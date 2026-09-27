@@ -955,3 +955,27 @@
 .stagger > *:nth-child(4) { animation-delay: 0.2s; }
 .stagger > *:nth-child(5) { animation-delay: 0.25s; }
 .stagger > *:nth-child(6) { animation-delay: 0.3s; }
+
+/* ---------- Explorador de jugadores ---------- */
+.iz-field {
+  width: 100%;
+  min-height: 2.25rem;
+  border: 1px solid var(--iz-panel-border);
+  background: var(--iz-card);
+  color: var(--iz-text);
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+}
+.iz-field:focus { outline: 2px solid var(--iz-blue-light); outline-offset: 1px; }
+.iz-label { display: block; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--iz-muted); margin-bottom: 0.2rem; }
+.cat-pill { display: inline-flex; align-items: center; border-radius: 999px; padding: 0.05rem 0.5rem; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.03em; white-space: nowrap; }
+.cat-legendary { background: linear-gradient(90deg, #b8860b, #ffd700); color: #2a1a00; }
+.cat-top { background: linear-gradient(90deg, #e04e00, #ff9a4a); color: #fff; }
+.cat-advanced { background: var(--iz-blue); color: #fff; }
+.cat-growing { background: #2e9d6a; color: #fff; }
+.cat-common { background: color-mix(in srgb, var(--iz-muted) 35%, transparent); color: var(--iz-text); }
+.stat-bar { height: 0.4rem; border-radius: 999px; background: color-mix(in srgb, var(--iz-muted) 25%, transparent); overflow: hidden; }
+.stat-bar > span { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--iz-blue), var(--iz-cyan)); }
+.team-tile { text-align: left; width: 100%; border: 1px solid var(--iz-panel-border); background: var(--iz-card); border-radius: 0.75rem; padding: 0.6rem 0.75rem; transition: transform .12s, border-color .12s; }
+.team-tile:hover { transform: translateY(-1px); border-color: var(--iz-orange); }

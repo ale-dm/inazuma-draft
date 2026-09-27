@@ -1,8 +1,7 @@
 import type { Player } from '../types'
 import { random } from '../lib/run-rng'
 import type { DraftPoolKey } from '../types'
-import { getPlayersForPool } from './players'
-import { displayPoolLabel, draftPoolKey, getPlayableDraftPools, parseDraftPoolKey } from './draft-pools'
+import { displayPoolLabel, draftPoolKey, getDraftPools, getTeamRoster, parseDraftPoolKey } from './catalog'
 import { pickBestXI } from './ffi-rosters'
 
 export interface TournamentOpponent {
@@ -51,7 +50,7 @@ export function localizeCountry(country: string, locale: 'fr' | 'en' | 'es'): st
 
 export function makeTournamentOpponent(key: DraftPoolKey): TournamentOpponent | null {
   const pool = parseDraftPoolKey(key)
-  const roster = getPlayersForPool(pool)
+  const roster = getTeamRoster(pool)
   if (roster.length < 7) return null
   const meta = META[key] ?? { country: pool.game, flag: '⚽' }
   const xi = pickBestXI(roster)
@@ -76,7 +75,7 @@ function shuffle<T>(arr: T[]): T[] {
 
 function pickUniqueOpponents(count: number, exclude: Set<DraftPoolKey> = new Set()): TournamentOpponent[] {
   const keys = shuffle(
-    getPlayableDraftPools()
+    getDraftPools()
       .map(p => draftPoolKey(p) as DraftPoolKey)
       .filter(k => !exclude.has(k)),
   )

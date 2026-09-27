@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react'
 import './index.css'
 import App from './App'
 import { AppSettingsProvider } from './context/AppSettings'
+import CatalogGate from './components/CatalogGate'
 import { initAnalytics } from './lib/analytics'
 import { recordGlobalVisit } from './lib/global-metrics'
 
@@ -13,7 +14,9 @@ recordGlobalVisit()
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AppSettingsProvider>
-      <App />
+      <CatalogGate>
+        <App />
+      </CatalogGate>
       <Analytics />
     </AppSettingsProvider>
   </StrictMode>,

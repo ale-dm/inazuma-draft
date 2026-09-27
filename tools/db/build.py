@@ -219,9 +219,9 @@ def main():
             forms.append({'label': 'default', 'grades': grades, 'source': 'Xtreme (wiki)'})
 
     # --- equipos de las cartas actuales del juego (nombre, juego) → equipo
-    old_team = {}
-    for m in re.finditer(r'^\s*p\("([^"]*)", "(\w+)", "([^"]*)"', open(os.path.join(ROOT, 'src', 'data', 'players.ts'), encoding='utf-8').read(), re.M):
-        old_team.setdefault((m.group(1), m.group(2)), m.group(3))
+    # (equipos por juego del juego original: data/legacy-teams.json, "nombre|juego" → equipo)
+    with open(os.path.join(ROOT, 'data', 'legacy-teams.json'), encoding='utf-8') as f:
+        old_team = {tuple(k.split('|', 1)): v for k, v in json.load(f).items()}
 
     # --- personajes: zukan agrupado por ficha + los que solo están en la wiki
     chars = collections.OrderedDict()
@@ -299,7 +299,8 @@ def main():
         dub = re.sub(r'\{\{Hover\|[^|}]*\|([^}]*)\}\}', r'\1', dub)          # {{Hover|largo|corto}} → corto
         dub = re.sub(r'\{\{[^}]*\}\}|\[\[(?:[^|\]]*\|)?([^\]]*)\]\]', lambda m: m.group(1) or '', dub)
         dub = re.split(r'\*|<br', dub.lstrip('*'))[0]
-        dub = re.sub(r'\s*\((?:game|games|EU|anime|games & anime|game & movie|[^)]*version)\)', '', dub).strip() or page
+        dub = re.sub(r'\s*\([^)]*(?:game|anime|movie|manga|EU|version)[^)]*\)', '', dub)
+        dub = re.sub(r'\s+', ' ', dub).strip() or page
         costs = {COST_GAME[k]: inf[k] for k in SHOW_COST if k in inf}
         show = next(((inf[k], COST_GAME[k]) for k in SHOW_COST if k in inf), (None, None))
         techniques[mid] = {'id': mid, 'name': dub, 'name_jp': inf.get('name_jp'), 'type': inf['type'],
