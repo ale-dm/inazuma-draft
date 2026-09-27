@@ -77,6 +77,9 @@ export interface Special {
   name_es?: string | null
   /** El Keshin puede usar Keshin Armed (armadura) */
   armed?: boolean
+  /** Hipertécnica del espíritu guerrero */
+  hyper?: string | null
+  hyper_es?: string | null
 }
 
 export type StaffRole = 'Manager' | 'Coach' | 'Coordinator'
