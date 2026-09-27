@@ -32,12 +32,13 @@
 | Darren LaChance · IE2 base | [oy1sibyz7wc.png](https://dxi4wb638ujep.cloudfront.net/1/k/o/y/oy1sibyz7wc.png) | [(Fa) Darren (HVR).png](https://static.wikia.nocookie.net/inazuma/images/e/ee/%28Fa%29_Darren_%28HVR%29.png/revision/latest?cb=20260711143852&path-prefix=es) |
 | Hurley Kane · IE2 base | [i0spbukph8c.png](https://dxi4wb638ujep.cloudfront.net/1/k/i/0/i0spbukph8c.png) | [(MT) Hurley (HVR).png](https://static.wikia.nocookie.net/inazuma/images/c/c5/%28MT%29_Hurley_%28HVR%29.png/revision/latest?cb=20260710200532&path-prefix=es) |
 | Victor Blade · GO2 Raimon | [q3kql_cttdk.png](https://dxi4wb638ujep.cloudfront.net/1/k/q/3/q3kql_cttdk.png) | [(R (GO)) Victor (HVR).png](https://static.wikia.nocookie.net/inazuma/images/9/93/%28R_%28GO%29%29_Victor_%28HVR%29.png/revision/latest?cb=20251208153437&path-prefix=es) |
+| Goldie Lemmon · GO2 base | [k579cnognde.png](https://dxi4wb638ujep.cloudfront.net/1/k/k/5/k579cnognde.png) | [(R (GO) Goldie (HVR).png](https://static.wikia.nocookie.net/inazuma/images/d/d6/%28R_%28GO%29_Goldie_%28HVR%29.png/revision/latest?cb=20240406152257&path-prefix=es) |
 | Beta · GO2 base | [uhsign1h3ek.png](https://dxi4wb638ujep.cloudfront.net/1/k/u/h/uhsign1h3ek.png) | [(PO 2.0) Beta (HVR).png](https://static.wikia.nocookie.net/inazuma/images/5/54/%28PO_2.0%29_Beta_%28HVR%29.png/revision/latest?cb=20260203001908&path-prefix=es) |
 | Beta · GO2 Protocol Omega 2.0 | [ijgn8lthcc8.png](https://dxi4wb638ujep.cloudfront.net/1/k/i/j/ijgn8lthcc8.png) | [(PO 2.0) Beta (HVR).png](https://static.wikia.nocookie.net/inazuma/images/5/54/%28PO_2.0%29_Beta_%28HVR%29.png/revision/latest?cb=20260203001908&path-prefix=es) |
 | Falco Flashman · GO3 base | [0ks2lhuo2sm.png](https://dxi4wb638ujep.cloudfront.net/1/k/0/k/0ks2lhuo2sm.png) | [(EE) Falco (HVR).png](https://static.wikia.nocookie.net/inazuma/images/e/e9/%28EE%29_Falco_%28HVR%29.png/revision/latest?cb=20260717112619&path-prefix=es) |
 | Falco Flashman · GO3 Earth Eleven (Nº 3960) | [pgc9ollbn5e.png](https://dxi4wb638ujep.cloudfront.net/1/k/p/g/pgc9ollbn5e.png) | [(EE) Falco (HVR).png](https://static.wikia.nocookie.net/inazuma/images/e/e9/%28EE%29_Falco_%28HVR%29.png/revision/latest?cb=20260717112619&path-prefix=es) |
 
-## 2. Sin sprite de Victory Road en ninguna de las dos wikis (se quedan con la foto repetida o el render)
+## 2. Sin sprite de Victory Road en ninguna de las dos wikis
 
 - **Joseph King** · IE3 Neo Japan
 - **Alan Master** · IE3 Neo Japan
@@ -45,4 +46,3 @@
 - **Jonas Demetrius** · IE3 Neo Japan
 - **Daniel Hatch** · IE3 Neo Japan
 - **Riku Pants Matsushita** · IE3 base
-- **Tez Beyan** · GO2 Protocol Omega
