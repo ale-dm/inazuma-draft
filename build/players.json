@@ -1169,7 +1169,7 @@
    "game": "GO2",
    "saga": "GO",
    "version": "base",
-   "team": "Raimon First Squad",
+   "team": "Raimon",
    "position": "DF",
    "element": "fire",
    "ovr": 90,
@@ -3361,7 +3361,7 @@
    "is_version": true,
    "description": "Manager Travis's daughter and childhood friend of Mark Evans, now a caring nurse at the hospital.",
    "description_es": "Antigua gerente del Raimon. En la actualidad trabaja de enfermera.",
-   "no": 5952,
+   "no": 5953,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -3850,7 +3850,7 @@
    "is_version": true,
    "description": "An earnest and positive boy. Though a beginner, he has great natural skill.",
    "description_es": "No era muy bueno cuando entró en el club, pero está mejorando muchísimo.",
-   "no": 5948,
+   "no": 5949,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -4219,7 +4219,7 @@
    "is_version": true,
    "description": null,
    "description_es": "La habilidad del delantero estrella del Raimon no tiene parangón.",
-   "no": 5934,
+   "no": 5935,
    "specials": [
     {
      "type": "soul",
@@ -5344,7 +5344,7 @@
    "is_version": true,
    "description": "He's not the biggest player, but he might be the most energetic! An optimistic young boy who's always ready when you are.",
    "description_es": "Un chico lleno de energía que ahora defiende la portería del Raimon.",
-   "no": 5937,
+   "no": 5938,
    "specials": [
     {
      "type": "keshin",
@@ -5403,7 +5403,7 @@
    "is_version": true,
    "description": null,
    "description_es": "Un chico lleno de energía que ahora defiende la portería del Raimon.",
-   "no": 5938,
+   "no": 5939,
    "specials": [
     {
      "type": "keshin",
@@ -6668,7 +6668,7 @@
    "is_version": true,
    "description": "A young boy with superb body balance. He has his highs and lows, but is a good kid at heart.",
    "description_es": "Un defensa con un equilibrio superior que a veces parece algo borde.",
-   "no": 5946,
+   "no": 5947,
    "specials": [
     {
      "type": "mixi",
@@ -7031,7 +7031,7 @@
    "is_version": true,
    "description": null,
    "description_es": "Un chico sencillo y puro como la brisa. Nunca se rinde ante los problemas.",
-   "no": 5933,
+   "no": 5934,
    "specials": [
     {
      "type": "soul",
@@ -7611,7 +7611,7 @@
    "game": "IE2",
    "saga": "IE",
    "version": "base",
-   "team": "Alia Academy",
+   "team": "Unaffiliated",
    "position": "MF",
    "element": "air",
    "ovr": 86,
@@ -8251,7 +8251,7 @@
    "is_version": true,
    "description": "A chivalrous boy with a strong moral compass. Spent some time in Italy.",
    "description_es": "Era delantero, pero volvió de Italia convertido en centrocampista.",
-   "no": 5947,
+   "no": 5948,
    "specials": [
     {
      "type": "keshin",
@@ -8760,58 +8760,64 @@
    ]
   },
   {
-   "id": "matsukaze-tenma--go1--tenmas",
+   "id": "matsukaze-tenma--go2--the-sherwinds",
    "character_id": "matsukaze-tenma",
    "name": "Arion Sherwind",
-   "game": "GO1",
+   "game": "GO2",
    "saga": "GO",
-   "version": "Tenmas",
-   "team": "Tenmas",
+   "version": "The Sherwinds",
+   "team": "The Sherwinds",
    "position": "MF",
    "element": "air",
    "ovr": 85,
    "category": "Top Player",
    "tier": "S",
    "source": "Strikers 2013",
-   "shooting": 83,
-   "control": 86,
-   "physical": 89,
+   "shooting": 84,
+   "control": 85,
+   "physical": 92,
    "speed": 83,
-   "defense": 84,
-   "goalkeeping": 84,
-   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/1/18/%28SR%29_Matsukaze_Tenma_sprite_%28VR%29.png/revision/latest?cb=20251129004425",
-   "zukan_id": null,
-   "zukan_no": null,
+   "defense": 83,
+   "goalkeeping": 83,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/o/o/ooxd-ldeoym.png",
+   "zukan_id": "k/o/o/ooxd-ldeoym",
+   "zukan_no": 2436,
    "is_version": true,
-   "description": null,
-   "description_es": "Un chico sencillo y puro como la brisa. Apasionado por el fútbol como pocos.",
-   "no": 5931,
+   "description": "An innocent young boy who adores football. A player as pleasant as a breath of fresh air.",
+   "description_es": "El capitán del Raimon es un chico sencillo y puro como la brisa.",
+   "no": 5933,
    "specials": [
     {
      "type": "keshin",
      "name": "Heavenly Horse Arch Pegasus",
      "name_es": "Alado Archipegaso",
-     "armed": false,
+     "armed": true,
      "hyper": "Pegasus Punch",
      "hyper_es": "Golpe justiciero"
+    },
+    {
+     "type": "mixi",
+     "name": "King Arthur, Tezcat, Victor, Mark"
     }
    ],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
-    "Kick": 91,
-    "Dribbling": 167,
-    "Technique": 98,
-    "Block": 115,
-    "Speed": 108,
-    "Stamina": 89,
-    "Catch": 69
+    "Kick": 121,
+    "Dribbling": 154,
+    "Technique": 102,
+    "Block": 111,
+    "Speed": 109,
+    "Stamina": 107,
+    "Catch": 88
    },
    "techniques": [
-    "Evolution",
+    "AggressiveBeat",
+    "WonderTrap",
+    "KazaanaDrive",
+    "GodWind",
     "SoyokazeStep",
-    "MachWind",
-    "SpiralDraw"
+    "MachWind"
    ]
   },
   {
@@ -9222,7 +9228,7 @@
    "is_version": true,
    "description": "She serves as the advisor for the Raimon football team, always keeping a gentle, watchful eye on the players.",
    "description_es": "Antigua gerente del Raimon. Ahora se ocupa de Arion y del equipo.",
-   "no": 5949,
+   "no": 5950,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -9962,7 +9968,7 @@
    "is_version": true,
    "description": "His seemingly unconcerned attitude hides an intense passion for football.",
    "description_es": "Su aparente frialdad oculta una enorme pasión por el fútbol.",
-   "no": 5945,
+   "no": 5946,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -10204,7 +10210,7 @@
    "is_version": true,
    "description": "He guides his team as precisely as an orchestra conductor. A genius playmaker known as \"the Virtuoso\" by many.",
    "description_es": "Por su genialidad y su impecable estrategia, es apodado el Virtuoso.",
-   "no": 5935,
+   "no": 5936,
    "specials": [
     {
      "type": "keshin",
@@ -10263,7 +10269,7 @@
    "is_version": true,
    "description": null,
    "description_es": "Apasionado de la música y el fútbol. Es apodado el virtuoso del campo.",
-   "no": 5936,
+   "no": 5937,
    "specials": [
     {
      "type": "soul",
@@ -10859,7 +10865,7 @@
    "is_version": true,
    "description": "A natural-born playmaker whose sharp control may even rival Jude.",
    "description_es": "Exjugador y actual entrenador de los Dragones de Fuego. Un genio del fútbol.",
-   "no": 5930,
+   "no": 5931,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -12881,7 +12887,7 @@
    "is_version": true,
    "description": "The biggest member of the team and a stalwart defender. Hates unfair play.",
    "description_es": "El jugador más grande del equipo. Un defensa que no tolera el juego sucio.",
-   "no": 5942,
+   "no": 5943,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -14948,7 +14954,7 @@
    "is_version": true,
    "description": "A persistent player who gets back up however many times he's knocked down. He's a caring guy who looks out for younger players.",
    "description_es": "Por su lealtad y su altruismo, algunos lo consideran el alma del Raimon.",
-   "no": 5940,
+   "no": 5941,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -16110,7 +16116,7 @@
    "is_version": true,
    "description": "A player so striking in looks that some mistake him for a girl. He's close with Riccardo Di.",
    "description_es": "El elegante defensa del Raimon. Conoce a Riccardo mejor que nadie.",
-   "no": 5939,
+   "no": 5940,
    "specials": [
     {
      "type": "keshin",
@@ -18247,7 +18253,7 @@
    "is_version": true,
    "description": "A canny lad who brightens the team's mood. Sea fishing is his hobby.",
    "description_es": "Un chico listo y de contagioso buen humor. Además, le gusta pescar.",
-   "no": 5943,
+   "no": 5944,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -18842,7 +18848,7 @@
    "is_version": true,
    "description": "Known for helping out his teammates and has a keen sense of strategy.",
    "description_es": "Tiene una gran visión estratégica y siempre ayuda a sus compañeros.",
-   "no": 5951,
+   "no": 5952,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -19702,7 +19708,7 @@
    "is_version": true,
    "description": "An analytical player more interested in strategy than physical prowess.",
    "description_es": "Un jugador muy analítico y basa todo su juego en la estrategia.",
-   "no": 5950,
+   "no": 5951,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -19864,7 +19870,7 @@
    "game": "IE2",
    "saga": "IE",
    "version": "base",
-   "team": "Inazuma Japan",
+   "team": "Unaffiliated",
    "position": "MF",
    "element": "air",
    "ovr": 81,
@@ -19900,6 +19906,51 @@
     "TsunamiBoost",
     "SuperShikofumi",
     "RockWallDam"
+   ]
+  },
+  {
+   "id": "hijikata-raiden--ie3--inazuma-japan",
+   "character_id": "hijikata-raiden",
+   "name": "Thor Stoutberg",
+   "game": "IE3",
+   "saga": "IE",
+   "version": "Inazuma Japan",
+   "team": "Inazuma Japan",
+   "position": "MF",
+   "element": "air",
+   "ovr": 81,
+   "category": "Advanced Player",
+   "tier": "S",
+   "source": "Strikers 2013",
+   "shooting": 82,
+   "control": 81,
+   "physical": 93,
+   "speed": 72,
+   "defense": 84,
+   "goalkeeping": 84,
+   "image_url": "https://static.wikia.nocookie.net/inazuma/images/5/52/%28IJ%29_Thor_%28HVR%29.png/revision/latest?cb=20260809005049&path-prefix=es",
+   "zukan_id": "k/a/g/ag7gjc6nhqe",
+   "zukan_no": 1330,
+   "is_version": true,
+   "description": "This large chap has a big heart and is a great shoulder to cry on.",
+   "description_es": "Tiene un buen corazón y siempre cuida de sus amigos.",
+   "no": 5930,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "Normal form",
+    "Kick": 56,
+    "Body": 80,
+    "Control": 53,
+    "Guard": 62,
+    "Speed": 50,
+    "Stamina": 71,
+    "Guts": 68
+   },
+   "techniques": [
+    "SuperShikofumi",
+    "RockWallDam",
+    "ThunderBeast"
    ]
   },
   {
@@ -20476,7 +20527,7 @@
    "is_version": true,
    "description": "Raimon's fastest midfielder. Has distinctly pessimistic tendencies.",
    "description_es": "El centrocampista más rápido del equipo, pero también un pesimista.",
-   "no": 5944,
+   "no": 5945,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -21357,7 +21408,7 @@
    "is_version": true,
    "description": "A hot-headed go-getter. Dribbles the ball like a runaway train.",
    "description_es": "Un jugador muy impulsivo. Avanza con el balón como una locomotora.",
-   "no": 5941,
+   "no": 5942,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -22043,7 +22094,7 @@
    "game": "GO3",
    "saga": "GO",
    "version": "base",
-   "team": "Zanark's Outsiders",
+   "team": "Unaffiliated",
    "position": "FW",
    "element": "air",
    "ovr": 79,
@@ -23462,7 +23513,7 @@
    "game": "GO2",
    "saga": "GO",
    "version": "base",
-   "team": "Zanark's Outsiders",
+   "team": "Unaffiliated",
    "position": "DF",
    "element": "earth",
    "ovr": 78,
@@ -31277,7 +31328,7 @@
    "game": "GO1",
    "saga": "GO",
    "version": "base",
-   "team": "Protocol Omega",
+   "team": "Unaffiliated",
    "position": "FW",
    "element": "earth",
    "ovr": 77,
@@ -31290,13 +31341,13 @@
    "speed": 78,
    "defense": 69,
    "goalkeeping": 74,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/f/j/fj3vf6wbeoe.png",
-   "zukan_id": "k/f/j/fj3vf6wbeoe",
-   "zukan_no": 3507,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/b/k/bkls6psx-bs.png",
+   "zukan_id": "k/b/k/bkls6psx-bs",
+   "zukan_no": 3083,
    "is_version": false,
-   "description": "A striker with a sweet, youthful face. Loyal second-in-command to Alpha.",
+   "description": "Elder of two brothers. A keen actor who enjoys portraying deep emotions.",
    "description_es": "Este leal delantero de rostro juvenil es la mano derecha de Alfa.",
-   "no": 3507,
+   "no": 3083,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -31341,7 +31392,7 @@
    "is_version": true,
    "description": "A striker with a sweet, youthful face. Loyal second-in-command to Alpha.",
    "description_es": "Este leal delantero de rostro juvenil es la mano derecha de Alfa.",
-   "no": 5953,
+   "no": 3507,
    "specials": [
     {
      "type": "mixi",
@@ -31363,51 +31414,6 @@
     "SonicShot",
     "PrestoTurn",
     "KodaiNoKiba"
-   ]
-  },
-  {
-   "id": "mike--go1--unaffiliated",
-   "character_id": "mike",
-   "name": "Tez Beyan",
-   "game": "GO1",
-   "saga": "GO",
-   "version": "Unaffiliated",
-   "team": "Unaffiliated",
-   "position": "FW",
-   "element": "earth",
-   "ovr": 77,
-   "category": "Advanced Player",
-   "tier": "B",
-   "source": "stats del juego",
-   "shooting": 81,
-   "control": 64,
-   "physical": 80,
-   "speed": 78,
-   "defense": 69,
-   "goalkeeping": 74,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/b/k/bkls6psx-bs.png",
-   "zukan_id": "k/b/k/bkls6psx-bs",
-   "zukan_no": 3083,
-   "is_version": true,
-   "description": "Elder of two brothers. A keen actor who enjoys portraying deep emotions.",
-   "description_es": "Este leal delantero de rostro juvenil es la mano derecha de Alfa.",
-   "no": 3083,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 139,
-    "Dribbling": 93,
-    "Technique": 88,
-    "Block": 96,
-    "Speed": 129,
-    "Stamina": 121,
-    "Catch": 66
-   },
-   "techniques": [
-    "SonicShot",
-    "PrestoTurn",
-    "FireTornado"
    ]
   },
   {
@@ -33999,6 +34005,50 @@
     "DogRun",
     "StormRider",
     "MugenNoKabe"
+   ]
+  },
+  {
+   "id": "shian-haseru--go1--base",
+   "character_id": "shian-haseru",
+   "name": "Joshua Bleak",
+   "game": "GO1",
+   "saga": "GO",
+   "version": "base",
+   "team": "Ivy Selective",
+   "position": "FW",
+   "element": "air",
+   "ovr": 76,
+   "category": "Advanced Player",
+   "tier": "B",
+   "source": "stats del juego",
+   "shooting": 79,
+   "control": 74,
+   "physical": 72,
+   "speed": 72,
+   "defense": 65,
+   "goalkeeping": 68,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/e/g/egcvgvp6a0s.png",
+   "zukan_id": "k/e/g/egcvgvp6a0s",
+   "zukan_no": 2785,
+   "is_version": false,
+   "description": "A contemplative youth with a gift for poetry. Snaps out of it on the pitch.",
+   "description_es": "Un poeta muy romántico que, sin embargo, se transforma cuando juega.",
+   "no": 2785,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 130,
+    "Dribbling": 113,
+    "Technique": 106,
+    "Block": 86,
+    "Speed": 110,
+    "Stamina": 101,
+    "Catch": 57
+   },
+   "techniques": [
+    "SonicShot",
+    "EternalBlizzard"
    ]
   },
   {
@@ -38323,50 +38373,6 @@
     "RapidFire",
     "SonicShot",
     "BoundFlame"
-   ]
-  },
-  {
-   "id": "shian-haseru--go1--base",
-   "character_id": "shian-haseru",
-   "name": "Joshua Bleak",
-   "game": "GO1",
-   "saga": "GO",
-   "version": "base",
-   "team": "Ivy Selective",
-   "position": "FW",
-   "element": "air",
-   "ovr": 75,
-   "category": "Advanced Player",
-   "tier": "B",
-   "source": "stats del juego",
-   "shooting": 78,
-   "control": 73,
-   "physical": 71,
-   "speed": 71,
-   "defense": 64,
-   "goalkeeping": 67,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/e/g/egcvgvp6a0s.png",
-   "zukan_id": "k/e/g/egcvgvp6a0s",
-   "zukan_no": 2785,
-   "is_version": false,
-   "description": "A contemplative youth with a gift for poetry. Snaps out of it on the pitch.",
-   "description_es": "Un poeta muy romántico que, sin embargo, se transforma cuando juega.",
-   "no": 2785,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 130,
-    "Dribbling": 113,
-    "Technique": 106,
-    "Block": 86,
-    "Speed": 110,
-    "Stamina": 101,
-    "Catch": 57
-   },
-   "techniques": [
-    "SonicShot",
-    "EternalBlizzard"
    ]
   },
   {
@@ -47107,6 +47113,60 @@
    ]
   },
   {
+   "id": "nebuchi-umitomo--go1--base",
+   "character_id": "nebuchi-umitomo",
+   "name": "Triton Nettuno",
+   "game": "GO1",
+   "saga": "GO",
+   "version": "base",
+   "team": "Universal",
+   "position": "FW",
+   "element": "air",
+   "ovr": 73,
+   "category": "Growing Player",
+   "tier": "B",
+   "source": "stats del juego",
+   "shooting": 76,
+   "control": 65,
+   "physical": 72,
+   "speed": 74,
+   "defense": 61,
+   "goalkeeping": 65,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/w/z/wzym9rkqlvk.png",
+   "zukan_id": "k/w/z/wzym9rkqlvk",
+   "zukan_no": 2653,
+   "is_version": false,
+   "description": "Unleashes powerful kicks by twisting his whole body like a whip.",
+   "description_es": "Realiza poderosos tiros usando todo el cuerpo como si fuese un látigo.",
+   "no": 2653,
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Lord of All Waters Neptune",
+     "name_es": "Neptuno, señor de los mares",
+     "armed": false,
+     "hyper": "Trident Torpedo",
+     "hyper_es": "Torpedo tridente"
+    }
+   ],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 117,
+    "Dribbling": 104,
+    "Technique": 88,
+    "Block": 80,
+    "Speed": 121,
+    "Stamina": 104,
+    "Catch": 56
+   },
+   "techniques": [
+    "RyuuseiBlade",
+    "PrestoTurn",
+    "PantherBlizzard"
+   ]
+  },
+  {
    "id": "sync--go2--base",
    "character_id": "sync",
    "name": "Tsync",
@@ -50220,60 +50280,6 @@
     "BigScissors",
     "NaminoriPierrot",
     "KouteiPenguin2gou"
-   ]
-  },
-  {
-   "id": "nebuchi-umitomo--go1--base",
-   "character_id": "nebuchi-umitomo",
-   "name": "Triton Nettuno",
-   "game": "GO1",
-   "saga": "GO",
-   "version": "base",
-   "team": "Universal",
-   "position": "FW",
-   "element": "air",
-   "ovr": 72,
-   "category": "Growing Player",
-   "tier": "B",
-   "source": "stats del juego",
-   "shooting": 75,
-   "control": 64,
-   "physical": 71,
-   "speed": 73,
-   "defense": 60,
-   "goalkeeping": 64,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/w/z/wzym9rkqlvk.png",
-   "zukan_id": "k/w/z/wzym9rkqlvk",
-   "zukan_no": 2653,
-   "is_version": false,
-   "description": "Unleashes powerful kicks by twisting his whole body like a whip.",
-   "description_es": "Realiza poderosos tiros usando todo el cuerpo como si fuese un látigo.",
-   "no": 2653,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Lord of All Waters Neptune",
-     "name_es": "Neptuno, señor de los mares",
-     "armed": false,
-     "hyper": "Trident Torpedo",
-     "hyper_es": "Torpedo tridente"
-    }
-   ],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 117,
-    "Dribbling": 104,
-    "Technique": 88,
-    "Block": 80,
-    "Speed": 121,
-    "Stamina": 104,
-    "Catch": 56
-   },
-   "techniques": [
-    "RyuuseiBlade",
-    "PrestoTurn",
-    "PantherBlizzard"
    ]
   },
   {
@@ -55716,6 +55722,50 @@
    ]
   },
   {
+   "id": "yukiji-keiichi--go1--base",
+   "character_id": "yukiji-keiichi",
+   "name": "Moe Sart",
+   "game": "GO1",
+   "saga": "GO",
+   "version": "base",
+   "team": "Prodigy Grammar",
+   "position": "FW",
+   "element": "wood",
+   "ovr": 70,
+   "category": "Growing Player",
+   "tier": "B",
+   "source": "stats del juego",
+   "shooting": 79,
+   "control": 63,
+   "physical": 62,
+   "speed": 58,
+   "defense": 68,
+   "goalkeeping": 66,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/l/w/lwn-qwf9lu0.png",
+   "zukan_id": "k/l/w/lwn-qwf9lu0",
+   "zukan_no": 2497,
+   "is_version": false,
+   "description": "Comes from a poor family, but attained academic greatness on talent alone.",
+   "description_es": "De familia humilde, alcanzó prestigio académico por méritos propios.",
+   "no": 2497,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 131,
+    "Dribbling": 88,
+    "Technique": 94,
+    "Block": 97,
+    "Speed": 76,
+    "Stamina": 86,
+    "Catch": 56
+   },
+   "techniques": [
+    "PerfectCourse",
+    "ThiefEye"
+   ]
+  },
+  {
    "id": "mbulelo-tsimba--ie3--base",
    "character_id": "mbulelo-tsimba",
    "name": "Moeneeb Booysen",
@@ -58957,50 +59007,6 @@
     "MagmaCarpet",
     "FootworkDraw",
     "VolcanoHead"
-   ]
-  },
-  {
-   "id": "yukiji-keiichi--go1--base",
-   "character_id": "yukiji-keiichi",
-   "name": "Moe Sart",
-   "game": "GO1",
-   "saga": "GO",
-   "version": "base",
-   "team": "Prodigy Grammar",
-   "position": "FW",
-   "element": "wood",
-   "ovr": 69,
-   "category": "Growing Player",
-   "tier": "B",
-   "source": "stats del juego",
-   "shooting": 78,
-   "control": 62,
-   "physical": 61,
-   "speed": 57,
-   "defense": 67,
-   "goalkeeping": 65,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/l/w/lwn-qwf9lu0.png",
-   "zukan_id": "k/l/w/lwn-qwf9lu0",
-   "zukan_no": 2497,
-   "is_version": false,
-   "description": "Comes from a poor family, but attained academic greatness on talent alone.",
-   "description_es": "De familia humilde, alcanzó prestigio académico por méritos propios.",
-   "no": 2497,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 131,
-    "Dribbling": 88,
-    "Technique": 94,
-    "Block": 97,
-    "Speed": 76,
-    "Stamina": 86,
-    "Catch": 56
-   },
-   "techniques": [
-    "PerfectCourse",
-    "ThiefEye"
    ]
   },
   {
@@ -66083,6 +66089,52 @@
    ]
   },
   {
+   "id": "muroi--go1--base",
+   "character_id": "muroi",
+   "name": "Mudhi Uppindown",
+   "game": "GO1",
+   "saga": "GO",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "FW",
+   "element": "earth",
+   "ovr": 67,
+   "category": "Growing Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 72,
+   "control": 60,
+   "physical": 68,
+   "speed": 60,
+   "defense": 51,
+   "goalkeeping": 55,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/h/l/hlqzc3but4c.png",
+   "zukan_id": "k/h/l/hlqzc3but4c",
+   "zukan_no": 2883,
+   "is_version": false,
+   "description": "Excels in both academic studies and sports, but prone to highs and lows.",
+   "description_es": null,
+   "no": 2883,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 145,
+    "Dribbling": 102,
+    "Technique": 97,
+    "Block": 70,
+    "Speed": 103,
+    "Stamina": 113,
+    "Catch": 50
+   },
+   "techniques": [
+    "Claymore",
+    "Senpuujin",
+    "RyuuseiBlade",
+    "FireTornado"
+   ]
+  },
+  {
    "id": "napa-radam--go3--base",
    "character_id": "napa-radam",
    "name": "Napa Rattana",
@@ -67384,7 +67436,7 @@
    "game": "IE3",
    "saga": "IE",
    "version": "base",
-   "team": "The Sambassadors",
+   "team": "Unaffiliated",
    "position": "GK",
    "element": "fire",
    "ovr": 67,
@@ -70532,52 +70584,6 @@
    "techniques": [
     "RapidWhip",
     "FenceOfGaia"
-   ]
-  },
-  {
-   "id": "muroi--go1--base",
-   "character_id": "muroi",
-   "name": "Mudhi Uppindown",
-   "game": "GO1",
-   "saga": "GO",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "FW",
-   "element": "earth",
-   "ovr": 66,
-   "category": "Growing Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 71,
-   "control": 59,
-   "physical": 67,
-   "speed": 59,
-   "defense": 50,
-   "goalkeeping": 54,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/h/l/hlqzc3but4c.png",
-   "zukan_id": "k/h/l/hlqzc3but4c",
-   "zukan_no": 2883,
-   "is_version": false,
-   "description": "Excels in both academic studies and sports, but prone to highs and lows.",
-   "description_es": null,
-   "no": 2883,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 145,
-    "Dribbling": 102,
-    "Technique": 97,
-    "Block": 70,
-    "Speed": 103,
-    "Stamina": 113,
-    "Catch": 50
-   },
-   "techniques": [
-    "Claymore",
-    "Senpuujin",
-    "RyuuseiBlade",
-    "FireTornado"
    ]
   },
   {
@@ -82713,6 +82719,51 @@
    ]
   },
   {
+   "id": "edomaru--go2--base",
+   "character_id": "edomaru",
+   "name": "Eoin Geary",
+   "game": "GO2",
+   "saga": "GO",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "FW",
+   "element": "air",
+   "ovr": 63,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 66,
+   "control": 60,
+   "physical": 54,
+   "speed": 67,
+   "defense": 53,
+   "goalkeeping": 59,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/s/-/s-wuktzx658.png",
+   "zukan_id": "k/s/-/s-wuktzx658",
+   "zukan_no": 3875,
+   "is_version": false,
+   "description": "This lover of football and sushi has a spicy hint of wasabi to his playing.",
+   "description_es": null,
+   "no": 3875,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 146,
+    "Dribbling": 107,
+    "Technique": 109,
+    "Block": 90,
+    "Speed": 133,
+    "Stamina": 88,
+    "Catch": 85
+   },
+   "techniques": [
+    "FlyingFish",
+    "KillerWhale",
+    "KouteiPenguin7"
+   ]
+  },
+  {
    "id": "atari--go1--base",
    "character_id": "atari",
    "name": "Esau Tariq",
@@ -84537,6 +84588,52 @@
    ]
   },
   {
+   "id": "garago--go1--base",
+   "character_id": "garago",
+   "name": "Kyu Lightning",
+   "game": "GO1",
+   "saga": "GO",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "FW",
+   "element": "fire",
+   "ovr": 63,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 69,
+   "control": 62,
+   "physical": 53,
+   "speed": 53,
+   "defense": 60,
+   "goalkeeping": 66,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/6/n/6nm0ylhxyj8.png",
+   "zukan_id": "k/6/n/6nm0ylhxyj8",
+   "zukan_no": 3120,
+   "is_version": false,
+   "description": "Rough-and-ready ninth child of eleven. Uses football as a form of stress relief.",
+   "description_es": null,
+   "no": 3120,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 140,
+    "Dribbling": 92,
+    "Technique": 124,
+    "Block": 106,
+    "Speed": 94,
+    "Stamina": 89,
+    "Catch": 84
+   },
+   "techniques": [
+    "MadJuggler",
+    "DashTrain",
+    "RocketHead",
+    "MaboroshiShot"
+   ]
+  },
+  {
    "id": "lalaya-obies--go3--base",
    "character_id": "lalaya-obies",
    "name": "Laraya Orbes",
@@ -85899,6 +85996,51 @@
     "HeatTackle",
     "UshiroNoShoumen",
     "ReflectBuster"
+   ]
+  },
+  {
+   "id": "tora--go1--base",
+   "character_id": "tora",
+   "name": "Rory Tigre",
+   "game": "GO1",
+   "saga": "GO",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "FW",
+   "element": "fire",
+   "ovr": 63,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 63,
+   "control": 63,
+   "physical": 64,
+   "speed": 63,
+   "defense": 62,
+   "goalkeeping": 52,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/h/4/h4ylx5qcnp0.png",
+   "zukan_id": "k/h/4/h4ylx5qcnp0",
+   "zukan_no": 2970,
+   "is_version": false,
+   "description": "His sleek figure and soft movements make him reminiscent of a tiger.",
+   "description_es": null,
+   "no": 2970,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 105,
+    "Dribbling": 132,
+    "Technique": 100,
+    "Block": 121,
+    "Speed": 129,
+    "Stamina": 117,
+    "Catch": 55
+   },
+   "techniques": [
+    "BoundFlame",
+    "RyuuseiBlade",
+    "FireTornado"
    ]
   },
   {
@@ -88115,52 +88257,6 @@
    ]
   },
   {
-   "id": "sharaku--ie1--base",
-   "character_id": "sharaku",
-   "name": "Cameron Mann",
-   "game": "IE1",
-   "saga": "IE",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "MF",
-   "element": "earth",
-   "ovr": 62,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 64,
-   "control": 63,
-   "physical": 60,
-   "speed": 59,
-   "defense": 64,
-   "goalkeeping": 62,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/k/l/kl3o3leqbze.png",
-   "zukan_id": "k/k/l/kl3o3leqbze",
-   "zukan_no": 296,
-   "is_version": false,
-   "description": "His dream is to have one of his sports photos published one day.",
-   "description_es": ".",
-   "no": 296,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "European version",
-    "Kick": 60,
-    "Body": 59,
-    "Control": 58,
-    "Guard": 61,
-    "Speed": 52,
-    "Stamina": 53,
-    "Guts": 54
-   },
-   "techniques": [
-    "DashAccel",
-    "QuickDraw",
-    "DokugiriNoJutsu",
-    "Harvest"
-   ]
-  },
-  {
    "id": "genjin--go1--base",
    "character_id": "genjin",
    "name": "Carny Voris",
@@ -89491,51 +89587,6 @@
     "HeadBazooka",
     "HinawaBullet",
     "OgreBlade"
-   ]
-  },
-  {
-   "id": "edomaru--go2--base",
-   "character_id": "edomaru",
-   "name": "Eoin Geary",
-   "game": "GO2",
-   "saga": "GO",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "FW",
-   "element": "air",
-   "ovr": 62,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 65,
-   "control": 59,
-   "physical": 53,
-   "speed": 66,
-   "defense": 52,
-   "goalkeeping": 58,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/s/-/s-wuktzx658.png",
-   "zukan_id": "k/s/-/s-wuktzx658",
-   "zukan_no": 3875,
-   "is_version": false,
-   "description": "This lover of football and sushi has a spicy hint of wasabi to his playing.",
-   "description_es": null,
-   "no": 3875,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 146,
-    "Dribbling": 107,
-    "Technique": 109,
-    "Block": 90,
-    "Speed": 133,
-    "Stamina": 88,
-    "Catch": 85
-   },
-   "techniques": [
-    "FlyingFish",
-    "KillerWhale",
-    "KouteiPenguin7"
    ]
   },
   {
@@ -91115,52 +91166,6 @@
     "ButtobiJump",
     "SpiralDraw",
     "RocketHead"
-   ]
-  },
-  {
-   "id": "garago--go1--base",
-   "character_id": "garago",
-   "name": "Kyu Lightning",
-   "game": "GO1",
-   "saga": "GO",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "FW",
-   "element": "fire",
-   "ovr": 62,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 68,
-   "control": 61,
-   "physical": 52,
-   "speed": 52,
-   "defense": 59,
-   "goalkeeping": 65,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/6/n/6nm0ylhxyj8.png",
-   "zukan_id": "k/6/n/6nm0ylhxyj8",
-   "zukan_no": 3120,
-   "is_version": false,
-   "description": "Rough-and-ready ninth child of eleven. Uses football as a form of stress relief.",
-   "description_es": null,
-   "no": 3120,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 140,
-    "Dribbling": 92,
-    "Technique": 124,
-    "Block": 106,
-    "Speed": 94,
-    "Stamina": 89,
-    "Catch": 84
-   },
-   "techniques": [
-    "MadJuggler",
-    "DashTrain",
-    "RocketHead",
-    "MaboroshiShot"
    ]
   },
   {
@@ -92900,51 +92905,6 @@
     "KodaiNoKiba",
     "DinosaurBreak",
     "OujaNoKiba"
-   ]
-  },
-  {
-   "id": "tora--go1--base",
-   "character_id": "tora",
-   "name": "Rory Tigre",
-   "game": "GO1",
-   "saga": "GO",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "FW",
-   "element": "fire",
-   "ovr": 62,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 62,
-   "control": 62,
-   "physical": 63,
-   "speed": 62,
-   "defense": 61,
-   "goalkeeping": 51,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/h/4/h4ylx5qcnp0.png",
-   "zukan_id": "k/h/4/h4ylx5qcnp0",
-   "zukan_no": 2970,
-   "is_version": false,
-   "description": "His sleek figure and soft movements make him reminiscent of a tiger.",
-   "description_es": null,
-   "no": 2970,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 105,
-    "Dribbling": 132,
-    "Technique": 100,
-    "Block": 121,
-    "Speed": 129,
-    "Stamina": 117,
-    "Catch": 55
-   },
-   "techniques": [
-    "BoundFlame",
-    "RyuuseiBlade",
-    "FireTornado"
    ]
   },
   {
@@ -95217,6 +95177,52 @@
     "SonicShot",
     "Zeroyon",
     "FlyingFish"
+   ]
+  },
+  {
+   "id": "sharaku--ie1--base",
+   "character_id": "sharaku",
+   "name": "Cameron Mann",
+   "game": "IE1",
+   "saga": "IE",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "MF",
+   "element": "earth",
+   "ovr": 61,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 63,
+   "control": 62,
+   "physical": 59,
+   "speed": 58,
+   "defense": 63,
+   "goalkeeping": 61,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/k/l/kl3o3leqbze.png",
+   "zukan_id": "k/k/l/kl3o3leqbze",
+   "zukan_no": 296,
+   "is_version": false,
+   "description": "His dream is to have one of his sports photos published one day.",
+   "description_es": ".",
+   "no": 296,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "European version",
+    "Kick": 60,
+    "Body": 59,
+    "Control": 58,
+    "Guard": 61,
+    "Speed": 52,
+    "Stamina": 53,
+    "Guts": 54
+   },
+   "techniques": [
+    "DashAccel",
+    "QuickDraw",
+    "DokugiriNoJutsu",
+    "Harvest"
    ]
   },
   {
@@ -98249,7 +98255,7 @@
    "category": "Common Player",
    "tier": "C",
    "source": "stats del juego",
-   "shooting": 65,
+   "shooting": 66,
    "control": 59,
    "physical": 53,
    "speed": 67,
@@ -104702,6 +104708,51 @@
    ]
   },
   {
+   "id": "banchou--go1--base",
+   "character_id": "banchou",
+   "name": "Ivor Kernel",
+   "game": "GO1",
+   "saga": "GO",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "FW",
+   "element": "earth",
+   "ovr": 60,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 63,
+   "control": 54,
+   "physical": 58,
+   "speed": 59,
+   "defense": 51,
+   "goalkeeping": 56,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/u/r/ur3vef5r3t8.png",
+   "zukan_id": "k/u/r/ur3vef5r3t8",
+   "zukan_no": 2829,
+   "is_version": false,
+   "description": "A serious and hard-working boy, often misjudged due to his surly attitude.",
+   "description_es": null,
+   "no": 2829,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 126,
+    "Dribbling": 92,
+    "Technique": 113,
+    "Block": 93,
+    "Speed": 118,
+    "Stamina": 105,
+    "Catch": 65
+   },
+   "techniques": [
+    "BurningSummer",
+    "RocketHead",
+    "FireTornado"
+   ]
+  },
+  {
    "id": "zucq--go3--base",
    "character_id": "zucq",
    "name": "Iyer Zuck",
@@ -105476,6 +105527,52 @@
     "Claymore",
     "TrickBall",
     "RyuuseiBlade"
+   ]
+  },
+  {
+   "id": "shishihara--go1--base",
+   "character_id": "shishihara",
+   "name": "Leon Proudler",
+   "game": "GO1",
+   "saga": "GO",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "FW",
+   "element": "earth",
+   "ovr": 60,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 60,
+   "control": 62,
+   "physical": 66,
+   "speed": 52,
+   "defense": 56,
+   "goalkeeping": 54,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/n/i/nitt5-8bjzu.png",
+   "zukan_id": "k/n/i/nitt5-8bjzu",
+   "zukan_no": 3139,
+   "is_version": false,
+   "description": "A prideful player who won't let anyone else take a free kick he's earned.",
+   "description_es": null,
+   "no": 3139,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 98,
+    "Dribbling": 128,
+    "Technique": 99,
+    "Block": 100,
+    "Speed": 98,
+    "Stamina": 131,
+    "Catch": 57
+   },
+   "techniques": [
+    "BurningSummer",
+    "Zeroyon",
+    "RyuuseiBlade",
+    "ShippuuDash"
    ]
   },
   {
@@ -110365,51 +110462,6 @@
    ]
   },
   {
-   "id": "banchou--go1--base",
-   "character_id": "banchou",
-   "name": "Ivor Kernel",
-   "game": "GO1",
-   "saga": "GO",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "FW",
-   "element": "earth",
-   "ovr": 59,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 62,
-   "control": 53,
-   "physical": 57,
-   "speed": 58,
-   "defense": 50,
-   "goalkeeping": 55,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/u/r/ur3vef5r3t8.png",
-   "zukan_id": "k/u/r/ur3vef5r3t8",
-   "zukan_no": 2829,
-   "is_version": false,
-   "description": "A serious and hard-working boy, often misjudged due to his surly attitude.",
-   "description_es": null,
-   "no": 2829,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 126,
-    "Dribbling": 92,
-    "Technique": 113,
-    "Block": 93,
-    "Speed": 118,
-    "Stamina": 105,
-    "Catch": 65
-   },
-   "techniques": [
-    "BurningSummer",
-    "RocketHead",
-    "FireTornado"
-   ]
-  },
-  {
    "id": "furufumi--ie1--base",
    "character_id": "furufumi",
    "name": "Jacob Grimley",
@@ -110816,52 +110868,6 @@
     "BunshinFeint",
     "Cyclone",
     "DivineArrow"
-   ]
-  },
-  {
-   "id": "shishihara--go1--base",
-   "character_id": "shishihara",
-   "name": "Leon Proudler",
-   "game": "GO1",
-   "saga": "GO",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "FW",
-   "element": "earth",
-   "ovr": 59,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 59,
-   "control": 61,
-   "physical": 65,
-   "speed": 51,
-   "defense": 55,
-   "goalkeeping": 53,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/n/i/nitt5-8bjzu.png",
-   "zukan_id": "k/n/i/nitt5-8bjzu",
-   "zukan_no": 3139,
-   "is_version": false,
-   "description": "A prideful player who won't let anyone else take a free kick he's earned.",
-   "description_es": null,
-   "no": 3139,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 98,
-    "Dribbling": 128,
-    "Technique": 99,
-    "Block": 100,
-    "Speed": 98,
-    "Stamina": 131,
-    "Catch": 57
-   },
-   "techniques": [
-    "BurningSummer",
-    "Zeroyon",
-    "RyuuseiBlade",
-    "ShippuuDash"
    ]
   },
   {
@@ -114702,6 +114708,51 @@
    "techniques": [
     "OraoraMenchi",
     "DigThrough"
+   ]
+  },
+  {
+   "id": "kako--go1--base",
+   "character_id": "kako",
+   "name": "Anne Sestral",
+   "game": "GO1",
+   "saga": "GO",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "FW",
+   "element": "air",
+   "ovr": 58,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 65,
+   "control": 47,
+   "physical": 49,
+   "speed": 59,
+   "defense": 54,
+   "goalkeeping": 62,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/7/o/7oiu5ve5rl8.png",
+   "zukan_id": "k/7/o/7oiu5ve5rl8",
+   "zukan_no": 3336,
+   "is_version": false,
+   "description": "Gifted with an incredible memory, she can clearly remember being a baby.",
+   "description_es": null,
+   "no": 3336,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 125,
+    "Dribbling": 85,
+    "Technique": 87,
+    "Block": 95,
+    "Speed": 114,
+    "Stamina": 86,
+    "Catch": 77
+   },
+   "techniques": [
+    "HeadBazooka",
+    "BurningSummer",
+    "ButtobiJump"
    ]
   },
   {
@@ -121704,52 +121755,6 @@
    ]
   },
   {
-   "id": "dancer--go1--base",
-   "character_id": "dancer",
-   "name": "Tommy Wobbal",
-   "game": "GO1",
-   "saga": "GO",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "GK",
-   "element": "earth",
-   "ovr": 58,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 42,
-   "control": 50,
-   "physical": 62,
-   "speed": 58,
-   "defense": 47,
-   "goalkeeping": 60,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/v/xvfuk2gukym.png",
-   "zukan_id": "k/x/v/xvfuk2gukym",
-   "zukan_no": 2870,
-   "is_version": false,
-   "description": "Teaches belly dancing after school, though he'd never tell his classmates.",
-   "description_es": null,
-   "no": 2870,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 64,
-    "Dribbling": 99,
-    "Technique": 97,
-    "Block": 84,
-    "Speed": 120,
-    "Stamina": 132,
-    "Catch": 115
-   },
-   "techniques": [
-    "TheMist",
-    "HydroAnchor",
-    "CrystalBarrier",
-    "CounterdriveGK"
-   ]
-  },
-  {
    "id": "sanzou--ie3--base",
    "character_id": "sanzou",
    "name": "Tony Sanzang",
@@ -122821,6 +122826,52 @@
    ]
   },
   {
+   "id": "kei-kun--go1--base",
+   "character_id": "kei-kun",
+   "name": "Alan McCallum",
+   "game": "GO1",
+   "saga": "GO",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "FW",
+   "element": "wood",
+   "ovr": 57,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 60,
+   "control": 53,
+   "physical": 56,
+   "speed": 53,
+   "defense": 58,
+   "goalkeeping": 57,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/d/f/dfmouw-d7ds.png",
+   "zukan_id": "k/d/f/dfmouw-d7ds",
+   "zukan_no": 3086,
+   "is_version": false,
+   "description": "A kind, well-meaning boy who is always putting his foot in his mouth.",
+   "description_es": null,
+   "no": 3086,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 103,
+    "Dribbling": 113,
+    "Technique": 85,
+    "Block": 113,
+    "Speed": 103,
+    "Stamina": 100,
+    "Catch": 65
+   },
+   "techniques": [
+    "Zeroyon",
+    "TrickBall",
+    "RyuuseiBlade",
+    "FireTornado"
+   ]
+  },
+  {
    "id": "ootama-konomi--ie1--base",
    "character_id": "ootama-konomi",
    "name": "Alex Lovely",
@@ -123001,51 +123052,6 @@
     "PressurePunch",
     "TheWall",
     "GigantWall"
-   ]
-  },
-  {
-   "id": "kako--go1--base",
-   "character_id": "kako",
-   "name": "Anne Sestral",
-   "game": "GO1",
-   "saga": "GO",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "FW",
-   "element": "air",
-   "ovr": 57,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 64,
-   "control": 46,
-   "physical": 48,
-   "speed": 58,
-   "defense": 53,
-   "goalkeeping": 61,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/7/o/7oiu5ve5rl8.png",
-   "zukan_id": "k/7/o/7oiu5ve5rl8",
-   "zukan_no": 3336,
-   "is_version": false,
-   "description": "Gifted with an incredible memory, she can clearly remember being a baby.",
-   "description_es": null,
-   "no": 3336,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 125,
-    "Dribbling": 85,
-    "Technique": 87,
-    "Block": 95,
-    "Speed": 114,
-    "Stamina": 86,
-    "Catch": 77
-   },
-   "techniques": [
-    "HeadBazooka",
-    "BurningSummer",
-    "ButtobiJump"
    ]
   },
   {
@@ -129538,6 +129544,52 @@
    ]
   },
   {
+   "id": "dancer--go1--base",
+   "character_id": "dancer",
+   "name": "Tommy Wobbal",
+   "game": "GO1",
+   "saga": "GO",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "GK",
+   "element": "earth",
+   "ovr": 57,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 41,
+   "control": 49,
+   "physical": 61,
+   "speed": 57,
+   "defense": 46,
+   "goalkeeping": 59,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/v/xvfuk2gukym.png",
+   "zukan_id": "k/x/v/xvfuk2gukym",
+   "zukan_no": 2870,
+   "is_version": false,
+   "description": "Teaches belly dancing after school, though he'd never tell his classmates.",
+   "description_es": null,
+   "no": 2870,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 64,
+    "Dribbling": 99,
+    "Technique": 97,
+    "Block": 84,
+    "Speed": 120,
+    "Stamina": 132,
+    "Catch": 115
+   },
+   "techniques": [
+    "TheMist",
+    "HydroAnchor",
+    "CrystalBarrier",
+    "CounterdriveGK"
+   ]
+  },
+  {
    "id": "sakanaga--go1--base",
    "character_id": "sakanaga",
    "name": "Tostig Muffler",
@@ -130084,52 +130136,6 @@
     "DaiBakuhatsuHarite",
     "HornTrain",
     "EchoBall"
-   ]
-  },
-  {
-   "id": "kei-kun--go1--base",
-   "character_id": "kei-kun",
-   "name": "Alan McCallum",
-   "game": "GO1",
-   "saga": "GO",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "FW",
-   "element": "wood",
-   "ovr": 56,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 59,
-   "control": 52,
-   "physical": 55,
-   "speed": 52,
-   "defense": 57,
-   "goalkeeping": 56,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/d/f/dfmouw-d7ds.png",
-   "zukan_id": "k/d/f/dfmouw-d7ds",
-   "zukan_no": 3086,
-   "is_version": false,
-   "description": "A kind, well-meaning boy who is always putting his foot in his mouth.",
-   "description_es": null,
-   "no": 3086,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 103,
-    "Dribbling": 113,
-    "Technique": 85,
-    "Block": 113,
-    "Speed": 103,
-    "Stamina": 100,
-    "Catch": 65
-   },
-   "techniques": [
-    "Zeroyon",
-    "TrickBall",
-    "RyuuseiBlade",
-    "FireTornado"
    ]
   },
   {
@@ -150005,6 +150011,50 @@
    ]
   },
   {
+   "id": "onbe--go1--base",
+   "character_id": "onbe",
+   "name": "Rita Bloggs",
+   "game": "GO1",
+   "saga": "GO",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "FW",
+   "element": "fire",
+   "ovr": 54,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 60,
+   "control": 50,
+   "physical": 45,
+   "speed": 49,
+   "defense": 51,
+   "goalkeeping": 48,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/z/y/zyq2cmtjme0.png",
+   "zukan_id": "k/z/y/zyq2cmtjme0",
+   "zukan_no": 2842,
+   "is_version": false,
+   "description": "A celebrity in certain internet circles, but keeps that out of her school life.",
+   "description_es": null,
+   "no": 2842,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 117,
+    "Dribbling": 108,
+    "Technique": 88,
+    "Block": 98,
+    "Speed": 100,
+    "Stamina": 87,
+    "Catch": 55
+   },
+   "techniques": [
+    "Sidewinder",
+    "Zeroyon"
+   ]
+  },
+  {
    "id": "nagano--ie1--base",
    "character_id": "nagano",
    "name": "Rob Freeby",
@@ -155690,52 +155740,6 @@
    ]
   },
   {
-   "id": "amaho--ie3--base",
-   "character_id": "amaho",
-   "name": "Paddy Filler",
-   "game": "IE3",
-   "saga": "IE",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "DF",
-   "element": "wood",
-   "ovr": 53,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 53,
-   "control": 52,
-   "physical": 51,
-   "speed": 64,
-   "defense": 51,
-   "goalkeeping": 52,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/t/k/tkwya6omilk.png",
-   "zukan_id": "k/t/k/tkwya6omilk",
-   "zukan_no": 2224,
-   "is_version": false,
-   "description": "He's trying to develop a strain of rice that will grow in any soil.",
-   "description_es": null,
-   "no": 2224,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 46,
-    "Body": 46,
-    "Control": 44,
-    "Guard": 44,
-    "Speed": 57,
-    "Stamina": 47,
-    "Guts": 54
-   },
-   "techniques": [
-    "CoilTurn",
-    "MeteorShower",
-    "KageNui",
-    "DragonGround"
-   ]
-  },
-  {
    "id": "mitama--ie1--base",
    "character_id": "mitama",
    "name": "Pat Shinko",
@@ -156189,50 +156193,6 @@
     "FutureEye",
     "MadJuggler",
     "NaminoriPierrot"
-   ]
-  },
-  {
-   "id": "onbe--go1--base",
-   "character_id": "onbe",
-   "name": "Rita Bloggs",
-   "game": "GO1",
-   "saga": "GO",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "FW",
-   "element": "fire",
-   "ovr": 53,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 59,
-   "control": 49,
-   "physical": 44,
-   "speed": 48,
-   "defense": 50,
-   "goalkeeping": 47,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/z/y/zyq2cmtjme0.png",
-   "zukan_id": "k/z/y/zyq2cmtjme0",
-   "zukan_no": 2842,
-   "is_version": false,
-   "description": "A celebrity in certain internet circles, but keeps that out of her school life.",
-   "description_es": null,
-   "no": 2842,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 117,
-    "Dribbling": 108,
-    "Technique": 88,
-    "Block": 98,
-    "Speed": 100,
-    "Stamina": 87,
-    "Catch": 55
-   },
-   "techniques": [
-    "Sidewinder",
-    "Zeroyon"
    ]
   },
   {
@@ -161259,6 +161219,52 @@
     "TarzanKick",
     "TsuchiDaruma",
     "Earthquake"
+   ]
+  },
+  {
+   "id": "amaho--ie3--base",
+   "character_id": "amaho",
+   "name": "Paddy Filler",
+   "game": "IE3",
+   "saga": "IE",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "DF",
+   "element": "wood",
+   "ovr": 52,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 52,
+   "control": 51,
+   "physical": 50,
+   "speed": 63,
+   "defense": 50,
+   "goalkeeping": 51,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/t/k/tkwya6omilk.png",
+   "zukan_id": "k/t/k/tkwya6omilk",
+   "zukan_no": 2224,
+   "is_version": false,
+   "description": "He's trying to develop a strain of rice that will grow in any soil.",
+   "description_es": null,
+   "no": 2224,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 46,
+    "Body": 46,
+    "Control": 44,
+    "Guard": 44,
+    "Speed": 57,
+    "Stamina": 47,
+    "Guts": 54
+   },
+   "techniques": [
+    "CoilTurn",
+    "MeteorShower",
+    "KageNui",
+    "DragonGround"
    ]
   },
   {
@@ -191607,6 +191613,24 @@
    ]
   },
   {
+   "id": "ThunderBeast",
+   "name": "Thunder Beast",
+   "name_es": "Bestia del trueno",
+   "name_jp": "サンダービースト",
+   "type": "Shoot",
+   "element": "air",
+   "cost": 49,
+   "cost_game": "IE3",
+   "costs": {
+    "IE3": 49
+   },
+   "description": "A jumping side volley that summons a thunder beast. Used to boost a teammate's shot.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/b/n/bn_9blb7jqu.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
    "id": "DualSmash",
    "name": "Dual Smash",
    "name_es": "Bloqueo doble",
@@ -193163,24 +193187,6 @@
    ]
   },
   {
-   "id": "ThunderBeast",
-   "name": "Thunder Beast",
-   "name_es": "Bestia del trueno",
-   "name_jp": "サンダービースト",
-   "type": "Shoot",
-   "element": "air",
-   "cost": 49,
-   "cost_game": "IE3",
-   "costs": {
-    "IE3": 49
-   },
-   "description": "A jumping side volley that summons a thunder beast. Used to boost a teammate's shot.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/b/n/bn_9blb7jqu.jpg",
-   "zukan_types": [
-    "Shot"
-   ]
-  },
-  {
    "id": "CardBuster",
    "name": "Sweet Deal",
    "name_es": "Full goleador",
@@ -193272,6 +193278,25 @@
    },
    "description": "Unleash a tornado on the opposition and send them flying. Then, with the wind, make a mad dash straight for the goal.",
    "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/z/r/zrhd7krq9ak.jpg",
+   "zukan_types": [
+    "Defence"
+   ]
+  },
+  {
+   "id": "WonderTrap",
+   "name": "Hyper-Swiper",
+   "name_es": "Robo fantástico",
+   "name_jp": "ワンダートラップ",
+   "type": "Block",
+   "element": "air",
+   "cost": 8,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 8,
+    "GO2": 19
+   },
+   "description": "Run in a way that leaves an afterimage to distract the opponent while you steal the ball.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/3/9/39ji9l8rihm.jpg",
    "zukan_types": [
     "Defence"
    ]
@@ -196980,25 +197005,6 @@
    },
    "description": "Combine sharp calculation and keen insight to orchestrate a flawless, unstoppable defence.",
    "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/g/4/g4cdo2cnhes.jpg",
-   "zukan_types": [
-    "Defence"
-   ]
-  },
-  {
-   "id": "WonderTrap",
-   "name": "Hyper-Swiper",
-   "name_es": "Robo fantástico",
-   "name_jp": "ワンダートラップ",
-   "type": "Block",
-   "element": "air",
-   "cost": 8,
-   "cost_game": "GO3",
-   "costs": {
-    "GO3": 8,
-    "GO2": 19
-   },
-   "description": "Run in a way that leaves an afterimage to distract the opponent while you steal the ball.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/3/9/39ji9l8rihm.jpg",
    "zukan_types": [
     "Defence"
    ]
@@ -219882,10 +219888,6 @@
  ],
  "teams": [
   {
-   "name": "Alia Academy",
-   "name_es": "Academia Alia"
-  },
-  {
    "name": "Almighty Faith",
    "name_es": "Colegio Poderosa Fe"
   },
@@ -220246,10 +220248,6 @@
    "name_es": "Zoolan Team"
   },
   {
-   "name": "Tenmas",
-   "name_es": "Los Arions"
-  },
-  {
    "name": "The Aquatic Wings",
    "name_es": null
   },
@@ -220280,10 +220278,6 @@
   {
    "name": "The Night Vipers",
    "name_es": null
-  },
-  {
-   "name": "The Sambassadors",
-   "name_es": "Olé de Samba"
   },
   {
    "name": "The Sherwinds",
@@ -220332,10 +220326,6 @@
   {
    "name": "Zanark's Domain",
    "name_es": "Zanark Domain"
-  },
-  {
-   "name": "Zanark's Outsiders",
-   "name_es": "Zanark Outsiders"
   },
   {
    "name": "Zeus",

@@ -208,6 +208,14 @@
   "sprite": "https://static.wikia.nocookie.net/inazuma/images/9/93/%28R_%28GO%29%29_Victor_%28HVR%29.png/revision/latest?cb=20251208153437&path-prefix=es"
  },
  {
+  "id": "nanobana-kinako--go2--base",
+  "name": "Goldie Lemmon",
+  "game": "GO2",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/k/5/k579cnognde.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/d/d6/%28R_%28GO%29_Goldie_%28HVR%29.png/revision/latest?cb=20240406152257&path-prefix=es"
+ },
+ {
   "id": "beta--go2--base",
   "name": "Beta",
   "game": "GO2",

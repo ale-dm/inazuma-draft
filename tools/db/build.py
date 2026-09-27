@@ -54,7 +54,7 @@ STRIKERS_FORMS = [
     ('second raimon', 'IE2', 'Raimon'), ('raimon ii', 'IE2', 'Raimon'), ('neo japan', 'IE3', 'Neo Japan'),
     ('inazuma japan', 'IE3', 'Inazuma Japan'), ('fire dragon', 'IE3', 'Fire Dragon'),
     ('teikoku', 'IE1', 'Royal Academy'), ('zeus', 'IE1', 'Zeus'), ('raimon form', 'IE1', 'Raimon'),
-    ('shinsei raimon', 'GO1', 'Raimon'), ('tenmas', 'GO1', 'Tenmas'),
+    ('shinsei raimon', 'GO1', 'Raimon'), ('tenmas', 'GO2', 'The Sherwinds'),     # Los Arions: equipo de Chrono Stone
 ]
 # Formas de PlayerData (wiki) → equipo de la versión. Real Inazuma, Mixi Max, modos y disfraces quedan fuera.
 # Caos no tiene cartas propias: su pool son las cartas de Prominence / Diamond Dust de sus jugadores (EXTRA_TEAM_FORMS)
@@ -482,6 +482,18 @@ def main(extra_z=None, write=True):
     # (equipos por juego del juego original: data/legacy-teams.json, "nombre|juego" → equipo)
     with open(os.path.join(ROOT, 'data', 'legacy-teams.json'), encoding='utf-8') as f:
         old_team = {tuple(k.split('|', 1)): v for k, v in json.load(f).items()}
+    legacy_cnt = collections.Counter((t, g) for (n, g), t in old_team.items())
+    team_home = {}
+    for (t, g), n_ in legacy_cnt.items():
+        if n_ >= 8 and n_ > legacy_cnt.get((t, team_home.get(t)), 0):
+            team_home[t] = g
+    # las selecciones no estaban en el draft original: su juego va fijo
+    team_home.update({'Inazuma Japan': 'IE3', 'Neo Japan': 'IE3', ILJ: 'GO2', 'Earth Eleven': 'GO3'})
+    # juegos clásicos en los que zukan pone cada equipo (los de solo Ares/Orion/VR quedan vacíos)
+    team_classic = collections.defaultdict(set)
+    for z in zukan:
+        for t in z['teams']:
+            team_classic[ZUKAN_TEAM.get(t, t)] |= set(z['games']) & set(MAIN)
 
     # --- personajes: zukan agrupado por ficha + los que solo están en la wiki
     chars = collections.OrderedDict()
@@ -727,6 +739,13 @@ def main(extra_z=None, write=True):
 
         # versiones: (juego, versión, equipo, pista de forma, entrada de técnicas)
         versions = [(first, 'base', None, None, None)]
+        # equipo de otro juego (Thor: scout en IE2, Inazuma Japón en IE3): la base va sin equipo y se añade la versión de ese juego
+        base_tm = old_team.get((name, first)) or next((ZUKAN_TEAM.get(t, t) for z in zs for t in z['teams'] if t not in SCOUT_TEAMS), None)
+        home = team_home.get(base_tm)
+        if home and home != first and legacy_cnt.get((base_tm, first), 0) <= 3:
+            versions[0] = (first, 'base', None, {'team_override': 'Unaffiliated'}, None)
+            if home in stats_by_game:
+                versions.append((home, base_tm, base_tm, {'force': True}, None))
         for f in strikers:
             lab = f['label'].lower()
             hit = next(((g, tm) for key, g, tm in STRIKERS_FORMS if key in lab), None)
@@ -864,6 +883,8 @@ def main(extra_z=None, write=True):
             ot = old_team.get((name, g))
             team = tm if tm and tm != 'Adult' else ((ot if ot and ot not in SCOUT_TEAMS else None) or (real[0] if real else None)
                                                       or ot or (ZUKAN_TEAM.get(zs[0]['teams'][0], zs[0]['teams'][0]) if zs and zs[0]['teams'] else None))
+            if isinstance(hint, dict) and hint.get('team_override'):
+                team = hint['team_override']
             if tm == 'Adult':
                 # el equipo es el de su ficha de adulto en zukan (casi siempre Sub Character); si no está en zukan, Sub Character
                 azs = [z for z in zs if z.get('age') == 'Adult' and g in z['games'] and z['teams']
@@ -1001,6 +1022,24 @@ def main(extra_z=None, write=True):
         c['category'] = category(c['ovr'])
         ver = c['version'] if c['version'] != 'base' else 'base'
         c['id'] = f"{c['character_id']}--{c['game'].lower()}--{slug(ver)}"
+
+    # equipos que no son de ese juego
+    for c in cards:
+        # los de Ares/Orion/Victory Road (Alia Academy, The Sambassadors…) → otro equipo clásico del personaje o sin equipo
+        if c['team'] and c['team'] in team_classic and not team_classic[c['team']] and c['team'] not in SCOUT_TEAMS:
+            alt = next((ZUKAN_TEAM.get(t, t) for z in c['zukan'] for t in z['teams']
+                        if c['game'] in team_classic.get(ZUKAN_TEAM.get(t, t), ()) and t not in SCOUT_TEAMS), None)
+            report.append(f"Equipo de Ares/Orion/VR en {c['name']} {c['game']}: {c['team']} → {alt or 'Unaffiliated'}")
+            c['team'] = alt or 'Unaffiliated'
+        # el primer equipo del Raimon de GO se llama Raimon en Chrono Stone y Galaxy
+        if c['team'] == 'Raimon First Squad' and c['game'] in ('GO2', 'GO3'):
+            c['team'] = 'Raimon'
+    # aviso: equipos con 1–3 cartas en un juego que no es el suyo
+    tg = collections.Counter((c['game'], c['team']) for c in cards)
+    for (g_, t_), n_ in sorted(tg.items(), key=str):
+        home_ = max((x for x in MAIN if tg.get((x, t_))), key=lambda x: tg[(x, t_)])
+        if n_ <= 3 and home_ != g_ and tg[(home_, t_)] >= 8 and t_ not in SCOUT_TEAMS | {'Mixi Max'}:
+            report.append(f'Equipo en otro juego: {t_} en {g_} ({n_}) — su juego es {home_}')
 
     # versión de adulto que coincide con otra carta del mismo personaje, juego y equipo (Caleb en la Resistencia de Japón): fuera
     keyset = collections.Counter((c['character_id'], c['game'], c['team']) for c in cards)
