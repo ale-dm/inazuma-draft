@@ -1,6 +1,6 @@
 # Fotos pendientes de revisar
 
-> Generado a partir de `build/players.json` y `build/sprites_review.json`. Criterio: foto de zukan; el sprite de Victory Road de la wiki española (galería «Diseño en los Videojuegos» o el índice de ficheros `(iniciales del equipo) Nombre (HVR).png`) se usa si la foto está repetida entre versiones, no hay foto de zukan / es un render 3D, es del Inazuma Japón Legendario, o se fuerza en `data/overrides.json` → `sprite_force`.
+> Generado a partir de `build/players.json` y `build/sprites_review.json`. Criterio: foto de zukan. Si la foto está repetida entre versiones, no hay foto de zukan / es un render 3D, o es del Inazuma Japón Legendario, se busca el sprite de Victory Road: (1) galería de la wiki española, (2) índice de ficheros de la wiki española `(iniciales) Nombre (HVR)`, (3) avatar de Victory Road de la wiki inglesa `(código) Nombre sprite (VR)`. A mano: `data/overrides.json` → `sprite_force`.
 
 ## 1. Zukan tiene foto propia, pero hay sprite de Victory Road que encaja con la versión
 
@@ -37,68 +37,12 @@
 | Falco Flashman · GO3 base | [0ks2lhuo2sm.png](https://dxi4wb638ujep.cloudfront.net/1/k/0/k/0ks2lhuo2sm.png) | [(EE) Falco (HVR).png](https://static.wikia.nocookie.net/inazuma/images/e/e9/%28EE%29_Falco_%28HVR%29.png/revision/latest?cb=20260717112619&path-prefix=es) |
 | Falco Flashman · GO3 Earth Eleven (Nº 3960) | [pgc9ollbn5e.png](https://dxi4wb638ujep.cloudfront.net/1/k/p/g/pgc9ollbn5e.png) | [(EE) Falco (HVR).png](https://static.wikia.nocookie.net/inazuma/images/e/e9/%28EE%29_Falco_%28HVR%29.png/revision/latest?cb=20260717112619&path-prefix=es) |
 
-## 2. Versiones con la misma foto que otra carta del personaje
+## 2. Sin sprite de Victory Road en ninguna de las dos wikis (se quedan con la foto repetida o el render)
 
-Revisado en la wiki española: **no hay sprite de Victory Road** para estas (ni en la galería ni en el índice de ficheros). Opciones: dejarlas así o usar sprites de los juegos de DS de la wiki (otro estilo).
-
-- **Adé Kébé**: GO2 Raimon
-- **Alan Master**: IE3 Neo Japan
-- **Arthur Sweet**: IE2 Dark Emperors
-- **Byron Love**: GO2 Adult
-- **Camellia Travis**: GO2 Adult
-- **Celia Hills**: GO2 Adult
-- **Changsu Choi**: GO3 Adult
-- **Charles Island**: IE2 Young Inazuma
-- **Constant Builder**: IE2 Young Inazuma
-- **Daniel Hatch**: IE3 Neo Japan
-- **Dvalin**: GO2 Adult
-- **Edward Gladstone**: IE2 Young Inazuma
-- **Eugene Peabody**: GO2 Raimon
-- **Garret Hairtown**: IE2 Dark Emperors
-- **Henry House**: IE3 Neo Japan
-- **Hugues Baudet**: GO2 Raimon
-- **Ian Suffolk**: IE2 Young Inazuma
-- **Jonas Demetrius**: IE3 Neo Japan
-- **Joseph King**: IE3 Neo Japan
-- **Joseph Yosemite**: IE2 Young Inazuma
-- **Josh Nathaniel**: IE2 Young Inazuma
-- **Michael Ballzack**: GO2 Raimon
-- **Millie Moonlight**: GO3 Adult
-- **Peter Mildred**: IE2 Young Inazuma
-- **Ryoma Nishiki**: GO2 Raimon
-- **Shunsuke Aoyama**: GO2 Raimon
-- **Steve Grim**: GO3 Adult
-- **Subaru Honda**: GO2 Raimon
-- **Tez Beyan**: GO2 Protocol Omega
-- **Tyler Thomas**: IE2 Young Inazuma
-- **Wanli Changcheng**: GO2 Raimon
-- **William Glass**: IE2 Raimon
-
-## 3. Render 3D de la wiki (no tiene el estilo de zukan)
-
-Revisado: sin sprite de Victory Road en la wiki española (Epsilon Plus, Fire Dragon, Tenmas…).
-
-- **Xene** · GO2 Inazuma Legend Japan — (ILJ) Hiroto 3D (1).png
-- **Arion Sherwind** · GO1 Tenmas — (SR) Tenma 3D (1).png
-- **Byron Love** · IE3 Fire Dragon — (FD) Aphrodi 3D (1).png
-- **Dvalin** · IE2 Epsilon Plus — (EK) Desarm 3D (1).png
-- **Zell** · IE2 Epsilon Plus — (EK) Zel 3D (1).png
-- **Krypto** · IE2 Epsilon Plus — (EK) Krypto 3D (1).png
-- **Mercury** · IE2 Epsilon Plus — (EK) Macure 3D (1).png
-- **Metron** · IE2 Epsilon Plus — (EK) Metron 3D (1).png
-- **Riku Pants Matsushita** · IE3 base — Pants 3D (1).png
-- **Sworm** · IE2 Epsilon Plus — (EK) Swarm 3D (1).png
-- **Kayson** · IE2 Epsilon Plus — (EK) Keison 3D (1).png
-- **Mole** · IE2 Epsilon Plus — (EK) Mole 3D (1).png
-- **Fedora** · IE2 Epsilon Plus — (EK) Fadra 3D (1).png
-- **Tytan** · IE2 Epsilon Plus — (EK) Titan 3D (1).png
-- **Kenville** · IE2 Epsilon Plus — (EK) Kenvil 3D (1).png
-
-## 4. Inazuma Japón Legendario sin sprite
-
-Revisado: la wiki española solo tiene sprite «(IJL)» de Mark, Axel, Jude, Shawn, Nathan, Hurley y Jack. Estos se quedan con la foto de zukan (adulto, Inazuma Legend National):
-
-- David Samford
-- Xene
-- Caleb Stonewall
-- Kevin Dragonfly
+- **Joseph King** · IE3 Neo Japan
+- **Alan Master** · IE3 Neo Japan
+- **Henry House** · IE3 Neo Japan
+- **Jonas Demetrius** · IE3 Neo Japan
+- **Daniel Hatch** · IE3 Neo Japan
+- **Riku Pants Matsushita** · IE3 base
+- **Tez Beyan** · GO2 Protocol Omega

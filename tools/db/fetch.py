@@ -564,6 +564,37 @@ def main():
         return out
     cached('es_hvr_files.json', es_hvr_files)
 
+    log('6g avatares de Victory Road de la wiki inglesa (PlayerData: file={VR="(DE) Kazemaru Ichirouta sprite (VR)"})')
+    def en_vr_sprites():
+        names = sorted({f for m in MODULES for f in re.findall(r'\n\t\t\tVR="([^"]+)"', mods[m]) if 'sprite' in f})
+        out = {}
+        for i in range(0, len(names), 50):
+            d = api(WIKI_API, action='query', titles='|'.join(f'File:{n}.png' for n in names[i:i + 50]), prop='imageinfo', iiprop='url')['query']
+            norm = {x['to']: x['from'] for x in d.get('normalized', [])}
+            for p in d['pages']:
+                if p.get('imageinfo'):
+                    out[norm.get(p['title'], p['title'])[5:-4]] = p['imageinfo'][0]['url']
+            time.sleep(0.2)
+        log(f'  {len(out)} de {len(names)} avatares de Victory Road con imagen')
+        return out
+    cached('en_vr_sprites.json', en_vr_sprites)
+    def en_vr_index():
+        """todos los avatares de Victory Road de la wiki inglesa: "(SR) Kurama Norihito sprite (VR)" → url"""
+        out, cont = {}, {}
+        while True:
+            d = api(WIKI_API, action='query', list='allimages', aiprefix='(', ailimit=500, aiprop='url', **cont)
+            for im in d['query']['allimages']:
+                n = im['name'].replace('_', ' ')
+                if n.endswith('sprite (VR).png') or re.search(r'sprite \([^)]*\) \(VR\)\.png$', n):
+                    out[n[:-4]] = im['url']
+            if 'continue' not in d:
+                break
+            cont = {'aicontinue': d['continue']['aicontinue']}
+            time.sleep(0.1)
+        log(f'  índice: {len(out)} avatares de Victory Road')
+        return out
+    cached('en_vr_index.json', en_vr_index)
+
     log('7/8 jugadores solo de la wiki (imagen)')
     def wiki_only():
         d = api(WIKI_API, action='query', titles='|'.join(WIKI_ONLY), prop='pageimages', piprop='original')['query']
