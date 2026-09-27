@@ -333,7 +333,10 @@ def main(extra_z=None, write=True):
             kd = keshin_data.get(key, '')
             page = (re.search(r'page="([^"]+)"', kd) or [None, key])[1]
             es, en = es_keshin.get(romaji(page), (None, None))
-            out.append({'type': 'keshin', 'name': en or page, 'name_es': es, 'armed': armed})
+            hk = re.search(r'\n\t\thissatsu="(\w+)"', kd)                     # hipertécnica del espíritu guerrero
+            ht = technique_any(hk.group(1)) if hk else None
+            out.append({'type': 'keshin', 'name': en or page, 'name_es': es, 'armed': armed,
+                        'hyper': ht and ht['name'], 'hyper_es': ht and ht.get('name_es')})
         for key, _ in lua_game_list(body, 'soul', MODULE[game]):
             sd = soul_data.get(key, '')
             page = (re.search(r'page="([^"]+)"', sd) or [None, key])[1]
@@ -543,7 +546,7 @@ def main(extra_z=None, write=True):
         s = re.sub(r'<[^>]+>|\{\{[^}]*\}\}', '', s)
         return re.sub(r'[\s・･!！?？「」『』*＊]', '', s)
     es_by_jp, es_by_en = {}, {}
-    for title, d in load('es_techniques.json').items():
+    for title, d in {**load_opt('es_hyper.json', {}), **load('es_techniques.json')}.items():
         es = re.sub(r'\s*\([^)]*\)$', '', title).strip()          # "Tormenta (supertécnica)" → "Tormenta"
         for j in d['jp']:
             es_by_jp.setdefault(norm_jp(j), es)
@@ -629,6 +632,17 @@ def main(extra_z=None, write=True):
             if any(mids):
                 return [m for m in mids if m]
         return []
+
+    def technique_any(mid):
+        page = move_page.get(mid, mid)
+        inf = move_info.get(page) or {}
+        t_ = technique(mid)
+        if t_:
+            return t_
+        dub = re.sub(r'\{\{[^}]*\}\}|\[\[(?:[^|\]]*\|)?([^\]]*)\]\]', lambda m: m.group(1) or '', (inf.get('name_dub') or '').replace('{{PAGENAME}}', page))
+        dub = re.split(r'\*|<br', dub.lstrip('*'))[0].strip() or re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', mid)
+        name_es = es_by_jp.get(norm_jp(inf.get('name_jp'))) or es_by_en.get(dub.lower())
+        return {'name': dub, 'name_es': name_es}
 
     def rank_cost(t, g):
         return next((t['_inf'][k] for k in RANK_COST[g[:2]] if k in t['_inf']), 0)
@@ -718,6 +732,12 @@ def main(extra_z=None, write=True):
         for (p, g, tm), d in proto.items():
             if p == pg and g in stats_by_game:
                 versions.append((g, tm, tm, d, d['entry']))
+        # jugadores del Raimon de GO sin versión de GO2: su versión Raimon de Chrono Stone
+        base_tm = old_team.get((name, first)) or next((ZUKAN_TEAM.get(t, t) for z in zs for t in z['teams']), None)
+        if first == 'GO1' and base_tm in ('Raimon', 'Raimon First Squad') and 'GO2' in stats_by_game \
+                and not any(v[0] == 'GO2' for v in versions):
+            versions.append(('GO2', 'Raimon', 'Raimon', None, None))
+
         # versiones de la wiki (formas de PlayerData); si la versión ya existe, se le asigna la entrada de su forma
         for g in MAIN:
             for tm, body in wiki_forms.get((pg, g), []):
@@ -842,7 +862,11 @@ def main(extra_z=None, write=True):
             team = tm if tm and tm != 'Adult' else ((ot if ot and ot not in SCOUT_TEAMS else None) or (real[0] if real else None)
                                                       or ot or (ZUKAN_TEAM.get(zs[0]['teams'][0], zs[0]['teams'][0]) if zs and zs[0]['teams'] else None))
             if tm == 'Adult':
-                team = 'Adult'
+                # el equipo es el de su ficha de adulto en zukan (casi siempre Sub Character); si no está en zukan, Sub Character
+                azs = [z for z in zs if z.get('age') == 'Adult' and g in z['games'] and z['teams']
+                       and 'Inazuma Legend National' not in z['teams']]
+                az = next((z for z in azs if next((x for x in MAIN if x in z['games']), None) == g), azs[0] if azs else None)
+                team = ZUKAN_TEAM.get(az['teams'][0], az['teams'][0]) if az else 'Sub Character'
 
             # técnicas
             mg = hint.get('moves_game') if isinstance(hint, dict) and hint.get('moves_game') else g
@@ -1013,6 +1037,20 @@ def main(extra_z=None, write=True):
         seen_ids[c['id']] += 1
         if seen_ids[c['id']] > 1:
             c['id'] += f"-{seen_ids[c['id']]}"
+
+    # poderes: las cartas Mixi Max (y el Chrono Storm, que va en su forma Mixi Max) no pueden usar nada;
+    # la versión normal de GO2 del jugador indica con quién puede hacer Mixi Max
+    partners = collections.defaultdict(list)
+    for c in cards:
+        if c['team'] in ('Mixi Max', 'Chrono Storm'):
+            for sp in c.get('specials') or []:
+                if sp['type'] == 'mixi' and sp.get('name') and sp['name'] not in partners[c['character_id']]:
+                    partners[c['character_id']].append(sp['name'])
+            c['specials'] = []
+    for c in cards:
+        if c['game'] == 'GO2' and c['team'] not in ('Mixi Max', 'Chrono Storm') and partners.get(c['character_id']):
+            c['specials'] = [x for x in c.get('specials') or [] if x['type'] != 'mixi'] + \
+                [{'type': 'mixi', 'name': ', '.join(partners[c['character_id']])}]
 
     # Caos: la carta base de ese juego (Prominence / Diamond Dust) cuenta también para ese equipo
     for c in cards:

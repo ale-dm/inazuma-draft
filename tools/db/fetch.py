@@ -340,7 +340,19 @@ def main():
     for k in used:
         pm = re.search(r'page="([^"]+)"', wz.get(k, ''))
         move_page[k] = pm.group(1).split('#')[0] if pm else k
+    # + hipertécnicas de los espíritus guerreros (Module:KeshinData, campo hissatsu)
+    kd = cached('KeshinData.lua', lambda: wikitext(WIKI_API, 'Module:KeshinData'))
+    for k in re.findall(r'\n\t\thissatsu="(\w+)"', kd):
+        pm = re.search(r'page="([^"]+)"', wz.get(k, ''))
+        move_page.setdefault(k, pm.group(1).split('#')[0] if pm else k)
     move_info = cached('moves.json', lambda: page_contents(sorted(set(move_page.values())), infobox))
+    missing = sorted(set(move_page.values()) - set(move_info))
+    if missing:                                              # incremental: solo las páginas nuevas
+        move_info.update(page_contents(missing, infobox))
+        with open(os.path.join(CACHE, 'moves.json'), 'w', encoding='utf-8') as f:
+            json.dump(move_info, f, ensure_ascii=False)
+    with open(os.path.join(CACHE, 'move_page.json'), 'w', encoding='utf-8') as f:
+        json.dump(move_page, f, ensure_ascii=False)
     cached('move_page.json', lambda: move_page)
 
     log('6/8 equipos protagonistas de GO')
@@ -476,10 +488,10 @@ def main():
     cached('wiki_only_images.json', wiki_only)
 
     log('8/9 supertécnicas en castellano (inazuma.fandom.com/es)')
-    def es_techniques():
+    def es_techniques(cat='Categoría:Supertécnicas'):
         titles_, cont = [], {}
         while True:
-            d = api(WIKI_ES_API, action='query', list='categorymembers', cmtitle='Categoría:Supertécnicas', cmlimit=500, **cont)
+            d = api(WIKI_ES_API, action='query', list='categorymembers', cmtitle=cat, cmlimit=500, **cont)
             titles_ += [m['title'] for m in d['query']['categorymembers'] if m.get('ns') == 0]
             if 'continue' not in d:
                 break
@@ -502,6 +514,7 @@ def main():
             time.sleep(0.3)
         return out
     cached('es_techniques.json', es_techniques)
+    cached('es_hyper.json', lambda: es_techniques('Categoría:Hipertécnicas'))     # técnicas de los espíritus guerreros
 
     log('9/10 renders 3D de las formas (wiki): "(DE) Kazemaru 3D (1).png"')
     def form_images():

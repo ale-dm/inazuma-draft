@@ -32,7 +32,9 @@
      "type": "keshin",
      "name": "Sacred Serpent White Wyvern",
      "name_es": "Dragón Heráldico, Guiverno blanco",
-     "armed": false
+     "armed": false,
+     "hyper": "White Breath",
+     "hyper_es": "Aliento blanco"
     }
    ],
    "extra_teams": [],
@@ -80,18 +82,7 @@
    "description": "Bailong and Zhuge Liang's miximaxed form is a peerless midfielder!",
    "description_es": "El Miximax Trans de Bai Long con Zhuge Liang es un medio formidable.",
    "no": 3908,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Sacred Serpent White Wyvern",
-     "name_es": "Dragón Heráldico, Guiverno blanco",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Zhuge Liang"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -135,12 +126,7 @@
    "description": "Bailong and Victor's Miximax. Will these rivals' strengths work together?",
    "description_es": null,
    "no": 3949,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Victor"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -186,12 +172,7 @@
    "description": "The Miximax of Bailong and Tezcat— a fierce combination of light and dark!",
    "description_es": null,
    "no": 3950,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Tezcat"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -237,18 +218,7 @@
    "description": "Goldie and the Queen of Dragons's miximax brings fantasy football to life!",
    "description_es": "El Miximax Trans de Goldie y la reina de los dragones es de fantasía.",
    "no": 3906,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Sorceress of the Dawn Amaterasu",
-     "name_es": "Guerrera del amanecer Amaterasu",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Queen of Dragons"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -293,12 +263,7 @@
    "description": "The Miximax of Bailong and Tezcat— a fierce combination of light and dark!",
    "description_es": null,
    "no": 3951,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Bailong"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -344,12 +309,7 @@
    "description": "Bailong and Victor's Miximax. Will these rivals' strengths work together?",
    "description_es": null,
    "no": 3948,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Bailong"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -400,7 +360,13 @@
      "type": "keshin",
      "name": "Fire Jotun Surtr",
      "name_es": "Gigante de fuego, Surtur",
-     "armed": false
+     "armed": false,
+     "hyper": "Fireball Storm",
+     "hyper_es": "Tormenta de fuego"
+    },
+    {
+     "type": "mixi",
+     "name": "Shawn"
     }
    ],
    "extra_teams": [],
@@ -428,7 +394,7 @@
    "game": "GO3",
    "saga": "GO",
    "version": "Adult",
-   "team": "Adult",
+   "team": "Sub Character",
    "position": "FW",
    "element": "fire",
    "ovr": 91,
@@ -446,14 +412,16 @@
    "zukan_no": 4145,
    "is_version": true,
    "description": "Beneath his cool exterior burns an intense and fiery passion for football.",
-   "description_es": "Un delantero legendario que tiene una pasión inigualable por el fútbol.",
+   "description_es": "Un delantero genial que oculta su genio bajo una máscara de frialdad.",
    "no": 4145,
    "specials": [
     {
      "type": "keshin",
      "name": "Fire Jotun Surtr",
      "name_es": "Gigante de fuego, Surtur",
-     "armed": false
+     "armed": false,
+     "hyper": "Fireball Storm",
+     "hyper_es": "Tormenta de fuego"
     }
    ],
    "extra_teams": [],
@@ -500,12 +468,7 @@
    "description": "The Miximax of Axel and Shawn has a fiery edge, but is still a cool customer.",
    "description_es": null,
    "no": 3954,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Shawn"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -577,7 +540,7 @@
    "game": "GO3",
    "saga": "GO",
    "version": "Adult",
-   "team": "Adult",
+   "team": "Sub Character",
    "position": "GK",
    "element": "wood",
    "ovr": 91,
@@ -731,12 +694,7 @@
    "description": "The Miximax of Axel and Shawn has a fiery edge, but is still a cool customer.",
    "description_es": null,
    "no": 3955,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Axel"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -782,18 +740,7 @@
    "description": "Zanark and Cao Cao's miximaxed form is the strongest—and most evil!",
    "description_es": "El Miximax Trans de Zanark y Cao Cao lleva al límite la potencia y la maldad.",
    "no": 3909,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Prince of the Astral Plane Zodiac",
-     "name_es": "Príncipe del plano astral, Zodíaco",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Cao Cao"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -842,7 +789,9 @@
      "type": "keshin",
      "name": "Crown Prince of Chaos Ashtarot",
      "name_es": "Príncipe del caos, Astaroth",
-     "armed": false
+     "armed": false,
+     "hyper": "Crimson Prison",
+     "hyper_es": "Prisión escarlata"
     }
    ],
    "extra_teams": [],
@@ -894,7 +843,9 @@
      "type": "keshin",
      "name": "Crown Prince of Chaos Ashtarot",
      "name_es": "Príncipe del caos, Astaroth",
-     "armed": false
+     "armed": false,
+     "hyper": "Crimson Prison",
+     "hyper_es": "Prisión escarlata"
     }
    ],
    "extra_teams": [],
@@ -991,7 +942,9 @@
      "type": "keshin",
      "name": "Goddess of Just Warfare Athene",
      "name_es": "Dueña del aire, Atenea",
-     "armed": true
+     "armed": true,
+     "hyper": "Athenian Assault",
+     "hyper_es": "Golpe de Atenea"
     }
    ],
    "extra_teams": [],
@@ -1043,7 +996,9 @@
      "type": "keshin",
      "name": "Goddess of Just Warfare Athene",
      "name_es": "Dueña del aire, Atenea",
-     "armed": true
+     "armed": true,
+     "hyper": "Athenian Assault",
+     "hyper_es": "Golpe de Atenea"
     }
    ],
    "extra_teams": [],
@@ -1140,7 +1095,9 @@
      "type": "keshin",
      "name": "Giant Usurper Gigante",
      "name_es": "Titán gigante",
-     "armed": true
+     "armed": true,
+     "hyper": "Giga Knuckle Sandwich",
+     "hyper_es": "Presa titánica"
     }
    ],
    "extra_teams": [],
@@ -1237,7 +1194,13 @@
      "type": "keshin",
      "name": "Sorceress of the Dawn Amaterasu",
      "name_es": "Guerrera del amanecer Amaterasu",
-     "armed": true
+     "armed": true,
+     "hyper": "Aurora Arrow",
+     "hyper_es": "Flecha del alba"
+    },
+    {
+     "type": "mixi",
+     "name": "Queen of Dragons"
     }
    ],
    "extra_teams": [],
@@ -1290,7 +1253,9 @@
      "type": "keshin",
      "name": "Kyou Senshi Diavel",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Dragon Storm",
+     "hyper_es": "Lanza tornado"
     }
    ],
    "extra_teams": [],
@@ -1428,12 +1393,7 @@
    "description": "Arion and Mark's Miximax is a football star that transcends space and time!",
    "description_es": null,
    "no": 3952,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Mark"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -1484,7 +1444,9 @@
      "type": "keshin",
      "name": "Kikai Hei Gareus",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Titanic Shield",
+     "hyper_es": "Escudo guardián"
     }
    ],
    "extra_teams": [],
@@ -1531,7 +1493,12 @@
    "description": "They say this aloof rebel has grown soft in his old age...",
    "description_es": "Dicen que con la edad, este rebelde sin causa se ha ido ablandando.",
    "no": 2814,
-   "specials": [],
+   "specials": [
+    {
+     "type": "mixi",
+     "name": "Jude"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Adult form",
@@ -1557,7 +1524,7 @@
    "game": "GO3",
    "saga": "GO",
    "version": "Adult",
-   "team": "Adult",
+   "team": "Japanese Resistance",
    "position": "MF",
    "element": "fire",
    "ovr": 89,
@@ -1570,13 +1537,13 @@
    "speed": 90,
    "defense": 81,
    "goalkeeping": 80,
-   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/0a/%28ILJ%29_Fudou_3D_%281%29.png/revision/latest?cb=20230728082550",
-   "zukan_id": null,
-   "zukan_no": null,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/o/5/o5u_czy19cc.png",
+   "zukan_id": "k/o/5/o5u_czy19cc",
+   "zukan_no": 4155,
    "is_version": true,
-   "description": null,
+   "description": "While originally ordered to take down Inazuma National, he did a 180 and now heads the Resistance.",
    "description_es": "Distante y poco de fiar. Le gusta alardear de su habilidad ante el rival.",
-   "no": 5926,
+   "no": 4155,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -1622,12 +1589,7 @@
    "description": "Jude and Caleb's Miximax. These opposites will cause quite a reaction!",
    "description_es": null,
    "no": 3957,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Jude"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -1666,13 +1628,13 @@
    "speed": 89,
    "defense": 81,
    "goalkeeping": 82,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/o/5/o5u_czy19cc.png",
-   "zukan_id": "k/o/5/o5u_czy19cc",
-   "zukan_no": 4155,
+   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/0a/%28ILJ%29_Fudou_3D_%281%29.png/revision/latest?cb=20230728082550",
+   "zukan_id": null,
+   "zukan_no": null,
    "is_version": true,
-   "description": "While originally ordered to take down Inazuma National, he did a 180 and now heads the Resistance.",
+   "description": null,
    "description_es": "Entrenador del Resistencia de Japón. Es bastante duro y no tiene piedad.",
-   "no": 4155,
+   "no": 5926,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -1724,7 +1686,9 @@
      "type": "keshin",
      "name": "Ryuu Kishi Tedis",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Dragon Storm",
+     "hyper_es": "Lanza tornado"
     }
    ],
    "extra_teams": [],
@@ -1772,18 +1736,7 @@
    "description": "Fei and Big's miximaxed form joins past and future for a dynamic MF.",
    "description_es": "El Miximax Trans de Fei y el tiranosaurio. ¡Un delantero de aúpa!",
    "no": 3903,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Light-Speed Knight Sir Rabby",
-     "name_es": "Caballero ultraveloz Robin",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Big"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -1832,7 +1785,13 @@
      "type": "keshin",
      "name": "Cursed Wolf Lycaon",
      "name_es": "Lobo maldito Licaón",
-     "armed": true
+     "armed": true,
+     "hyper": "Forked Edge",
+     "hyper_es": "Relámpago bestial"
+    },
+    {
+     "type": "mixi",
+     "name": "Zanark"
     }
    ],
    "extra_teams": [],
@@ -1879,18 +1838,7 @@
    "description": "Miximaxed with Zanark, he was brainwashed into obedience.",
    "description_es": "El capitán del Protocolo Omega 3.0. Es un narcisista orgulloso.",
    "no": 3920,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Cursed Wolf Lycaon",
-     "name_es": "Lobo maldito Licaón",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Zanark"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "Normal form",
@@ -1935,18 +1883,7 @@
    "description": "JP and Liu Bei's miximaxed form is a solid goalie with a heart of gold!",
    "description_es": "El Miximax Trans de JP y Liu Bei es un portero temible con un gran corazón.",
    "no": 3901,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Defender of Earth Atlas",
-     "name_es": "Protector de la Tierra, Atlas",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Liu Bei"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -2035,12 +1972,7 @@
    "description": "Jude and Caleb's Miximax. These opposites will cause quite a reaction!",
    "description_es": null,
    "no": 3956,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Caleb"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -2091,7 +2023,9 @@
      "type": "keshin",
      "name": "Brave Samurai Musashi",
      "name_es": "Bravo samurái Musashi",
-     "armed": false
+     "armed": false,
+     "hyper": "Bushin Blades",
+     "hyper_es": "Estocada samurai"
     }
    ],
    "extra_teams": [],
@@ -2143,7 +2077,9 @@
      "type": "keshin",
      "name": "Armoured Cavalry White Knight",
      "name_es": "Caballo blanco",
-     "armed": false
+     "armed": false,
+     "hyper": "Destrier Charge",
+     "hyper_es": "Carga al galope"
     }
    ],
    "extra_teams": [],
@@ -2241,7 +2177,13 @@
      "type": "keshin",
      "name": "The Great Genie Majin",
      "name_es": "Mágico gigante, Grandius",
-     "armed": false
+     "armed": false,
+     "hyper": "Majin the Great",
+     "hyper_es": "Mano grandiosa"
+    },
+    {
+     "type": "mixi",
+     "name": "Arion"
     }
    ],
    "extra_teams": [],
@@ -2288,12 +2230,7 @@
    "description": "Arion and Mark's Miximax is a football star that transcends space and time!",
    "description_es": null,
    "no": 3953,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Arion"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -2476,7 +2413,12 @@
    "description": "A Japanese pro footballer who was temporarily Alpine's football coach.",
    "description_es": "Jugador de la liga de fútbol japonesa que también entrenó al Alpino.",
    "no": 2813,
-   "specials": [],
+   "specials": [
+    {
+     "type": "mixi",
+     "name": "Axel"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Adult form",
@@ -2527,7 +2469,9 @@
      "type": "keshin",
      "name": "Lord of Daemons Evera",
      "name_es": "Gran señor de los demonios, Evera",
-     "armed": true
+     "armed": true,
+     "hyper": "Mortal Smash",
+     "hyper_es": "Asalto mortal"
     }
    ],
    "extra_teams": [],
@@ -2580,7 +2524,9 @@
      "type": "keshin",
      "name": "Lord of Daemons Evera",
      "name_es": "Gran señor de los demonios, Evera",
-     "armed": true
+     "armed": true,
+     "hyper": "Mortal Smash",
+     "hyper_es": "Asalto mortal"
     }
    ],
    "extra_teams": [],
@@ -2633,7 +2579,9 @@
      "type": "keshin",
      "name": "Lord of Daemons Evera",
      "name_es": "Gran señor de los demonios, Evera",
-     "armed": true
+     "armed": true,
+     "hyper": "Mortal Smash",
+     "hyper_es": "Asalto mortal"
     }
    ],
    "extra_teams": [],
@@ -2686,7 +2634,9 @@
      "type": "keshin",
      "name": "Dark Demigod Black Butcher",
      "name_es": "Señor oscuro, Azote negro",
-     "armed": false
+     "armed": false,
+     "hyper": "Executioner's Axe",
+     "hyper_es": "Hacha del Azote negro"
     }
    ],
    "extra_teams": [],
@@ -2734,18 +2684,7 @@
    "description": "Victor and Soji's miximaxed form strikes with the speed of a snake!",
    "description_es": "El Miximax Trans de Victor y Soji ataca con la rapidez de una serpiente.",
    "no": 3905,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Heroic Swordsman Lancelot",
-     "name_es": "Caballero Lancelot",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Soji"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -2794,7 +2733,13 @@
      "type": "keshin",
      "name": "Supreme War Chief Pendragon",
      "name_es": "Caballero misterioso, Pendragón",
-     "armed": true
+     "armed": true,
+     "hyper": "Dark Reaver",
+     "hyper_es": "Desolación eterna"
+    },
+    {
+     "type": "mixi",
+     "name": "Victor"
     }
    ],
    "extra_teams": [],
@@ -2842,18 +2787,7 @@
    "description": "Vladimir and Victor's miximaxed form. Brotherly love and sibling rivalry!",
    "description_es": "El Miximax Trans de Vladimir y Victor. ¡Amor fraternal y rivalidad en uno!",
    "no": 3896,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Supreme War Chief Pendragon",
-     "name_es": "Caballero misterioso, Pendragón",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Victor"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -2902,7 +2836,13 @@
      "type": "keshin",
      "name": "Supreme War Chief Pendragon",
      "name_es": "Caballero misterioso, Pendragón",
-     "armed": true
+     "armed": true,
+     "hyper": "Dark Reaver",
+     "hyper_es": "Desolación eterna"
+    },
+    {
+     "type": "mixi",
+     "name": "Victor"
     }
    ],
    "extra_teams": [],
@@ -2955,7 +2895,13 @@
      "type": "keshin",
      "name": "Prince of the Astral Plane Zodiac",
      "name_es": "Príncipe del plano astral, Zodíaco",
-     "armed": true
+     "armed": true,
+     "hyper": "Crimson Prison",
+     "hyper_es": "Prisión escarlata"
+    },
+    {
+     "type": "mixi",
+     "name": "Cao Cao, Zeta"
     }
    ],
    "extra_teams": [],
@@ -3002,18 +2948,7 @@
    "description": "Zanark and Zeta's miximaxed form leaves chaos in his wake!",
    "description_es": "El Miximax Trans de Zanark y Cao Cao lleva al límite la potencia y la maldad.",
    "no": 3910,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Prince of the Astral Plane Zodiac",
-     "name_es": "Príncipe del plano astral, Zodíaco",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Zeta"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -3062,7 +2997,9 @@
      "type": "keshin",
      "name": "Tenkuu no Shihaisha Houou",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Firebird Flight",
+     "hyper_es": "Vuelo de fénix"
     }
    ],
    "extra_teams": [],
@@ -3110,18 +3047,7 @@
    "description": "Arion and King Arthur's miximaxed form is the king of midfielders!",
    "description_es": "El Miximax Trans de Arion y Tezcat combina fuerza y pasión.",
    "no": 3907,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Heavenly Horse Arch Pegasus",
-     "name_es": "Alado Archipegaso",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "King Arthur"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -3166,12 +3092,7 @@
    "description": "The Miximax of Arion and Victor, featuring eagle eyes and wild hair.",
    "description_es": null,
    "no": 3942,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Victor"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -3288,7 +3209,7 @@
    "game": "GO2",
    "saga": "GO",
    "version": "Adult",
-   "team": "Adult",
+   "team": "Sub Character",
    "position": "FW",
    "element": "wood",
    "ovr": 88,
@@ -3466,7 +3387,7 @@
    "game": "GO2",
    "saga": "GO",
    "version": "Adult",
-   "team": "Adult",
+   "team": "Sub Character",
    "position": "DF",
    "element": "wood",
    "ovr": 88,
@@ -3485,7 +3406,7 @@
    "is_version": true,
    "description": "Manager Travis's daughter and childhood friend of Mark Evans, now a caring nurse at the hospital.",
    "description_es": "Antigua gerente del Raimon. En la actualidad trabaja de enfermera.",
-   "no": 5953,
+   "no": 5956,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -3581,7 +3502,9 @@
      "type": "keshin",
      "name": "Fire Jotun Surtr",
      "name_es": "Gigante de fuego, Surtur",
-     "armed": false
+     "armed": false,
+     "hyper": "Fireball Storm",
+     "hyper_es": "Tormenta de fuego"
     }
    ],
    "extra_teams": [],
@@ -3680,7 +3603,9 @@
      "type": "keshin",
      "name": "Discordian Witch Eris",
      "name_es": "Bruja de la discordia Eris",
-     "armed": true
+     "armed": true,
+     "hyper": "Sordid Thorns",
+     "hyper_es": "Espinas insidiosas"
     }
    ],
    "extra_teams": [],
@@ -3732,7 +3657,9 @@
      "type": "keshin",
      "name": "Discordian Witch Eris",
      "name_es": "Bruja de la discordia Eris",
-     "armed": true
+     "armed": true,
+     "hyper": "Sordid Thorns",
+     "hyper_es": "Espinas insidiosas"
     }
    ],
    "extra_teams": [],
@@ -3920,7 +3847,9 @@
      "type": "keshin",
      "name": "Vicious Dragon Vritra",
      "name_es": "Dragón despiadado, Vritrá",
-     "armed": false
+     "armed": false,
+     "hyper": "Gigabite Geyser",
+     "hyper_es": "Géiser gigante"
     }
    ],
    "extra_teams": [],
@@ -3966,7 +3895,7 @@
    "is_version": true,
    "description": "An earnest and positive boy. Though a beginner, he has great natural skill.",
    "description_es": "No era muy bueno cuando entró en el club, pero está mejorando muchísimo.",
-   "no": 5949,
+   "no": 5950,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -4153,7 +4082,9 @@
      "type": "keshin",
      "name": "Snow Nymph Chione",
      "name_es": "Chione, reina de la nieve",
-     "armed": false
+     "armed": false,
+     "hyper": "Icicle Road",
+     "hyper_es": "Lanza de carámbanos"
     }
    ],
    "extra_teams": [],
@@ -4200,18 +4131,7 @@
    "description": "Roma and Ryoma's miximaxed form means a trickster of a midfielder!",
    "description_es": "El Miximax trans de Roma y Ryoma controla el centro con soltura .",
    "no": 3904,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Brave Samurai Musashi",
-     "name_es": "Bravo samurái Musashi",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Ryoma"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -4255,18 +4175,7 @@
    "description": "Sol and Zhuge Liang's miximaxed form is a peerless midfielder!",
    "description_es": "El Miximax Trans de Sol y Zhuge Liang domina el mediocampo como nadie.",
    "no": 3900,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Sun Deity Apollo",
-     "name_es": "Apolo, dios del sol",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Zhuge Liang"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -4410,12 +4319,7 @@
    "description": "The Miximax of Arion and Victor, featuring eagle eyes and wild hair.",
    "description_es": null,
    "no": 3943,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Arion"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -4466,7 +4370,9 @@
      "type": "keshin",
      "name": "Watchtower Sentinel Black Rook",
      "name_es": "Centinela vigía, Torre negra",
-     "armed": false
+     "armed": false,
+     "hyper": "Titanic Slam",
+     "hyper_es": "Golpe titánico"
     }
    ],
    "extra_teams": [],
@@ -4749,7 +4655,9 @@
      "type": "keshin",
      "name": "Feathers of Flames Firebird",
      "name_es": "Plumas ardientes, Ave de fuego",
-     "armed": false
+     "armed": false,
+     "hyper": "Thunderclaw",
+     "hyper_es": "Alas de halcón"
     }
    ],
    "extra_teams": [],
@@ -4847,7 +4755,9 @@
      "type": "keshin",
      "name": "Ruler of the Seven Seas Poseidon",
      "name_es": "Rey de los mares, Poseidón",
-     "armed": false
+     "armed": false,
+     "hyper": "Trident Torpedo",
+     "hyper_es": "Torpedo tridente"
     }
    ],
    "extra_teams": [],
@@ -4900,7 +4810,13 @@
      "type": "keshin",
      "name": "Light-Speed Knight Sir Rabby",
      "name_es": "Caballero ultraveloz Robin",
-     "armed": true
+     "armed": true,
+     "hyper": "Full Moon Fever",
+     "hyper_es": "Fiebre de luna llena"
+    },
+    {
+     "type": "mixi",
+     "name": "Big, Tyrannosaurus Rex"
     }
    ],
    "extra_teams": [],
@@ -4948,18 +4864,7 @@
    "description": "Fei and the Tyrannosaurus Rex's miximaxed form. A strong forward!",
    "description_es": "El Miximax Trans de Fei y el tiranosaurio. ¡Un delantero de aúpa!",
    "no": 3895,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Light-Speed Knight Sir Rabby",
-     "name_es": "Caballero ultraveloz Robin",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Tyrannosaurus Rex"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -5054,7 +4959,9 @@
      "type": "keshin",
      "name": "Royal Enchantress White Queen",
      "name_es": "Encantadora real, Reina blanca",
-     "armed": true
+     "armed": true,
+     "hyper": "Checkmate",
+     "hyper_es": "Jaque mate"
     }
    ],
    "extra_teams": [],
@@ -5288,7 +5195,9 @@
      "type": "keshin",
      "name": "Metal Mammoth Behemoth",
      "name_es": "Barron, coloso metálico",
-     "armed": false
+     "armed": false,
+     "hyper": "Titanic Shield",
+     "hyper_es": "Escudo guardián"
     }
    ],
    "extra_teams": [],
@@ -5360,7 +5269,7 @@
    "game": "GO2",
    "saga": "GO",
    "version": "Adult",
-   "team": "Adult",
+   "team": "Sub Character",
    "position": "MF",
    "element": "wood",
    "ovr": 87,
@@ -5431,7 +5340,9 @@
      "type": "keshin",
      "name": "Defender of Earth Atlas",
      "name_es": "Protector de la Tierra, Atlas",
-     "armed": false
+     "armed": false,
+     "hyper": "Majin The Hand",
+     "hyper_es": "Mano mágica"
     }
    ],
    "extra_teams": [],
@@ -5484,7 +5395,13 @@
      "type": "keshin",
      "name": "Defender of Earth Atlas",
      "name_es": "Protector de la Tierra, Atlas",
-     "armed": true
+     "armed": true,
+     "hyper": "Majin The Hand",
+     "hyper_es": "Mano mágica"
+    },
+    {
+     "type": "mixi",
+     "name": "Liu Bei"
     }
    ],
    "extra_teams": [],
@@ -5537,7 +5454,9 @@
      "type": "keshin",
      "name": "Defender of Earth Atlas",
      "name_es": "Protector de la Tierra, Atlas",
-     "armed": false
+     "armed": false,
+     "hyper": "Majin The Hand",
+     "hyper_es": "Mano mágica"
     }
    ],
    "extra_teams": [],
@@ -5632,7 +5551,12 @@
    "description": "Royal Academy's supreme commander and manager. Still as sharp as ever.",
    "description_es": "El entrenador de la Royal Academy no ha perdido su dominio de la táctica.",
    "no": 2556,
-   "specials": [],
+   "specials": [
+    {
+     "type": "mixi",
+     "name": "Caleb"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Adult form",
@@ -5820,7 +5744,9 @@
      "type": "keshin",
      "name": "Master Magician Trickster",
      "name_es": "Ilusionista Trickster",
-     "armed": false
+     "armed": false,
+     "hyper": "Magician's Box",
+     "hyper_es": null
     }
    ],
    "extra_teams": [],
@@ -5872,7 +5798,9 @@
      "type": "keshin",
      "name": "Aoki Ryuuku",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Roc and Roll",
+     "hyper_es": "Asalto aéreo"
     }
    ],
    "extra_teams": [],
@@ -6010,18 +5938,7 @@
    "description": "Riccardo Di and Nobunaga's miximaxed form is the ultimate gamemaker!",
    "description_es": "El Miximax Trans de Riccardo y Nobunaga. ¡El estratega definitivo!",
    "no": 3898,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Master Conductor Maestro",
-     "name_es": "Director Magister",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Nobunaga"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -6253,7 +6170,9 @@
      "type": "keshin",
      "name": "Sun Deity Apollo",
      "name_es": "Apolo, dios del sol",
-     "armed": false
+     "armed": false,
+     "hyper": "Solar Flare",
+     "hyper_es": "Llamarada solar"
     }
    ],
    "extra_teams": [],
@@ -6305,7 +6224,9 @@
      "type": "keshin",
      "name": "Thin Air Slasher Sickle Weasel",
      "name_es": "Garras de hoz Comadreja",
-     "armed": false
+     "armed": false,
+     "hyper": "Air Cut",
+     "hyper_es": "Hoz de remolino"
     }
    ],
    "extra_teams": [],
@@ -6495,7 +6416,9 @@
      "type": "keshin",
      "name": "Grand Inquisitor Judge",
      "name_es": "Juez supremo",
-     "armed": true
+     "armed": true,
+     "hyper": "Grand Finale",
+     "hyper_es": "Sentencia final"
     }
    ],
    "extra_teams": [],
@@ -6591,7 +6514,13 @@
      "type": "keshin",
      "name": "Heroic Swordsman Lancelot",
      "name_es": "Caballero Lancelot",
-     "armed": true
+     "armed": true,
+     "hyper": "Lancelot Lunge",
+     "hyper_es": "Estocada de Lancelot"
+    },
+    {
+     "type": "mixi",
+     "name": "Soji, Arion, Bailong"
     }
    ],
    "extra_teams": [],
@@ -6736,7 +6665,9 @@
      "type": "keshin",
      "name": "Royal Enchantress White Queen",
      "name_es": "Encantadora real, Reina blanca",
-     "armed": false
+     "armed": false,
+     "hyper": "Checkmate",
+     "hyper_es": "Jaque mate"
     }
    ],
    "extra_teams": [],
@@ -6782,8 +6713,13 @@
    "is_version": true,
    "description": "A young boy with superb body balance. He has his highs and lows, but is a good kid at heart.",
    "description_es": "Un defensa con un equilibrio superior que a veces parece algo borde.",
-   "no": 5947,
-   "specials": [],
+   "no": 5948,
+   "specials": [
+    {
+     "type": "mixi",
+     "name": "Gabriel"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -6828,12 +6764,7 @@
    "description": "The Miximax of Gabriel and Aitor. It looks like they make a good match!",
    "description_es": null,
    "no": 3947,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Gabriel"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -6883,7 +6814,9 @@
      "type": "keshin",
      "name": "Giant Usurper Gigante",
      "name_es": "Titán gigante",
-     "armed": false
+     "armed": false,
+     "hyper": "Giga Knuckle Sandwich",
+     "hyper_es": "Presa titánica"
     }
    ],
    "extra_teams": [],
@@ -6935,7 +6868,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow OF",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Sword",
+     "hyper_es": "Espada sombría"
     }
    ],
    "extra_teams": [],
@@ -6987,7 +6922,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow OF",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Sword",
+     "hyper_es": "Espada sombría"
     }
    ],
    "extra_teams": [],
@@ -7014,7 +6951,7 @@
    "game": "GO3",
    "saga": "GO",
    "version": "Adult",
-   "team": "Adult",
+   "team": "Sub Character",
    "position": "DF",
    "element": "air",
    "ovr": 86,
@@ -7084,7 +7021,13 @@
      "type": "keshin",
      "name": "Heavenly Horse Arch Pegasus",
      "name_es": "Alado Archipegaso",
-     "armed": true
+     "armed": true,
+     "hyper": "Pegasus Punch",
+     "hyper_es": "Golpe justiciero"
+    },
+    {
+     "type": "mixi",
+     "name": "King Arthur, Tezcat, Victor, Mark"
     }
    ],
    "extra_teams": [],
@@ -7596,12 +7539,7 @@
    "description": "The Miximax of Gabriel and Aitor. It looks like they make a good match!",
    "description_es": null,
    "no": 3946,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Aitor"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -7829,7 +7767,12 @@
    "description": "A veritable wall of a lad. Many get knocked out when running into him.",
    "description_es": "Es tan robusto que muchos de sus rivales no resisten colisiones con él.",
    "no": 3513,
-   "specials": [],
+   "specials": [
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Normal form",
@@ -7874,12 +7817,7 @@
    "description": "Miximaxed with Zanark, he whips the ball from his opponents with a smile.",
    "description_es": "Tras el Miximax con Zanark, roba balones con una sonrisa perenne.",
    "no": 3913,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Zanark"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "Normal form",
@@ -8059,7 +7997,12 @@
    "description": "A midfielder with a wiry body like a spring. Good friends with Beta.",
    "description_es": null,
    "no": 3515,
-   "specials": [],
+   "specials": [
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Normal form",
@@ -8104,12 +8047,7 @@
    "description": "Miximaxed with Zanark, her supple movements are fortified with strength.",
    "description_es": null,
    "no": 3917,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Zanark"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "Normal form",
@@ -8203,7 +8141,9 @@
      "type": "keshin",
      "name": "Wise Monarch White King",
      "name_es": "Sabio monarca, Rey blanco",
-     "armed": false
+     "armed": false,
+     "hyper": "Crown Fire",
+     "hyper_es": "Corona de fuego"
     }
    ],
    "extra_teams": [],
@@ -8255,7 +8195,9 @@
      "type": "keshin",
      "name": "Raven Wings Corvus",
      "name_es": "Cuervo alas negras",
-     "armed": false
+     "armed": false,
+     "hyper": "Roc and Roll",
+     "hyper_es": "Asalto aéreo"
     }
    ],
    "extra_teams": [],
@@ -8306,7 +8248,9 @@
      "type": "keshin",
      "name": "Brave Samurai Musashi",
      "name_es": "Bravo samurái Musashi",
-     "armed": false
+     "armed": false,
+     "hyper": "Bushin Blades",
+     "hyper_es": "Estocada samurai"
     }
    ],
    "extra_teams": [],
@@ -8352,13 +8296,19 @@
    "is_version": true,
    "description": "A chivalrous boy with a strong moral compass. Spent some time in Italy.",
    "description_es": "Era delantero, pero volvió de Italia convertido en centrocampista.",
-   "no": 5948,
+   "no": 5949,
    "specials": [
     {
      "type": "keshin",
      "name": "Brave Samurai Musashi",
      "name_es": "Bravo samurái Musashi",
-     "armed": true
+     "armed": true,
+     "hyper": "Bushin Blades",
+     "hyper_es": "Estocada samurai"
+    },
+    {
+     "type": "mixi",
+     "name": "Ryoma"
     }
    ],
    "extra_teams": [],
@@ -8592,7 +8542,9 @@
      "type": "keshin",
      "name": "Heroic Swordsman Lancelot",
      "name_es": "Caballero Lancelot",
-     "armed": false
+     "armed": false,
+     "hyper": "Lancelot Lunge",
+     "hyper_es": "Estocada de Lancelot"
     }
    ],
    "extra_teams": [],
@@ -8666,7 +8618,7 @@
    "game": "GO3",
    "saga": "GO",
    "version": "Adult",
-   "team": "Adult",
+   "team": "Sub Character",
    "position": "MF",
    "element": "air",
    "ovr": 86,
@@ -8829,7 +8781,9 @@
      "type": "keshin",
      "name": "Heavenly Horse Arch Pegasus",
      "name_es": "Alado Archipegaso",
-     "armed": false
+     "armed": false,
+     "hyper": "Pegasus Punch",
+     "hyper_es": "Golpe justiciero"
     }
    ],
    "extra_teams": [],
@@ -8882,7 +8836,9 @@
      "type": "keshin",
      "name": "Heavenly Horse Arch Pegasus",
      "name_es": "Alado Archipegaso",
-     "armed": false
+     "armed": false,
+     "hyper": "Pegasus Punch",
+     "hyper_es": "Golpe justiciero"
     }
    ],
    "extra_teams": [],
@@ -8935,7 +8891,9 @@
      "type": "keshin",
      "name": "Heavenly Horse Arch Pegasus",
      "name_es": "Alado Archipegaso",
-     "armed": false
+     "armed": false,
+     "hyper": "Pegasus Punch",
+     "hyper_es": "Golpe justiciero"
     }
    ],
    "extra_teams": [],
@@ -9079,7 +9037,9 @@
      "type": "keshin",
      "name": "Front-Line Fighter White Pawn",
      "name_es": "Peón blanco",
-     "armed": false
+     "armed": false,
+     "hyper": "Rat-a-Tat Pass",
+     "hyper_es": "Puño metralleta"
     }
    ],
    "extra_teams": [],
@@ -9106,7 +9066,7 @@
    "game": "GO2",
    "saga": "GO",
    "version": "Adult",
-   "team": "Adult",
+   "team": "Sub Character",
    "position": "MF",
    "element": "wood",
    "ovr": 85,
@@ -9288,7 +9248,7 @@
    "game": "GO2",
    "saga": "GO",
    "version": "Adult",
-   "team": "Adult",
+   "team": "Sub Character",
    "position": "MF",
    "element": "air",
    "ovr": 85,
@@ -9307,7 +9267,7 @@
    "is_version": true,
    "description": "She serves as the advisor for the Raimon football team, always keeping a gentle, watchful eye on the players.",
    "description_es": "Antigua gerente del Raimon. Ahora se ocupa de Arion y del equipo.",
-   "no": 5950,
+   "no": 5953,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -9533,12 +9493,7 @@
    "description": "Riccardo Di and Gabi's Miximax. These good friends make a great combo!",
    "description_es": null,
    "no": 3945,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Riccardo Di"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -9729,7 +9684,9 @@
      "type": "keshin",
      "name": "Living Nightmare Phantasma",
      "name_es": "Garas, maestra de ilusiones",
-     "armed": false
+     "armed": false,
+     "hyper": "Black Briars",
+     "hyper_es": "Lazos de oscuridad"
     }
    ],
    "extra_teams": [],
@@ -10243,7 +10200,9 @@
      "type": "keshin",
      "name": "Master Conductor Maestro",
      "name_es": "Director Magister",
-     "armed": false
+     "armed": false,
+     "hyper": "Atomic Harmonic",
+     "hyper_es": "Movimientos armónicos"
     }
    ],
    "extra_teams": [],
@@ -10296,7 +10255,13 @@
      "type": "keshin",
      "name": "Master Conductor Maestro",
      "name_es": "Director Magister",
-     "armed": true
+     "armed": true,
+     "hyper": "Atomic Harmonic",
+     "hyper_es": "Movimientos armónicos"
+    },
+    {
+     "type": "mixi",
+     "name": "Nobunaga, Gabi"
     }
    ],
    "extra_teams": [],
@@ -10397,12 +10362,7 @@
    "description": "Riccardo Di and Gabi's Miximax. These good friends make a great combo!",
    "description_es": null,
    "no": 3944,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Gabi"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -10925,7 +10885,7 @@
    "game": "GO3",
    "saga": "GO",
    "version": "Adult",
-   "team": "Adult",
+   "team": "Sub Character",
    "position": "MF",
    "element": "fire",
    "ovr": 84,
@@ -11311,7 +11271,9 @@
      "type": "keshin",
      "name": "Hypersonic Fighter Scramjet",
      "name_es": "Barius supersónico",
-     "armed": false
+     "armed": false,
+     "hyper": "Hyperdrive",
+     "hyper_es": "Carga hipersónica"
     }
    ],
    "extra_teams": [],
@@ -11410,7 +11372,9 @@
      "type": "keshin",
      "name": "Front-Line Fighter Black Pawn",
      "name_es": "Peón negro",
-     "armed": false
+     "armed": false,
+     "hyper": "Rat-a-Tat Pass",
+     "hyper_es": "Puño metralleta"
     }
    ],
    "extra_teams": [],
@@ -11523,6 +11487,51 @@
    ]
   },
   {
+   "id": "minamisawa-atsushi--go2--raimon",
+   "character_id": "minamisawa-atsushi",
+   "name": "Doug McArthur",
+   "game": "GO2",
+   "saga": "GO",
+   "version": "Raimon",
+   "team": "Raimon",
+   "position": "FW",
+   "element": "air",
+   "ovr": 84,
+   "category": "Top Player",
+   "tier": "S",
+   "source": "Strikers 2013",
+   "shooting": 82,
+   "control": 81,
+   "physical": 89,
+   "speed": 88,
+   "defense": 72,
+   "goalkeeping": 70,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/h/xh4aaoz_rn0.png",
+   "zukan_id": "k/x/h/xh4aaoz_rn0",
+   "zukan_no": 2447,
+   "is_version": true,
+   "description": "A proud striker. His skills are the real deal, but he seems a little detached.",
+   "description_es": null,
+   "no": 5947,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 144,
+    "Dribbling": 119,
+    "Technique": 112,
+    "Block": 107,
+    "Speed": 109,
+    "Stamina": 102,
+    "Catch": 55
+   },
+   "techniques": [
+    "SonicShot",
+    "Claymore",
+    "WolfLegend"
+   ]
+  },
+  {
    "id": "saginuma-osamu--ie3--neo-japan",
    "character_id": "saginuma-osamu",
    "name": "Dvalin",
@@ -11575,7 +11584,7 @@
    "game": "GO2",
    "saga": "GO",
    "version": "Adult",
-   "team": "Adult",
+   "team": "Sub Character",
    "position": "MF",
    "element": "fire",
    "ovr": 84,
@@ -11686,18 +11695,7 @@
    "description": "Gabi and Joan of Arc's miximaxed form is a courageous defender.",
    "description_es": "El Miximax Trans de Gabi y Juana de Arco ofrece una defensa excepcional.",
    "no": 3899,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Standard-Bearer Brynhildr",
-     "name_es": "Valquiria abanderada Brunilda",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Joan of Arc"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -12563,7 +12561,12 @@
    "description": "A midfielder from Protocol Omega 3.0 who clearly admires Gamma.",
    "description_es": "La característica más llamativa de esta centrocampista es su elegancia.",
    "no": 3521,
-   "specials": [],
+   "specials": [
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Normal form",
@@ -12609,12 +12612,7 @@
    "description": "Miximaxed with Zanark, she plays as coolly as ever.",
    "description_es": "Tras el Miximax con Zanark, juega incluso con más calma que antes.",
    "no": 3918,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Zanark"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "Normal form",
@@ -12703,18 +12701,7 @@
    "description": "Sor and Pa's miximaxed form is defence from the skies!",
    "description_es": "El Miximax trans de Sor y su padre surca los cielos en busca del balón.",
    "no": 3902,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Prehistoric Chieftain Jagwarrior",
-     "name_es": "Guerrero prehistórico Jaguar",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Pa"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -13306,7 +13293,9 @@
      "type": "keshin",
      "name": "Juuou Leon",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Back Slash",
+     "hyper_es": "Zarpazo real"
     }
    ],
    "extra_teams": [],
@@ -13816,7 +13805,9 @@
      "type": "keshin",
      "name": "Front-Line Fighter White Pawn",
      "name_es": "Peón blanco",
-     "armed": false
+     "armed": false,
+     "hyper": "Rat-a-Tat Pass",
+     "hyper_es": "Puño metralleta"
     }
    ],
    "extra_teams": [],
@@ -13998,7 +13989,7 @@
    "is_version": false,
    "description": null,
    "description_es": "Este chico es una leyenda en todo el mundo.",
-   "no": 5955,
+   "no": 5958,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -14746,7 +14737,7 @@
    "game": "GO3",
    "saga": "GO",
    "version": "Adult",
-   "team": "Adult",
+   "team": "Sub Character",
    "position": "FW",
    "element": "wood",
    "ovr": 83,
@@ -14771,7 +14762,9 @@
      "type": "keshin",
      "name": "Lady of Artifice Metis",
      "name_es": "Señora del ingenio, Metis",
-     "armed": false
+     "armed": false,
+     "hyper": "Athenian Assault",
+     "hyper_es": "Golpe de Atenea"
     }
    ],
    "extra_teams": [],
@@ -15233,7 +15226,9 @@
      "type": "keshin",
      "name": "Armoured Cavalry Black Knight",
      "name_es": "Caballo negro",
-     "armed": false
+     "armed": false,
+     "hyper": "Destrier Charge",
+     "hyper_es": "Carga al galope"
     }
    ],
    "extra_teams": [],
@@ -15606,7 +15601,9 @@
      "type": "keshin",
      "name": "Supernatural Wingman Thunderbird",
      "name_es": "Sobrenatural halcón de trueno",
-     "armed": false
+     "armed": false,
+     "hyper": "Thunderclaw",
+     "hyper_es": "Alas de halcón"
     }
    ],
    "extra_teams": [],
@@ -15744,18 +15741,7 @@
    "description": "Arion and Tezcat's miximaxed form combines strength and passion!",
    "description_es": "El Miximax Trans de Arion y Tezcat combina fuerza y pasión.",
    "no": 3897,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Heavenly Horse Arch Pegasus",
-     "name_es": "Alado Archipegaso",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Tezcat"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -16220,7 +16206,13 @@
      "type": "keshin",
      "name": "Standard-Bearer Brynhildr",
      "name_es": "Valquiria abanderada Brunilda",
-     "armed": true
+     "armed": true,
+     "hyper": "Valkyrie's Signal",
+     "hyper_es": "Estandarte de valquiria"
+    },
+    {
+     "type": "mixi",
+     "name": "Joan of Arc, Riccardo Di, Aitor"
     }
    ],
    "extra_teams": [],
@@ -17047,7 +17039,13 @@
      "type": "keshin",
      "name": "Hypersonic Fighter Scramjet",
      "name_es": "Barius supersónico",
-     "armed": true
+     "armed": true,
+     "hyper": "Hyperdrive",
+     "hyper_es": "Carga hipersónica"
+    },
+    {
+     "type": "mixi",
+     "name": "Zanark"
     }
    ],
    "extra_teams": [],
@@ -17094,18 +17092,7 @@
    "description": "Miximaxed with Zanark, his dreamy gaze never seems to change.",
    "description_es": "Tras el Miximax con Zanark, no ha cambiado su aspecto soñador.",
    "no": 3916,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Hypersonic Fighter Scramjet",
-     "name_es": "Barius supersónico",
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Zanark"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "Normal form",
@@ -17473,7 +17460,9 @@
      "type": "keshin",
      "name": "Front-Line Fighter White Pawn",
      "name_es": "Peón blanco",
-     "armed": false
+     "armed": false,
+     "hyper": "Rat-a-Tat Pass",
+     "hyper_es": "Puño metralleta"
     }
    ],
    "extra_teams": [],
@@ -17841,14 +17830,7 @@
    "description": "A surprising and vigorous young lad who grew up amongst dinosaurs.",
    "description_es": "El Miximax trans de Sor y su padre surca los cielos en busca del balón.",
    "no": 3487,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Prehistoric Chieftain Jagwarrior",
-     "name_es": "Guerrero prehistórico Jaguar",
-     "armed": true
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -18081,7 +18063,9 @@
      "type": "keshin",
      "name": "Faster Than Light Tachyon",
      "name_es": "Hipervelocista Tachión",
-     "armed": false
+     "armed": false,
+     "hyper": "Hyperdrive",
+     "hyper_es": "Carga hipersónica"
     }
    ],
    "extra_teams": [],
@@ -18948,7 +18932,7 @@
    "is_version": true,
    "description": "Known for helping out his teammates and has a keen sense of strategy.",
    "description_es": "Tiene una gran visión estratégica y siempre ayuda a sus compañeros.",
-   "no": 5952,
+   "no": 5955,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -19808,7 +19792,7 @@
    "is_version": true,
    "description": "An analytical player more interested in strategy than physical prowess.",
    "description_es": "Un jugador muy analítico y basa todo su juego en la estrategia.",
-   "no": 5951,
+   "no": 5954,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -19833,7 +19817,7 @@
    "game": "GO3",
    "saga": "GO",
    "version": "Adult",
-   "team": "Adult",
+   "team": "Sub Character",
    "position": "MF",
    "element": "air",
    "ovr": 81,
@@ -21272,7 +21256,9 @@
      "type": "keshin",
      "name": "Gigantic Garrison Gargantua",
      "name_es": "Gargantúa, gigante metálico",
-     "armed": false
+     "armed": false,
+     "hyper": "Giga Knuckle Sandwich",
+     "hyper_es": "Presa titánica"
     }
    ],
    "extra_teams": [],
@@ -21323,7 +21309,9 @@
      "type": "keshin",
      "name": "Gigantic Garrison Gargantua",
      "name_es": "Gargantúa, gigante metálico",
-     "armed": false
+     "armed": false,
+     "hyper": "Giga Knuckle Sandwich",
+     "hyper_es": "Presa titánica"
     }
    ],
    "extra_teams": [],
@@ -22592,7 +22580,9 @@
      "type": "keshin",
      "name": "Eichi no Ou Bungu Oh",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Superior Crayon Power",
+     "hyper_es": "Descarga de colores"
     }
    ],
    "extra_teams": [],
@@ -22689,7 +22679,12 @@
    "description": "The fire inside him burns as red as his hair. Despite his name, he's not a dad.",
    "description_es": "Su pelo refleja la pasión que siente. A pesar de su nombre, no tiene hijos.",
    "no": 3519,
-   "specials": [],
+   "specials": [
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Normal form",
@@ -22734,12 +22729,7 @@
    "description": "Miximaxed with Zanark, he works hard and plays hard. Beware!",
    "description_es": "Tras el Miximax con Zanark, es muy duro de roer. ¡Cuidado!.",
    "no": 3914,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Zanark"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "Normal form",
@@ -23587,7 +23577,9 @@
      "type": "keshin",
      "name": "Warrior of the North Xuan-Wu",
      "name_es": "Guerrero del norte Xuan-Wu",
-     "armed": false
+     "armed": false,
+     "hyper": "Tortoise Shield",
+     "hyper_es": "Escudo caparazón"
     }
    ],
    "extra_teams": [],
@@ -23820,7 +23812,9 @@
      "type": "keshin",
      "name": "Byakuya no Senkou Raimeiza",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Demon's Bolt",
+     "hyper_es": "Rayo demoníaco"
     }
    ],
    "extra_teams": [],
@@ -23873,7 +23867,9 @@
      "type": "keshin",
      "name": "Byakuya no Senkou Raimeiza",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Demon's Bolt",
+     "hyper_es": "Rayo demoníaco"
     }
    ],
    "extra_teams": [],
@@ -24162,7 +24158,9 @@
      "type": "keshin",
      "name": "Shinen no Agillaus",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Gigabite Geyser",
+     "hyper_es": "Géiser gigante"
     }
    ],
    "extra_teams": [],
@@ -25091,7 +25089,9 @@
      "type": "keshin",
      "name": "Ryuujin Corogaon",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Crimson Sphere",
+     "hyper_es": "Cúpula carmesí"
     }
    ],
    "extra_teams": [],
@@ -25953,7 +25953,7 @@
    "is_version": false,
    "description": null,
    "description_es": "Es una ganadora nata. Confunde al contrincante con magníficas jugadas.",
-   "no": 5956,
+   "no": 5959,
    "specials": [],
    "extra_teams": [],
    "raw_stats": {
@@ -26056,7 +26056,9 @@
      "type": "keshin",
      "name": "Lord of All Waters Neptune",
      "name_es": "Neptuno, señor de los mares",
-     "armed": false
+     "armed": false,
+     "hyper": "Trident Torpedo",
+     "hyper_es": "Torpedo tridente"
     }
    ],
    "extra_teams": [],
@@ -26430,7 +26432,9 @@
      "type": "keshin",
      "name": "Metal Mammoth Behemoth",
      "name_es": "Barron, coloso metálico",
-     "armed": false
+     "armed": false,
+     "hyper": "Titanic Shield",
+     "hyper_es": "Escudo guardián"
     }
    ],
    "extra_teams": [],
@@ -27990,7 +27994,9 @@
      "type": "keshin",
      "name": "Bob-Tailed Bombshell Loverette",
      "name_es": "Colablanca explosiva, Amorosa",
-     "armed": true
+     "armed": true,
+     "hyper": "Stop it, Poppet",
+     "hyper_es": "Defensa de muñecos"
     }
    ],
    "extra_teams": [],
@@ -28583,7 +28589,9 @@
      "type": "keshin",
      "name": "The Great Genie Majin",
      "name_es": "Mágico gigante, Grandius",
-     "armed": false
+     "armed": false,
+     "hyper": "Majin the Great",
+     "hyper_es": "Mano grandiosa"
     }
    ],
    "extra_teams": [],
@@ -30065,6 +30073,61 @@
    ]
   },
   {
+   "id": "nike--go2--base",
+   "character_id": "nike",
+   "name": "Katya Felis",
+   "game": "GO2",
+   "saga": "GO",
+   "version": "base",
+   "team": "Ragnah",
+   "position": "MF",
+   "element": "fire",
+   "ovr": 77,
+   "category": "Advanced Player",
+   "tier": "B",
+   "source": "stats del juego",
+   "shooting": 75,
+   "control": 80,
+   "physical": 71,
+   "speed": 77,
+   "defense": 74,
+   "goalkeeping": 74,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/m/n/mnzp1cde1d8.png",
+   "zukan_id": "k/m/n/mnzp1cde1d8",
+   "zukan_no": 3647,
+   "is_version": false,
+   "description": "Uses agile movements to play cat and mouse with her foes.",
+   "description_es": "Le encanta jugar al gato y al ratón con sus contrincantes.",
+   "no": 3647,
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Femme Fatale Sirena",
+     "name_es": "Sirena, la hechicera",
+     "armed": false,
+     "hyper": "Black Briars",
+     "hyper_es": "Lazos de oscuridad"
+    }
+   ],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 116,
+    "Dribbling": 170,
+    "Technique": 119,
+    "Block": 115,
+    "Speed": 123,
+    "Stamina": 97,
+    "Catch": 92
+   },
+   "techniques": [
+    "StormZone",
+    "Screwdriver",
+    "LoveArrow",
+    "EndlessSummer"
+   ]
+  },
+  {
    "id": "goshiki-jun--go1--base",
    "character_id": "goshiki-jun",
    "name": "Laike Alder",
@@ -30367,7 +30430,9 @@
      "type": "keshin",
      "name": "Star-Crossed Soul The Lovers ♂",
      "name_es": "Almas encadenadas, Los enamorados ♂",
-     "armed": true
+     "armed": true,
+     "hyper": "Heart's Desire",
+     "hyper_es": "Ataque de corazón"
     }
    ],
    "extra_teams": [],
@@ -30919,7 +30984,9 @@
      "type": "keshin",
      "name": "Storm Bringer Raiden",
      "name_es": "Señor de las tormentas, Raiden",
-     "armed": false
+     "armed": false,
+     "hyper": "Tortoise Shield",
+     "hyper_es": "Escudo caparazón"
     }
    ],
    "extra_teams": [],
@@ -31419,8 +31486,13 @@
    "is_version": true,
    "description": "A striker with a sweet, youthful face. Loyal second-in-command to Alpha.",
    "description_es": "Este leal delantero de rostro juvenil es la mano derecha de Alfa.",
-   "no": 5954,
-   "specials": [],
+   "no": 5957,
+   "specials": [
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -31877,7 +31949,9 @@
      "type": "keshin",
      "name": "Duke of Doom Demogorgon",
      "name_es": "Duque destructor, Demogorgo",
-     "armed": true
+     "armed": true,
+     "hyper": "Inferno Fist",
+     "hyper_es": "Despeje demoníaco"
     }
    ],
    "extra_teams": [],
@@ -31949,7 +32023,7 @@
    "game": "GO3",
    "saga": "GO",
    "version": "Adult",
-   "team": "Adult",
+   "team": "Sub Character",
    "position": "FW",
    "element": "wood",
    "ovr": 77,
@@ -31974,7 +32048,9 @@
      "type": "keshin",
      "name": "Kouun no Last Vega",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Lucky Dice",
+     "hyper_es": "Dados de la suerte"
     }
    ],
    "extra_teams": [],
@@ -32026,7 +32102,9 @@
      "type": "keshin",
      "name": "Fiery Hellhound Dire Wolf",
      "name_es": "Can infernal, Huargo",
-     "armed": true
+     "armed": true,
+     "hyper": "Burning Claws",
+     "hyper_es": "Garras llameantes"
     }
    ],
    "extra_teams": [],
@@ -32079,7 +32157,9 @@
      "type": "keshin",
      "name": "Fiery Hellhound Dire Wolf",
      "name_es": "Can infernal, Huargo",
-     "armed": true
+     "armed": true,
+     "hyper": "Burning Claws",
+     "hyper_es": "Garras llameantes"
     }
    ],
    "extra_teams": [],
@@ -32132,7 +32212,9 @@
      "type": "keshin",
      "name": "Yume Shinshi Dream Uncle",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Magician's Box",
+     "hyper_es": null
     }
    ],
    "extra_teams": [],
@@ -32550,7 +32632,9 @@
      "type": "keshin",
      "name": "Gigantic Garrison Gargantua",
      "name_es": "Gargantúa, gigante metálico",
-     "armed": true
+     "armed": true,
+     "hyper": "Giga Knuckle Sandwich",
+     "hyper_es": "Presa titánica"
     }
    ],
    "extra_teams": [],
@@ -33575,7 +33659,9 @@
      "type": "keshin",
      "name": "Winged Serpent Kukulkan",
      "name_es": "Serpiente emplumada, Kukulkán",
-     "armed": false
+     "armed": false,
+     "hyper": "Feather Duster",
+     "hyper_es": "Danza de plumas"
     }
    ],
    "extra_teams": [],
@@ -33764,7 +33850,9 @@
      "type": "keshin",
      "name": "Fumetsu no Gokuchou Oculot",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Inferno Fist",
+     "hyper_es": "Despeje demoníaco"
     }
    ],
    "extra_teams": [],
@@ -34203,59 +34291,6 @@
    ]
   },
   {
-   "id": "nike--go2--base",
-   "character_id": "nike",
-   "name": "Katya Felis",
-   "game": "GO2",
-   "saga": "GO",
-   "version": "base",
-   "team": "Ragnah",
-   "position": "MF",
-   "element": "fire",
-   "ovr": 76,
-   "category": "Advanced Player",
-   "tier": "B",
-   "source": "stats del juego",
-   "shooting": 74,
-   "control": 79,
-   "physical": 70,
-   "speed": 76,
-   "defense": 73,
-   "goalkeeping": 73,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/m/n/mnzp1cde1d8.png",
-   "zukan_id": "k/m/n/mnzp1cde1d8",
-   "zukan_no": 3647,
-   "is_version": false,
-   "description": "Uses agile movements to play cat and mouse with her foes.",
-   "description_es": "Le encanta jugar al gato y al ratón con sus contrincantes.",
-   "no": 3647,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Femme Fatale Sirena",
-     "name_es": "Sirena, la hechicera",
-     "armed": false
-    }
-   ],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 116,
-    "Dribbling": 170,
-    "Technique": 119,
-    "Block": 115,
-    "Speed": 123,
-    "Stamina": 97,
-    "Catch": 92
-   },
-   "techniques": [
-    "StormZone",
-    "Screwdriver",
-    "LoveArrow",
-    "EndlessSummer"
-   ]
-  },
-  {
    "id": "minaho-kazuto--go3--base",
    "character_id": "minaho-kazuto",
    "name": "Keenan Sharpe",
@@ -34624,7 +34659,9 @@
      "type": "keshin",
      "name": "Hunter of Glory Asura",
      "name_es": "Cazador de gloria, Asura",
-     "armed": false
+     "armed": false,
+     "hyper": "Firebird Flight",
+     "hyper_es": "Vuelo de fénix"
     }
    ],
    "extra_teams": [],
@@ -36279,7 +36316,9 @@
      "type": "keshin",
      "name": "Snow Nymph Chione",
      "name_es": "Chione, reina de la nieve",
-     "armed": false
+     "armed": false,
+     "hyper": "Icicle Road",
+     "hyper_es": "Lanza de carámbanos"
     }
    ],
    "extra_teams": [],
@@ -36378,7 +36417,9 @@
      "type": "keshin",
      "name": "Dicey Dicer Lot",
      "name_es": "Gran jugador Lot",
-     "armed": false
+     "armed": false,
+     "hyper": "Lucky Dice",
+     "hyper_es": "Dados de la suerte"
     }
    ],
    "extra_teams": [],
@@ -37715,7 +37756,9 @@
      "type": "keshin",
      "name": "Raven Wings Corvus",
      "name_es": "Cuervo alas negras",
-     "armed": true
+     "armed": true,
+     "hyper": "Roc and Roll",
+     "hyper_es": "Asalto aéreo"
     }
    ],
    "extra_teams": [],
@@ -38540,7 +38583,9 @@
      "type": "keshin",
      "name": "Ryuu Kishi Tedis",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Dragon Storm",
+     "hyper_es": "Lanza tornado"
     }
    ],
    "extra_teams": [],
@@ -39094,7 +39139,9 @@
      "type": "keshin",
      "name": "Hakugin no Joou Gerda",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Icicle Road",
+     "hyper_es": "Lanza de carámbanos"
     }
    ],
    "extra_teams": [],
@@ -39374,7 +39421,9 @@
      "type": "keshin",
      "name": "Sun Deity Apollo",
      "name_es": "Apolo, dios del sol",
-     "armed": false
+     "armed": false,
+     "hyper": "Solar Flare",
+     "hyper_es": "Llamarada solar"
     }
    ],
    "extra_teams": [],
@@ -39656,7 +39705,9 @@
      "type": "keshin",
      "name": "Sacred Serpent White Wyvern",
      "name_es": "Dragón Heráldico, Guiverno blanco",
-     "armed": true
+     "armed": true,
+     "hyper": "White Breath",
+     "hyper_es": "Aliento blanco"
     }
    ],
    "extra_teams": [],
@@ -39897,7 +39948,9 @@
      "type": "keshin",
      "name": "Standard-Bearer Brynhildr",
      "name_es": "Valquiria abanderada Brunilda",
-     "armed": false
+     "armed": false,
+     "hyper": "Valkyrie's Signal",
+     "hyper_es": "Estandarte de valquiria"
     }
    ],
    "extra_teams": [],
@@ -39996,7 +40049,9 @@
      "type": "keshin",
      "name": "Living Nightmare Phantasma",
      "name_es": "Garas, maestra de ilusiones",
-     "armed": false
+     "armed": false,
+     "hyper": "Black Briars",
+     "hyper_es": "Lazos de oscuridad"
     }
    ],
    "extra_teams": [],
@@ -41094,7 +41149,9 @@
      "type": "keshin",
      "name": "Faster Than Light Tachyon",
      "name_es": "Hipervelocista Tachión",
-     "armed": true
+     "armed": true,
+     "hyper": "Hyperdrive",
+     "hyper_es": "Carga hipersónica"
     }
    ],
    "extra_teams": [],
@@ -41191,7 +41248,9 @@
      "type": "keshin",
      "name": "Front-Line Fighter White Pawn",
      "name_es": "Peón blanco",
-     "armed": false
+     "armed": false,
+     "hyper": "Rat-a-Tat Pass",
+     "hyper_es": "Puño metralleta"
     }
    ],
    "extra_teams": [],
@@ -41243,7 +41302,9 @@
      "type": "keshin",
      "name": "Shadow Shooter Trigger",
      "name_es": "Tirador sombrío",
-     "armed": true
+     "armed": true,
+     "hyper": "Scattershot",
+     "hyper_es": "Ráfaga de tiros"
     }
    ],
    "extra_teams": [],
@@ -41616,7 +41677,9 @@
      "type": "keshin",
      "name": "Faster Than Light Tachyon",
      "name_es": "Hipervelocista Tachión",
-     "armed": false
+     "armed": false,
+     "hyper": "Hyperdrive",
+     "hyper_es": "Carga hipersónica"
     }
    ],
    "extra_teams": [],
@@ -42219,7 +42282,9 @@
      "type": "keshin",
      "name": "Leonine Warlord Khmet",
      "name_es": "Adalid leonino, Jmet",
-     "armed": false
+     "armed": false,
+     "hyper": "Back Slash",
+     "hyper_es": "Zarpazo real"
     }
    ],
    "extra_teams": [],
@@ -42595,7 +42660,9 @@
      "type": "keshin",
      "name": "Feathers of Flames Firebird",
      "name_es": "Plumas ardientes, Ave de fuego",
-     "armed": false
+     "armed": false,
+     "hyper": "Thunderclaw",
+     "hyper_es": "Alas de halcón"
     }
    ],
    "extra_teams": [],
@@ -42692,7 +42759,9 @@
      "type": "keshin",
      "name": "Divine Messenger White Bishop",
      "name_es": "Mensajero divino, Alfil blanco",
-     "armed": false
+     "armed": false,
+     "hyper": "Dark Space",
+     "hyper_es": "Espacio oscuro"
     }
    ],
    "extra_teams": [],
@@ -42880,7 +42949,9 @@
      "type": "keshin",
      "name": "Femme Fatale Sirena",
      "name_es": "Sirena, la hechicera",
-     "armed": false
+     "armed": false,
+     "hyper": "Black Briars",
+     "hyper_es": "Lazos de oscuridad"
     }
    ],
    "extra_teams": [],
@@ -42979,7 +43050,9 @@
      "type": "keshin",
      "name": "Aoki Ryuuku",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Roc and Roll",
+     "hyper_es": "Asalto aéreo"
     }
    ],
    "extra_teams": [],
@@ -43489,7 +43562,9 @@
      "type": "keshin",
      "name": "Warrior of the North Xuan-Wu",
      "name_es": "Guerrero del norte Xuan-Wu",
-     "armed": false
+     "armed": false,
+     "hyper": "Tortoise Shield",
+     "hyper_es": "Escudo caparazón"
     }
    ],
    "extra_teams": [],
@@ -43631,7 +43706,9 @@
      "type": "keshin",
      "name": "Kyou Senshi Diavel",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Dragon Storm",
+     "hyper_es": "Lanza tornado"
     }
    ],
    "extra_teams": [],
@@ -44425,7 +44502,9 @@
      "type": "keshin",
      "name": "Warrior of the West Baihu",
      "name_es": "Guerrero del oeste, Baihu",
-     "armed": true
+     "armed": true,
+     "hyper": "Forked Edge",
+     "hyper_es": "Relámpago bestial"
     }
    ],
    "extra_teams": [],
@@ -44851,7 +44930,9 @@
      "type": "keshin",
      "name": "Divine Messenger White Bishop",
      "name_es": "Mensajero divino, Alfil blanco",
-     "armed": false
+     "armed": false,
+     "hyper": "Dark Space",
+     "hyper_es": "Espacio oscuro"
     }
    ],
    "extra_teams": [],
@@ -46319,7 +46400,9 @@
      "type": "keshin",
      "name": "Dicey Dicer Lot",
      "name_es": "Gran jugador Lot",
-     "armed": true
+     "armed": true,
+     "hyper": "Lucky Dice",
+     "hyper_es": "Dados de la suerte"
     }
    ],
    "extra_teams": [],
@@ -47145,7 +47228,9 @@
      "type": "keshin",
      "name": "Warrior of the South Zhu Que",
      "name_es": "Guerrera del sur, Zhuque",
-     "armed": false
+     "armed": false,
+     "hyper": "Feather Duster",
+     "hyper_es": "Danza de plumas"
     }
    ],
    "extra_teams": [],
@@ -47333,7 +47418,9 @@
      "type": "keshin",
      "name": "Fire Jotun Surtr",
      "name_es": "Gigante de fuego, Surtur",
-     "armed": false
+     "armed": false,
+     "hyper": "Fireball Storm",
+     "hyper_es": "Tormenta de fuego"
     }
    ],
    "extra_teams": [],
@@ -48075,7 +48162,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow DF",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Guard",
+     "hyper_es": "Guardia sombría"
     }
    ],
    "extra_teams": [],
@@ -48128,7 +48217,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow DF",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Guard",
+     "hyper_es": "Guardia sombría"
     }
    ],
    "extra_teams": [],
@@ -49320,7 +49411,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow SH",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Kick",
+     "hyper_es": "Tiro sombrío"
     }
    ],
    "extra_teams": [],
@@ -49373,7 +49466,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow SH",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Kick",
+     "hyper_es": "Tiro sombrío"
     }
    ],
    "extra_teams": [],
@@ -50249,7 +50344,9 @@
      "type": "keshin",
      "name": "Lord of All Waters Neptune",
      "name_es": "Neptuno, señor de los mares",
-     "armed": false
+     "armed": false,
+     "hyper": "Trident Torpedo",
+     "hyper_es": "Torpedo tridente"
     }
    ],
    "extra_teams": [],
@@ -51169,7 +51266,9 @@
      "type": "keshin",
      "name": "Warrior of the East Qinglong",
      "name_es": "Guerrero del este, Qinglong",
-     "armed": true
+     "armed": true,
+     "hyper": "The Tempest",
+     "hyper_es": "La tempestad"
     }
    ],
    "extra_teams": [],
@@ -51674,7 +51773,9 @@
      "type": "keshin",
      "name": "Star-Crossed Soul The Lovers ♂",
      "name_es": "Almas encadenadas, Los enamorados ♂",
-     "armed": true
+     "armed": true,
+     "hyper": "Heart's Desire",
+     "hyper_es": "Ataque de corazón"
     }
    ],
    "extra_teams": [],
@@ -52963,7 +53064,13 @@
      "type": "keshin",
      "name": "Kouun no Last Vega",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Lucky Dice",
+     "hyper_es": "Dados de la suerte"
+    },
+    {
+     "type": "mixi",
+     "name": "Zanark"
     }
    ],
    "extra_teams": [],
@@ -53010,18 +53117,7 @@
    "description": "Miximaxed with Zanark, he guards the goal with a terrifying look on his face.",
    "description_es": "Tras el Miximax con Zanark, defiende la portería con fanatismo renovado.",
    "no": 3911,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Kouun no Last Vega",
-     "name_es": null,
-     "armed": true
-    },
-    {
-     "type": "mixi",
-     "name": "Zanark"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "Normal form",
@@ -53389,7 +53485,9 @@
      "type": "keshin",
      "name": "Front-Line Fighter Black Pawn",
      "name_es": "Peón negro",
-     "armed": false
+     "armed": false,
+     "hyper": "Rat-a-Tat Pass",
+     "hyper_es": "Puño metralleta"
     }
    ],
    "extra_teams": [],
@@ -53532,7 +53630,9 @@
      "type": "keshin",
      "name": "Juuou Leon",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Back Slash",
+     "hyper_es": "Zarpazo real"
     }
    ],
    "extra_teams": [],
@@ -53629,7 +53729,9 @@
      "type": "keshin",
      "name": "Jewelled Dragon Cychr",
      "name_es": "Dragón enjoyado Cychr",
-     "armed": false
+     "armed": false,
+     "hyper": "The Tempest",
+     "hyper_es": "La tempestad"
     }
    ],
    "extra_teams": [],
@@ -55181,7 +55283,9 @@
      "type": "keshin",
      "name": "Front-Line Fighter White Pawn",
      "name_es": "Peón blanco",
-     "armed": false
+     "armed": false,
+     "hyper": "Rat-a-Tat Pass",
+     "hyper_es": "Puño metralleta"
     }
    ],
    "extra_teams": [],
@@ -56097,7 +56201,9 @@
      "type": "keshin",
      "name": "Front-Line Fighter White Pawn",
      "name_es": "Peón blanco",
-     "armed": false
+     "armed": false,
+     "hyper": "Rat-a-Tat Pass",
+     "hyper_es": "Puño metralleta"
     }
    ],
    "extra_teams": [],
@@ -56285,7 +56391,9 @@
      "type": "keshin",
      "name": "Ruler of the Seven Seas Poseidon",
      "name_es": "Rey de los mares, Poseidón",
-     "armed": true
+     "armed": true,
+     "hyper": "Trident Torpedo",
+     "hyper_es": "Torpedo tridente"
     }
    ],
    "extra_teams": [],
@@ -56710,6 +56818,50 @@
    "techniques": [
     "FutureEye",
     "AirBullet"
+   ]
+  },
+  {
+   "id": "kosaka-motonari--go2--raimon",
+   "character_id": "kosaka-motonari",
+   "name": "Sven Johansson",
+   "game": "GO2",
+   "saga": "GO",
+   "version": "Raimon",
+   "team": "Raimon",
+   "position": "DF",
+   "element": "fire",
+   "ovr": 70,
+   "category": "Growing Player",
+   "tier": "B",
+   "source": "stats del juego",
+   "shooting": 66,
+   "control": 60,
+   "physical": 75,
+   "speed": 61,
+   "defense": 72,
+   "goalkeeping": 60,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/v/a/va_g0xltuh0.png",
+   "zukan_id": "k/v/a/va_g0xltuh0",
+   "zukan_no": 2453,
+   "is_version": true,
+   "description": "A sly boy. Likes football, but doesn't like to oppose people with power.",
+   "description_es": "Antiguo jugador del Raimon que valora la astucia más que la fuerza.",
+   "no": 5952,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 81,
+    "Dribbling": 75,
+    "Technique": 97,
+    "Block": 120,
+    "Speed": 90,
+    "Stamina": 112,
+    "Catch": 54
+   },
+   "techniques": [
+    "FutureEye",
+    "TheTower"
    ]
   },
   {
@@ -57881,7 +58033,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow SH",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Kick",
+     "hyper_es": "Tiro sombrío"
     }
    ],
    "extra_teams": [],
@@ -57934,7 +58088,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow SH",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Kick",
+     "hyper_es": "Tiro sombrío"
     }
    ],
    "extra_teams": [],
@@ -58033,7 +58189,9 @@
      "type": "keshin",
      "name": "Armoured Cavalry White Knight",
      "name_es": "Caballo blanco",
-     "armed": false
+     "armed": false,
+     "hyper": "Destrier Charge",
+     "hyper_es": "Carga al galope"
     }
    ],
    "extra_teams": [],
@@ -58267,7 +58425,9 @@
      "type": "keshin",
      "name": "Divine Messenger Black Bishop",
      "name_es": "Mensajero divino, Alfil negro",
-     "armed": false
+     "armed": false,
+     "hyper": "Dark Space",
+     "hyper_es": "Espacio oscuro"
     }
    ],
    "extra_teams": [],
@@ -59878,7 +60038,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow GK",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Hand",
+     "hyper_es": "Mano sombría"
     }
    ],
    "extra_teams": [],
@@ -59931,7 +60093,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow GK",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Hand",
+     "hyper_es": "Mano sombría"
     }
    ],
    "extra_teams": [],
@@ -60990,7 +61154,9 @@
      "type": "keshin",
      "name": "Heroic Swordsman Lancelot",
      "name_es": "Caballero Lancelot",
-     "armed": false
+     "armed": false,
+     "hyper": "Lancelot Lunge",
+     "hyper_es": "Estocada de Lancelot"
     }
    ],
    "extra_teams": [],
@@ -62920,7 +63086,9 @@
      "type": "keshin",
      "name": "Armoured Cavalry Black Knight",
      "name_es": "Caballo negro",
-     "armed": false
+     "armed": false,
+     "hyper": "Destrier Charge",
+     "hyper_es": "Carga al galope"
     }
    ],
    "extra_teams": [],
@@ -62972,7 +63140,9 @@
      "type": "keshin",
      "name": "Front-Line Fighter Black Pawn",
      "name_es": "Peón negro",
-     "armed": false
+     "armed": false,
+     "hyper": "Rat-a-Tat Pass",
+     "hyper_es": "Puño metralleta"
     }
    ],
    "extra_teams": [],
@@ -63109,12 +63279,7 @@
    "description": "Miximaxed with Zanark, he still retains his loyalty to Alpha.",
    "description_es": "Tras el Miximax con Zanark, sigue siendo completamente leal a Alfa.",
    "no": 3921,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Zanark"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "default",
@@ -63391,7 +63556,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow OF",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Sword",
+     "hyper_es": "Espada sombría"
     }
    ],
    "extra_teams": [],
@@ -63444,7 +63611,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow OF",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Sword",
+     "hyper_es": "Espada sombría"
     }
    ],
    "extra_teams": [],
@@ -64499,7 +64668,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow DF",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Guard",
+     "hyper_es": "Guardia sombría"
     }
    ],
    "extra_teams": [],
@@ -64552,7 +64723,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow DF",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Guard",
+     "hyper_es": "Guardia sombría"
     }
    ],
    "extra_teams": [],
@@ -64697,7 +64870,9 @@
      "type": "keshin",
      "name": "Heroic Swordsman Lancelot",
      "name_es": "Caballero Lancelot",
-     "armed": false
+     "armed": false,
+     "hyper": "Lancelot Lunge",
+     "hyper_es": "Estocada de Lancelot"
     }
    ],
    "extra_teams": [],
@@ -67213,7 +67388,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow OF",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Shadow Sword",
+     "hyper_es": "Espada sombría"
     }
    ],
    "extra_teams": [],
@@ -67266,7 +67443,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow OF",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Shadow Sword",
+     "hyper_es": "Espada sombría"
     }
    ],
    "extra_teams": [],
@@ -68004,7 +68183,9 @@
      "type": "keshin",
      "name": "Hypersonic Fighter Scramjet",
      "name_es": "Barius supersónico",
-     "armed": false
+     "armed": false,
+     "hyper": "Hyperdrive",
+     "hyper_es": "Carga hipersónica"
     }
    ],
    "extra_teams": [],
@@ -71102,7 +71283,12 @@
    "description": "A midfielder with quiet eyes that hide a fierce determination. A talented player who places his trust in Gamma.",
    "description_es": "Parece tranquilo, pero en el fondo es muy tenaz y un rival temible.",
    "no": 3520,
-   "specials": [],
+   "specials": [
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Normal form",
@@ -71147,12 +71333,7 @@
    "description": "Miximaxed with Zanark, his eyes burn with fighting spirit behind his bangs.",
    "description_es": "Tras su Miximax con Zanark, su mirada se ha vuelto amenazadora.",
    "no": 3915,
-   "specials": [
-    {
-     "type": "mixi",
-     "name": "Zanark"
-    }
-   ],
+   "specials": [],
    "extra_teams": [],
    "raw_stats": {
     "form": "Normal form",
@@ -72618,7 +72799,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow DF",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Guard",
+     "hyper_es": "Guardia sombría"
     }
    ],
    "extra_teams": [],
@@ -72671,7 +72854,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow DF",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Guard",
+     "hyper_es": "Guardia sombría"
     }
    ],
    "extra_teams": [],
@@ -73141,7 +73326,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow OF",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Sword",
+     "hyper_es": "Espada sombría"
     }
    ],
    "extra_teams": [],
@@ -73194,7 +73381,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow OF",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Sword",
+     "hyper_es": "Espada sombría"
     }
    ],
    "extra_teams": [],
@@ -73385,7 +73574,9 @@
      "type": "keshin",
      "name": "Master Conductor Maestro",
      "name_es": "Director Magister",
-     "armed": false
+     "armed": false,
+     "hyper": "Atomic Harmonic",
+     "hyper_es": "Movimientos armónicos"
     }
    ],
    "extra_teams": [],
@@ -74350,7 +74541,9 @@
      "type": "keshin",
      "name": "Brave Samurai Musashi",
      "name_es": "Bravo samurái Musashi",
-     "armed": false
+     "armed": false,
+     "hyper": "Bushin Blades",
+     "hyper_es": "Estocada samurai"
     }
    ],
    "extra_teams": [],
@@ -75861,7 +76054,9 @@
      "type": "keshin",
      "name": "Feathers of Flames Firebird",
      "name_es": "Plumas ardientes, Ave de fuego",
-     "armed": false
+     "armed": false,
+     "hyper": "Thunderclaw",
+     "hyper_es": "Alas de halcón"
     }
    ],
    "extra_teams": [],
@@ -78872,7 +79067,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow SH",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Kick",
+     "hyper_es": "Tiro sombrío"
     }
    ],
    "extra_teams": [],
@@ -78925,7 +79122,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow SH",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Kick",
+     "hyper_es": "Tiro sombrío"
     }
    ],
    "extra_teams": [],
@@ -79937,7 +80136,9 @@
      "type": "keshin",
      "name": "Watchtower Sentinel Black Rook",
      "name_es": "Centinela vigía, Torre negra",
-     "armed": false
+     "armed": false,
+     "hyper": "Titanic Slam",
+     "hyper_es": "Golpe titánico"
     }
    ],
    "extra_teams": [],
@@ -82646,6 +82847,51 @@
    ]
   },
   {
+   "id": "edomaru--go2--base",
+   "character_id": "edomaru",
+   "name": "Eoin Geary",
+   "game": "GO2",
+   "saga": "GO",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "FW",
+   "element": "air",
+   "ovr": 63,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 66,
+   "control": 60,
+   "physical": 54,
+   "speed": 67,
+   "defense": 53,
+   "goalkeeping": 59,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/s/-/s-wuktzx658.png",
+   "zukan_id": "k/s/-/s-wuktzx658",
+   "zukan_no": 3875,
+   "is_version": false,
+   "description": "This lover of football and sushi has a spicy hint of wasabi to his playing.",
+   "description_es": null,
+   "no": 3875,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 146,
+    "Dribbling": 107,
+    "Technique": 109,
+    "Block": 90,
+    "Speed": 133,
+    "Stamina": 88,
+    "Catch": 85
+   },
+   "techniques": [
+    "FlyingFish",
+    "KillerWhale",
+    "KouteiPenguin7"
+   ]
+  },
+  {
    "id": "atari--go1--base",
    "character_id": "atari",
    "name": "Esau Tariq",
@@ -84096,7 +84342,9 @@
      "type": "keshin",
      "name": "Capricious Trickster Serendipity",
      "name_es": "Serendipity, maestro de las trampas",
-     "armed": false
+     "armed": false,
+     "hyper": "Lucky Dice",
+     "hyper_es": "Dados de la suerte"
     }
    ],
    "extra_teams": [],
@@ -84193,7 +84441,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow GK",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Hand",
+     "hyper_es": "Mano sombría"
     }
    ],
    "extra_teams": [],
@@ -84246,7 +84496,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow GK",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Hand",
+     "hyper_es": "Mano sombría"
     }
    ],
    "extra_teams": [],
@@ -84311,6 +84563,116 @@
     "BunshinShoot",
     "BunshinFeint",
     "BackTornado"
+   ]
+  },
+  {
+   "id": "kay-rowe--go2--base",
+   "character_id": "kay-rowe",
+   "name": "Kay Zirro",
+   "game": "GO2",
+   "saga": "GO",
+   "version": "base",
+   "team": "Perfect Cascade",
+   "position": "MF",
+   "element": "fire",
+   "ovr": 63,
+   "category": "Common Player",
+   "tier": "B",
+   "source": "stats del juego",
+   "shooting": 59,
+   "control": 66,
+   "physical": 65,
+   "speed": 62,
+   "defense": 57,
+   "goalkeeping": 64,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/r/w/rwkm1wyfqsu.png",
+   "zukan_id": "k/r/w/rwkm1wyfqsu",
+   "zukan_no": 3585,
+   "is_version": false,
+   "description": "This creepy smiling midfielder will do literally anything for Schemer Guile.",
+   "description_es": "Este medio de sonrisa inquietante haría lo que fuera por Schemer Guile.",
+   "no": 3585,
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Jinkou Keshin Plasma Shadow OF",
+     "name_es": null,
+     "armed": true,
+     "hyper": "Shadow Sword",
+     "hyper_es": "Espada sombría"
+    }
+   ],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "Normal form",
+    "Kick": 81,
+    "Dribbling": 125,
+    "Technique": 104,
+    "Block": 90,
+    "Speed": 109,
+    "Stamina": 104,
+    "Catch": 90
+   },
+   "techniques": [
+    "MueiSouha",
+    "TwinMixer",
+    "BoundFlame",
+    "MadJuggler"
+   ]
+  },
+  {
+   "id": "kay-rowe--go2--perfect-cascade",
+   "character_id": "kay-rowe",
+   "name": "Kay Zirro",
+   "game": "GO2",
+   "saga": "GO",
+   "version": "Perfect Cascade",
+   "team": "Perfect Cascade",
+   "position": "MF",
+   "element": "fire",
+   "ovr": 63,
+   "category": "Common Player",
+   "tier": "B",
+   "source": "stats del juego",
+   "shooting": 59,
+   "control": 66,
+   "physical": 65,
+   "speed": 62,
+   "defense": 57,
+   "goalkeeping": 64,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/l/n/lnsscru2iou.png",
+   "zukan_id": "k/l/n/lnsscru2iou",
+   "zukan_no": 3928,
+   "is_version": true,
+   "description": "Schemer Guile's android has a power boosting Hyperdrive Mode.",
+   "description_es": "Este medio de sonrisa inquietante haría lo que fuera por Schemer Guile.",
+   "no": 3928,
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Jinkou Keshin Plasma Shadow OF",
+     "name_es": null,
+     "armed": true,
+     "hyper": "Shadow Sword",
+     "hyper_es": "Espada sombría"
+    }
+   ],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "Normal form",
+    "Kick": 81,
+    "Dribbling": 125,
+    "Technique": 104,
+    "Block": 90,
+    "Speed": 109,
+    "Stamina": 104,
+    "Catch": 90
+   },
+   "techniques": [
+    "MueiSouha",
+    "TwinMixer",
+    "BoundFlame",
+    "MadJuggler"
    ]
   },
   {
@@ -84441,7 +84803,9 @@
      "type": "keshin",
      "name": "Wise Monarch Black King",
      "name_es": "Sabio monarca, Rey negro",
-     "armed": false
+     "armed": false,
+     "hyper": "Crown Fire",
+     "hyper_es": "Corona de fuego"
     }
    ],
    "extra_teams": [],
@@ -85421,7 +85785,7 @@
    "game": "GO3",
    "saga": "GO",
    "version": "Adult",
-   "team": "Adult",
+   "team": "Sub Character",
    "position": "FW",
    "element": "wood",
    "ovr": 63,
@@ -86948,7 +87312,9 @@
      "type": "keshin",
      "name": "Front-Line Fighter Black Pawn",
      "name_es": "Peón negro",
-     "armed": false
+     "armed": false,
+     "hyper": "Rat-a-Tat Pass",
+     "hyper_es": "Puño metralleta"
     }
    ],
    "extra_teams": [],
@@ -86966,6 +87332,51 @@
     "PrestoTurn",
     "Zeroyon",
     "TrickBall"
+   ]
+  },
+  {
+   "id": "fork--go1--base",
+   "character_id": "fork",
+   "name": "Trey Prongs",
+   "game": "GO1",
+   "saga": "GO",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "DF",
+   "element": "air",
+   "ovr": 63,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 49,
+   "control": 54,
+   "physical": 67,
+   "speed": 47,
+   "defense": 68,
+   "goalkeeping": 54,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/p/w/pw2dcp_lgo8.png",
+   "zukan_id": "k/p/w/pw2dcp_lgo8",
+   "zukan_no": 3055,
+   "is_version": false,
+   "description": "Believes the fork is the ultimate piece of cutlery. Even uses it to eat soup.",
+   "description_es": null,
+   "no": 3055,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 72,
+    "Dribbling": 68,
+    "Technique": 124,
+    "Block": 157,
+    "Speed": 80,
+    "Stamina": 127,
+    "Catch": 56
+   },
+   "techniques": [
+    "Zeroyon",
+    "KillerWhale",
+    "KattobiDefense"
    ]
   },
   {
@@ -87501,7 +87912,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow SH",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Kick",
+     "hyper_es": "Tiro sombrío"
     }
    ],
    "extra_teams": [],
@@ -87554,7 +87967,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow SH",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Kick",
+     "hyper_es": "Tiro sombrío"
     }
    ],
    "extra_teams": [],
@@ -88213,6 +88628,52 @@
     "RyuuseiBlade",
     "FireTornado",
     "ShippuuDash"
+   ]
+  },
+  {
+   "id": "netan--go2--base",
+   "character_id": "netan",
+   "name": "Charlie",
+   "game": "GO2",
+   "saga": "GO",
+   "version": "base",
+   "team": "Protocol Omega",
+   "position": "MF",
+   "element": "fire",
+   "ovr": 62,
+   "category": "Common Player",
+   "tier": "B",
+   "source": "stats del juego",
+   "shooting": 62,
+   "control": 63,
+   "physical": 57,
+   "speed": 65,
+   "defense": 58,
+   "goalkeeping": 63,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/o/m/ombukupyaou.png",
+   "zukan_id": "k/o/m/ombukupyaou",
+   "zukan_no": 3501,
+   "is_version": false,
+   "description": "A swift, relentless hunter who never lets his target out of his sight.",
+   "description_es": "Un cazador veloz y despiadado que nunca pierde de vista a su rival.",
+   "no": 3501,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 90,
+    "Dribbling": 120,
+    "Technique": 95,
+    "Block": 94,
+    "Speed": 114,
+    "Stamina": 88,
+    "Catch": 88
+   },
+   "techniques": [
+    "SpinningUpper",
+    "HeadBazooka",
+    "MadJuggler",
+    "RocketHead"
    ]
   },
   {
@@ -89388,7 +89849,9 @@
      "type": "keshin",
      "name": "Watchtower Sentinel White Rook",
      "name_es": "Centinela vigía, Torre blanca",
-     "armed": false
+     "armed": false,
+     "hyper": "Titanic Slam",
+     "hyper_es": "Golpe titánico"
     }
    ],
    "extra_teams": [],
@@ -89453,51 +89916,6 @@
     "HeadBazooka",
     "HinawaBullet",
     "OgreBlade"
-   ]
-  },
-  {
-   "id": "edomaru--go2--base",
-   "character_id": "edomaru",
-   "name": "Eoin Geary",
-   "game": "GO2",
-   "saga": "GO",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "FW",
-   "element": "air",
-   "ovr": 62,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 65,
-   "control": 59,
-   "physical": 53,
-   "speed": 66,
-   "defense": 52,
-   "goalkeeping": 58,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/s/-/s-wuktzx658.png",
-   "zukan_id": "k/s/-/s-wuktzx658",
-   "zukan_no": 3875,
-   "is_version": false,
-   "description": "This lover of football and sushi has a spicy hint of wasabi to his playing.",
-   "description_es": null,
-   "no": 3875,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 146,
-    "Dribbling": 107,
-    "Technique": 109,
-    "Block": 90,
-    "Speed": 133,
-    "Stamina": 88,
-    "Catch": 85
-   },
-   "techniques": [
-    "FlyingFish",
-    "KillerWhale",
-    "KouteiPenguin7"
    ]
   },
   {
@@ -89624,7 +90042,9 @@
      "type": "keshin",
      "name": "Armoured Cavalry White Knight",
      "name_es": "Caballo blanco",
-     "armed": false
+     "armed": false,
+     "hyper": "Destrier Charge",
+     "hyper_es": "Carga al galope"
     }
    ],
    "extra_teams": [],
@@ -90744,112 +91164,6 @@
    ]
   },
   {
-   "id": "kay-rowe--go2--base",
-   "character_id": "kay-rowe",
-   "name": "Kay Zirro",
-   "game": "GO2",
-   "saga": "GO",
-   "version": "base",
-   "team": "Perfect Cascade",
-   "position": "MF",
-   "element": "fire",
-   "ovr": 62,
-   "category": "Common Player",
-   "tier": "B",
-   "source": "stats del juego",
-   "shooting": 58,
-   "control": 65,
-   "physical": 64,
-   "speed": 61,
-   "defense": 56,
-   "goalkeeping": 63,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/r/w/rwkm1wyfqsu.png",
-   "zukan_id": "k/r/w/rwkm1wyfqsu",
-   "zukan_no": 3585,
-   "is_version": false,
-   "description": "This creepy smiling midfielder will do literally anything for Schemer Guile.",
-   "description_es": "Este medio de sonrisa inquietante haría lo que fuera por Schemer Guile.",
-   "no": 3585,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Jinkou Keshin Plasma Shadow OF",
-     "name_es": null,
-     "armed": true
-    }
-   ],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "Normal form",
-    "Kick": 81,
-    "Dribbling": 125,
-    "Technique": 104,
-    "Block": 90,
-    "Speed": 109,
-    "Stamina": 104,
-    "Catch": 90
-   },
-   "techniques": [
-    "MueiSouha",
-    "TwinMixer",
-    "BoundFlame",
-    "MadJuggler"
-   ]
-  },
-  {
-   "id": "kay-rowe--go2--perfect-cascade",
-   "character_id": "kay-rowe",
-   "name": "Kay Zirro",
-   "game": "GO2",
-   "saga": "GO",
-   "version": "Perfect Cascade",
-   "team": "Perfect Cascade",
-   "position": "MF",
-   "element": "fire",
-   "ovr": 62,
-   "category": "Common Player",
-   "tier": "B",
-   "source": "stats del juego",
-   "shooting": 58,
-   "control": 65,
-   "physical": 64,
-   "speed": 61,
-   "defense": 56,
-   "goalkeeping": 63,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/l/n/lnsscru2iou.png",
-   "zukan_id": "k/l/n/lnsscru2iou",
-   "zukan_no": 3928,
-   "is_version": true,
-   "description": "Schemer Guile's android has a power boosting Hyperdrive Mode.",
-   "description_es": "Este medio de sonrisa inquietante haría lo que fuera por Schemer Guile.",
-   "no": 3928,
-   "specials": [
-    {
-     "type": "keshin",
-     "name": "Jinkou Keshin Plasma Shadow OF",
-     "name_es": null,
-     "armed": true
-    }
-   ],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "Normal form",
-    "Kick": 81,
-    "Dribbling": 125,
-    "Technique": 104,
-    "Block": 90,
-    "Speed": 109,
-    "Stamina": 104,
-    "Catch": 90
-   },
-   "techniques": [
-    "MueiSouha",
-    "TwinMixer",
-    "BoundFlame",
-    "MadJuggler"
-   ]
-  },
-  {
    "id": "kazama-remi--go1--base",
    "character_id": "kazama-remi",
    "name": "Keeley Hall",
@@ -91164,6 +91478,50 @@
    ]
   },
   {
+   "id": "mizumori-tatsuya--go2--raimon",
+   "character_id": "mizumori-tatsuya",
+   "name": "Lars Dijkstra",
+   "game": "GO2",
+   "saga": "GO",
+   "version": "Raimon",
+   "team": "Raimon",
+   "position": "MF",
+   "element": "air",
+   "ovr": 62,
+   "category": "Common Player",
+   "tier": "B",
+   "source": "stats del juego",
+   "shooting": 61,
+   "control": 68,
+   "physical": 56,
+   "speed": 54,
+   "defense": 62,
+   "goalkeeping": 60,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/m/j/mjj73x_f8uc.png",
+   "zukan_id": "k/m/j/mjj73x_f8uc",
+   "zukan_no": 2452,
+   "is_version": true,
+   "description": "A cool-headed player who only plays football for the sake of his grades.",
+   "description_es": "Aunque ya no está en el Raimon, su amor por el fútbol no ha disminuido.",
+   "no": 5951,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 81,
+    "Dribbling": 125,
+    "Technique": 102,
+    "Block": 98,
+    "Speed": 78,
+    "Stamina": 81,
+    "Catch": 71
+   },
+   "techniques": [
+    "BurningSummer",
+    "TwinMixer"
+   ]
+  },
+  {
    "id": "asatsuyu--ie1--base",
    "character_id": "asatsuyu",
    "name": "Lloyd Tabb",
@@ -91345,6 +91703,51 @@
     "Moonsault",
     "InazumaOtoshi",
     "ArmadilloCircus"
+   ]
+  },
+  {
+   "id": "mai--go2--base",
+   "character_id": "mai",
+   "name": "Maia",
+   "game": "GO2",
+   "saga": "GO",
+   "version": "base",
+   "team": "Sub Character",
+   "position": "DF",
+   "element": "wood",
+   "ovr": 62,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 48,
+   "control": 60,
+   "physical": 50,
+   "speed": 65,
+   "defense": 67,
+   "goalkeeping": 59,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/m/d/md4ccde2eus.png",
+   "zukan_id": "k/m/d/md4ccde2eus",
+   "zukan_no": 2821,
+   "is_version": false,
+   "description": "Tezcat's gentle sister, who was cast off into the sea to save her village.",
+   "description_es": "La hermana de Tezcat. Su pueblo la envió sola al mar para salvarse.",
+   "no": 2821,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 57,
+    "Dribbling": 81,
+    "Technique": 131,
+    "Block": 149,
+    "Speed": 123,
+    "Stamina": 78,
+    "Catch": 83
+   },
+   "techniques": [
+    "DeepMist",
+    "PrestoTurn",
+    "BlackAsh"
    ]
   },
   {
@@ -91786,7 +92189,9 @@
      "type": "keshin",
      "name": "Armoured Cavalry Black Knight",
      "name_es": "Caballo negro",
-     "armed": false
+     "armed": false,
+     "hyper": "Destrier Charge",
+     "hyper_es": "Carga al galope"
     }
    ],
    "extra_teams": [],
@@ -93902,51 +94307,6 @@
    ]
   },
   {
-   "id": "fork--go1--base",
-   "character_id": "fork",
-   "name": "Trey Prongs",
-   "game": "GO1",
-   "saga": "GO",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "DF",
-   "element": "air",
-   "ovr": 62,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 48,
-   "control": 53,
-   "physical": 66,
-   "speed": 46,
-   "defense": 67,
-   "goalkeeping": 53,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/p/w/pw2dcp_lgo8.png",
-   "zukan_id": "k/p/w/pw2dcp_lgo8",
-   "zukan_no": 3055,
-   "is_version": false,
-   "description": "Believes the fork is the ultimate piece of cutlery. Even uses it to eat soup.",
-   "description_es": null,
-   "no": 3055,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 72,
-    "Dribbling": 68,
-    "Technique": 124,
-    "Block": 157,
-    "Speed": 80,
-    "Stamina": 127,
-    "Catch": 56
-   },
-   "techniques": [
-    "Zeroyon",
-    "KillerWhale",
-    "KattobiDefense"
-   ]
-  },
-  {
    "id": "fujinami--ie1--base",
    "character_id": "fujinami",
    "name": "Tyson Moodey",
@@ -95447,52 +95807,6 @@
    ]
   },
   {
-   "id": "netan--go2--base",
-   "character_id": "netan",
-   "name": "Charlie",
-   "game": "GO2",
-   "saga": "GO",
-   "version": "base",
-   "team": "Protocol Omega",
-   "position": "MF",
-   "element": "fire",
-   "ovr": 61,
-   "category": "Common Player",
-   "tier": "B",
-   "source": "stats del juego",
-   "shooting": 61,
-   "control": 62,
-   "physical": 56,
-   "speed": 64,
-   "defense": 57,
-   "goalkeeping": 62,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/o/m/ombukupyaou.png",
-   "zukan_id": "k/o/m/ombukupyaou",
-   "zukan_no": 3501,
-   "is_version": false,
-   "description": "A swift, relentless hunter who never lets his target out of his sight.",
-   "description_es": "Un cazador veloz y despiadado que nunca pierde de vista a su rival.",
-   "no": 3501,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 90,
-    "Dribbling": 120,
-    "Technique": 95,
-    "Block": 94,
-    "Speed": 114,
-    "Stamina": 88,
-    "Catch": 88
-   },
-   "techniques": [
-    "SpinningUpper",
-    "HeadBazooka",
-    "MadJuggler",
-    "RocketHead"
-   ]
-  },
-  {
    "id": "takeba--ie2--base",
    "character_id": "takeba",
    "name": "Chip Stocks",
@@ -96641,7 +96955,7 @@
    "game": "GO3",
    "saga": "GO",
    "version": "Adult",
-   "team": "Adult",
+   "team": "Sub Character",
    "position": "DF",
    "element": "fire",
    "ovr": 61,
@@ -97808,7 +98122,9 @@
      "type": "keshin",
      "name": "Wise Monarch White King",
      "name_es": "Sabio monarca, Rey blanco",
-     "armed": false
+     "armed": false,
+     "hyper": "Crown Fire",
+     "hyper_es": "Corona de fuego"
     }
    ],
    "extra_teams": [],
@@ -98007,51 +98323,6 @@
     "KodaiNoKiba",
     "StrikeSamba",
     "OdinSword"
-   ]
-  },
-  {
-   "id": "mai--go2--base",
-   "character_id": "mai",
-   "name": "Maia",
-   "game": "GO2",
-   "saga": "GO",
-   "version": "base",
-   "team": "Sub Character",
-   "position": "DF",
-   "element": "wood",
-   "ovr": 61,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 47,
-   "control": 59,
-   "physical": 49,
-   "speed": 64,
-   "defense": 66,
-   "goalkeeping": 58,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/m/d/md4ccde2eus.png",
-   "zukan_id": "k/m/d/md4ccde2eus",
-   "zukan_no": 2821,
-   "is_version": false,
-   "description": "Tezcat's gentle sister, who was cast off into the sea to save her village.",
-   "description_es": "La hermana de Tezcat. Su pueblo la envió sola al mar para salvarse.",
-   "no": 2821,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 57,
-    "Dribbling": 81,
-    "Technique": 131,
-    "Block": 149,
-    "Speed": 123,
-    "Stamina": 78,
-    "Catch": 83
-   },
-   "techniques": [
-    "DeepMist",
-    "PrestoTurn",
-    "BlackAsh"
    ]
   },
   {
@@ -98445,7 +98716,9 @@
      "type": "keshin",
      "name": "Armoured Cavalry Black Knight",
      "name_es": "Caballo negro",
-     "armed": false
+     "armed": false,
+     "hyper": "Destrier Charge",
+     "hyper_es": "Carga al galope"
     }
    ],
    "extra_teams": [],
@@ -101865,7 +102138,9 @@
      "type": "keshin",
      "name": "Divine Messenger Black Bishop",
      "name_es": "Mensajero divino, Alfil negro",
-     "armed": false
+     "armed": false,
+     "hyper": "Dark Space",
+     "hyper_es": "Espacio oscuro"
     }
    ],
    "extra_teams": [],
@@ -103561,7 +103836,9 @@
      "type": "keshin",
      "name": "Gigantic Garrison Gargantua",
      "name_es": "Gargantúa, gigante metálico",
-     "armed": false
+     "armed": false,
+     "hyper": "Giga Knuckle Sandwich",
+     "hyper_es": "Presa titánica"
     }
    ],
    "extra_teams": [],
@@ -103750,7 +104027,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow DF",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Guard",
+     "hyper_es": "Guardia sombría"
     }
    ],
    "extra_teams": [],
@@ -103802,7 +104081,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow DF",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Guard",
+     "hyper_es": "Guardia sombría"
     }
    ],
    "extra_teams": [],
@@ -107546,7 +107827,9 @@
      "type": "keshin",
      "name": "Front-Line Fighter Black Pawn",
      "name_es": "Peón negro",
-     "armed": false
+     "armed": false,
+     "hyper": "Rat-a-Tat Pass",
+     "hyper_es": "Puño metralleta"
     }
    ],
    "extra_teams": [],
@@ -112754,7 +113037,9 @@
      "type": "keshin",
      "name": "Royal Enchantress Black Queen",
      "name_es": "Encantadora real, Reina negra",
-     "armed": false
+     "armed": false,
+     "hyper": "Checkmate",
+     "hyper_es": "Jaque mate"
     }
    ],
    "extra_teams": [],
@@ -119470,7 +119755,9 @@
      "type": "keshin",
      "name": "Doukeshi Phantam",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Magician's Box",
+     "hyper_es": null
     }
    ],
    "extra_teams": [],
@@ -119589,7 +119876,7 @@
    "game": "GO3",
    "saga": "GO",
    "version": "Adult (Nº 4144)",
-   "team": "Adult",
+   "team": "Sub Character",
    "position": "GK",
    "element": "wood",
    "ovr": 58,
@@ -120299,7 +120586,9 @@
      "type": "keshin",
      "name": "Defender of Earth Atlas",
      "name_es": "Protector de la Tierra, Atlas",
-     "armed": false
+     "armed": false,
+     "hyper": "Majin The Hand",
+     "hyper_es": "Mano mágica"
     }
    ],
    "extra_teams": [],
@@ -122494,7 +122783,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow OF",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Sword",
+     "hyper_es": "Espada sombría"
     }
    ],
    "extra_teams": [],
@@ -122546,7 +122837,9 @@
      "type": "keshin",
      "name": "Jinkou Keshin Plasma Shadow OF",
      "name_es": null,
-     "armed": true
+     "armed": true,
+     "hyper": "Shadow Sword",
+     "hyper_es": "Espada sombría"
     }
    ],
    "extra_teams": [],
@@ -133518,7 +133811,9 @@
      "type": "keshin",
      "name": "Hunter of Glory Asura",
      "name_es": "Cazador de gloria, Asura",
-     "armed": false
+     "armed": false,
+     "hyper": "Firebird Flight",
+     "hyper_es": "Vuelo de fénix"
     }
    ],
    "extra_teams": [],
@@ -137901,7 +138196,9 @@
      "type": "keshin",
      "name": "Divine Messenger Black Bishop",
      "name_es": "Mensajero divino, Alfil negro",
-     "armed": false
+     "armed": false,
+     "hyper": "Dark Space",
+     "hyper_es": "Espacio oscuro"
     }
    ],
    "extra_teams": [],
@@ -142158,7 +142455,9 @@
      "type": "keshin",
      "name": "Ryuu Kishi Tedis",
      "name_es": null,
-     "armed": false
+     "armed": false,
+     "hyper": "Dragon Storm",
+     "hyper_es": "Lanza tornado"
     }
    ],
    "extra_teams": [],
@@ -142806,7 +143105,9 @@
      "type": "keshin",
      "name": "Royal Enchantress Black Queen",
      "name_es": "Encantadora real, Reina negra",
-     "armed": false
+     "armed": false,
+     "hyper": "Checkmate",
+     "hyper_es": "Jaque mate"
     }
    ],
    "extra_teams": [],
@@ -145966,7 +146267,9 @@
      "type": "keshin",
      "name": "Duke of Doom Demogorgon",
      "name_es": "Duque destructor, Demogorgo",
-     "armed": false
+     "armed": false,
+     "hyper": "Inferno Fist",
+     "hyper_es": "Despeje demoníaco"
     }
    ],
    "extra_teams": [],
@@ -147254,7 +147557,9 @@
      "type": "keshin",
      "name": "Supreme War Chief Pendragon",
      "name_es": "Caballero misterioso, Pendragón",
-     "armed": false
+     "armed": false,
+     "hyper": "Dark Reaver",
+     "hyper_es": "Desolación eterna"
     }
    ],
    "extra_teams": [],
@@ -153203,7 +153508,9 @@
      "type": "keshin",
      "name": "Front-Line Fighter Black Pawn",
      "name_es": "Peón negro",
-     "armed": false
+     "armed": false,
+     "hyper": "Rat-a-Tat Pass",
+     "hyper_es": "Puño metralleta"
     }
    ],
    "extra_teams": [],
@@ -154260,7 +154567,9 @@
      "type": "keshin",
      "name": "Wise Monarch Black King",
      "name_es": "Sabio monarca, Rey negro",
-     "armed": false
+     "armed": false,
+     "hyper": "Crown Fire",
+     "hyper_es": "Corona de fuego"
     }
    ],
    "extra_teams": [],
@@ -160422,7 +160731,9 @@
      "type": "keshin",
      "name": "Raven Wings Corvus",
      "name_es": "Cuervo alas negras",
-     "armed": false
+     "armed": false,
+     "hyper": "Roc and Roll",
+     "hyper_es": "Asalto aéreo"
     }
    ],
    "extra_teams": [],
@@ -162667,7 +162978,9 @@
      "type": "keshin",
      "name": "Heroic Swordsman Lancelot",
      "name_es": "Caballero Lancelot",
-     "armed": false
+     "armed": false,
+     "hyper": "Lancelot Lunge",
+     "hyper_es": "Estocada de Lancelot"
     }
    ],
    "extra_teams": [],
@@ -166874,7 +167187,9 @@
      "type": "keshin",
      "name": "Winged Steed Pegasus",
      "name_es": "Pegaso alado",
-     "armed": false
+     "armed": false,
+     "hyper": "Pegasus Bolt",
+     "hyper_es": "Rayo celeste"
     }
    ],
    "extra_teams": [],
@@ -170590,7 +170905,9 @@
      "type": "keshin",
      "name": "Warrior of the West Baihu",
      "name_es": "Guerrero del oeste, Baihu",
-     "armed": false
+     "armed": false,
+     "hyper": "Forked Edge",
+     "hyper_es": "Relámpago bestial"
     }
    ],
    "extra_teams": [],
@@ -171009,7 +171326,9 @@
      "type": "keshin",
      "name": "Light-Speed Knight Sir Rabby",
      "name_es": "Caballero ultraveloz Robin",
-     "armed": false
+     "armed": false,
+     "hyper": "Full Moon Fever",
+     "hyper_es": "Fiebre de luna llena"
     }
    ],
    "extra_teams": [],
@@ -171516,7 +171835,9 @@
      "type": "keshin",
      "name": "Metal Mammoth Behemoth",
      "name_es": "Barron, coloso metálico",
-     "armed": false
+     "armed": false,
+     "hyper": "Titanic Shield",
+     "hyper_es": "Escudo guardián"
     }
    ],
    "extra_teams": [],
@@ -173404,7 +173725,9 @@
      "type": "keshin",
      "name": "Storm Bringer Raiden",
      "name_es": "Señor de las tormentas, Raiden",
-     "armed": false
+     "armed": false,
+     "hyper": "Tortoise Shield",
+     "hyper_es": "Escudo caparazón"
     }
    ],
    "extra_teams": [],
@@ -219826,10 +220149,6 @@
   }
  ],
  "teams": [
-  {
-   "name": "Adult",
-   "name_es": "Adultos"
-  },
   {
    "name": "Alia Academy",
    "name_es": "Academia Alia"

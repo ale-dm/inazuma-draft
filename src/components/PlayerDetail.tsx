@@ -87,6 +87,13 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
                     {sp.armed && <span className="ml-auto text-xs text-accent font-heading">{t('special.armed')}</span>}
                   </li>
                 ))}
+                {player.specials.filter(sp => sp.hyper).map((sp, i) => (
+                  <li key={`h${i}`} className="flex items-center gap-2 text-sm">
+                    <span aria-hidden>💥</span>
+                    <span className="text-[0.65rem] text-iz-muted">{t('special.hyper')}</span>
+                    <span className="font-heading font-bold text-hissatsu truncate">{(locale === 'es' && sp.hyper_es) || sp.hyper}</span>
+                  </li>
+                ))}
               </ul>
             </section>
           )}
