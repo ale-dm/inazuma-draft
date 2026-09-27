@@ -45,6 +45,7 @@ create table if not exists public.cards (
 alter table public.techniques add column if not exists name_es text;
 alter table public.characters add column if not exists zukan_no int;
 alter table public.cards add column if not exists zukan_no int;
+alter table public.cards add column if not exists description text;
 
 create index if not exists cards_character_idx on public.cards(character_id);
 create index if not exists cards_ovr_idx on public.cards(ovr desc);
@@ -53,6 +54,20 @@ create index if not exists cards_game_pos_idx on public.cards(game, position);
 create table if not exists public.teams (
   name        text primary key,              -- nombre del equipo en las cartas (inglés)
   name_es     text                           -- nombre en castellano (inazuma.fandom.com/es)
+);
+
+create table if not exists public.staff (      -- cuerpo técnico (zukan), de momento sin stats
+  zukan_no     int primary key,              -- nº oficial en zukan.inazuma.jp
+  name         text not null,
+  role         text not null,                -- Manager (entrenador) | Coach (segundo entrenador) | Coordinator (gerente)
+  team         text,
+  teams        jsonb,
+  games        jsonb,                        -- juegos de la saga principal
+  age          text,
+  element      text,
+  image_url    text,
+  description  text,                         -- descripción oficial de zukan (inglés)
+  wiki_page    text
 );
 
 create table if not exists public.card_techniques (
@@ -66,7 +81,7 @@ create table if not exists public.card_techniques (
 do $$
 declare t text;
 begin
-  foreach t in array array['characters','techniques','cards','card_techniques','teams'] loop
+  foreach t in array array['characters','techniques','cards','card_techniques','teams','staff'] loop
     execute format('alter table public.%I enable row level security', t);
     execute format('drop policy if exists "public read" on public.%I', t);
     execute format('create policy "public read" on public.%I for select using (true)', t);

@@ -1,4 +1,4 @@
-import type { Category, DraftPool, DraftPoolKey, Element, GameId, Player, Position, Technique } from '../types'
+import type { Category, DraftPool, DraftPoolKey, Element, GameId, Player, Position, Staff, StaffRole, Technique } from '../types'
 import { GAME_LABEL } from './games'
 
 /**
@@ -15,8 +15,8 @@ export const POSITIONS: Position[] = ['GK', 'DF', 'MF', 'FW']
 export const CATEGORIES: Category[] = ['Legendary Player', 'Top Player', 'Advanced Player', 'Growing Player', 'Common Player']
 export const ELEMENTS: Element[] = ['fire', 'wood', 'air', 'earth']
 
-/** Equipos que no forman un pool de draft (scouts, versiones adultas) */
-const NON_TEAMS = new Set(['Unaffiliated', 'Sub Character', 'Adult'])
+/** Equipos que no forman un pool de draft (scouts, versiones adultas, Mixi Max) */
+const NON_TEAMS = new Set(['Unaffiliated', 'Sub Character', 'Adult', 'Mixi Max'])
 const MIN_POOL_SIZE = 8
 
 interface CardRow {
@@ -40,6 +40,7 @@ interface CardRow {
   image_url: string | null
   is_version: boolean
   zukan_no?: number | null
+  description?: string | null
   card_techniques: { slot: number; technique_id: string }[]
 }
 
@@ -53,6 +54,17 @@ interface TechniqueRow {
   cost_game: string | null
 }
 
+interface StaffRow {
+  zukan_no: number
+  name: string
+  role: StaffRole
+  team: string | null
+  teams: string[] | null
+  games: GameId[] | null
+  image_url: string | null
+  description: string | null
+}
+
 interface TeamRow {
   name: string
   name_es: string | null
@@ -60,6 +72,7 @@ interface TeamRow {
 
 let players: Player[] = []
 let teamsEs = new Map<string, string>()
+let staff: Staff[] = []
 let techniquesById = new Map<string, Technique>()
 let byId = new Map<string, Player>()
 let pools: DraftPool[] = []
@@ -85,6 +98,12 @@ export async function loadCatalog(): Promise<void> {
   // la tabla de equipos es opcional: sin ella se muestran los nombres en inglés
   const teams = await rest<TeamRow[]>('teams?select=*').catch(() => [] as TeamRow[])
   teamsEs = new Map(teams.filter(t => t.name_es).map(t => [t.name, t.name_es as string]))
+  // cuerpo técnico: también opcional
+  const staffRows = await rest<StaffRow[]>('staff?select=*&order=zukan_no').catch(() => [] as StaffRow[])
+  staff = staffRows.map(s => ({
+    zukanNo: s.zukan_no, name: s.name, role: s.role, team: s.team, teams: s.teams ?? [], games: s.games ?? [],
+    image: s.image_url, description: s.description,
+  }))
   const rows: CardRow[] = []
   for (let offset = 0; ; offset += PAGE) {
     const page = await rest<CardRow[]>(`cards?select=${CARD_COLUMNS}&order=id&limit=${PAGE}&offset=${offset}`)
@@ -116,6 +135,7 @@ export async function loadCatalog(): Promise<void> {
       hissatsu: techs.map(t => t.name),
       isVersion: r.is_version,
       zukanNo: r.zukan_no ?? null,
+      description: r.description ?? null,
     }
   })
   byId = new Map(players.map(p => [p.id, p]))
@@ -147,6 +167,13 @@ export function teamName(team: string, locale: string): string {
   return (locale === 'es' && teamsEs.get(team)) || team
 }
 
+/** "Equipo · Versión" de una carta, sin repetir ("Mixi Max (Shawn)", no "Mixi Max · Mixi Max (Shawn)") */
+export function cardTeamLabel(p: Pick<Player, 'team' | 'version'>, locale: string): string {
+  if (p.version === 'base' || p.version === p.team) return teamName(p.team, locale)
+  if (p.version.startsWith(p.team)) return teamName(p.version, locale)
+  return `${teamName(p.team, locale)} · ${teamName(p.version, locale)}`
+}
+
 /**
  * Traduce una etiqueta que contiene un equipo: "Dark Emperors", "Dark Emperors (Inazuma Eleven 2)"
  * o "🇯🇵 Dark Emperors (…)". Lo que no sea un equipo conocido se deja igual.
@@ -158,6 +185,10 @@ export function teamLabel(label: string, locale: string): string {
   const sp = head.indexOf(' ')                                   // prefijo de bandera: "🇯🇵 Equipo"
   if (sp > 0 && teamsEs.has(head.slice(sp + 1))) return head.slice(0, sp + 1) + teamsEs.get(head.slice(sp + 1)) + suffix
   return label
+}
+
+export function getStaff(): Staff[] {
+  return staff
 }
 
 export function getAllPlayers(): Player[] {

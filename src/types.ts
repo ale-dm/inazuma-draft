@@ -56,6 +56,22 @@ export interface Player {
   isVersion: boolean
   /** Nº oficial de la ficha en zukan.inazuma.jp (null en versiones que solo están en la wiki) */
   zukanNo: number | null
+  /** Descripción oficial de zukan (inglés) */
+  description: string | null
+}
+
+export type StaffRole = 'Manager' | 'Coach' | 'Coordinator'
+
+/** Cuerpo técnico de zukan (entrenadores y gerentes), de momento sin stats */
+export interface Staff {
+  zukanNo: number
+  name: string
+  role: StaffRole
+  team: string | null
+  teams: string[]
+  games: GameId[]
+  image: string | null
+  description: string | null
 }
 
 export interface MatchEvent {

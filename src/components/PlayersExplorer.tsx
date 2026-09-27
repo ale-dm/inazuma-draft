@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
-import type { Category, Element, GameId, Player, Position } from '../types'
-import { CATEGORIES, ELEMENTS, GAMES, POSITIONS, getAllPlayers, teamName } from '../data/catalog'
+import type { Category, Element, GameId, Player, Position, Staff, StaffRole } from '../types'
+import { CATEGORIES, ELEMENTS, GAMES, POSITIONS, cardTeamLabel, getAllPlayers, getStaff, teamName } from '../data/catalog'
 import { GAME_LABEL } from '../data/games'
 import { useAppSettings } from '../context/AppSettings'
 import PlayerCard from './PlayerCard'
@@ -12,9 +12,11 @@ const PAGE = 60
 const SCOUT_TEAMS = new Set(['Unaffiliated', 'Sub Character'])
 const SCOUTS = '__scouts__'
 const POS_ORDER: Record<Position, number> = { GK: 0, DF: 1, MF: 2, FW: 3 }
+const MAIN_ORDER = (p: Player) => GAMES.indexOf(p.game)
+const STAFF_ROLES: StaffRole[] = ['Manager', 'Coach', 'Coordinator']
 
-type Tab = 'search' | 'games'
-type Sort = 'ovr' | 'name'
+type Tab = 'search' | 'games' | 'staff'
+type Sort = 'ovr' | 'name' | 'no'
 
 export default function PlayersExplorer() {
   const { t, locale } = useAppSettings()
@@ -29,21 +31,23 @@ export default function PlayersExplorer() {
           <div className="iz-panel-head flex flex-wrap items-center justify-between gap-2">
             <span>{t('players.title')} <span className="opacity-70 font-normal normal-case tracking-normal">· {all.length}</span></span>
             <div className="seg-group">
-              {(['search', 'games'] as const).map(k => (
+              {(['search', 'games', 'staff'] as const).map(k => (
                 <button
                   key={k}
                   type="button"
                   onClick={() => setTab(k)}
                   className={`seg-btn seg-btn--sm min-h-[2rem] px-3 ${tab === k ? 'seg-btn--on' : 'seg-btn--off'}`}
                 >
-                  {t(k === 'search' ? 'players.tab.search' : 'players.tab.games')}
+                  {t(`players.tab.${k}`)}
                 </button>
               ))}
             </div>
           </div>
         </div>
 
-        {tab === 'search' ? <SearchView players={all} onOpen={setDetail} /> : <GamesView players={all} onOpen={setDetail} />}
+        {tab === 'search' && <SearchView players={all} onOpen={setDetail} />}
+        {tab === 'games' && <GamesView players={all} onOpen={setDetail} />}
+        {tab === 'staff' && <StaffView />}
       </div>
       {detail && <PlayerDetail player={detail} onClose={() => setDetail(null)} onOpen={setDetail} />}
     </div>
@@ -73,6 +77,7 @@ function SearchView({ players, onOpen }: { players: Player[]; onOpen: (p: Player
       (!q || p.name.toLowerCase().includes(q) || String(p.zukanNo) === q || p.team.toLowerCase().includes(q) || teamName(p.team, locale).toLowerCase().includes(q)) &&
       (!pos || p.position === pos) && (!cat || p.category === cat) && (!game || p.game === game) &&
       (!element || p.element === element) && (!team || p.team === team) && p.ovr >= minOvr)
+    if (sort === 'no') return list.sort((a, b) => (a.zukanNo ?? Infinity) - (b.zukanNo ?? Infinity) || MAIN_ORDER(a) - MAIN_ORDER(b))
     return sort === 'ovr'
       ? list.sort((a, b) => b.ovr - a.ovr || a.name.localeCompare(b.name))
       : list.sort((a, b) => a.name.localeCompare(b.name) || b.ovr - a.ovr)
@@ -111,10 +116,10 @@ function SearchView({ players, onOpen }: { players: Player[]; onOpen: (p: Player
           <span className="font-bold text-iz-text">{t('players.results', { n: results.length })}</span>
           <span className="ml-auto">{t('players.sort')}:</span>
           <div className="seg-group">
-            {(['ovr', 'name'] as const).map(s => (
+            {(['ovr', 'name', 'no'] as const).map(s => (
               <button key={s} type="button" onClick={() => setSort(s)}
                 className={`seg-btn seg-btn--sm min-h-[1.75rem] px-2 ${sort === s ? 'seg-btn--on' : 'seg-btn--off'}`}>
-                {t(s === 'ovr' ? 'players.sort.ovr' : 'players.sort.name')}
+                {t(`players.sort.${s}`)}
               </button>
             ))}
           </div>
@@ -252,8 +257,11 @@ function PlayerGrid({ players, onOpen }: { players: Player[]; onOpen: (p: Player
       {players.map(p => (
         <div key={p.id} className="relative">
           <PlayerCard player={p} mode="classic" onClick={() => onOpen(p)}
-            teamLabel={`${teamName(p.team, locale)}${p.version !== 'base' && p.version !== p.team ? ` · ${teamName(p.version, locale)}` : ''} · ${p.game}`} />
+            teamLabel={`${cardTeamLabel(p, locale)} · ${p.game}`} />
           <span className={`cat-pill ${CATEGORY_CLASS[p.category]} absolute bottom-2 right-2`}>{p.category.replace(' Player', '')}</span>
+          {p.zukanNo != null && (
+            <span className="absolute top-2 right-2 text-[0.6rem] tabular-nums text-iz-muted font-heading" title="zukan.inazuma.jp">Nº {p.zukanNo}</span>
+          )}
         </div>
       ))}
     </div>
@@ -272,5 +280,75 @@ function Select<T extends string>({ label, value, onChange, options }: {
         {options.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
       </select>
     </label>
+  )
+}
+
+/** Cuerpo técnico de zukan: entrenadores, segundos entrenadores y gerentes (sin stats por ahora) */
+function StaffView() {
+  const { t, locale } = useAppSettings()
+  const all = getStaff()
+  const [query, setQuery] = useState('')
+  const [role, setRole] = useState<StaffRole | ''>('')
+  const [open, setOpen] = useState<number | null>(null)
+
+  const list = useMemo(() => {
+    const q = query.trim().toLowerCase()
+    return all.filter(s => (!role || s.role === role) && (!q || s.name.toLowerCase().includes(q) || String(s.zukanNo) === q
+      || s.teams.some(tm => tm.toLowerCase().includes(q) || teamName(tm, locale).toLowerCase().includes(q))))
+  }, [all, query, role, locale])
+
+  return (
+    <>
+      <div className="iz-panel mb-4">
+        <div className="iz-panel-body grid gap-3 sm:grid-cols-[1fr_auto] items-end">
+          <label>
+            <span className="iz-label">{t('players.tab.search')}</span>
+            <input className="iz-field" value={query} onChange={e => setQuery(e.target.value)} placeholder={t('staff.placeholder')} />
+          </label>
+          <div className="seg-group">
+            {(['', ...STAFF_ROLES] as const).map(r => (
+              <button key={r || 'all'} type="button" onClick={() => setRole(r)}
+                className={`seg-btn seg-btn--sm min-h-[2rem] px-2 ${role === r ? 'seg-btn--on' : 'seg-btn--off'}`}>
+                {r ? t(`staff.role.${r}`) : t('players.all')}
+              </button>
+            ))}
+          </div>
+        </div>
+        <p className="px-4 pb-3 text-xs text-iz-muted">{t('staff.note', { n: list.length })}</p>
+      </div>
+      {list.length === 0 ? (
+        <p className="text-center text-iz-muted py-10">{t('players.empty')}</p>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+          {list.map(s => <StaffTile key={s.zukanNo} staff={s} open={open === s.zukanNo} onToggle={() => setOpen(o => (o === s.zukanNo ? null : s.zukanNo))} />)}
+        </div>
+      )}
+    </>
+  )
+}
+
+function StaffTile({ staff: s, open, onToggle }: { staff: Staff; open: boolean; onToggle: () => void }) {
+  const { t, locale } = useAppSettings()
+  const [failed, setFailed] = useState(false)
+  return (
+    <button type="button" onClick={onToggle} className="team-tile flex items-start gap-3 text-left">
+      <div className="w-14 h-14 shrink-0 rounded-full overflow-hidden bg-iz-card grid place-items-center font-heading font-bold">
+        {s.image && !failed
+          ? <img src={s.image} alt="" loading="lazy" className="w-full h-full object-cover" onError={() => setFailed(true)} />
+          : s.name.split(' ').map(w => w[0]).join('').slice(0, 2)}
+      </div>
+      <div className="min-w-0 flex-1">
+        <div className="flex items-baseline gap-2">
+          <span className="font-heading font-bold text-iz-heading truncate">{s.name}</span>
+          <span className="ml-auto text-[0.6rem] tabular-nums text-iz-muted font-heading">Nº {s.zukanNo}</span>
+        </div>
+        <div className="text-xs text-accent font-heading">{t(`staff.role.${s.role}`)}</div>
+        <div className="text-xs text-iz-text truncate">{s.teams.map(tm => teamName(tm, locale)).join(' · ')}</div>
+        <div className="text-[0.65rem] text-iz-muted">{s.games.join(' · ')}</div>
+        {s.description && (
+          <p className={`text-xs text-iz-text italic mt-1 ${open ? '' : 'line-clamp-2'}`} lang="en">“{s.description}”</p>
+        )}
+      </div>
+    </button>
   )
 }

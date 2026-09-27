@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import type { Player } from '../types'
-import { getCharacterVersions, teamName, techniqueName } from '../data/catalog'
+import { cardTeamLabel, getCharacterVersions, teamName, techniqueName } from '../data/catalog'
 import { GAME_LABEL } from '../data/games'
 import { ALL_STAT_KEYS } from '../lib/power'
 import { useAppSettings } from '../context/AppSettings'
@@ -41,7 +41,7 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
                 {player.position} · <span className={`element-${player.element}`}>{t(`element.${player.element}`)}</span>
               </p>
               <p className="text-sm text-iz-text">
-                {teamName(player.team, locale)}{player.version !== 'base' && player.version !== player.team ? ` · ${teamName(player.version, locale)}` : ''}
+                {cardTeamLabel(player, locale)}
               </p>
               <p className="text-xs text-iz-muted">
                 {player.game} · {GAME_LABEL[player.game]}{player.zukanNo ? ` · Nº ${player.zukanNo}` : ''}
@@ -61,6 +61,13 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
               ))}
             </div>
           </section>
+
+          {player.description && (
+            <section>
+              <h3 className="font-heading text-sm font-bold text-accent mb-2">{t('players.description')}</h3>
+              <p className="text-sm text-iz-text italic" lang="en">“{player.description}”</p>
+            </section>
+          )}
 
           <section>
             <h3 className="font-heading text-sm font-bold text-accent mb-2">{t('players.techniques')}</h3>
