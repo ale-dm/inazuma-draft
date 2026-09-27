@@ -1357,6 +1357,7 @@ export const ALL_PLAYERS: Player[] = [
   p("Brighton Spark", "GO1", "Eternal Light", "wood", "MF", 100, 88, 109, 87, 81, 97, 105, []),
   p("Laban Lux", "GO1", "Eternal Light", "air", "MF", 100, 88, 109, 87, 81, 97, 105, []),
   p("Filbert Weissman", "GO1", "Eternal Light", "earth", "FW", 118, 81, 112, 83, 81, 89, 102, []),
+  p("Bailong", "GO1", "Eternal Light", "air", "FW", 121, 85, 115, 88, 85, 93, 105, []),
   // GO1 — Ancient Darkness
   p("Nero Night", "GO1", "Ancient Darkness", "fire", "GK", 84, 101, 92, 97, 104, 92, 86, []),
   p("Morris Moore", "GO1", "Ancient Darkness", "wood", "DF", 86, 102, 88, 97, 88, 111, 91, []),
@@ -2048,6 +2049,7 @@ export const ALL_PLAYERS: Player[] = [
   p("Hairy", "GO2", "The Sherwinds", "wood", "MF", 101, 89, 109, 88, 81, 97, 107, []),
   p("Spikey", "GO2", "The Sherwinds", "wood", "MF", 100, 88, 109, 87, 81, 97, 105, []),
   p("Creepy", "GO2", "The Sherwinds", "wood", "FW", 118, 81, 112, 83, 81, 89, 102, []),
+  p("Arion Sherwind", "GO2", "The Sherwinds", "air", "MF", 100, 85, 115, 88, 85, 104, 116, []),
   p("Vladimir Blade", "GO2", "The Sherwinds", "fire", "FW", 121, 85, 115, 88, 85, 93, 105, []),
   // GO2 — The Despairadoes
   p("Lotus", "GO2", "The Despairadoes", "earth", "GK", 84, 101, 92, 97, 104, 92, 86, []),
@@ -2289,6 +2291,9 @@ export const ALL_PLAYERS: Player[] = [
   p("Keenan Sharpe", "GO3", "Earth Eleven", "earth", "DF", 84, 107, 87, 104, 89, 119, 85, []),
   p("Trina Verdure", "GO3", "Earth Eleven", "wood", "DF", 87, 104, 91, 99, 89, 112, 92, []),
   p("Zack Avalon", "GO3", "Earth Eleven", "wood", "FW", 119, 84, 114, 85, 84, 92, 104, []),
+  p("Arion Sherwind", "GO3", "Earth Eleven", "air", "MF", 100, 85, 115, 88, 85, 104, 116, []),
+  p("Victor Blade", "GO3", "Earth Eleven", "fire", "FW", 121, 85, 115, 88, 85, 93, 105, []),
+  p("Riccardo Di Rigo", "GO3", "Earth Eleven", "wood", "MF", 104, 92, 112, 91, 85, 100, 109, []),
   // GO3 — Ixar Fleet
   p("Phobos Quasar", "GO3", "Ixar Fleet", "earth", "GK", 87, 104, 95, 96, 109, 94, 89, []),
   p("Aegir Cepheid", "GO3", "Ixar Fleet", "air", "DF", 82, 106, 85, 102, 87, 118, 83, []),
