@@ -78,10 +78,18 @@ export default function Draft({ mode, seed, onCopySeed, onComplete }: Props) {
     if (isReroll) setRerollsLeft(r => r - 1)
 
     setTimeout(() => {
+      // Seuls les pools avec au moins un joueur plaçable (sinon soft-lock sans relance)
+      const draftedIds = new Set(drafted.map(d => d.id))
+      const pickable = pools.filter(pool =>
+        getTeamRoster(pool).some(p =>
+          !draftedIds.has(p.id) && compatibleEmptySlots(lineup, p, formationId).length > 0,
+        ),
+      )
+      const candidates = pickable.length > 0 ? pickable : pools
       let pool: DraftPool
       do {
-        pool = pools[Math.floor(random() * pools.length)]
-      } while (draftPoolKey(pool) === lastPoolKey && pools.length > 1)
+        pool = candidates[Math.floor(random() * candidates.length)]
+      } while (draftPoolKey(pool) === lastPoolKey && candidates.length > 1)
 
       setRolledPool(pool)
       setRolledRoster(getTeamRoster(pool))
