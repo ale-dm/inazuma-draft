@@ -30,6 +30,25 @@ const META: Partial<Record<DraftPoolKey, { country: string; flag: string }>> = {
   'IE2:Epsilon': { country: 'Japon', flag: '🇯🇵' },
 }
 
+const COUNTRY_I18N: Record<string, { en: string; es: string }> = {
+  Allemagne: { en: 'Germany', es: 'Alemania' },
+  Argentine: { en: 'Argentina', es: 'Argentina' },
+  Brésil: { en: 'Brazil', es: 'Brasil' },
+  Espagne: { en: 'Spain', es: 'España' },
+  France: { en: 'France', es: 'Francia' },
+  Grèce: { en: 'Greece', es: 'Grecia' },
+  Italie: { en: 'Italy', es: 'Italia' },
+  Japon: { en: 'Japan', es: 'Japón' },
+  Suisse: { en: 'Switzerland', es: 'Suiza' },
+  USA: { en: 'USA', es: 'EE. UU.' },
+}
+
+/** Nom de pays affiché selon la langue (les clés META sont en français) */
+export function localizeCountry(country: string, locale: 'fr' | 'en' | 'es'): string {
+  if (locale === 'fr') return country
+  return COUNTRY_I18N[country]?.[locale] ?? country
+}
+
 export function makeTournamentOpponent(key: DraftPoolKey): TournamentOpponent | null {
   const pool = parseDraftPoolKey(key)
   const roster = getPlayersForPool(pool)

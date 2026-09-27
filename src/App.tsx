@@ -57,7 +57,7 @@ export default function App() {
     setDrafted([])
     setLineup({})
     setFormationId(DEFAULT_FORMATION)
-    setRunSeed(readSeedFromLocation())
+    setRunSeed(null)
     setWon(false)
     const url = new URL(window.location.href)
     url.searchParams.delete('seed')

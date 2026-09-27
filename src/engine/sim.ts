@@ -93,13 +93,13 @@ function simulatePenalties(
     if (b.scored) p2++
   }
 
-  while (p1 === p2) {
+  for (let round = 5; p1 === p2; round++) {
     kick++
-    const a = takePenalty(s1[(kick / 2) % s1.length], gk2, 0, kick)
+    const a = takePenalty(s1[round % s1.length], gk2, 0, kick)
     events.push(a.event)
     if (a.scored) p1++
     kick++
-    const b = takePenalty(s2[(kick / 2) % s2.length], gk1, 1, kick)
+    const b = takePenalty(s2[round % s2.length], gk1, 1, kick)
     events.push(b.event)
     if (b.scored) p2++
   }
@@ -127,8 +127,8 @@ export function simulateMatch(
   let goals1 = Math.round(eg1 + noise())
   let goals2 = Math.round(eg2 + noise())
 
-  goals1 = clampGoals(goals1, ratio, true)
-  goals2 = clampGoals(goals2, ratio, false)
+  goals1 = clampGoals(goals1, ratio, ratio >= 0.5)
+  goals2 = clampGoals(goals2, ratio, ratio < 0.5)
 
   if (!options?.decisive && goals1 === 0 && goals2 === 0) {
     if (ratio >= 0.52) goals1 = 1
@@ -137,9 +137,9 @@ export function simulateMatch(
     else goals2 = 1
   }
 
-  const allMinutes = Array.from({ length: goals1 + goals2 }, () => Math.floor(random() * 88) + 2).sort((a, b) => a - b)
-  const mins1 = allMinutes.filter((_, i) => i < goals1)
-  const mins2 = allMinutes.filter((_, i) => i >= goals1)
+  const allMinutes = Array.from({ length: goals1 + goals2 }, () => Math.floor(random() * 88) + 2)
+  const mins1 = allMinutes.slice(0, goals1)
+  const mins2 = allMinutes.slice(goals1)
 
   const events = [
     ...generateGoalEvents(0, team1, goals1, mins1),

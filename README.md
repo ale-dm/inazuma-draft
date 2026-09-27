@@ -66,7 +66,7 @@ Déploiement live : [ffi-6-0.vercel.app](https://ffi-6-0.vercel.app)
 - Rosters canon : `src/data/canonical-rosters.ts`
 - Dédup automatique des doublons zukan (même perso listé plusieurs fois dans un pool)
 - Portraits joueurs (zukan + fallbacks)
-- **FR / EN** · thème clair / sombre
+- **FR / EN / ES** · thème clair / sombre
 
 ### Scripts data (dossier `scripts/`, gitignored)
 
