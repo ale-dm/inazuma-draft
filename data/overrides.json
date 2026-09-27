@@ -171,5 +171,16 @@
       "no": 1922,
       "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/09/%28O%29_Nakata_Hidetoshi_sprite.png/revision/latest?cb=20230826094456"
     }
-  ]
+  ],
+  "zukan_wiki_pages": {
+    "_doc": "Nombre de zukan (o '#Nº' si el nombre se repite en zukan) → ficha de la wiki inglesa, para los que no cruzan solos.",
+    "Dante Diavolo": "Dante Diavlo",
+    "Bill Steakspear": "Atsuta Nao",
+    "Fred Ferrell": "Momotarou",
+    "Seraph Sharpe": "Minaho Sakyou",
+    "Miriam Sharpe": "Minaho Mitsuyo",
+    "#3496": "Kimoro",
+    "#301": "Sakamoto (scout character)",
+    "#2948": "Goudatsu"
+  }
 }

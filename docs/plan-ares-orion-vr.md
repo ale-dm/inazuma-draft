@@ -62,3 +62,8 @@ En la galería de sprites de Victory Road de la wiki española (sección «Saga 
 - Zaizen Touko: Raimon Equipo B (Saga de Mark)
 - Zaizen Touko: Earth Eleven (Saga de Mark)
 - Zaizen Touko: Adulta (Saga de Arion)
+
+## Equipos de Victory Road detectados (para esta fase)
+
+- **Nuevo Inazuma Japón / Inazuma Japón Alterno** (sprites "(IJA)" de la wiki española): Arion, Victor, JP, Riccardo, Fei, Aitor, Gabi, Goldie, Bai Long. Es de Victory Road, no de GO2 ni el Earth Eleven.
+- **Inazuma Best Eleven** (sprites "(IBE)").

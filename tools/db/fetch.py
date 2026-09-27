@@ -21,6 +21,7 @@ import urllib.request
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', '..'))
 CACHE = os.path.join(ROOT, 'tools', '.cache', 'db')
 ZUKAN_DIR = os.path.join(ROOT, 'data', 'zukan')          # copia de zukan.inazuma.jp: va en el repo (no se pierde)
+OVERRIDES = json.load(open(os.path.join(ROOT, 'data', 'overrides.json'), encoding='utf-8'))
 ZUKAN_BASE = 'https://zukan.inazuma.jp'
 WIKI_API = 'https://inazuma-eleven.fandom.com/api.php'
 WIKI_ES_API = 'https://inazuma.fandom.com/es/api.php'
@@ -326,10 +327,17 @@ def main():
     log('3/8 nombres de zukan → fichas de la wiki')
     names = [z['name'] for z in zukan if z['role'].startswith('Player')]
     titles = cached('redirects.json', lambda: resolve_titles(names))
+    alias = {k: v for k, v in OVERRIDES.get('zukan_wiki_pages', {}).items() if not k.startswith('_')}
+    titles.update({k: v for k, v in alias.items() if not k.startswith('#')})                              # a mano: nombres de zukan que no cruzan (Dante Diavolo → Dante Diavlo)
 
     log('4/8 fichas de jugadores (Parameters + infobox)')
-    pages = sorted({t for t in titles.values() if t} | set(WIKI_ONLY))
+    pages = sorted({t for t in titles.values() if t} | set(WIKI_ONLY) | set(alias.values()))
     params = cached('params.json', lambda: page_contents(pages, lambda c: {'params': parameters_section(c), 'info': infobox(c)}))
+    missing = [t for t in pages if t not in params]
+    if missing:                                       # incremental: fichas nuevas (alias añadidos a mano)
+        params.update(page_contents(missing, lambda c: {'params': parameters_section(c), 'info': infobox(c)}))
+        with open(os.path.join(CACHE, 'params.json'), 'w', encoding='utf-8') as f:
+            json.dump(params, f, ensure_ascii=False)
 
     log('5/8 técnicas (ficha de cada técnica)')
     used = set()
@@ -426,8 +434,8 @@ def main():
             cont = d['continue']
             time.sleep(0.2)
 
-    def es_descriptions():
-        pages_ = sorted({t for t in titles.values() if t} | set(WIKI_ONLY) | set(load_fusions()))
+    def es_descriptions(only=None):
+        pages_ = sorted(only or ({t for t in titles.values() if t} | set(WIKI_ONLY) | set(load_fusions())))
         es = {}
         for i in range(0, len(pages_), 50):                  # ficha inglesa → ficha española (enlace interlingüístico)
             pg_, red = query_all(WIKI_API, titles='|'.join(pages_[i:i + 50]), prop='langlinks', lllang='es', lllimit=500, redirects=1)
@@ -438,7 +446,7 @@ def main():
         # sin enlace: probar con el nombre inglés de zukan (la wiki española usa los nombres del doblaje: Axel Blaze…)
         name_of = {}
         for n, t in titles.items():
-            if t and t not in es:
+            if t and t not in es and t in pages_:
                 name_of.setdefault(t, n)
         cand = sorted(set(name_of.values()))
         for i in range(0, len(cand), 50):
@@ -481,7 +489,12 @@ def main():
             if i % 400 == 0:
                 log(f'  descripciones {i}/{len(es_titles)}')
         return out
-    cached('es_descriptions.json', es_descriptions)
+    es_cache = cached('es_descriptions.json', es_descriptions)
+    new = sorted(set(alias.values()) - set(es_cache))
+    if new:                                           # incremental: solo las fichas de los alias
+        es_cache.update(es_descriptions(new))
+        with open(os.path.join(CACHE, 'es_descriptions.json'), 'w', encoding='utf-8') as f:
+            json.dump(es_cache, f, ensure_ascii=False)
 
     log('6e sprites de Victory Road por versión (wiki española: <Personaje>/Diseño en los Videojuegos → Saga de Destin)')
     def es_sprites():
