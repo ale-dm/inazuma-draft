@@ -1910,7 +1910,8 @@
    },
    "techniques": [
     "GammaStrike",
-    "AllDelete"
+    "AllDelete",
+    "OmegaAttack"
    ]
   },
   {
@@ -63147,6 +63148,7 @@
     "Catch": 72
    },
    "techniques": [
+    "GaussShot",
     "PlasmaBall",
     "SpringArrow"
    ]
@@ -185595,9 +185597,12 @@
     "IE3": 37,
     "IE2": 57
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "A giant fist of justice protects the goal by punching away incoming shots.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/h/n/hn2hdobqqwe.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "TheEarth",
@@ -185630,9 +185635,12 @@
    "costs": {
     "IE3": 42
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Focus power into a fist and swing it down angrily with the Majin's support to put a stop to incoming shots.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/-/n/-na09vya4hk.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "IjigenTheHand",
@@ -185767,9 +185775,11 @@
     "GO3": 70,
     "GO2": 50
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Stir up a strong cyclone and dive in, using the air tunnel to go right past the opponent.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/t/0/t0e7_9rco6c.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "FireTornado",
@@ -185788,9 +185798,11 @@
     "GO1": 40,
     "IE1": 35
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Unleash a fiery shot from midair. The deadly ball enveloped in flames pierces straight to the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/a/d/adammie74y0.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "HeatTackle",
@@ -185846,9 +185858,11 @@
     "IE2": 44,
     "IE1": 45
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Use a large player's body as a springboard to shoot a high ball down like lightning from the sky.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/l/a/lasyyqxjghs.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "BakunetsuStorm",
@@ -185866,9 +185880,11 @@
     "IE2": 62,
     "GO1": 75
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Passion ignites, exploding into a scorching storm that burns all in its path.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/b/c/bcvrcipsube.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "BakunetsuScrew",
@@ -185884,9 +185900,11 @@
     "IE3": 52,
     "GO2": 50
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Shoot the ball at the goal while surrounded by whirling flames that burn everything up instantly.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/1/l/1lkwbkiyo80.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "GrandFire",
@@ -185958,9 +185976,11 @@
     "GO2": 60,
     "GO1": 70
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "A special move that utilizes the flames blazing within. Synergy with the red-hot power of friendship fuels it further.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/x/ixnv-sxpcpk.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "TsubameGaeshi",
@@ -185975,9 +185995,11 @@
     "GO3": 40,
     "GO2": 36
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Dive down sharply from mid-air to kick the ball in a curved arch.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/g/c/gcg8mzjrgzm.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "AtomicFlare",
@@ -186225,9 +186247,11 @@
     "GO1": 32,
     "IE1": 18
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Buffet the opposition into disarray with speed like the wind! Can only be mastered by lightweight players.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/q/k/qkisglqraie.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "BunshinFeint",
@@ -186243,9 +186267,11 @@
     "IE2": 36,
     "IE1": 37
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "A high level ninja move that confuses the opponent by splitting into three fast-moving ninja clones.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/w/l/wlrzvwfjvc0.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "HonooNoKazamidori",
@@ -186261,9 +186287,11 @@
     "IE2": 71,
     "IE1": 55
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Two players kick the ball with full force and make it fly towards the goal as if with fiery wings.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/y/xyiltu-e4ls.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "DarkPhoenix",
@@ -186300,9 +186328,11 @@
     "GO2": 36,
     "GO1": 36
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "A wild dance too fast for the naked eye to perceive! Trap the opposition in a violent vortex.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/6/r/6ry_osrtnxu.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "TheHurricane",
@@ -186334,9 +186364,11 @@
    "costs": {
     "IE3": 49
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "New version of Inazuma Drop where two players work together to execute a whirlwind bicycle kick.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/q/l/qlocsanbkj8.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "AirBullet",
@@ -186384,7 +186416,7 @@
   {
    "id": "JigokuGuruma",
    "name": "Rolling Hell",
-   "name_es": null,
+   "name_es": "Rueda infernal",
    "name_jp": "*じごくぐるま",
    "type": "Dribble",
    "element": "earth",
@@ -186395,9 +186427,11 @@
     "IE2": 38,
     "IE1": 40
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Two players form a whirling wheel and slam into opponents, sending them flying.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/y/q/yqsf7pnpqe0.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "DragonCrash",
@@ -186510,9 +186544,11 @@
     "GO2": 55,
     "GO1": 60
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Behold the sharpness of an ancient blade! A shot that cuts straight through the pitch.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/4/x4fuj8ad0de.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "NoboriRyuu",
@@ -186528,9 +186564,11 @@
     "GO2": 40,
     "GO1": 45
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Summon a red dragon from the ground to break through the opponent's defences.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/1/x/1x9y6ozfnvu.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "DragonBlaster",
@@ -186565,9 +186603,11 @@
     "IE2": 15,
     "IE1": 15
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Ride the ball at breakneck speed, dazzling defenders with acrobatic flair.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/g/a/gatdkcotn7c.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "SuiseiShoot",
@@ -186583,9 +186623,11 @@
     "IE2": 36,
     "IE1": 25
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Rain the ball down like a blazing comet, leaving a trail of light in its wake.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/3/x3v4k7oqtsu.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "MonkeyTurn",
@@ -186643,9 +186685,11 @@
     "IE2": 42,
     "IE1": 40
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Grab a teammate to use as a bat in an ultimate show of mutual trust.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/y/t/ytwjfeajwtm.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "RollingKick",
@@ -186758,9 +186802,11 @@
     "GO3": 30,
     "GO2": 50
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Use high voltage to surround the ball with plasma before shooting it low at the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/1/x1ylvsmow7k.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "OdinSword",
@@ -186879,9 +186925,11 @@
     "IE2": 17,
     "IE1": 22
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Spin the ball to generate a cyclone that kicks up dirt to blind the opponent.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/h/m/hm5nr0mr3rs.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "KungFuHead",
@@ -186917,9 +186965,11 @@
     "IE2": 51,
     "IE1": 40
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "A barely legal move that uses ninja clones to kick the ball from three different angles.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/g/w/gwhs0z7ylbm.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "KungFuAttack",
@@ -186976,9 +187026,11 @@
     "IE2": 23,
     "IE1": 25
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Do a bizarre dance with pattering feet to stir up a cloud of dust that blocks visibility.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/k/m/kms5thgacxm.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "FakeBall",
@@ -187092,9 +187144,11 @@
     "IE2": 17,
     "IE1": 30
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Strike from behind with a sneaky knee, then snatch the ball while they stagger.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/p/a/pam__aouxks.jpg",
+   "zukan_types": [
+    "Defence"
+   ]
   },
   {
    "id": "Zanzou",
@@ -187110,9 +187164,11 @@
     "IE2": 25,
     "IE1": 30
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Move so fast the eye can't keep up. Dodge rivals with this ninja technique.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/b/h/bh-ttlzyeiu.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "KageNui",
@@ -187128,9 +187184,11 @@
     "IE2": 32,
     "IE1": 38
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Create and control a giant hand shadow to catch the opponent's shadow by weaving through the ground.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/5/k/5kpihbjueq8.jpg",
+   "zukan_types": [
+    "Defence"
+   ]
   },
   {
    "id": "KagomeKagome",
@@ -187245,9 +187303,11 @@
     "IE2": 17,
     "IE1": 20
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Envelop your foe in a curse to slow them, then dash right past.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/o/o/ooiqqdhksx8.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "GodBreak",
@@ -187602,9 +187662,12 @@
     "IE2": 57,
     "IE1": 55
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Three players raise an impregnable infinite wall together in front of the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/9/e/9ebns-ygwxc.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "DrillSmasher",
@@ -187858,9 +187921,11 @@
     "IE2": 24,
     "IE1": 30
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Deliver a series of frenzied kicks to the ball before unleashing a super shot from mid-air.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/y/8/y8hqirwx900.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "Kamaitachi",
@@ -187914,9 +187979,11 @@
     "IE3": 43,
     "IE2": 51
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "A blistering two-man Wrath Shot barrage that hammers the goal with relentless strikes.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/k/q/kqkmbvsudlk.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "DeathZone2",
@@ -187950,9 +188017,11 @@
     "IE3": 47,
     "IE2": 38
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Synchronize with a teammate to release a sweeping shockwave that trips the opponent.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/-/j/-jks7f1wqxc.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "KouteiPenguin3gou",
@@ -187968,9 +188037,11 @@
     "IE3": 64,
     "GO2": 60
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Summon a penguin huddle by whistling, and gather energy as they circle around.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/5/d/5dbu8hmf52k.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "LastDeathZone",
@@ -188008,9 +188079,11 @@
     "GO1": 50,
     "IE1": 60
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "A move that lessens the burden of Emperor Penguin No. 1. Summon penguins that take to the skies for the empire.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/k/ik6jszomzuc.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "KouteiPenguin1gou",
@@ -188025,9 +188098,11 @@
     "IE3": 58,
     "IE2": 62
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "A forbidden ultimate technique that unleashes penguins who peck at feet with savage force.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/z/m/zmfelutkae8.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "ReppuuDash",
@@ -188042,9 +188117,11 @@
     "IE3": 42,
     "IE2": 36
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Unleash a souped-up Flurry Dash and blaze past opponents in a streak of fire.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/j/c/jcjii4ijzou.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "SpacePenguin",
@@ -188079,9 +188156,11 @@
     "GO2": 55,
     "GO1": 60
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Multicolored penguins form a mesmerizing rainbow arc as they swarm toward the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/u/4/u4vc-cvw4cm.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "DashAccel",
@@ -188137,9 +188216,11 @@
     "IE2": 24,
     "IE1": 25
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Make the ball vanish and reappear, confounding the keeper at the last second.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/l/1/l1lrv_b9l4u.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "Onryou",
@@ -188155,9 +188236,11 @@
     "IE2": 17,
     "IE1": 23
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Those who are caught by these ghostly hands that appear from the ground can never escape.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/e/q/eqnnnhbdite.jpg",
+   "zukan_types": [
+    "Defence"
+   ]
   },
   {
    "id": "KillerBlade",
@@ -188194,9 +188277,12 @@
     "IE2": 19,
     "IE1": 30
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Warp space to create a black hole that attracts all shots towards it.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/k/l/klgwmabr7-s.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "Tsumuji",
@@ -188293,9 +188379,12 @@
     "IE2": 17,
     "IE1": 20
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Infuse willpower into your right hand to block goal shots by punching them away.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/3/s/3s8dd-z5mu0.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "RocketKobushi",
@@ -188332,9 +188421,12 @@
     "IE2": 36,
     "IE1": 47
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Pound the ball more than 100 times in a second to repel incoming shots with full force.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/d/r/dras0g1fjss.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "Counterstrike",
@@ -188371,9 +188463,11 @@
     "IE2": 17,
     "IE1": 35
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Unleash a toxic mist to stagger opponents and dash through the opening.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/5/v/5vaeuhuw0ek.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "KumoNoIto",
@@ -188390,9 +188484,11 @@
     "IE2": 30,
     "IE1": 35
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Spread a spider web on the ground that makes movement difficult.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/n/o/nowq2wk25vu.jpg",
+   "zukan_types": [
+    "Defence"
+   ]
   },
   {
    "id": "Moonsault",
@@ -188449,9 +188545,11 @@
     "IE2": 15,
     "IE1": 15
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Raise your foot in a mighty sumo stomp to make the ground shake.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/m/xmyfdaad_gc.jpg",
+   "zukan_types": [
+    "Defence"
+   ]
   },
   {
    "id": "HornTrain",
@@ -188795,9 +188893,12 @@
     "IE2": 19,
     "IE1": 38
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Chop the ball with the force of an axe swing! Every strike gets slammed to the ground.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/l/z/lz6l5wjwtbe.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "Kogarashi",
@@ -188813,9 +188914,12 @@
     "IE2": 27,
     "IE1": 45
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Summon a swirling leaf tornado to guard the goal and knock away the ball.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/v/n/vnzza8mdjau.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "GigantWall",
@@ -188873,9 +188977,12 @@
     "IE2": 41,
     "IE1": 55
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "The sea god's roar summons a tall tsunami wave that forms a wall to block off incoming shots.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/n/8/n83jhvj3kju.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "SabakiNoTettsui",
@@ -188891,9 +188998,12 @@
     "IE2": 38,
     "IE1": 42
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Summon a colossal foot from above to crush defenders like a hammer of justice.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/b/m/bmvz97t1stm.jpg",
+   "zukan_types": [
+    "Defence",
+    "Shot Block"
+   ]
   },
   {
    "id": "HeavensTime",
@@ -188989,9 +189099,11 @@
     "GO3": 85,
     "GO2": 60
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Kick the ball and quickly follow up a few times to speed the ball forward.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/4/t/4tcbep7yuxe.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "GodWind",
@@ -189312,9 +189424,11 @@
     "IE2": 51,
     "IE1": 47
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Two players move in perfect sync, unleashing a powerful combo shot in a show of friendship.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/p/u/pu2xpuwtqhc.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "TornadoCatch",
@@ -189431,9 +189545,11 @@
     "GO2": 60,
     "GO1": 60
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Combine four elements into one for a destructive shot that surpasses them all.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/a/_/a_d8dwwnypu.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "ExcellentBreast",
@@ -189510,9 +189626,12 @@
     "GO2": 27,
     "GO1": 32
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Summon a Great Wall from underground to surround and block the entire pitch.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/n/w/nwkmd3e9cmc.jpg",
+   "zukan_types": [
+    "Defence",
+    "Shot Block"
+   ]
   },
   {
    "id": "KillerWhale",
@@ -189706,9 +189825,12 @@
     "IE3": 28,
     "IE2": 25
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "A large foot appears in the sky and stomps on the opponent in this enhanced version of Sumo Stomp.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/g/s/gsmbmxsqeac.jpg",
+   "zukan_types": [
+    "Defence",
+    "Shot Block"
+   ]
   },
   {
    "id": "HeavyBaby",
@@ -189806,9 +189928,12 @@
     "IE3": 60,
     "IE2": 25
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "One hand rises, as if freezing time itself, stopping the football's momentum and deflecting it away.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/y/q/yqqmswz4dgc.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "RyuuseiBlade",
@@ -189826,9 +189951,11 @@
     "IE2": 28,
     "GO1": 50
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Dominate the pitch with a foreboding threat reminiscent of the galaxy and shoot with a comet-like high kick.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/q/h/qhzqxmwlwbu.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "UniverseBlast",
@@ -190114,9 +190241,11 @@
     "IE3": 55,
     "IE2": 62
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "A combo move that works together with Fire Tornado by boosting its power.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/d/o/do7rginhgn0.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "PrimaDonna",
@@ -190399,9 +190528,11 @@
    "costs": {
     "IE3": 55
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "A cosmic shot that crashes with heavenly force as a storm of stars fall from outer space.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/4/c/4c0zyll2vfu.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "ExtendZone",
@@ -190456,9 +190587,12 @@
     "IE3": 40,
     "IE2": 43
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Countless aura shields block incoming shots, ensuring the safety of the team.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/s/f/sfxh0uedods.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "ToumeiFeint",
@@ -190473,9 +190607,11 @@
     "IE3": 42,
     "IE2": 36
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Bend the foe's vision and vanish like a ghost to then slip past like an invisible gust.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/s/q/sq4dphuz098.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "NekketsuHead",
@@ -190490,9 +190626,12 @@
     "IE3": 30,
     "IE2": 24
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Headbutt the ball with blazing force and blast back any shot with explosive power.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/e/b/ebrcirlf9zm.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "BodyShield",
@@ -190605,9 +190744,11 @@
     "GO3": 85,
     "GO2": 70
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Call forth swirling thunderclouds that imbue the ball with electricity before shooting.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/l/1/l1dvg8zqt7u.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "GiantSpin",
@@ -190742,9 +190883,12 @@
     "IE3": 37,
     "IE2": 41
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Take a deep breath and release it along with fiery flames to weaken and catch incoming shots.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/j/t/jtl6c9hzpb0.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "BunshinBlock",
@@ -190760,9 +190904,12 @@
     "IE2": 48,
     "IE1": 48
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Split into three with ninja precision and slam the ball down from above with triple power.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/r/m/rmqub_09g1u.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "BunshinDefense",
@@ -190777,9 +190924,11 @@
     "IE3": 42,
     "IE2": 36
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Split into three and send one person to attack while the other two steal the ball.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/n/h/nhhjrdccsms.jpg",
+   "zukan_types": [
+    "Defence"
+   ]
   },
   {
    "id": "TatsumakiDokugiri",
@@ -190794,9 +190943,11 @@
     "IE3": 35,
     "IE2": 30
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Spin the ball and scatter a cloud of toxic mist, blinding opponents in a whirlwind of chaos.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/z/1/z1di1lgm83e.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "EagleBuster",
@@ -190834,9 +190985,12 @@
     "IE2": 33,
     "GO1": 32
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Rotate at high frequencies like a prankster's toy top, creating whirlwinds that are difficult to contend with.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/k/m/km8eaoho3w8.jpg",
+   "zukan_types": [
+    "Defence",
+    "Shot Block"
+   ]
   },
   {
    "id": "TrickBall",
@@ -190967,9 +191121,11 @@
     "IE3": 55,
     "IE2": 59
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Swing your teammates like a club for a game-changing, hole-in-one strike.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/l/ilnq1m-4ynk.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "Hanafubuki",
@@ -190986,9 +191142,12 @@
     "GO2": 30,
     "IE2": 28
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Use flower petals dancing daintily on the pitch to reduce the power of incoming shots.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/e/ietuyfxwig8.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "SlashNail",
@@ -191023,9 +191182,12 @@
     "IE3": 40,
     "IE2": 51
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Grab a round table-shaped earth fragment and flip it up in a display of sheer anger.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/z/6/z6ifxy3rawm.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "RibbonShower",
@@ -191080,9 +191242,11 @@
     "IE3": 37,
     "IE2": 44
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "The ball flies high up into the air and plunges down at high speed while spinning.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/u/e/uegm2yxeefe.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "GodHand_Blue",
@@ -191166,9 +191330,12 @@
    "costs": {
     "IE3": 60
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Channel anger into energy to manifest a fearsome fiend.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/d/s/dswrnah_1f0.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "StarReflection",
@@ -191224,9 +191391,12 @@
     "IE3": 35,
     "IE2": 36
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Absorb any shot with the softest part of the body and cushion the impact with mastery.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/u/j/ujdsdawihhe.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "NoEscape",
@@ -191357,9 +191527,11 @@
     "IE3": 21,
     "IE2": 24
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Kick the ball up with your knee and hammer it down with a sharp heel kick.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/j/o/jovxuqedy08.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "TripleDash",
@@ -191510,9 +191682,11 @@
     "GO3": 20,
     "GO2": 32
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Harness repulsion and suction to hover and drive forward like a motor vehicle.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/n/b/nb9osgek7as.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "Shinkuuma",
@@ -191528,9 +191702,12 @@
     "IE3": 44,
     "GO2": 35
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Use a kick to create a tear in space that sucks in the ball and reduces its power.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/p/z/pzayygttwpm.jpg",
+   "zukan_types": [
+    "Defence",
+    "Shot Block"
+   ]
   },
   {
    "id": "MeganeCrash",
@@ -191637,9 +191814,12 @@
    "costs": {
     "IE3": 53
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Manifest a shield infused with barbarian strength to intimidate and repel any assault.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/z/r/zrgvvwvaagk.jpg",
+   "zukan_types": [
+    "Defence",
+    "Shot Block"
+   ]
   },
   {
    "id": "StonePrison",
@@ -191802,9 +191982,12 @@
     "GO3": 30,
     "IE3": 42
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Unleash a ferocious streak of fiery sumo slaps on the ball to cause a large explosion that blows it backwards.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/6/c/6cih49wuble.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "JibashiriKaen",
@@ -191819,9 +192002,11 @@
     "GO3": 15,
     "IE3": 33
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Steal the ball with a fiery roundhouse kick, Taekwondo-style.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/d/5/d5cqhlizcse.jpg",
+   "zukan_types": [
+    "Defence"
+   ]
   },
   {
    "id": "NarakuOtoshi",
@@ -191835,9 +192020,11 @@
    "costs": {
     "IE3": 33
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Hit the ball with a heel to make it bounce off the ground and into the opponent.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/a/-/a-rkdpebsrk.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "Doukasen",
@@ -191851,9 +192038,11 @@
    "costs": {
     "GO3": 20
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Send a blazing ball rolling to their feet and ignite it in a burst at the perfect moment.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/l/2/l2tigqlatts.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "Galatyn",
@@ -192015,9 +192204,11 @@
    "costs": {
     "IE3": 58
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "An emperor penguin born from darkness. Its aura of hate devours all.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/s/g/sg5tdhc65p8.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "MegatonHead",
@@ -192912,9 +193103,11 @@
     "IE2": 66,
     "IE1": 66
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Two players use a large player's body as a springboard to combine Inazuma-1 and Inazuma Drop.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/v/h/vhnau68einu.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "CardProtect",
@@ -193098,9 +193291,11 @@
    "costs": {
     "GO3": 85
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Unleash a raging hurricane from the ball and send it barreling toward the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/-/a/-anqfb3bc3m.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "AcrobatKeep",
@@ -193540,9 +193735,12 @@
     "GO2": 50,
     "GO1": 55
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Channel dark, ethereal hands from your arms, smashing the ball head-on to block any shot.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/5/x/5xcmkwxvnre.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "BurningCatch",
@@ -193698,9 +193896,11 @@
     "GO3": 15,
     "GO2": 27
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Infuse the ball with electromagnetic power to make it spiral into the air together with the dribbler.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/u/q/uqnig_os4re.jpg",
+   "zukan_types": [
+    "Defence"
+   ]
   },
   {
    "id": "CounterdriveGK",
@@ -193950,9 +194150,11 @@
    "costs": {
     "GO3": 15
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Calculate the perfect angle and speed to intercept, turning every movement into a precise block.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/f/x/fxlamvyc-7u.jpg",
+   "zukan_types": [
+    "Defence"
+   ]
   },
   {
    "id": "DesertDrift",
@@ -194137,14 +194339,17 @@
     "GO3": 10,
     "GO2": 30
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Stop the momentum of incoming shots with sheer will, without even touching the ball.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/v/5/v5p_txdi7vm.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "DoubleShot",
    "name": "Fission and Fusion",
-   "name_es": null,
+   "name_es": "Disparo doble",
    "name_jp": "*ダブルショット",
    "type": "Shoot",
    "element": "void",
@@ -194154,9 +194359,11 @@
     "GO3": 55,
     "GO2": 50
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Split the ball into two, strike with both feet, and fuse the two pieces back together to unleash a devastatingly powerful shot.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/j/f/jfntkhlkxem.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "DragonsTail",
@@ -194302,9 +194509,11 @@
     "GO3": 85,
     "GO2": 70
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Launch a triple Fire Tornado with three blazing spirals that crash together into one brutal shot.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/a/f/afcnshw9yi8.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "FloralDespair",
@@ -194433,14 +194642,16 @@
     "GO3": 70,
     "GO2": 55
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Draw light particles from the atmosphere into the ball, then shoot a concentrated energy blast.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/6/d/6ds0nd_qai8.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "GaussShot",
    "name": "Gaussian Goal",
-   "name_es": null,
+   "name_es": "Tiro magnético",
    "name_jp": "*ガウスショット",
    "type": "Shoot",
    "element": "wood",
@@ -194450,9 +194661,11 @@
     "GO3": 40,
     "GO2": 50
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Spin the ball with both feet to generate a magnetic field and launch a shot with unstoppable force.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/6/y/6ybhqwperre.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "GearDrive",
@@ -194522,9 +194735,12 @@
    "costs": {
     "GO3": 70
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Rocket the ball sky-high and blast it past the atmosphere and across the galaxy.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/-/2/-2etzgurvw0.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "GloriousRay",
@@ -194646,7 +194862,7 @@
   {
    "id": "GyroSaving",
    "name": "Gyro-Blocker",
-   "name_es": null,
+   "name_es": "Giroparada",
    "name_jp": "*ジャイロセービング",
    "type": "Catch",
    "element": "wood",
@@ -194656,9 +194872,12 @@
     "GO3": 40,
     "GO2": 40
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Spin like a top on the spot to create a gyroscopic effect that blunts the impact of incoming shots, making them easier to catch.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/y/w/ywskrhpvfnu.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "HeadBazooka",
@@ -194693,9 +194912,11 @@
     "GO3": 40,
     "GO2": 50
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "One player aims the shot while another fires it like a matchlock bullet.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/j/7/j7t6pwdidks.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "HologramLock",
@@ -194770,9 +194991,12 @@
     "GO3": 20,
     "GO2": 27
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Build up a daunting Japanese-style fortress in the blink of an eye, intimidating the opponent.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/y/-/y-qtcllejkk.jpg",
+   "zukan_types": [
+    "Defence",
+    "Shot Block"
+   ]
   },
   {
    "id": "Injection",
@@ -194898,9 +195122,12 @@
     "GO2": 45,
     "GO1": 45
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Manipulate shadows to catch the ball using a hand filled with eerie dark energy.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/t/3/t39astljhcc.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "KattobiDefense",
@@ -194972,9 +195199,11 @@
     "GO3": 85,
     "GO2": 60
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Close your eyes to deliver a kick sharp enough to make the petals of a chrysanthemum fall apart.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/r/a/ra-gzhsyybk.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "KillBridge",
@@ -195048,9 +195277,11 @@
     "GO3": 10,
     "GO2": 35
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Execute a shot that bites into the opposing team's goal like a tyrannosaurus biting into its prey.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/m/d/mdpq4tasdim.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "KodaiNoTsubasa",
@@ -195065,14 +195296,16 @@
     "GO3": 55,
     "GO2": 45
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Charge at the opponent like an ancient winged dinosaur swooping down with a cyclone in its wake.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/g/v/gv4dq0arp0k.jpg",
+   "zukan_types": [
+    "Defence"
+   ]
   },
   {
    "id": "KogetsuJuujishou",
    "name": "Crescent Cross",
-   "name_es": null,
+   "name_es": "Despeje medialuna",
    "name_jp": "*弧月十字掌",
    "type": "Catch",
    "element": "void",
@@ -195082,9 +195315,12 @@
     "GO3": 55,
     "GO2": 55
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Unleash energy blades in a cross-shape and use them to hit incoming shots away.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/e/m/emp53x-ftbu.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "KonohaRendezvous",
@@ -195181,7 +195417,7 @@
   {
    "id": "LoveArrow",
    "name": "Cupid's Arrow",
-   "name_es": null,
+   "name_es": "Flecha de Cupido",
    "name_jp": "*ラブ・アロー",
    "type": "Shoot",
    "element": "fire",
@@ -195191,9 +195427,11 @@
     "GO3": 30,
     "GO2": 50
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "A dazzlingly cute and magical show fires a heart-shaped arrow shot.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/p/u/puop6toa2ec.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "LoyalHeartShot",
@@ -195291,7 +195529,7 @@
   {
    "id": "MagnetDraw",
    "name": "Magnetism",
-   "name_es": null,
+   "name_es": "Magnetismo",
    "name_jp": "*マグネットドロー",
    "type": "Block",
    "element": "magnet draw",
@@ -195301,9 +195539,11 @@
     "GO3": 30,
     "GO2": 31
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Use the power of magnetism to draw the opponent's ball away and hold on firmly to it.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/o/_/o_u9vidanx0.jpg",
+   "zukan_types": [
+    "Defence"
+   ]
   },
   {
    "id": "MochimochiKinakoMochi",
@@ -195318,9 +195558,12 @@
     "GO3": 40,
     "GO2": 35
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Whip up a mixture of gloopy goo. Vigorously stretch it out and mix in the ball to trap it.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/f/f/ffzolgzw0jk.jpg",
+   "zukan_types": [
+    "Defence",
+    "Shot Block"
+   ]
   },
   {
    "id": "MoonsaultStamp",
@@ -195356,14 +195599,16 @@
     "GO3": 55,
     "GO2": 45
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Their moves may seem all over the place at first, but it's all a calculated move to steal the ball.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/2/z/2zubdqwv7em.jpg",
+   "zukan_types": [
+    "Defence"
+   ]
   },
   {
    "id": "MueiSouha",
    "name": "In-Line Stampede",
-   "name_es": null,
+   "name_es": "Estampida en línea",
    "name_jp": "*無影走破",
    "type": "Dribble",
    "element": "void",
@@ -195373,9 +195618,11 @@
     "GO3": 55,
     "GO2": 40
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Synchronize perfectly with your teammates and barrel through defenders in a single, unstoppable line.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/c/s/csivbdu12v8.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "NaminoriPierrot",
@@ -195477,7 +195724,7 @@
   {
    "id": "OmegaAttack",
    "name": "Omega Assault",
-   "name_es": null,
+   "name_es": "Ataque Omega",
    "name_jp": "*オメガアタック",
    "type": "Shoot",
    "element": "void",
@@ -195487,9 +195734,11 @@
     "GO3": 85,
     "GO2": 70
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "The strongest shot in all of El Dorado's arsenal. A myriad of aspects converge to form a dazzling rainbow beam.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/m/w/mwuwsxukixu.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "OraoraMenchi",
@@ -195540,9 +195789,11 @@
     "GO3": 70,
     "GO2": 50
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Take a dazzling sword and swing with all your might. Only one with a royal bearing can master this skill.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/b/xbuoy7ajegu.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "OujaNoKiba",
@@ -195557,9 +195808,11 @@
     "GO3": 70,
     "GO2": 60
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "This shot is many times more fang-tastically powerful than Jurassic Jaws.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/p/7/p758d4-0ddk.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "PantherBlizzard",
@@ -195921,9 +196174,11 @@
     "GO3": 85,
     "GO2": 70
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "All 11 players of the team combine powers to execute a rainbow shot that makes the impossible possible.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/a/w/awru1sajz7e.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "SaikyousanShoukan",
@@ -195939,9 +196194,11 @@
     "GO2": 40,
     "GO1": 40
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Summon a mighty being that blasts forth a beam from its mouth at enemies.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/b/0/b0vzjtnogts.jpg",
+   "zukan_types": [
+    "Defence"
+   ]
   },
   {
    "id": "SandCutter",
@@ -196197,7 +196454,7 @@
   {
    "id": "SouhiYuuseidan",
    "name": "Twin Sun Smash",
-   "name_es": null,
+   "name_es": "Doble trallazo planetario",
    "name_jp": "*双飛遊星弾",
    "type": "Shoot",
    "element": "earth",
@@ -196207,9 +196464,11 @@
     "GO3": 70,
     "GO2": 60
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Two players deliver perfectly-timed kicks in unison that greatly increase the ball's conductivity.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/r/ir4ovdxzoem.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "SpinningTransam",
@@ -196224,9 +196483,11 @@
     "GO3": 15,
     "GO2": 30
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Conjure a small cyclone while rising into the air, using the rotation to fire out a forceful shot.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/g/y/gykfro1aoo8.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "SpinningUpper",
@@ -196241,9 +196502,11 @@
     "GO3": 30,
     "GO2": 32
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Add an incredible backspin to the ball before launching it at the opponent, causing them to be blown away.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/c/c/ccvascn4jj0.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
   },
   {
    "id": "SpringArrow",
@@ -196353,9 +196616,12 @@
     "GO3": 55,
     "GO2": 45
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Manifest a rock hand in a space reminiscent of an ink painting to put a stop to incoming shots.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/u/x/uxice-ot6qs.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
   },
   {
    "id": "TentacleHold",
@@ -196506,9 +196772,11 @@
     "GO2": 60,
     "GO1": 60
    },
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
+   "description": "Three players come together in a perfectly balanced manner to unleash an eye-catching triangle shot.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/e/ieqmzhbdpwc.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
   },
   {
    "id": "TwinMixer",

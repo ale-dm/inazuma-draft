@@ -541,7 +541,7 @@ def main(extra_z=None, write=True):
     def norm_jp(s):
         s = re.sub(r'\{\{Ruby\|([^|}]*)\|[^}]*\}\}', r'\1', s or '')
         s = re.sub(r'<[^>]+>|\{\{[^}]*\}\}', '', s)
-        return re.sub(r'[\s・･!！?？「」『』]', '', s)
+        return re.sub(r'[\s・･!！?？「」『』*＊]', '', s)
     es_by_jp, es_by_en = {}, {}
     for title, d in load('es_techniques.json').items():
         es = re.sub(r'\s*\([^)]*\)$', '', title).strip()          # "Tormenta (supertécnica)" → "Tormenta"
@@ -550,11 +550,13 @@ def main(extra_z=None, write=True):
         for e in d['en']:
             es_by_en.setdefault(e.lower(), es)
 
-    zskills = {}                    # supertécnicas de zukan por nombre japonés (descripción, imagen, tipos; sin vídeo)
+    zskills, zskills_en = {}, {}    # supertécnicas de zukan por nombre japonés / inglés (descripción, imagen, tipos; sin vídeo)
     for r in (json.load(open(os.path.join(ZUKAN_DIR, 'skills.json'), encoding='utf-8'))
               if os.path.exists(os.path.join(ZUKAN_DIR, 'skills.json')) else []):
         if r.get('name_ja'):
             zskills.setdefault(norm_jp(r['name_ja']), r)
+        if r.get('name') and r['name'] != '???':
+            zskills_en.setdefault(re.sub(r'[^a-z0-9]', '', r['name'].lower()), r)
 
     def technique(mid):
         if mid in techniques:
@@ -573,7 +575,7 @@ def main(extra_z=None, write=True):
         costs = {COST_GAME[k]: inf[k] for k in SHOW_COST if k in inf}
         show = next(((inf[k], COST_GAME[k]) for k in SHOW_COST if k in inf), (None, None))
         name_es = es_by_jp.get(norm_jp(inf.get('name_jp'))) or es_by_en.get(dub.lower())
-        zs_ = zskills.get(norm_jp(inf.get('name_jp')))
+        zs_ = zskills.get(norm_jp(inf.get('name_jp'))) or zskills_en.get(re.sub(r'[^a-z0-9]', '', dub.lower()))
         techniques[mid] = {'id': mid, 'name': dub, 'name_es': name_es, 'name_jp': inf.get('name_jp'), 'type': inf['type'],
                            'element': ELEMENT.get(inf.get('element'), (inf.get('element') or '').lower() or None),
                            'cost': show[0], 'cost_game': show[1], 'costs': costs, '_inf': inf,

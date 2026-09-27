@@ -93,7 +93,7 @@
   ],
   "params": [],
   "index": 7,
-  "name_ja": "蜘蛛くもの糸いと"
+  "name_ja": "蜘蛛の糸"
  },
  {
   "name": "Cyclone",
@@ -135,7 +135,7 @@
   ],
   "params": [],
   "index": 10,
-  "name_ja": "影縫かげぬい"
+  "name_ja": "影縫い"
  },
  {
   "name": "Sumo Stomp",
@@ -149,7 +149,7 @@
   ],
   "params": [],
   "index": 11,
-  "name_ja": "四股踏しこふみ"
+  "name_ja": "四股踏み"
  },
  {
   "name": "Horn Train",
@@ -223,7 +223,7 @@
   ],
   "params": [],
   "index": 16,
-  "name_ja": "怨霊おんりょう"
+  "name_ja": "怨霊"
  },
  {
   "name": "Doppelganger",
@@ -281,7 +281,7 @@
   ],
   "params": [],
   "index": 20,
-  "name_ja": "裁さばきの鉄槌てっつい"
+  "name_ja": "裁きの鉄槌"
  },
  {
   "name": "Mega Quake",
@@ -323,7 +323,7 @@
   ],
   "params": [],
   "index": 23,
-  "name_ja": "後うしろの正面しょうめん"
+  "name_ja": "後ろの正面"
  },
  {
   "name": "Shooting Star",
@@ -367,7 +367,7 @@
   ],
   "params": [],
   "index": 26,
-  "name_ja": "分身ぶんしんディフェンス"
+  "name_ja": "分身ディフェンス"
  },
  {
   "name": "Circus Block",
@@ -535,7 +535,7 @@
   ],
   "params": [],
   "index": 37,
-  "name_ja": "スーパー四股踏しこふみ"
+  "name_ja": "スーパー四股踏み"
  },
  {
   "name": "Planet Shield",
@@ -739,7 +739,7 @@
   ],
   "params": [],
   "index": 51,
-  "name_ja": "旋風陣せんぷうじん"
+  "name_ja": "旋風陣"
  },
  {
   "name": "Mad Express",
@@ -827,7 +827,7 @@
   ],
   "params": [],
   "index": 57,
-  "name_ja": "バーバリアンの盾たて"
+  "name_ja": "バーバリアンの盾"
  },
  {
   "name": "Ground Quake",
@@ -899,7 +899,7 @@
   ],
   "params": [],
   "index": 62,
-  "name_ja": "地走じばしり火炎かえん"
+  "name_ja": "地走り火炎"
  },
  {
   "name": "Iron Wall",
@@ -945,7 +945,7 @@
   ],
   "params": [],
   "index": 65,
-  "name_ja": "真空魔しんくうま"
+  "name_ja": "真空魔"
  },
  {
   "name": "Yo-Yo Ball",
@@ -1263,7 +1263,7 @@
   ],
   "params": [],
   "index": 87,
-  "name_ja": "最強さいきょうさん召喚しょうかん"
+  "name_ja": "最強さん召喚"
  },
  {
   "name": "Solar Surprise",
@@ -1307,7 +1307,7 @@
   ],
   "params": [],
   "index": 90,
-  "name_ja": "ビバ！万里ばんりの長城ちょうじょう"
+  "name_ja": "ビバ！万里の長城"
  },
  {
   "name": "Mystic Mist",
@@ -1395,7 +1395,7 @@
   ],
   "params": [],
   "index": 96,
-  "name_ja": "破壊弾幕はかいだんまく"
+  "name_ja": "破壊弾幕"
  },
  {
   "name": "Dark Space",
@@ -1451,7 +1451,7 @@
   ],
   "params": [],
   "index": 100,
-  "name_ja": "古代こだいの翼つばさ"
+  "name_ja": "古代の翼"
  },
  {
   "name": "Tesla Coil",
@@ -1557,7 +1557,7 @@
   ],
   "params": [],
   "index": 107,
-  "name_ja": "もちもち黄粉餅きなこもち"
+  "name_ja": "もちもち黄粉餅"
  },
  {
   "name": "Fire Drill",
@@ -1587,7 +1587,7 @@
   ],
   "params": [],
   "index": 109,
-  "name_ja": "一夜城いちやじょう"
+  "name_ja": "一夜城"
  },
  {
   "name": "Floral Fiesta",
@@ -1631,7 +1631,7 @@
   ],
   "params": [],
   "index": 112,
-  "name_ja": "無影乱舞むえいらんぶ"
+  "name_ja": "無影乱舞"
  },
  {
   "name": "Skytree Hop",
@@ -1705,7 +1705,7 @@
   ],
   "params": [],
   "index": 117,
-  "name_ja": "正拳亀甲波せいけんきっこうは"
+  "name_ja": "正拳亀甲波"
  },
  {
   "name": "Aurora Arrow",
@@ -1719,7 +1719,7 @@
   ],
   "params": [],
   "index": 118,
-  "name_ja": "光輪こうりんの矢や"
+  "name_ja": "光輪の矢"
  },
  {
   "name": "Hunter's Spear",
@@ -1761,7 +1761,7 @@
   ],
   "params": [],
   "index": 121,
-  "name_ja": "天空てんくうの舞まい"
+  "name_ja": "天空の舞"
  },
  {
   "name": "Sordid Thorns",
@@ -1789,7 +1789,7 @@
   ],
   "params": [],
   "index": 123,
-  "name_ja": "ディフェンス方程式ほうていしき"
+  "name_ja": "ディフェンス方程式"
  },
  {
   "name": "Fancy-Footwork",
@@ -2283,7 +2283,7 @@
   ],
   "params": [],
   "index": 158,
-  "name_ja": "フランケン守しゅタイン"
+  "name_ja": "フランケン守タイン"
  },
  {
   "name": "Easter Island Header",
@@ -2297,7 +2297,7 @@
   ],
   "params": [],
   "index": 159,
-  "name_ja": "もっこり丘おかのモアイ"
+  "name_ja": "もっこり丘のモアイ"
  },
  {
   "name": "Wall for One",
@@ -2329,7 +2329,7 @@
   ],
   "params": [],
   "index": 161,
-  "name_ja": "必殺ひっさつクマゴロシ縛ばく"
+  "name_ja": "必殺クマゴロシ縛"
  },
  {
   "name": "Formidable Fortress",
@@ -2391,7 +2391,7 @@
   ],
   "params": [],
   "index": 165,
-  "name_ja": "爆喰獅子ばくぐいしし"
+  "name_ja": "爆喰獅子"
  },
  {
   "name": "Twirling Turtle",
@@ -2475,7 +2475,7 @@
   ],
   "params": [],
   "index": 171,
-  "name_ja": "海神かいじん・ザ・クェイク"
+  "name_ja": "海神・ザ・クェイク"
  },
  {
   "name": "Vigorous Stomp",
@@ -2491,7 +2491,7 @@
   ],
   "params": [],
   "index": 172,
-  "name_ja": "オラオラ四股踏しこふみ"
+  "name_ja": "オラオラ四股踏み"
  },
  {
   "name": "Runaway Bull",
@@ -2607,7 +2607,7 @@
   ],
   "params": [],
   "index": 180,
-  "name_ja": "熱血ねっけつパンチ"
+  "name_ja": "熱血パンチ"
  },
  {
   "name": "Shot Pocket",
@@ -2639,7 +2639,7 @@
   ],
   "params": [],
   "index": 182,
-  "name_ja": "ゆがむ空間くうかん"
+  "name_ja": "ゆがむ空間"
  },
  {
   "name": "Counter Strike",
@@ -2767,7 +2767,7 @@
   ],
   "params": [],
   "index": 190,
-  "name_ja": "薪割まきわりチョップ"
+  "name_ja": "薪割りチョップ"
  },
  {
   "name": "Whirlwind",
@@ -2847,7 +2847,7 @@
   ],
   "params": [],
   "index": 195,
-  "name_ja": "木枯こがらし"
+  "name_ja": "木枯らし"
  },
  {
   "name": "Killer Blade",
@@ -2895,7 +2895,7 @@
   ],
   "params": [],
   "index": 198,
-  "name_ja": "爆裂ばくれつパンチ"
+  "name_ja": "爆裂パンチ"
  },
  {
   "name": "Majin the Hand",
@@ -2927,7 +2927,7 @@
   ],
   "params": [],
   "index": 200,
-  "name_ja": "無限むげんの壁かべ"
+  "name_ja": "無限の壁"
  },
  {
   "name": "Mugen the Hand",
@@ -2959,7 +2959,7 @@
   ],
   "params": [],
   "index": 202,
-  "name_ja": "ド根性こんじょうキャッチ"
+  "name_ja": "ド根性キャッチ"
  },
  {
   "name": "Fireball Head",
@@ -2975,7 +2975,7 @@
   ],
   "params": [],
   "index": 203,
-  "name_ja": "熱血ねっけつヘッド"
+  "name_ja": "熱血ヘッド"
  },
  {
   "name": "Aurora Curtain",
@@ -3007,7 +3007,7 @@
   ],
   "params": [],
   "index": 205,
-  "name_ja": "ちゃぶ台返だいがえし"
+  "name_ja": "ちゃぶ台返し"
  },
  {
   "name": "Flame Breath",
@@ -3023,7 +3023,7 @@
   ],
   "params": [],
   "index": 206,
-  "name_ja": "火炎放射かえんほうしゃ"
+  "name_ja": "火炎放射"
  },
  {
   "name": "Beast Fang",
@@ -3071,7 +3071,7 @@
   ],
   "params": [],
   "index": 209,
-  "name_ja": "分身ぶんしんブロック"
+  "name_ja": "分身ブロック"
  },
  {
   "name": "Claw Slash",
@@ -3135,7 +3135,7 @@
   ],
   "params": [],
   "index": 213,
-  "name_ja": "花吹雪はなふぶき"
+  "name_ja": "花吹雪"
  },
  {
   "name": "Swan Dive",
@@ -3231,7 +3231,7 @@
   ],
   "params": [],
   "index": 219,
-  "name_ja": "時空じくうの壁かべ"
+  "name_ja": "時空の壁"
  },
  {
   "name": "Procyon Net",
@@ -3263,7 +3263,7 @@
   ],
   "params": [],
   "index": 221,
-  "name_ja": "正義せいぎの鉄拳てっけん"
+  "name_ja": "正義の鉄拳"
  },
  {
   "name": "Burnout",
@@ -3343,7 +3343,7 @@
   ],
   "params": [],
   "index": 226,
-  "name_ja": "ゴッドハンドＥＶエヴォルブ"
+  "name_ja": "ゴッドハンドＥＶ"
  },
  {
   "name": "Dimensional Hand",
@@ -3375,7 +3375,7 @@
   ],
   "params": [],
   "index": 228,
-  "name_ja": "怒いかりの鉄槌てっつい"
+  "name_ja": "怒りの鉄槌"
  },
  {
   "name": "Soul Hand",
@@ -3423,7 +3423,7 @@
   ],
   "params": [],
   "index": 231,
-  "name_ja": "魔王まおう・ザ・ハンド"
+  "name_ja": "魔王・ザ・ハンド"
  },
  {
   "name": "God Catch",
@@ -3455,7 +3455,7 @@
   ],
   "params": [],
   "index": 233,
-  "name_ja": "ゴッドキャッチＦＴフルスロットル"
+  "name_ja": "ゴッドキャッチＦＴ"
  },
  {
   "name": "Storm Rider",
@@ -3503,7 +3503,7 @@
   ],
   "params": [],
   "index": 236,
-  "name_ja": "大爆発張だいばくはつはり手て"
+  "name_ja": "大爆発張り手"
  },
  {
   "name": "Barrier Reef",
@@ -3855,7 +3855,7 @@
   ],
   "params": [],
   "index": 258,
-  "name_ja": "影掴かげつかみ"
+  "name_ja": "影掴み"
  },
  {
   "name": "Somersault Stamp",
@@ -3983,7 +3983,7 @@
   ],
   "params": [],
   "index": 266,
-  "name_ja": "無頼ぶらいハンド"
+  "name_ja": "無頼ハンド"
  },
  {
   "name": "Bridge to Nowhere",
@@ -4303,7 +4303,7 @@
   ],
   "params": [],
   "index": 286,
-  "name_ja": "暴あばれ車ぐるま"
+  "name_ja": "暴れ車"
  },
  {
   "name": "Double God Hand",
@@ -4335,7 +4335,7 @@
   ],
   "params": [],
   "index": 288,
-  "name_ja": "大国謳歌たいこくおうか"
+  "name_ja": "大国謳歌"
  },
  {
   "name": "Crescent Cross",
@@ -4351,7 +4351,7 @@
   ],
   "params": [],
   "index": 289,
-  "name_ja": "弧月十字掌こげつじゅうじしょう"
+  "name_ja": "弧月十字掌"
  },
  {
   "name": "Penguin the Hand",
@@ -4447,7 +4447,7 @@
   ],
   "params": [],
   "index": 295,
-  "name_ja": "必勝ひっしょう！我夢射乱がむしゃらん"
+  "name_ja": "必勝！我夢射乱"
  },
  {
   "name": "Wild Dunk",
@@ -4687,7 +4687,7 @@
   ],
   "params": [],
   "index": 310,
-  "name_ja": "銀河ぎんがロケット"
+  "name_ja": "銀河ロケット"
  },
  {
   "name": "Dragon Rage Dunk",
@@ -5011,7 +5011,7 @@
   ],
   "params": [],
   "index": 331,
-  "name_ja": "王家おうけの盾たて"
+  "name_ja": "王家の盾"
  },
  {
   "name": "Grabber Arm",
@@ -5059,7 +5059,7 @@
   ],
   "params": [],
   "index": 334,
-  "name_ja": "風神雷神ふうじんらいじん"
+  "name_ja": "風神雷神"
  },
  {
   "name": "Diamond Igloo",
@@ -5075,7 +5075,7 @@
   ],
   "params": [],
   "index": 335,
-  "name_ja": "ＫＡＭＡＫＵＲＡ Ｄディメンション"
+  "name_ja": "ＫＡＭＡＫＵＲＡ Ｄ"
  },
  {
   "name": "Force Shield",
@@ -5267,7 +5267,7 @@
   ],
   "params": [],
   "index": 347,
-  "name_ja": "マカロニスパゲッティ ソース増量ぞうりょう"
+  "name_ja": "マカロニスパゲッティ ソース増量"
  },
  {
   "name": "Majin the Wave",
@@ -5299,7 +5299,7 @@
   ],
   "params": [],
   "index": 349,
-  "name_ja": "軍事衛星ぐんじえいせいフォボス"
+  "name_ja": "軍事衛星フォボス"
  },
  {
   "name": "Maw-Ment of Truth",
@@ -5315,7 +5315,7 @@
   ],
   "params": [],
   "index": 350,
-  "name_ja": "真実しんじつの大口おおぐち"
+  "name_ja": "真実の大口"
  },
  {
   "name": "Raiser Blade",
@@ -5331,7 +5331,7 @@
   ],
   "params": [],
   "index": 351,
-  "name_ja": "太陽たいようのギロチン"
+  "name_ja": "太陽のギロチン"
  },
  {
   "name": "Mega Majin Trio",
@@ -5347,7 +5347,7 @@
   ],
   "params": [],
   "index": 352,
-  "name_ja": "風神雷神ふうじんらいじんゴースト"
+  "name_ja": "風神雷神ゴースト"
  },
  {
   "name": "Behind Bars",
@@ -5363,7 +5363,7 @@
   ],
   "params": [],
   "index": 353,
-  "name_ja": "忘却ぼうきゃくのソナタ"
+  "name_ja": "忘却のソナタ"
  },
  {
   "name": "God Hand of Friendship",
@@ -5379,7 +5379,7 @@
   ],
   "params": [],
   "index": 354,
-  "name_ja": "友情ゆうじょうのゴッドハンド"
+  "name_ja": "友情のゴッドハンド"
  },
  {
   "name": "Fantastic Save",
@@ -5395,7 +5395,7 @@
   ],
   "params": [],
   "index": 355,
-  "name_ja": "龍神鉄扇りゅうじんてっせん"
+  "name_ja": "龍神鉄扇"
  },
  {
   "name": "Diamond Arm",
@@ -5459,7 +5459,7 @@
   ],
   "params": [],
   "index": 359,
-  "name_ja": "氷結ひょうけつの舞まい"
+  "name_ja": "氷結の舞"
  },
  {
   "name": "Cyber Realm",
@@ -5523,7 +5523,7 @@
   ],
   "params": [],
   "index": 363,
-  "name_ja": "明鏡止水めいきょうしすい"
+  "name_ja": "明鏡止水"
  },
  {
   "name": "Royal Shield",
@@ -5571,7 +5571,7 @@
   ],
   "params": [],
   "index": 366,
-  "name_ja": "女神めがみ大陸たいりく"
+  "name_ja": "女神大陸"
  },
  {
   "name": "Divine Deflectors",
@@ -5601,7 +5601,7 @@
   ],
   "params": [],
   "index": 368,
-  "name_ja": "分身ぶんしんフェイント"
+  "name_ja": "分身フェイント"
  },
  {
   "name": "Flurry Dash",
@@ -5615,7 +5615,7 @@
   ],
   "params": [],
   "index": 369,
-  "name_ja": "疾風しっぷうダッシュ"
+  "name_ja": "疾風ダッシュ"
  },
  {
   "name": "Whirlwind Twister",
@@ -5629,7 +5629,7 @@
   ],
   "params": [],
   "index": 370,
-  "name_ja": "竜巻旋風たつまきせんぷう"
+  "name_ja": "竜巻旋風"
  },
  {
   "name": "Illusory Ball",
@@ -5671,7 +5671,7 @@
   ],
   "params": [],
   "index": 373,
-  "name_ja": "地獄車じごくぐるま"
+  "name_ja": "地獄車"
  },
  {
   "name": "Scorching Tackle",
@@ -5713,7 +5713,7 @@
   ],
   "params": [],
   "index": 376,
-  "name_ja": "玉乗たまのりピエロ"
+  "name_ja": "玉乗りピエロ"
  },
  {
   "name": "Black Magic",
@@ -5727,7 +5727,7 @@
   ],
   "params": [],
   "index": 377,
-  "name_ja": "呪のろい"
+  "name_ja": "呪い"
  },
  {
   "name": "Super Armadillo",
@@ -5755,7 +5755,7 @@
   ],
   "params": [],
   "index": 379,
-  "name_ja": "毒霧どくぎりの術じゅつ"
+  "name_ja": "毒霧の術"
  },
  {
   "name": "Attack Scan",
@@ -5783,7 +5783,7 @@
   ],
   "params": [],
   "index": 381,
-  "name_ja": "五里霧中ごりむちゅう"
+  "name_ja": "五里霧中"
  },
  {
   "name": "Boost Glider",
@@ -5811,7 +5811,7 @@
   ],
   "params": [],
   "index": 383,
-  "name_ja": "残像ざんぞう"
+  "name_ja": "残像"
  },
  {
   "name": "Mole Fake",
@@ -5951,7 +5951,7 @@
   ],
   "params": [],
   "index": 393,
-  "name_ja": "透明とうめいフェイント"
+  "name_ja": "透明フェイント"
  },
  {
   "name": "Gale Dash",
@@ -5965,7 +5965,7 @@
   ],
   "params": [],
   "index": 394,
-  "name_ja": "烈風れっぷうダッシュ"
+  "name_ja": "烈風ダッシュ"
  },
  {
   "name": "Three-Legged Rush",
@@ -6119,7 +6119,7 @@
   ],
   "params": [],
   "index": 405,
-  "name_ja": "合気道あいきどう"
+  "name_ja": "合気道"
  },
  {
   "name": "Mole Shuffle",
@@ -6147,7 +6147,7 @@
   ],
   "params": [],
   "index": 407,
-  "name_ja": "竜巻毒霧たつまきどくぎり"
+  "name_ja": "竜巻毒霧"
  },
  {
   "name": "Warp Drive",
@@ -6287,7 +6287,7 @@
   ],
   "params": [],
   "index": 417,
-  "name_ja": "ならく落おとし"
+  "name_ja": "ならく落とし"
  },
  {
   "name": "Bewilder Blast",
@@ -6329,7 +6329,7 @@
   ],
   "params": [],
   "index": 420,
-  "name_ja": "風神ふうじんの舞まい"
+  "name_ja": "風神の舞"
  },
  {
   "name": "Card Slap",
@@ -6749,7 +6749,7 @@
   ],
   "params": [],
   "index": 450,
-  "name_ja": "昇のぼり龍りゅう"
+  "name_ja": "昇り龍"
  },
  {
   "name": "Athena's Anthem",
@@ -6903,7 +6903,7 @@
   ],
   "params": [],
   "index": 461,
-  "name_ja": "風穴かざあなドライブ"
+  "name_ja": "風穴ドライブ"
  },
  {
   "name": "Guided Collide",
@@ -6987,7 +6987,7 @@
   ],
   "params": [],
   "index": 467,
-  "name_ja": "ツバメ返がえし"
+  "name_ja": "ツバメ返し"
  },
  {
   "name": "Black Tide Ride",
@@ -7015,7 +7015,7 @@
   ],
   "params": [],
   "index": 469,
-  "name_ja": "王おうの剣つるぎ"
+  "name_ja": "王の剣"
  },
  {
   "name": "Format Disk",
@@ -7043,7 +7043,7 @@
   ],
   "params": [],
   "index": 471,
-  "name_ja": "無影走破むえいそうは"
+  "name_ja": "無影走破"
  },
  {
   "name": "Easy Breezy Kid",
@@ -7085,7 +7085,7 @@
   ],
   "params": [],
   "index": 474,
-  "name_ja": "旋風つむじの刃やいば"
+  "name_ja": "旋風の刃"
  },
  {
   "name": "The Tempest",
@@ -7197,7 +7197,7 @@
   ],
   "params": [],
   "index": 482,
-  "name_ja": "導火線どうかせん"
+  "name_ja": "導火線"
  },
  {
   "name": "Z Slash",
@@ -7715,7 +7715,7 @@
   ],
   "params": [],
   "index": 519,
-  "name_ja": "特攻とっこうバッファロートレイン"
+  "name_ja": "特攻バッファロートレイン"
  },
  {
   "name": "Short Circuit",
@@ -7855,7 +7855,7 @@
   ],
   "params": [],
   "index": 529,
-  "name_ja": "ハヤブサ返がえし"
+  "name_ja": "ハヤブサ返し"
  },
  {
   "name": "Frost Finesse",
@@ -7939,7 +7939,7 @@
   ],
   "params": [],
   "index": 535,
-  "name_ja": "イナズマ落おとし"
+  "name_ja": "イナズマ落とし"
  },
  {
   "name": "Twin Boost",
@@ -7981,7 +7981,7 @@
   ],
   "params": [],
   "index": 538,
-  "name_ja": "百烈ひゃくれつショット"
+  "name_ja": "百烈ショット"
  },
  {
   "name": "Inazuma-1",
@@ -7995,7 +7995,7 @@
   ],
   "params": [],
   "index": 539,
-  "name_ja": "イナズマ１号ごう"
+  "name_ja": "イナズマ１号"
  },
  {
   "name": "Dragon Crash",
@@ -8131,7 +8131,7 @@
   ],
   "params": [],
   "index": 549,
-  "name_ja": "彗星すいせいシュート"
+  "name_ja": "彗星シュート"
  },
  {
   "name": "Rolling Kick",
@@ -8159,7 +8159,7 @@
   ],
   "params": [],
   "index": 551,
-  "name_ja": "分身ぶんしんシュート"
+  "name_ja": "分身シュート"
  },
  {
   "name": "Dynamite Shot",
@@ -8243,7 +8243,7 @@
   ],
   "params": [],
   "index": 557,
-  "name_ja": "神隠かみかくし"
+  "name_ja": "神隠し"
  },
  {
   "name": "Psycho Shot",
@@ -8313,7 +8313,7 @@
   ],
   "params": [],
   "index": 562,
-  "name_ja": "ド根性こんじょうバット"
+  "name_ja": "ド根性バット"
  },
  {
   "name": "Reflect Buster",
@@ -8453,7 +8453,7 @@
   ],
   "params": [],
   "index": 572,
-  "name_ja": "炎ほのおの風見鶏かざみどり"
+  "name_ja": "炎の風見鶏"
  },
  {
   "name": "Inazuma Break",
@@ -8495,7 +8495,7 @@
   ],
   "params": [],
   "index": 575,
-  "name_ja": "皇帝こうていペンギン２号ごう"
+  "name_ja": "皇帝ペンギン２号"
  },
  {
   "name": "The Phoenix",
@@ -8565,7 +8565,7 @@
   ],
   "params": [],
   "index": 580,
-  "name_ja": "爆熱ばくねつストーム"
+  "name_ja": "爆熱ストーム"
  },
  {
   "name": "Tsunami Boost",
@@ -8649,7 +8649,7 @@
   ],
   "params": [],
   "index": 586,
-  "name_ja": "流星りゅうせいブレード"
+  "name_ja": "流星ブレード"
  },
  {
   "name": "Acrobat Bomber",
@@ -8733,7 +8733,7 @@
   ],
   "params": [],
   "index": 592,
-  "name_ja": "浴あびせ蹴げり"
+  "name_ja": "浴びせ蹴り"
  },
  {
   "name": "Dragon Cannon",
@@ -8789,7 +8789,7 @@
   ],
   "params": [],
   "index": 596,
-  "name_ja": "皇帝こうていペンギン１号ごう"
+  "name_ja": "皇帝ペンギン１号"
  },
  {
   "name": "Bed of Roses",
@@ -8817,7 +8817,7 @@
   ],
   "params": [],
   "index": 598,
-  "name_ja": "ド根性こんじょうクラブ"
+  "name_ja": "ド根性クラブ"
  },
  {
   "name": "Double Wrath Shot",
@@ -8831,7 +8831,7 @@
   ],
   "params": [],
   "index": 599,
-  "name_ja": "二百烈にひゃくれつショット"
+  "name_ja": "二百烈ショット"
  },
  {
   "name": "Gungnir",
@@ -8887,7 +8887,7 @@
   ],
   "params": [],
   "index": 603,
-  "name_ja": "イナズマ１号落ごうおとし"
+  "name_ja": "イナズマ１号落とし"
  },
  {
   "name": "Ganymede Ray",
@@ -8999,7 +8999,7 @@
   ],
   "params": [],
   "index": 611,
-  "name_ja": "ツインブーストＦファイア"
+  "name_ja": "ツインブーストＦ"
  },
  {
   "name": "Double Tornado",
@@ -9209,7 +9209,7 @@
   ],
   "params": [],
   "index": 626,
-  "name_ja": "通天閣つうてんかくシュート"
+  "name_ja": "通天閣シュート"
  },
  {
   "name": "Northern Impact",
@@ -9321,7 +9321,7 @@
   ],
   "params": [],
   "index": 634,
-  "name_ja": "竜巻落たつまきおとし"
+  "name_ja": "竜巻落とし"
  },
  {
   "name": "Thunder Beast",
@@ -9391,7 +9391,7 @@
   ],
   "params": [],
   "index": 639,
-  "name_ja": "皇帝こうていペンギン３号ごう"
+  "name_ja": "皇帝ペンギン３号"
  },
  {
   "name": "Grand Fenrir",
@@ -9573,7 +9573,7 @@
   ],
   "params": [],
   "index": 652,
-  "name_ja": "爆熱ばくねつスクリュー"
+  "name_ja": "爆熱スクリュー"
  },
  {
   "name": "Mirage Shot",
@@ -9755,7 +9755,7 @@
   ],
   "params": [],
   "index": 665,
-  "name_ja": "皇帝こうていペンギンＸ"
+  "name_ja": "皇帝ペンギンＸ"
  },
  {
   "name": "RC Shot",
@@ -9923,7 +9923,7 @@
   ],
   "params": [],
   "index": 677,
-  "name_ja": "天空落てんくうおとし"
+  "name_ja": "天空落とし"
  },
  {
   "name": "Clone Death Zone",
@@ -9937,7 +9937,7 @@
   ],
   "params": [],
   "index": 678,
-  "name_ja": "分身ぶんしんデスゾーン"
+  "name_ja": "分身デスゾーン"
  },
  {
   "name": "Clone Penguin",
@@ -9951,7 +9951,7 @@
   ],
   "params": [],
   "index": 679,
-  "name_ja": "分身ぶんしんペンギン"
+  "name_ja": "分身ペンギン"
  },
  {
   "name": "Zephyr Shot",
@@ -9993,7 +9993,7 @@
   ],
   "params": [],
   "index": 682,
-  "name_ja": "皇帝こうていペンギン７"
+  "name_ja": "皇帝ペンギン７"
  },
  {
   "name": "Jumping Jack",
@@ -10021,7 +10021,7 @@
   ],
   "params": [],
   "index": 684,
-  "name_ja": "伝来宝刀でんらいほうとう"
+  "name_ja": "伝来宝刀"
  },
  {
   "name": "Bouncing Bomb",
@@ -10091,7 +10091,7 @@
   ],
   "params": [],
   "index": 689,
-  "name_ja": "トライアングルＺＺダブルゼット"
+  "name_ja": "トライアングルＺＺ"
  },
  {
   "name": "Optimal Trajectory",
@@ -10329,7 +10329,7 @@
   ],
   "params": [],
   "index": 706,
-  "name_ja": "風林火山ふうりんかざんデストロイヤー"
+  "name_ja": "風林火山デストロイヤー"
  },
  {
   "name": "Black Ash",
@@ -10385,7 +10385,7 @@
   ],
   "params": [],
   "index": 710,
-  "name_ja": "ファイアトルネードＤＤダブルドライブ"
+  "name_ja": "ファイアトルネードＤＤ"
  },
  {
   "name": "Fireball Storm",
@@ -10399,7 +10399,7 @@
   ],
   "params": [],
   "index": 711,
-  "name_ja": "爆熱ばくねつストーム"
+  "name_ja": "爆熱ストーム"
  },
  {
   "name": "Lancelot Lunge",
@@ -10539,7 +10539,7 @@
   ],
   "params": [],
   "index": 721,
-  "name_ja": "武神連斬ぶしんれんざん"
+  "name_ja": "武神連斬"
  },
  {
   "name": "White Breath",
@@ -10567,7 +10567,7 @@
   ],
   "params": [],
   "index": 723,
-  "name_ja": "魔王まおうの斧おの"
+  "name_ja": "魔王の斧"
  },
  {
   "name": "Caliburn",
@@ -10679,7 +10679,7 @@
   ],
   "params": [],
   "index": 731,
-  "name_ja": "古代こだいの牙きば"
+  "name_ja": "古代の牙"
  },
  {
   "name": "Plasma Ball",
@@ -10791,7 +10791,7 @@
   ],
   "params": [],
   "index": 739,
-  "name_ja": "刹那せつなブースト"
+  "name_ja": "刹那ブースト"
  },
  {
   "name": "Matchlock Bullet",
@@ -10805,7 +10805,7 @@
   ],
   "params": [],
   "index": 740,
-  "name_ja": "火縄ひなわバレット"
+  "name_ja": "火縄バレット"
  },
  {
   "name": "Cupid's Arrow",
@@ -10903,7 +10903,7 @@
   ],
   "params": [],
   "index": 747,
-  "name_ja": "双飛遊星弾そうひゆうせいだん"
+  "name_ja": "双飛遊星弾"
  },
  {
   "name": "Solar Nexus",
@@ -10959,7 +10959,7 @@
   ],
   "params": [],
   "index": 751,
-  "name_ja": "ファイアトルネードＴＣトリプルクラッシャー"
+  "name_ja": "ファイアトルネードＴＣ"
  },
  {
   "name": "???",
@@ -11025,7 +11025,7 @@
   ],
   "params": [],
   "index": 756,
-  "name_ja": "天地雷鳴てんちらいめい"
+  "name_ja": "天地雷鳴"
  },
  {
   "name": "Chrysanthemum Katana",
@@ -11039,7 +11039,7 @@
   ],
   "params": [],
   "index": 757,
-  "name_ja": "菊一文字きくいちもんじ"
+  "name_ja": "菊一文字"
  },
  {
   "name": "Shell Burst",
@@ -11081,7 +11081,7 @@
   ],
   "params": [],
   "index": 760,
-  "name_ja": "王者おうじゃの牙きば"
+  "name_ja": "王者の牙"
  },
  {
   "name": "Majestic Radiance",
@@ -11221,7 +11221,7 @@
   ],
   "params": [],
   "index": 770,
-  "name_ja": "最強さいきょうイレブン波動はどう"
+  "name_ja": "最強イレブン波動"
  },
  {
   "name": "Firebird Flight",
@@ -11235,7 +11235,7 @@
   ],
   "params": [],
   "index": 771,
-  "name_ja": "鳳凰烈火ほうおうれっか"
+  "name_ja": "鳳凰烈火"
  },
  {
   "name": "Athenian Assault",
@@ -11291,7 +11291,7 @@
   ],
   "params": [],
   "index": 775,
-  "name_ja": "満月まんげつラッシュ"
+  "name_ja": "満月ラッシュ"
  },
  {
   "name": "Mortal Smash",
@@ -11683,7 +11683,7 @@
   ],
   "params": [],
   "index": 803,
-  "name_ja": "嵐あらし・竜巻たつまき・ハリケーン"
+  "name_ja": "嵐・竜巻・ハリケーン"
  },
  {
   "name": "Falcon Glide",
@@ -11893,7 +11893,7 @@
   ],
   "params": [],
   "index": 818,
-  "name_ja": "ファイアトルネードＡアレス"
+  "name_ja": "ファイアトルネードＡ"
  },
  {
   "name": "Golden Gull",
@@ -11921,7 +11921,7 @@
   ],
   "params": [],
   "index": 820,
-  "name_ja": "北極ほっきょくグマ２号ごう"
+  "name_ja": "北極グマ２号"
  },
  {
   "name": "Meteor Strike",
@@ -11949,7 +11949,7 @@
   ],
   "params": [],
   "index": 822,
-  "name_ja": "忍法にんぽうガマガエル"
+  "name_ja": "忍法ガマガエル"
  },
  {
   "name": "Flash Dance",
@@ -11977,7 +11977,7 @@
   ],
   "params": [],
   "index": 824,
-  "name_ja": "氷こおりの槍やり"
+  "name_ja": "氷の槍"
  },
  {
   "name": "Hot Head",
@@ -12019,7 +12019,7 @@
   ],
   "params": [],
   "index": 827,
-  "name_ja": "火ひだるまバクネツ弾だん"
+  "name_ja": "火だるまバクネツ弾"
  },
  {
   "name": "Fire Lemonade",
@@ -12131,7 +12131,7 @@
   ],
   "params": [],
   "index": 835,
-  "name_ja": "天空てんくうの刃やいば"
+  "name_ja": "天空の刃"
  },
  {
   "name": "Ursa Rager",
@@ -12145,7 +12145,7 @@
   ],
   "params": [],
   "index": 836,
-  "name_ja": "必殺ひっさつクマゴロシ斬ざん"
+  "name_ja": "必殺クマゴロシ斬"
  },
  {
   "name": "Cold Front",
@@ -12243,7 +12243,7 @@
   ],
   "params": [],
   "index": 843,
-  "name_ja": "天竜てんりゅう"
+  "name_ja": "天竜"
  },
  {
   "name": "Diamond Ray",
@@ -12271,7 +12271,7 @@
   ],
   "params": [],
   "index": 845,
-  "name_ja": "曲まがるダイヤモンドレイ"
+  "name_ja": "曲がるダイヤモンドレイ"
  },
  {
   "name": "Triple G Strike",
@@ -12285,7 +12285,7 @@
   ],
   "params": [],
   "index": 846,
-  "name_ja": "ＧＧＧ線上せんじょうのアリア"
+  "name_ja": "ＧＧＧ線上のアリア"
  },
  {
   "name": "Off-Balance Pisa Kick",
@@ -12369,7 +12369,7 @@
   ],
   "params": [],
   "index": 852,
-  "name_ja": "カロネード砲ほう"
+  "name_ja": "カロネード砲"
  },
  {
   "name": "Solar Flex",
@@ -12523,7 +12523,7 @@
   ],
   "params": [],
   "index": 863,
-  "name_ja": "バーニング・火ひの鳥とり"
+  "name_ja": "バーニング・火の鳥"
  },
  {
   "name": "Bull Rush",
@@ -12659,7 +12659,7 @@
   ],
   "params": [],
   "index": 873,
-  "name_ja": "ラストリゾートΣシグマ"
+  "name_ja": "ラストリゾートΣ"
  },
  {
   "name": "Last Resort D",
@@ -12673,7 +12673,7 @@
   ],
   "params": [],
   "index": 874,
-  "name_ja": "ラストリゾートＤドラゴン"
+  "name_ja": "ラストリゾートＤ"
  },
  {
   "name": "Hollow Blare",
@@ -12715,7 +12715,7 @@
   ],
   "params": [],
   "index": 877,
-  "name_ja": "月光丸げっこうまる・燕返つばめがえし"
+  "name_ja": "月光丸・燕返し"
  },
  {
   "name": "Emperor Penguin No. 2 feat. Shark",
@@ -12729,7 +12729,7 @@
   ],
   "params": [],
   "index": 878,
-  "name_ja": "皇帝こうていペンギン２号ごう ｆｅａｔ．シャーク"
+  "name_ja": "皇帝ペンギン２号 ｆｅａｔ．シャーク"
  },
  {
   "name": "Avenging Eagle",
@@ -12743,7 +12743,7 @@
   ],
   "params": [],
   "index": 879,
-  "name_ja": "天空隼弾てんくうはやぶさだん"
+  "name_ja": "天空隼弾"
  },
  {
   "name": "Crack Shot",
@@ -12757,7 +12757,7 @@
   ],
   "params": [],
   "index": 880,
-  "name_ja": "天崩地裂てんほうちれつ"
+  "name_ja": "天崩地裂"
  },
  {
   "name": "Icebreaker",
@@ -12771,7 +12771,7 @@
   ],
   "params": [],
   "index": 881,
-  "name_ja": "氷結ひょうけつのグングニル"
+  "name_ja": "氷結のグングニル"
  },
  {
   "name": "Twin Gallop",
@@ -12785,7 +12785,7 @@
   ],
   "params": [],
   "index": 882,
-  "name_ja": "暴走ぼうそうチャリオット"
+  "name_ja": "暴走チャリオット"
  },
  {
   "name": "Inazuma Break CG",
@@ -12799,7 +12799,7 @@
   ],
   "params": [],
   "index": 883,
-  "name_ja": "イナズマブレイクＣＧコードグレイト"
+  "name_ja": "イナズマブレイクＣＧ"
  },
  {
   "name": "Cold Snap",
@@ -12813,7 +12813,7 @@
   ],
   "params": [],
   "index": 884,
-  "name_ja": "氷こおりの矢や"
+  "name_ja": "氷の矢"
  },
  {
   "name": "Cross Fire",
@@ -12841,7 +12841,7 @@
   ],
   "params": [],
   "index": 886,
-  "name_ja": "流星りゅうせいブレードＡアレス"
+  "name_ja": "流星ブレードＡ"
  },
  {
   "name": "Spring Thunderclap",
@@ -12855,7 +12855,7 @@
   ],
   "params": [],
   "index": 887,
-  "name_ja": "春雷しゅんらい"
+  "name_ja": "春雷"
  },
  {
   "name": "Sunshine Splitter",
@@ -12897,7 +12897,7 @@
   ],
   "params": [],
   "index": 890,
-  "name_ja": "剛ごうの一閃いっせん"
+  "name_ja": "剛の一閃"
  },
  {
   "name": "Swirly Shot",
@@ -13009,7 +13009,7 @@
   ],
   "params": [],
   "index": 898,
-  "name_ja": "天空てんくうサンダー"
+  "name_ja": "天空サンダー"
  },
  {
   "name": "Solution Boost",
@@ -13051,7 +13051,7 @@
   ],
   "params": [],
   "index": 901,
-  "name_ja": "メテオッド・ファイアトルネードＶヴィクトリー"
+  "name_ja": "メテオッド・ファイアトルネードＶ"
  },
  {
   "name": "Legendary Silver Wolf",

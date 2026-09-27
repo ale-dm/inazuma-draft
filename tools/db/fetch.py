@@ -137,6 +137,7 @@ def fetch_zukan_desc(zukan):
 
 
 def _txt(s):
+    s = re.sub(r'<rt>.*?</rt>|<rp>.*?</rp>', '', s, flags=re.S)       # sin furigana
     s = re.sub(r'<br\s*/?>', ' ', s)
     return html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', s))).strip()
 
