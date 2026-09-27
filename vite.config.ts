@@ -3,4 +3,6 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  // GitHub Pages sert le site sous /<repo>/ (VITE_BASE=/inazuma-draft/ en CI)
+  base: process.env.VITE_BASE ?? '/',
 })
