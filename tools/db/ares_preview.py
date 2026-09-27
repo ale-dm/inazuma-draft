@@ -1,10 +1,13 @@
 """Muestra de notas de Ares (prototipo, no carga nada): python3 tools/db/ares_preview.py → build/ares_preview.csv
 
-Nota: nivel por papel (A: ha estado en el Raimon de Ares · B: rivales · C: secundarios) con su banda de los clásicos;
+Nota: banda por el tier de potencial del juego (clave de stats de Victory Road, 0–3; data/roadtoultimate);
 posición en la banda = percentil (en su posición) de 0,6·mejor técnica + 0,4·media de sus 3 mejores (potencia máx.
-de Victory Road); +2 si su rareza base es Experimentado, +1 si tiene una técnica de 640 o más.
+de Victory Road); +1 si tiene una técnica de 640 o más. Los que tienen versión héroe/basara en el juego
+(protagonistas de Ares: Sonny, Elliot, Heath) tienen suelo de Top. Personajes de sagas anteriores: media con la nota de
+su carta de IE2 (o la primera que tengan), salvo Shawn.
 Stats: forma de su plantilla de VR (fórmulas de docs/victory-road-stats.md) + tipo de sus técnicas, repartidas
-alrededor de la nota como en los clásicos. Personajes clásicos: también la media con la nota de su primera carta.
+alrededor de la nota como en los clásicos. Stats de VR de la carta: su plantilla a nivel 50 × el multiplicador de la
+rareza que corresponde a su categoría (Común = Normal ×1,0 … Legendario = Légendaire ×1,4).
 """
 import collections, csv, json, os, re, statistics as stt
 
@@ -20,6 +23,11 @@ moves.update(json.load(open(os.path.join(D, 'azalee', 'wiki_moves_ares_orion.jso
 waza = open(os.path.join(C, 'WazaData.lua')).read()
 AT = open(os.path.join(C, 'PlayerData_AT.lua')).read()
 cards = json.load(open(os.path.join(ROOT, 'build', 'players.json')))['cards']
+TAB = json.load(open(os.path.join(D, 'roadtoultimate', 'stat_tables.json')))
+RTU = collections.defaultdict(list)
+for x in json.load(open(os.path.join(D, 'roadtoultimate', 'ares.json'))):
+    RTU[x['zukan_id']].append(x)
+NO_ANCHOR = {'Fubuki Shirou'}                     # Shawn: su versión de Ares va sola
 
 norm = lambda s: re.sub(r'[\W_]+', '', (s or '').replace('*', '').lower())
 slug = lambda s: re.sub(r'-+', '-', re.sub(r'[^a-z0-9]+', '-', s.lower())).strip('-')
@@ -47,10 +55,9 @@ tmpl_common = {}
 for pos in ('FW', 'MF', 'DF', 'GK'):
     cnt = collections.Counter(tuple(x['lv99'][k] for k in KEYS) for x in AZ.values() if x['position'] == pos and x['rarity_code'] == 0)
     tmpl_common[pos] = dict(zip(KEYS, cnt.most_common(1)[0][0]))
-first_card = {}
-for c in sorted(cards, key=lambda c: ['IE1', 'IE2', 'IE3', 'GO1', 'GO2', 'GO3'].index(c['game'])):
-    if c['version'] == 'base':
-        first_card.setdefault(c['character_id'], c)
+first_card = {}                                   # carta de referencia: la de IE2 si la tiene; si no, la primera
+for c in sorted(cards, key=lambda c: (c['game'] != 'IE2', ['IE1', 'IE2', 'IE3', 'GO1', 'GO2', 'GO3'].index(c['game']), c['version'] != 'base')):
+    first_card.setdefault(c['character_id'], c)
 
 rows = []
 for z in Z:
@@ -67,22 +74,27 @@ for z in Z:
         src, st, rar = ('wiki' if pg in at_by_page else '-'), tmpl_common[z['position']], 'Normal'
     sk = list({s['name_en']: s for s in sorted(sk, key=lambda s: s['max'])}.values())      # mismo nombre (otra versión): la más fuerte
     top = sorted((s['max'] for s in sk), reverse=True)
-    rows.append(dict(no=z['no'], name=z['name'], page=titles.get(z['name']), pos=z['position'], team=team, src=src, st=st, rar=rar,
+    rx = RTU.get(z['id'], [])
+    norm_x = next((x for x in rx if x['type'] == 'normal'), None)
+    key = (norm_x or {}).get('stat_key')
+    rows.append(dict(key=key, vtier=int(key[-1]) if key else 0, hero=any(x['type'] in ('hero', 'basara') for x in rx),no=z['no'], name=z['name'], page=titles.get(z['name']), pos=z['position'], team=team, src=src, st=st, rar=rar,
                      tier='A' if 'Raimon' in z['teams'] else 'C' if team == 'Sub Character' else 'B',
                      best=top[0] if top else 0, top3=stt.mean(top[:3]) if top else 0,
                      cats={c: max((s['max'] for s in sk if s['category'] == c), default=0) for c in ('Tir', 'Dribble', 'Défense', 'Arrêt')},
                      skills=[f"{s['name_en']} ({s['max']})" for s in sorted(sk, key=lambda s: -s['max'])[:4]]))
 
-BAND = {'A': (66, 84), 'B': (56, 77), 'C': (44, 72)}
+BAND = {3: (74, 86), 2: (68, 80), 1: (61, 74), 0: (54, 68)}      # por tier de potencial de VR
 for pos in ('FW', 'MF', 'DF', 'GK'):
     g = [r for r in rows if r['pos'] == pos]
     sc = sorted(0.6 * r['best'] + 0.4 * r['top3'] for r in g)
     for r in g:
         s = 0.6 * r['best'] + 0.4 * r['top3']
         q = (sum(1 for v in sc if v < s) + 0.5 * sum(1 for v in sc if v == s)) / len(sc)
-        lo, hi = BAND[r['tier']]
-        r['ovr'] = round(lo + (hi - lo) * q + (2 if r['rar'].startswith('Exp') else 0) + (1 if r['best'] >= 640 else 0))
-        fc = first_card.get(slug(r['page'])) if r['page'] else None
+        lo, hi = BAND[r['vtier']]
+        r['ovr'] = round(lo + (hi - lo) * q + (1 if r['best'] >= 640 else 0))
+        if r['hero']:
+            r['ovr'] = max(r['ovr'], 84)                  # protagonistas de Ares (versión héroe/basara en el juego)
+        fc = first_card.get(slug(r['page'])) if r['page'] and r['page'] not in NO_ANCHOR else None
         r['classic'] = f"{fc['game']} {fc['ovr']}" if fc else ''
         r['ovr_mix'] = round((r['ovr'] + fc['ovr']) / 2) if fc else r['ovr']
 
@@ -108,14 +120,22 @@ for pos in ('FW', 'MF', 'DF', 'GK'):
         off = r['ovr_mix'] - sum(raw[k] * w for k, w in W[pos].items())
         main = max(W[pos], key=W[pos].get)                  # su stat principal (Tiro, Control, Defensa, Parada) manda
         r['stats'] = {k: max(25, min(99 if k == main else r['ovr_mix'] + 4, round(raw[k] + off if k in W[pos] else raw[k] - 3))) for k in raw}
+        r['stats'][main] = max(r['stats'][main], min(99, r['ovr_mix'] + 2))   # la stat principal de su posición, por encima de la nota
+        r['stats'] = {k: v if k == main else min(v, r['stats'][main] - 1) for k, v in r['stats'].items()}   # y la más alta
+        # stats de VR de la carta: plantilla Lv50 × rareza de su categoría
+        rar = next(n for n, t in (('legendaire', 89), ('emerite', 83), ('experimente', 75), ('grimpant', 65), ('normal', 0)) if r['ovr_mix'] >= t)
+        mult = next(x['multiplierPct'] for x in TAB['rarities'] if x['name'] == rar) / 100
+        tpl = TAB['templates'].get(r['key'] or '', {}).get('50')
+        r['vr_rarity'], r['vr_stats'] = rar, [round(v * mult) for v in tpl] if tpl else None
 
 os.makedirs(os.path.join(ROOT, 'build'), exist_ok=True)
 with open(os.path.join(ROOT, 'build', 'ares_preview.csv'), 'w', newline='', encoding='utf-8') as f:
     w = csv.writer(f)
-    w.writerow(['no', 'nombre', 'equipo', 'pos', 'nivel', 'rareza_vr', 'nota_ares', 'clasico', 'nota_final', 'tiro', 'control', 'fisico',
-                'velocidad', 'defensa', 'parada', 'tecnicas', 'fuente'])
+    w.writerow(['no', 'nombre', 'equipo', 'pos', 'tier_vr', 'heroe', 'nota_ares', 'clasico', 'nota_final', 'tiro', 'control', 'fisico',
+                'velocidad', 'defensa', 'parada', 'rareza_vr', 'stats_vr_lv50', 'tecnicas', 'fuente'])
     for r in sorted(rows, key=lambda r: (r['team'], -r['ovr_mix'])):
         s = r['stats']
-        w.writerow([r['no'], r['name'], r['team'], r['pos'], r['tier'], r['rar'], r['ovr'], r['classic'], r['ovr_mix'], s['shooting'], s['control'],
-                    s['physical'], s['speed'], s['defense'], s['goalkeeping'], ' · '.join(r['skills']), r['src']])
+        w.writerow([r['no'], r['name'], r['team'], r['pos'], r['vtier'], 'sí' if r['hero'] else '', r['ovr'], r['classic'], r['ovr_mix'], s['shooting'],
+                    s['control'], s['physical'], s['speed'], s['defense'], s['goalkeeping'], r['vr_rarity'],
+                    '/'.join(map(str, r['vr_stats'])) if r['vr_stats'] else '', ' · '.join(r['skills']), r['src']])
 print(f"{len(rows)} jugadores de Ares → build/ares_preview.csv", collections.Counter(r['src'] for r in rows))
