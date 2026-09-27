@@ -474,12 +474,78 @@ def main():
                     k = c.find('{{Descripción')
                     desc = c[k:k + 4000]
                 tech = section('Supert')
-                if desc or tech:
-                    out[inv.get(red.get(t, t), inv.get(t, t))] = {'es_page': t, 'section': desc or '', 'techniques': tech or ''}
+                design = section('Dise')                    # sprites (Saga de Destin = Victory Road) si no tiene subpágina
+                if desc or tech or design:
+                    out[inv.get(red.get(t, t), inv.get(t, t))] = {'es_page': t, 'section': desc or '', 'techniques': tech or '',
+                                                                   'design': design or ''}
             if i % 400 == 0:
                 log(f'  descripciones {i}/{len(es_titles)}')
         return out
     cached('es_descriptions.json', es_descriptions)
+
+    log('6e sprites de Victory Road por versión (wiki española: <Personaje>/Diseño en los Videojuegos → Saga de Destin)')
+    def es_sprites():
+        es_desc = json.load(open(os.path.join(CACHE, 'es_descriptions.json'), encoding='utf-8'))
+        es_pages = {v['es_page']: k for k, v in es_desc.items()}
+        titles_ = sorted(f'{t}/Diseño en los Videojuegos' for t in es_pages)
+        out, files, subpages = {}, set(), {}
+        for i in range(0, len(titles_), 20):
+            pg_, red = query_all(WIKI_ES_API, titles='|'.join(titles_[i:i + 20]), prop='revisions', rvprop='content', rvslots='main', redirects=1)
+            if i % 400 == 0:
+                log(f'  diseño {i}/{len(titles_)}')
+            for t, p in pg_.items():
+                if not p.get('revisions'):
+                    continue
+                c = p['revisions'][0]['slots']['main']['content']
+                src = red.get(t, t).replace('/Diseño en los Videojuegos', '')
+                subpages[src] = c
+        for src, en in es_pages.items():                      # subpágina, o la sección de la ficha principal
+            c = subpages.get(src) or es_desc.get(en, {}).get('design') or ''
+            m = re.search(r'\{\{Saga de Destin\}\}\s*=+', c)
+            if not m:
+                # formato de ficha: grupos por equipo (N = Raimon (GO)…) y las imágenes de Victory Road llevan "HVR"
+                groups = []
+                for n_, body in re.findall(r'\{\{Tabla \(Sprite\)\s*\|N\s*=\s*(.*?)\n\|Img\s*=(.*?)\}\}\s*(?=\{\{Tabla|\Z)', c.split('|-|Modelo 3D=')[0], re.S):
+                    imgs = [(f.strip(), cap) for f, cap in re.findall(r'\[\[Archivo:([^|\]]+)(?:\|([^\]]*))?\]\]', body) if 'HVR' in f and '3D' not in f]
+                    if imgs:
+                        caps = [[x for x in (cap or '').split('|') if not re.match(r'^\d+px$', x.strip())] for _, cap in imgs]
+                        groups.append({'era': '', 'label': re.sub(r'<br\s*/?>|\{\{[^}]*\}\}', ' ', n_).strip(),
+                                       'images': [{'file': f, 'caption': (cp[0].strip() if cp else '')} for (f, _), cp in zip(imgs, caps)]})
+                        files |= {f for f, _ in imgs}
+                if groups:
+                    out[en] = groups
+                continue
+            if True:
+                sec = c[m.end():]
+                sec = sec.split('|-|Modelo 3D=')[0].split('\n==')[0]
+                groups = []
+                for tb in re.findall(r'\{\{Tabla \(Sprite\)\s*\|N\s*=\s*(.*?)\n\|Img\s*=(.*?)\}\}\s*(?=\{\{Tabla|\Z)', sec, re.S):
+                    era, body = tb
+                    for part in body.split('----'):
+                        imgs = re.findall(r'\[\[Archivo:([^|\]]+)(?:\|([^\]]*))?\]\]', part)
+                        label = re.sub(r'\[\[Archivo:[^\]]*\]\]|<br\s*/?>|\{\{[^}]*\}\}', ' ', part)
+                        label = re.sub(r'\s+', ' ', label).strip()
+                        caps = [[x for x in (cap or '').split('|') if not re.match(r'^\d+px$', x.strip())] for _, cap in imgs]
+                        groups.append({'era': re.sub(r'[{}]', '', era).strip(), 'label': label,
+                                       'images': [{'file': f.strip(), 'caption': (cp[0].strip() if cp else '')} for (f, _), cp in zip(imgs, caps)]})
+                        files |= {f.strip() for f, _ in imgs}
+                out[en] = groups
+        urls = {}
+        files = sorted(files)
+        for i in range(0, len(files), 50):
+            d = api(WIKI_ES_API, action='query', titles='|'.join('Archivo:' + f for f in files[i:i + 50]), prop='imageinfo', iiprop='url')['query']
+            norm = {n['to']: n['from'] for n in d.get('normalized', [])}
+            for p in d['pages']:
+                if p.get('imageinfo'):
+                    urls[norm.get(p['title'], p['title']).split(':', 1)[1]] = p['imageinfo'][0]['url']
+            time.sleep(0.2)
+        for groups in out.values():
+            for g in groups:
+                for im in g['images']:
+                    im['url'] = urls.get(im['file']) or urls.get(im['file'].replace('_', ' '))
+        log(f'  {len(out)} personajes con sprites de Victory Road, {len(urls)} imágenes')
+        return out
+    cached('es_sprites.json', es_sprites)
 
     log('7/8 jugadores solo de la wiki (imagen)')
     def wiki_only():

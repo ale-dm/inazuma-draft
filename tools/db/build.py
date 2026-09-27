@@ -732,12 +732,6 @@ def main(extra_z=None, write=True):
         for (p, g, tm), d in proto.items():
             if p == pg and g in stats_by_game:
                 versions.append((g, tm, tm, d, d['entry']))
-        # jugadores del Raimon de GO sin versión de GO2: su versión Raimon de Chrono Stone
-        base_tm = old_team.get((name, first)) or next((ZUKAN_TEAM.get(t, t) for z in zs for t in z['teams']), None)
-        if first == 'GO1' and base_tm in ('Raimon', 'Raimon First Squad') and 'GO2' in stats_by_game \
-                and not any(v[0] == 'GO2' for v in versions):
-            versions.append(('GO2', 'Raimon', 'Raimon', None, None))
-
         # versiones de la wiki (formas de PlayerData); si la versión ya existe, se le asigna la entrada de su forma
         for g in MAIN:
             for tm, body in wiki_forms.get((pg, g), []):
@@ -1072,6 +1066,55 @@ def main(extra_z=None, write=True):
     sin_es = [t['name'] for t in teams if not t['name_es']]
     if sin_es:
         report.append(f'Equipos sin nombre en castellano ({len(sin_es)}): añadir a overrides.team_es → ' + ', '.join(sin_es))
+
+    # --- sprites de Victory Road por versión (wiki española: Diseño en los Videojuegos → Saga de Destin): más fieles que zukan
+    sprites = load_opt('es_sprites.json', {})
+    def norm_label(x):
+        x = re.sub(r'\((?:GO|HVR|PR|IE HVR)\)', '', x or '')
+        return re.sub(r'[^a-záéíóúñ0-9]', '', x.lower())
+    unmatched = collections.Counter()
+    for c in cards:
+        groups = sprites.get(c['page'])
+        if not groups:
+            continue
+        mixi_card = c['team'] in ('Mixi Max', 'Chrono Storm')
+        adult = c['version'] in (ILJ, 'Adult') or (c['team'] == 'Sub Character' and c['version'] == 'Adult')
+        es_names = {norm_label(n) for n in (c['team'], c['version'], manual_es.get(c['team']), es_team.get(tnorm(c['team'] or '')),
+                                             manual_es.get(c['version']), es_team.get(tnorm(c['version']))) if n}
+        pm = re.search(r'Mixi Max \(([^)]+)\)', c['version'])
+        partner = pm.group(1) if pm else next((sp.get('name') or '' for sp in c.get('specials') or [] if sp['type'] == 'mixi'), '')
+        best, best_sc = None, 0
+        for g in groups:
+            era = g['era'].lower()
+            if mixi_card != era.startswith('miximax'):
+                continue
+            if norm_label(g['label']) not in es_names and not (mixi_card and partner and partner.split()[0].lower()[:4] in era):
+                continue
+            sc = 5 + 3 * (('mark' in era and c['game'].startswith('IE')) or ('arion' in era and c['game'].startswith('GO')) or not era)
+            for im in g['images']:
+                if not im.get('url'):
+                    continue
+                cap = (im.get('caption') or '').lower()
+                s2 = sc + 2 * (('portero' in cap and c['position'] == 'GK') or (('líbero' in cap or 'libero' in cap) and c['position'] != 'GK'))
+                s2 += 2 * (('adult' in cap) == adult) - 3 * ('sin bandana' in cap) - 2 * (('joven' in cap) and adult)
+                s2 -= 2 * (('portero' in cap and c['position'] != 'GK') or ('líbero' in cap and c['position'] == 'GK'))
+                if s2 > best_sc:
+                    best, best_sc = im['url'], s2
+        if best:
+            c['image_url'] = best
+    have_lab = collections.defaultdict(set)
+    for c in cards:
+        have_lab[c['page']] |= {norm_label(x) for x in (c['team'], c['version'], es_team.get(tnorm(c['team'] or '')), manual_es.get(c['team']),
+                                                         es_team.get(tnorm(c['version'])), manual_es.get(c['version'])) if x}
+    extra_sprites = []
+    for pg_, groups in sprites.items():
+        if pg_ not in have_lab:
+            continue
+        for g in groups:
+            if g['era'].lower().startswith(('saga de mark', 'saga de arion')) and norm_label(g['label']) not in have_lab[pg_]:
+                extra_sprites.append(f"{pg_}: {g['label']} ({g['era']})")
+    if extra_sprites:
+        report.append(f'Versiones con sprite de Victory Road sin carta ({len(extra_sprites)}): ' + '; '.join(extra_sprites))
 
     # nº de cada carta: el de su ficha de zukan (la primera carta que la usa); las nuestras, a partir del último de zukan
     max_no = max(z['no'] for z in zukan if z.get('no'))
