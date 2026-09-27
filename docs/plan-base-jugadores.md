@@ -1,6 +1,6 @@
 # Plan: base de datos de jugadores (mega actualización)
 
-> Estado: **diseño acordado, prototipado con datos reales; falta implementar los scripts**.
+> Estado: **implementado** (primera versión). Ver «Uso» al final.
 > Objetivo: una base completa de jugadores (stats, OVR, categoría, técnicas, fotos) para una futura app tipo MadFut / Pacybits, reutilizando el draft actual.
 > Complementa [`plan-tecnicas.md`](./plan-tecnicas.md).
 
@@ -119,3 +119,16 @@ supabase/
   schema.sql                esquema del catálogo
 build/                      salida generada: players.json, review.csv (para revisar a mano)
 ```
+
+## 9. Uso
+
+```bash
+python3 tools/db/fetch.py            # descarga todas las fuentes (caché en tools/.cache/db/, ~10 min la primera vez)
+python3 tools/db/build.py            # genera build/players.json, build/review.csv, build/report.txt y supabase/seed.sql
+```
+
+- **Revisar:** `build/review.csv` (todas las cartas con OVR, categoría, stats y técnicas) y `build/report.txt` (avisos).
+- **Ajustar:** editar `data/overrides.json` (destacados, posiciones por versión, equivalencias de nombres, OVR manual) y volver a ejecutar `build.py`.
+- **Cargar en Supabase:** al hacer push a `main` de cambios en `supabase/`, el workflow `.github/workflows/db-load.yml` aplica `schema.sql` + `seed.sql` con el secreto del repo `SUPABASE_DB_URL` (también se puede lanzar a mano desde Actions → "Load player database into Supabase").
+
+Primera generación: **3.903 cartas** (3.806 personajes + 97 versiones), 587 técnicas · Legendary 36 · Top 233 · Advanced 516 · Growing 771 · Common 2.347 · OVR mediana 61, p90 79, máx 92.

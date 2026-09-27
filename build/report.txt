@@ -1,0 +1,10 @@
+Cartas: 3903 (97 versiones extra) · personajes: 3806 · técnicas: 587
+Categorías: Legendary Player 36 · Top Player 233 · Advanced Player 516 · Growing Player 771 · Common Player 2347
+Niveles: S 365 · A 84 · B 997 · C 2457
+OVR: mediana 61 · p90 79 · p99 88 · máx 92
+
+Balancing doc del Xtreme sin ficha (7): añadir a overrides.xtreme_balancing_pages → Rhionne (Chaos), Dante Diavolo (Orpheus), Kino Aki (Girls Team), Oogu (Zanark Domain), Yasha (Zanark Domain), Goburis (Zanark Domain), Yamana Akane (Secret players (GO))
+Wiki del Xtreme: "Kino Aki" sin ficha (Kino Aki)
+Wiki del Xtreme: "Sorano Aoi" sin ficha (Sorano Aoi)
+Jugadores de zukan sin ficha en la wiki (6): Bill Steakspear, Fred Ferrell, Dante Diavolo, Seraph Sharpe, Miriam Sharpe, Josephine
+Personajes sin stats de la saga principal (fuera): 1174
