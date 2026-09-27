@@ -190,7 +190,7 @@
     ]
   },
   "team_tuning": {
-    "_doc": "Ajuste fino por equipo y juego (orden de rivales de la historia). top11: media objetivo del once titular (las 11 mejores cartas); todo el equipo se mueve lo mismo. captain: ficha de la wiki del capitán: +2 y al menos 4 por encima de esa media (máx. 88).",
+    "_doc": "Ajuste fino por equipo y juego (orden de rivales de la historia). top11: media objetivo del once titular (las 11 mejores cartas); todo el equipo se mueve lo mismo (+1 a los más flojos del once hasta clavar la media). captain: ficha de la wiki del capitán: +2 y cerca de 4 por encima de esa media (subida máx. +6). Las subidas no pasan del techo del juego (CEIL) y nadie baja por él.",
     "IE1": {
       "Royal Academy": {
         "top11": 80.5,
@@ -241,6 +241,192 @@
         "top11": 82.6,
         "captain": "Afuro Terumi",
         "note": "11 final"
+      }
+    },
+    "IE2": {
+      "Gemini Storm": {
+        "top11": 76.5,
+        "captain": "Midorikawa Ryuuji",
+        "note": "1"
+      },
+      "Alpine": {
+        "top11": 77.0,
+        "captain": "Fubuki Shirou",
+        "note": "2"
+      },
+      "Epsilon": {
+        "top11": 77.5,
+        "captain": "Saginuma Osamu",
+        "note": "3"
+      },
+      "Cloister Divinity": {
+        "top11": 78.0,
+        "captain": "Kakita Taishou",
+        "note": "4"
+      },
+      "Royal Academy Redux": {
+        "top11": 79.0,
+        "captain": "Fudou Akio",
+        "note": "5"
+      },
+      "Super Triple C": {
+        "top11": 79.5,
+        "captain": "Urabe Rica",
+        "note": "6"
+      },
+      "Epsilon Plus": {
+        "top11": 80.5,
+        "captain": "Saginuma Osamu",
+        "note": "7"
+      },
+      "Diamond Dust": {
+        "top11": 82.0,
+        "captain": "Suzuno Fuusuke",
+        "note": "8"
+      },
+      "Prominence": {
+        "top11": 82.5,
+        "captain": "Nagumo Haruya",
+        "note": "9"
+      },
+      "Dark Emperors": {
+        "top11": 84.5,
+        "captain": "Kazemaru Ichirouta",
+        "note": "10"
+      },
+      "Genesis": {
+        "top11": 86.0,
+        "captain": "Kiyama Hiroto",
+        "note": "11"
+      }
+    },
+    "IE3": {
+      "Big Waves": {
+        "top11": 77.0,
+        "captain": "Niese Dolphin",
+        "note": "1"
+      },
+      "Desert Lions": {
+        "top11": 77.5,
+        "captain": "Bjorn Kyle",
+        "note": "2"
+      },
+      "Neo Japan": {
+        "top11": 79.0,
+        "captain": "Saginuma Osamu",
+        "note": "3"
+      },
+      "Fire Dragon": {
+        "top11": 80.0,
+        "captain": "Choi Chang-soo",
+        "note": "4"
+      },
+      "Queen's Knights": {
+        "top11": 81.0,
+        "captain": "Edgar Valtinas",
+        "note": "5"
+      },
+      "Team D": {
+        "top11": 81.5,
+        "captain": "Demonio Strada",
+        "note": "6"
+      },
+      "Unicorn": {
+        "top11": 82.5,
+        "captain": "Mark Krueger",
+        "note": "7"
+      },
+      "Orpheus": {
+        "top11": 83.5,
+        "captain": "Fidio Aldena",
+        "note": "8"
+      },
+      "The Empire": {
+        "top11": 84.0,
+        "captain": "Teles Torrue",
+        "note": "9"
+      },
+      "The Kingdom": {
+        "top11": 84.5,
+        "captain": "Mack Ronijo",
+        "note": "10"
+      },
+      "Team Zoolan": {
+        "top11": 85.0,
+        "captain": "Lubbock Henktacker",
+        "note": "11"
+      },
+      "Little Gigantes": {
+        "top11": 86.5,
+        "captain": "Rococo Ulpa",
+        "note": "12"
+      }
+    },
+    "GO1": {
+      "Milky Way Charter": {
+        "top11": 74.0,
+        "captain": "Kita Ichiban",
+        "note": "1"
+      },
+      "Almighty Faith": {
+        "top11": 74.5,
+        "captain": "Isozaki Kenma",
+        "note": "2"
+      },
+      "Royal Academy": {
+        "top11": 75.5,
+        "captain": "Mikado Haruma",
+        "note": "3"
+      },
+      "Pirates Cove": {
+        "top11": 76.0,
+        "captain": "Namikawa Rensuke",
+        "note": "4"
+      },
+      "Lunar Sea": {
+        "top11": 76.5,
+        "captain": "Hyoudou Tsukasa",
+        "note": "5"
+      },
+      "Alpine": {
+        "top11": 77.5,
+        "captain": "Shirosaki Katsuya",
+        "note": "6"
+      },
+      "Kirkwood": {
+        "top11": 78.0,
+        "captain": "Kishibe Taiga",
+        "note": "7"
+      },
+      "Mirage": {
+        "top11": 78.5,
+        "captain": "Mahoro Tadashi",
+        "note": "8"
+      },
+      "Universal": {
+        "top11": 79.5,
+        "captain": "Amemiya Taiyou",
+        "note": "9"
+      },
+      "Mount Olympus": {
+        "top11": 80.5,
+        "captain": "Kurosaki Makoto",
+        "note": "10"
+      },
+      "Dragon Link": {
+        "top11": 81.5,
+        "captain": "Senguuji Yamato",
+        "note": "11"
+      },
+      "Eternal Light": {
+        "top11": 83.0,
+        "captain": "Hakuryuu",
+        "note": "12"
+      },
+      "Ancient Darkness": {
+        "top11": 84.0,
+        "captain": "Shuu",
+        "note": "13"
       }
     }
   }
