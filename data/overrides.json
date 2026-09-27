@@ -302,17 +302,17 @@
     },
     "IE3": {
       "Big Waves": {
-        "top11": 77.0,
+        "top11": 76.0,
         "captain": "Niese Dolphin",
         "note": "1"
       },
       "Desert Lions": {
-        "top11": 77.5,
+        "top11": 76.5,
         "captain": "Bjorn Kyle",
         "note": "2"
       },
       "Neo Japan": {
-        "top11": 79.0,
+        "top11": 80.5,
         "captain": "Saginuma Osamu",
         "note": "3"
       },
@@ -327,7 +327,7 @@
         "note": "5"
       },
       "Team D": {
-        "top11": 81.5,
+        "top11": 79.5,
         "captain": "Demonio Strada",
         "note": "6"
       },
@@ -337,12 +337,12 @@
         "note": "7"
       },
       "Orpheus": {
-        "top11": 83.5,
+        "top11": 84.5,
         "captain": "Fidio Aldena",
         "note": "8"
       },
       "The Empire": {
-        "top11": 84.0,
+        "top11": 82.0,
         "captain": "Teles Torrue",
         "note": "9"
       },
@@ -352,7 +352,7 @@
         "note": "10"
       },
       "Team Zoolan": {
-        "top11": 85.0,
+        "top11": 81.0,
         "captain": "Lubbock Henktacker",
         "note": "11"
       },
@@ -364,27 +364,27 @@
     },
     "GO1": {
       "Milky Way Charter": {
-        "top11": 74.0,
+        "top11": 74.5,
         "captain": "Kita Ichiban",
         "note": "1"
       },
       "Almighty Faith": {
-        "top11": 74.5,
+        "top11": 75.0,
         "captain": "Isozaki Kenma",
         "note": "2"
       },
       "Royal Academy": {
-        "top11": 75.5,
+        "top11": 76.0,
         "captain": "Mikado Haruma",
         "note": "3"
       },
       "Pirates Cove": {
-        "top11": 76.0,
+        "top11": 76.5,
         "captain": "Namikawa Rensuke",
         "note": "4"
       },
       "Lunar Sea": {
-        "top11": 76.5,
+        "top11": 77.0,
         "captain": "Hyoudou Tsukasa",
         "note": "5"
       },
@@ -404,29 +404,180 @@
         "note": "8"
       },
       "Universal": {
-        "top11": 79.5,
+        "top11": 79.0,
         "captain": "Amemiya Taiyou",
         "note": "9"
       },
       "Mount Olympus": {
-        "top11": 80.5,
+        "top11": 80.0,
         "captain": "Kurosaki Makoto",
         "note": "10"
       },
       "Dragon Link": {
-        "top11": 81.5,
+        "top11": 81.0,
         "captain": "Senguuji Yamato",
         "note": "11"
       },
       "Eternal Light": {
-        "top11": 83.0,
+        "top11": 82.5,
         "captain": "Hakuryuu",
         "note": "12"
       },
       "Ancient Darkness": {
-        "top11": 84.0,
+        "top11": 83.5,
         "captain": "Shuu",
         "note": "13"
+      }
+    },
+    "GO2": {
+      "Protocol Omega": {
+        "top11": 76.0,
+        "captain": "Alpha",
+        "note": "1"
+      },
+      "Protocol Omega 2.0": {
+        "top11": 77.5,
+        "captain": "Beta",
+        "note": "2"
+      },
+      "White Deer": {
+        "top11": 78.0,
+        "captain": "Inaba Taian",
+        "note": "3"
+      },
+      "Protocol Omega 3.0": {
+        "top11": 79.5,
+        "captain": "Gamma",
+        "note": "4"
+      },
+      "The Terracotta Army": {
+        "top11": 80.0,
+        "captain": "Bingmayong no Ichi",
+        "note": "5"
+      },
+      "Zanark's Domain": {
+        "top11": 81.0,
+        "captain": "Zanark Avalonic",
+        "note": "6"
+      },
+      "Perfect Cascade": {
+        "top11": 82.0,
+        "captain": "Rei Rukh",
+        "note": "7"
+      },
+      "Zan": {
+        "top11": 83.0,
+        "note": "8 (su capitán del juego, Zanark/Fei, juega en otro equipo en la base)"
+      },
+      "Gihl": {
+        "top11": 83.5,
+        "captain": "Meia",
+        "note": "9"
+      },
+      "Gahl": {
+        "top11": 84.0,
+        "note": "10 (su capitán del juego, Zanark/Fei, juega en otro equipo en la base)"
+      },
+      "Ragnah": {
+        "top11": 85.5,
+        "captain": "Saryuu Evan",
+        "note": "11"
+      },
+      "The Despairadoes": {
+        "top11": 86.5,
+        "captain": "Asta",
+        "note": "12"
+      },
+      "Nosfanatica": {
+        "top11": 87.0,
+        "captain": "Vampheny Vamp",
+        "note": "13"
+      },
+      "Lunar Howl": {
+        "top11": 87.0,
+        "captain": "Garshah Wolfein",
+        "note": "14"
+      }
+    },
+    "GO3": {
+      "Fire Dragon": {
+        "top11": 73.0,
+        "captain": "Lee Choon-yoon",
+        "note": "1"
+      },
+      "Big Waves": {
+        "top11": 73.5,
+        "captain": "Cole LaRuze",
+        "note": "2"
+      },
+      "Shamshir": {
+        "top11": 74.5,
+        "captain": "Said Ashraf",
+        "note": "3"
+      },
+      "Muay Tigers": {
+        "top11": 75.0,
+        "captain": "Napa Radam",
+        "note": "4"
+      },
+      "Storm Wolves": {
+        "top11": 76.0,
+        "captain": "Dmitri Sobirov",
+        "note": "5"
+      },
+      "Silica Eleven": {
+        "top11": 77.0,
+        "captain": "Kazerma Worg",
+        "note": "6"
+      },
+      "Naiadi Eleven": {
+        "top11": 78.0,
+        "captain": "Powai Pichori",
+        "note": "7"
+      },
+      "Magmavia Eleven": {
+        "top11": 79.0,
+        "captain": "Alvega Gordon",
+        "note": "8"
+      },
+      "Fertilia Eleven": {
+        "top11": 80.0,
+        "captain": "Stag Kuwatta",
+        "note": "9"
+      },
+      "Falam Medius": {
+        "top11": 81.0,
+        "captain": "Argo Burgess",
+        "note": "10"
+      },
+      "Ixar Fleet": {
+        "top11": 82.5,
+        "captain": "Bitway Ozrock",
+        "note": "11"
+      },
+      "Supernova": {
+        "top11": 84.5,
+        "captain": "Acrous Obies",
+        "note": "12"
+      },
+      "Big Bang": {
+        "top11": 84.5,
+        "captain": "Sarjes Luhg",
+        "note": "13"
+      }
+    },
+    "_game": {
+      "_doc": "Por juego: cap = techo de las subidas; compress_above/compress_factor = por encima de ese valor la nota se comprime (GO1: 92 → 88,5) para una escala de poder tipo IE1.",
+      "GO1": {
+        "cap": 87,
+        "compress_above": 84,
+        "compress_factor": 0.5
+      },
+      "GO2": {
+        "cap": 90
+      },
+      "GO3": {
+        "cap": 90
       }
     }
   }
