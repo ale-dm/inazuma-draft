@@ -67,7 +67,7 @@ function SearchView({ players, onOpen }: { players: Player[]; onOpen: (p: Player
   const [limit, setLimit] = useState(PAGE)
 
   const teams = useMemo(() => {
-    const set = new Set(players.filter(p => !game || p.game === game).map(p => p.team))
+    const set = new Set(players.filter(p => !game || p.game === game).flatMap(p => [p.team, ...p.extraTeams]))
     return [...set].sort((a, b) => teamName(a, locale).localeCompare(teamName(b, locale)))
   }, [players, game, locale])
 
@@ -76,7 +76,7 @@ function SearchView({ players, onOpen }: { players: Player[]; onOpen: (p: Player
     const list = players.filter(p =>
       (!q || p.name.toLowerCase().includes(q) || String(p.no) === q || String(p.zukanNo) === q || p.team.toLowerCase().includes(q) || teamName(p.team, locale).toLowerCase().includes(q)) &&
       (!pos || p.position === pos) && (!cat || p.category === cat) && (!game || p.game === game) &&
-      (!element || p.element === element) && (!team || p.team === team) && p.ovr >= minOvr)
+      (!element || p.element === element) && (!team || p.team === team || p.extraTeams.includes(team)) && p.ovr >= minOvr)
     if (sort === 'no') return list.sort((a, b) => (a.no ?? Infinity) - (b.no ?? Infinity) || MAIN_ORDER(a) - MAIN_ORDER(b))
     return sort === 'ovr'
       ? list.sort((a, b) => b.ovr - a.ovr || a.name.localeCompare(b.name))
@@ -159,10 +159,12 @@ function GamesView({ players, onOpen }: { players: Player[]; onOpen: (p: Player)
     if (!game) return []
     const m = new Map<string, Player[]>()
     for (const p of byGame.get(game) ?? []) {
-      const key = SCOUT_TEAMS.has(p.team) ? SCOUTS : p.team
-      const list = m.get(key)
-      if (list) list.push(p)
-      else m.set(key, [p])
+      for (const tm of [p.team, ...p.extraTeams]) {
+        const key = SCOUT_TEAMS.has(tm) ? SCOUTS : tm
+        const list = m.get(key)
+        if (list) list.push(p)
+        else m.set(key, [p])
+      }
     }
     return [...m.entries()]
       .map(([name, list]) => ({

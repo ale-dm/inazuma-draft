@@ -449,12 +449,20 @@ def main():
                 if not p.get('revisions'):
                     continue
                 c = p['revisions'][0]['slots']['main']['content']
-                m = re.search(r'\n==\s*Descripci(?:ón|ones)\s*==', c)
-                if not m:
-                    continue
-                b2 = re.search(r'\n==[^=]', c[m.end():])
-                sec = c[m.start():m.end() + b2.start()] if b2 else c[m.start():]
-                out[inv.get(red.get(t, t), inv.get(t, t))] = {'es_page': t, 'section': sec}
+                def section(pat):
+                    m = re.search(r'\n==[^=\n]*' + pat + r'[^=\n]*==', c)
+                    if not m:
+                        return None
+                    b2 = re.search(r'\n==[^=]', c[m.end():])
+                    return c[m.start():m.end() + b2.start()] if b2 else c[m.start():]
+                # la cabecera varía ("Descripciones", "Descripción", "Descripión del videojuego"…): vale cualquiera con la plantilla
+                desc = section('Descrip')
+                if not desc and '{{Descripción' in c:
+                    k = c.find('{{Descripción')
+                    desc = c[k:k + 4000]
+                tech = section('Supert')
+                if desc or tech:
+                    out[inv.get(red.get(t, t), inv.get(t, t))] = {'es_page': t, 'section': desc or '', 'techniques': tech or ''}
             if i % 400 == 0:
                 log(f'  descripciones {i}/{len(es_titles)}')
         return out

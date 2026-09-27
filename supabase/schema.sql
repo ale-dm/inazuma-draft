@@ -20,6 +20,9 @@ create table if not exists public.techniques (
   cost_game   text,                          -- juego de ese coste
   costs       jsonb                          -- todos los costes por juego
 );
+alter table public.techniques add column if not exists description text;   -- descripción oficial de zukan (inglés)
+alter table public.techniques add column if not exists image_url text;     -- imagen de zukan
+alter table public.techniques add column if not exists zukan_types jsonb;  -- categorías de zukan (Shot, Defence, Shot Block…)
 
 create table if not exists public.cards (
   id           text primary key,             -- <personaje>--<juego>--<versión>
@@ -48,8 +51,8 @@ alter table public.cards add column if not exists zukan_no int;
 alter table public.cards add column if not exists description text;
 alter table public.cards add column if not exists description_es text;   -- descripción en castellano (inazuma.fandom.com/es)
 alter table public.cards add column if not exists no int;                -- nº de la carta: el de zukan o, las nuestras, desde el último de zukan
-alter table public.cards add column if not exists specials jsonb;
-alter table public.zukan add column if not exists name_ja text;        -- Keshin / Keshin Armed / Soul (tótem) / Mixi Max
+alter table public.cards add column if not exists specials jsonb;        -- Keshin / Keshin Armed / Soul (tótem) / Mixi Max
+alter table public.cards add column if not exists extra_teams jsonb;     -- equipos sin cartas propias en los que juega (Caos)
 
 create index if not exists cards_character_idx on public.cards(character_id);
 create index if not exists cards_ovr_idx on public.cards(ovr desc);
@@ -89,6 +92,7 @@ create table if not exists public.zukan (      -- réplica de las fichas oficial
   vr_lv50      jsonb,                        -- stats oficiales de Victory Road a nivel 50
   wiki_page    text
 );
+alter table public.zukan add column if not exists name_ja text;
 
 create table if not exists public.card_techniques (
   card_id      text not null references public.cards(id) on delete cascade,
