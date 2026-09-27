@@ -20,6 +20,8 @@ import urllib.request
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', '..'))
 CACHE = os.path.join(ROOT, 'tools', '.cache', 'db')
+ZUKAN_DIR = os.path.join(ROOT, 'data', 'zukan')          # copia de zukan.inazuma.jp: va en el repo (no se pierde)
+ZUKAN_BASE = 'https://zukan.inazuma.jp'
 WIKI_API = 'https://inazuma-eleven.fandom.com/api.php'
 WIKI_ES_API = 'https://inazuma.fandom.com/es/api.php'
 XTREME_API = 'https://iegos13xtreme.fandom.com/api.php'
@@ -56,16 +58,16 @@ def api(base, **params):
     return json.loads(get(base, params))
 
 
-def cached(name, producer):
-    path = os.path.join(CACHE, name)
+def cached(name, producer, base=CACHE):
+    path = os.path.join(base, name)
     if not REFRESH and os.path.exists(path):
         with open(path, encoding='utf-8') as f:
             return json.load(f) if name.endswith('.json') else f.read()
     data = producer()
-    os.makedirs(CACHE, exist_ok=True)
+    os.makedirs(base, exist_ok=True)
     with open(path, 'w', encoding='utf-8') as f:
         if name.endswith('.json'):
-            json.dump(data, f, ensure_ascii=False)
+            json.dump(data, f, ensure_ascii=False, indent=None if base == CACHE else 1)
         else:
             f.write(data)
     return data
@@ -120,7 +122,7 @@ def fetch_zukan_desc(zukan):
             game, desc = (g.group(1), g.group(2)) if g else (None, m.group(1))
         stats = {k: int(v) for k, v in re.findall(r'(Kick|Control|Technique|Pressure|Physical|Agility|Intelligence) Lv50 (\d+)', t)}
         return str(z['no']), {'game': game, 'desc': desc, 'vr_lv50': stats or None}
-    part = os.path.join(CACHE, 'zukan_desc.partial.json')      # progreso parcial: se puede reanudar
+    part = os.path.join(ZUKAN_DIR, 'chara_param.partial.json')  # progreso parcial: se puede reanudar
     out = json.load(open(part, encoding='utf-8')) if os.path.exists(part) else {}
     todo = [z for z in todo if str(z['no']) not in out]
     with ThreadPoolExecutor(4) as ex:
@@ -131,6 +133,88 @@ def fetch_zukan_desc(zukan):
                     json.dump(out, f, ensure_ascii=False)
                 log(f'  fichas {i}/{len(todo)}')
     os.remove(part) if os.path.exists(part) else None
+    return out
+
+
+def _txt(s):
+    s = re.sub(r'<br\s*/?>', ' ', s)
+    return html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', s))).strip()
+
+
+def _pages(url):
+    """todas las páginas de un listado de zukan (?page=N)"""
+    first = get(url).decode('utf-8')
+    nums = [int(n) for n in re.findall(r'[?&]page=(\d+)', first)]
+    out = [first]
+    for n in range(2, (max(nums) if nums else 1) + 1):
+        out.append(get(url + ('&' if '?' in url else '?') + f'page={n}').decode('utf-8'))
+        time.sleep(0.3)
+    return out
+
+
+def fetch_zukan_names_ja():
+    """id de imagen → nombre japonés (lista de personajes en japonés)"""
+    out = {}
+    for h in _pages(ZUKAN_BASE + '/ja/chara_list/'):
+        for cid, name in re.findall(r'data-chara-id="([^"]+)"\s*data-chara-name="([^"]*)"', h):
+            out[cid] = html.unescape(name).strip()
+    log(f'  nombres en japonés: {len(out)}')
+    return out
+
+
+def fetch_zukan_skills():
+    """supertécnicas de zukan (inglés + nombre japonés), con categorías, descripción, imagen y vídeos"""
+    def parse(h):
+        rows = []
+        box = h.split('<ul class="skillListBox">', 1)[-1].split('</ul>\n', 1)[0] if 'skillListBox' in h else ''
+        for b in re.split(r'<li>\s*<div class="nameBox">', h.split('<ul class="skillListBox">', 1)[-1])[1:]:
+            name = re.search(r'class="name">(.*?)</span>', b, re.S)
+            img = re.search(r'<img src="([^"]+)"', b)
+            rows.append({'name': _txt(name.group(1)) if name else None,
+                         'types': [_txt(x) for x in re.findall(r'class="btnMovie[^"]*">(.*?)</a>', b, re.S)],
+                         'description': _txt(m.group(1)) if (m := re.search(r'<p class="description">(.*?)</p>', b, re.S)) else None,
+                         'image': img.group(1) if img else None,
+                         'movies': re.findall(r'data-movie-url="([^"]+)"', b)[::2],
+                         'params': [_txt(x) for x in re.findall(r'<li[^>]*>(.*?)</li>', (re.search(r'<ul class="param">(.*?)</ul>', b, re.S) or [None, ''])[1], re.S)]})
+        return rows
+    en = [r for h in _pages(ZUKAN_BASE + '/en/skill/?per_page=200') for r in parse(h)]
+    ja = [r for h in _pages(ZUKAN_BASE + '/ja/skill/?per_page=200') for r in parse(h)]
+    ja_by_img = {r['image']: r['name'] for r in ja if r['image'] and 'secret' not in r['image']}
+    for i, r in enumerate(en, 1):
+        r['index'] = i
+        r['name_ja'] = ja_by_img.get(r['image']) if r['image'] and 'secret' not in r['image'] else None
+    log(f'  supertécnicas: {len(en)} ({sum(1 for r in en if r["name_ja"])} con nombre japonés)')
+    return en
+
+
+def fetch_zukan_formations():
+    h = get(ZUKAN_BASE + '/en/soccer_formation/').decode('utf-8')
+    body = h.split('Formations', 2)[-1]
+    out = []
+    for b in re.split(r'<li[ >]', body)[1:]:
+        name = re.search(r'(\d-\d-\d(?:-\d)? [A-Za-z ]+)', _txt(b))
+        img = re.search(r'<img src="([^"]+)"', b)
+        if name and name.group(1).strip() not in [o['name'] for o in out]:
+            out.append({'name': name.group(1).strip(), 'image': img.group(1) if img else None})
+    log(f'  formaciones: {len(out)}')
+    return out
+
+
+def fetch_zukan_items():
+    """objetos por categoría (submenú de zukan: Boots, Bracelet, Pendant, Special, Kit, Emblem)"""
+    base = get(ZUKAN_BASE + '/en/item/equip/').decode('utf-8')
+    nav = base.split('class="subNav"', 1)[-1].split('</ul>', 1)[0]
+    cats = re.findall(r'<a href="(/en/item/[^"]+)">(.*?)</a>', nav)
+    out = []
+    for href, label in cats:
+        for h in _pages(ZUKAN_BASE + html.unescape(href)):
+            for b in re.split(r'<li>\s*<div class="nameBox">', h)[1:]:
+                name = re.search(r'<p class="name">(.*?)</p>', b, re.S)
+                img = re.search(r'<img src="([^"]+)"', b)
+                if name:
+                    out.append({'category': _txt(label), 'name': _txt(name.group(1)), 'image': img.group(1) if img else None})
+        time.sleep(0.3)
+    log(f'  objetos: {len(out)}')
     return out
 
 
@@ -217,16 +301,22 @@ def load_fusions():
 
 def main():
     log('1/8 zukan')
-    zukan = cached('zukan.json', fetch_zukan)
+    zukan = cached('chara_list.json', fetch_zukan, ZUKAN_DIR)
     log(f'    {len(zukan)} fichas')
 
     log('1b ficha de cada personaje de zukan (descripción oficial y stats de Victory Road) — todas')
-    path = os.path.join(CACHE, 'zukan_desc.json')
+    path = os.path.join(ZUKAN_DIR, 'chara_param.json')
     have = {} if REFRESH or not os.path.exists(path) else json.load(open(path, encoding='utf-8'))
     if any(z.get('q') and str(z['no']) not in have for z in zukan):          # incremental: solo las que faltan
         have.update(fetch_zukan_desc([z for z in zukan if str(z['no']) not in have]))
         with open(path, 'w', encoding='utf-8') as f:
-            json.dump(have, f, ensure_ascii=False)
+            json.dump(have, f, ensure_ascii=False, indent=1)
+
+    log('1c resto de zukan: nombres en japonés, supertécnicas, formaciones y objetos')
+    cached('chara_names_ja.json', fetch_zukan_names_ja, ZUKAN_DIR)
+    cached('skills.json', fetch_zukan_skills, ZUKAN_DIR)
+    cached('formations.json', fetch_zukan_formations, ZUKAN_DIR)
+    cached('items.json', fetch_zukan_items, ZUKAN_DIR)
 
     log('2/8 módulos de la wiki (PlayerData, WazaData)')
     mods = {m: cached(f'PlayerData_{m}.lua', lambda m=m: wikitext(WIKI_API, f'Module:PlayerData/{m}')) for m in MODULES}

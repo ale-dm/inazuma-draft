@@ -48,7 +48,8 @@ alter table public.cards add column if not exists zukan_no int;
 alter table public.cards add column if not exists description text;
 alter table public.cards add column if not exists description_es text;   -- descripción en castellano (inazuma.fandom.com/es)
 alter table public.cards add column if not exists no int;                -- nº de la carta: el de zukan o, las nuestras, desde el último de zukan
-alter table public.cards add column if not exists specials jsonb;        -- Keshin / Keshin Armed / Soul (tótem) / Mixi Max
+alter table public.cards add column if not exists specials jsonb;
+alter table public.zukan add column if not exists name_ja text;        -- Keshin / Keshin Armed / Soul (tótem) / Mixi Max
 
 create index if not exists cards_character_idx on public.cards(character_id);
 create index if not exists cards_ovr_idx on public.cards(ovr desc);
@@ -77,6 +78,7 @@ create table if not exists public.zukan (      -- réplica de las fichas oficial
   no           int primary key,              -- nº oficial
   image_id     text,                         -- ruta de la imagen (dxi4wb638ujep.cloudfront.net/1/<id>.png)
   name         text not null,
+  name_ja      text,                         -- nombre en japonés (zukan en japonés)
   role         text,                         -- Player | Manager | Coach | Coordinator…
   age          text,
   element      text,

@@ -4330,12 +4330,6 @@
    "no": 5949,
    "specials": [
     {
-     "type": "keshin",
-     "name": "Heroic Swordsman Lancelot",
-     "name_es": "Caballero Lancelot",
-     "armed": true
-    },
-    {
      "type": "soul",
      "name": "Wolf",
      "name_es": "Lobo"
@@ -5535,7 +5529,7 @@
      "type": "keshin",
      "name": "Defender of Earth Atlas",
      "name_es": "Protector de la Tierra, Atlas",
-     "armed": true
+     "armed": false
     }
    ],
    "raw_stats": {
@@ -7143,12 +7137,6 @@
    "description_es": "Un chico sencillo y puro como la brisa. Nunca se rinde ante los problemas.",
    "no": 5948,
    "specials": [
-    {
-     "type": "keshin",
-     "name": "Heavenly Horse Arch Pegasus",
-     "name_es": "Alado Archipegaso",
-     "armed": true
-    },
     {
      "type": "soul",
      "name": "Pegasus",
@@ -10555,12 +10543,6 @@
    "description_es": "Apasionado de la música y el fútbol. Es apodado el virtuoso del campo.",
    "no": 5951,
    "specials": [
-    {
-     "type": "keshin",
-     "name": "Master Conductor Maestro",
-     "name_es": "Director Magister",
-     "armed": true
-    },
     {
      "type": "soul",
      "name": "Peacock",
