@@ -1036,6 +1036,17 @@ def main(extra_z=None, write=True):
         c['id'] = f"{c['character_id']}--{c['game'].lower()}--{slug(ver)}"
 
     # a mano: overrides.team_tuning — curva de rivales de la historia: media del once titular y capitán que destaca
+    game_cfg = {k: v for k, v in ov.get('team_tuning', {}).get('_game', {}).items() if not k.startswith('_')}
+    for g_, gc in game_cfg.items():                # escala de poder del juego: comprimir las notas muy altas (GO1 tipo IE1)
+        if gc.get('compress_above'):
+            a_, f_ = gc['compress_above'], gc.get('compress_factor', 0.5)
+            for c in cards:
+                if c['game'] == g_ and c['ovr'] > a_:
+                    new = round(a_ + (c['ovr'] - a_) * f_)
+                    c.setdefault('ovr_untuned', c['ovr'])
+                    c['stats'] = {k: max(25, min(99, v + new - c['ovr'])) for k, v in c['stats'].items()}
+                    c['ovr'] = new
+                    c['category'] = category(new)
     for g_, tms in ov.get('team_tuning', {}).items():
         if g_.startswith('_'):
             continue
@@ -1045,7 +1056,7 @@ def main(extra_z=None, write=True):
                 report.append(f'team_tuning: {g_} {tm} sin cartas')
                 continue
             capt = [c for c in grp if c['page'] == cfg.get('captain')]
-            top_ = max(CEIL.get(g_, 88), 88)       # techo de las subidas: el del juego (mín. 88); nadie baja por él
+            top_ = game_cfg.get(g_, {}).get('cap') or max(CEIL.get(g_, 88), 88)   # techo de las subidas; nadie baja por él
 
             def tuned(c, delta):
                 new = max(25, min(max(c['ovr'], top_), c['ovr'] + delta))
@@ -1056,7 +1067,7 @@ def main(extra_z=None, write=True):
             # once hasta clavar la media: así el orden de la historia se cumple exacto
             n11 = min(11, len(grp))
             mean11 = lambda d: sum(sorted(tuned(c, d) for c in grp)[-11:]) / n11
-            delta = max((d for d in range(-10, 11) if mean11(d) <= cfg['top11'] + 1e-9), default=-10)
+            delta = max((d for d in range(-15, 16) if mean11(d) <= cfg['top11'] + 1e-9), default=-15)
             once = sorted(grp, key=lambda c: tuned(c, delta))[-11:]
             extra = {id(c) for c in once[:round((cfg['top11'] - mean11(delta)) * n11)] if c not in capt}
             for c in grp:

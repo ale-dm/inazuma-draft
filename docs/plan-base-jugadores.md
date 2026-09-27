@@ -163,8 +163,13 @@ python3 tools/db/build.py            # genera build/players.json, build/review.c
     - `captain` es la ficha de la wiki del capitán: +2 y cerca de 4 por encima del once (subida máx. +6, tope 88).
     - IE1: Occult 73,5 → Wild 74 → Brain 74,5 → Otaku 75 → Royal Academy 80,5 → Veteranos 80,9 → Shuriken 81,3 → Farm 81,7 → Kirkwood 82,1 → Zeus 82,6.
     - IE2: Gemini Storm 76,5 → Alpino 77 → Épsilon 77,5 → Claustro Sagrado 78 → Royal Redux 79 → Triple C 79,5 → Épsilon Plus 80,5 → Diamond Dust 82 → Prominence 82,5 → Emperadores Oscuros 84,5 → Génesis 86.
-    - IE3: Big Waves 77 → Leones del Desierto 77,5 → Neo Japón 79 → Dragones de Fuego 80 → Knights of Queen 81 → Equipo D 81,5 → Unicorn 82,5 → Orfeo 83,5 → Los Emperadores 84 → Os Reis 84,5 → Zoolan 85 → Little Gigantes 86,5.
-    - GO1: Vía Láctea 74 → Poderosa Fe 74,5 → Royal Academy 75,5 → Cala Pirata 76 → Mar de Luna 76,5 → Alpino 77,5 → Kirkwood 78 → Espejismo 78,5 → Universal 79,5 → Monte Olimpo 80,5 → Dragon Link 81,5 → Luz Eterna 83 → Oscuridad Ancestral 84.
+    - IE3: Big Waves 76 → Leones del Desierto 76,5 → Neo Japón 80,5 → Dragones de Fuego 80 → Knights of Queen 81 → Equipo D 79,5 → Unicorn 82,5 → Orfeo 84,5 → Los Emperadores 82 → Os Reis 84,5 → Zoolan 81 → Little Gigantes 86,5 (ajustado a mano).
+    - GO1: escala tipo IE1, un pelín por encima.
+      - Vía Láctea 74,5 → Poderosa Fe 75 → Royal Academy 76 → Cala Pirata 76,5 → Mar de Luna 77 → Alpino 77,5 → Kirkwood 78 → Espejismo 78,5 → Universal 79 → Monte Olimpo 80 → Dragon Link 81 → Luz Eterna 82,5 → Oscuridad Ancestral 83,5.
+      - Las notas de más de 84 se comprimen a la mitad (92 → 88) y las subidas no pasan de 87.
+    - GO2 (orden por el nivel de la historia en la wiki): Protocolo Omega 76 → Omega 2.0 77,5 → Ciervo Blanco 78 → Omega 3.0 79,5 → Terracota 80 → Zanark Domain 81 → Cascada Perfecta 82 → Zan 83 → Gir 83,5 → Gar 84 → Ragnah 85,5; después de la historia: Desesperdidos 86,5, Nosfanáticos y Aullido Lunar 87. Techo 90.
+    - GO3 (nivel de la historia): Dragones de Fuego 73 → Big Waves 73,5 → Cimitarras 74,5 → Muay Tigers 75 → Storm Wolves 76 → Sílice 77 → Naiadi 78 → Magmavís 79 → Fertilia 80 → Falam Medius 81 → Flota Ixar 82,5; después de la historia: Supernova y Big Bang 84,5. Techo 90.
+    - Opciones por juego en `team_tuning._game`: `cap` (techo de las subidas), `compress_above` y `compress_factor`.
     - Fuera de la curva (sitio en la historia sin confirmar): Mary Times, Fauxshore, Servicio Secreto (IE2); los equipos del anime de GO (Caballeros Templarios, Empollones, Edad Dorada, Equipo B del Raimon).
     - Techo de las subidas: el del juego (mín. 88). Nadie baja por el techo.
   - `zukan_wiki_pages`: nombre de zukan (o `#Nº` si el nombre se repite) → ficha de la wiki inglesa, para los que no cruzan solos (Dante Diavolo → Dante Diavlo; Creepy Nº 3496 → Kimoro).
