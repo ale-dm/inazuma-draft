@@ -27,7 +27,7 @@ Reglas:
    - **Nº de cada carta (`cards.no`)**: el de su ficha de zukan (la primera carta que la usa); el resto de cartas (versiones nuestras, p. ej. Axel IE2 Raimon) se numeran **a partir del último nº de zukan** (5878…), para respetar el original.
    - **Tabla `zukan`**: réplica de las 5.456 fichas oficiales (todas las sagas, también Ares/Orion/Victory Road), con descripción y **stats oficiales de Victory Road (Lv50)**.
    - **Fusiones Mixi Max** con ficha propia en la wiki (scouts de Galaxy): Shaxel (Axel + Shawn), Juleb, Tezlong, Aitriel, Gabardo, Baivic, Markion, Victarion → sus stats y técnicas; OVR al menos el del mejor de sus dos jugadores.
-   - **Poderes especiales (`cards.specials`)**: Keshin / espíritu guerrero (y si tiene Keshin Armed / armadura), Soul / tótem (Galaxy) y Mixi Max, por juego, de `Module:PlayerData` + `Module:KeshinData` / `Module:SoulData`, con el nombre en castellano de la wiki española. Los *despertares* de Victory Road quedan para más adelante.
+   - **Poderes especiales (`cards.specials`)**, según el juego de la carta: GO → espíritu guerrero (Keshin); Chrono Stone → espíritu guerrero con armadura (Keshin Armed) y Mixi Max; Galaxy → tótem (Soul) (o su Keshin si no tiene tótem); de `Module:PlayerData` + `Module:KeshinData` / `Module:SoulData`, con el nombre en castellano de la wiki española. Los *despertares* de Victory Road quedan para más adelante.
    - **Descripción en castellano (`cards.description_es`)**: sección «Descripciones» de la ficha de la wiki española (pestaña de la versión y plantilla del juego); si no hay, la de zukan en inglés.
 7. **Versiones de la wiki** (formas de `Module:PlayerData`): cada forma de equipo es una carta con **sus propias técnicas, posición y stats** (entrada de esa forma, no la de la versión normal): Dark Emperors, Chaos, Epsilon Plus (Epsilon Kai), Royal Academy Redux (Shin Teikoku), Neo Japan, Fire Dragon, Unicorn, Zeus, Young Inazuma (young form) y adultos (`adult form` en GO2/Galaxy, equipo *Adult*, fuera del draft). Quedan fuera los modos (Kyouaku, Arajishi…), disfraces (Mister K, Kuroiwa…), formas de niño, Real Inazuma, Mixi Max y Chara Change.
    - **Fotos:** si zukan no tiene ficha de esa versión, se usa el render 3D de la forma en la wiki (`(DE) Kazemaru 3D (1).png`, prefijo del sprite de ese juego).
@@ -45,6 +45,7 @@ Estimación: ~3.828 personajes + versiones de Strikers y protagonistas GO ≈ **
 | Dato | Fuente | Cómo |
 |---|---|---|
 | Personajes, nombre inglés, foto | zukan | ver arriba |
+| **Copia completa de zukan** (fichas, descripciones, stats de Victory Road, nombres japoneses, supertécnicas, formaciones, objetos) | [`data/zukan/`](../data/zukan/README.md) | en el repo, para no perderla |
 | Nombre inglés → ficha de la wiki | Fandom (redirecciones) | `api.php?action=query&titles=…&redirects=1` (lotes de 50). 2.593/2.595 nombres nuevos resuelven |
 | **Stats reales por juego (nivel 99)** | Sección `==Parameters==` de la ficha del jugador | `prop=revisions&rvprop=content` (lotes de 25). IE1 → usar la **versión europea** (la japonesa es plana, 84/84/84…) |
 | Técnicas por juego | `Module:PlayerData/{IE,IE2,IE3,GO,CS,GX}` | ver `plan-tecnicas.md` |

@@ -20,6 +20,7 @@ import re
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', '..'))
 CACHE = os.path.join(ROOT, 'tools', '.cache', 'db')
 OUT = os.path.join(ROOT, 'build')
+ZUKAN_DIR = os.path.join(ROOT, 'data', 'zukan')
 
 MAIN = ['IE1', 'IE2', 'IE3', 'GO1', 'GO2', 'GO3']
 MODULE = dict(zip(MAIN, ['IE', 'IE2', 'IE3', 'GO', 'CS', 'GX']))
@@ -179,8 +180,8 @@ def main(extra_z=None, write=True):
     extra_z = extra_z or {}
     report = []
     ov = json.load(open(os.path.join(ROOT, 'data', 'overrides.json'), encoding='utf-8'))
-    zukan = load('zukan.json')
-    zdesc = load('zukan_desc.json')
+    zukan = json.load(open(os.path.join(ZUKAN_DIR, 'chara_list.json'), encoding='utf-8'))       # copia de zukan en el repo
+    zdesc = json.load(open(os.path.join(ZUKAN_DIR, 'chara_param.json'), encoding='utf-8'))
     es_desc = load_opt('es_descriptions.json', {})
     keshin_data = lua_entries(load_opt('KeshinData.lua', ''))
     soul_data = lua_entries(load_opt('SoulData.lua', ''))
@@ -331,6 +332,14 @@ def main(extra_z=None, write=True):
         if tm in ('Mixi Max', 'Chrono Storm') and isinstance(hint, dict):
             who = hint.get('fusion_partner') or next((n for n in (hint.get('mixi') or []) if n and n != 'mixi'), None)
             out.append({'type': 'mixi', 'name': who})
+        # cada juego, su poder: GO → espíritu guerrero; Chrono Stone → + armadura y Mixi Max; Galaxy → tótem
+        if game == 'GO1':
+            out = [{**x, 'armed': False} for x in out if x['type'] == 'keshin']
+        elif game == 'GO3':
+            souls = [x for x in out if x['type'] == 'soul']
+            out = (souls or [{**x, 'armed': False} for x in out if x['type'] == 'keshin']) + [x for x in out if x['type'] == 'mixi']
+        elif game != 'GO2':
+            out = []
         return out
 
     def mixi_partner(z, char_name):
@@ -999,7 +1008,9 @@ def main(extra_z=None, write=True):
         c['description_es'] = es_description(d.get('section'), c['game'], c['version'], c['team'] in (ILJ, 'Adult'),
                                              c['team'] in ('Mixi Max', 'Chrono Storm'), d.get('es_page') or '',
                                              manual_es.get(c['version']) or es_team.get(tnorm(c['version'])) or '', partner)
-    zukan_rows = [{'no': z['no'], 'image_id': z['id'], 'name': z['name'], 'role': z['role'], 'age': z['age'],
+    names_ja = json.load(open(os.path.join(ZUKAN_DIR, 'chara_names_ja.json'), encoding='utf-8')) \
+        if os.path.exists(os.path.join(ZUKAN_DIR, 'chara_names_ja.json')) else {}
+    zukan_rows = [{'no': z['no'], 'image_id': z['id'], 'name': z['name'], 'name_ja': names_ja.get(z['id']), 'role': z['role'], 'age': z['age'],
                    'element': ELEMENT.get(z['element']), 'position': z['position'], 'teams': z['teams'], 'games': z['games'],
                    'description': (zdesc.get(str(z['no'])) or {}).get('desc'), 'vr_lv50': (zdesc.get(str(z['no'])) or {}).get('vr_lv50'),
                    'wiki_page': titles.get(z['name'])} for z in zukan if z.get('no')]
@@ -1067,7 +1078,7 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
              for c in public for i, t in enumerate(dict.fromkeys(c['techniques']))]
     seed = ['-- Generado por tools/db/build.py — no editar a mano.', 'begin;',
             'truncate public.card_techniques, public.cards, public.techniques, public.characters, public.teams, public.staff, public.zukan;',
-            insert('zukan', ['no', 'image_id', 'name', 'role', 'age', 'element', 'position', 'teams', 'games', 'description', 'vr_lv50', 'wiki_page'], zukan_rows),
+            insert('zukan', ['no', 'image_id', 'name', 'name_ja', 'role', 'age', 'element', 'position', 'teams', 'games', 'description', 'vr_lv50', 'wiki_page'], zukan_rows),
             insert('staff', ['zukan_no', 'name', 'role', 'team', 'teams', 'games', 'age', 'element', 'image_url', 'description', 'wiki_page'], staff),
             insert('teams', ['name', 'name_es'], teams),
             insert('characters', ['id', 'name', 'wiki_page', 'zukan_no'], [{**c} for c in chars]),
