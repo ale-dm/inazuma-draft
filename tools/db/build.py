@@ -719,6 +719,7 @@ def main(extra_z=None, write=True):
             report.append(f'Destacado sin carta: {p}')
     pos_override = {(o['page'], o['game']): o['position'] for o in ov['position_by_version']}
     manual = {k: v for k, v in ov.get('ovr_manual', {}).items() if not k.startswith('_')}
+    extra_ver = [x for x in ov.get('extra_versions', []) if 'page' in x]
 
     # --- generación de cartas
     cards = []
@@ -842,6 +843,11 @@ def main(extra_z=None, write=True):
                     body, hint['moves_game'] = None, ie          # técnicas como su carta de ese juego
             versions.append((g, ver, tm, hint, body))
 
+        # a mano: overrides.extra_versions (Nakata en Orfeo: sin ficha de zukan, hueco Nº 1922)
+        for x in extra_ver:
+            if x['page'] == pg and x['game'] in stats_by_game:
+                versions.append((x['game'], x['team'], x['team'], {'force': True}, None))
+
         seen = set()
         for g, ver, tm, hint, entry in versions:
             vkey = (g, 'base' if ver == 'base' else ver)
@@ -879,7 +885,7 @@ def main(extra_z=None, write=True):
             if position not in POSW:
                 position = 'MF'
             element = ELEMENT.get(lua_field(base_body, 'element') if base_body else None) \
-                or ELEMENT.get(zs[0]['element'] if zs else None)
+                or ELEMENT.get(zs[0]['element'] if zs else None) or ELEMENT.get((info.get(pg) or {}).get('element'))
             real = [ZUKAN_TEAM.get(t, t) for z in zs for t in z['teams'] if t not in SCOUT_TEAMS]
             ot = old_team.get((name, g))
             team = tm if tm and tm != 'Adult' else ((ot if ot and ot not in SCOUT_TEAMS else None) or (real[0] if real else None)
@@ -1283,6 +1289,17 @@ def main(extra_z=None, write=True):
                 sprite_review = [x for x in sprite_review if x['id'] != c['id']]
             else:
                 report.append(f'sprite_force sin imagen: {c["id"]} → {f_}')
+    team_force = {k: v for k, v in ov.get('team_force', {}).items() if not k.startswith('_')}
+    xv_by_id = {f"{slug(x['page'])}--{x['game'].lower()}--{slug(x['team'])}": x for x in extra_ver}
+    for c in cards:                                   # a mano: overrides.team_force / extra_versions (equipo, foto, nº)
+        if c['id'] in team_force:
+            c['team'] = team_force[c['id']]
+        x = xv_by_id.get(c['id'])
+        if x and x.get('image'):
+            c['image_url'] = x['image']
+            sprite_review = [r for r in sprite_review if r['id'] != c['id']]
+        if x and x.get('no'):
+            c['no_force'] = x['no']
     with open(os.path.join(OUT, 'sprites_review.json'), 'w', encoding='utf-8') as f:
         json.dump(sprite_review, f, ensure_ascii=False, indent=1)
     if extra_sprites:
@@ -1291,7 +1308,13 @@ def main(extra_z=None, write=True):
     # nº de cada carta: el de su ficha de zukan (la primera carta que la usa); las nuestras, a partir del último de zukan
     max_no = max(z['no'] for z in zukan if z.get('no'))
     taken = set()
+    for c in cards:
+        if c.get('no_force'):
+            c['no'] = c.pop('no_force')
+            taken.add(c['no'])
     for c in sorted(cards, key=lambda c: (c['is_version'], MAIN.index(c['game']), c['id'])):
+        if 'no' in c:
+            continue
         if c.get('zukan_no') and c['zukan_no'] not in taken:
             c['no'] = c['zukan_no']
             taken.add(c['no'])

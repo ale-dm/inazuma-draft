@@ -289,7 +289,8 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 83,Top Player,Gaiel,IE3,base,Apostles from the Sky,FW,S,Strikers 2013,82,82,80,91,82,82,Heavenly Drive (70) · The Ikaros (57) · Prima Donna (39) · Gungnir (30),guel--ie3--base
 83,Top Player,Gale Mistral,GO1,base,Unaffiliated,DF,C,stats del juego,70,78,81,73,88,82,Ozone Flayer (55) · White Hurricane (70),kiyoraka--go1--base
 83,Top Player,Giuseppe Cannavaro,IE3,base,Orpheus,DF,S,Xtreme (balancing),70,80,77,70,90,82,Circus Block (47) · Mole Fake (10) · Mole Shuffle (42) · Echo Ball (44),giuseppe-cannavaro--ie3--base
-83,Top Player,Hidetoshi Nakata,IE2,base,,MF,B,stats del juego,82,84,84,83,82,84,Gale Dash (42) · Dual Pass (53) · Neo Galaxy (64),nakata-hidetoshi--ie2--base
+83,Top Player,Hidetoshi Nakata,IE2,base,Sub Character,MF,B,stats del juego,82,84,84,83,82,84,Gale Dash (42) · Dual Pass (53) · Neo Galaxy (64),nakata-hidetoshi--ie2--base
+83,Top Player,Hidetoshi Nakata,IE3,Orpheus,Orpheus,MF,B,stats del juego,84,84,84,82,79,81,Brave Shot (76) · Circus Block (47) · Super Elastico (56),nakata-hidetoshi--ie3--orpheus
 83,Top Player,India,GO2,base,Protocol Omega,MF,S,Strikers 2013,79,81,87,91,79,81,Spin Out (30) · Tesla Coil (15) · Cupid's Arrow (30),neira--go2--base
 83,Top Player,Indy Iffrent,GO1,base,Unaffiliated,GK,C,stats del juego,66,72,84,84,77,85,Power Spike (10) · Anchors Aweigh (30),hirari--go1--base
 83,Top Player,Jack Knife,GO1,base,Black Templars,MF,A,stats del juego,76,91,85,76,80,81,Pyrokinetic (30) · Hey Presto (30) · Sidewinder (20),iseya-minoru--go1--base
@@ -522,7 +523,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 78,Advanced Player,Gustav Weathervane,IE3,base,Unaffiliated,DF,C,stats del juego,75,80,64,85,82,81,Double Cyclone (46) · Dash Storm (46) · Wind God's Dance (40),kazamatsuri--ie3--base
 78,Advanced Player,Hernán Tévez,IE3,base,The Empire,DF,B,stats del juego,68,78,71,77,82,82,Illusion Ball (20) · Circus Block (47) · Rocket Kobushi (25) · Ultra Moon (44),hern-n-t-vez--ie3--base
 78,Advanced Player,Ientel,IE3,base,Apostles from the Sky,MF,B,stats del juego,76,80,70,79,79,79,Heaven's Ascent (56) · Odin Sword (55) · Sleeping Dust (30),aiel--ie3--base
-78,Advanced Player,Igor Ferreira,IE3,base,Red Matador,MF,B,stats del juego,69,83,83,78,71,64,Yo-Yo Ball (36) · Dual Pass (53) · Bubble Gum (30) · Shine Drive (34),igor-freire--ie3--base
 78,Advanced Player,Isla Pullens,IE2,base,Unaffiliated,GK,C,stats del juego,79,70,76,61,79,79,Warp Space (22) · Claw Slash (32) · Table-Turner (40) · Mugen The Hand (55),pierrone--ie2--base
 78,Advanced Player,Jesse Spiller,IE2,base,Unaffiliated,DF,C,stats del juego,83,74,83,73,78,83,Aurora Dribble (39) · Dash Storm (46) · Divine Stamp (43),suda--ie2--base
 78,Advanced Player,Jude Sharp,IE1,base,Royal Academy,MF,S,Strikers 2013,72,82,81,81,66,81,Spinning Cut (30) · Illusion Ball (20) · Twin Boost (37) · Inazuma Break (55),kidou-yuuto--ie1--base
@@ -620,6 +620,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 77,Advanced Player,Ian Suffolk,IE2,Young Inazuma,Young Inazuma,MF,B,stats del juego,77,79,81,74,72,80,Fire Rooster (62) · Heat Tackle (27) · Utter Gutsiness Bat (40) · Zigzag Spark (55),sugata-iwao--ie2--young-inazuma
 77,Advanced Player,Iapetus Pierce,GO1,base,Mount Olympus,DF,B,stats del juego,62,71,78,67,81,65,Ozone Flayer (55) · Frosticle (55) · Wall of Atlantis (40),iyabe-satoshi--go1--base
 77,Advanced Player,Iggy Russ,IE1,base,Zeus,GK,B,stats del juego,76,74,75,65,80,77,Hawk Shot (34) · Whirlwind Twister (20) · Spinning Cut (30) · Heaven's Time (70),ika-michiyuki--ie1--base
+77,Advanced Player,Igor Ferreira,IE3,base,Red Matador,MF,B,stats del juego,68,82,82,77,70,63,Yo-Yo Ball (36) · Dual Pass (53) · Bubble Gum (30) · Shine Drive (34),igor-freire--ie3--base
 77,Advanced Player,Isaac César,IE3,base,Red Matador,FW,B,stats del juego,79,71,75,80,62,62,Fire Tornado (30) · Slingshot (49) · Super Elastico (56) · Assault Shot (44),isaac-c-sar--ie3--base
 77,Advanced Player,Jamila Wali,IE3,base,Desert Lions,DF,B,stats del juego,62,72,77,79,77,76,Desert Blast (30) · Double Cyclone (46) · Breakthrough (25) · Cross Drive (28),djamel-djammadu--ie3--base
 77,Advanced Player,Jarell Mangrove,IE3,base,Little Gigantes,DF,S,Strikers 2013,79,83,71,72,80,71,Whirlwind Force (20) · Spinning Shot (20) · Capoeira Grab (40),mccall-kisarra--ie3--base
@@ -658,7 +659,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 77,Advanced Player,Ron Innwater,GO2,base,Nosfanatica,DF,B,stats del juego,71,71,75,76,80,77,Wall of Atlantis (40) · Transporter Device (15) · Ozone Flayer (55),zinc--go2--base
 77,Advanced Player,Roy Daring,IE2,base,Forest Team,FW,B,stats del juego,78,78,76,75,75,76,Clone Shot (46),shiki-yuuji--ie2--base
 77,Advanced Player,Ruger Baran,GO3,base,Fertilia Eleven,FW,B,stats del juego,80,78,69,73,76,74,Scream of Eden (85) · Illusion Ball (20),ryugel-baran--go3--base
-77,Advanced Player,Sachinel,IE3,base,Apostles from the Sky,MF,B,stats del juego,75,78,71,80,78,76,Excalibur (66) · Ultra Moon (44),sachinel--ie3--base
 77,Advanced Player,Santelmo Phyre,GO1,base,Pirates Cove,MF,B,stats del juego,74,77,76,81,76,69,Wind God's Dance (40) · Killer Whale (15) · Bouncing Bomb (30) · Ball Lightning (70),murakami-gunki--go1--base
 77,Advanced Player,Sean Muller,GO1,base,Inazuma Kids FC,DF,B,stats del juego,68,63,81,66,81,76,Jumbo Sandwich (20) · The Wall (8),munakata-kosuke--go1--base
 77,Advanced Player,Sempiterno Bliss,GO1,base,Almighty Faith,MF,B,stats del juego,74,78,74,81,74,71,Boomerang Bluff (20) · Whirly-Whirly (10) · Warp Step (70),okano-shunpei--go1--base
@@ -752,6 +752,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 76,Advanced Player,Rolf Howells,IE1,base,Farm,DF,B,stats del juego,70,71,74,70,80,76,Quick Draw (20) · About Face (16) · Monkey Turn (20) · Cyclone (38),inukai-shigeki--ie1--base
 76,Advanced Player,Ryuun Cho,GO2,base,Unaffiliated,FW,C,stats del juego,78,76,75,71,65,65,Astro Break (30) · Doom Spear (40) · Thundertaker (85),chouun--go2--base
 76,Advanced Player,S'haha,GO3,base,Silica Eleven,FW,B,stats del juego,78,70,79,72,64,65,Sandwinder (55) · Major Miner (55) · Warhead (30) · Gigaton Head (40),zaba-harler--go3--base
+76,Advanced Player,Sachinel,IE3,base,Apostles from the Sky,MF,B,stats del juego,74,77,70,79,77,75,Excalibur (66) · Ultra Moon (44),sachinel--ie3--base
 76,Advanced Player,Sail Bluesea,IE1,base,Shuriken,FW,S,Strikers 2013,70,87,79,79,70,78,Dirt Ball (22) · Poison Fog (20) · Afterimage (31) · Fire Rooster (62),kirigakure-saiji--ie1--base
 76,Advanced Player,Sam Kincaid,IE1,base,Raimon,MF,S,Strikers 2013,72,78,78,78,70,87,Grenade Shot (20) · Bewildered (15) · Fake Ball (30) · Twin Boost (37),shishido-sakichi--ie1--base
 76,Advanced Player,Samuel Mayo,IE3,base,Red Matador,FW,B,stats del juego,77,73,73,78,58,64,Slingshot (49) · Matador Feint (47) · Land Dragon (46) · Odin Sword (55),samuel-mayo--ie3--base
@@ -788,7 +789,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 75,Advanced Player,Brutus Nastion,GO1,base,Northern Fang,GK,B,stats del juego,64,68,77,72,69,77,Slice and Dice (15) · Crystal Barrier (40) · All-Star (30) · Shot Stopper (55),zanma-shido--go1--base
 75,Advanced Player,Ceram Longicorn,GO3,base,Fertilia Eleven,GK,B,stats del juego,70,67,68,72,69,79,Venus Balltrap (55) · Bindweed (55),longa-kamicula--go3--base
 75,Advanced Player,Claude Moreau,IE3,base,Rose Griffons,MF,B,stats del juego,75,81,76,64,73,73,Illusion Ball (20) · Moonsault (25) · Heaven's Time (70),claude-moreau--ie3--base
-75,Advanced Player,Coruja Cerezo,IE3,base,The Kingdom,MF,B,stats del juego,68,72,82,82,82,82,Shine Drive (34) · Super Elastico (56) · Dash Accelerator (20) · Run Ball Run (28),coruja-cerezo--ie3--base
 75,Advanced Player,Cyber Dalekman,GO1,base,Milky Way Charter,MF,B,stats del juego,73,82,67,69,71,72,Grand Slam (15) · Flapjack Defence (20) · Dance on Air (55),harei-mizunari--go1--base
 75,Advanced Player,Daniel Dawson,IE1,base,Farm,MF,B,stats del juego,74,73,75,76,81,82,Mole Fake (10) · Run Ball Run (28) · Coil Turn (20) · Blade Attack (24),negami-daichi--ie1--base
 75,Advanced Player,Dora Delight,IE2,base,Mary Times,MF,S,Strikers 2013,80,71,80,70,87,79,Bubble Gum (30) · Flame Dance (39) · Armadillo Circus (47),kyan-rinka--ie2--base
@@ -873,6 +873,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 74,Growing Player,Bracknell Forge,GO1,base,Northern Fang,FW,B,stats del juego,79,65,79,63,65,73,Snowstorm Leopard (40) · Pyroclastic (55) · Dark Energy Star (70),shaza-sabaki--go1--base
 74,Growing Player,Bruce Marlin,IE3,base,Big Waves,FW,B,stats del juego,79,63,68,77,61,65,Spinning Cut (30) · Comet Shot (25) · Kangaroo Kick (20) · Mirage Shot (43),bruce-marlin--ie3--base
 74,Growing Player,Coral,IE2,base,Gemini Storm,DF,B,stats del juego,67,81,66,81,74,72,Asteroid Belt (46) · Moonsault (25) · Photon Crash (25) · Procyon Net (52),sango-yoshirou--ie2--base
+74,Growing Player,Coruja Cerezo,IE3,base,The Kingdom,MF,B,stats del juego,67,71,81,81,81,81,Shine Drive (34) · Super Elastico (56) · Dash Accelerator (20) · Run Ball Run (28),coruja-cerezo--ie3--base
 74,Growing Player,Dave Walker,GO2,base,Nosfanatica,MF,B,stats del juego,69,78,65,76,73,75,Frosticle (55) · Vac Attack (40) · Black Tide Ride (70),chroma--go2--base
 74,Growing Player,Davi Peroqué,IE3,base,Red Matador,FW,B,stats del juego,78,68,73,69,57,61,Slingshot (49) · Matador Feint (47) · Twin Boost (37),davi-peroqui--ie3--base
 74,Growing Player,David Quintola,GO1,base,Dragon Link,FW,B,stats del juego,78,71,64,74,61,68,Entropic Arrows (55) · Ballista Barrage (55) · Warp Step (70),godai-shingo--go1--base
@@ -917,7 +918,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 74,Growing Player,Roger Pialat,IE3,base,Rose Griffons,GK,B,stats del juego,59,74,73,69,75,74,The Stinger (37) · Galatyn (37) · God Catch (57),ladji-paara--ie3--base
 74,Growing Player,Roman Ballista,GO1,base,Black Templars,MF,B,stats del juego,75,81,65,65,72,70,Grand Slam (15) · Dragster (30) · Fire Tornado (30),maniwa-kento--go1--base
 74,Growing Player,Romuald Huysmans,IE3,base,Rose Griffons,MF,B,stats del juego,73,79,63,75,65,66,Eiffel Tower (43) · Photon Crash (25) · Tri-Pegasus (55),ronny-weiss--ie3--base
-74,Growing Player,Shane Pierce,IE3,base,Unicorn,MF,B,stats del juego,82,82,64,61,61,61,Zigzag Spark (55) · Freeze Shot (25) · Pegasus Shot (49),sean-pierce--ie3--base
 74,Growing Player,Shawn Princeton,IE3,base,Big Waves,MF,B,stats del juego,63,78,77,79,70,75,Water Veil (53) · Moonsault (25) · Gravestone (36) · Stone Prison (42),sully-princeton--ie3--base
 74,Growing Player,Siid Sinapis,GO2,base,Ragnah,GK,B,stats del juego,62,61,73,63,68,76,Negative Feedback (40) · Whip Crack (20) · Anchors Aweigh (30) · Fingers of Gaia (40),woods--go2--base
 74,Growing Player,Sithri Peon,GO1,base,Milky Way Charter,DF,B,stats del juego,73,60,79,65,77,68,Thief's Eye (8) · Jumbo Sandwich (20),oushida-kazuhiro--go1--base
@@ -987,13 +987,13 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 73,Growing Player,Nobunaga Oda,GO2,base,Sub Character,FW,C,stats del juego,76,77,63,66,66,70,Ephemeral Boost (85) · Rising Dragon (55) · Elemental Destroyer (70),oda-nobunaga--go2--base
 73,Growing Player,Norimaru Gazen,GO2,base,White Deer,GK,B,stats del juego,58,60,75,56,67,75,Jumping Whack (30) · Shadow Catch (20),gazen-norimaru--go2--base
 73,Growing Player,Parry Waxon,IE2,base,Cloister Divinity,DF,B,stats del juego,74,76,72,72,73,73,Spider Web (20) · Clone Defence (42) · Black Magic (20) · Divine Stamp (43),satori-kai--ie2--base
-73,Growing Player,Paul Appleton,IE3,base,Queen's Knights,MF,B,stats del juego,69,76,74,74,67,70,Ultra Moon (44) · Zigzag Spark (55) · Cyclone (38) · Echo Ball (44),paul-appleton--ie3--base
 73,Growing Player,Pete Bogg,IE2,base,Alpine,MF,B,stats del juego,72,78,63,71,68,68,Double Touch (10) · Meteor Attack (22) · Aurora Dribble (39) · Utter Gutsiness Bat (40),shitsuhara-zen--ie2--base
 73,Growing Player,Peter Naumann,IE3,base,Brocken Brigade,FW,B,stats del juego,77,68,65,76,66,73,Sub-Terfuge (47) · Divine Arrows (46) · Cross Drive (28) · Assault Shot (44),peter-nimke--ie3--base
 73,Growing Player,Petey Sorcar,GO1,base,Mirage,DF,B,stats del juego,64,58,77,62,77,72,Boomerang Bluff (20) · Mystifying Mist (15) · Big Ball Trick (40),iryuu-jouji--go1--base
 73,Growing Player,Qasim Batal,GO3,base,Shamshir,FW,B,stats del juego,75,71,66,75,67,66,Gusher Crusher (40) · Dragster (30) · Parkour Power (40),qasim-badr--go3--base
 73,Growing Player,Seats,IE2,base,Prominence,DF,B,stats del juego,76,75,69,68,76,79,Heavy Mettle (42) · Ignite Steal (53) · Doppelganger (21) · Assault Shot (44),satou-kazuo--ie2--base
 73,Growing Player,Sedgley Scofield,IE3,base,Team Zoolan,FW,B,stats del juego,78,64,79,62,65,61,Dash Storm (46) · Dark Phoenix (61) · Clone Faker (42) · Ganymede Ray (55),scorpio--ie3--base
+73,Growing Player,Shane Pierce,IE3,base,Unicorn,MF,B,stats del juego,81,81,63,60,60,60,Zigzag Spark (55) · Freeze Shot (25) · Pegasus Shot (49),sean-pierce--ie3--base
 73,Growing Player,Sid Viper,GO2,base,Nosfanatica,MF,B,stats del juego,69,77,61,74,74,75,Athena's Anthem (70) · Spatial Portal (55) · Bouncing Bunny (15),snaker--go2--base
 73,Growing Player,Songhwan Ko,IE3,base,Fire Dragon,DF,B,stats del juego,65,67,65,64,81,81,Racing Flame (15) · Utter Gutsiness Bat (40) · Utter Gutsiness Catch (15),ko-sung-hwan--ie3--base
 73,Growing Player,Sothern Newman,IE1,base,Inazuma Kids FC,DF,A,stats del juego,71,72,70,70,76,72,The Wall (8) · Super Armadillo (24) · Pressure Punch (21) · Gigant Wall (30),shintake-souta--ie1--base
@@ -1053,6 +1053,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 72,Growing Player,Nun Chuck,GO1,base,Black Templars,DF,B,stats del juego,64,59,76,60,76,71,Pyrokinetic (30) · Jumbo Sandwich (20) · Slice and Dice (15),daimon-mitsuru--go1--base
 72,Growing Player,Ough Cee,GO2,base,Perfect Cascade,FW,B,stats del juego,75,70,69,69,59,68,Twin Sun Smash (70) · Doomsword Slash (15) · Bouncing Bomb (30) · Fireball Screw (55),gra-fom--go2--base
 72,Growing Player,Ough Cee,GO2,Perfect Cascade,Perfect Cascade,FW,B,stats del juego,75,70,69,69,59,68,Twin Sun Smash (70) · Doomsword Slash (15) · Bouncing Bomb (30) · Fireball Screw (55),gra-fom--go2--perfect-cascade
+72,Growing Player,Paul Appleton,IE3,base,Queen's Knights,MF,B,stats del juego,68,75,73,73,66,69,Ultra Moon (44) · Zigzag Spark (55) · Cyclone (38) · Echo Ball (44),paul-appleton--ie3--base
 72,Growing Player,Peter Cole,IE3,base,Queen's Knights,MF,B,stats del juego,65,76,80,70,66,69,Ultra Moon (44) · Attack Scan (25) · Dynamite Shot (31) · Echo Ball (44),peter-cole--ie3--base
 72,Growing Player,Peter Drent,IE1,base,Royal Academy,DF,S,Strikers 2013,73,80,71,70,72,80,Illusion Ball (20) · Earthquake (32) · Reflect Buster (40) · Mega Quake (44),oono-densuke--ie1--base
 72,Growing Player,Pinoh,GO2,base,Gahl,MF,B,stats del juego,66,75,66,78,68,73,Decoy Deploy (70) · Warhead (30) · Pyroclastic (55),pino--go2--base
@@ -1067,7 +1068,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 72,Growing Player,Sulayk Sulaiman,IE3,base,Desert Lions,MF,B,stats del juego,74,67,79,77,70,67,Whirlwind Twister (20) · Fake Ball (30) · Clone Faker (42) · Clone Defence (42),sulai-sulaiman--ie3--base
 72,Growing Player,Tamgan Jaa,GO3,base,Muay Tigers,FW,B,stats del juego,75,70,67,68,59,73,Tusk Force (30) · Low Scythe Slice (40) · Will-o'-the-Wisp Shot (40) · Tiger Drive (40),thamgan-jaa--go3--base
 72,Growing Player,Tet Aqua,GO1,base,Mount Olympus,FW,B,stats del juego,79,65,69,62,61,64,Fire Tornado (30) · Fugue Wave (40) · Ozone Flayer (55),tsutsumi-tomo--go1--base
-72,Growing Player,Themba Sepeng,IE3,base,The Cape Crusaders,MF,B,stats del juego,80,70,76,70,66,77,Flame Dance (39) · Liar Shot (44) · Kangaroo Kick (20) · Divine Stamp (43),themba-sepeng--ie3--base
 72,Growing Player,Timothy Western,IE2,base,Secret Service,DF,B,stats del juego,70,80,65,78,72,74,Defence Scan (28) · Attack Scan (25) · Perimeter Zone (42) · Divine Stamp (43),goyou-takeshi--ie2--base
 72,Growing Player,Tom Contented,IE2,base,Mary Times,MF,B,stats del juego,75,77,69,65,63,64,Eagle Buster (62) · Hawk Shot (34) · Heel Kick (20) · Monkey Turn (20),koja-hidenori--ie2--base
 72,Growing Player,Trent Poplar,GO1,base,Kirkwood,DF,B,stats del juego,66,66,73,60,77,71,Pincer Pinch (20) · Log Roll (10) · Emperor Penguin No. 2 (55),konuma-waku--go1--base
@@ -1140,6 +1140,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 71,Growing Player,Taylor Firepool,IE2,base,Secret Service,MF,B,stats del juego,68,73,64,70,78,77,Magic (21) · Patriot Shot (30) · Aikido (47) · Assault Shot (44),gokuhi-tsutomu--ie2--base
 71,Growing Player,Terracotta Warrior 8,GO2,base,The Terracotta Army,MF,B,stats del juego,65,77,74,67,64,71,Transporter Device (15) · Zigzag Spark (55),bingmayong-no-hachi--go2--base
 71,Growing Player,Terry Stronger,IE1,base,Brainwashing,DF,A,stats del juego,70,70,70,70,72,71,Defence Scan (28) · Attack Scan (25) · Psycho Shot (20) · Kung Fu Header (31),hanaoka-tsuyoshi--ie1--base
+71,Growing Player,Themba Sepeng,IE3,base,The Cape Crusaders,MF,B,stats del juego,79,69,75,69,65,76,Flame Dance (39) · Liar Shot (44) · Kangaroo Kick (20) · Divine Stamp (43),themba-sepeng--ie3--base
 71,Growing Player,Tim Roubadour,IE3,base,Unaffiliated,MF,C,stats del juego,73,74,59,75,59,57,Whirlwind Twister (20) · Echo Ball (44) · Flurry Dash (20) · God Break (64),milano--ie3--base
 71,Growing Player,Tzeikh,GO2,base,Gihl,MF,B,stats del juego,64,75,73,71,65,71,Decoy Deploy (70) · Fractal Repeller (10) · Acrobatic Keep (40),zake--go2--base
 71,Growing Player,Yuri Avelin,GO3,base,Storm Wolves,DF,B,stats del juego,66,64,62,73,77,74,War Saw (40) · Silk Road (40) · Hunter's Net (30),yuri-averin--go3--base
@@ -1150,7 +1151,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 70,Growing Player,Antonio Gallego,IE3,base,Red Matador,DF,B,stats del juego,68,62,62,65,77,80,Yo-Yo Ball (36) · Million Hands (55) · About Face (16) · Barbarian Shield (53),antonio-galius--ie3--base
 70,Growing Player,Apex Paradiso,GO1,base,Almighty Faith,GK,B,stats del juego,58,58,65,63,70,72,Combustion Catch (8) · Pyrokinetic (30) · Fingers of Gaia (40),chita-tsuyoshi--go1--base
 70,Growing Player,Aris Tottle,GO1,base,Prodigy Grammar,DF,B,stats del juego,62,71,72,60,72,64,Thief's Eye (8) · Boomerang Bluff (20),honda-taizou--go1--base
-70,Growing Player,Beldio Smeraldo,IE3,base,Team D,MF,B,stats del juego,60,80,63,65,66,79,Breakthrough (25) · Clone Defence (42) · Heavy Mettle (42),verdio-smeraldo--ie3--base
 70,Growing Player,Beluga,IE2,base,Diamond Dust,GK,B,stats del juego,72,60,69,65,70,70,Ice Block (50) · Cyclone (38) · Tornado Catch (22) · Frozen Steal (53),shirai-ikkaku--ie2--base
 70,Growing Player,Bill Moony,IE1,base,Unaffiliated,FW,C,stats del juego,74,65,64,68,66,64,Toughness Block (20) · Freeze Shot (25) · Illusion Ball (20) · Bamboo Pattern (57),kamo-scout-character--ie1--base
 70,Growing Player,Caesar Lionheart,GO1,base,Northern Fang,MF,B,stats del juego,65,80,64,63,61,62,Killer Whale (15) · Blast Mine (40) · Big Ball Trick (40),noma-tsuyuki--go1--base
@@ -1221,6 +1221,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 69,Growing Player,A'kra,GO3,base,Silica Eleven,DF,B,stats del juego,68,66,73,55,72,72,Under Miner (55) · Menacing Glare (30) · War Saw (40),takla-marker--go3--base
 69,Growing Player,Astro Ceres,GO1,base,Universal,GK,B,stats del juego,55,57,58,61,61,75,God Hand (10) · All-Star (30),serei-kazutoyo--go1--base
 69,Growing Player,Azzurro Zaffiro,IE3,base,Team D,DF,B,stats del juego,57,75,64,56,74,70,Killer Slide (10) · Whirlwind Cut (36) · Diabolical Cut (53),azzurro-zaffire--ie3--base
+69,Growing Player,Beldio Smeraldo,IE3,base,Team D,MF,B,stats del juego,59,79,62,64,65,78,Breakthrough (25) · Clone Defence (42) · Heavy Mettle (42),verdio-smeraldo--ie3--base
 69,Growing Player,Ben Curd,IE1,base,Unaffiliated,DF,C,stats del juego,67,62,68,66,72,70,Spinning Shot (20) · Bewildered (15) · Heat Tackle (27) · Harvest (48),mameha--ie1--base
 69,Growing Player,Big,GO3,base,Sub Character,FW,C,stats del juego,74,63,72,57,66,64,Fangtasmagoria (70) · Bouncing Bunny (15) · Elemental Destroyer (70),big--go3--base
 69,Growing Player,Billy-Lee Adarma,GO1,base,Milky Way Charter,MF,B,stats del juego,68,69,67,78,57,73,Grand Slam (15) · Pyroclastic (55),higashi-kinya--go1--base
@@ -1288,7 +1289,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 69,Growing Player,Zato Memmor,GO2,base,Unaffiliated,FW,C,stats del juego,73,63,73,59,66,59,Tiger Drive (40) · Boomerang Bluff (20) · Splitting Hares (70),elysion--go2--base
 68,Growing Player,A. Woodbridge,IE1,base,Otaku,MF,B,stats del juego,71,67,65,68,69,72,Bewildered (15) · Utter Gutsiness Bat (40) · Coil Turn (20) · Wrath Shot (22),robo-gouki--ie1--base
 68,Growing Player,Amanda Ray,GO3,base,Big Waves,MF,B,stats del juego,68,69,56,72,66,71,Kangaroo Kick (20) · Sleeping Dust (30) · Dance on Air (55),amanda-turner--go3--base
-68,Growing Player,Anfaira D'vantage,IE3,base,Unaffiliated,MF,C,stats del juego,56,72,70,69,73,73,Perimeter Zone (42) · Card Slap (44) · Sweet Deal (43) · Body Shield (57),otonagai--ie3--base
 68,Growing Player,Anton Nortje,IE3,base,The Cape Crusaders,MF,B,stats del juego,74,62,79,71,63,78,Super Armadillo (24) · Power Charge (39) · Heat Tackle (27) · Mad Express (57),athol-nortje--ie3--base
 68,Growing Player,Bandy Horsman,IE3,base,Team Zoolan,MF,B,stats del juego,77,62,80,65,66,67,Doppelganger (21) · Breakthrough 3 (48) · Teleport Shot (21) · Rolling Hell (46),giraffe--ie3--base
 68,Growing Player,Bayonet Gunne,GO1,base,Black Templars,MF,B,stats del juego,72,65,64,72,68,60,Sonic Shot (10) · Pyrokinetic (30) · Mystifying Mist (15),amano-kaiji--go1--base
@@ -1360,6 +1360,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 67,Growing Player,Ace Breaker,IE1,base,Unaffiliated,DF,C,stats del juego,61,65,64,70,68,67,Quick Draw (20) · Bewildered (15) · Cyclone (38) · Dash Storm (46),naminori--ie1--base
 67,Growing Player,Adrastus Argos,GO3,base,Sub Character,DF,C,stats del juego,60,64,65,61,70,70,Tesla Coil (15) · Spin Out (30) · Magnetism (30) · Omega Assault (85),toudou-heikichi--go3--base
 67,Growing Player,Alex Dauger,IE2,base,Unaffiliated,DF,C,stats del juego,67,66,68,64,68,67,Supreme Spin (20) · Earthquake (32) · Dash Storm (46) · Shooting Star (47),kaotetsu--ie2--base
+67,Growing Player,Anfaira D'vantage,IE3,base,Unaffiliated,MF,C,stats del juego,55,71,69,68,72,72,Perimeter Zone (42) · Card Slap (44) · Sweet Deal (43) · Body Shield (57),otonagai--ie3--base
 67,Growing Player,Barton Combo,GO3,base,Unaffiliated,MF,C,stats del juego,68,74,57,63,56,69,Fugue Wave (40) · Plasma Cut (55) · Shiny Feathers (85),renda--go3--base
 67,Growing Player,Bernie Ellement,IE3,base,Unaffiliated,FW,C,stats del juego,72,51,67,72,53,66,Dragon Cannon (46) · Volcano Cut (42) · Flame Dance (39) · Atomic Flare (70),nekketsu--ie3--base
 67,Growing Player,Bert Neptune,IE1,base,Unaffiliated,MF,C,stats del juego,67,67,68,66,67,67,Defence Scan (28) · Attack Scan (25) · Harvest (48) · Freeze Shot (25),kaiou-scout-character--ie1--base
@@ -1478,7 +1479,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 66,Growing Player,Everard Valiant,GO1,base,Unaffiliated,DF,C,stats del juego,59,69,67,50,69,65,Killer Whale (15) · Ozone Flayer (55),muteki-two--go1--base
 66,Growing Player,Galahad Chevalier,IE3,base,Unaffiliated,FW,C,stats del juego,71,62,65,56,49,53,Utter Gutsiness Bat (40) · Power Charge (39) · Paladin Strike (43) · Divine Stamp (43),knight--ie3--base
 66,Growing Player,Gary Primo,IE2,base,Unaffiliated,FW,C,stats del juego,73,57,61,59,59,53,Spiral Shot (20) · Rainbow Arc (37) · Shine Drive (34) · Revolution V (49),red-s--ie2--base
-66,Growing Player,Graplen Hawk,IE3,base,Unaffiliated,MF,C,stats del juego,52,73,55,73,61,63,Shadow Stitch (39) · Dirt Ball (22) · Horn Train (20) · Racing Flame (15),kaginawa--ie3--base
 66,Growing Player,Greg Bernard,IE1,base,Umbrella MS,FW,B,stats del juego,65,70,65,64,64,67,Snake Shot (20) · Attack Scan (25) · Zigzag Spark (55) · Patriot Shot (30),mizuguchi-seiji--ie1--base
 66,Growing Player,Grengo,IE2,base,Gemini Storm,MF,B,stats del juego,66,62,75,66,75,75,Warp Drive (36) · Magic (21) · Doppelganger (21) · Gungnir (30),omotsuki-sora--ie2--base
 66,Growing Player,Guile Crocket,IE1,base,Unaffiliated,DF,C,stats del juego,67,60,64,74,66,68,Whirlwind Twister (20) · Condor Dive (22) · Hawk Shot (34) · Boost Glider (57),cool--ie1--base
@@ -1587,6 +1587,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 65,Growing Player,Fabrice Soffner,IE3,base,Unaffiliated,FW,C,stats del juego,65,61,57,76,64,67,Freeze Shot (25) · Dirt Ball (22) · Eagle Buster (62) · Tarzan Kick (20),kishiki--ie3--base
 65,Growing Player,George Wu,GO1,base,Dragon Link,MF,B,stats del juego,72,65,62,64,54,60,Rising Dragon (55) · Triangle ZZ (40) · Warp Step (70),gonokami-eiji--go1--base
 65,Growing Player,Grant Stodgell,IE2,base,Unaffiliated,FW,C,stats del juego,72,59,55,59,55,52,Psycho Shot (20) · Freeze Shot (25) · Dark Tornado (40) · Dual Strike (46),red-d--ie2--base
+65,Growing Player,Graplen Hawk,IE3,base,Unaffiliated,MF,C,stats del juego,51,72,54,72,60,62,Shadow Stitch (39) · Dirt Ball (22) · Horn Train (20) · Racing Flame (15),kaginawa--ie3--base
 65,Growing Player,Greena Grasse,GO1,base,Unaffiliated,GK,C,stats del juego,47,59,68,59,51,69,Thief's Eye (8) · Runaway Train (8) · Mystifying Mist (15) · Crystal Barrier (40),moko--go1--base
 65,Growing Player,Greene Beray,IE2,base,Secret Service,DF,B,stats del juego,73,78,64,62,64,65,Coil Turn (20) · Fake Ball (30) · Bewildered (15) · Perimeter Zone (42),tokube-nariyuki--ie2--base
 65,Growing Player,Grew Driver,IE1,base,Unaffiliated,MF,C,stats del juego,65,65,65,65,64,65,Zigzag Spark (55) · Cross Drive (28) · Clone Faker (42) · Twin Boost (37),nagata--ie1--base
@@ -1920,7 +1921,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 62,Common Player,Drummond Bays,GO1,base,Unaffiliated,FW,C,stats del juego,63,58,61,64,44,52,Flying Fish (20) · Fire Tornado (30) · Flurry Dash (20),tap--go1--base
 62,Common Player,Duff Dooley,GO1,base,Ancient Darkness,MF,B,stats del juego,58,65,59,60,64,60,Entropic Arrows (55) · Ball Lightning (70) · Spatial Portal (55) · Side Swipe (70),noya-keiichirou--go1--base
 62,Common Player,Earle Humble,IE3,base,Unaffiliated,DF,C,stats del juego,61,63,57,62,64,65,Bed Of Roses (31) · Photon Crash (25) · Heat Tackle (27) · Matador Feint (47),shitou--ie3--base
-62,Common Player,Ed Ripp,IE1,base,Unaffiliated,DF,C,stats del juego,56,59,63,64,62,62,Sumo Stomp (20) · The Wall (8) · Super Armadillo (24) · Mega Quake (44),matsuda-scout-character--ie1--base
 62,Common Player,Eira Dynamic,GO1,base,Unaffiliated,GK,C,stats del juego,46,58,62,50,53,65,Flapjack Defence (20) · Land Of Ice (20) · Crystal Barrier (40),sarashina--go1--base
 62,Common Player,Eljas Viisi,GO1,base,Dragon Link,DF,B,stats del juego,61,65,61,63,61,68,Side Swipe (70) · Headbanger (10) · Warp Step (70) · Ozone Flayer (55),gouishi-senma--go1--base
 62,Common Player,Emosuke Rokudo,GO2,base,Unaffiliated,FW,C,stats del juego,65,59,64,57,51,53,Utter Gutsiness Bat (40) · Headbanger (10) · Matchlock Bullet (40) · Falling Planet (70),emosuke--go2--base
@@ -2052,7 +2052,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 61,Common Player,Casey Gin,GO3,base,Unaffiliated,MF,C,stats del juego,60,64,60,60,54,61,Transporter Device (15) · Spin Out (30) · Holograb (70),gin-kakkuji--go3--base
 61,Common Player,Catra Page,GO3,base,Sub Character,FW,C,stats del juego,65,59,48,64,57,57,Sleeping Dust (30) · Heavenly Drive (70) · Athena's Anthem (70),catra-page--go3--base
 61,Common Player,Catra Page,GO3,Child,Sub Character,FW,C,stats del juego,65,59,48,64,57,57,Mermaid Smash (30) · Will-o'-the-Wisp Shot (40) · Emperor Penguin 7 (70),catra-page--go3--child
-61,Common Player,Chandler Spillane,IE3,base,Unaffiliated,MF,C,stats del juego,55,67,57,55,64,59,Dash Accelerator (20) · Zigzag Spark (55) · Invisible Fake (42) · Sub-Terfuge (47),iso--ie3--base
 61,Common Player,Charlie,GO2,base,Protocol Omega,MF,B,stats del juego,61,62,56,64,57,62,Spin Out (30) · Headbanger (10) · Grand Slam (15) · Warhead (30),netan--go2--base
 61,Common Player,Chip Stocks,IE2,base,Unaffiliated,FW,C,stats del juego,61,62,64,58,65,64,Freeze Shot (25) · Moonsault (25) · Whirlwind Cut (36) · Reflect Buster (40),takeba--ie2--base
 61,Common Player,Chuck Dollman,IE1,base,Occult,FW,B,stats del juego,62,60,60,60,60,60,Phantom Shot (21) · Black Magic (20) · Doppelganger (21) · Rocket Kobushi (25),hitogata-gen--ie1--base
@@ -2065,6 +2064,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 61,Common Player,Don Snow,IE1,base,Unaffiliated,GK,C,stats del juego,62,62,60,62,62,61,Pressure Punch (21) · Toughness Block (20) · Dash Accelerator (20) · Mistral (27),yamanashi--ie1--base
 61,Common Player,Drew Reiner,IE1,base,Unaffiliated,DF,C,stats del juego,60,66,63,59,60,61,Coil Turn (20) · Blade Attack (24) · Spider Web (20) · Cross Drive (28),baba--ie1--base
 61,Common Player,Earl Bird,IE3,base,Unaffiliated,GK,C,stats del juego,48,52,46,50,64,65,Fireball Knuckle (20) · Killer Slide (10) · Ghost Pull (22) · Dual Smash (47),sakitori--ie3--base
+61,Common Player,Ed Ripp,IE1,base,Unaffiliated,DF,C,stats del juego,55,58,62,63,61,61,Sumo Stomp (20) · The Wall (8) · Super Armadillo (24) · Mega Quake (44),matsuda-scout-character--ie1--base
 61,Common Player,Eldritch Priest,IE3,base,Unaffiliated,GK,C,stats del juego,62,61,63,45,60,61,Mistral (27) · Shadow Stitch (39) · Asteroid Belt (46) · Shooting Star (47),ginhai--ie3--base
 61,Common Player,Elreid Orbes,GO3,base,Sub Character,GK,C,stats del juego,55,56,56,49,56,64,Dry Blow (30) · Claw de Force (40),iraid-obies--go3--base
 61,Common Player,Ethan Swallow,IE2,base,Unaffiliated,MF,C,stats del juego,57,59,63,68,58,65,Rodeo Clown (20) · Fake Bomber (29) · Run Ball Run (28) · Dash Storm (46),kamimaru--ie2--base
@@ -2211,6 +2211,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 60,Common Player,Carl Penter,IE1,base,Unaffiliated,FW,C,stats del juego,62,57,61,58,55,56,Rolling Kick (20) · Zigzag Spark (55) · Fire Tornado (30) · Back Tornado (31),tezukuri--ie1--base
 60,Common Player,Carson Haynes,IE1,base,Unaffiliated,DF,C,stats del juego,61,60,61,60,60,63,Spinning Cut (30) · Shadow Stitch (39) · Whirlwind Cut (36) · Dash Storm (46),kudou-scout-character--ie1--base
 60,Common Player,Chandler Blanc,GO1,base,Eternal Light,DF,B,stats del juego,61,66,51,62,63,57,Warp Step (70) · Solar Surprise (40) · Ball Lightning (70),fujiki-tatsuhiko--go1--base
+60,Common Player,Chandler Spillane,IE3,base,Unaffiliated,MF,C,stats del juego,54,66,56,54,63,58,Dash Accelerator (20) · Zigzag Spark (55) · Invisible Fake (42) · Sub-Terfuge (47),iso--ie3--base
 60,Common Player,Clara Schott,GO1,base,Unaffiliated,FW,C,stats del juego,67,50,51,61,52,63,Pyrokinetic (30) · Hey Presto (30) · Illusion Ball (20),soramori--go1--base
 60,Common Player,Clint Wester,IE1,base,Unaffiliated,DF,C,stats del juego,60,60,61,59,60,60,Grenade Shot (20) · Defence Scan (28) · Patriot Shot (30) · Attack Scan (25),seibu--ie1--base
 60,Common Player,Colin Binder,IE2,base,Unaffiliated,MF,C,stats del juego,57,68,57,54,51,64,Flurry Dash (20) · Blade Attack (24) · Flame Dance (39) · Deceptor Dribble (39),file--ie2--base
@@ -2519,7 +2520,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 58,Common Player,Ed Hartsell,IE2,base,Unaffiliated,DF,C,stats del juego,59,56,60,51,59,58,Killer Slide (10) · Whirlwind Twister (20) · Heat Tackle (27) · Shadow Stitch (39),hiramatsu--ie2--base
 58,Common Player,Eddie Prentice,IE1,base,Street Sally's,FW,B,stats del juego,58,61,56,56,56,56,Dynamite Shot (31) · Heat Tackle (27) · Twin Boost (37) · Quick Draw (20),purogure-iwao--ie1--base
 58,Common Player,Edward Headwood,GO1,base,Inazuma Kids FC,DF,B,stats del juego,59,68,56,69,54,52,Whirly-Whirly (10) · Illusion Ball (20),matsuishi-rintarou--go1--base
-58,Common Player,Egon Omercer,IE2,base,Unaffiliated,GK,C,stats del juego,62,47,59,46,53,59,Killer Blade (20) · Supreme Spin (20) · Whirlwind (32) · Tsunami Wall (42),zack-scout-character--ie2--base
 58,Common Player,Eins Whitely,GO1,base,Unaffiliated,GK,C,stats del juego,42,52,62,53,48,60,Great Wall (15) · Power Spike (10) · Crystal Barrier (40),shiroha--go1--base
 58,Common Player,Eveline Veitch,IE3,base,Unaffiliated,MF,C,stats del juego,58,60,56,55,58,66,Photon Crash (25) · Condor Dive (22) · Magic (21) · Boost Glider (57),kuromajo--ie3--base
 58,Common Player,Fala Polaris,IE3,base,Unaffiliated,DF,C,stats del juego,50,58,53,57,61,59,Moonsault (25) · Gravitation (38) · Meteor Shower (38) · Meteor Blade (55),cauca--ie3--base
@@ -2553,7 +2553,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 58,Common Player,Ken Cake,IE1,base,Inazuma Kids FC,FW,B,stats del juego,59,56,56,58,56,56,Spiral Shot (20) · Sumo Stomp (20) · Horn Train (20) · Cross Drive (28),hirata-ken--ie1--base
 58,Common Player,Kim Ono,IE1,base,Unaffiliated,FW,C,stats del juego,56,66,56,57,58,57,Tarzan Kick (20) · Bewildered (15) · Hawk Shot (34) · Poison Fog (20),matsuoka--ie1--base
 58,Common Player,Kippy Jones,IE1,base,Street Sally's,MF,B,stats del juego,59,58,57,57,59,58,Killer Slide (10) · Flurry Dash (20) · Fake Ball (30) · Tarzan Kick (20),misemachi-yasunori--ie1--base
-58,Common Player,Lacy Cagney,IE3,base,Unaffiliated,MF,C,stats del juego,56,60,53,57,59,56,Sleeping Dust (30) · Deceptor Dribble (39) · Perimeter Zone (42) · Security Shot (37),naemi--ie3--base
 58,Common Player,Laititia Cheeseman,IE3,base,Unaffiliated,MF,C,stats del juego,64,58,54,53,61,56,Prima Donna (39) · Butterfly Trance (55) · Rolling Kick (20) · Yo-Yo Ball (36),milk--ie3--base
 58,Common Player,Lizzy Squirrel,IE1,base,Street Sally's,MF,B,stats del juego,57,59,57,58,57,56,Dash Accelerator (20) · Magic (21) · Killer Slide (10) · Kung Fu Header (31),tachimi-ritsuko--ie1--base
 58,Common Player,Lucan Thorpe,GO1,base,Unaffiliated,DF,C,stats del juego,55,43,64,50,61,59,Runaway Train (8) · Jumbo Sandwich (20) · Whirly-Whirly (10),howling--go1--base
@@ -2685,6 +2684,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 57,Common Player,Drew Pii,GO1,base,Unaffiliated,MF,C,stats del juego,52,62,46,52,66,48,Land Of Ice (20) · Will-o'-the-Wisp Shot (40) · Meteor Blade (55),tanuki--go1--base
 57,Common Player,Dustin Westend,IE1,base,Unaffiliated,FW,C,stats del juego,55,59,56,62,55,55,Comet Shot (25) · Dynamite Shot (31) · Illusion Ball (20) · Divine Arrows (46),utaba--ie1--base
 57,Common Player,Dwayne Woo,IE1,base,Unaffiliated,MF,C,stats del juego,59,55,62,56,57,59,Flurry Dash (20) · Killer Slide (10) · Quick Draw (20) · Back Tornado (31),saitama--ie1--base
+57,Common Player,Egon Omercer,IE2,base,Unaffiliated,GK,C,stats del juego,61,46,58,45,52,58,Killer Blade (20) · Supreme Spin (20) · Whirlwind (32) · Tsunami Wall (42),zack-scout-character--ie2--base
 57,Common Player,Eric Motter,IE2,base,Unaffiliated,GK,C,stats del juego,45,53,44,46,62,60,Swan Dive (20) · Horn Train (20) · Rocket Kobushi (25) · Sliding Goal (32),yokoyama--ie2--base
 57,Common Player,Ernest Byer,IE1,base,Unaffiliated,FW,C,stats del juego,57,54,61,58,56,57,Fire Tornado (30) · Utter Gutsiness Bat (40) · Poison Fog (20) · Spider Web (20),inpou--ie1--base
 57,Common Player,Errol Lorre,IE1,base,Unaffiliated,FW,C,stats del juego,58,55,59,54,56,56,Hawk Shot (34) · Quick Draw (20) · Back Tornado (31) · About Face (16),kaihou--ie1--base
@@ -2715,6 +2715,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 57,Common Player,Kit Cymbal,GO1,base,Unaffiliated,DF,C,stats del juego,53,60,51,58,59,45,Combustion Catch (8) · Thief's Eye (8) · Whip Crack (20) · Fugue Wave (40),kotomi--go1--base
 57,Common Player,Korum Jintal,GO3,base,Unaffiliated,MF,C,stats del juego,57,60,51,54,54,49,Driving Header (20) · Warhead (30) · Gigaton Head (40),koety--go3--base
 57,Common Player,Kyoko Hanabayashi,GO2,base,Sub Character,FW,C,stats del juego,59,57,50,59,42,45,Zephyr Shot (20) · Flying Fish (20) · Dragster (30),hanabayashi-kyouko--go2--base
+57,Common Player,Lacy Cagney,IE3,base,Unaffiliated,MF,C,stats del juego,55,59,52,56,58,55,Sleeping Dust (30) · Deceptor Dribble (39) · Perimeter Zone (42) · Security Shot (37),naemi--ie3--base
 57,Common Player,Larga Thanlyfe,GO1,base,Unaffiliated,DF,C,stats del juego,51,57,44,63,62,56,Emperor Penguin No. 2 (55) · Flurry Dash (20) · The Wall (8),teiou--go1--base
 57,Common Player,Lee Figreene,IE1,base,Unaffiliated,FW,C,stats del juego,54,62,55,61,54,55,Dirt Ball (22) · Horn Train (20) · Twin Boost (37) · Hurricane Arrows (57),sanpo--ie1--base
 57,Common Player,Lenton Gouger,IE3,base,Unaffiliated,DF,C,stats del juego,59,57,54,57,59,57,Cyclone (38) · Warp Drive (36) · Doppelganger (21) · Diabolical Cut (53),lantern--ie3--base
@@ -2906,7 +2907,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 56,Common Player,Minack Sargo,GO3,base,Unaffiliated,GK,C,stats del juego,48,47,50,57,50,60,Blam Dunk (10) · Menace Elbow (30) · Claw de Force (40),minocka--go3--base
 56,Common Player,Mitch Grumble,IE1,base,Inazuma Kids FC,MF,B,stats del juego,58,56,56,55,56,55,Illusion Ball (20) · Zigzag Spark (55) · Teleport Shot (21) · Shadow Stitch (39),hasebe-seiji--ie1--base
 56,Common Player,Mitch Hett,IE1,base,Unaffiliated,FW,C,stats del juego,54,64,52,55,55,54,Freeze Shot (25) · Doppelganger (21) · Bewildered (15) · Back Tornado (31),medaka--ie1--base
-56,Common Player,Monty Tasker,IE3,base,Unaffiliated,DF,C,stats del juego,54,53,59,51,56,51,Black Magic (20) · Dash Accelerator (20) · Steeple Shot (37) · Whirlwind Force (20),nagara--ie3--base
 56,Common Player,Ms QT,GO1,base,Unaffiliated,MF,C,stats del juego,50,64,59,45,52,61,Criss-Cross (70) · Blast Mine (40) · Land Of Ice (20),cutie--go1--base
 56,Common Player,Neil Seating,IE2,base,Unaffiliated,MF,C,stats del juego,56,65,50,47,44,45,Monkey Turn (20) · Heat Tackle (27) · Wrath Shot (22) · Cyclone (38),hisamoto--ie2--base
 56,Common Player,Ness Lockley,IE1,base,Unaffiliated,DF,C,stats del juego,51,56,52,59,57,58,Quick Draw (20) · Zigzag Spark (55) · Horn Train (20) · About Face (16),enomoto--ie1--base
@@ -3068,6 +3068,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 55,Common Player,Mmor Pegg,GO2,base,Unaffiliated,DF,C,stats del juego,46,44,57,45,59,56,Runaway Train (8) · Pyrokinetic (30) · Slice and Dice (15) · Solar Surprise (40),login--go2--base
 55,Common Player,Moka Rimmer,GO3,base,Unaffiliated,DF,C,stats del juego,56,47,61,47,56,52,Pincer Pinch (20) · Gusher Crusher (40) · Fungusmungous (55),mowka--go3--base
 55,Common Player,Monty Patten,IE1,base,Unaffiliated,DF,C,stats del juego,58,58,53,52,56,57,Doppelganger (21) · Spinning Cut (30) · Attack Scan (25) · Psycho Shot (20),soumei--ie1--base
+55,Common Player,Monty Tasker,IE3,base,Unaffiliated,DF,C,stats del juego,53,52,58,50,55,50,Black Magic (20) · Dash Accelerator (20) · Steeple Shot (37) · Whirlwind Force (20),nagara--ie3--base
 55,Common Player,Morgan Iser,IE1,base,Unaffiliated,MF,C,stats del juego,57,56,53,54,52,52,Magic (21) · Fake Ball (30) · Illusion Ball (20) · Run Ball Run (28),yoshino--ie1--base
 55,Common Player,Odessa Ryder,IE2,base,Unaffiliated,MF,C,stats del juego,53,57,56,52,55,54,Kung Fu Fighting (37) · Circus Block (47) · Clone Block (45),maika--ie2--base
 55,Common Player,Ollie Twister,IE1,base,Unaffiliated,FW,C,stats del juego,56,57,52,52,53,54,Whirlwind Twister (20) · Rolling Kick (20) · Fire Tornado (30) · Back Tornado (31),tatsumaki--ie1--base
@@ -3144,7 +3145,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 54,Common Player,Beth Doodle,IE2,base,Unaffiliated,MF,C,stats del juego,46,55,55,59,54,52,Patriot Shot (30) · Blade Attack (24) · Ribbon Shower (40),sonoka--ie2--base
 54,Common Player,Bill Dozer,IE1,base,Unaffiliated,GK,C,stats del juego,54,53,52,53,54,55,Fireball Knuckle (20) · Rocket Kobushi (25) · Blazing Knuckle (35) · Spinning Cut (30),tatemori--ie1--base
 54,Common Player,Bloomer Topp,GO1,base,Unaffiliated,GK,C,stats del juego,48,42,57,57,40,58,Somersault Stamp (8) · Whip Crack (20) · Runaway Train (8),aooni--go1--base
-54,Common Player,Blowie Armstraw,IE3,base,Unaffiliated,MF,C,stats del juego,49,56,46,56,59,59,Blade Attack (24) · Back Tornado (31) · Spiral Shot (20) · Power Charge (39),sasabue--ie3--base
 54,Common Player,Bluster Tryadd,GO1,base,Unaffiliated,DF,C,stats del juego,50,49,47,44,61,43,Whirlwind Force (20) · Land Of Ice (20) · Illusion Ball (20) · Big Ball Trick (40),beat-scout-character--go1--base
 54,Common Player,Bo Ling,IE1,base,Unaffiliated,DF,C,stats del juego,52,66,53,55,52,51,Killer Slide (10) · Zigzag Spark (55) · Cyclone (38) · Whirlwind Cut (36),nakayama--ie1--base
 54,Common Player,Brenda Brandish,IE2,base,Unaffiliated,FW,C,stats del juego,58,53,55,40,56,52,Snake Shot (20) · Quick Draw (20) · Spinning Cut (30) · Inazuma Drop (37),nishikawa--ie2--base
@@ -3288,6 +3288,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 53,Common Player,Belle Allure,IE2,base,Unaffiliated,MF,C,stats del juego,57,45,55,63,57,60,Spider Web (20) · Sleeping Dust (30) · Aurora Curtain (35),neylon--ie2--base
 53,Common Player,Bernina Nightoil,IE3,base,Unaffiliated,MF,C,stats del juego,53,54,50,52,52,50,Ribbon Shower (40) · Spectacle Crash (37) · Liar Shot (44) · Doppelganger (21),hii-kun--ie3--base
 53,Common Player,Bill Fierce,IE2,base,Unaffiliated,MF,C,stats del juego,60,50,56,49,56,53,Monkey Turn (20) · Blade Attack (24) · Bewildered (15) · Flame Dance (39),sihero--ie2--base
+53,Common Player,Blowie Armstraw,IE3,base,Unaffiliated,MF,C,stats del juego,48,55,45,55,58,58,Blade Attack (24) · Back Tornado (31) · Spiral Shot (20) · Power Charge (39),sasabue--ie3--base
 53,Common Player,Bob Shishker,IE1,base,Unaffiliated,FW,C,stats del juego,52,54,51,58,55,55,Condor Dive (22) · Dash Accelerator (20) · Hawk Shot (34) · Dash Storm (46),mozu--ie1--base
 53,Common Player,Bobby Peeler,IE3,base,Unaffiliated,MF,C,stats del juego,44,57,46,57,54,51,Dash Accelerator (20) · Attack Scan (25) · Kung Fu Fighting (37) · Whirlwind Cut (36),tobihiro--ie3--base
 53,Common Player,Bonnie Sytree,GO1,base,Unaffiliated,MF,C,stats del juego,52,55,42,61,43,46,Optimal Trajectory (10) · Future Eye (10) · Easy Breezy (15) · Mystifying Mist (15),nako--go1--base
@@ -3353,7 +3354,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 53,Common Player,Manny Kinsland,IE1,base,Unaffiliated,FW,C,stats del juego,53,50,56,53,57,57,Grenade Shot (20) · Kung Fu Header (31) · Shine Drive (34) · Moonsault (25),kuriyama-scout-character--ie1--base
 53,Common Player,Manny Saboy,GO1,base,Unaffiliated,FW,C,stats del juego,53,59,44,56,53,51,Sonic Shot (10) · Sidewinder (20) · The Wall (8),tokawa--go1--base
 53,Common Player,Mariah Knowles,IE3,base,Unaffiliated,FW,C,stats del juego,54,53,51,52,53,50,Wrath Shot (22) · Coil Turn (20) · Dragon Cannon (46),iko--ie3--base
-53,Common Player,Marthin Bannister,IE3,base,Unaffiliated,FW,C,stats del juego,49,66,52,50,66,51,Quick Draw (20) · Flurry Dash (20) · Wrath Shot (22) · Dash Storm (46),isa--ie3--base
 53,Common Player,Matsuri Chai,GO2,base,Unaffiliated,DF,C,stats del juego,43,42,53,45,58,55,Whirly-Whirly (10) · Electric Impedance (30) · Fractal Repeller (10) · Vac Attack (40),chai--go2--base
 53,Common Player,Melody Fayre,GO1,base,Unaffiliated,FW,C,stats del juego,51,58,48,58,53,57,Jumping Jack (40) · Big Ball Trick (40) · Brimstone Rain (55),sakebi--go1--base
 53,Common Player,Mint Royle,GO1,base,Unaffiliated,MF,C,stats del juego,47,57,49,60,41,50,Land Of Ice (20) · Big Ball Trick (40) · Flurry Dash (20),date-go--go1--base
@@ -3379,7 +3379,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 53,Common Player,Ria Vivalist,IE3,base,Unaffiliated,FW,C,stats del juego,53,52,49,60,54,51,Double Touch (10) · Spiral Shot (20) · Dash Storm (46),shiho--ie3--base
 53,Common Player,Ricky Charmers,IE1,base,Unaffiliated,FW,C,stats del juego,53,52,52,55,56,57,Rolling Kick (20) · Kung Fu Header (31) · Run Ball Run (28) · Mole Fake (10),ittoku--ie1--base
 53,Common Player,Riff Ormd,GO1,base,Unaffiliated,MF,C,stats del juego,54,54,43,61,42,41,Future Eye (10) · Grand Slam (15) · Log Roll (10),youkou--go1--base
-53,Common Player,Rob Ottley,IE1,base,Unaffiliated,MF,C,stats del juego,49,53,52,58,51,51,Flurry Dash (20) · Zigzag Spark (55) · Hawk Shot (34) · Patriot Shot (30),denkou--ie1--base
 53,Common Player,Rock Poulon,IE2,base,Unaffiliated,GK,C,stats del juego,44,41,55,42,52,53,Swan Dive (20) · Fireball Head (30) · Poison Fog (20) · Whirlwind (32),taniki--ie2--base
 53,Common Player,Rose Bedd,IE2,base,Unaffiliated,MF,C,stats del juego,62,50,54,45,62,57,Flurry Dash (20) · Bed Of Roses (31) · Zigzag Spark (55) · Cyclone (38),chisaka--ie2--base
 53,Common Player,Ry Sling,IE1,base,Unaffiliated,DF,C,stats del juego,51,64,52,57,50,50,Doppelganger (21) · Shadow Stitch (39) · Magic (21) · Illusion Ball (20),sakai--ie1--base
@@ -3479,6 +3478,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 52,Common Player,Kudon Kanran,GO3,base,Unaffiliated,MF,C,stats del juego,55,55,59,41,47,57,Kangaroo Kick (20) · Menacing Glare (30) · Blast Mine (40),kudo--go3--base
 52,Common Player,Kurt Tweedy,IE1,base,Unaffiliated,FW,C,stats del juego,52,48,57,53,56,53,Snake Shot (20) · Sumo Stomp (20) · Bewildered (15) · Earthquake (32),ooniwa--ie1--base
 52,Common Player,Mabel Lerner,GO3,base,Sub Character,MF,C,stats del juego,52,56,41,50,52,54,Defence Equation (15) · Seal Matrix (30) · Logicstical Sync (40),manabe-kyouko--go3--base
+52,Common Player,Marthin Bannister,IE3,base,Unaffiliated,FW,C,stats del juego,48,65,51,49,65,50,Quick Draw (20) · Flurry Dash (20) · Wrath Shot (22) · Dash Storm (46),isa--ie3--base
 52,Common Player,Mike Chequer,IE1,base,Unaffiliated,GK,C,stats del juego,58,53,51,53,52,52,Pressure Punch (21) · Horn Train (20) · Wood Chopper (21) · Blazing Knuckle (35),himuro--ie1--base
 52,Common Player,Minnie Stratio,IE2,base,Unaffiliated,GK,C,stats del juego,48,65,53,53,51,52,Wood Chopper (21) · Fake Ball (30) · Invisible Fake (42) · Aurora Curtain (35),tamami--ie2--base
 52,Common Player,Nathan Weyton,IE1,base,Unaffiliated,DF,C,stats del juego,50,49,50,57,52,53,Coil Turn (20) · Spinning Cut (30) · Cyclone (38) · Whirlwind Cut (36),okinawa-scout-character--ie1--base
@@ -3506,6 +3506,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 52,Common Player,Rex Plorer,IE1,base,Unaffiliated,FW,C,stats del juego,50,54,51,56,55,53,Snake Shot (20) · Tarzan Kick (20) · Run Ball Run (28) · Mole Fake (10),kusanagi--ie1--base
 52,Common Player,Rick Whited,GO1,base,Unaffiliated,MF,C,stats del juego,45,56,47,59,40,40,Zephyr Shot (20) · Illusion Ball (20) · Flurry Dash (20),c-mon--go1--base
 52,Common Player,Rio Sands,GO1,base,Unaffiliated,FW,C,stats del juego,57,45,55,42,45,58,Warhead (30) · Illusion Ball (20) · Fire Tornado (30),samba-go--go1--base
+52,Common Player,Rob Ottley,IE1,base,Unaffiliated,MF,C,stats del juego,48,52,51,57,50,50,Flurry Dash (20) · Zigzag Spark (55) · Hawk Shot (34) · Patriot Shot (30),denkou--ie1--base
 52,Common Player,Rory Circles,IE1,base,Unaffiliated,MF,C,stats del juego,51,50,51,57,54,56,Bewildered (15) · Poison Fog (20) · Dash Storm (46) · Sumo Stomp (20),funada--ie1--base
 52,Common Player,Rufus Brunt,GO1,base,Unaffiliated,GK,C,stats del juego,37,43,57,44,39,55,Power Spike (10) · Whirlwind Force (20) · Close Counter (15),oshimoto--go1--base
 52,Common Player,Sal Curie,IE1,base,Unaffiliated,DF,C,stats del juego,51,56,54,51,51,51,Bewildered (15) · Killer Slide (10) · Horn Train (20) · Mole Fake (10),kouko-scout-character--ie1--base

@@ -157,6 +157,8 @@ python3 tools/db/build.py            # genera build/players.json, build/review.c
 
 - **Revisar:** `build/review.csv` (todas las cartas con OVR, categoría, stats y técnicas) y `build/report.txt` (avisos).
 - **Ajustar:** editar `data/overrides.json` (destacados, posiciones por versión, equivalencias de nombres, OVR manual) y volver a ejecutar `build.py`.
+  - `team_force`: equipo a la fuerza por id de carta (Nakata IE2 → Secundarios).
+  - `extra_versions`: versiones a mano sin ficha de zukan: juego, equipo, nº e imagen. Nakata IE3 va en Orfeo con el Nº 1922, el hueco de zukan entre Cannavaro (1921) y The Kingdom (1923), con el sprite "(O)" de la wiki.
 - **Cargar en Supabase:** al hacer push a `main` de cambios en `supabase/`, el workflow `.github/workflows/db-load.yml` aplica `schema.sql` + `seed.sql` con el secreto del repo `SUPABASE_DB_URL` (también se puede lanzar a mano desde Actions → "Load player database into Supabase").
 
 Generación actual: **4.038 cartas** (3.806 personajes + 232 versiones; 29 Mixi Max), 589 técnicas, 79 del cuerpo técnico; 3.998 cartas con nº de zukan. Primera generación: 3.903 cartas (3.806 personajes + 97 versiones), 587 técnicas · Legendary 36 · Top 233 · Advanced 516 · Growing 771 · Common 2.347 · OVR mediana 61, p90 79, máx 92.

@@ -155,5 +155,21 @@
     "_doc": "Sprite de Victory Road (wiki española) a la fuerza para una carta: id de carta → nombre del fichero de la galería.",
     "endou-mamoru--ie2--raimon": "(R) Mark (HVR-LB).png",
     "kidou-yuuto--ie2--raimon": "(R) Jude (HVR).png"
-  }
+  },
+  "team_force": {
+    "_doc": "Equipo a la fuerza para una carta: id de carta → equipo.",
+    "nakata-hidetoshi--ie2--base": "Sub Character"
+  },
+  "extra_versions": [
+    {
+      "_doc": "Versión añadida a mano (sin ficha de zukan): page de la wiki, juego, equipo, nº (hueco de zukan) e imagen."
+    },
+    {
+      "page": "Nakata Hidetoshi",
+      "game": "IE3",
+      "team": "Orpheus",
+      "no": 1922,
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/09/%28O%29_Nakata_Hidetoshi_sprite.png/revision/latest?cb=20230826094456"
+    }
+  ]
 }
