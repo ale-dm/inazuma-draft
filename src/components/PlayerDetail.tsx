@@ -15,6 +15,8 @@ interface Props {
   onOpen: (p: Player) => void
 }
 
+const SPECIAL_ICON: Record<string, string> = { keshin: '👤', soul: '🐾', mixi: '🌀' }
+
 export default function PlayerDetail({ player, onClose, onOpen }: Props) {
   const { t, locale } = useAppSettings()
   const versions = getCharacterVersions(player.characterId).filter(v => v.id !== player.id)
@@ -44,7 +46,7 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
                 {cardTeamLabel(player, locale)}
               </p>
               <p className="text-xs text-iz-muted">
-                {player.game} · {GAME_LABEL[player.game]}{player.zukanNo ? ` · Nº ${player.zukanNo}` : ''}
+                {player.game} · {GAME_LABEL[player.game]}{player.no ? ` · Nº ${player.no}` : ''}
               </p>
             </div>
           </div>
@@ -62,10 +64,30 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
             </div>
           </section>
 
-          {player.description && (
+          {(player.description || player.descriptionEs) && (
             <section>
               <h3 className="font-heading text-sm font-bold text-accent mb-2">{t('players.description')}</h3>
-              <p className="text-sm text-iz-text italic" lang="en">“{player.description}”</p>
+              {locale === 'es' && player.descriptionEs
+                ? <p className="text-sm text-iz-text italic" lang="es">“{player.descriptionEs}”</p>
+                : <p className="text-sm text-iz-text italic" lang="en">“{player.description ?? player.descriptionEs}”</p>}
+            </section>
+          )}
+
+          {player.specials.length > 0 && (
+            <section>
+              <h3 className="font-heading text-sm font-bold text-accent mb-2">{t('players.specials')}</h3>
+              <ul className="space-y-1.5">
+                {player.specials.map((sp, i) => (
+                  <li key={i} className="flex items-center gap-2 text-sm">
+                    <span aria-hidden>{SPECIAL_ICON[sp.type]}</span>
+                    <span className="text-[0.65rem] text-iz-muted">{t(`special.${sp.type}`)}</span>
+                    <span className="font-heading font-bold text-iz-heading truncate">
+                      {(locale === 'es' && sp.name_es) || sp.name || '—'}
+                    </span>
+                    {sp.armed && <span className="ml-auto text-xs text-accent font-heading">{t('special.armed')}</span>}
+                  </li>
+                ))}
+              </ul>
             </section>
           )}
 

@@ -1,4 +1,4 @@
-import type { Category, DraftPool, DraftPoolKey, Element, GameId, Player, Position, Staff, StaffRole, Technique } from '../types'
+import type { Category, DraftPool, DraftPoolKey, Element, GameId, Player, Position, Special, Staff, StaffRole, Technique } from '../types'
 import { GAME_LABEL } from './games'
 
 /**
@@ -41,6 +41,9 @@ interface CardRow {
   is_version: boolean
   zukan_no?: number | null
   description?: string | null
+  description_es?: string | null
+  no?: number | null
+  specials?: Special[] | null
   card_techniques: { slot: number; technique_id: string }[]
 }
 
@@ -136,6 +139,9 @@ export async function loadCatalog(): Promise<void> {
       isVersion: r.is_version,
       zukanNo: r.zukan_no ?? null,
       description: r.description ?? null,
+      descriptionEs: r.description_es ?? null,
+      no: r.no ?? r.zukan_no ?? null,
+      specials: r.specials ?? [],
     }
   })
   byId = new Map(players.map(p => [p.id, p]))

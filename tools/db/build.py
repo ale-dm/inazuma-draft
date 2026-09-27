@@ -90,6 +90,83 @@ def lua_moves(body, module):
     return re.findall(r'\{"(\w+)"', m.group(1)) if m else []
 
 
+def load_opt(name, default):
+    """caché opcional (pasos de fetch.py añadidos después)"""
+    return load(name) if os.path.exists(os.path.join(CACHE, name)) else default
+
+
+def lua_game_list(body, field, module):
+    """keshin={GO={"Lancelot",true}, CST={{"A",true,2,"…"},{"B",…}}} → [("Lancelot", True)] para ese juego"""
+    m = re.search(r'\n\t\t' + field + r'=\{(.*?)\n\t\t\}', body or '', re.S)
+    if not m:
+        return []
+    out, key = [], None
+    for line in m.group(1).split('\n'):
+        km = re.match(r'\s*(\w+)=\{(.*)', line)
+        if km:
+            key, line = km.group(1), km.group(2)
+        if key == module:
+            out += [(n, a == 'true') for n, a in re.findall(r'"(\w+)"(?:,(true|false))?', line)]
+    return out
+
+
+DESC_CODE = dict(zip(MAIN, ['', ' IE2', ' IE3', ' IEGO', ' IEGO2', ' IEGO3']))    # |Descripción IEGO2 = …
+
+
+def es_desc_tabs(section):
+    """sección 'Descripciones' de la wiki española → [(pestaña, texto)] (pestañas anidadas incluidas)"""
+    section = section.split('===Manga===')[0]
+    parts = re.split(r'(?:\|-\||\{\{!\}\}-\{\{!\}\}|\{\{#tag: ?tabber\|\s*)([^=\n|{}]+)=', section)
+    tabs = [('', parts[0])] + [(parts[i].strip(), parts[i + 1]) for i in range(1, len(parts) - 1, 2)]
+    return [(l, t) for l, t in tabs if 'Descripción' in t]
+
+
+def es_desc_clean(v):
+    v = re.split(r'\n\s*=+', v)[0]                     # sin subsecciones (===Sitio Oficial===…)
+    v = v.split('----')[-1]
+    v = re.sub(r'^\s*[A-Z]{2}\|:?\s*', '', v)
+    v = re.sub(r'\[\[(?:[^|\]]*\|)?([^\]]*)\]\]', r'\1', v)
+    v = re.sub(r"\{\{[^{}]*\}\}|<[^>]+>|'''?", '', v)
+    v = re.sub(r'\{\{|\}\}|\[\[|\]\]', '', v)
+    v = re.sub(r'^\s*[A-Z]{2}\|:?\s*\*?\s*', '', v)
+    return re.sub(r'\s+', ' ', v).strip(' *|')
+
+
+def es_description(section, game, version, adult, mixi, page_es, version_es='', partner=''):
+    """descripción en castellano de esa carta: pestaña de la versión (joven/adulto/Mixi Max) y plantilla del juego"""
+    if not section:
+        return None
+    tabs = es_desc_tabs(section)
+    if not tabs:
+        return None
+    def score(lt):
+        l = lt[0].lower()
+        sc = 3 * (mixi and 'mixi' in l) + 3 * (adult and ('adult' in l or l == page_es.lower()))
+        sc += 4 * any(v and len(v) > 3 and v.lower() in l for v in (version_es, version))
+        sc += 4 * bool(mixi and partner and any(w.lower() in l for w in partner.split() if len(w) > 3))
+        sc -= 3 * (not mixi and 'mixi' in l) + 2 * (not adult and 'adult' in l) + ('armadura' in l or 'hyper' in l)
+        return sc
+    order = sorted(range(len(tabs)), key=lambda i: (-score(tabs[i]), i))
+    for i in order[:1] + [j for j in order[1:] if score(tabs[j]) == score(tabs[order[0]])]:
+        text = tabs[i][1]
+        for g in [game] + [x for x in reversed(MAIN) if x != game and x[:2] == game[:2]]:
+            # vale para {{Descripción/IE GO 2|Descripción IEGO2 = …}} y para {{Descripción|Descripción IE3 = …|Descripción IEGO = …}}
+            m = re.search(r'\|\s*Descripción' + DESC_CODE[g] + r'\s*=(.*?)(?=\s*\|\s*Descripción|\n\{\{Descripción|\n\s*\}\}\s*$|\Z)',
+                          text, re.S | re.M)
+            if not m:
+                continue
+            v = re.sub(r'\}\}\s*(\}\})?\s*$', '', m.group(1).strip())
+            bullets = re.findall(r"\*\s*'''([^']+)''':\s*([^\n]+)", v)
+            if bullets:
+                want = version.lower()
+                pick = next((t for lab, t in bullets if any(w in lab.lower() for w in want.split() if len(w) > 3)), bullets[0][1])
+                v = pick
+            v = es_desc_clean(v)
+            if v:
+                return v
+    return None
+
+
 def category(ovr):
     return next(c for c, t in CATEGORIES if ovr >= t)
 
@@ -104,6 +181,20 @@ def main(extra_z=None, write=True):
     ov = json.load(open(os.path.join(ROOT, 'data', 'overrides.json'), encoding='utf-8'))
     zukan = load('zukan.json')
     zdesc = load('zukan_desc.json')
+    es_desc = load_opt('es_descriptions.json', {})
+    keshin_data = lua_entries(load_opt('KeshinData.lua', ''))
+    soul_data = lua_entries(load_opt('SoulData.lua', ''))
+    def romaji(k):                                   # "Seijuu"/"Seiju", "Jinrou"/"Jinro", "Buffalo (Soul)"/"Buffalo"
+        k = re.sub(r'\s*\((?:soul|tótem|totem)\)', '', k.lower())
+        k = re.sub(r'[^a-z]', '', k).replace('ou', 'o')
+        return re.sub(r'([aeiou])\1+', r'\1', k)
+    def es_names(d):
+        idx = {}
+        for title, v in d.items():
+            for k in v['jp'] + v['en']:
+                idx.setdefault(romaji(k), (re.sub(r'\s*\(Tótem\)$', '', title), (v['en'] or [None])[0]))
+        return idx
+    es_keshin, es_soul = es_names(load_opt('es_keshin.json', {})), es_names(load_opt('es_souls.json', {}))
     GAME_TITLE = re.compile(r'^(?:Inazuma Eleven )?(?:GO Chrono Stones: Wildfire / Thunderflash|GO Galaxy: Big Bang / Supernova|'
                             r'GO: Light / Shadow|2: Firestorm / Blizzard|3: Lightning Bolt / Bomb Blast / Team Ogre Attacks!|'
                             r'Ares|Orion|: Victory Road)\s+')
@@ -147,6 +238,9 @@ def main(extra_z=None, write=True):
         return games, strikers, spin
 
     wiki = {p: parse_params((d or {}).get('params')) for p, d in params.items()}
+    # fusiones Mixi Max con ficha propia (Gousetsuji = Axel + Shawn "Shaxel"): stats y técnicas de Galaxy
+    fusions = load_opt('fusions.json', {})
+    fusion_stats = {f: parse_params(v.get('params'))[0] for f, v in fusions.items()}
     info = {p: (d or {}).get('info', {}) for p, d in params.items()}
 
     # --- entradas de PlayerData por página y módulo
@@ -209,6 +303,35 @@ def main(extra_z=None, write=True):
 
     def zdesc_of(z):
         return (zdesc.get(str(z.get('no'))) or {}).get('desc') or ''
+
+    def find_fusion(page, partner):
+        """ficha de la fusión Mixi Max de `page` con `partner` (nombre inglés), si la wiki la tiene"""
+        for f, v in fusions.items():
+            if page not in v['pair']:
+                continue
+            for other in v['pair']:
+                names = [other] + [z['name'] for z in chars.get(other, [])[:1]]
+                if other != page and any(w[:3].lower() == partner.split()[0][:3].lower() for n in names for w in n.split()):
+                    return f
+        return None
+
+    def specials_for(body, game, hint, tm):
+        """poderes especiales de la carta: Keshin (espíritu guerrero), Keshin Armed (armadura), Soul (tótem), Mixi Max"""
+        out = []
+        for key, armed in lua_game_list(body, 'keshin', MODULE[game]):
+            kd = keshin_data.get(key, '')
+            page = (re.search(r'page="([^"]+)"', kd) or [None, key])[1]
+            es, en = es_keshin.get(romaji(page), (None, None))
+            out.append({'type': 'keshin', 'name': en or page, 'name_es': es, 'armed': armed})
+        for key, _ in lua_game_list(body, 'soul', MODULE[game]):
+            sd = soul_data.get(key, '')
+            page = (re.search(r'page="([^"]+)"', sd) or [None, key])[1]
+            es, en = es_soul.get(romaji(page), (None, None))
+            out.append({'type': 'soul', 'name': en or page, 'name_es': es})
+        if tm in ('Mixi Max', 'Chrono Storm') and isinstance(hint, dict):
+            who = hint.get('fusion_partner') or next((n for n in (hint.get('mixi') or []) if n and n != 'mixi'), None)
+            out.append({'type': 'mixi', 'name': who})
+        return out
 
     def mixi_partner(z, char_name):
         """None si la descripción de zukan no habla de Mixi Max; si no, el nombre del compañero ('' si no se lee)"""
@@ -547,6 +670,13 @@ def main(extra_z=None, write=True):
         for z, partner in mixi_z:
             g = next(g for g in MAIN if g in z['games'] and g in stats_by_game)
             ver = f'Mixi Max ({partner})' if partner else 'Mixi Max'
+            fus = find_fusion(pg, partner) if partner else None
+            if fus:
+                nick = re.search(r'"([^"]+)"', fusions[fus].get('dub') or '')
+                ver += f' «{nick.group(1)}»' if nick else ''
+                fbody = next(iter(entries.get((fus, 'GX'), {}).values()), None)
+                versions.append((g, ver, 'Mixi Max', {'zukan': z['id'], 'force': True, 'fusion': fus, 'fusion_partner': partner}, fbody))
+                continue
             mm = next((b for b in entries.get((pg, MODULE[g]), {}).values()
                        if 'mixi' in (lua_field(b, 'form') or '').lower() and partner
                        and same_partner(partner, re.sub(r'.*form', '', lua_field(b, 'form') or ''))), None)
@@ -614,6 +744,9 @@ def main(extra_z=None, write=True):
                 forms = [x for x in forms if 'adult' in x[0].lower()] or forms
             elif want:
                 forms = [x for x in forms if want.split()[0] in x[0].lower()] or forms
+            fusion = hint.get('fusion') if isinstance(hint, dict) else None
+            if fusion and fusion_stats.get(fusion, {}).get('GO3'):
+                forms = fusion_stats[fusion]['GO3']          # stats de la fusión (Galaxy)
             label, raw = forms[0]
 
             if not entry and subm:
@@ -634,10 +767,14 @@ def main(extra_z=None, write=True):
 
             # técnicas
             mg = hint.get('moves_game') if isinstance(hint, dict) and hint.get('moves_game') else g
-            mids = moves_for(pg, mg, entry, adult=(tm in (ILJ, 'Adult')))
+            mids = moves_for(fusion, 'GO3', entry) if fusion else moves_for(pg, mg, entry, adult=(tm in (ILJ, 'Adult')))
             if not mids and entry and MODULE[g] == 'CS':
                 mids = lua_moves(entry, 'GX')          # formas Mixi Max: técnicas en GX
             moves = [t for t in (technique(m) for m in mids) if t]
+            # el keshin/soul de un juego puede estar en la entrada de otro módulo (p. ej. Tenma de GO trae el de CS)
+            kcands = ([entry] if entry else []) + sorted(by_page.get(fusion or pg, []), key=lambda b: 'form=' in b)
+            kbody = next((b for b in kcands if lua_game_list(b, 'keshin', MODULE[g]) or lua_game_list(b, 'soul', MODULE[g])), entry)
+            specials = specials_for(kbody if tm not in (ILJ, 'Adult') or entry else None, g, hint, tm)
             best_move = max((rank_cost(t, g) for t in moves), default=0)
 
             c = common(g, raw)
@@ -645,7 +782,7 @@ def main(extra_z=None, write=True):
 
             # formas de Strikers/Xtreme para esta versión
             sform = None
-            if strikers:
+            if strikers and not fusion:                 # las fusiones van por sus stats de Galaxy
                 if isinstance(hint, dict) and 'grades' in hint:
                     sform = hint
                 else:
@@ -679,7 +816,7 @@ def main(extra_z=None, write=True):
                 'character_id': char_id, 'page': pg, 'name': name, 'game': g, 'saga': g[:2], 'version': 'base' if ver == 'base' else ver,
                 'form_label': label, 'team': team, 'position': position, 'element': element, 'tier': tier, 'source': src,
                 'raw': raw, 'raw_keys': IEK if g.startswith('IE') else GOK, 'q': q, 'ovr_raw': ovr, 'st': st,
-                'moves': moves, 'best_move': best_move, 'is_version': ver != 'base',
+                'moves': moves, 'best_move': best_move, 'is_version': ver != 'base', 'specials': specials, 'fusion': fusion,
                 'zhint': hint.get('zukan') if isinstance(hint, dict) else None,
                 'zukan': zs, 'featured': featured.get(pg), 'form_image': form_image(base_body, g) if base_body else None,
             })
@@ -728,7 +865,16 @@ def main(extra_z=None, write=True):
         for c in sorted(line, key=lambda c: MAIN.index(c['game'])):
             c['ovr'] = max(c['ovr'], best)
             best = c['ovr']
-    go2 = {(c['character_id'], c['position']): c['ovr'] for c in cards if c['game'] == 'GO2' and c['version'] != 'Chrono Storm'}
+    # fusiones Mixi Max (Shaxel…): al menos tan buenas como el mejor de sus dos jugadores
+    best_page = collections.defaultdict(int)
+    for c in cards:
+        if c['team'] != 'Mixi Max':
+            best_page[c['page']] = max(best_page[c['page']], c['ovr'])
+    for c in cards:
+        if c.get('fusion'):
+            c['ovr'] = min(CAP, max(c['ovr'], *(best_page.get(p, 0) for p in fusions[c['fusion']]['pair'])))
+    go2 = {(c['character_id'], c['position']): c['ovr'] for c in cards
+           if c['game'] == 'GO2' and c['version'] != 'Chrono Storm' and c['team'] != 'Mixi Max'}
     for c in cards:
         if c['version'] == 'Chrono Storm':
             ref = go2.get((c['character_id'], c['position']))
@@ -804,6 +950,23 @@ def main(extra_z=None, write=True):
     if sin_es:
         report.append(f'Equipos sin nombre en castellano ({len(sin_es)}): añadir a overrides.team_es → ' + ', '.join(sin_es))
 
+    # nº de cada carta: el de su ficha de zukan (la primera carta que la usa); las nuestras, a partir del último de zukan
+    max_no = max(z['no'] for z in zukan if z.get('no'))
+    taken = set()
+    for c in sorted(cards, key=lambda c: (c['is_version'], MAIN.index(c['game']), c['id'])):
+        if c.get('zukan_no') and c['zukan_no'] not in taken:
+            c['no'] = c['zukan_no']
+            taken.add(c['no'])
+    char_no = {}
+    for c in cards:
+        if c.get('zukan_no'):
+            char_no[c['character_id']] = min(char_no.get(c['character_id'], 10 ** 6), c['zukan_no'])
+    nxt = max_no
+    for c in sorted((c for c in cards if 'no' not in c),
+                    key=lambda c: (char_no.get(c['character_id'], 10 ** 6), MAIN.index(c['game']), c['id'])):
+        nxt += 1
+        c['no'] = nxt
+
     # fichas oficiales de zukan (saga principal) sin carta propia: la pasada siguiente crea su versión
     assigned = {c['zukan_id'] for c in cards}
     with_cards = {c['page'] for c in cards}
@@ -831,8 +994,17 @@ def main(extra_z=None, write=True):
         teams.append({'name': tm, 'name_es': manual_es.get(tm) or es_team.get(tnorm(tm))})
     for c in cards:
         c['description'] = (zdesc.get(str(c.get('zukan_no'))) or {}).get('desc')
+        d = es_desc.get(c['page']) or {} if not c.get('fusion') else {}          # las fusiones no tienen ficha en castellano
+        partner = next((sp.get('name') or '' for sp in c.get('specials') or [] if sp['type'] == 'mixi'), '')
+        c['description_es'] = es_description(d.get('section'), c['game'], c['version'], c['team'] in (ILJ, 'Adult'),
+                                             c['team'] in ('Mixi Max', 'Chrono Storm'), d.get('es_page') or '',
+                                             manual_es.get(c['version']) or es_team.get(tnorm(c['version'])) or '', partner)
+    zukan_rows = [{'no': z['no'], 'image_id': z['id'], 'name': z['name'], 'role': z['role'], 'age': z['age'],
+                   'element': ELEMENT.get(z['element']), 'position': z['position'], 'teams': z['teams'], 'games': z['games'],
+                   'description': (zdesc.get(str(z['no'])) or {}).get('desc'), 'vr_lv50': (zdesc.get(str(z['no'])) or {}).get('vr_lv50'),
+                   'wiki_page': titles.get(z['name'])} for z in zukan if z.get('no')]
     if write:
-        write_outputs(cards, chars_out, techniques, teams, staff, report)
+        write_outputs(cards, chars_out, techniques, teams, staff, zukan_rows, report)
     return uncovered
 
 
@@ -856,7 +1028,7 @@ def insert(table, cols, rows, chunk=500):
     return '\n'.join(out)
 
 
-def write_outputs(cards, chars, techniques, teams, staff, report):
+def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
     os.makedirs(OUT, exist_ok=True)
     used = {t['id'] for c in cards for t in c['moves']}
     techs = [{k: v for k, v in t.items() if k != '_inf'} for t in techniques.values() if t and t['id'] in used]
@@ -870,7 +1042,8 @@ def write_outputs(cards, chars, techniques, teams, staff, report):
             'version': c['version'], 'team': c['team'], 'position': c['position'], 'element': c['element'],
             'ovr': c['ovr'], 'category': c['category'], 'tier': c['tier'], 'source': c['source'], **c['stats'],
             'image_url': c['image_url'], 'zukan_id': c['zukan_id'], 'zukan_no': c.get('zukan_no'), 'is_version': c['is_version'],
-            'description': c.get('description'),
+            'description': c.get('description'), 'description_es': c.get('description_es'), 'no': c['no'],
+            'specials': c.get('specials') or [],
             'raw_stats': {'form': c['form_label'], **dict(zip(c['raw_keys'], c['raw']))},
             'techniques': [t['id'] for t in c['moves']],
         })
@@ -889,11 +1062,12 @@ def write_outputs(cards, chars, techniques, teams, staff, report):
 
     card_cols = ['id', 'character_id', 'name', 'game', 'saga', 'version', 'team', 'position', 'element', 'ovr', 'category',
                  'tier', 'source', 'shooting', 'control', 'physical', 'speed', 'defense', 'goalkeeping', 'image_url',
-                 'zukan_id', 'zukan_no', 'description', 'raw_stats', 'is_version']
+                 'zukan_id', 'zukan_no', 'no', 'description', 'description_es', 'specials', 'raw_stats', 'is_version']
     links = [{'card_id': c['id'], 'technique_id': t, 'slot': i + 1}
              for c in public for i, t in enumerate(dict.fromkeys(c['techniques']))]
     seed = ['-- Generado por tools/db/build.py — no editar a mano.', 'begin;',
-            'truncate public.card_techniques, public.cards, public.techniques, public.characters, public.teams, public.staff;',
+            'truncate public.card_techniques, public.cards, public.techniques, public.characters, public.teams, public.staff, public.zukan;',
+            insert('zukan', ['no', 'image_id', 'name', 'role', 'age', 'element', 'position', 'teams', 'games', 'description', 'vr_lv50', 'wiki_page'], zukan_rows),
             insert('staff', ['zukan_no', 'name', 'role', 'team', 'teams', 'games', 'age', 'element', 'image_url', 'description', 'wiki_page'], staff),
             insert('teams', ['name', 'name_es'], teams),
             insert('characters', ['id', 'name', 'wiki_page', 'zukan_no'], [{**c} for c in chars]),

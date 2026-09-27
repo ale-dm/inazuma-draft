@@ -58,6 +58,20 @@ export interface Player {
   zukanNo: number | null
   /** Descripción oficial de zukan (inglés) */
   description: string | null
+  /** Descripción en castellano (inazuma.fandom.com/es) */
+  descriptionEs: string | null
+  /** Nº de la carta: el de su ficha de zukan o, en las versiones nuestras, a partir del último de zukan */
+  no: number | null
+  /** Keshin (espíritu guerrero), Soul (tótem) y Mixi Max */
+  specials: Special[]
+}
+
+export interface Special {
+  type: 'keshin' | 'soul' | 'mixi'
+  name: string | null
+  name_es?: string | null
+  /** El Keshin puede usar Keshin Armed (armadura) */
+  armed?: boolean
 }
 
 export type StaffRole = 'Manager' | 'Coach' | 'Coordinator'
