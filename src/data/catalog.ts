@@ -44,6 +44,7 @@ interface CardRow {
   description_es?: string | null
   no?: number | null
   specials?: Special[] | null
+  extra_teams?: string[] | null
   card_techniques: { slot: number; technique_id: string }[]
 }
 
@@ -55,6 +56,8 @@ interface TechniqueRow {
   element: Element | null
   cost: number | null
   cost_game: string | null
+  description?: string | null
+  image_url?: string | null
 }
 
 interface StaffRow {
@@ -95,6 +98,7 @@ export async function loadCatalog(): Promise<void> {
   const techniques = await rest<TechniqueRow[]>('techniques?select=*')
   const techById = new Map<string, Technique>(techniques.map(t => [t.id, {
     id: t.id, name: t.name, nameEs: t.name_es ?? null, type: t.type, element: t.element, cost: t.cost, costGame: t.cost_game,
+    description: t.description ?? null, image: t.image_url ?? null,
   }]))
 
   techniquesById = techById
@@ -142,17 +146,20 @@ export async function loadCatalog(): Promise<void> {
       descriptionEs: r.description_es ?? null,
       no: r.no ?? r.zukan_no ?? null,
       specials: r.specials ?? [],
+      extraTeams: r.extra_teams ?? [],
     }
   })
   byId = new Map(players.map(p => [p.id, p]))
 
   const groups = new Map<string, Player[]>()
   for (const p of players) {
-    if (NON_TEAMS.has(p.team)) continue
-    const key = `${p.game}:${p.team}`
-    const list = groups.get(key)
-    if (list) list.push(p)
-    else groups.set(key, [p])
+    for (const team of [p.team, ...p.extraTeams]) {
+      if (NON_TEAMS.has(team)) continue
+      const key = `${p.game}:${team}`
+      const list = groups.get(key)
+      if (list) list.push(p)
+      else groups.set(key, [p])
+    }
   }
   poolRosters = new Map([...groups].filter(([, list]) => list.length >= MIN_POOL_SIZE))
   // Orden estable: las partidas con semilla deben sortear igual en todos los navegadores

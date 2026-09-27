@@ -50,14 +50,16 @@ COST_GAME = {'tp_iego3': 'GO3', 'tp_ie3': 'IE3', 'tp_iego2': 'GO2', 'tp_ie2': 'I
 
 # Formas de Strikers 2013 → (juego, equipo de la versión). Orden = prioridad.
 STRIKERS_FORMS = [
-    ('dark emperors', 'IE2', 'Dark Emperors'), ('chaos', 'IE2', 'Chaos'), ('shin teikoku', 'IE2', 'Royal Academy Redux'),
+    ('dark emperors', 'IE2', 'Dark Emperors'), ('shin teikoku', 'IE2', 'Royal Academy Redux'),
     ('second raimon', 'IE2', 'Raimon'), ('raimon ii', 'IE2', 'Raimon'), ('neo japan', 'IE3', 'Neo Japan'),
-    ('inazuma japan', 'IE3', 'Inazuma Japan'), ('fire dragon', 'IE3', 'Fire Dragon'), ('sekai senbatsu', 'IE3', 'Sekai Senbatsu'),
+    ('inazuma japan', 'IE3', 'Inazuma Japan'), ('fire dragon', 'IE3', 'Fire Dragon'),
     ('teikoku', 'IE1', 'Royal Academy'), ('zeus', 'IE1', 'Zeus'), ('raimon form', 'IE1', 'Raimon'),
     ('shinsei raimon', 'GO1', 'Raimon'), ('tenmas', 'GO1', 'Tenmas'),
 ]
 # Formas de PlayerData (wiki) → equipo de la versión. Real Inazuma, Mixi Max, modos y disfraces quedan fuera.
-WIKI_FORM_TEAM = {'Dark Emperors': 'Dark Emperors', 'Chaos': 'Chaos', 'Epsilon Kai': 'Epsilon Plus',
+# Caos no tiene cartas propias: su pool son las cartas de Prominence / Diamond Dust de sus jugadores (EXTRA_TEAM_FORMS)
+EXTRA_TEAM_FORMS = {'Chaos': 'Chaos'}
+WIKI_FORM_TEAM = {'Dark Emperors': 'Dark Emperors', 'Epsilon Kai': 'Epsilon Plus',
                   'Shin Teikoku Gakuen': 'Royal Academy Redux', 'Diamond Dust': 'Diamond Dust', 'Prominence': 'Prominence',
                   'Neo Japan': 'Neo Japan', 'Fire Dragon': 'Fire Dragon', 'Unicorn': 'Unicorn', 'Zeus': 'Zeus'}
 TEAM_FORM_WORD = {v: k.lower() for k, v in WIKI_FORM_TEAM.items()} | {'Young Inazuma': 'young'}
@@ -271,6 +273,14 @@ def main(extra_z=None, write=True):
             if form_word in (lua_field(b, 'form') or '').lower() and lua_moves(b, mod):
                 return b
         return None
+
+    # equipos extra sin cartas propias (Caos): páginas cuyos jugadores forman parte de ese equipo
+    extra_team_pages = collections.defaultdict(set)
+    for (pg_, mod), es in entries.items():
+        for b in es.values():
+            link = re.match(r'\[\[([^|\]]+)\]\] form$', lua_field(b, 'form') or '')
+            if link and link.group(1) in EXTRA_TEAM_FORMS:
+                extra_team_pages[pg_].add((next(g for g, m in MODULE.items() if m == mod), EXTRA_TEAM_FORMS[link.group(1)]))
 
     # versiones que define la wiki: (página, juego) → [(equipo, entrada)]
     wiki_forms = collections.defaultdict(list)
@@ -540,6 +550,12 @@ def main(extra_z=None, write=True):
         for e in d['en']:
             es_by_en.setdefault(e.lower(), es)
 
+    zskills = {}                    # supertécnicas de zukan por nombre japonés (descripción, imagen, tipos; sin vídeo)
+    for r in (json.load(open(os.path.join(ZUKAN_DIR, 'skills.json'), encoding='utf-8'))
+              if os.path.exists(os.path.join(ZUKAN_DIR, 'skills.json')) else []):
+        if r.get('name_ja'):
+            zskills.setdefault(norm_jp(r['name_ja']), r)
+
     def technique(mid):
         if mid in techniques:
             return techniques[mid]
@@ -557,10 +573,38 @@ def main(extra_z=None, write=True):
         costs = {COST_GAME[k]: inf[k] for k in SHOW_COST if k in inf}
         show = next(((inf[k], COST_GAME[k]) for k in SHOW_COST if k in inf), (None, None))
         name_es = es_by_jp.get(norm_jp(inf.get('name_jp'))) or es_by_en.get(dub.lower())
+        zs_ = zskills.get(norm_jp(inf.get('name_jp')))
         techniques[mid] = {'id': mid, 'name': dub, 'name_es': name_es, 'name_jp': inf.get('name_jp'), 'type': inf['type'],
                            'element': ELEMENT.get(inf.get('element'), (inf.get('element') or '').lower() or None),
-                           'cost': show[0], 'cost_game': show[1], 'costs': costs, '_inf': inf}
+                           'cost': show[0], 'cost_game': show[1], 'costs': costs, '_inf': inf,
+                           'description': zs_ and zs_.get('description'), 'image_url': zs_ and zs_.get('image'),
+                           'zukan_types': zs_ and zs_.get('types')}
         return techniques[mid]
+
+    # técnicas de las formas Mixi Max en la wiki española ("[Miximax - Okita]": Proyectil letal, Katana crisantemo…)
+    mid_by_es = {}
+    def es_index():
+        if not mid_by_es:
+            for mid_ in sorted(move_page):
+                t_ = technique(mid_)
+                if t_ and t_.get('name_es'):
+                    mid_by_es.setdefault(t_['name_es'].lower(), mid_)
+        return mid_by_es
+
+    def es_mixi_moves(page, partners):
+        sec = (es_desc.get(page) or {}).get('techniques') or ''
+        sec = sec[sec.find('===Videojuegos'):] if '===Videojuegos' in sec else sec
+        words = [w.lower() for p_ in partners for w in re.split(r"[\s|]+", p_ or '') if len(w) > 3]
+        for b in re.split(r'\{\{ST/Set \(J\) \(Usu\)', sec)[1:]:
+            b = b.split('|-|')[0]
+            label = (re.search(r'\|\s*F\s*=\s*([^}]*)\}\}', b) or [None, ''])[1].lower()
+            if 'mixi' not in label or (words and not any(w[:5] in label for w in words)):
+                continue
+            names = [n.strip() for code, n in re.findall(r'\{\{Stec\|(\w+)\|([^|}]+)', b) if code != 'TA']
+            mids = [es_index().get(n.lower()) for n in names]
+            if any(mids):
+                return [m for m in mids if m]
+        return []
 
     def rank_cost(t, g):
         return next((t['_inf'][k] for k in RANK_COST[g[:2]] if k in t['_inf']), 0)
@@ -777,6 +821,8 @@ def main(extra_z=None, write=True):
             # técnicas
             mg = hint.get('moves_game') if isinstance(hint, dict) and hint.get('moves_game') else g
             mids = moves_for(fusion, 'GO3', entry) if fusion else moves_for(pg, mg, entry, adult=(tm in (ILJ, 'Adult')))
+            if tm in ('Mixi Max', 'Chrono Storm') and not fusion and isinstance(hint, dict):
+                mids = es_mixi_moves(pg, [n for n in (hint.get('mixi') or []) if n != 'mixi']) or mids
             if not mids and entry and MODULE[g] == 'CS':
                 mids = lua_moves(entry, 'GX')          # formas Mixi Max: técnicas en GX
             moves = [t for t in (technique(m) for m in mids) if t]
@@ -942,6 +988,10 @@ def main(extra_z=None, write=True):
         if seen_ids[c['id']] > 1:
             c['id'] += f"-{seen_ids[c['id']]}"
 
+    # Caos: la carta base de ese juego (Prominence / Diamond Dust) cuenta también para ese equipo
+    for c in cards:
+        c['extra_teams'] = sorted({tm for g, tm in extra_team_pages.get(c['page'], ()) if g == c['game'] and c['version'] == 'base'})
+
     # --- nombres de equipo en castellano (wiki en español: plantilla Equipo; cruce por nombre inglés o japonés)
     SUF = r'\b(jr\.? high|junior high|middle school|merchant marine academy|military academy|academy|school)\b|^order of |^the '
     tnorm = lambda s: re.sub(r'[^a-z0-9]', '', re.sub(SUF, '', s.lower()))
@@ -953,7 +1003,7 @@ def main(extra_z=None, write=True):
                 es_team.setdefault(tnorm(k), es)
     manual_es = {k: v for k, v in ov.get('team_es', {}).items() if not k.startswith('_')}
     teams = []
-    for tm in sorted({c['team'] for c in cards if c['team']}):
+    for tm in sorted({c['team'] for c in cards if c['team']} | {t for c in cards for t in c.get('extra_teams') or []}):
         teams.append({'name': tm, 'name_es': manual_es.get(tm) or es_team.get(tnorm(tm))})
     sin_es = [t['name'] for t in teams if not t['name_es']]
     if sin_es:
@@ -1054,7 +1104,7 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
             'ovr': c['ovr'], 'category': c['category'], 'tier': c['tier'], 'source': c['source'], **c['stats'],
             'image_url': c['image_url'], 'zukan_id': c['zukan_id'], 'zukan_no': c.get('zukan_no'), 'is_version': c['is_version'],
             'description': c.get('description'), 'description_es': c.get('description_es'), 'no': c['no'],
-            'specials': c.get('specials') or [],
+            'specials': c.get('specials') or [], 'extra_teams': c.get('extra_teams') or [],
             'raw_stats': {'form': c['form_label'], **dict(zip(c['raw_keys'], c['raw']))},
             'techniques': [t['id'] for t in c['moves']],
         })
@@ -1073,7 +1123,7 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
 
     card_cols = ['id', 'character_id', 'name', 'game', 'saga', 'version', 'team', 'position', 'element', 'ovr', 'category',
                  'tier', 'source', 'shooting', 'control', 'physical', 'speed', 'defense', 'goalkeeping', 'image_url',
-                 'zukan_id', 'zukan_no', 'no', 'description', 'description_es', 'specials', 'raw_stats', 'is_version']
+                 'zukan_id', 'zukan_no', 'no', 'description', 'description_es', 'specials', 'extra_teams', 'raw_stats', 'is_version']
     links = [{'card_id': c['id'], 'technique_id': t, 'slot': i + 1}
              for c in public for i, t in enumerate(dict.fromkeys(c['techniques']))]
     seed = ['-- Generado por tools/db/build.py — no editar a mano.', 'begin;',
@@ -1082,7 +1132,8 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
             insert('staff', ['zukan_no', 'name', 'role', 'team', 'teams', 'games', 'age', 'element', 'image_url', 'description', 'wiki_page'], staff),
             insert('teams', ['name', 'name_es'], teams),
             insert('characters', ['id', 'name', 'wiki_page', 'zukan_no'], [{**c} for c in chars]),
-            insert('techniques', ['id', 'name', 'name_es', 'name_jp', 'type', 'element', 'cost', 'cost_game', 'costs'], techs),
+            insert('techniques', ['id', 'name', 'name_es', 'name_jp', 'type', 'element', 'cost', 'cost_game', 'costs',
+                                  'description', 'image_url', 'zukan_types'], techs),
             insert('cards', card_cols, public),
             insert('card_techniques', ['card_id', 'technique_id', 'slot'], links),
             'commit;', '']

@@ -33,6 +33,9 @@ export interface Technique {
   /** Coste mostrado (Galaxy si existe) */
   cost: number | null
   costGame: string | null
+  /** Descripción oficial de zukan (inglés) e imagen */
+  description?: string | null
+  image?: string | null
 }
 
 export interface Player {
@@ -64,6 +67,8 @@ export interface Player {
   no: number | null
   /** Keshin (espíritu guerrero), Soul (tótem) y Mixi Max */
   specials: Special[]
+  /** Equipos sin cartas propias en los que también juega (Caos: jugadores de Prominence / Diamond Dust) */
+  extraTeams: string[]
 }
 
 export interface Special {

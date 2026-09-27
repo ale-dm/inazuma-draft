@@ -98,8 +98,10 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
             ) : (
               <ul className="space-y-1.5">
                 {player.techniques.map(tech => (
-                  <li key={tech.id} className="flex items-center gap-2 text-sm">
-                    <span aria-hidden>{TECH_ICON[tech.type]}</span>
+                  <li key={tech.id} className="flex items-center gap-2 text-sm" title={tech.description ?? undefined}>
+                    {tech.image
+                      ? <img src={tech.image} alt="" loading="lazy" className="w-10 h-6 object-cover rounded shrink-0" />
+                      : <span aria-hidden>{TECH_ICON[tech.type]}</span>}
                     <span className="font-heading font-bold text-hissatsu truncate" title={tech.name}>{techniqueName(tech, locale)}</span>
                     <span className="text-[0.65rem] text-iz-muted">{t(`tech.${tech.type}`)}</span>
                     {tech.cost != null && (
