@@ -30,7 +30,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 89,Legendary Player,Arion Sherwind,GO2,Mixi Max (Mark) «Markion»,Mixi Max,MF,A,stats del juego,88,94,93,82,80,92,Easy Breezy (15) · Inazuma Break (55) · Gigaton Head (40) · Tornado Tunnel (70),matsukaze-tenma--go2--mixi-max-mark-markion
 89,Legendary Player,Aum Nirvana,GO1,base,Almighty Faith,GK,S,Xtreme (wiki),73,79,78,80,82,95,Ultrasonic (8) · Crystal Barrier (40) · Bridge to Nowhere (55),shinoyama-mitsuru--go1--base
 89,Legendary Player,Caleb Stonewall,GO2,Inazuma Legend Japan,Inazuma Legend Japan,MF,S,Strikers 2013,90,91,88,90,80,80,Killer Slide (10) · Doom Spear (40) · Pyroclastic (55) · Emperor Penguin No. 3 (70),fudou-akio--go2--inazuma-legend-japan
-89,Legendary Player,Caleb Stonewall,GO3,Adult,Japanese Resistance,MF,S,Strikers 2013,90,91,88,90,81,80,Bungee Ball Burst (40) · Plasma Cut (55) · Great Blaster (70),fudou-akio--go3--adult
 89,Legendary Player,Caleb Stonewall,GO2,Mixi Max (Jude) «Juleb»,Mixi Max,MF,A,stats del juego,88,94,77,88,86,83,Illusion Ball (20) · Killer Slide (10) · Inazuma Break (55) · Final Death Zone (85),fudou-akio--go2--mixi-max-jude-juleb
 89,Legendary Player,Caleb Stonewall,GO3,Japanese Resistance,Japanese Resistance,MF,S,Strikers 2013,90,91,89,89,81,82,Killer Slide (10) · Bungee Ball Burst (40) · Emperor Penguin No. 2 (55) · Emperor Penguin No. 3 (70),fudou-akio--go3--japanese-resistance
 89,Legendary Player,Dracon Yale,GO1,base,Royal Academy,DF,S,Xtreme (balancing),77,87,85,79,95,82,Whirlpool (40) · Criss-Cross (70) · Emperor Penguin 7 (70) · Side Swipe (70),ryuuzaki-ouji--go1--base
@@ -1836,7 +1835,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 63,Common Player,Percy Verence,IE1,base,Unaffiliated,FW,C,stats del juego,60,65,66,66,65,65,Defence Scan (28) · Attack Scan (25) · Teleport Shot (21) · Divine Arrows (46),komamame--ie1--base
 63,Common Player,Phil Noir,IE1,base,Occult,FW,B,stats del juego,64,62,62,63,63,61,Black Magic (20) · Psycho Shot (20) · Doppelganger (21) · Death Zone (52),kurogami-noroi--ie1--base
 63,Common Player,Ptumri,GO3,base,Sub Character,FW,C,stats del juego,65,66,56,58,57,59,Dark Tornado (40) · Brimstone Rain (55) · Dark Matter (70),potomuri-emnator--go3--base
-63,Common Player,Ptumri,GO3,Adult,Sub Character,FW,C,stats del juego,65,66,56,58,57,59,Dark Tornado (40) · Brimstone Rain (55) · Dark Matter (70),potomuri-emnator--go3--adult
 63,Common Player,Ralph Fary,IE2,base,Unaffiliated,FW,C,stats del juego,65,60,64,59,57,61,Dynamite Shot (31) · Shine Drive (34) · Rolling Hell (46) · Dual Strike (46),araba--ie2--base
 63,Common Player,Ray Whitehead,IE1,base,Unaffiliated,MF,C,stats del juego,58,63,62,69,61,61,Magic (21) · Doppelganger (21) · Shadow Stitch (39) · Clone Faker (42),yamamura--ie1--base
 63,Common Player,Reid Scarlet,IE1,base,Unaffiliated,DF,C,stats del juego,62,57,63,59,65,63,Dash Accelerator (20) · Teleport Shot (21) · Clone Faker (42) · Tarzan Kick (20),akae--ie1--base
@@ -2081,7 +2079,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 61,Common Player,Ginji Santetsu,GO2,base,White Deer,MF,B,stats del juego,61,64,58,60,55,61,Swallow Counter (40) · Ephemeral Boost (85),santetsu-ginji--go2--base
 61,Common Player,Glen Adeer,IE1,base,Unaffiliated,FW,C,stats del juego,62,61,59,58,63,62,Spiral Shot (20) · Coil Turn (20) · Wrath Shot (22) · Cyclone (38),kabe--ie1--base
 61,Common Player,Globulus Ava,GO3,base,Sub Character,DF,C,stats del juego,56,57,60,56,64,63,Asterocks (30) · War Saw (40) · Judgement Ray (55),minel-ava--go3--base
-61,Common Player,Globulus Ava,GO3,Adult,Sub Character,DF,C,stats del juego,56,57,60,56,64,63,Asterocks (30) · War Saw (40) · Judgement Ray (55),minel-ava--go3--adult
 61,Common Player,Gus Potter,IE1,base,Unaffiliated,DF,C,stats del juego,57,61,60,64,61,62,Sumo Stomp (20) · Bewildered (15) · Fake Ball (30) · Mega Quake (44),ideta--ie1--base
 61,Common Player,Hanam Gurry,GO3,base,Unaffiliated,DF,C,stats del juego,57,56,64,52,63,57,Tesla Coil (15) · Flapjack Defence (20) · Willy-Willy (30) · Floral Fiesta (40),hanam--go3--base
 61,Common Player,Haniwa Pawlo,GO3,base,Unaffiliated,DF,C,stats del juego,54,52,63,53,64,62,Runaway Train (8) · Samba Strike (30) · Look! UFO (55) · La Flamme (55),haniwaa-paulo--go3--base

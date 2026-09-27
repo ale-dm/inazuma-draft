@@ -8,22 +8,6 @@
   "sprite": "https://static.wikia.nocookie.net/inazuma/images/9/94/%28R%29_Mark_%28HVR%29.png/revision/latest?cb=20251203220035&path-prefix=es"
  },
  {
-  "id": "endou-mamoru--ie2--raimon",
-  "name": "Mark Evans",
-  "game": "IE2",
-  "version": "Raimon",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/4/g/4g1p9bwrwx0.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/4/46/%28R%29_Mark_%28HVR-LB%29.png/revision/latest?cb=20260502205332&path-prefix=es"
- },
- {
-  "id": "endou-mamoru--go2--inazuma-legend-japan",
-  "name": "Mark Evans",
-  "game": "GO2",
-  "version": "Inazuma Legend Japan",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/_/k/_k2bq4onqie.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/0/01/%28IJL%29_Mark_%28HVR%29.png/revision/latest?cb=20260520020406&path-prefix=es"
- },
- {
   "id": "endou-mamoru--go2--mixi-max-arion-markion",
   "name": "Mark Evans",
   "game": "GO2",
@@ -38,14 +22,6 @@
   "version": "base",
   "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/f/1/f1kh7d67sbs.png",
   "sprite": "https://static.wikia.nocookie.net/inazuma/images/0/0b/%28R%29_Axel_%28HVR%29.png/revision/latest?cb=20251203220407&path-prefix=es"
- },
- {
-  "id": "gouenji-shuuya--go2--inazuma-legend-japan",
-  "name": "Axel Blaze",
-  "game": "GO2",
-  "version": "Inazuma Legend Japan",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/w/b/wbkpcsww-ek.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/9/9f/%28IJL%29_Axel_%28HVR%29.png/revision/latest?cb=20260518181659&path-prefix=es"
  },
  {
   "id": "gouenji-shuuya--go2--mixi-max-shawn-shaxel",
@@ -64,14 +40,6 @@
   "sprite": "https://static.wikia.nocookie.net/inazuma/images/c/c7/%28R%29_Jack_%28HVR%29.png/revision/latest?cb=20260401203522&path-prefix=es"
  },
  {
-  "id": "kabeyama-heigorou--go2--inazuma-legend-japan",
-  "name": "Jack Wallside",
-  "game": "GO2",
-  "version": "Inazuma Legend Japan",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/u/n/unkvua7_ixc.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/5/5e/%28IJL%29_Jack_%28HVR%29.png/revision/latest?cb=20260715152633&path-prefix=es"
- },
- {
   "id": "kazemaru-ichirouta--ie1--base",
   "name": "Nathan Swift",
   "game": "IE1",
@@ -86,14 +54,6 @@
   "version": "Dark Emperors",
   "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/j/x/jxwu6ywqhfe.png",
   "sprite": "https://static.wikia.nocookie.net/inazuma/images/4/45/%28EO%29_Nathan_%28HVR%29.png/revision/latest?cb=20260203164014&path-prefix=es"
- },
- {
-  "id": "kazemaru-ichirouta--go2--inazuma-legend-japan",
-  "name": "Nathan Swift",
-  "game": "GO2",
-  "version": "Inazuma Legend Japan",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/d/e/desox8ppge0.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/3/3f/%28IJL%29_Nathan_%28HVR%29.png/revision/latest?cb=20260714185004&path-prefix=es"
  },
  {
   "id": "someoka-ryuugo--ie1--base",
@@ -126,22 +86,6 @@
   "version": "base",
   "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/l/1/l1wbplzhm4k.png",
   "sprite": "https://static.wikia.nocookie.net/inazuma/images/1/1d/%28RA%29_Jude_%28HVR%29.png/revision/latest?cb=20251203221440&path-prefix=es"
- },
- {
-  "id": "kidou-yuuto--ie2--raimon",
-  "name": "Jude Sharp",
-  "game": "IE2",
-  "version": "Raimon",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/y/p/ypw6ucjzj3e.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/4/43/%28R%29_Jude_%28HVR%29.png/revision/latest?cb=20260502150037&path-prefix=es"
- },
- {
-  "id": "kidou-yuuto--go2--inazuma-legend-japan",
-  "name": "Jude Sharp",
-  "game": "GO2",
-  "version": "Inazuma Legend Japan",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/m/d/mda8pecb4xs.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/2/2c/%28IJL%29_Jude_%28HVR%29.png/revision/latest?cb=20260710205134&path-prefix=es"
  },
  {
   "id": "kidou-yuuto--go2--mixi-max-caleb-juleb",
@@ -232,14 +176,6 @@
   "sprite": "https://static.wikia.nocookie.net/inazuma/images/3/3a/%28IJ%29_Shawn_%28HVR%29.png/revision/latest?cb=20260503122143&path-prefix=es"
  },
  {
-  "id": "fubuki-shirou--go2--inazuma-legend-japan",
-  "name": "Shawn Froste",
-  "game": "GO2",
-  "version": "Inazuma Legend Japan",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/n/p/npvivtwkt3m.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/a/ab/%28IJL%29_Shawn_%28HVR%29.png/revision/latest?cb=20260612142949&path-prefix=es"
- },
- {
   "id": "fubuki-shirou--go2--mixi-max-axel-shaxel",
   "name": "Shawn Froste",
   "game": "GO2",
@@ -264,14 +200,6 @@
   "sprite": "https://static.wikia.nocookie.net/inazuma/images/c/c5/%28MT%29_Hurley_%28HVR%29.png/revision/latest?cb=20260710200532&path-prefix=es"
  },
  {
-  "id": "tsunami-jousuke--go2--inazuma-legend-japan",
-  "name": "Hurley Kane",
-  "game": "GO2",
-  "version": "Inazuma Legend Japan",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/s/s/ssjj6dptn3c.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/3/31/%28IJL%29_Hurley_%28HVR%29.png/revision/latest?cb=20260710200542&path-prefix=es"
- },
- {
   "id": "tsurugi-kyousuke--go2--raimon",
   "name": "Victor Blade",
   "game": "GO2",
@@ -294,5 +222,21 @@
   "version": "Protocol Omega 2.0",
   "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/i/j/ijgn8lthcc8.png",
   "sprite": "https://static.wikia.nocookie.net/inazuma/images/5/54/%28PO_2.0%29_Beta_%28HVR%29.png/revision/latest?cb=20260203001908&path-prefix=es"
+ },
+ {
+  "id": "matatagi-hayato--go3--base",
+  "name": "Falco Flashman",
+  "game": "GO3",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/0/k/0ks2lhuo2sm.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/e/e9/%28EE%29_Falco_%28HVR%29.png/revision/latest?cb=20260717112619&path-prefix=es"
+ },
+ {
+  "id": "matatagi-hayato--go3--earth-eleven-n-3960",
+  "name": "Falco Flashman",
+  "game": "GO3",
+  "version": "Earth Eleven (Nº 3960)",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/p/g/pgc9ollbn5e.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/e/e9/%28EE%29_Falco_%28HVR%29.png/revision/latest?cb=20260717112619&path-prefix=es"
  }
 ]
