@@ -94,7 +94,12 @@ def category(ovr):
     return next(c for c, t in CATEGORIES if ovr >= t)
 
 
-def main():
+AGE_VERSION = {'Adult': 'Adult', 'Child': 'Child', 'Elementary': 'Child', 'High School': 'High School', 'College': 'Adult'}
+
+
+def main(extra_z=None, write=True):
+    """extra_z: {página: [fichas de zukan]} que aún no tienen carta propia → se crea una versión para cada una"""
+    extra_z = extra_z or {}
     report = []
     ov = json.load(open(os.path.join(ROOT, 'data', 'overrides.json'), encoding='utf-8'))
     zukan = load('zukan.json')
@@ -183,6 +188,24 @@ def main():
                 continue
             if tm_ not in [t for t, _ in wiki_forms[(pg_, g_)]]:
                 wiki_forms[(pg_, g_)].append((tm_, b))
+
+    def zukan_entry(page, game, z, used):
+        """entrada de PlayerData que corresponde a una ficha de zukan (por edad y equipo) + palabra de su forma"""
+        age = z.get('age', '')
+        words = [w.lower() for t in z['teams'] for w in re.findall(r'[A-Za-z]{3,}', ZUKAN_TEAM.get(t, t))]
+        def sc(b):
+            f = (lua_field(b, 'form') or '').lower()
+            return (3 * (age == 'Adult' and any(k in f for k in ('adult', 'legend', 'galaxy', 'ishido', 'go</i>')))
+                    + 3 * (age in ('Child', 'Elementary') and any(k in f for k in ('child', 'young')))
+                    + 3 * any(w in f for w in words) + (not f and age in ('Middle School', 'Exobeing'))
+                    - 2 * (b in used) - 5 * any(k in f for k in ('real inazuma', 'mixi max', 'hyper dive')))
+        cands = [b for b in entries.get((page, MODULE[game]), {}).values() if lua_moves(b, MODULE[game])]
+        if not cands:
+            return None, None
+        b = max(cands, key=sc)
+        f = re.sub(r'\[\[(?:[^|\]]*\|)?([^\]]*)\]\]|<[^>]+>', r'\1', lua_field(b, 'form') or '').lower()
+        want = re.sub(r'\s*(form|mode)$', '', f).strip() or None
+        return b, want
 
     def form_image(body, game):
         """render 3D de la forma en la wiki: "(DE) Kazemaru 3D (1).png" (prefijo del sprite de ese juego primero)"""
@@ -279,8 +302,8 @@ def main():
         chars.setdefault(pg, []).append(z)
     for z in zukan:
         pg = titles.get(z['name'])
-        if not z['role'].startswith('Player') and pg in chars and 'Inazuma Legend National' in z['teams']:
-            chars[pg].append(z)                         # p. ej. Mark adulto figura como 'Coach'
+        if not z['role'].startswith('Player') and pg in chars and set(z['games']) & set(MAIN):
+            chars[pg].append(z)                         # p. ej. Mark adulto figura como 'Coach', Axel 'Manager' de El Dorado 03
     for pg in ('Nakata Hidetoshi', 'Pants'):
         chars.setdefault(pg, [])
     if no_page:
@@ -483,12 +506,37 @@ def main():
             versions.append((zgames[0], tm, tm, {'zukan': z['id']}, wf))
             have.add(tm)
 
+        # fichas oficiales de zukan (saga principal) que no tenían carta propia en la pasada anterior
+        for z in extra_z.get(pg, []):
+            zg = [g for g in MAIN if g in z['games'] and g in stats_by_game]
+            if not zg:
+                continue
+            zteams = [ZUKAN_TEAM.get(t, t) for t in z['teams'] if t not in SCOUT_TEAMS]
+            have_tm = {v[2] for v in versions} | {old_team.get((name, first))} \
+                | {ZUKAN_TEAM.get(t, t) for z2 in zs if z2 not in extra_z.get(pg, []) for t in z2['teams']}
+            label = next((t for t in zteams if t not in have_tm), zteams[0]) if zteams \
+                else AGE_VERSION.get(z['age'], (z['teams'] or ['Unaffiliated'])[0])
+            taken = {(v[0], v[1]) for v in versions}
+            g = next((g for g in zg if (g, label) not in taken), zg[0])
+            ver = label if (g, label) not in taken else f"{label} (Nº {z['no']})"
+            tm = label if zteams or label == 'Adult' else (z['teams'] or ['Unaffiliated'])[0]
+            body, want = zukan_entry(pg, g, z, [v[4] for v in versions if v[0] == g])
+            hint = {'zukan': z['id'], 'force': True, 'want': want}
+            if g.startswith('GO') and first.startswith('IE') and z['age'] == 'Middle School' and zteams:
+                # la versión de niño que sale en Chrono Stone / Galaxy (viaje al pasado): equipo propio y técnicas de su época
+                ver = tm = f'{label} (Past)'
+                ie = next((x for x in ('IE3', 'IE2', 'IE1') if base_entry(pg, x) and lua_moves(base_entry(pg, x), MODULE[x])), None)
+                if ie:
+                    body, hint['moves_game'] = None, ie          # técnicas como su carta de ese juego
+            versions.append((g, ver, tm, hint, body))
+
         seen = set()
         for g, ver, tm, hint, entry in versions:
             vkey = (g, 'base' if ver == 'base' else ver)
             if vkey in seen:
                 continue
-            if ver != 'base' and (g, 'base') in seen and g == first and tm in (None, old_team.get((name, g))):
+            forced = isinstance(hint, dict) and hint.get('force')
+            if ver != 'base' and not forced and (g, 'base') in seen and g == first and tm in (None, old_team.get((name, g))):
                 continue                     # la versión coincide con la carta base
             seen.add(vkey)
 
@@ -501,7 +549,7 @@ def main():
                 mm = [x for x in stats_by_game[g] if 'mixi' in x[0].lower() and any(n.lower() in x[0].lower() for n in mixi)]
                 forms = mm or forms
             subm = re.search(r'\((.+)\)$', ver)
-            want = 'adult' if tm in (ILJ, 'Adult') else (subm.group(1) if subm else TEAM_FORM_WORD.get(tm, tm or '')).lower()
+            want = hint['want'] if isinstance(hint, dict) and hint.get('want') else 'adult' if tm in (ILJ, 'Adult') else (subm.group(1) if subm else TEAM_FORM_WORD.get(tm, tm or '')).lower()
             if 'adult' in want:
                 forms = [x for x in forms if 'adult' in x[0].lower()] or forms
             elif want:
@@ -525,7 +573,8 @@ def main():
                 team = 'Adult'
 
             # técnicas
-            mids = moves_for(pg, g, entry, adult=(tm in (ILJ, 'Adult')))
+            mg = hint.get('moves_game') if isinstance(hint, dict) and hint.get('moves_game') else g
+            mids = moves_for(pg, mg, entry, adult=(tm in (ILJ, 'Adult')))
             if not mids and entry and MODULE[g] == 'CS':
                 mids = lua_moves(entry, 'GX')          # formas Mixi Max: técnicas en GX
             moves = [t for t in (technique(m) for m in mids) if t]
@@ -645,28 +694,30 @@ def main():
     for group in by_char.values():
         used_z = set()
         # base primero; después las versiones cuyo equipo tiene ficha en zukan; las que tienen render de la wiki, al final
-        in_zukan = lambda c: bool(c['zhint']) or any(c['team'] in z['teams'] for z in c['zukan'])
+        in_zukan = lambda c: bool(c['zhint']) or any(c['team'] in {ZUKAN_TEAM.get(t, t) for t in z['teams']} for z in c['zukan'])
         for c in sorted(group, key=lambda c: (c['is_version'], not in_zukan(c), bool(c['form_image']), MAIN.index(c['game']))):
             if not c['zukan']:
-                c['zukan_id'], c['image_url'] = None, wiki_only_img.get(c['page']) or c['form_image']
+                c['zukan_id'], c['image_url'], c['zukan_no'] = None, wiki_only_img.get(c['page']) or c['form_image'], None
                 continue
             ilj, cs = c['version'] in (ILJ, 'Adult'), c['version'] == 'Chrono Storm'
             scout = c['tier'] == 'C'
             def score(z):
-                teams, games = set(z['teams']), set(z['games'])
+                teams, games = {ZUKAN_TEAM.get(t, t) for t in z['teams']}, set(z['games'])
                 adult = z.get('age') == 'Adult'
-                return (10 * (z['id'] == c['zhint']) + 4 * (c['team'] in teams) + 5 * (c['version'] == ILJ and 'Inazuma Legend National' in teams)
+                return (10 * (z['id'] == c['zhint']) + 4 * (c['team'] in teams) + 5 * (c['version'] == ILJ and ILJ in teams)
                         + 3 * (cs and 'Chrono Storm' in teams and not games & {'IE1', 'IE2', 'IE3'})
-                        + 2 * (z['id'] not in used_z) + (z['position'] == c['position']) + (c['game'] in games)
-                        - 6 * (not games & MAINLINE) - 3 * (teams <= SCOUT_TEAMS and not scout)
+                        + 2 * (z['id'] not in used_z) + (z['position'] == c['position']) + 3 * (c['game'] in games)
+                        + 2 * (next((g for g in MAIN if g in games), None) == c['game'])
+                        - 6 * (not games & MAINLINE) - 3 * (teams <= SCOUT_TEAMS and not scout and c['version'] != 'Adult')
                         - 4 * (adult and not ilj) - 4 * (ilj and not adult))
             z = max(c['zukan'], key=score)
             wrong_age = c['version'] in (ILJ, 'Adult') and z.get('age') != 'Adult'
             if c['form_image'] and (z['id'] in used_z or wrong_age):
-                c['zukan_id'], c['image_url'] = None, c['form_image']      # zukan no tiene foto de esta forma
+                c['zukan_id'], c['image_url'], c['zukan_no'] = None, c['form_image'], None      # zukan no tiene foto de esta forma
                 continue
             used_z.add(z['id'])
             c['zukan_id'], c['image_url'] = z['id'], f"https://dxi4wb638ujep.cloudfront.net/1/{z['id']}.png"
+            c['zukan_no'] = z['no']
 
     # ids únicos
     seen_ids = collections.Counter()
@@ -692,7 +743,20 @@ def main():
     if sin_es:
         report.append(f'Equipos sin nombre en castellano ({len(sin_es)}): añadir a overrides.team_es → ' + ', '.join(sin_es))
 
-    write_outputs(cards, chars_out, techniques, teams, report)
+    # fichas oficiales de zukan (saga principal) sin carta propia: la pasada siguiente crea su versión
+    assigned = {c['zukan_id'] for c in cards}
+    with_cards = {c['page'] for c in cards}
+    uncovered = {pg: [z for z in zs if set(z['games']) & MAINLINE and z['id'] not in assigned]
+                 for pg, zs in chars.items() if pg in with_cards}
+    uncovered = {pg: zs for pg, zs in uncovered.items() if zs}
+    for c in cards:                         # nº oficial del personaje: su primera ficha de zukan
+        chars_out[c['character_id']]['zukan_no'] = min((z['no'] for z in c['zukan'] if z.get('no')), default=None)
+    if uncovered:
+        left = [f"{z['name']} (Nº {z['no']})" for zs in uncovered.values() for z in zs]
+        report.append(f'Fichas de zukan de la saga principal sin carta ({len(left)}; sin stats en esos juegos o sin entrada): ' + ', '.join(left))
+    if write:
+        write_outputs(cards, chars_out, techniques, teams, report)
+    return uncovered
 
 
 def sql(v):
@@ -728,7 +792,7 @@ def write_outputs(cards, chars, techniques, teams, report):
             'id': c['id'], 'character_id': c['character_id'], 'name': c['name'], 'game': c['game'], 'saga': c['saga'],
             'version': c['version'], 'team': c['team'], 'position': c['position'], 'element': c['element'],
             'ovr': c['ovr'], 'category': c['category'], 'tier': c['tier'], 'source': c['source'], **c['stats'],
-            'image_url': c['image_url'], 'zukan_id': c['zukan_id'], 'is_version': c['is_version'],
+            'image_url': c['image_url'], 'zukan_id': c['zukan_id'], 'zukan_no': c.get('zukan_no'), 'is_version': c['is_version'],
             'raw_stats': {'form': c['form_label'], **dict(zip(c['raw_keys'], c['raw']))},
             'techniques': [t['id'] for t in c['moves']],
         })
@@ -747,13 +811,13 @@ def write_outputs(cards, chars, techniques, teams, report):
 
     card_cols = ['id', 'character_id', 'name', 'game', 'saga', 'version', 'team', 'position', 'element', 'ovr', 'category',
                  'tier', 'source', 'shooting', 'control', 'physical', 'speed', 'defense', 'goalkeeping', 'image_url',
-                 'zukan_id', 'raw_stats', 'is_version']
+                 'zukan_id', 'zukan_no', 'raw_stats', 'is_version']
     links = [{'card_id': c['id'], 'technique_id': t, 'slot': i + 1}
              for c in public for i, t in enumerate(dict.fromkeys(c['techniques']))]
     seed = ['-- Generado por tools/db/build.py — no editar a mano.', 'begin;',
             'truncate public.card_techniques, public.cards, public.techniques, public.characters, public.teams;',
             insert('teams', ['name', 'name_es'], teams),
-            insert('characters', ['id', 'name', 'wiki_page'], [{**c} for c in chars]),
+            insert('characters', ['id', 'name', 'wiki_page', 'zukan_no'], [{**c} for c in chars]),
             insert('techniques', ['id', 'name', 'name_es', 'name_jp', 'type', 'element', 'cost', 'cost_game', 'costs'], techs),
             insert('cards', card_cols, public),
             insert('card_techniques', ['card_id', 'technique_id', 'slot'], links),
@@ -777,4 +841,4 @@ def write_outputs(cards, chars, techniques, teams, report):
 
 
 if __name__ == '__main__':
-    main()
+    main(main(write=False))

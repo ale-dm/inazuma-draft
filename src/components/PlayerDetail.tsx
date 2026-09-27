@@ -43,7 +43,9 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
               <p className="text-sm text-iz-text">
                 {teamName(player.team, locale)}{player.version !== 'base' && player.version !== player.team ? ` · ${teamName(player.version, locale)}` : ''}
               </p>
-              <p className="text-xs text-iz-muted">{player.game} · {GAME_LABEL[player.game]}</p>
+              <p className="text-xs text-iz-muted">
+                {player.game} · {GAME_LABEL[player.game]}{player.zukanNo ? ` · Nº ${player.zukanNo}` : ''}
+              </p>
             </div>
           </div>
 

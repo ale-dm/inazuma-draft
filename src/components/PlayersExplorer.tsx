@@ -70,7 +70,7 @@ function SearchView({ players, onOpen }: { players: Player[]; onOpen: (p: Player
   const results = useMemo(() => {
     const q = query.trim().toLowerCase()
     const list = players.filter(p =>
-      (!q || p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q) || teamName(p.team, locale).toLowerCase().includes(q)) &&
+      (!q || p.name.toLowerCase().includes(q) || String(p.zukanNo) === q || p.team.toLowerCase().includes(q) || teamName(p.team, locale).toLowerCase().includes(q)) &&
       (!pos || p.position === pos) && (!cat || p.category === cat) && (!game || p.game === game) &&
       (!element || p.element === element) && (!team || p.team === team) && p.ovr >= minOvr)
     return sort === 'ovr'

@@ -5,7 +5,8 @@ create table if not exists public.characters (
   id          text primary key,              -- slug estable (ficha de la wiki o zukan)
   name        text not null,                 -- nombre inglés oficial (zukan)
   wiki_page   text,                          -- título de la ficha en inazuma-eleven.fandom.com
-  gender      text
+  gender      text,
+  zukan_no    int                            -- nº oficial en zukan.inazuma.jp (su primera ficha)
 );
 
 create table if not exists public.techniques (
@@ -37,10 +38,13 @@ create table if not exists public.cards (
   shooting     int, control int, physical int, speed int, defense int, goalkeeping int,
   image_url    text,
   zukan_id     text,
+  zukan_no     int,                          -- nº oficial de la ficha de zukan de esta carta (foto)
   raw_stats    jsonb,                        -- stats originales del juego (nivel 99)
   is_version   boolean not null default false -- true = versión extra (Strikers / protagonistas GO)
 );
 alter table public.techniques add column if not exists name_es text;
+alter table public.characters add column if not exists zukan_no int;
+alter table public.cards add column if not exists zukan_no int;
 
 create index if not exists cards_character_idx on public.cards(character_id);
 create index if not exists cards_ovr_idx on public.cards(ovr desc);

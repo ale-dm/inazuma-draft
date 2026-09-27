@@ -1,7 +1,7 @@
-Cartas: 3973 (167 versiones extra) · personajes: 3806 · técnicas: 589
-Categorías: Legendary Player 43 · Top Player 263 · Advanced Player 537 · Growing Player 772 · Common Player 2358
-Niveles: S 405 · A 97 · B 1014 · C 2457
-OVR: mediana 61 · p90 81 · p99 89 · máx 92
+Cartas: 4037 (231 versiones extra) · personajes: 3806 · técnicas: 589
+Categorías: Legendary Player 58 · Top Player 278 · Advanced Player 550 · Growing Player 779 · Common Player 2372
+Niveles: S 435 · A 101 · B 1037 · C 2464
+OVR: mediana 62 · p90 81 · p99 89 · máx 94
 
 Balancing doc del Xtreme sin ficha (7): añadir a overrides.xtreme_balancing_pages → Rhionne (Chaos), Dante Diavolo (Orpheus), Kino Aki (Girls Team), Oogu (Zanark Domain), Yasha (Zanark Domain), Goburis (Zanark Domain), Yamana Akane (Secret players (GO))
 Wiki del Xtreme: "Kino Aki" sin ficha (Kino Aki)
@@ -9,3 +9,4 @@ Wiki del Xtreme: "Sorano Aoi" sin ficha (Sorano Aoi)
 Jugadores de zukan sin ficha en la wiki (6): Bill Steakspear, Fred Ferrell, Dante Diavolo, Seraph Sharpe, Miriam Sharpe, Josephine
 Personajes sin stats de la saga principal (fuera): 1174
 Equipos sin nombre en castellano (6): añadir a overrides.team_es → Team Sharp, The Aquatic Wings, The Crimson Hounds, The Golden Bears, The Night Vipers, The Snow Weasels
+Fichas de zukan de la saga principal sin carta (6; sin stats en esos juegos o sin entrada): Creepy (Nº 3496), Seymour Hillman (Nº 2804), Sonny Raimon (Nº 261), Chester Horse Sr (Nº 263), Frank Drake (Nº 301), Nick Yergrub (Nº 2948)

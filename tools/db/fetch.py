@@ -88,6 +88,7 @@ def fetch_zukan():
             cells = [text(c) for c in re.findall(r'<td[^>]*>(.*?)</td>', block, re.S)]
             marks = cells[-9:]
             rows.append({
+                'no': int(cells[1]) if cells[1].isdigit() else None,          # nº oficial del zukan
                 'id': m.group(1), 'name': html.unescape(m.group(2)).strip(),
                 'element': cells[6], 'position': cells[7], 'role': cells[8], 'age': cells[9],
                 'teams': [t.strip() for t in cells[11].split(' / ') if t.strip()],
