@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { SITE } from '../config/site'
 import { useAppSettings } from '../context/AppSettings'
 import RulesModal from './RulesModal'
 
@@ -19,10 +18,10 @@ export default function TopBar() {
           </div>
 
           <a
-            href={SITE.url}
+            href={import.meta.env.BASE_URL}
             className="min-w-0 sm:absolute sm:left-1/2 sm:-translate-x-1/2 flex items-center gap-1.5 sm:gap-2 hover:opacity-90 transition-opacity iz-nav-title max-w-[50%]"
           >
-            <img src="/favicon.svg" alt="" className="w-7 h-7 sm:w-8 sm:h-8 rounded shadow-md shrink-0" width={32} height={32} />
+            <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" className="w-7 h-7 sm:w-8 sm:h-8 rounded shadow-md shrink-0" width={32} height={32} />
             <span className="font-heading font-black text-xs sm:text-sm tracking-tight truncate">
               <span className="text-[#ffe566]">FFI</span>
               <span> 6-0</span>
