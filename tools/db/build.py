@@ -1033,6 +1033,10 @@ def main(extra_z=None, write=True):
         ver = c['version'] if c['version'] != 'base' else 'base'
         c['id'] = f"{c['character_id']}--{c['game'].lower()}--{slug(ver)}"
 
+    # a mano: overrides.drop_cards (versiones descartadas)
+    drop = set(ov.get('drop_cards', {}).get('ids', []))
+    cards = [c for c in cards if c['id'] not in drop]
+
     # equipos que no son de ese juego
     for c in cards:
         # los de Ares/Orion/Victory Road (Alia Academy, The Sambassadors…) → otro equipo clásico del personaje o sin equipo
