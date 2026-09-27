@@ -54,6 +54,8 @@ export interface Player {
   /** Nombres de las técnicas (compatibilidad con el motor) */
   hissatsu: string[]
   isVersion: boolean
+  /** Nº oficial de la ficha en zukan.inazuma.jp (null en versiones que solo están en la wiki) */
+  zukanNo: number | null
 }
 
 export interface MatchEvent {

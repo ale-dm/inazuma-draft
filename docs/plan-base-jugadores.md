@@ -20,11 +20,12 @@ Reglas:
    - **GO3 (Galaxy):** Inazuma Japan / Earth Eleven.
 4. **Subformas de Strikers:** cada forma con nombre propio es una carta aparte (p. ej. Shawn Frost: Raimon (Atsuya) DEL y Raimon (Shirou) DEF, con sus técnicas).
 5. **Versiones de zukan:** si zukan tiene una ficha del personaje en otro equipo de la saga principal que aún no tiene carta (Young Inazuma, Perfect Cascade, Protocol Omega 2.0/3.0, The Sherwinds…), se crea esa versión con su foto. Nombres de zukan normalizados: Inazuma National → Inazuma Japan, Neo National → Neo Japan.
-6. **Versiones de la wiki** (formas de `Module:PlayerData`): cada forma de equipo es una carta con **sus propias técnicas, posición y stats** (entrada de esa forma, no la de la versión normal): Dark Emperors, Chaos, Epsilon Plus (Epsilon Kai), Royal Academy Redux (Shin Teikoku), Neo Japan, Fire Dragon, Unicorn, Zeus, Young Inazuma (young form) y adultos (`adult form` en GO2/Galaxy, equipo *Adult*, fuera del draft). Quedan fuera los modos (Kyouaku, Arajishi…), disfraces (Mister K, Kuroiwa…), formas de niño, Real Inazuma, Mixi Max y Chara Change.
+6. **Nº oficial de zukan:** cada ficha de zukan de la saga principal (IE1–GO3) tiene su carta, y la carta guarda su número (`cards.zukan_no`, el de la foto); el personaje guarda el de su primera ficha (`characters.zukan_no`). `build.py` hace dos pasadas: la primera detecta las fichas sin carta propia y la segunda crea su versión (equipo de la ficha, técnicas y stats de la forma de la wiki que encaja por edad/equipo). Ej. Axel: 2 (IE1–IE3), 3680 (Inazuma Japón Legendario), 3705 (El Dorado 03), 3954 (niño en Chrono Stone → equipo *Raimon (Past)*, con técnicas de IE3), 4145 (adulto de Galaxy). Las versiones que solo están en la wiki no tienen número.
+7. **Versiones de la wiki** (formas de `Module:PlayerData`): cada forma de equipo es una carta con **sus propias técnicas, posición y stats** (entrada de esa forma, no la de la versión normal): Dark Emperors, Chaos, Epsilon Plus (Epsilon Kai), Royal Academy Redux (Shin Teikoku), Neo Japan, Fire Dragon, Unicorn, Zeus, Young Inazuma (young form) y adultos (`adult form` en GO2/Galaxy, equipo *Adult*, fuera del draft). Quedan fuera los modos (Kyouaku, Arajishi…), disfraces (Mister K, Kuroiwa…), formas de niño, Real Inazuma, Mixi Max y Chara Change.
    - **Fotos:** si zukan no tiene ficha de esa versión, se usa el render 3D de la forma en la wiki (`(DE) Kazemaru 3D (1).png`, prefijo del sprite de ese juego).
-7. **Fuera por ahora:** los ~1.156 personajes que solo aparecen en Ares, Orion o Victory Road (no tienen stats de los juegos clásicos). Otro tema.
-8. **Formas especiales fuera de las cartas base** (irán como cartas especiales más adelante): Real Inazuma y Mixi Max (salvo el Chrono Storm de GO2).
-9. **Jugadores que no están en Victory Road** (licencias): importarlos de la wiki, con su imagen de la wiki:
+8. **Fuera por ahora:** los ~1.156 personajes que solo aparecen en Ares, Orion o Victory Road (no tienen stats de los juegos clásicos). Otro tema.
+9. **Formas especiales fuera de las cartas base** (irán como cartas especiales más adelante): Real Inazuma y Mixi Max (salvo el Chrono Storm de GO2).
+10. **Jugadores que no están en Victory Road** (licencias): importarlos de la wiki, con su imagen de la wiki:
    - **Hide Nakata** (`Nakata Hidetoshi`): MED, stats en IE2/IE3.
    - **Pants** (`Pants`, "Riku 'Pants' Matsushita"): DEF, stats en IE3, GO2, GO3.
    - *(El "Poseidon" de IE3 es Paul Siddon, portero del Zeus: ya existe.)*
@@ -144,7 +145,7 @@ python3 tools/db/build.py            # genera build/players.json, build/review.c
 - **Ajustar:** editar `data/overrides.json` (destacados, posiciones por versión, equivalencias de nombres, OVR manual) y volver a ejecutar `build.py`.
 - **Cargar en Supabase:** al hacer push a `main` de cambios en `supabase/`, el workflow `.github/workflows/db-load.yml` aplica `schema.sql` + `seed.sql` con el secreto del repo `SUPABASE_DB_URL` (también se puede lanzar a mano desde Actions → "Load player database into Supabase").
 
-Generación actual: **3.973 cartas** (3.806 personajes + 167 versiones), 589 técnicas. Primera generación: 3.903 cartas (3.806 personajes + 97 versiones), 587 técnicas · Legendary 36 · Top 233 · Advanced 516 · Growing 771 · Common 2.347 · OVR mediana 61, p90 79, máx 92.
+Generación actual: **4.037 cartas** (3.806 personajes + 231 versiones), 589 técnicas; 3.999 cartas con nº de zukan (3.954 fichas oficiales distintas). Primera generación: 3.903 cartas (3.806 personajes + 97 versiones), 587 técnicas · Legendary 36 · Top 233 · Advanced 516 · Growing 771 · Common 2.347 · OVR mediana 61, p90 79, máx 92.
 
 ## 10. La app
 

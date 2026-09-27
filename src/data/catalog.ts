@@ -39,6 +39,7 @@ interface CardRow {
   goalkeeping: number
   image_url: string | null
   is_version: boolean
+  zukan_no?: number | null
   card_techniques: { slot: number; technique_id: string }[]
 }
 
@@ -70,11 +71,8 @@ async function rest<T>(path: string): Promise<T> {
   return res.json() as Promise<T>
 }
 
-const CARD_COLUMNS = [
-  'id', 'character_id', 'name', 'game', 'version', 'team', 'position', 'element', 'ovr', 'category', 'tier',
-  'shooting', 'control', 'physical', 'speed', 'defense', 'goalkeeping', 'image_url', 'is_version',
-  'card_techniques(slot,technique_id)',
-].join(',')
+// '*' y no una lista: así la app funciona también antes de que la base tenga columnas nuevas (zukan_no…)
+const CARD_COLUMNS = '*,card_techniques(slot,technique_id)'
 
 export async function loadCatalog(): Promise<void> {
   if (players.length) return
@@ -117,6 +115,7 @@ export async function loadCatalog(): Promise<void> {
       techniques: techs,
       hissatsu: techs.map(t => t.name),
       isVersion: r.is_version,
+      zukanNo: r.zukan_no ?? null,
     }
   })
   byId = new Map(players.map(p => [p.id, p]))
