@@ -1,5 +1,5 @@
 export const SITE = {
-  url: 'https://ffi-6-0.vercel.app',
+  url: 'https://inazuma-draft-alpha.vercel.app',
   name: 'FFI 6-0',
   author: 'Thomas Lekieffre',
   github: 'https://github.com/thomaslekieffre',
