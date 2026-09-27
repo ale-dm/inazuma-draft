@@ -9875,11 +9875,9 @@ insert into public.techniques (id,name,name_es,name_jp,type,element,cost,cost_ga
 ('Evolution','Triple Threat','Triple amenaza','エボリューション','Shoot','earth',85,'GO3','{"GO3": 85, "GO2": 60, "GO1": 70}'::jsonb,'Three powerful kicks push the shot to evolve the triple shot closer to its ultimate form.','https://dxi4wb638ujep.cloudfront.net/1/k/r/4/r4ro90j_q6m.jpg','["Shot"]'::jsonb),
 ('MachWind','Zephyr Shot','Tiro vendaval','マッハウィンド','Shoot','air',20,'GO3','{"GO3": 20, "GO2": 35, "GO1": 35}'::jsonb,'Generate a strong gust of wind with an explosive run to execute a shot that''s too fast for human eyes.','https://dxi4wb638ujep.cloudfront.net/1/k/r/6/r6h7iwkoyqm.jpg','["Shot"]'::jsonb),
 ('SpiralDraw','Whirly-Whirly','Fuerza centrífuga','スパイラルドロー','Block','air',10,'GO3','{"GO3": 10, "GO2": 23, "GO1": 28}'::jsonb,'Unleash a tornado on the opposition and send them flying. Then, with the wind, make a mad dash straight for the goal.','https://dxi4wb638ujep.cloudfront.net/1/k/z/r/zrhd7krq9ak.jpg','["Defence"]'::jsonb),
-('WonderTrap','Hyper-Swiper','Robo fantástico','ワンダートラップ','Block','air',8,'GO3','{"GO3": 8, "GO2": 19}'::jsonb,'Run in a way that leaves an afterimage to distract the opponent while you steal the ball.','https://dxi4wb638ujep.cloudfront.net/1/k/3/9/39ji9l8rihm.jpg','["Defence"]'::jsonb),
-('ZSlash','Zed Zag',null,'Ｚスラッシュ','Dribble','wood',30,'GO3','{"GO3": 30}'::jsonb,'Break their balance with a sharp feint, slicing past in a flash that traces a perfect Z.','https://dxi4wb638ujep.cloudfront.net/1/k/6/e/6eipnvd6age.jpg','["Offence"]'::jsonb),
-('ArashiTatsumakiHurricane','Typhoon, Tornado, Hurricane!','¡Tormenta, tornado, huracán!','嵐・竜巻・ハリケーン','Shoot','air',85,'GO3','{"GO3": 85}'::jsonb,'Unleash a raging hurricane from the ball and send it barreling toward the goal.','https://dxi4wb638ujep.cloudfront.net/1/k/-/a/-anqfb3bc3m.jpg','["Shot"]'::jsonb),
 ('AcrobatKeep','Acrobatic Keep','Guardia acrobática','アクロバットキープ','Dribble','acrobat keep',40,'GO3','{"GO3": 40, "GO2": 36, "GO1": 36}'::jsonb,'Outmaneuver with swift, sharp steps before charging past opponents in a burst of speed.','https://dxi4wb638ujep.cloudfront.net/1/k/v/4/v4ehp1gn4pk.jpg','["Offence"]'::jsonb),
 ('AllDelete','Format Disk','Formateo de disco','オールデリート','Dribble','void',85,'GO3','{"GO3": 85, "GO2": 45}'::jsonb,'Spread a chaotic aura that erases everything in its path and sweep past opponents in style.','https://dxi4wb638ujep.cloudfront.net/1/k/z/6/z6t02iipbmu.jpg','["Offence"]'::jsonb),
+('ArashiTatsumakiHurricane','Typhoon, Tornado, Hurricane!','¡Tormenta, tornado, huracán!','嵐・竜巻・ハリケーン','Shoot','air',85,'GO3','{"GO3": 85}'::jsonb,'Unleash a raging hurricane from the ball and send it barreling toward the goal.','https://dxi4wb638ujep.cloudfront.net/1/k/-/a/-anqfb3bc3m.jpg','["Shot"]'::jsonb),
 ('AsokoNiUFO','Look! UFO','¡Mirad, un platillo volante!','あそこにＵＦＯ','Dribble','wood',55,'GO3','{"GO3": 55}'::jsonb,'Shout about a flying UFO to steal your foe''s attention, then sneak by with the ball in a cheeky dash.','https://dxi4wb638ujep.cloudfront.net/1/k/y/_/y_xzxeyqbfm.jpg','["Offence"]'::jsonb),
 ('AsteriskRock','Asterocks','Estrella de roca','アスタリスクロック','Block','fire',30,'GO3','{"GO3": 30, "GO2": 40}'::jsonb,'Smash the ground to fling opponents aside, then crush them beneath six massive boulders.','https://dxi4wb638ujep.cloudfront.net/1/k/_/w/_wofdy0vnqu.jpg','["Defence", "Shot Block"]'::jsonb),
 ('AtlantisWall','Wall of Atlantis','Muralla de Atlantis','アトランティスウォール','Block','earth',40,'GO3','{"GO3": 40, "GO2": 40, "GO1": 50}'::jsonb,'Awaken the legacy of Atlantis'' ancient power and drive the ball back with its immense force.','https://dxi4wb638ujep.cloudfront.net/1/k/l/p/lpdmpkqoxa0.jpg','["Defence", "Shot Block"]'::jsonb),
@@ -9981,10 +9979,10 @@ insert into public.techniques (id,name,name_es,name_jp,type,element,cost,cost_ga
 ('KillerElbow','Menace Elbow','Parada de codo','キラーエルボー','Catch','air',30,'GO3','{"GO3": 30}'::jsonb,'Dive into the shot and split the ball in two with a brutal elbow.','https://dxi4wb638ujep.cloudfront.net/1/k/c/p/cpc7juu-kje.jpg','["Success", "Failure"]'::jsonb),
 ('KirakiraIllusion','Oglitteration','Ilusión deslumbrante','きらきらイリュージョン','Block','wood',70,'GO3','{"GO3": 70, "GO2": 45}'::jsonb,'Mesmerize the opponent with a fantastic display of stardust and fireworks.','https://dxi4wb638ujep.cloudfront.net/1/k/f/4/f48praoovis.jpg','["Defence"]'::jsonb),
 ('KodaiNoKiba','Jurassic Jaws','Chut prehistórico','古代の牙','Shoot','earth',10,'GO3','{"GO3": 10, "GO2": 35}'::jsonb,'Execute a shot that bites into the opposing team''s goal like a tyrannosaurus biting into its prey.','https://dxi4wb638ujep.cloudfront.net/1/k/m/d/mdpq4tasdim.jpg','["Shot"]'::jsonb),
-('KodaiNoTsubasa','Pterrordactyl Swoop','Caída prehistórica','古代の翼','Block','air',55,'GO3','{"GO3": 55, "GO2": 45}'::jsonb,'Charge at the opponent like an ancient winged dinosaur swooping down with a cyclone in its wake.','https://dxi4wb638ujep.cloudfront.net/1/k/g/v/gv4dq0arp0k.jpg','["Defence"]'::jsonb);
-insert into public.techniques (id,name,name_es,name_jp,type,element,cost,cost_game,costs,description,image_url,zukan_types) values
+('KodaiNoTsubasa','Pterrordactyl Swoop','Caída prehistórica','古代の翼','Block','air',55,'GO3','{"GO3": 55, "GO2": 45}'::jsonb,'Charge at the opponent like an ancient winged dinosaur swooping down with a cyclone in its wake.','https://dxi4wb638ujep.cloudfront.net/1/k/g/v/gv4dq0arp0k.jpg','["Defence"]'::jsonb),
 ('KogetsuJuujishou','Crescent Cross','Despeje medialuna','*弧月十字掌','Catch','void',55,'GO3','{"GO3": 55, "GO2": 55}'::jsonb,'Unleash energy blades in a cross-shape and use them to hit incoming shots away.','https://dxi4wb638ujep.cloudfront.net/1/k/e/m/emp53x-ftbu.jpg','["Success", "Failure"]'::jsonb),
-('KonohaRendezvous','Verdure Vortex','Remolino de hojas','このはランデブー','Dribble','wood',70,'GO3','{"GO3": 70}'::jsonb,'Spin hand-in-hand with a teammate, whipping up leaves as you barrel forward.','https://dxi4wb638ujep.cloudfront.net/1/k/j/4/j4jnpmhydmu.jpg','["Offence"]'::jsonb),
+('KonohaRendezvous','Verdure Vortex','Remolino de hojas','このはランデブー','Dribble','wood',70,'GO3','{"GO3": 70}'::jsonb,'Spin hand-in-hand with a teammate, whipping up leaves as you barrel forward.','https://dxi4wb638ujep.cloudfront.net/1/k/j/4/j4jnpmhydmu.jpg','["Offence"]'::jsonb);
+insert into public.techniques (id,name,name_es,name_jp,type,element,cost,cost_game,costs,description,image_url,zukan_types) values
 ('KonohaRoll','Leaf Bowler','Bola de hojas','このはロール','Block','wood',40,'GO3','{"GO3": 40}'::jsonb,'Roll through the pitch wrapped in leaves, crashing into opponents and taking them by surprise.','https://dxi4wb638ujep.cloudfront.net/1/k/s/e/se9npzskwo8.jpg','["Defence"]'::jsonb),
 ('KyoubouHead','Driving Header','Cabezazo catapulta','キョウボウヘッド','Shoot','earth',20,'GO3','{"GO3": 20}'::jsonb,'Lock eyes on the goal and deliver a full-swing header with deadly precision.','https://dxi4wb638ujep.cloudfront.net/1/k/b/c/bcxv3hx_ice.jpg','["Shot"]'::jsonb),
 ('LaFlamme','La Flamme','La flamme','ラ・フラム','Block','fire',55,'GO3','{"GO3": 55, "GO2": 45}'::jsonb,'Block the opponent''s offence with a wall of blazing flames swirling around your body.','https://dxi4wb638ujep.cloudfront.net/1/k/v/n/vnfgwxinobs.jpg','["Defence", "Shot Block"]'::jsonb),
@@ -10071,13 +10069,15 @@ insert into public.techniques (id,name,name_es,name_jp,type,element,cost,cost_ga
 ('WildDunk','Blam Dunk','Parada mate','ワイルドダンク','Catch','air',10,'GO3','{"GO3": 10}'::jsonb,'Hammer the opponent''s shot with a full-force basketball dunk.','https://dxi4wb638ujep.cloudfront.net/1/k/a/3/a3dkyj8xw50.jpg','["Success", "Failure"]'::jsonb),
 ('WillyWilly','Willy-Willy','Remolino polvoriento','ウィリー・ウィリー','Block','earth',30,'GO3','{"GO3": 30}'::jsonb,'Spin rapidly to unleash a willy-willy dust devil and blast foes aside.','https://dxi4wb638ujep.cloudfront.net/1/k/9/z/9zvzxr_4odk.jpg','["Defence"]'::jsonb),
 ('WinningLogic','Logicstical Sync','Lógica ganadora','ウイニングロジック','Block','air',40,'GO3','{"GO3": 40}'::jsonb,'Combine sharp calculation and keen insight to orchestrate a flawless, unstoppable defence.','https://dxi4wb638ujep.cloudfront.net/1/k/g/4/g4cdo2cnhes.jpg','["Defence"]'::jsonb),
+('WonderTrap','Hyper-Swiper','Robo fantástico','ワンダートラップ','Block','air',8,'GO3','{"GO3": 8, "GO2": 19}'::jsonb,'Run in a way that leaves an afterimage to distract the opponent while you steal the ball.','https://dxi4wb638ujep.cloudfront.net/1/k/3/9/39ji9l8rihm.jpg','["Defence"]'::jsonb),
+('ZSlash','Zed Zag',null,'Ｚスラッシュ','Dribble','wood',30,'GO3','{"GO3": 30}'::jsonb,'Break their balance with a sharp feint, slicing past in a flash that traces a perfect Z.','https://dxi4wb638ujep.cloudfront.net/1/k/6/e/6eipnvd6age.jpg','["Offence"]'::jsonb),
 ('ZeroMagnum','Zero Magnum','Zero Magnum','ゼロマグナム','Shoot','void',85,'GO3','{"GO3": 85, "GO2": 60, "GO1": 70}'::jsonb,'This ultimate shot reduces everything to nothingness by blending light and darkness together.','https://dxi4wb638ujep.cloudfront.net/1/k/o/4/o47ekkmmmle.jpg','["Shot"]'::jsonb);
 insert into public.cards (id,character_id,name,game,saga,version,team,position,element,ovr,category,tier,source,shooting,control,physical,speed,defense,goalkeeping,image_url,zukan_id,zukan_no,no,description,description_es,specials,extra_teams,raw_stats,is_version) values
 ('hakuryuu--go1--base','hakuryuu','Bailong','GO1','GO','base','Eternal Light','FW','air',92,'Legendary Player','S','Xtreme (wiki)',95,91,87,86,75,72,'https://dxi4wb638ujep.cloudfront.net/1/k/1/g/1g0broofgtu.png','k/1/g/1g0broofgtu',2704,2704,'A young boy with absolute confidence in his own ability. Harbors a rivalry with Victor.','Confía mucho en su talento, por eso destaca incluso entre los imperiales.','[{"type": "keshin", "name": "Sacred Serpent White Wyvern", "name_es": "Dragón Heráldico, Guiverno blanco", "armed": false}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 178, "Dribbling": 126, "Technique": 150, "Block": 84, "Speed": 91, "Stamina": 90, "Catch": 57}'::jsonb,false),
-('hakuryuu--go2--chrono-storm','hakuryuu','Bailong','GO2','GO','Chrono Storm','Chrono Storm','FW','air',92,'Legendary Player','S','Xtreme (wiki)',95,90,88,89,73,70,'https://dxi4wb638ujep.cloudfront.net/1/k/w/_/w_er0q88toc.png','k/w/_/w_er0q88toc',3908,3908,'Bailong and Zhuge Liang''s miximaxed form is a peerless midfielder!','El Miximax Trans de Bai Long con Zhuge Liang es un medio formidable.','[{"type": "keshin", "name": "Sacred Serpent White Wyvern", "name_es": "Dragón Heráldico, Guiverno blanco", "armed": true}, {"type": "mixi", "name": "Zhuge Kongming"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 183, "Dribbling": 126, "Technique": 147, "Block": 73, "Speed": 121, "Stamina": 97, "Catch": 62}'::jsonb,true),
+('hakuryuu--go2--chrono-storm','hakuryuu','Bailong','GO2','GO','Chrono Storm','Chrono Storm','FW','air',92,'Legendary Player','S','Xtreme (wiki)',95,90,88,89,73,70,'https://dxi4wb638ujep.cloudfront.net/1/k/w/_/w_er0q88toc.png','k/w/_/w_er0q88toc',3908,3908,'Bailong and Zhuge Liang''s miximaxed form is a peerless midfielder!','El Miximax Trans de Bai Long con Zhuge Liang es un medio formidable.','[{"type": "keshin", "name": "Sacred Serpent White Wyvern", "name_es": "Dragón Heráldico, Guiverno blanco", "armed": true}, {"type": "mixi", "name": "Zhuge Liang"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 183, "Dribbling": 126, "Technique": 147, "Block": 73, "Speed": 121, "Stamina": 97, "Catch": 62}'::jsonb,true),
 ('hakuryuu--go2--mixi-max-victor-baivic','hakuryuu','Bailong','GO2','GO','Mixi Max (Victor) «Baivic»','Mixi Max','FW','air',92,'Legendary Player','A','stats del juego',95,94,79,93,83,79,'https://dxi4wb638ujep.cloudfront.net/1/k/t/2/t21ogxhntmm.png','k/t/2/t21ogxhntmm',3949,3949,'Bailong and Victor''s Miximax. Will these rivals'' strengths work together?',null,'[{"type": "mixi", "name": "Victor"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 188, "Dribbling": 133, "Technique": 145, "Block": 100, "Speed": 135, "Stamina": 85, "Catch": 64}'::jsonb,true),
 ('hakuryuu--go2--mixi-max-tezcat-tezlong','hakuryuu','Bailong','GO2','GO','Mixi Max (Tezcat) «Tezlong»','Mixi Max','FW','wood',92,'Legendary Player','A','stats del juego',95,94,81,90,83,84,'https://dxi4wb638ujep.cloudfront.net/1/k/k/d/kdtdpgr25s0.png','k/k/d/kdtdpgr25s0',3950,3950,'The Miximax of Bailong and Tezcat— a fierce combination of light and dark!',null,'[{"type": "mixi", "name": "Tezcat"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 183, "Dribbling": 138, "Technique": 147, "Block": 100, "Speed": 121, "Stamina": 90, "Catch": 79}'::jsonb,true),
-('nanobana-kinako--go2--chrono-storm','nanobana-kinako','Goldie Lemmon','GO2','GO','Chrono Storm','Chrono Storm','DF','fire',92,'Legendary Player','S','Xtreme (wiki)',92,87,87,87,97,88,'https://dxi4wb638ujep.cloudfront.net/1/k/d/2/d2yw32iqf70.png','k/d/2/d2yw32iqf70',3906,3906,'Goldie and the Queen of Dragons''s miximax brings fantasy football to life!','El Miximax Trans de Goldie y la reina de los dragones es de fantasía.','[{"type": "keshin", "name": "Sorceress of the Dawn Amaterasu", "name_es": "Guerrera del amanecer Amaterasu", "armed": true}, {"type": "mixi", "name": null}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 126, "Dribbling": 105, "Technique": 114, "Block": 173, "Speed": 109, "Stamina": 97, "Catch": 95}'::jsonb,true),
+('nanobana-kinako--go2--chrono-storm','nanobana-kinako','Goldie Lemmon','GO2','GO','Chrono Storm','Chrono Storm','DF','fire',92,'Legendary Player','S','Xtreme (wiki)',92,87,87,87,97,88,'https://dxi4wb638ujep.cloudfront.net/1/k/d/2/d2yw32iqf70.png','k/d/2/d2yw32iqf70',3906,3906,'Goldie and the Queen of Dragons''s miximax brings fantasy football to life!','El Miximax Trans de Goldie y la reina de los dragones es de fantasía.','[{"type": "keshin", "name": "Sorceress of the Dawn Amaterasu", "name_es": "Guerrera del amanecer Amaterasu", "armed": true}, {"type": "mixi", "name": "Queen of Dragons"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 126, "Dribbling": 105, "Technique": 114, "Block": 173, "Speed": 109, "Stamina": 97, "Catch": 95}'::jsonb,true),
 ('shuu--go2--mixi-max-bailong-tezlong','shuu','Tezcat','GO2','GO','Mixi Max (Bailong) «Tezlong»','Mixi Max','FW','wood',92,'Legendary Player','A','stats del juego',95,94,81,90,83,84,'https://dxi4wb638ujep.cloudfront.net/1/k/z/c/zckw38evkzk.png','k/z/c/zckw38evkzk',3951,3951,'The Miximax of Bailong and Tezcat— a fierce combination of light and dark!',null,'[{"type": "mixi", "name": "Bailong"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 183, "Dribbling": 138, "Technique": 147, "Block": 100, "Speed": 121, "Stamina": 90, "Catch": 79}'::jsonb,true),
 ('tsurugi-kyousuke--go2--mixi-max-bailong-baivic','tsurugi-kyousuke','Victor Blade','GO2','GO','Mixi Max (Bailong) «Baivic»','Mixi Max','FW','air',92,'Legendary Player','A','stats del juego',95,94,79,93,83,79,'https://dxi4wb638ujep.cloudfront.net/1/k/7/1/71i8i5nmufc.png','k/7/1/71i8i5nmufc',3948,3948,'Bailong and Victor''s Miximax. Will these rivals'' strengths work together?',null,'[{"type": "mixi", "name": "Bailong"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 188, "Dribbling": 133, "Technique": 145, "Block": 100, "Speed": 135, "Stamina": 85, "Catch": 64}'::jsonb,true),
 ('gouenji-shuuya--go2--inazuma-legend-japan','gouenji-shuuya','Axel Blaze','GO2','GO','Inazuma Legend Japan','Inazuma Legend Japan','FW','fire',91,'Legendary Player','S','Strikers 2013',91,91,91,90,78,79,'https://dxi4wb638ujep.cloudfront.net/1/k/w/b/wbkpcsww-ek.png','k/w/b/wbkpcsww-ek',3680,3680,'Beneath his cool exterior burns an intense and fiery passion for football.','Un delantero legendario que tiene una pasión inigualable por el fútbol.','[{"type": "keshin", "name": "Fire Jotun Surtr", "name_es": "Gigante de fuego, Surtur", "armed": false}]'::jsonb,'[]'::jsonb,'{"form": "Adult form", "Kick": 196, "Dribbling": 140, "Technique": 154, "Block": 67, "Speed": 119, "Stamina": 114, "Catch": 57}'::jsonb,true),
@@ -10088,7 +10088,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('genda-koujirou--ie3--neo-japan','genda-koujirou','Joseph King','IE3','IE','Neo Japan','Neo Japan','GK','fire',91,'Legendary Player','S','Xtreme (balancing)',80,82,81,72,91,94,'https://dxi4wb638ujep.cloudfront.net/1/k/9/w/9wtikebapts.png','k/9/w/9wtikebapts',20,5889,'The King of Keepers. There is no angle that he can not cover.','Le llaman "el rey de los porteros". No deja ningún hueco sin cubrir.','[]'::jsonb,'[]'::jsonb,'{"form": "Normal form", "Kick": 55, "Body": 53, "Control": 69, "Guard": 75, "Speed": 55, "Stamina": 64, "Guts": 60}'::jsonb,true),
 ('zagomel-zande--ie3--base','zagomel-zande','Lars Luceafăr','IE3','IE','base','Team Ogre','GK','earth',91,'Legendary Player','S','Xtreme (balancing)',78,70,79,81,91,95,'https://dxi4wb638ujep.cloudfront.net/1/k/n/6/n6eeto9n0hc.png','k/n/6/n6eeto9n0hc',2072,2072,'Team Ogre''s wall of a keeper, never seen without Lump and Bump on his shoulders.','El portero del equipo Ogro. Presume de poder parar cualquier balón.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 50, "Body": 50, "Control": 50, "Guard": 99, "Speed": 58, "Stamina": 60, "Guts": 63}'::jsonb,false),
 ('fubuki-shirou--go2--mixi-max-axel-shaxel','fubuki-shirou','Shawn Froste','GO2','GO','Mixi Max (Axel) «Shaxel»','Mixi Max','FW','air',91,'Legendary Player','A','stats del juego',93,92,83,92,76,79,'https://dxi4wb638ujep.cloudfront.net/1/k/m/c/mc0a0kigy_k.png','k/m/c/mc0a0kigy_k',3955,3955,'The Miximax of Axel and Shawn has a fiery edge, but is still a cool customer.',null,'[{"type": "mixi", "name": "Axel"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 193, "Dribbling": 133, "Technique": 150, "Block": 85, "Speed": 142, "Stamina": 97, "Catch": 70}'::jsonb,true),
-('zanark-avalonic--go2--chrono-storm','zanark-avalonic','Zanark Avalonic','GO2','GO','Chrono Storm','Chrono Storm','FW','earth',91,'Legendary Player','S','Strikers 2013',93,92,93,82,79,81,'https://dxi4wb638ujep.cloudfront.net/1/k/b/x/bx1kzvaga90.png','k/b/x/bx1kzvaga90',3909,3909,'Zanark and Cao Cao''s miximaxed form is the strongest—and most evil!','El Miximax Trans de Zanark y Cao Cao lleva al límite la potencia y la maldad.','[{"type": "keshin", "name": "Prince of the Astral Plane Zodiac", "name_es": "Príncipe del plano astral, Zodíaco", "armed": true}, {"type": "mixi", "name": "Clara Jane"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 173, "Dribbling": 123, "Technique": 125, "Block": 71, "Speed": 107, "Stamina": 138, "Catch": 72}'::jsonb,true),
+('zanark-avalonic--go2--chrono-storm','zanark-avalonic','Zanark Avalonic','GO2','GO','Chrono Storm','Chrono Storm','FW','earth',91,'Legendary Player','S','Strikers 2013',93,92,93,82,79,81,'https://dxi4wb638ujep.cloudfront.net/1/k/b/x/bx1kzvaga90.png','k/b/x/bx1kzvaga90',3909,3909,'Zanark and Cao Cao''s miximaxed form is the strongest—and most evil!','El Miximax Trans de Zanark y Cao Cao lleva al límite la potencia y la maldad.','[{"type": "keshin", "name": "Prince of the Astral Plane Zodiac", "name_es": "Príncipe del plano astral, Zodíaco", "armed": true}, {"type": "mixi", "name": "Cao Cao"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 173, "Dribbling": 123, "Technique": 125, "Block": 71, "Speed": 107, "Stamina": 138, "Catch": 72}'::jsonb,true),
 ('asta--go2--base','asta','Asta','GO2','GO','base','Zanark''s Domain','FW','fire',90,'Legendary Player','S','Strikers 2013',91,90,87,90,78,81,'https://dxi4wb638ujep.cloudfront.net/1/k/7/2/72bh20v6mtc.png','k/7/2/72bh20v6mtc',3570,3570,'This little midfielder is the team joker but his skills are no joke!',null,'[{"type": "keshin", "name": "Crown Prince of Chaos Ashtarot", "name_es": "Príncipe del caos, Astaroth", "armed": false}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 167, "Dribbling": 131, "Technique": 121, "Block": 83, "Speed": 119, "Stamina": 85, "Catch": 87}'::jsonb,false),
 ('asta--go2--the-despairadoes','asta','Asta','GO2','GO','The Despairadoes','The Despairadoes','FW','fire',90,'Legendary Player','S','Strikers 2013',91,90,87,90,78,81,'https://dxi4wb638ujep.cloudfront.net/1/k/j/f/jfb3psnxmwk.png','k/j/f/jfb3psnxmwk',3690,3690,'The boy who appeared with Flora. Produces strong duplies.',null,'[{"type": "keshin", "name": "Crown Prince of Chaos Ashtarot", "name_es": "Príncipe del caos, Astaroth", "armed": false}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 167, "Dribbling": 131, "Technique": 121, "Block": 83, "Speed": 119, "Stamina": 85, "Catch": 87}'::jsonb,true),
 ('beelzebu--ie3--base','beelzebu','Bael','IE3','IE','base','Devil Army Z','DF','earth',90,'Legendary Player','S','Xtreme (balancing)',83,78,90,81,95,83,'https://dxi4wb638ujep.cloudfront.net/1/k/c/z/czpfxivghmu.png','k/c/z/czpfxivghmu',2051,2051,'Wielding dark powers, this player has a conceited and malevolent demeanor.','Un jugador del inframundo. Muy orgulloso y retorcido.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 65, "Body": 69, "Control": 47, "Guard": 71, "Speed": 56, "Stamina": 50, "Guts": 77}'::jsonb,false),
@@ -10111,7 +10111,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('fei-rune--go2--chrono-storm','fei-rune','Fei Rune','GO2','GO','Chrono Storm','Chrono Storm','FW','wood',89,'Legendary Player','S','Strikers 2013',93,83,83,92,72,83,'https://dxi4wb638ujep.cloudfront.net/1/k/8/z/8z7ptvsr8em.png','k/8/z/8z7ptvsr8em',3903,3903,'Fei and Big''s miximaxed form joins past and future for a dynamic MF.','El Miximax Trans de Fei y el tiranosaurio. ¡Un delantero de aúpa!','[{"type": "keshin", "name": "Light-Speed Knight Sir Rabby", "name_es": "Caballero ultraveloz Robin", "armed": true}, {"type": "mixi", "name": "Big"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 144, "Dribbling": 107, "Technique": 102, "Block": 76, "Speed": 119, "Stamina": 97, "Catch": 90}'::jsonb,true),
 ('gamma--go2--base','gamma','Gamma','GO2','GO','base','Protocol Omega 3.0','FW','wood',89,'Legendary Player','S','Xtreme (balancing)',90,83,91,91,78,80,'https://dxi4wb638ujep.cloudfront.net/1/k/5/g/5gofomcbgls.png','k/5/g/5gofomcbgls',3522,3522,'Captain of Protocol Omega 3.0. Proud and supremely confident in his ability.','El capitán del Protocolo Omega 3.0. Es un narcisista orgulloso.','[{"type": "keshin", "name": "Cursed Wolf Lycaon", "name_es": "Lobo maldito Licaón", "armed": true}]'::jsonb,'[]'::jsonb,'{"form": "Normal form", "Kick": 159, "Dribbling": 119, "Technique": 154, "Block": 83, "Speed": 142, "Stamina": 92, "Catch": 79}'::jsonb,false),
 ('gamma--go2--mixi-max-zanark','gamma','Gamma','GO2','GO','Mixi Max (Zanark)','Mixi Max','FW','wood',89,'Legendary Player','S','Xtreme (balancing)',90,83,91,91,78,80,'https://dxi4wb638ujep.cloudfront.net/1/k/y/x/yx0e9c4kdrk.png','k/y/x/yx0e9c4kdrk',3920,3920,'Miximaxed with Zanark, he was brainwashed into obedience.','El capitán del Protocolo Omega 3.0. Es un narcisista orgulloso.','[{"type": "keshin", "name": "Cursed Wolf Lycaon", "name_es": "Lobo maldito Licaón", "armed": true}, {"type": "mixi", "name": "Zanark"}]'::jsonb,'[]'::jsonb,'{"form": "Normal form", "Kick": 159, "Dribbling": 119, "Technique": 154, "Block": 83, "Speed": 142, "Stamina": 92, "Catch": 79}'::jsonb,true),
-('nishizono-shinsuke--go2--chrono-storm','nishizono-shinsuke','Jean-Pierre Lapin','GO2','GO','Chrono Storm','Chrono Storm','GK','earth',89,'Legendary Player','S','Strikers 2013',72,82,84,83,83,93,'https://dxi4wb638ujep.cloudfront.net/1/k/5/b/5b12pn3j2im.png','k/5/b/5b12pn3j2im',3901,3901,'JP and Liu Bei''s miximaxed form is a solid goalie with a heart of gold!','El Miximax Trans de JP y Liu Bei es un portero temible con un gran corazón.','[{"type": "keshin", "name": "Defender of Earth Atlas", "name_es": "Protector de la Tierra, Atlas", "armed": true}, {"type": "mixi", "name": null}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 62, "Dribbling": 85, "Technique": 109, "Block": 116, "Speed": 112, "Stamina": 107, "Catch": 136}'::jsonb,true),
+('nishizono-shinsuke--go2--chrono-storm','nishizono-shinsuke','Jean-Pierre Lapin','GO2','GO','Chrono Storm','Chrono Storm','GK','earth',89,'Legendary Player','S','Strikers 2013',72,82,84,83,83,93,'https://dxi4wb638ujep.cloudfront.net/1/k/5/b/5b12pn3j2im.png','k/5/b/5b12pn3j2im',3901,3901,'JP and Liu Bei''s miximaxed form is a solid goalie with a heart of gold!','El Miximax Trans de JP y Liu Bei es un portero temible con un gran corazón.','[{"type": "keshin", "name": "Defender of Earth Atlas", "name_es": "Protector de la Tierra, Atlas", "armed": true}, {"type": "mixi", "name": "Liu Bei"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 62, "Dribbling": 85, "Technique": 109, "Block": 116, "Speed": 112, "Stamina": 107, "Catch": 136}'::jsonb,true),
 ('genda-koujirou--ie2--royal-academy-redux','genda-koujirou','Joseph King','IE2','IE','Royal Academy Redux','Royal Academy Redux','GK','fire',89,'Legendary Player','S','Xtreme (balancing)',82,82,74,71,90,94,'https://dxi4wb638ujep.cloudfront.net/1/k/k/0/k07toapik30.png','k/k/0/k07toapik30',1193,1193,'The Emperor of Goal Keepers surpasses all other shot-stoppers.','Ha superado al Rey, es el Emperador de los porteros.','[]'::jsonb,'[]'::jsonb,'{"form": "Shin Teikoku Gakuen form", "Kick": 72, "Body": 75, "Control": 69, "Guard": 72, "Speed": 55, "Stamina": 74, "Guts": 60}'::jsonb,true),
 ('kidou-yuuto--go2--mixi-max-caleb-juleb','kidou-yuuto','Jude Sharp','GO2','GO','Mixi Max (Caleb) «Juleb»','Mixi Max','MF','fire',89,'Legendary Player','A','stats del juego',88,94,77,88,86,83,'https://dxi4wb638ujep.cloudfront.net/1/k/x/0/x0f7z1ua1mm.png','k/x/0/x0f7z1ua1mm',3956,3956,'Jude and Caleb''s Miximax. These opposites will cause quite a reaction!',null,'[{"type": "mixi", "name": "Caleb"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 121, "Dribbling": 173, "Technique": 152, "Block": 111, "Speed": 119, "Stamina": 83, "Catch": 81}'::jsonb,true),
 ('someoka-ryuugo--go2--inazuma-legend-japan','someoka-ryuugo','Kevin Dragonfly','GO2','GO','Inazuma Legend Japan','Inazuma Legend Japan','FW','wood',89,'Legendary Player','S','Strikers 2013',91,90,91,80,77,79,'https://dxi4wb638ujep.cloudfront.net/1/k/4/p/4p_kytf5foe.png','k/4/p/4p_kytf5foe',2812,2812,'This Italian pro league player has a scary face, but a heart of gold.','Este jugador de liga italiana tiene un corazón de oro.','[{"type": "keshin", "name": "Brave Samurai Musashi", "name_es": "Bravo samurái Musashi", "armed": false}]'::jsonb,'[]'::jsonb,'{"form": "Adult form", "Kick": 157, "Dribbling": 128, "Technique": 123, "Block": 66, "Speed": 104, "Stamina": 121, "Catch": 66}'::jsonb,true),
@@ -10127,7 +10127,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('saryuu-evan--go2--ragnah','saryuu-evan','Simeon Ayp','GO2','GO','Ragnah','Ragnah','FW','earth',89,'Legendary Player','S','Strikers 2013',91,90,89,81,81,79,'https://dxi4wb638ujep.cloudfront.net/1/k/d/t/dtblea0kwi8.png','k/d/t/dtblea0kwi8',3650,3650,'Simeon in goggle mode, eyes burning with ambition behind tinted lenses.','El líder de Nu-Gen. Su objetivo es dominar el mundo entero.','[{"type": "keshin", "name": "Lord of Daemons Evera", "name_es": "Gran señor de los demonios, Evera", "armed": true}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 170, "Dribbling": 131, "Technique": 126, "Block": 109, "Speed": 112, "Stamina": 107, "Catch": 68}'::jsonb,true),
 ('saryuu-evan--go2--ragnah-n-3938','saryuu-evan','Simeon Ayp','GO2','GO','Ragnah (Nº 3938)','Ragnah','FW','earth',89,'Legendary Player','S','Strikers 2013',91,90,89,81,81,79,'https://dxi4wb638ujep.cloudfront.net/1/k/4/r/4rtimymulie.png','k/4/r/4rtimymulie',3938,3938,'Simeon''s Mix ''n'' Matched great ape form!','El líder de Nu-Gen. Su objetivo es dominar el mundo entero.','[{"type": "keshin", "name": "Lord of Daemons Evera", "name_es": "Gran señor de los demonios, Evera", "armed": true}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 170, "Dribbling": 131, "Technique": 126, "Block": 109, "Speed": 112, "Stamina": 107, "Catch": 68}'::jsonb,true),
 ('shuu--go1--base','shuu','Tezcat','GO1','GO','base','Ancient Darkness','FW','wood',89,'Legendary Player','S','Xtreme (wiki)',87,95,93,82,86,76,'https://dxi4wb638ujep.cloudfront.net/1/k/v/g/vggdlgtj-qc.png','k/v/g/vggdlgtj-qc',2715,2715,'A mysterious football player who moves like a phantom. The details of his past and upbringing are entirely unknown.','Un chico que vive en la isla del Santuario. Tiene un pasado misterioso.','[{"type": "keshin", "name": "Dark Demigod Black Butcher", "name_es": "Señor oscuro, Azote negro", "armed": false}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 176, "Dribbling": 136, "Technique": 127, "Block": 114, "Speed": 78, "Stamina": 102, "Catch": 57}'::jsonb,false),
-('tsurugi-kyousuke--go2--chrono-storm','tsurugi-kyousuke','Victor Blade','GO2','GO','Chrono Storm','Chrono Storm','FW','fire',89,'Legendary Player','S','Xtreme (balancing)',92,84,84,90,82,73,'https://dxi4wb638ujep.cloudfront.net/1/k/j/z/jzrjkr9iwbe.png','k/j/z/jzrjkr9iwbe',3905,3905,'Victor and Soji''s miximaxed form strikes with the speed of a snake!','El Miximax Trans de Victor y Soji ataca con la rapidez de una serpiente.','[{"type": "keshin", "name": "Heroic Swordsman Lancelot", "name_es": "Caballero Lancelot", "armed": true}, {"type": "mixi", "name": "Okita Souji"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 165, "Dribbling": 119, "Technique": 126, "Block": 102, "Speed": 107, "Stamina": 112, "Catch": 66}'::jsonb,true),
+('tsurugi-kyousuke--go2--chrono-storm','tsurugi-kyousuke','Victor Blade','GO2','GO','Chrono Storm','Chrono Storm','FW','fire',89,'Legendary Player','S','Xtreme (balancing)',92,84,84,90,82,73,'https://dxi4wb638ujep.cloudfront.net/1/k/j/z/jzrjkr9iwbe.png','k/j/z/jzrjkr9iwbe',3905,3905,'Victor and Soji''s miximaxed form strikes with the speed of a snake!','El Miximax Trans de Victor y Soji ataca con la rapidez de una serpiente.','[{"type": "keshin", "name": "Heroic Swordsman Lancelot", "name_es": "Caballero Lancelot", "armed": true}, {"type": "mixi", "name": "Soji"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 165, "Dribbling": 119, "Technique": 126, "Block": 102, "Speed": 107, "Stamina": 112, "Catch": 66}'::jsonb,true),
 ('tsurugi-yuuichi--go2--base','tsurugi-yuuichi','Vladimir Blade','GO2','GO','base','The Sherwinds','FW','fire',89,'Legendary Player','S','Strikers 2013',91,90,90,81,79,79,'https://dxi4wb638ujep.cloudfront.net/1/k/x/w/xwnabrc2pos.png','k/x/w/xwnabrc2pos',3485,3485,'Victor''s older brother from a parallel universe in which he was never hurt...','El hermano mayor de Victor de un universo paralelo muy diferente.','[{"type": "keshin", "name": "Supreme War Chief Pendragon", "name_es": "Caballero misterioso, Pendragón", "armed": true}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 165, "Dribbling": 119, "Technique": 133, "Block": 90, "Speed": 116, "Stamina": 126, "Catch": 72}'::jsonb,false),
 ('tsurugi-yuuichi--go2--mixi-max-victor','tsurugi-yuuichi','Vladimir Blade','GO2','GO','Mixi Max (Victor)','Mixi Max','FW','fire',89,'Legendary Player','S','Strikers 2013',91,90,90,81,79,79,'https://dxi4wb638ujep.cloudfront.net/1/k/q/9/q9g-fc2xrdu.png','k/q/9/q9g-fc2xrdu',3896,3896,'Vladimir and Victor''s miximaxed form. Brotherly love and sibling rivalry!','El Miximax Trans de Vladimir y Victor. ¡Amor fraternal y rivalidad en uno!','[{"type": "keshin", "name": "Supreme War Chief Pendragon", "name_es": "Caballero misterioso, Pendragón", "armed": true}, {"type": "mixi", "name": "Victor"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 165, "Dribbling": 119, "Technique": 133, "Block": 90, "Speed": 116, "Stamina": 126, "Catch": 72}'::jsonb,true),
 ('tsurugi-yuuichi--go2--child','tsurugi-yuuichi','Vladimir Blade','GO2','GO','Child','Sub Character','FW','fire',89,'Legendary Player','S','Strikers 2013',91,90,90,81,79,79,'https://dxi4wb638ujep.cloudfront.net/1/k/e/d/edbi6yfp0im.png','k/e/d/edbi6yfp0im',3704,3704,'Young Vladimir, who often played with his brother Victor. Before the accident, he was healthy and full of life.','El hermano mayor de Victor de un universo paralelo muy diferente.','[{"type": "keshin", "name": "Supreme War Chief Pendragon", "name_es": "Caballero misterioso, Pendragón", "armed": true}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 165, "Dribbling": 119, "Technique": 133, "Block": 90, "Speed": 116, "Stamina": 126, "Catch": 72}'::jsonb,true),
@@ -10157,8 +10157,8 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('mistrene-callous--ie3--base','mistrene-callous','Mystral Callous','IE3','IE','base','Team Ogre','FW','earth',88,'Top Player','S','Xtreme (balancing)',91,79,88,91,80,80,'https://dxi4wb638ujep.cloudfront.net/1/k/p/b/pbdy9xvhxnc.png','k/p/b/pbdy9xvhxnc',2077,2077,'He might look like a girl, but his style of play is surprisingly savage.','Puede parecer una chica, pero, a la hora de jugar, es todo un salvaje.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 73, "Body": 53, "Control": 51, "Guard": 54, "Speed": 76, "Stamina": 59, "Guts": 58}'::jsonb,false),
 ('kazemaru-ichirouta--go2--inazuma-legend-japan','kazemaru-ichirouta','Nathan Swift','GO2','GO','Inazuma Legend Japan','Inazuma Legend Japan','DF','air',88,'Top Player','S','Strikers 2013',81,90,79,91,91,82,'https://dxi4wb638ujep.cloudfront.net/1/k/d/e/desox8ppge0.png','k/d/e/desox8ppge0',2810,2810,'Pro star known as the Gale. His looks have fans torn between him and Shawn.','Un jugador de la liga de fútbol japonesa tan famoso como Shawn.','[]'::jsonb,'[]'::jsonb,'{"form": "Adult form", "Kick": 104, "Dribbling": 109, "Technique": 131, "Block": 154, "Speed": 147, "Stamina": 83, "Catch": 97}'::jsonb,true),
 ('yukimura-hyouga--go1--base','yukimura-hyouga','Njord Snio','GO1','GO','base','Alpine','FW','air',88,'Top Player','S','Xtreme (balancing)',94,78,78,90,77,69,'https://dxi4wb638ujep.cloudfront.net/1/k/x/h/xhakvrbs3k0.png','k/x/h/xhakvrbs3k0',2601,2601,'The hottest striker of the north, scouted out by Shawn Froste.','El delantero más destacado del norte, descubierto por Shawn Froste.','[{"type": "keshin", "name": "Snow Nymph Chione", "name_es": "Chione, reina de la nieve", "armed": false}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 139, "Dribbling": 94, "Technique": 91, "Block": 76, "Speed": 96, "Stamina": 86, "Catch": 48}'::jsonb,false),
-('nishiki-ryouma--go2--chrono-storm','nishiki-ryouma','Ryoma Nishiki','GO2','GO','Chrono Storm','Chrono Storm','MF','earth',88,'Top Player','S','Xtreme (balancing)',84,93,96,82,82,72,'https://dxi4wb638ujep.cloudfront.net/1/k/s/x/sxgcjubydos.png','k/s/x/sxgcjubydos',3904,3904,'Roma and Ryoma''s miximaxed form means a trickster of a midfielder!','El Miximax trans de Roma y Ryoma controla el centro con soltura .','[{"type": "keshin", "name": "Brave Samurai Musashi", "name_es": "Bravo samurái Musashi", "armed": true}, {"type": "mixi", "name": "Sakamoto Ryouma"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 123, "Dribbling": 141, "Technique": 120, "Block": 102, "Speed": 104, "Stamina": 112, "Catch": 54}'::jsonb,true),
-('amemiya-taiyou--go2--chrono-storm','amemiya-taiyou','Sol Daystar','GO2','GO','Chrono Storm','Chrono Storm','FW','fire',88,'Top Player','S','Xtreme (wiki)',91,87,87,82,86,74,'https://dxi4wb638ujep.cloudfront.net/1/k/i/z/izexiyrzb7k.png','k/i/z/izexiyrzb7k',3900,3900,'Sol and Zhuge Liang''s miximaxed form is a peerless midfielder!','El Miximax Trans de Sol y Zhuge Liang domina el mediocampo como nadie.','[{"type": "keshin", "name": "Sun Deity Apollo", "name_es": "Apolo, dios del sol", "armed": true}, {"type": "mixi", "name": null}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 159, "Dribbling": 142, "Technique": 121, "Block": 123, "Speed": 119, "Stamina": 88, "Catch": 53}'::jsonb,true),
+('nishiki-ryouma--go2--chrono-storm','nishiki-ryouma','Ryoma Nishiki','GO2','GO','Chrono Storm','Chrono Storm','MF','earth',88,'Top Player','S','Xtreme (balancing)',84,93,96,82,82,72,'https://dxi4wb638ujep.cloudfront.net/1/k/s/x/sxgcjubydos.png','k/s/x/sxgcjubydos',3904,3904,'Roma and Ryoma''s miximaxed form means a trickster of a midfielder!','El Miximax trans de Roma y Ryoma controla el centro con soltura .','[{"type": "keshin", "name": "Brave Samurai Musashi", "name_es": "Bravo samurái Musashi", "armed": true}, {"type": "mixi", "name": "Ryoma"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 123, "Dribbling": 141, "Technique": 120, "Block": 102, "Speed": 104, "Stamina": 112, "Catch": 54}'::jsonb,true),
+('amemiya-taiyou--go2--chrono-storm','amemiya-taiyou','Sol Daystar','GO2','GO','Chrono Storm','Chrono Storm','FW','fire',88,'Top Player','S','Xtreme (wiki)',91,87,87,82,86,74,'https://dxi4wb638ujep.cloudfront.net/1/k/i/z/izexiyrzb7k.png','k/i/z/izexiyrzb7k',3900,3900,'Sol and Zhuge Liang''s miximaxed form is a peerless midfielder!','El Miximax Trans de Sol y Zhuge Liang domina el mediocampo como nadie.','[{"type": "keshin", "name": "Sun Deity Apollo", "name_es": "Apolo, dios del sol", "armed": true}, {"type": "mixi", "name": "Zhuge Liang"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 159, "Dribbling": 142, "Technique": 121, "Block": 123, "Speed": 119, "Stamina": 88, "Catch": 53}'::jsonb,true),
 ('gouenji-masato--ie2--base','gouenji-masato','Syon Blaze','IE2','IE','base','Unaffiliated','FW','fire',88,'Top Player','S','Strikers 2013',90,91,81,83,82,74,'https://dxi4wb638ujep.cloudfront.net/1/k/g/p/gpyvabpvuw0.png','k/g/p/gpyvabpvuw0',1332,1332,'A striker and Axel Blaze''s cousin who sees him as his ultimate rival.','Delantero extraordinario, se parece mucho a Axel...','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 70, "Body": 60, "Control": 76, "Guard": 67, "Speed": 72, "Stamina": 64, "Guts": 68}'::jsonb,false),
 ('tsurugi-kyousuke--go3--earth-eleven','tsurugi-kyousuke','Victor Blade','GO3','GO','Earth Eleven','Earth Eleven','FW','fire',88,'Top Player','S','Xtreme (balancing)',91,83,82,90,80,72,'https://static.wikia.nocookie.net/inazuma-eleven/images/6/65/%28EE%29_Tsurugi_3D_%281%29.png/revision/latest?cb=20230702140427',null,null,5935,null,'La habilidad del delantero estrella del Raimon no tiene parangón.','[{"type": "soul", "name": "Wolf", "name_es": "Lobo"}]'::jsonb,'[]'::jsonb,'{"form": "Normal form", "Kick": 183, "Dribbling": 119, "Technique": 133, "Block": 100, "Speed": 119, "Stamina": 107, "Catch": 77}'::jsonb,true),
 ('tsurugi-kyousuke--go2--mixi-max-arion-victarion','tsurugi-kyousuke','Victor Blade','GO2','GO','Mixi Max (Arion) «Victarion»','Mixi Max','MF','fire',88,'Top Player','A','stats del juego',89,91,80,89,79,82,'https://dxi4wb638ujep.cloudfront.net/1/k/o/t/ot30ycmsjke.png','k/o/t/ot30ycmsjke',3943,3943,'The Miximax of Arion and Victor, featuring eagle eyes and wild hair.',null,'[{"type": "mixi", "name": "Arion"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 147, "Dribbling": 167, "Technique": 133, "Block": 96, "Speed": 128, "Stamina": 95, "Catch": 85}'::jsonb,true),
@@ -10194,7 +10194,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('sura--go2--base','sura','Navan','GO2','GO','base','Zanark''s Domain','FW','air',87,'Top Player','S','Strikers 2013',90,89,81,81,78,80,'https://dxi4wb638ujep.cloudfront.net/1/k/k/e/kewmbljahg0.png','k/k/e/kewmbljahg0',3571,3571,'A striker of incredible talent. When he plays, the pitch becomes a battlefield.','Un delantero de gran talento que sale al campo con la furia de un guerrero.','[{"type": "keshin", "name": "Aoki Ryuuku", "name_es": null, "armed": false}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 141, "Dribbling": 114, "Technique": 120, "Block": 83, "Speed": 119, "Stamina": 104, "Catch": 79}'::jsonb,false),
 ('raimon-natsumi--go1--base','raimon-natsumi','Nelly Evans','GO1','GO','base','Sub Character','FW','fire',87,'Top Player','S','Xtreme (wiki)',94,81,81,78,69,77,'https://dxi4wb638ujep.cloudfront.net/1/k/w/u/wurkqeypzec.png','k/w/u/wurkqeypzec',2800,2800,'Previously a Raimon coordinator, she''s now the chairwoman of the school.','Tiene carácter, aunque su padre dice que a veces es un poco llorona.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 107, "Dribbling": 60, "Technique": 91, "Block": 67, "Speed": 92, "Stamina": 71, "Catch": 34}'::jsonb,false),
 ('posei-donichi--ie1--base','posei-donichi','Paul Siddon','IE1','IE','base','Zeus','GK','earth',87,'Top Player','S','Strikers 2013',81,73,80,61,89,89,'https://dxi4wb638ujep.cloudfront.net/1/k/b/7/b7piycz2hdk.png','k/b/7/b7piycz2hdk',176,176,'His fluid, infallible goal-keeping earned him the nickname "Poseidon."','Le llaman "Poseidón" porque nadie consigue mover las redes en su mar.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 79, "Body": 79, "Control": 71, "Guard": 79, "Speed": 44, "Stamina": 74, "Guts": 76}'::jsonb,false),
-('shindou-takuto--go2--chrono-storm','shindou-takuto','Riccardo Di Rigo','GO2','GO','Chrono Storm','Chrono Storm','MF','wood',87,'Top Player','S','Strikers 2013',84,93,83,83,83,75,'https://dxi4wb638ujep.cloudfront.net/1/k/z/0/z0wdc6cbdo8.png','k/z/0/z0wdc6cbdo8',3898,3898,'Riccardo Di and Nobunaga''s miximaxed form is the ultimate gamemaker!','El Miximax Trans de Riccardo y Nobunaga. ¡El estratega definitivo!','[{"type": "keshin", "name": "Master Conductor Maestro", "name_es": "Director Magister", "armed": true}, {"type": "mixi", "name": "Oda Nobunaga"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 123, "Dribbling": 144, "Technique": 133, "Block": 115, "Speed": 114, "Stamina": 102, "Catch": 97}'::jsonb,true),
+('shindou-takuto--go2--chrono-storm','shindou-takuto','Riccardo Di Rigo','GO2','GO','Chrono Storm','Chrono Storm','MF','wood',87,'Top Player','S','Strikers 2013',84,93,83,83,83,75,'https://dxi4wb638ujep.cloudfront.net/1/k/z/0/z0wdc6cbdo8.png','k/z/0/z0wdc6cbdo8',3898,3898,'Riccardo Di and Nobunaga''s miximaxed form is the ultimate gamemaker!','El Miximax Trans de Riccardo y Nobunaga. ¡El estratega definitivo!','[{"type": "keshin", "name": "Master Conductor Maestro", "name_es": "Director Magister", "armed": true}, {"type": "mixi", "name": "Nobunaga"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 123, "Dribbling": 144, "Technique": 133, "Block": 115, "Speed": 114, "Stamina": 102, "Catch": 97}'::jsonb,true),
 ('kogure-yuuya--ie2--base','kogure-yuuya','Scott Banyan','IE2','IE','base','Cloister Divinity','DF','wood',87,'Top Player','S','Xtreme (balancing)',74,82,82,90,90,82,'https://dxi4wb638ujep.cloudfront.net/1/k/j/q/jqeiblnbhis.png','k/j/q/jqeiblnbhis',1186,1186,'A naughty little prankster. Could his small frame be host to some hidden power?','Personalidad falsa Es muy travieso. Su pequeño cuerpo esconde una fuerza impresionante.','[]'::jsonb,'[]'::jsonb,'{"form": "Normal form", "Kick": 63, "Body": 71, "Control": 64, "Guard": 64, "Speed": 65, "Stamina": 61, "Guts": 70}'::jsonb,false),
 ('kogure-yuuya--ie2--raimon','kogure-yuuya','Scott Banyan','IE2','IE','Raimon','Raimon','DF','wood',87,'Top Player','S','Xtreme (balancing)',74,82,82,90,90,82,'https://static.wikia.nocookie.net/inazuma-eleven/images/6/67/%28IJ%29_Kogure_3D_%281%29.png/revision/latest?cb=20191219224720',null,null,5925,null,'Personalidad falsa Es muy travieso. Su pequeño cuerpo esconde una fuerza impresionante.','[]'::jsonb,'[]'::jsonb,'{"form": "Normal form", "Kick": 63, "Body": 71, "Control": 64, "Guard": 64, "Speed": 65, "Stamina": 61, "Guts": 70}'::jsonb,true),
 ('kogure-yuuya--go1--golden-oldies','kogure-yuuya','Scott Banyan','GO1','GO','Golden Oldies','Golden Oldies','DF','wood',87,'Top Player','S','Xtreme (balancing)',71,80,81,90,90,81,'https://dxi4wb638ujep.cloudfront.net/1/k/p/a/paue1pxxxym.png','k/p/a/paue1pxxxym',2765,2765,'A former Inazuma National defender. Now works for a top business.','Un bromista empedernido. Parece poca cosa, pero tiene mucha fuerza.','[]'::jsonb,'[]'::jsonb,'{"form": "Young form", "Kick": 74, "Dribbling": 106, "Technique": 96, "Block": 123, "Speed": 120, "Stamina": 100, "Catch": 65}'::jsonb,true),
@@ -10314,7 +10314,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('saginuma-osamu--ie3--neo-japan','saginuma-osamu','Dvalin','IE3','IE','Neo Japan','Neo Japan','MF','fire',84,'Top Player','S','Strikers 2013',91,82,83,82,82,81,'https://dxi4wb638ujep.cloudfront.net/1/k/c/d/cdjl8bipg5s.png','k/c/d/cdjl8bipg5s',1817,1817,'Raimon first met this Gungnir-toting football fanatic in Kyoto back in his Dvalin days.','Futbolista que presume de su técnica Lanza de Odín. Antes se hacía llamar Dvalin.','[]'::jsonb,'[]'::jsonb,'{"form": "Normal form", "Kick": 75, "Body": 68, "Control": 61, "Guard": 63, "Speed": 59, "Stamina": 57, "Guts": 48}'::jsonb,true),
 ('saginuma-osamu--go2--adult','saginuma-osamu','Dvalin','GO2','GO','Adult','Adult','MF','fire',84,'Top Player','S','Strikers 2013',92,84,83,79,79,84,'https://dxi4wb638ujep.cloudfront.net/1/k/c/d/cdjl8bipg5s.png','k/c/d/cdjl8bipg5s',1817,5913,'Raimon first met this Gungnir-toting football fanatic in Kyoto back in his Dvalin days.','Su pasión por el fútbol viene de antiguo, y no parece tener fin.','[]'::jsonb,'[]'::jsonb,'{"form": "Adult form", "Kick": 135, "Dribbling": 144, "Technique": 120, "Block": 72, "Speed": 83, "Stamina": 107, "Catch": 128}'::jsonb,true),
 ('ejima-kazuya--go1--base','ejima-kazuya','Dwight Whittaker','GO1','GO','base','Eternal Light','DF','earth',84,'Top Player','S','Strikers 2013',78,77,83,70,90,81,'https://dxi4wb638ujep.cloudfront.net/1/k/8/e/8efgqffq7ve.png','k/8/e/8efgqffq7ve',2697,2697,'An incredibly strong fellow who can lift a 200 kilogram barbell.','De fuerza descomunal, puede levantar hasta una pesa de doscientos kilos.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 77, "Dribbling": 72, "Technique": 87, "Block": 131, "Speed": 89, "Stamina": 122, "Catch": 67}'::jsonb,false),
-('kirino-ranmaru--go2--chrono-storm','kirino-ranmaru','Gabriel Garcia','GO2','GO','Chrono Storm','Chrono Storm','DF','wood',84,'Top Player','S','Strikers 2013',72,90,81,84,84,72,'https://dxi4wb638ujep.cloudfront.net/1/k/o/c/ocnixfk7ubu.png','k/o/c/ocnixfk7ubu',3899,3899,'Gabi and Joan of Arc''s miximaxed form is a courageous defender.','El Miximax Trans de Gabi y Juana de Arco ofrece una defensa excepcional.','[{"type": "keshin", "name": "Standard-Bearer Brynhildr", "name_es": "Valquiria abanderada Brunilda", "armed": true}, {"type": "mixi", "name": "Jeanne d''Arc"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 66, "Dribbling": 90, "Technique": 116, "Block": 141, "Speed": 119, "Stamina": 88, "Catch": 50}'::jsonb,true),
+('kirino-ranmaru--go2--chrono-storm','kirino-ranmaru','Gabriel Garcia','GO2','GO','Chrono Storm','Chrono Storm','DF','wood',84,'Top Player','S','Strikers 2013',72,90,81,84,84,72,'https://dxi4wb638ujep.cloudfront.net/1/k/o/c/ocnixfk7ubu.png','k/o/c/ocnixfk7ubu',3899,3899,'Gabi and Joan of Arc''s miximaxed form is a courageous defender.','El Miximax Trans de Gabi y Juana de Arco ofrece una defensa excepcional.','[{"type": "keshin", "name": "Standard-Bearer Brynhildr", "name_es": "Valquiria abanderada Brunilda", "armed": true}, {"type": "mixi", "name": "Joan of Arc"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 66, "Dribbling": 90, "Technique": 116, "Block": 141, "Speed": 119, "Stamina": 88, "Catch": 50}'::jsonb,true),
 ('kanime-iderou--ie2--base','kanime-iderou','Ganymede','IE2','IE','base','Gemini Storm','DF','earth',84,'Top Player','S','Strikers 2013',81,74,82,82,88,79,'https://dxi4wb638ujep.cloudfront.net/1/k/r/r/rr4mb7zwk-m.png','k/r/r/rr4mb7zwk-m',1062,1062,'Claims he used to be devastatingly handsome in his youth, but no one believes him.','Va diciendo que antes era un adonis, pero nadie lo cree.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 64, "Body": 68, "Control": 67, "Guard": 58, "Speed": 69, "Stamina": 68, "Guts": 56}'::jsonb,false),
 ('gori-shingo--ie1--base','gori-shingo','Gary Lancaster','IE1','IE','base','Wild','FW','earth',84,'Top Player','A','stats del juego',88,79,82,80,84,86,'https://dxi4wb638ujep.cloudfront.net/1/k/5/l/5lywygjxtsc.png','k/5/l/5lywygjxtsc',65,65,'Beats the ball into the goal with his ape-like size and strength.','Emplea su severo semblante y sólido cuerpo para invadir el área rival.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 78, "Body": 66, "Control": 49, "Guard": 64, "Speed": 54, "Stamina": 52, "Guts": 67}'::jsonb,false),
 ('jean-baker--ie3--base','jean-baker','Gene Whalon','IE3','IE','base','Big Waves','GK','air',84,'Top Player','A','stats del juego',79,68,79,77,85,85,'https://dxi4wb638ujep.cloudfront.net/1/k/p/u/purwl1flw1m.png','k/p/u/purwl1flw1m',1780,1780,'Australia''s star keeper, who uses the power of water to block the shots that come his way.','Portero estrella de Australia. Utiliza la fuerza del Pacífico para detener cualquier tiro.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 58, "Body": 69, "Control": 49, "Guard": 76, "Speed": 57, "Stamina": 48, "Guts": 73}'::jsonb,false),
@@ -10336,7 +10336,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('dhanna--go2--base','dhanna','Sierra','GO2','GO','base','Protocol Omega 3.0','MF','wood',84,'Top Player','A','stats del juego',82,88,88,82,73,82,'https://dxi4wb638ujep.cloudfront.net/1/k/i/q/iqqmzzkjv9m.png','k/i/q/iqqmzzkjv9m',3521,3521,'A midfielder from Protocol Omega 3.0 who clearly admires Gamma.','La característica más llamativa de esta centrocampista es su elegancia.','[]'::jsonb,'[]'::jsonb,'{"form": "Normal form", "Kick": 114, "Dribbling": 180, "Technique": 113, "Block": 90, "Speed": 116, "Stamina": 131, "Catch": 100}'::jsonb,false),
 ('dhanna--go2--mixi-max-zanark','dhanna','Sierra','GO2','GO','Mixi Max (Zanark)','Mixi Max','MF','wood',84,'Top Player','A','stats del juego',82,88,88,82,73,82,'https://dxi4wb638ujep.cloudfront.net/1/k/t/x/txeokixxpos.png','k/t/x/txeokixxpos',3918,3918,'Miximaxed with Zanark, she plays as coolly as ever.','Tras el Miximax con Zanark, juega incluso con más calma que antes.','[{"type": "mixi", "name": "Zanark"}]'::jsonb,'[]'::jsonb,'{"form": "Normal form", "Kick": 114, "Dribbling": 180, "Technique": 113, "Block": 90, "Speed": 116, "Stamina": 131, "Catch": 100}'::jsonb,true),
 ('wally--go2--base','wally','Smarty','GO2','GO','base','The Sherwinds','DF','wood',84,'Top Player','S','Strikers 2013',81,78,82,69,91,82,'https://dxi4wb638ujep.cloudfront.net/1/k/n/y/nypvqnwdj7k.png','k/n/y/nypvqnwdj7k',3491,3491,'This dupli of Fei''s is like a human wall with a deep, penetrating gaze.','Este duplicado de Fei es como un muro de mirada penetrante.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 92, "Dribbling": 79, "Technique": 92, "Block": 144, "Speed": 55, "Stamina": 112, "Catch": 109}'::jsonb,false),
-('torb--go2--chrono-storm','torb','Sor','GO2','GO','Chrono Storm','Chrono Storm','DF','air',84,'Top Player','A','stats del juego',79,75,84,83,86,84,'https://dxi4wb638ujep.cloudfront.net/1/k/n/x/nxku-q0rr3k.png','k/n/x/nxku-q0rr3k',3902,3902,'Sor and Pa''s miximaxed form is defence from the skies!','El Miximax trans de Sor y su padre surca los cielos en busca del balón.','[{"type": "keshin", "name": "Prehistoric Chieftain Jagwarrior", "name_es": "Guerrero prehistórico Jaguar", "armed": true}, {"type": "mixi", "name": null}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 100, "Dribbling": 100, "Technique": 102, "Block": 149, "Speed": 123, "Stamina": 114, "Catch": 116}'::jsonb,true),
+('torb--go2--chrono-storm','torb','Sor','GO2','GO','Chrono Storm','Chrono Storm','DF','air',84,'Top Player','A','stats del juego',79,75,84,83,86,84,'https://dxi4wb638ujep.cloudfront.net/1/k/n/x/nxku-q0rr3k.png','k/n/x/nxku-q0rr3k',3902,3902,'Sor and Pa''s miximaxed form is defence from the skies!','El Miximax trans de Sor y su padre surca los cielos en busca del balón.','[{"type": "keshin", "name": "Prehistoric Chieftain Jagwarrior", "name_es": "Guerrero prehistórico Jaguar", "armed": true}, {"type": "mixi", "name": "Pa"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 100, "Dribbling": 100, "Technique": 102, "Block": 149, "Speed": 123, "Stamina": 114, "Catch": 116}'::jsonb,true),
 ('takanashi-shinobu--ie2--base','takanashi-shinobu','Sue Sparrow','IE2','IE','base','Royal Academy Redux','MF','air',84,'Top Player','S','Xtreme (balancing)',80,89,84,81,79,71,'https://dxi4wb638ujep.cloudfront.net/1/k/n/x/nxy28x48r90.png','k/n/x/nxy28x48r90',1200,1200,'Royal Academy Redux''s genius midfielder. Her game-changing techniques made her a regular.','Centrocampista extraordinaria que juega en la Royal Academy Redux.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 57, "Body": 63, "Control": 64, "Guard": 54, "Speed": 62, "Stamina": 59, "Guts": 60}'::jsonb,false),
 ('mukata-tomo--ie1--base','mukata-tomo','Thomas Murdock','IE1','IE','base','Kirkwood','FW','air',84,'Top Player','A','stats del juego',84,84,84,83,81,82,'https://dxi4wb638ujep.cloudfront.net/1/k/h/0/h0e-xiwkbpe.png','k/h/0/h0e-xiwkbpe',168,168,'Middle brother of the trio. Friendly and approachable, the team''s go-to for venting.','Hermano mediano de los trillizos. Es cordial y el equipo confía en él.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 68, "Body": 70, "Control": 65, "Guard": 60, "Speed": 64, "Stamina": 62, "Guts": 61}'::jsonb,false),
 ('shourinji-ayumu--ie2--dark-emperors','shourinji-ayumu','Tim Saunders','IE2','IE','Dark Emperors','Dark Emperors','MF','wood',84,'Top Player','S','Xtreme (balancing)',83,83,91,82,91,83,'https://dxi4wb638ujep.cloudfront.net/1/k/i/b/ibla8bc7slk.png','k/i/b/ibla8bc7slk',1269,1269,'The power of the Alius crystal has taken his shooting skill to a whole new level.','Gracias a la Piedra Alius, ha mejorado su juego de pies.','[]'::jsonb,'[]'::jsonb,'{"form": "Dark Emperors form", "Kick": 80, "Body": 74, "Control": 93, "Guard": 93, "Speed": 69, "Stamina": 93, "Guts": 70}'::jsonb,true),
@@ -11853,7 +11853,6 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('power--ie3--base','power','Dee Tarrant','IE3','IE','base','Unaffiliated','GK','fire',63,'Common Player','C','stats del juego',64,65,50,48,66,66,'https://dxi4wb638ujep.cloudfront.net/1/k/r/0/r0yp66dqk18.png','k/r/0/r0yp66dqk18',2281,2281,'He''s a classical realist who believes that peace is preserved only by might.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 60, "Body": 60, "Control": 60, "Guard": 64, "Speed": 41, "Stamina": 41, "Guts": 59}'::jsonb,false),
 ('fukuro-tetsuya--go1--base','fukuro-tetsuya','Ed Ison','GO1','GO','base','Prodigy Grammar','MF','wood',63,'Common Player','B','stats del juego',67,59,73,64,61,58,'https://dxi4wb638ujep.cloudfront.net/1/k/o/y/oydh2c6lvy0.png','k/o/y/oydh2c6lvy0',2495,2495,'Attends art classes after school. His creative work draws a lot of attention.','Después del instituto va a clases de pintura, donde comienza a destacar.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 98, "Dribbling": 116, "Technique": 73, "Block": 95, "Speed": 107, "Stamina": 130, "Catch": 54}'::jsonb,false),
 ('nafshi--go3--base','nafshi','Edana Naves','GO3','GO','base','Unaffiliated','FW','air',63,'Common Player','C','stats del juego',65,58,65,61,50,50,'https://dxi4wb638ujep.cloudfront.net/1/k/q/r/qrueg4g-v2e.png','k/q/r/qrueg4g-v2e',4255,4255,'Won the 286th Annual Hide-and-Seek Championship after hiding for ten straight days.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 146, "Dribbling": 107, "Technique": 110, "Block": 83, "Speed": 116, "Stamina": 119, "Catch": 64}'::jsonb,false),
-('edomaru--go2--base','edomaru','Eoin Geary','GO2','GO','base','Unaffiliated','FW','air',63,'Common Player','C','stats del juego',66,60,54,67,53,59,'https://dxi4wb638ujep.cloudfront.net/1/k/s/-/s-wuktzx658.png','k/s/-/s-wuktzx658',3875,3875,'This lover of football and sushi has a spicy hint of wasabi to his playing.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 146, "Dribbling": 107, "Technique": 109, "Block": 90, "Speed": 133, "Stamina": 88, "Catch": 85}'::jsonb,false),
 ('atari--go1--base','atari','Esau Tariq','GO1','GO','base','Unaffiliated','MF','wood',63,'Common Player','C','stats del juego',70,55,70,72,56,56,'https://dxi4wb638ujep.cloudfront.net/1/k/h/2/h2rel7rda9k.png','k/h/2/h2rel7rda9k',3348,3348,'Plays in a unique style passed down in his family. A big fan of the paranormal.','Su familia lleva el fútbol en las venas, fan de lo sobrenatural.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 121, "Dribbling": 94, "Technique": 87, "Block": 82, "Speed": 150, "Stamina": 118, "Catch": 54}'::jsonb,false),
 ('kim-eun-young--ie3--base','kim-eun-young','Eunyeong Kim','IE3','IE','base','Fire Dragon','MF','earth',63,'Common Player','B','stats del juego',61,60,72,59,78,75,'https://dxi4wb638ujep.cloudfront.net/1/k/6/h/6h7p0sxub5u.png','k/6/h/6h7p0sxub5u',1827,1827,'This computer prodigy''s only in middle school, but has already won medals as a pro gamer.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 48, "Body": 76, "Control": 48, "Guard": 77, "Speed": 46, "Stamina": 40, "Guts": 45}'::jsonb,false),
 ('gin-ag--go3--base','gin-ag','Ezra Gin','GO3','GO','base','Unaffiliated','GK','fire',63,'Common Player','C','stats del juego',57,55,62,56,56,66,'https://dxi4wb638ujep.cloudfront.net/1/k/1/v/1vdhtbgdhde.png','k/1/v/1vdhtbgdhde',4345,4345,'A mysterious alien who impersonated Aleksei Karimov to compete in FFIV2.','Alien que participaba en el FFI V2. Sustituía a Aleksei Karimov.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 94, "Dribbling": 100, "Technique": 104, "Block": 102, "Speed": 107, "Stamina": 109, "Catch": 141}'::jsonb,false),
@@ -12002,6 +12001,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('sarashina--go1--base','sarashina','Eira Dynamic','GO1','GO','base','Unaffiliated','GK','fire',62,'Common Player','C','stats del juego',46,58,62,50,53,65,'https://dxi4wb638ujep.cloudfront.net/1/k/r/-/r-gyvl79ore.png','k/r/-/r-gyvl79ore',3031,3031,'A fluke champion at ski jumping, who won the first event she took part in.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 67, "Dribbling": 88, "Technique": 125, "Block": 96, "Speed": 95, "Stamina": 112, "Catch": 136}'::jsonb,false),
 ('gouishi-senma--go1--base','gouishi-senma','Eljas Viisi','GO1','GO','base','Dragon Link','DF','air',62,'Common Player','B','stats del juego',61,65,61,63,61,68,'https://dxi4wb638ujep.cloudfront.net/1/k/u/s/usiatb_pbqu.png','k/u/s/usiatb_pbqu',2680,2680,'His headbutt is unrivalled. Naturally, he''s also a master at flying headers.','Sus remates de cabeza no tienen rival, gracias a la dureza de su cráneo.','[{"type": "keshin", "name": "Watchtower Sentinel White Rook", "name_es": "Centinela vigía, Torre blanca", "armed": false}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 85, "Dribbling": 91, "Technique": 128, "Block": 102, "Speed": 110, "Stamina": 98, "Catch": 91}'::jsonb,false),
 ('emosuke--go2--base','emosuke','Emosuke Rokudo','GO2','GO','base','Unaffiliated','FW','wood',62,'Common Player','C','stats del juego',65,59,64,57,51,53,'https://dxi4wb638ujep.cloudfront.net/1/k/_/f/_fepc8yjrwu.png','k/_/f/_fepc8yjrwu',3804,3804,'Has individual taste in clothes. Loves to recite poetry in his latest outfits.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 141, "Dribbling": 100, "Technique": 115, "Block": 85, "Speed": 107, "Stamina": 112, "Catch": 70}'::jsonb,false),
+('edomaru--go2--base','edomaru','Eoin Geary','GO2','GO','base','Unaffiliated','FW','air',62,'Common Player','C','stats del juego',65,59,53,66,52,58,'https://dxi4wb638ujep.cloudfront.net/1/k/s/-/s-wuktzx658.png','k/s/-/s-wuktzx658',3875,3875,'This lover of football and sushi has a spicy hint of wasabi to his playing.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 146, "Dribbling": 107, "Technique": 109, "Block": 90, "Speed": 133, "Stamina": 88, "Catch": 85}'::jsonb,false),
 ('numaguchi--ie1--base','numaguchi','Erhard Blower','IE1','IE','base','Unaffiliated','FW','air',62,'Common Player','C','stats del juego',61,65,61,60,61,59,'https://dxi4wb638ujep.cloudfront.net/1/k/v/m/vmt5kqxcqps.png','k/v/m/vmt5kqxcqps',870,870,'A qigong master who can knock anything over with a mere touch.','Es un experto en chi-kung. Todo lo que toca sale volando.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 54, "Body": 60, "Control": 62, "Guard": 55, "Speed": 54, "Stamina": 56, "Guts": 52}'::jsonb,false),
 ('taira--ie1--base','taira','Evan Yielding','IE1','IE','base','Unaffiliated','FW','wood',62,'Common Player','C','stats del juego',61,59,60,72,63,65,'https://dxi4wb638ujep.cloudfront.net/1/k/f/v/fv7cqscl4ke.png','k/f/v/fv7cqscl4ke',338,338,'He hates fighting and prefers to cheer from the sidelines.','No le gustan las peleas. Apoya a su equipo en la sombra.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 53, "Body": 46, "Control": 50, "Guard": 60, "Speed": 76, "Stamina": 65, "Guts": 64}'::jsonb,false),
 ('ikari-gouriki--go1--base','ikari-gouriki','Ferdinand Delafünfe','GO1','GO','base','Dragon Link','MF','fire',62,'Common Player','B','stats del juego',70,59,55,64,60,60,'https://dxi4wb638ujep.cloudfront.net/1/k/9/0/90dsdg-3g_m.png','k/9/0/90dsdg-3g_m',2683,2683,'Somewhat excitable, he can get worked up over the smallest things.','Inquieto e impetuoso, se irrita con el menor incidente a su alrededor.','[{"type": "keshin", "name": "Armoured Cavalry White Knight", "name_es": "Caballo blanco", "armed": false}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 112, "Dribbling": 95, "Technique": 95, "Block": 91, "Speed": 108, "Stamina": 84, "Catch": 56}'::jsonb,false),
@@ -12042,7 +12042,6 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('bach--ie2--base','bach','Lou Fauntleroy','IE2','IE','base','Unaffiliated','MF','earth',62,'Common Player','C','stats del juego',56,64,64,65,58,64,'https://dxi4wb638ujep.cloudfront.net/1/k/a/a/aak7yncxlbs.png','k/a/a/aak7yncxlbs',1548,1548,'He wears a curly wig and pretends he''s a European aristocrat.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 57, "Body": 67, "Control": 68, "Guard": 61, "Speed": 72, "Stamina": 68, "Guts": 71}'::jsonb,false),
 ('yuuky--ie2--base','yuuky','Mac Gabbon','IE2','IE','base','Unaffiliated','FW','wood',62,'Common Player','C','stats del juego',68,60,54,53,51,52,'https://dxi4wb638ujep.cloudfront.net/1/k/-/f/-f12vr9xpoc.png','k/-/f/-f12vr9xpoc',1600,1600,'When he''s not playing football, he''s the world student backgammon champion.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 79, "Body": 52, "Control": 61, "Guard": 52, "Speed": 54, "Stamina": 63, "Guts": 58}'::jsonb,false),
 ('kumagai--ie2--base','kumagai','Mac Robat','IE2','IE','base','Unaffiliated','FW','wood',62,'Common Player','C','stats del juego',61,57,68,66,66,66,'https://dxi4wb638ujep.cloudfront.net/1/k/t/g/tgwwskjuagc.png','k/t/g/tgwwskjuagc',1506,1506,'An aspiring acrobat who trains to make his body more supple.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 61, "Body": 76, "Control": 58, "Guard": 71, "Speed": 70, "Stamina": 78, "Guts": 65}'::jsonb,false),
-('mai--go2--base','mai','Maia','GO2','GO','base','Sub Character','DF','wood',62,'Common Player','C','stats del juego',48,60,50,65,67,59,'https://dxi4wb638ujep.cloudfront.net/1/k/m/d/md4ccde2eus.png','k/m/d/md4ccde2eus',2821,2821,'Tezcat''s gentle sister, who was cast off into the sea to save her village.','La hermana de Tezcat. Su pueblo la envió sola al mar para salvarse.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 57, "Dribbling": 81, "Technique": 131, "Block": 149, "Speed": 123, "Stamina": 78, "Catch": 83}'::jsonb,false),
 ('martha--ie3--base','martha','Melody Toontune','IE3','IE','base','Unaffiliated','DF','wood',62,'Common Player','C','stats del juego',62,61,66,61,60,63,'https://dxi4wb638ujep.cloudfront.net/1/k/q/a/qayjgjxjx-u.png','k/q/a/qayjgjxjx-u',2263,2263,'She hopes for success as a singer, singing theme tunes for cartoons.','Espera triunfar en el mundo de la música cantando temas de dibujos animados.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 49, "Body": 51, "Control": 48, "Guard": 48, "Speed": 50, "Stamina": 58, "Guts": 57}'::jsonb,false),
 ('menpukku--go3--base','menpukku','Men Pukk','GO3','GO','base','Unaffiliated','FW','earth',62,'Common Player','C','stats del juego',64,53,65,66,47,53,'https://dxi4wb638ujep.cloudfront.net/1/k/r/f/rfuccl0d69s.png','k/r/f/rfuccl0d69s',4237,4237,'Poker-faced dealer at one of Newcrest''s underground casinos.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 138, "Dribbling": 83, "Technique": 114, "Block": 71, "Speed": 136, "Stamina": 121, "Catch": 77}'::jsonb,false),
 ('tamada-go--go1--base','tamada-go','Mickey Schmitt','GO1','GO','base','Unaffiliated','DF','air',62,'Common Player','C','stats del juego',56,50,65,58,64,53,'https://dxi4wb638ujep.cloudfront.net/1/k/a/x/axguscscjks.png','k/a/x/axguscscjks',3352,3352,'A tough, fearless boy who won''t hesitate to go for a diving header.','Se lanza por el gol, Literalmente. Los marca tirándose en plancha.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 90, "Dribbling": 99, "Technique": 90, "Block": 137, "Speed": 115, "Stamina": 137, "Catch": 57}'::jsonb,false),
@@ -12075,9 +12074,9 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('yabuki--ie2--base','yabuki','Ralph Vance','IE2','IE','base','Unaffiliated','FW','fire',62,'Common Player','C','stats del juego',60,66,65,62,52,56,'https://dxi4wb638ujep.cloudfront.net/1/k/v/y/vyfcew2uxee.png','k/v/y/vyfcew2uxee',1402,1402,'A tough nut with a hard exterior, but he''s a big softy underneath.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 61, "Body": 69, "Control": 74, "Guard": 54, "Speed": 65, "Stamina": 66, "Guts": 63}'::jsonb,false),
 ('miyachi--ie1--base','miyachi','Ringo Spinning','IE1','IE','base','Unaffiliated','GK','fire',62,'Common Player','C','stats del juego',61,55,61,56,62,62,'https://dxi4wb638ujep.cloudfront.net/1/k/j/o/jogeqbk_lnu.png','k/j/o/jogeqbk_lnu',966,966,'Buys any fabric he likes the look of for making clothes with.','Cuando ve una tela que le gusta, se la compra. Tiene el cuarto lleno.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 60, "Body": 62, "Control": 44, "Guard": 65, "Speed": 52, "Stamina": 62, "Guts": 60}'::jsonb,false),
 ('amakawa--ie1--base','amakawa','Rob Zervatory','IE1','IE','base','Unaffiliated','FW','wood',62,'Common Player','C','stats del juego',64,60,59,62,59,57,'https://dxi4wb638ujep.cloudfront.net/1/k/6/w/6weziqqfuje.png','k/6/w/6weziqqfuje',903,903,'An amateur astrologer who has a planetarium in his house.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 68, "Body": 52, "Control": 58, "Guard": 57, "Speed": 62, "Stamina": 63, "Guts": 52}'::jsonb,false),
-('franz-scout-character--go2--base','franz-scout-character','Roost Dubois','GO2','GO','base','Unaffiliated','FW','earth',62,'Common Player','C','stats del juego',68,50,68,52,47,49,'https://dxi4wb638ujep.cloudfront.net/1/k/-/1/-1g91djusac.png','k/-/1/-1g91djusac',3821,3821,'For some reason, small birds love him and always perch on his shoulders.','Por algún motivo, los pájaros lo adoran y se posan en sus hombros.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 157, "Dribbling": 102, "Technique": 62, "Block": 50, "Speed": 90, "Stamina": 123, "Catch": 51}'::jsonb,false);
+('franz-scout-character--go2--base','franz-scout-character','Roost Dubois','GO2','GO','base','Unaffiliated','FW','earth',62,'Common Player','C','stats del juego',68,50,68,52,47,49,'https://dxi4wb638ujep.cloudfront.net/1/k/-/1/-1g91djusac.png','k/-/1/-1g91djusac',3821,3821,'For some reason, small birds love him and always perch on his shoulders.','Por algún motivo, los pájaros lo adoran y se posan en sus hombros.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 157, "Dribbling": 102, "Technique": 62, "Block": 50, "Speed": 90, "Stamina": 123, "Catch": 51}'::jsonb,false),
+('tora--go1--base','tora','Rory Tigre','GO1','GO','base','Unaffiliated','FW','fire',62,'Common Player','C','stats del juego',62,62,63,62,61,51,'https://dxi4wb638ujep.cloudfront.net/1/k/h/4/h4ylx5qcnp0.png','k/h/4/h4ylx5qcnp0',2970,2970,'His sleek figure and soft movements make him reminiscent of a tiger.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 105, "Dribbling": 132, "Technique": 100, "Block": 121, "Speed": 129, "Stamina": 117, "Catch": 55}'::jsonb,false);
 insert into public.cards (id,character_id,name,game,saga,version,team,position,element,ovr,category,tier,source,shooting,control,physical,speed,defense,goalkeeping,image_url,zukan_id,zukan_no,no,description,description_es,specials,extra_teams,raw_stats,is_version) values
-('tora--go1--base','tora','Rory Tigre','GO1','GO','base','Unaffiliated','FW','fire',62,'Common Player','C','stats del juego',62,62,63,62,61,51,'https://dxi4wb638ujep.cloudfront.net/1/k/h/4/h4ylx5qcnp0.png','k/h/4/h4ylx5qcnp0',2970,2970,'His sleek figure and soft movements make him reminiscent of a tiger.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 105, "Dribbling": 132, "Technique": 100, "Block": 121, "Speed": 129, "Stamina": 117, "Catch": 55}'::jsonb,false),
 ('dorian--go2--base','dorian','Ruff LeGrand','GO2','GO','base','Unaffiliated','GK','wood',62,'Common Player','C','stats del juego',46,48,63,45,56,64,'https://dxi4wb638ujep.cloudfront.net/1/k/n/m/nm9gzpaoslc.png','k/n/m/nm9gzpaoslc',3815,3815,'An infamous ruffian who acts like he owns the place wherever he goes.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 66, "Dribbling": 90, "Technique": 94, "Block": 109, "Speed": 85, "Stamina": 128, "Catch": 173}'::jsonb,false),
 ('sangou-baku--ie1--base','sangou-baku','Samuel Buster','IE1','IE','base','Brainwashing','MF','fire',62,'Common Player','B','stats del juego',64,62,60,61,61,60,'https://dxi4wb638ujep.cloudfront.net/1/k/m/p/mpniz44whmc.png','k/m/p/mpniz44whmc',89,89,'Plays aggressively close to the edge since being brainwashed.','﻿Se ha vuelto un bruto cuyo juego está al limite de la legalidad.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 55, "Body": 46, "Control": 52, "Guard": 49, "Speed": 48, "Stamina": 50, "Guts": 49}'::jsonb,false),
 ('tomooka-naruto--ie1--base','tomooka-naruto','Saul Tunk','IE1','IE','base','Umbrella MS','MF','fire',62,'Common Player','B','stats del juego',64,60,60,63,66,64,'https://dxi4wb638ujep.cloudfront.net/1/k/l/1/l1i_6ibqq7k.png','k/l/1/l1i_6ibqq7k',236,236,'Not a team player, but good at smoothing over ruffled feathers.','Le cuesta mucho jugar en equipo, pero sabe poner paz tras una pelea.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 55, "Body": 53, "Control": 44, "Guard": 62, "Speed": 55, "Stamina": 47, "Guts": 54}'::jsonb,false),
@@ -12190,6 +12189,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('liu-xuande--go2--base','liu-xuande','Liu Bei','GO2','GO','base','Sub Character','GK','earth',61,'Common Player','C','stats del juego',55,60,57,44,58,63,'https://dxi4wb638ujep.cloudfront.net/1/k/3/w/3wzg1j_krrk.png','k/3/w/3wzg1j_krrk',3724,3724,'Hero of the Three Kingdoms. A hardy fellow who finishes what he''s started.','Este héroe chino dirige con fuerte convicción y apenas vacila.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 96, "Dribbling": 95, "Technique": 144, "Block": 116, "Speed": 78, "Stamina": 104, "Catch": 152}'::jsonb,false),
 ('jouki--ie3--base','jouki','Lyle Covet','IE3','IE','base','Unaffiliated','FW','fire',61,'Common Player','C','stats del juego',66,46,65,59,45,46,'https://dxi4wb638ujep.cloudfront.net/1/k/f/t/ft2igu3-sce.png','k/f/t/ft2igu3-sce',2403,2403,'He dreams of amassing a hoard of treasure on an island somewhere.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 80, "Body": 77, "Control": 42, "Guard": 38, "Speed": 58, "Stamina": 50, "Guts": 57}'::jsonb,false),
 ('mag--go3--base','mag','Mag Nessium','GO3','GO','base','Unaffiliated','FW','earth',61,'Common Player','C','stats del juego',63,56,65,56,58,51,'https://dxi4wb638ujep.cloudfront.net/1/k/9/b/9bqobt2rhvc.png','k/9/b/9bqobt2rhvc',4276,4276,'A mercurial firebrand who flips from rage to calm with no warning at all.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 141, "Dribbling": 121, "Technique": 95, "Block": 112, "Speed": 109, "Stamina": 128, "Catch": 72}'::jsonb,false),
+('mai--go2--base','mai','Maia','GO2','GO','base','Sub Character','DF','wood',61,'Common Player','C','stats del juego',47,59,49,64,66,58,'https://dxi4wb638ujep.cloudfront.net/1/k/m/d/md4ccde2eus.png','k/m/d/md4ccde2eus',2821,2821,'Tezcat''s gentle sister, who was cast off into the sea to save her village.','La hermana de Tezcat. Su pueblo la envió sola al mar para salvarse.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 57, "Dribbling": 81, "Technique": 131, "Block": 149, "Speed": 123, "Stamina": 78, "Catch": 83}'::jsonb,false),
 ('oosaki--ie1--base','oosaki','Max Hurt','IE1','IE','base','Unaffiliated','GK','fire',61,'Common Player','C','stats del juego',55,57,61,65,60,61,'https://dxi4wb638ujep.cloudfront.net/1/k/r/t/rty-fcsjgs0.png','k/r/t/rty-fcsjgs0',1012,1012,'Known for using particularly tough training to improve his stamina.','Es famoso porque está siguiendo un entrenamiento espartano.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 45, "Body": 59, "Control": 52, "Guard": 60, "Speed": 69, "Stamina": 65, "Guts": 63}'::jsonb,false),
 ('idehara--go1--base','idehara','Mel O''Drahma','GO1','GO','base','Unaffiliated','FW','air',61,'Common Player','C','stats del juego',64,59,52,64,52,57,'https://dxi4wb638ujep.cloudfront.net/1/k/y/t/yt9v5pynwue.png','k/y/t/yt9v5pynwue',3085,3085,'An overly sensitive girl who seems to always get the wrong end of the stick.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 118, "Dribbling": 93, "Technique": 125, "Block": 90, "Speed": 137, "Stamina": 92, "Catch": 63}'::jsonb,false),
 ('erise--go1--base','erise','Mia Tior','GO1','GO','base','Unaffiliated','GK','wood',61,'Common Player','C','stats del juego',53,47,64,58,47,65,'https://dxi4wb638ujep.cloudfront.net/1/k/7/i/7ifxd96kntu.png','k/7/i/7ifxd96kntu',3293,3293,'A keen stargazer, she especially likes spotting comets and asteroids.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 83, "Dribbling": 78, "Technique": 98, "Block": 79, "Speed": 114, "Stamina": 125, "Catch": 141}'::jsonb,false),
@@ -12708,6 +12708,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('takagi--ie1--base','takagi','Tim Eisback','IE1','IE','base','Unaffiliated','DF','wood',58,'Common Player','C','stats del juego',55,57,57,64,57,57,'https://dxi4wb638ujep.cloudfront.net/1/k/m/m/mmuzn1ag5qc.png','k/m/m/mmuzn1ag5qc',845,845,'Likes eating cold things so much that he nearly froze his belly once.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 48, "Body": 58, "Control": 57, "Guard": 57, "Speed": 69, "Stamina": 60, "Guts": 58}'::jsonb,false),
 ('alumi--ie1--base','alumi','Tim Toppel','IE1','IE','base','Unaffiliated','GK','wood',58,'Common Player','C','stats del juego',61,59,60,59,57,58,'https://dxi4wb638ujep.cloudfront.net/1/k/g/e/gekut016amm.png','k/g/e/gekut016amm',281,281,'He may be small and light, but he can upset even the biggest players.','Aunque es muy ligero, no se inmuta ante la embestida de tiarrones.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 69, "Body": 65, "Control": 64, "Guard": 60, "Speed": 64, "Stamina": 69, "Guts": 61}'::jsonb,false),
 ('kinoshita-toukichirou--go2--base','kinoshita-toukichirou','Tokichiro Kinoshita','GO2','GO','base','Sub Character','DF','fire',58,'Common Player','C','stats del juego',44,58,56,49,62,59,'https://dxi4wb638ujep.cloudfront.net/1/k/5/3/53h-8_dlfd0.png','k/5/3/53h-8_dlfd0',3717,3717,'Admirer of Nobunaga Oda. He later succeeds Oda as Hideyoshi Toyotomi.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 64, "Dribbling": 98, "Technique": 136, "Block": 149, "Speed": 100, "Stamina": 102, "Catch": 107}'::jsonb,false),
+('dancer--go1--base','dancer','Tommy Wobbal','GO1','GO','base','Unaffiliated','GK','earth',58,'Common Player','C','stats del juego',42,50,62,58,47,60,'https://dxi4wb638ujep.cloudfront.net/1/k/x/v/xvfuk2gukym.png','k/x/v/xvfuk2gukym',2870,2870,'Teaches belly dancing after school, though he''d never tell his classmates.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 64, "Dribbling": 99, "Technique": 97, "Block": 84, "Speed": 120, "Stamina": 132, "Catch": 115}'::jsonb,false),
 ('sanzou--ie3--base','sanzou','Tony Sanzang','IE3','IE','base','Unaffiliated','GK','wood',58,'Common Player','C','stats del juego',55,57,49,54,62,60,'https://dxi4wb638ujep.cloudfront.net/1/k/a/i/aimyuxwkhmc.png','k/a/i/aimyuxwkhmc',2329,2329,'She''s interested in New Age things and old religious texts.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 53, "Body": 57, "Control": 54, "Guard": 60, "Speed": 53, "Stamina": 42, "Guts": 53}'::jsonb,false),
 ('kouchi--ie1--base','kouchi','Tosh Coach','IE1','IE','base','Unaffiliated','DF','earth',58,'Common Player','C','stats del juego',51,51,52,51,64,54,'https://dxi4wb638ujep.cloudfront.net/1/k/6/f/6fexgqylpz0.png','k/6/f/6fexgqylpz0',450,450,'Holds forth with strong opinions, but is really a big softy at heart.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 34, "Body": 70, "Control": 39, "Guard": 78, "Speed": 37, "Stamina": 32, "Guts": 32}'::jsonb,false),
 ('tomoka--ie3--base','tomoka','Tracy Tracker','IE3','IE','base','Unaffiliated','GK','earth',58,'Common Player','C','stats del juego',60,56,54,55,61,59,'https://dxi4wb638ujep.cloudfront.net/1/k/2/g/2gnoms2162e.png','k/2/g/2gnoms2162e',2155,2155,'Sometimes she gets herself lost following interesting animals around.','Le gusta perseguir animales, pero casi siempre termina perdiéndose.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 56, "Body": 53, "Control": 53, "Guard": 57, "Speed": 53, "Stamina": 54, "Guts": 54}'::jsonb,false),
@@ -12878,7 +12879,6 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('seiya--go1--base','seiya','Theo Therr','GO1','GO','base','Unaffiliated','DF','earth',57,'Common Player','C','stats del juego',45,46,57,43,63,53,'https://dxi4wb638ujep.cloudfront.net/1/k/q/v/qvwahnxlz2k.png','k/q/v/qvwahnxlz2k',3338,3338,'A keen stage actor since the age of three. Talented, but new to football.','Actúa en obras de teatro desde los tres años. Es bastante piscinero.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 70, "Dribbling": 67, "Technique": 111, "Block": 140, "Speed": 80, "Stamina": 104, "Catch": 58}'::jsonb,false),
 ('mochimowta--go3--base','mochimowta','Tippi & Tappa','GO3','GO','base','Unaffiliated','FW','earth',57,'Common Player','C','stats del juego',60,54,57,50,49,50,'https://dxi4wb638ujep.cloudfront.net/1/k/u/l/ulpzoseicqe.png','k/u/l/ulpzoseicqe',4303,4303,'Tappa, a parasite living on Tippi &''s head, senses danger and protects her.',null,'[{"type": "soul", "name": "Zooma", "name_es": null}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 136, "Dribbling": 112, "Technique": 100, "Block": 90, "Speed": 102, "Stamina": 104, "Catch": 75}'::jsonb,false),
 ('karai-ataru--go1--base','karai-ataru','Titch Allhare','GO1','GO','base','Inazuma Kids FC','GK','wood',57,'Common Player','B','stats del juego',44,59,62,65,51,57,'https://dxi4wb638ujep.cloudfront.net/1/k/1/b/1ba9q_z0ge8.png','k/1/b/1ba9q_z0ge8',2757,2757,'An unusually short goalkeeper, whose hair has made many spectacular saves.','Bajito pero experto portero, utiliza su pelo para defender la meta..','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 64, "Dribbling": 117, "Technique": 99, "Block": 87, "Speed": 145, "Stamina": 114, "Catch": 65}'::jsonb,false),
-('dancer--go1--base','dancer','Tommy Wobbal','GO1','GO','base','Unaffiliated','GK','earth',57,'Common Player','C','stats del juego',41,49,61,57,46,59,'https://dxi4wb638ujep.cloudfront.net/1/k/x/v/xvfuk2gukym.png','k/x/v/xvfuk2gukym',2870,2870,'Teaches belly dancing after school, though he''d never tell his classmates.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 64, "Dribbling": 99, "Technique": 97, "Block": 84, "Speed": 120, "Stamina": 132, "Catch": 115}'::jsonb,false),
 ('sakanaga--go1--base','sakanaga','Tostig Muffler','GO1','GO','base','Unaffiliated','GK','wood',57,'Common Player','C','stats del juego',50,44,50,46,45,63,'https://dxi4wb638ujep.cloudfront.net/1/k/m/w/mwml5cbdgbu.png','k/m/w/mwml5cbdgbu',3008,3008,'Wears a scarf all year round, as he always catches a cold with a bare neck.','Lleva una bufanda todo el año porque siempre pilla frío en el cuello.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 80, "Dribbling": 81, "Technique": 88, "Block": 76, "Speed": 92, "Stamina": 92, "Catch": 140}'::jsonb,false),
 ('ugwis--go3--base','ugwis','Ugwis Ann','GO3','GO','base','Unaffiliated','FW','wood',57,'Common Player','C','stats del juego',61,56,48,53,48,53,'https://dxi4wb638ujep.cloudfront.net/1/k/u/h/uhg7a5rfwxs.png','k/u/h/uhg7a5rfwxs',4235,4235,'A refined Magmavia poet whose beautiful voice captivates anyone who hears it.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 141, "Dribbling": 104, "Technique": 119, "Block": 88, "Speed": 107, "Stamina": 85, "Catch": 83}'::jsonb,false),
 ('ukegawa--ie1--base','ukegawa','Vaughn DeVille','IE1','IE','base','Unaffiliated','DF','air',57,'Common Player','C','stats del juego',56,56,60,58,55,56,'https://dxi4wb638ujep.cloudfront.net/1/k/x/r/xr8r0qmiab8.png','k/x/r/xr8r0qmiab8',1004,1004,'Longs to be an entertainer, but his act never goes down well.','Intenta impresionar a los demás con sus dotes interpretativas.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 55, "Body": 62, "Control": 55, "Guard": 55, "Speed": 61, "Stamina": 66, "Guts": 59}'::jsonb,false),
@@ -13939,6 +13939,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('coco--go2--base','coco','Wowah Zumu','GO2','GO','base','Unaffiliated','MF','fire',49,'Common Player','C','stats del juego',51,54,40,43,46,51,'https://dxi4wb638ujep.cloudfront.net/1/k/0/v/0vfbuhxkkp8.png','k/0/v/0vfbuhxkkp8',3789,3789,'The speediest girl in school, she''ll never let herself lose.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 97, "Dribbling": 128, "Technique": 104, "Block": 96, "Speed": 95, "Stamina": 76, "Catch": 88}'::jsonb,false),
 ('teshigawara--go1--base','teshigawara','Amanda Jurr','GO1','GO','base','Unaffiliated','MF','wood',48,'Common Player','C','stats del juego',42,47,47,61,40,48,'https://dxi4wb638ujep.cloudfront.net/1/k/x/-/x-xqu9n5ro8.png','k/x/-/x-xqu9n5ro8',3007,3007,'Gifted with great business sense, she dreams of founding her own company.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 71, "Dribbling": 105, "Technique": 88, "Block": 68, "Speed": 153, "Stamina": 93, "Catch": 57}'::jsonb,false),
 ('mio--go1--base','mio','Amy Sargent','GO1','GO','base','Unaffiliated','MF','wood',48,'Common Player','C','stats del juego',49,46,47,47,59,43,'https://dxi4wb638ujep.cloudfront.net/1/k/u/i/uiqz6bxbk8k.png','k/u/i/uiqz6bxbk8k',3116,3116,'A classmate of Arion''s. A quiet, gentle girl, but she knows what she wants.','Compañera de clase de Arion. Habla muy bajito, pero tiene temperamento.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 89, "Dribbling": 104, "Technique": 93, "Block": 156, "Speed": 103, "Stamina": 96, "Catch": 54}'::jsonb,false),
+('hatchi--go1--base','hatchi','Beatrix Hunny','GO1','GO','base','Unaffiliated','DF','fire',48,'Common Player','C','stats del juego',53,49,47,49,48,50,'https://dxi4wb638ujep.cloudfront.net/1/k/s/y/syaa1ycqqb8.png','k/s/y/syaa1ycqqb8',2860,2860,'Is from a family of beekeepers, but has a fear of insects.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 107, "Dribbling": 87, "Technique": 124, "Block": 106, "Speed": 111, "Stamina": 99, "Catch": 66}'::jsonb,false),
 ('sada--ie2--base','sada','Bert Emmerson','IE2','IE','base','Unaffiliated','FW','fire',48,'Common Player','C','stats del juego',42,61,51,49,43,43,'https://dxi4wb638ujep.cloudfront.net/1/k/j/-/j-ygm2augxu.png','k/j/-/j-ygm2augxu',1609,1609,'A poet who likes to wax lyrical. He won''t use one word when he can use a hundred.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 40, "Body": 63, "Control": 72, "Guard": 45, "Speed": 55, "Stamina": 56, "Guts": 52}'::jsonb,false),
 ('nakadate--ie1--base','nakadate','Bob Stretcher','IE1','IE','base','Unaffiliated','FW','wood',48,'Common Player','C','stats del juego',47,50,48,47,49,47,'https://dxi4wb638ujep.cloudfront.net/1/k/u/8/u8rn7_2y_tm.png','k/u/8/u8rn7_2y_tm',1007,1007,'Regularly goes to restaurants to order a single coffee and read.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 44, "Body": 49, "Control": 54, "Guard": 52, "Speed": 46, "Stamina": 54, "Guts": 49}'::jsonb,false),
 ('cook--go2--base','cook','Bon Homie','GO2','GO','base','Unaffiliated','MF','fire',48,'Common Player','C','stats del juego',40,59,40,40,43,53,'https://dxi4wb638ujep.cloudfront.net/1/k/u/v/uvldap0y6q0.png','k/u/v/uvldap0y6q0',3809,3809,'A wannabe chef who infuriates his parents by always feeding stray cats.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 52, "Dribbling": 123, "Technique": 125, "Block": 75, "Speed": 50, "Stamina": 60, "Catch": 88}'::jsonb,false),
@@ -14011,7 +14012,6 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('azuma--ie3--base','azuma','Andy','IE3','IE','base','Unaffiliated','DF','earth',47,'Common Player','C','stats del juego',52,45,46,56,45,50,'https://dxi4wb638ujep.cloudfront.net/1/k/z/f/zfhygptxm1s.png','k/z/f/zfhygptxm1s',264,264,'A classmate of Mark''s who only took up football to get noticed by the girls.','Compañero de clase de Mark. Juega al fútbol para que las chicas le hagan caso.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 54, "Body": 52, "Control": 48, "Guard": 48, "Speed": 58, "Stamina": 52, "Guts": 60}'::jsonb,false),
 ('mikan--ie2--base','mikan','Audry Orange','IE2','IE','base','Unaffiliated','MF','fire',47,'Common Player','C','stats del juego',49,46,47,46,46,44,'https://dxi4wb638ujep.cloudfront.net/1/k/9/j/9j31-qj0uys.png','k/9/j/9j31-qj0uys',1751,1751,'Even in the depths of winter, she''s bright and full of life.','Chica vigorosa a la que el frío invernal no le afecta para nada.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 52, "Body": 53, "Control": 48, "Guard": 48, "Speed": 48, "Stamina": 56, "Guts": 44}'::jsonb,false),
 ('koyori--ie2--base','koyori','Aurie Garmer','IE2','IE','base','Unaffiliated','MF','air',47,'Common Player','C','stats del juego',49,42,57,45,59,56,'https://dxi4wb638ujep.cloudfront.net/1/k/z/x/zxyqdk5stmk.png','k/z/x/zxyqdk5stmk',1431,1431,'An origami enthusiast who can make nearly anything out of paper.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 56, "Body": 66, "Control": 44, "Guard": 70, "Speed": 52, "Stamina": 65, "Guts": 56}'::jsonb,false),
-('hatchi--go1--base','hatchi','Beatrix Hunny','GO1','GO','base','Unaffiliated','DF','fire',47,'Common Player','C','stats del juego',52,48,46,48,47,49,'https://dxi4wb638ujep.cloudfront.net/1/k/s/y/syaa1ycqqb8.png','k/s/y/syaa1ycqqb8',2860,2860,'Is from a family of beekeepers, but has a fear of insects.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 107, "Dribbling": 87, "Technique": 124, "Block": 106, "Speed": 111, "Stamina": 99, "Catch": 66}'::jsonb,false),
 ('yuguchi--ie1--base','yuguchi','Brent Cross','IE1','IE','base','Unaffiliated','MF','fire',47,'Common Player','C','stats del juego',53,45,47,46,46,47,'https://dxi4wb638ujep.cloudfront.net/1/k/u/x/ux39wjxfe-0.png','k/u/x/ux39wjxfe-0',386,386,'His obsession with the underground is unique even for trainspotters.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 63, "Body": 52, "Control": 40, "Guard": 49, "Speed": 49, "Stamina": 58, "Guts": 57}'::jsonb,false),
 ('kobushi--go1--base','kobushi','Brutus Pummel','GO1','GO','base','Unaffiliated','DF','wood',47,'Common Player','C','stats del juego',42,53,35,49,51,37,'https://dxi4wb638ujep.cloudfront.net/1/k/c/a/cabxvzlzltc.png','k/c/a/cabxvzlzltc',2841,2841,'"Nothing solves an argument like a good fist fight!" is his dubious motto.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 79, "Dribbling": 142, "Technique": 91, "Block": 118, "Speed": 113, "Stamina": 75, "Catch": 48}'::jsonb,false),
 ('maezono--ie1--base','maezono','Buster Locke','IE1','IE','base','Unaffiliated','DF','fire',47,'Common Player','C','stats del juego',51,48,49,47,46,47,'https://dxi4wb638ujep.cloudfront.net/1/k/x/c/xc_dmtp-ywu.png','k/x/c/xc_dmtp-ywu',474,474,'This sticky-fingered gangster can break any lock in three minutes flat.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 56, "Body": 58, "Control": 49, "Guard": 43, "Speed": 49, "Stamina": 56, "Guts": 58}'::jsonb,false),
@@ -14110,10 +14110,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('hakuryuu--go1--base','SprintWarp',2),
 ('hakuryuu--go1--base','AirBullet',3),
 ('hakuryuu--go1--base','ZeroMagnum',4),
-('hakuryuu--go2--chrono-storm','DragonBlaster',1),
-('hakuryuu--go2--chrono-storm','SprintWarp',2),
-('hakuryuu--go2--chrono-storm','WhiteHurricane',3),
-('hakuryuu--go2--chrono-storm','ZeroMagnum',4),
+('hakuryuu--go2--chrono-storm','WhiteHurricane',1),
+('hakuryuu--go2--chrono-storm','TenchiRaimei',2),
 ('hakuryuu--go2--mixi-max-victor-baivic','DeathSword',1),
 ('hakuryuu--go2--mixi-max-victor-baivic','WhiteHurricane',2),
 ('hakuryuu--go2--mixi-max-victor-baivic','SprintWarp',3),
@@ -14122,10 +14120,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('hakuryuu--go2--mixi-max-tezcat-tezlong','BlackAsh',2),
 ('hakuryuu--go2--mixi-max-tezcat-tezlong','StormZone',3),
 ('hakuryuu--go2--mixi-max-tezcat-tezlong','ZeroMagnum',4),
-('nanobana-kinako--go2--chrono-storm','MochimochiKinakoMochi',1),
-('nanobana-kinako--go2--chrono-storm','YakimochiScrew',2),
-('nanobana-kinako--go2--chrono-storm','SkyWalk',3),
-('nanobana-kinako--go2--chrono-storm','FireTornadoTC',4),
+('nanobana-kinako--go2--chrono-storm','KirakiraIllusion',1),
+('nanobana-kinako--go2--chrono-storm','MochimochiKinakoMochi',2),
+('nanobana-kinako--go2--chrono-storm','FireTornadoTC',3),
 ('shuu--go2--mixi-max-bailong-tezlong','WhiteHurricane',1),
 ('shuu--go2--mixi-max-bailong-tezlong','BlackAsh',2),
 ('shuu--go2--mixi-max-bailong-tezlong','StormZone',3),
@@ -14162,8 +14159,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('fubuki-shirou--go2--mixi-max-axel-shaxel','BakunetsuScrew',3),
 ('fubuki-shirou--go2--mixi-max-axel-shaxel','NorthernImpact',4),
 ('zanark-avalonic--go2--chrono-storm','DisasterBreak',1),
-('zanark-avalonic--go2--chrono-storm','BungeeThrust',2),
-('zanark-avalonic--go2--chrono-storm','Screwdriver',3),
+('zanark-avalonic--go2--chrono-storm','DimensionCut',2),
 ('asta--go2--base','DimensionStorm',1),
 ('asta--go2--base','AsteriskRock',2),
 ('asta--go2--base','SunshineStorm',3),
@@ -14229,19 +14225,15 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('ryuuzaki-ouji--go1--base','KouteiPenguin7',3),
 ('ryuuzaki-ouji--go1--base','VanishingCut',4),
 ('fei-rune--go2--chrono-storm','BouncerRabbit',1),
-('fei-rune--go2--chrono-storm','SkyWalk',2),
-('fei-rune--go2--chrono-storm','AirBullet',3),
-('fei-rune--go2--chrono-storm','ExtremeRabbit',4),
+('fei-rune--go2--chrono-storm','OujaNoKiba',2),
 ('gamma--go2--base','GammaStrike',1),
 ('gamma--go2--base','AllDelete',2),
 ('gamma--go2--base','OmegaAttack',3),
 ('gamma--go2--mixi-max-zanark','GammaStrike',1),
 ('gamma--go2--mixi-max-zanark','AllDelete',2),
 ('gamma--go2--mixi-max-zanark','OmegaAttack',3),
-('nishizono-shinsuke--go2--chrono-storm','BurningCatch',1),
-('nishizono-shinsuke--go2--chrono-storm','ButtobiPunch',2),
-('nishizono-shinsuke--go2--chrono-storm','KattobiDefense',3),
-('nishizono-shinsuke--go2--chrono-storm','MugenTheHand',4),
+('nishizono-shinsuke--go2--chrono-storm','ButtobiPunch',1),
+('nishizono-shinsuke--go2--chrono-storm','TaikokuOuka',2),
 ('genda-koujirou--ie2--royal-academy-redux','BeastFang',1),
 ('genda-koujirou--ie2--royal-academy-redux','PowerShield',2),
 ('genda-koujirou--ie2--royal-academy-redux','FullPowerShield',3),
@@ -14313,18 +14305,14 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('zanark-avalonic--go2--base','BungeeThrust',2),
 ('zanark-avalonic--go2--base','Screwdriver',3),
 ('zanark-avalonic--go2--mixi-max-zeta','DisasterBreak',1),
-('zanark-avalonic--go2--mixi-max-zeta','BungeeThrust',2),
-('zanark-avalonic--go2--mixi-max-zeta','Screwdriver',3),
+('zanark-avalonic--go2--mixi-max-zeta','DimensionCut',2),
 ('alpha--go2--base','SpinningTransam',1),
 ('alpha--go2--base','Claymore',2),
 ('alpha--go2--base','GaussShot',3),
 ('alpha--go2--base','OmegaAttack',4),
-('matsukaze-tenma--go2--chrono-storm','AggressiveBeat',1),
-('matsukaze-tenma--go2--chrono-storm','WonderTrap',2),
-('matsukaze-tenma--go2--chrono-storm','KazaanaDrive',3),
-('matsukaze-tenma--go2--chrono-storm','GodWind',4),
-('matsukaze-tenma--go2--chrono-storm','SoyokazeStep',5),
-('matsukaze-tenma--go2--chrono-storm','MachWind',6),
+('matsukaze-tenma--go2--chrono-storm','MachWind',1),
+('matsukaze-tenma--go2--chrono-storm','OuNoTsurugi',2),
+('matsukaze-tenma--go2--chrono-storm','SaikyouElevenHadou',3),
 ('matsukaze-tenma--go2--mixi-max-victor-victarion','SoyokazeStep',1),
 ('matsukaze-tenma--go2--mixi-max-victor-victarion','DeathSword',2),
 ('matsukaze-tenma--go2--mixi-max-victor-victarion','KazaanaDrive',3),
@@ -14397,8 +14385,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('nishiki-ryouma--go2--chrono-storm','AcrobatKeep',1),
 ('nishiki-ryouma--go2--chrono-storm','KuroshioRide',2),
 ('amemiya-taiyou--go2--chrono-storm','AtomicFlare',1),
-('amemiya-taiyou--go2--chrono-storm','SparkEdgeDribble',2),
-('amemiya-taiyou--go2--chrono-storm','SunshineStorm',3),
+('amemiya-taiyou--go2--chrono-storm','TenchiRaimei',2),
 ('gouenji-masato--ie2--base','FireTornado',1),
 ('gouenji-masato--ie2--base','InazumaOtoshi',2),
 ('gouenji-masato--ie2--base','ReppuuDash',3),
@@ -14453,9 +14440,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('fei-rune--go2--base','AirBullet',3),
 ('fei-rune--go2--base','ExtremeRabbit',4),
 ('fei-rune--go2--mixi-max-tyrannosaurus-rex','BouncerRabbit',1),
-('fei-rune--go2--mixi-max-tyrannosaurus-rex','SkyWalk',2),
-('fei-rune--go2--mixi-max-tyrannosaurus-rex','AirBullet',3),
-('fei-rune--go2--mixi-max-tyrannosaurus-rex','ExtremeRabbit',4),
+('fei-rune--go2--mixi-max-tyrannosaurus-rex','KodaiNoKiba',2),
 ('drim--go2--base','SpinningUpper',1),
 ('drim--go2--base','BurningSummer',2),
 ('drim--go2--base','TheTyphoon',3),
@@ -14605,8 +14590,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('tobitaka-seiya--go3--adult','KillerSlide',3),
 ('matsukaze-tenma--go2--raimon','AggressiveBeat',1),
 ('matsukaze-tenma--go2--raimon','WonderTrap',2),
-('matsukaze-tenma--go2--raimon','KazaanaDrive',3);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('matsukaze-tenma--go2--raimon','KazaanaDrive',3),
 ('matsukaze-tenma--go2--raimon','GodWind',4),
 ('matsukaze-tenma--go2--raimon','SoyokazeStep',5),
 ('matsukaze-tenma--go2--raimon','MachWind',6),
@@ -14621,7 +14605,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('buvo-trangas--ie3--base','PowerCharge',3),
 ('buvo-trangas--ie3--base','SigmaZone',4),
 ('saki-yukio--go1--base','PrestoTurn',1),
-('saki-yukio--go1--base','CrazySunlight',2),
+('saki-yukio--go1--base','CrazySunlight',2);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('saki-yukio--go1--base','TheWall',3),
 ('endou-canon--ie3--base','Inazuma1gou',1),
 ('endou-canon--ie3--base','MegatonHead',2),
@@ -14945,10 +14930,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('ejima-kazuya--go1--base','Claymore',1),
 ('ejima-kazuya--go1--base','AtlantisWall',2),
 ('ejima-kazuya--go1--base','CrazySunlight',3),
-('kirino-ranmaru--go2--chrono-storm','DeepMist',1),
-('kirino-ranmaru--go2--chrono-storm','SouthernCrosscut',2),
-('kirino-ranmaru--go2--chrono-storm','DeepJungle',3),
-('kirino-ranmaru--go2--chrono-storm','TheMist',4),
+('kirino-ranmaru--go2--chrono-storm','TheMist',1),
+('kirino-ranmaru--go2--chrono-storm','LaFlamme',2),
 ('kanime-iderou--ie2--base','Gravitation',1),
 ('kanime-iderou--ie2--base','PsychoShot',2),
 ('kanime-iderou--ie2--base','HeavyBaby',3),
@@ -15011,16 +14994,13 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('dhanna--go2--base','PlasmaBall',2),
 ('dhanna--go2--base','Transmove',3),
 ('dhanna--go2--base','SpringArrow',4),
-('dhanna--go2--mixi-max-zanark','LinearDrive',1),
-('dhanna--go2--mixi-max-zanark','PlasmaBall',2),
-('dhanna--go2--mixi-max-zanark','Transmove',3),
-('dhanna--go2--mixi-max-zanark','SpringArrow',4),
+('dhanna--go2--mixi-max-zanark','Transmove',1),
+('dhanna--go2--mixi-max-zanark','SpringArrow',2),
 ('wally--go2--base','FractalHouse',1),
 ('wally--go2--base','NaminoriPierrot',2),
 ('wally--go2--base','TheTyphoon',3),
-('torb--go2--chrono-storm','ElephantPress',1),
-('torb--go2--chrono-storm','AcrobatKeep',2),
-('torb--go2--chrono-storm','DeepJungle',3),
+('torb--go2--chrono-storm','DeepJungle',1),
+('torb--go2--chrono-storm','KodaiNoTsubasa',2),
 ('takanashi-shinobu--ie2--base','BackTornado',1),
 ('takanashi-shinobu--ie2--base','Cyclone',2),
 ('takanashi-shinobu--ie2--base','DokugiriNoJutsu',3),
@@ -15106,8 +15086,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('gotou-yukai--go1--base','SprintWarp',3),
 ('guel--ie3--base','HeavenDrive',1),
 ('guel--ie3--base','TheIkaros',2),
-('guel--ie3--base','PrimaDonna',3);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('guel--ie3--base','PrimaDonna',3),
 ('guel--ie3--base','Gungnir',4),
 ('kiyoraka--go1--base','AirBullet',1),
 ('kiyoraka--go1--base','WhiteHurricane',2),
@@ -15127,7 +15106,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('iseya-minoru--go1--base','PrestoTurn',2),
 ('iseya-minoru--go1--base','Sidewinder',3),
 ('midorikawa-ryuuji--ie2--base','AstroBreak',1),
-('midorikawa-ryuuji--ie2--base','WarpDrive',2),
+('midorikawa-ryuuji--ie2--base','WarpDrive',2);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('midorikawa-ryuuji--ie2--base','UniverseBlast',3),
 ('midorikawa-ryuuji--ie2--base','GaiaBreak',4),
 ('jinny-geino--ie3--base','KageNui',1),
@@ -15607,8 +15587,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('gianluca-zanardi--ie3--base','TripleBoost',3),
 ('gianluca-zanardi--ie3--base','WaterVeil',4),
 ('geimu-konomu--ie1--base','DokonjouBat',1),
-('geimu-konomu--ie1--base','Gorimuchuu',2);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('geimu-konomu--ie1--base','Gorimuchuu',2),
 ('geimu-konomu--ie1--base','FakeBall',3),
 ('geimu-konomu--ie1--base','ShineDrive',4),
 ('kabeyama-heigorou--ie1--base','TheWall',1),
@@ -15628,7 +15607,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('demete-yutaka--ie1--base','DivineArrow',3),
 ('demete-yutaka--ie1--base','HornTrain',4),
 ('hasuike-an--ie2--base','AstroBreak',1),
-('hasuike-an--ie2--base','SouthernCrosscut',2),
+('hasuike-an--ie2--base','SouthernCrosscut',2);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('hasuike-an--ie2--base','PrimaDonna',3),
 ('hasuike-an--ie2--base','AtomicFlare',4),
 ('midou-reika--ie2--base','ButterflyDream',1),
@@ -16108,8 +16088,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('umigishi-entarou--go1--base','KouteiPenguin2gou',3),
 ('umigishi-entarou--go1--base','SkyWalk',4),
 ('vassu-dhanissh--go3--base','PsychicBow',1),
-('vassu-dhanissh--go3--base','Shinkuuma',2);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('vassu-dhanissh--go3--base','Shinkuuma',2),
 ('vassu-dhanissh--go3--base','RoundSpark',3),
 ('izumi-kanaaki--go1--base','IllusionBall',1),
 ('izumi-kanaaki--go1--base','SoyokazeStep',2),
@@ -16129,7 +16108,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('shika-kaneaki--ie2--base','QuickDraw',1),
 ('shika-kaneaki--ie2--base','ArmadilloCircus',2),
 ('shika-kaneaki--ie2--base','NekketsuHead',3),
-('shika-kaneaki--ie2--base','Kaenhousha',4),
+('shika-kaneaki--ie2--base','Kaenhousha',4);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('kurashibe-reiichi--ie2--base','DragonGround',1),
 ('kurashibe-reiichi--ie2--base','Gorimuchuu',2),
 ('chet--go2--base','Rejection',1),
@@ -16609,8 +16589,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('kusao-hisashi--ie1--base','KungFuHead',4),
 ('stag-kuwatta--go3--base','GigantVine',1),
 ('stag-kuwatta--go3--base','MushroomHop',2),
-('stag-kuwatta--go3--base','TentacleHold',3);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('stag-kuwatta--go3--base','TentacleHold',3),
 ('stag-kuwatta--go3--base','StormZone',4),
 ('luka-schmitt--ie3--base','ScissorsBomb',1),
 ('luka-schmitt--ie3--base','PowerCharge',2),
@@ -16630,7 +16609,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('michiba-ryouji--ie1--base','BladeAttack',1),
 ('michiba-ryouji--ie1--base','KungFuHead',2),
 ('michiba-ryouji--ie1--base','BunshinShoot',3),
-('michiba-ryouji--ie1--base','MakiwariChop',4),
+('michiba-ryouji--ie1--base','MakiwariChop',4);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('otaru-koutarou--go1--base','IceGround',1),
 ('otaru-koutarou--go1--base','KillerWhale',2),
 ('otaru-koutarou--go1--base','Claymore',3),
@@ -17110,8 +17090,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('chroma--go2--base','Shinkuuma',2),
 ('chroma--go2--base','KuroshioRide',3),
 ('davi-peroqui--ie3--base','Slingshot',1),
-('davi-peroqui--ie3--base','MatadorFeint',2);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('davi-peroqui--ie3--base','MatadorFeint',2),
 ('davi-peroqui--ie3--base','TwinBoost',3),
 ('godai-shingo--go1--base','ThousandArrow',1),
 ('godai-shingo--go1--base','BallistaShot',2),
@@ -17131,7 +17110,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('gerald-enders--ie3--base','Shootrap',1),
 ('gerald-enders--ie3--base','PowerCharge',2),
 ('gerald-enders--ie3--base','ChabudaiGaeshi',3),
-('gerald-enders--ie3--base','Galatyn',4),
+('gerald-enders--ie3--base','Galatyn',4);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('kikuma-shousuke--ie2--base','Gravitation',1),
 ('kikuma-shousuke--ie2--base','SuperShikofumi',2),
 ('kikuma-shousuke--ie2--base','WarpDrive',3),
@@ -17611,8 +17591,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('bark-sepakraw--go3--base','BoundFlame',4),
 ('ishikawa-kanpei--go1--base','BigScissors',1),
 ('ishikawa-kanpei--go1--base','IllusionBall',2),
-('ishikawa-kanpei--go1--base','CounterdriveGK',3);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('ishikawa-kanpei--go1--base','CounterdriveGK',3),
 ('ishikawa-kanpei--go1--base','TheWall',4),
 ('heo-ji-nan--ie3--base','DaiBakuhatsuHarite',1),
 ('heo-ji-nan--ie3--base','BakuretsuPunch',2),
@@ -17632,7 +17611,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('bado-addo--go2--base','MueiRanbu',1),
 ('bado-addo--go2--base','MueiSouha',2),
 ('bado-addo--go2--base','TwinMixer',3),
-('bado-addo--go2--base','RocketHead',4),
+('bado-addo--go2--base','RocketHead',4);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('bado-addo--go2--perfect-cascade','MueiRanbu',1),
 ('bado-addo--go2--perfect-cascade','MueiSouha',2),
 ('bado-addo--go2--perfect-cascade','TwinMixer',3),
@@ -18001,9 +17981,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('lugic--go2--base','GyroSaving',1),
 ('lugic--go2--base','Wormhole',2),
 ('lugic--go2--base','KillBridge',3),
-('lugic--go2--mixi-max-zanark','GyroSaving',1),
-('lugic--go2--mixi-max-zanark','Wormhole',2),
-('lugic--go2--mixi-max-zanark','KillBridge',3),
+('lugic--go2--mixi-max-zanark','Wormhole',1),
+('lugic--go2--mixi-max-zanark','KillBridge',2),
 ('rosso-granato--ie3--base','JudgeThrough2',1),
 ('rosso-granato--ie3--base','KouteiPenguin2gou',2),
 ('rosso-granato--ie3--base','SabakiNoTettsui',3),
@@ -18112,8 +18091,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('hong-doo-yoon--ie3--base','JibashiriKaen',2),
 ('hong-doo-yoon--ie3--base','KillerSlide',3),
 ('hong-doo-yoon--ie3--base','TamanoriPierrot',4),
-('enimo--go2--base','Rejection',1);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('enimo--go2--base','Rejection',1),
 ('enimo--go2--base','Hanafubuki',2),
 ('enimo--go2--base','PowerSpike',3),
 ('yiwatto--go3--base','SpiralDraw',1),
@@ -18134,7 +18112,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('hatou-torahiko--ie2--epsilon-plus','PhotonFlash',2),
 ('fetta--go2--base','StormZone',1),
 ('fetta--go2--base','BurningSummer',2),
-('fetta--go2--base','LoveArrow',3),
+('fetta--go2--base','LoveArrow',3);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('fetta--go2--base','BungeeThrust',4),
 ('sougetsu-nozomi--go1--base','SoyokazeStep',1),
 ('sougetsu-nozomi--go1--base','MachWind',2),
@@ -18613,8 +18592,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('maneuver-gibutsu--go3--unaffiliated','DeathDrop',6),
 ('gold--ie2--base','DarkTornado',1),
 ('gold--ie2--base','DualStrike',2),
-('franz-poujol--ie3--base','TheWall',1);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('franz-poujol--ie3--base','TheWall',1),
 ('franz-poujol--ie3--base','MegaQuake',2),
 ('franz-poujol--ie3--base','FullPowerShield',3),
 ('franz-poujol--ie3--base','IronWall',4),
@@ -18635,7 +18613,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('idory--go3--base','Shootrap',2),
 ('idory--go3--base','TsubameGaeshi',3),
 ('idory--go3--base','Kazangan',4),
-('kanou-ikkatsu--go2--base','TsubameGaeshi',1),
+('kanou-ikkatsu--go2--base','TsubameGaeshi',1);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('kanou-ikkatsu--go2--base','TheMist',2),
 ('kanou-ikkatsu--go2--base','Ichiyajou',3),
 ('kondou-isami--go2--base','TheWall',1),
@@ -18767,7 +18746,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('tetra--go3--base','HologramLock',3),
 ('mike--go2--mixi-max-zanark','GaussShot',1),
 ('mike--go2--mixi-max-zanark','PlasmaBall',2),
-('mike--go2--mixi-max-zanark','SpringArrow',3),
+('mike--go2--mixi-max-zanark','BlackAsh',3),
 ('sakisaka-satoru--go1--base','PrestoTurn',1),
 ('sakisaka-satoru--go1--base','HuntersNet',2),
 ('sakisaka-satoru--go1--base','Senpuujin',3),
@@ -19114,8 +19093,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('souma-zenki--ie2--base','TamanoriPierrot',1),
 ('souma-zenki--ie2--base','PhantomShoot',2),
 ('souma-zenki--ie2--base','BackTornado',3),
-('souma-zenki--ie2--base','ArmadilloCircus',4);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('souma-zenki--ie2--base','ArmadilloCircus',4),
 ('zhangfei--go2--base','AtomicFlare',1),
 ('zhangfei--go2--base','TigerDrive',2),
 ('zhangfei--go2--base','SparkEdgeDribble',3),
@@ -19136,7 +19114,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('shibuki-shoudai--ie1--base','TatsumakiSenpuu',2),
 ('shibuki-shoudai--ie1--base','SuperArmadillo',3),
 ('shibuki-shoudai--ie1--base','KungFuHead',4),
-('nayu--ie2--base','UshiroNoShoumen',1),
+('nayu--ie2--base','UshiroNoShoumen',1);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('nayu--ie2--base','MoguraFeint',2),
 ('nayu--ie2--base','SabakiNoTettsui',3),
 ('belial--ie3--base','GoToHell',1),
@@ -19615,8 +19594,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('gonokami-eiji--go1--base','NoboriRyuu',1),
 ('gonokami-eiji--go1--base','TriangleZZ',2),
 ('gonokami-eiji--go1--base','SprintWarp',3),
-('red-d--ie2--base','PsychoShot',1);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('red-d--ie2--base','PsychoShot',1),
 ('red-d--ie2--base','FreezeShot',2),
 ('red-d--ie2--base','DarkTornado',3),
 ('red-d--ie2--base','DualStrike',4),
@@ -19637,7 +19615,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('gigam--go2--base','FuujinNoMai',3),
 ('goliath--ie3--base','KillerSlide',1),
 ('goliath--ie3--base','BigSpider',2),
-('goliath--ie3--base','SwanDive',3),
+('goliath--ie3--base','SwanDive',3);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('goliath--ie3--base','PlanetShield',4),
 ('guanyu--go2--base','VivaBanriNoChoujou',1),
 ('guanyu--go2--base','DimensionCut',2),
@@ -20116,8 +20095,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('kunouzan--ie3--base','ScissorsBomb',1),
 ('kunouzan--ie3--base','TwinBoost',2),
 ('kunouzan--ie3--base','Oouchiwa',3),
-('kunouzan--ie3--base','DualStorm',4);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('kunouzan--ie3--base','DualStorm',4),
 ('tageh--go3--base','MadJuggler',1),
 ('tageh--go3--base','Abisegeri',2),
 ('tageh--go3--base','TsubameGaeshi',3),
@@ -20138,7 +20116,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('dada--go1--base','ShootBreak',3),
 ('touring--ie3--base','HitoriOneTwo',1),
 ('touring--ie3--base','SpiralShot',2),
-('touring--ie3--base','MeteorAttack',3),
+('touring--ie3--base','MeteorAttack',3);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('touring--ie3--base','RyuuseiBlade',4),
 ('nunomura--ie1--base','PowerShield',1),
 ('nunomura--ie1--base','HornTrain',2),
@@ -20291,9 +20270,6 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('nafshi--go3--base','SonicShot',1),
 ('nafshi--go3--base','PlasmaBall',2),
 ('nafshi--go3--base','GanymedeProton',3),
-('edomaru--go2--base','FlyingFish',1),
-('edomaru--go2--base','KillerWhale',2),
-('edomaru--go2--base','KouteiPenguin7',3),
 ('atari--go1--base','CardSplash',1),
 ('atari--go1--base','IllusionBall',2),
 ('atari--go1--base','MaboroshiShot',3),
@@ -20617,8 +20593,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('maeda-toshiie--go2--base','DenraiHoutou',3),
 ('fujita-scout-character--ie2--base','Shikofumi',1),
 ('fujita-scout-character--ie2--base','HeatTackle',2),
-('fujita-scout-character--ie2--base','KageNui',3);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('fujita-scout-character--ie2--base','KageNui',3),
 ('fujita-scout-character--ie2--base','ReppuuDash',4),
 ('kurofu--go1--base','PrestoTurn',1),
 ('kurofu--go1--base','Zeroyon',2),
@@ -20642,7 +20617,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('shirasagi--ie3--base','RoseSplash',1),
 ('shirasagi--ie3--base','PhotonFlash',2),
 ('shirasagi--ie3--base','AuroraDribble',3),
-('shirasagi--ie3--base','FlashUpper',4),
+('shirasagi--ie3--base','FlashUpper',4);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('onyx--go1--base','RapidWhip',1),
 ('onyx--go1--base','DashTrain',2),
 ('kamikiri-go--go1--base','PrestoTurn',1),
@@ -20821,6 +20797,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('emosuke--go2--base','HeadBazooka',2),
 ('emosuke--go2--base','HinawaBullet',3),
 ('emosuke--go2--base','OgreBlade',4),
+('edomaru--go2--base','FlyingFish',1),
+('edomaru--go2--base','KillerWhale',2),
+('edomaru--go2--base','KouteiPenguin7',3),
 ('numaguchi--ie1--base','PsychoShot',1),
 ('numaguchi--ie1--base','BladeAttack',2),
 ('numaguchi--ie1--base','HurricaneArrow',3),
@@ -20961,9 +20940,6 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('kumagai--ie2--base','Moonsault',2),
 ('kumagai--ie2--base','InazumaOtoshi',3),
 ('kumagai--ie2--base','ArmadilloCircus',4),
-('mai--go2--base','DeepMist',1),
-('mai--go2--base','PrestoTurn',2),
-('mai--go2--base','BlackAsh',3),
 ('martha--ie3--base','Doppelganger',1),
 ('martha--ie3--base','HitoriOneTwo',2),
 ('martha--ie3--base','GanymedeProton',3),
@@ -21118,8 +21094,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('sofoo--go3--base','Gorimuchuu',1),
 ('sofoo--go3--base','FuusenGum',2),
 ('sofoo--go3--base','AsokoNiUFO',3),
-('soratoh--go3--base','TracePress',1);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('soratoh--go3--base','TracePress',1),
 ('soratoh--go3--base','KattobiDefense',2),
 ('soratoh--go3--base','AsokoNiUFO',3),
 ('stia--go2--base','Rejection',1),
@@ -21143,7 +21118,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('naya--ie1--base','RocketKobushi',1),
 ('naya--ie1--base','BakuretsuPunch',2),
 ('naya--ie1--base','CoilTurn',3),
-('naya--ie1--base','Noroi',4),
+('naya--ie1--base','Noroi',4);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('yazu-tenkei--go2--base','ShippuuDash',1),
 ('yazu-tenkei--go2--base','Senpuujin',2),
 ('yazu-tenkei--go2--base','Shinkuuma',3),
@@ -21475,6 +21451,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('mag--go3--base','KodaiNoKiba',1),
 ('mag--go3--base','StrikeSamba',2),
 ('mag--go3--base','OdinSword',3),
+('mai--go2--base','DeepMist',1),
+('mai--go2--base','PrestoTurn',2),
+('mai--go2--base','BlackAsh',3),
 ('oosaki--ie1--base','KillerBlade',1),
 ('oosaki--ie1--base','KillerSlide',2),
 ('oosaki--ie1--base','UshiroNoShoumen',3),
@@ -21619,8 +21598,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('naka--ie1--base','KagomeKagome',4),
 ('smebamy--go3--base','MermaidSmash',1),
 ('smebamy--go3--base','RibbonShower',2),
-('smebamy--go3--base','HeavenDrive',3);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('smebamy--go3--base','HeavenDrive',3),
 ('saru-kun--ie3--base','MonkeyTurn',1),
 ('saru-kun--ie3--base','KungFuAttack',2),
 ('saru-kun--ie3--base','KurukuruHead',3),
@@ -21641,7 +21619,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('sendai-hiroaki--go1--base','IllusionBall',1),
 ('sendai-hiroaki--go1--base','FlyingFish',2),
 ('sendai-hiroaki--go1--base','HydroAnchor',3),
-('cople--go2--base','CoilUpper',1),
+('cople--go2--base','CoilUpper',1);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('cople--go2--base','SpinningUpper',2),
 ('harsonki--go3--base','DeathSword',1),
 ('harsonki--go3--base','RapidFire',2),
@@ -22120,8 +22099,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('katsuo--ie1--base','Tsumuji',4),
 ('shimabukuro--ie1--base','TamanoriPierrot',1),
 ('shimabukuro--ie1--base','PressurePunch',2),
-('shimabukuro--ie1--base','RocketKobushi',3);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('shimabukuro--ie1--base','RocketKobushi',3),
 ('shimabukuro--ie1--base','BakuretsuPunch',4),
 ('charge--go1--base','HeadBazooka',1),
 ('charge--go1--base','MadJuggler',2),
@@ -22142,7 +22120,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('retci--go1--base','HydroAnchor',2),
 ('retci--go1--base','RyuuseiBlade',3),
 ('yamori--ie1--base','Shikofumi',1),
-('yamori--ie1--base','HornTrain',2),
+('yamori--ie1--base','HornTrain',2);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('yamori--ie1--base','Doppelganger',3),
 ('yamori--ie1--base','TwinBoost',4),
 ('kamai--ie1--base','BladeAttack',1),
@@ -22621,8 +22600,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('tanabe-sayaka--ie1--base','CoilTurn',1),
 ('tanabe-sayaka--ie1--base','TamanoriPierrot',2),
 ('tanabe-sayaka--ie1--base','Kogarashi',3),
-('tanabe-sayaka--ie1--base','FakeBall',4);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('tanabe-sayaka--ie1--base','FakeBall',4),
 ('kurohime--go1--base','Claymore',1),
 ('kurohime--go1--base','DeepMist',2),
 ('kurohime--go1--base','ExtendZone',3),
@@ -22643,7 +22621,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('yamiyo-yamaki--go1--base','Claymore',3),
 ('yamiyo-yamaki--go1--base','TwinMixer',4),
 ('jail--go1--base','VivaBanriNoChoujou',1),
-('jail--go1--base','PrestoTurn',2),
+('jail--go1--base','PrestoTurn',2);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('jail--go1--base','RyuuseiBlade',3),
 ('midorimage--ie3--base','Kamaitachi',1),
 ('midorimage--ie3--base','PsychoShot',2),
@@ -23122,8 +23101,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('wairu--go1--base','TheMist',1),
 ('wairu--go1--base','KillerWhale',2),
 ('wairu--go1--base','DimensionCut',3),
-('matsubara--ie1--base','DashAccel',1);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('matsubara--ie1--base','DashAccel',1),
 ('matsubara--ie1--base','RocketKobushi',2),
 ('matsubara--ie1--base','HeatTackle',3),
 ('matsubara--ie1--base','Counterstrike',4),
@@ -23144,7 +23122,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('araki-scout-character--ie2--base','KumoNoIto',3),
 ('araki-scout-character--ie2--base','KageNui',4),
 ('ishii-seiki--ie1--base','KillerSlide',1),
-('ishii-seiki--ie1--base','SpinningCut',2),
+('ishii-seiki--ie1--base','SpinningCut',2);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('ishii-seiki--ie1--base','Cyclone',3),
 ('ishii-seiki--ie1--base','BackTornado',4),
 ('sammy-dempsey--ie3--base','KurukuruHead',1),
@@ -23331,6 +23310,10 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('kinoshita-toukichirou--go2--base','Ichiyajou',1),
 ('kinoshita-toukichirou--go2--base','Shinkuuma',2),
 ('kinoshita-toukichirou--go2--base','HinawaBullet',3),
+('dancer--go1--base','TheMist',1),
+('dancer--go1--base','HydroAnchor',2),
+('dancer--go1--base','CrystalBarrier',3),
+('dancer--go1--base','CounterdriveGK',4),
 ('sanzou--ie3--base','YugamuKuukan',1),
 ('sanzou--ie3--base','KumoNoIto',2),
 ('sanzou--ie3--base','Kaenhousha',3),
@@ -23623,8 +23606,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('kyaputen--go1--base','Sargasso',2),
 ('kyaputen--go1--base','HydroAnchor',3),
 ('reppuu-go--go1--base','FuujinNoMai',1),
-('reppuu-go--go1--base','KillBridge',2);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('reppuu-go--go1--base','KillBridge',2),
 ('maizuru--ie1--base','KillerBlade',1),
 ('maizuru--ie1--base','Doppelganger',2),
 ('maizuru--ie1--base','Tsumuji',3),
@@ -23641,7 +23623,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('tokio-scout-character--ie1--base','WildClaw',1),
 ('tokio-scout-character--ie1--base','DashAccel',2),
 ('tokio-scout-character--ie1--base','MakiwariChop',3),
-('tokio-scout-character--ie1--base','UshiroNoShoumen',4),
+('tokio-scout-character--ie1--base','UshiroNoShoumen',4);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('kotomi--go1--base','BurningCatch',1),
 ('kotomi--go1--base','ThiefEye',2),
 ('kotomi--go1--base','RapidWhip',3),
@@ -23950,10 +23933,6 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('karai-ataru--go1--base','RapidWhip',1),
 ('karai-ataru--go1--base','BatAttack',2),
 ('karai-ataru--go1--base','StarReflection',3),
-('dancer--go1--base','TheMist',1),
-('dancer--go1--base','HydroAnchor',2),
-('dancer--go1--base','CrystalBarrier',3),
-('dancer--go1--base','CounterdriveGK',4),
 ('sakanaga--go1--base','BurningCatch',1),
 ('sakanaga--go1--base','VivaBanriNoChoujou',2),
 ('sakanaga--go1--base','TheMist',3),
@@ -24124,8 +24103,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('ushimado--ie3--base','HornTrain',1),
 ('ushimado--ie3--base','AuroraDribble',2),
 ('ushimado--ie3--base','TatsumakiSenpuu',3),
-('ushimado--ie3--base','MeganeCrash',4);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('ushimado--ie3--base','MeganeCrash',4),
 ('mikita--ie1--base','Shikofumi',1),
 ('mikita--ie1--base','Earthquake',2),
 ('mikita--ie1--base','Gorimuchuu',3),
@@ -24146,7 +24124,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('ishitsukuri--ie3--base','Gorimuchuu',2),
 ('ishitsukuri--ie3--base','Gravestone',3),
 ('ishitsukuri--ie3--base','ShippuuDash',4),
-('veeview--go3--base','TheStamp',1),
+('veeview--go3--base','TheStamp',1);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('veeview--go3--base','DigThrough',2),
 ('vooview--go3--base','BlitzBridge',1),
 ('vooview--go3--base','MueiSouha',2),
@@ -24625,8 +24604,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('shirosou--go1--base','DimensionCut',3),
 ('daruma--ie2--base','TamanoriPierrot',1),
 ('daruma--ie2--base','RunBallRun',2),
-('daruma--ie2--base','ArmadilloCircus',3);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('daruma--ie2--base','ArmadilloCircus',3),
 ('hitodasuke--ie3--base','HornTrain',1),
 ('hitodasuke--ie3--base','CondorDive',2),
 ('hitodasuke--ie3--base','PhantomShoot',3),
@@ -24647,7 +24625,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('shiga--ie1--base','TwinBoost',3),
 ('shiga--ie1--base','Cyclone',4),
 ('sunakawa--ie1--base','Kamikakushi',1),
-('sunakawa--ie1--base','Doppelganger',2),
+('sunakawa--ie1--base','Doppelganger',2);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('sunakawa--ie1--base','PsychoShot',3),
 ('sunakawa--ie1--base','DivineArrow',4),
 ('bunarshi--go3--base','MadJuggler',1),
@@ -25126,8 +25105,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('guu--go1--base','MadJuggler',1),
 ('guu--go1--base','BoomerangFeint',2),
 ('guu--go1--base','Sidewinder',3),
-('kobana--ie3--base','MoguraFeint',1);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('kobana--ie3--base','MoguraFeint',1),
 ('kobana--ie3--base','MoguraShuffle',2),
 ('kobana--ie3--base','FlameDance',3),
 ('kobana--ie3--base','DragonGround',4),
@@ -25148,7 +25126,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('kyouichi--ie1--base','MonkeyTurn',3),
 ('kyouichi--ie1--base','BladeAttack',4),
 ('makiya-scout-character--go1--base','MadJuggler',1),
-('makiya-scout-character--go1--base','NaminoriPierrot',2),
+('makiya-scout-character--go1--base','NaminoriPierrot',2);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('makiya-scout-character--go1--base','SpiralDraw',3),
 ('nishihara--ie1--base','CoilTurn',1),
 ('nishihara--ie1--base','ShippuuDash',2),
@@ -25627,8 +25606,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('kanagawa--ie1--base','DynamiteShoot',2),
 ('kanagawa--ie1--base','PatriotShoot',3),
 ('kanagawa--ie1--base','ShineDrive',4),
-('kosaka-scout-character--ie2--base','SuperScanDF',1);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('kosaka-scout-character--ie2--base','SuperScanDF',1),
 ('kosaka-scout-character--ie2--base','IllusionBall',2),
 ('kosaka-scout-character--ie2--base','KageNui',3),
 ('kosaka-scout-character--ie2--base','BunshinDefense',4),
@@ -25649,7 +25627,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('hitoyanagi--ie3--base','DivineArrow',4),
 ('kusaka-scout-character--ie1--base','SpinningCut',1),
 ('kusaka-scout-character--ie1--base','Magic',2),
-('kusaka-scout-character--ie1--base','SpinningShoot',3),
+('kusaka-scout-character--ie1--base','SpinningShoot',3);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('kusaka-scout-character--ie1--base','IllusionBall',4),
 ('shiejuu--go3--base','MoguraFeint',1),
 ('shiejuu--go3--base','TheStamp',2),
@@ -26128,8 +26107,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('sayo--go2--base','NaminoriPierrot',2),
 ('sayo--go2--base','KillerWhale',3),
 ('sayo--go2--base','Sargasso',4),
-('senkuro--go3--base','AstroBreak',1);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('senkuro--go3--base','AstroBreak',1),
 ('senkuro--go3--base','PantherBlizzard',2),
 ('senkuro--go3--base','MaboroshiShot',3),
 ('senkuro--go3--base','PlasmaBall',4),
@@ -26150,7 +26128,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('oooka--ie1--base','MonkeyTurn',2),
 ('oooka--ie1--base','HornTrain',3),
 ('oooka--ie1--base','HeatTackle',4),
-('higashi-scout-character--ie1--base','NekketsuPunch',1),
+('higashi-scout-character--ie1--base','NekketsuPunch',1);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('higashi-scout-character--ie1--base','PressurePunch',2),
 ('higashi-scout-character--ie1--base','TornadoCatch',3),
 ('higashi-scout-character--ie1--base','Counterstrike',4),
@@ -26629,8 +26608,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('nabeman--ie3--base','FireTornado',2),
 ('nabeman--ie3--base','NarakuOtoshi',3),
 ('nabeman--ie3--base','Inazuma1gou',4),
-('kent--ie2--base','ShippuuDash',1);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('kent--ie2--base','ShippuuDash',1),
 ('kent--ie2--base','KurukuruHead',2),
 ('kent--ie2--base','SecurityShot',3),
 ('hare--go1--base','PrestoTurn',1),
@@ -26651,7 +26629,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('ponta--ie1--base','HornTrain',2),
 ('ponta--ie1--base','Earthquake',3),
 ('ponta--ie1--base','MegaQuake',4),
-('nakashimaru--go3--base','KageTsukami',1),
+('nakashimaru--go3--base','KageTsukami',1);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('nakashimaru--go3--base','KumoNoIto',2),
 ('nakashimaru--go3--base','SandCutter',3),
 ('sotoyama--ie1--base','DashAccel',1),
@@ -27130,8 +27109,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('kumo--go1--base','PowerSpike',1),
 ('kumo--go1--base','HydroAnchor',2),
 ('kumo--go1--base','HuntersNet',3),
-('kumo--go1--base','CounterdriveGK',4);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('kumo--go1--base','CounterdriveGK',4),
 ('ueki--ie1--base','Doppelganger',1),
 ('ueki--ie1--base','UshiroNoShoumen',2),
 ('ueki--ie1--base','SuperArmadillo',3),
@@ -27152,7 +27130,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('nagai--ie1--base','SpinningShoot',2),
 ('nagai--ie1--base','FakeBall',3),
 ('nagai--ie1--base','BackTornado',4),
-('dive--go2--base','SonicShot',1),
+('dive--go2--base','SonicShot',1);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('dive--go2--base','Zeroyon',2),
 ('dive--go2--base','Gungnir',3),
 ('rendai--ie2--base','CoilTurn',1),
@@ -27631,8 +27610,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('rajou--ie1--base','NekketsuPunch',1),
 ('rajou--ie1--base','Shikofumi',2),
 ('rajou--ie1--base','HornTrain',3),
-('rajou--ie1--base','BakuretsuPunch',4);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('rajou--ie1--base','BakuretsuPunch',4),
 ('nagasaki--ie1--base','PressurePunch',1),
 ('nagasaki--ie1--base','WildClaw',2),
 ('nagasaki--ie1--base','RocketKobushi',3),
@@ -27653,7 +27631,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('tachibana--ie1--base','TatsumakiSenpuu',2),
 ('tachibana--ie1--base','ShineDrive',3),
 ('tachibana--ie1--base','Kamaitachi',4),
-('tamoto--ie2--base','KillerSlide',1),
+('tamoto--ie2--base','KillerSlide',1);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('tamoto--ie2--base','Magic',2),
 ('tamoto--ie2--base','SuperScanDF',3),
 ('tamoto--ie2--base','KumoNoIto',4),
@@ -27844,6 +27823,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('teshigawara--go1--base','FutureEye',1),
 ('teshigawara--go1--base','NaminoriPierrot',2),
 ('teshigawara--go1--base','Senpuujin',3),
+('hatchi--go1--base','FutureEye',1),
+('hatchi--go1--base','MadJuggler',2),
+('hatchi--go1--base','SpiralDraw',3),
 ('sada--ie2--base','DashAccel',1),
 ('sada--ie2--base','KurukuruHead',2),
 ('sada--ie2--base','DynamiteShoot',3),
@@ -28102,9 +28084,6 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('koyori--ie2--base','CrossDrive',2),
 ('koyori--ie2--base','UshiroNoShoumen',3),
 ('koyori--ie2--base','RibbonShower',4),
-('hatchi--go1--base','FutureEye',1),
-('hatchi--go1--base','MadJuggler',2),
-('hatchi--go1--base','SpiralDraw',3),
 ('yuguchi--ie1--base','DashAccel',1),
 ('yuguchi--ie1--base','GrenadeShot',2),
 ('yuguchi--ie1--base','JudgeThrough',3),
@@ -28132,8 +28111,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('hikyaku--ie1--base','QuickDraw',2),
 ('hikyaku--ie1--base','Kogarashi',3),
 ('hikyaku--ie1--base','DashAccel',4),
-('kamizuru--ie2--base','Onryou',1);
-insert into public.card_techniques (card_id,technique_id,slot) values
+('kamizuru--ie2--base','Onryou',1),
 ('kamizuru--ie2--base','TatsumakiSenpuu',2),
 ('kamizuru--ie2--base','KumoNoIto',3),
 ('kamizuru--ie2--base','Zanzou',4),
@@ -28154,7 +28132,8 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('shirobe--ie2--base','TatsumakiSenpuu',2),
 ('shirobe--ie2--base','BackTornado',3),
 ('shirobe--ie2--base','IllusionBall',4),
-('nobayashi--ie2--base','ToughnessBlock',1),
+('nobayashi--ie2--base','ToughnessBlock',1);
+insert into public.card_techniques (card_id,technique_id,slot) values
 ('nobayashi--ie2--base','Earthquake',2),
 ('nobayashi--ie2--base','PowerShield',3),
 ('nobayashi--ie2--base','GoalZurashi',4),

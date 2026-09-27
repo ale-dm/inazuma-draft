@@ -161,6 +161,17 @@ export async function loadCatalog(): Promise<void> {
       else groups.set(key, [p])
     }
   }
+  // una carta por jugador y equipo: la versión de ese equipo (Sor del Chrono Storm, no su forma normal) o la de más nota
+  for (const [key, list] of groups) {
+    const team = key.slice(key.indexOf(':') + 1)
+    const best = new Map<string, Player>()
+    for (const p of list) {
+      const cur = best.get(p.characterId)
+      const score = (x: Player) => (x.version === team ? 1000 : 0) + x.ovr
+      if (!cur || score(p) > score(cur)) best.set(p.characterId, p)
+    }
+    groups.set(key, [...best.values()])
+  }
   poolRosters = new Map([...groups].filter(([, list]) => list.length >= MIN_POOL_SIZE))
   // Orden estable: las partidas con semilla deben sortear igual en todos los navegadores
   pools = [...poolRosters.keys()].sort().map(parseDraftPoolKey)

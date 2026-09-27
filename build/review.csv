@@ -1,9 +1,9 @@
 ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físico,velocidad,defensa,parada,técnicas,id
 92,Legendary Player,Bailong,GO1,base,Eternal Light,FW,S,Xtreme (wiki),95,91,87,86,75,72,White Hurricane (70) · Warp Step (70) · Ozone Flayer (55) · Zero Magnum (85),hakuryuu--go1--base
-92,Legendary Player,Bailong,GO2,Chrono Storm,Chrono Storm,FW,S,Xtreme (wiki),95,90,88,89,73,70,Dragon Driver (70) · Warp Step (70) · White Hurricane (70) · Zero Magnum (85),hakuryuu--go2--chrono-storm
+92,Legendary Player,Bailong,GO2,Chrono Storm,Chrono Storm,FW,S,Xtreme (wiki),95,90,88,89,73,70,White Hurricane (70) · Thundertaker (85),hakuryuu--go2--chrono-storm
 92,Legendary Player,Bailong,GO2,Mixi Max (Victor) «Baivic»,Mixi Max,FW,A,stats del juego,95,94,79,93,83,79,Doomsword Slash (15) · White Hurricane (70) · Warp Step (70) · Great Blaster (70),hakuryuu--go2--mixi-max-victor-baivic
 92,Legendary Player,Bailong,GO2,Mixi Max (Tezcat) «Tezlong»,Mixi Max,FW,A,stats del juego,95,94,81,90,83,84,White Hurricane (70) · Black Ash (70) · Eye of the Storm (70) · Zero Magnum (85),hakuryuu--go2--mixi-max-tezcat-tezlong
-92,Legendary Player,Goldie Lemmon,GO2,Chrono Storm,Chrono Storm,DF,S,Xtreme (wiki),92,87,87,87,97,88,Goopy Gloopy Goo (40) · Dough Ray Me (70) · Dance on Air (55) · Fire Tornado TC (85),nanobana-kinako--go2--chrono-storm
+92,Legendary Player,Goldie Lemmon,GO2,Chrono Storm,Chrono Storm,DF,S,Xtreme (wiki),92,87,87,87,97,88,Oglitteration (70) · Goopy Gloopy Goo (40) · Fire Tornado TC (85),nanobana-kinako--go2--chrono-storm
 92,Legendary Player,Tezcat,GO2,Mixi Max (Bailong) «Tezlong»,Mixi Max,FW,A,stats del juego,95,94,81,90,83,84,White Hurricane (70) · Black Ash (70) · Eye of the Storm (70) · Zero Magnum (85),shuu--go2--mixi-max-bailong-tezlong
 92,Legendary Player,Victor Blade,GO2,Mixi Max (Bailong) «Baivic»,Mixi Max,FW,A,stats del juego,95,94,79,93,83,79,Doomsword Slash (15) · White Hurricane (70) · Warp Step (70) · Great Blaster (70),tsurugi-kyousuke--go2--mixi-max-bailong-baivic
 91,Legendary Player,Axel Blaze,GO2,Inazuma Legend Japan,Inazuma Legend Japan,FW,S,Strikers 2013,91,91,91,90,78,79,Fireball Screw (55) · Fire Drill (30) · Plasma Cut (55) · Fire Tornado DD (70),gouenji-shuuya--go2--inazuma-legend-japan
@@ -14,7 +14,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 91,Legendary Player,Joseph King,IE3,Neo Japan,Neo Japan,GK,S,Xtreme (balancing),80,82,81,72,91,94,Infinite Wall (55) · Drill Smasher (50),genda-koujirou--ie3--neo-japan
 91,Legendary Player,Lars Luceafăr,IE3,base,Team Ogre,GK,S,Xtreme (balancing),78,70,79,81,91,95,High Voltage (60) · Needle Hammer (45) · Electrap (47),zagomel-zande--ie3--base
 91,Legendary Player,Shawn Froste,GO2,Mixi Max (Axel) «Shaxel»,Mixi Max,FW,A,stats del juego,93,92,83,92,76,79,Fire Tornado (30) · Eternal Blizzard (30) · Fireball Screw (55) · Northern Impact (55),fubuki-shirou--go2--mixi-max-axel-shaxel
-91,Legendary Player,Zanark Avalonic,GO2,Chrono Storm,Chrono Storm,FW,S,Strikers 2013,93,92,93,82,79,81,Disaster Strike (55) · Bungee Ball Burst (40) · Fire Drill (30),zanark-avalonic--go2--chrono-storm
+91,Legendary Player,Zanark Avalonic,GO2,Chrono Storm,Chrono Storm,FW,S,Strikers 2013,93,92,93,82,79,81,Disaster Strike (55) · Spatial Portal (55),zanark-avalonic--go2--chrono-storm
 90,Legendary Player,Asta,GO2,base,Zanark's Domain,FW,S,Strikers 2013,91,90,87,90,78,81,Dimensional Deluge (85) · Asterocks (30) · Solar Nexus (70),asta--go2--base
 90,Legendary Player,Asta,GO2,The Despairadoes,The Despairadoes,FW,S,Strikers 2013,91,90,87,90,78,81,Dimensional Deluge (85) · Asterocks (30) · Solar Nexus (70),asta--go2--the-despairadoes
 90,Legendary Player,Bael,IE3,base,Devil Army Z,DF,S,Xtreme (balancing),83,78,90,81,95,83,Hell's Descent (56) · Dark Whirlwind (35) · Gravitation (38),beelzebu--ie3--base
@@ -34,10 +34,10 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 89,Legendary Player,Caleb Stonewall,GO2,Mixi Max (Jude) «Juleb»,Mixi Max,MF,A,stats del juego,88,94,77,88,86,83,Illusion Ball (20) · Killer Slide (10) · Inazuma Break (55) · Final Death Zone (85),fudou-akio--go2--mixi-max-jude-juleb
 89,Legendary Player,Caleb Stonewall,GO3,Japanese Resistance,Japanese Resistance,MF,S,Strikers 2013,90,91,89,89,81,82,Killer Slide (10) · Bungee Ball Burst (40) · Emperor Penguin No. 2 (55) · Emperor Penguin No. 3 (70),fudou-akio--go3--japanese-resistance
 89,Legendary Player,Dracon Yale,GO1,base,Royal Academy,DF,S,Xtreme (balancing),77,87,85,79,95,82,Whirlpool (40) · Criss-Cross (70) · Emperor Penguin 7 (70) · Side Swipe (70),ryuuzaki-ouji--go1--base
-89,Legendary Player,Fei Rune,GO2,Chrono Storm,Chrono Storm,FW,S,Strikers 2013,93,83,83,92,72,83,Bouncing Bunny (15) · Dance on Air (55) · Ozone Flayer (55) · Splitting Hares (70),fei-rune--go2--chrono-storm
+89,Legendary Player,Fei Rune,GO2,Chrono Storm,Chrono Storm,FW,S,Strikers 2013,93,83,83,92,72,83,Bouncing Bunny (15) · Fangtasmagoria (70),fei-rune--go2--chrono-storm
 89,Legendary Player,Gamma,GO2,base,Protocol Omega 3.0,FW,S,Xtreme (balancing),90,83,91,91,78,80,Atomic Spin (70) · Format Disk (85) · Omega Assault (85),gamma--go2--base
 89,Legendary Player,Gamma,GO2,Mixi Max (Zanark),Mixi Max,FW,S,Xtreme (balancing),90,83,91,91,78,80,Atomic Spin (70) · Format Disk (85) · Omega Assault (85),gamma--go2--mixi-max-zanark
-89,Legendary Player,Jean-Pierre Lapin,GO2,Chrono Storm,Chrono Storm,GK,S,Strikers 2013,72,82,84,83,83,93,Combustion Catch (8) · Jumping Whack (30) · Flapjack Defence (20) · Mugen The Hand (55),nishizono-shinsuke--go2--chrono-storm
+89,Legendary Player,Jean-Pierre Lapin,GO2,Chrono Storm,Chrono Storm,GK,S,Strikers 2013,72,82,84,83,83,93,Jumping Whack (30) · Song of the Three Kingdoms (55),nishizono-shinsuke--go2--chrono-storm
 89,Legendary Player,Joseph King,IE2,Royal Academy Redux,Royal Academy Redux,GK,S,Xtreme (balancing),82,82,74,71,90,94,Beast Fang (52) · Power Shield (20) · Full Power Shield (32),genda-koujirou--ie2--royal-academy-redux
 89,Legendary Player,Jude Sharp,GO2,Mixi Max (Caleb) «Juleb»,Mixi Max,MF,A,stats del juego,88,94,77,88,86,83,Illusion Ball (20) · Killer Slide (10) · Inazuma Break (55) · Final Death Zone (85),kidou-yuuto--go2--mixi-max-caleb-juleb
 89,Legendary Player,Kevin Dragonfly,GO2,Inazuma Legend Japan,Inazuma Legend Japan,FW,S,Strikers 2013,91,90,91,80,77,79,Katana Kick (30) · Rising Dragon (55) · Dragon Driver (70),someoka-ryuugo--go2--inazuma-legend-japan
@@ -58,9 +58,9 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 89,Legendary Player,Vladimir Blade,GO2,Mixi Max (Victor),Mixi Max,FW,S,Strikers 2013,91,90,90,81,79,79,Entropic Arrows (55) · Doomsword Slash (15),tsurugi-yuuichi--go2--mixi-max-victor
 89,Legendary Player,Vladimir Blade,GO2,Child,Sub Character,FW,S,Strikers 2013,91,90,90,81,79,79,Entropic Arrows (55) · Flurry Dash (20) · Fireball Screw (55) · Great Blaster (70),tsurugi-yuuichi--go2--child
 89,Legendary Player,Zanark Avalonic,GO2,base,Zanark's Domain,FW,S,Strikers 2013,91,90,91,80,77,79,Disaster Strike (55) · Bungee Ball Burst (40) · Fire Drill (30),zanark-avalonic--go2--base
-89,Legendary Player,Zanark Avalonic,GO2,Mixi Max (Zeta),Mixi Max,FW,S,Strikers 2013,91,90,91,80,77,79,Disaster Strike (55) · Bungee Ball Burst (40) · Fire Drill (30),zanark-avalonic--go2--mixi-max-zeta
+89,Legendary Player,Zanark Avalonic,GO2,Mixi Max (Zeta),Mixi Max,FW,S,Strikers 2013,91,90,91,80,77,79,Disaster Strike (55) · Spatial Portal (55),zanark-avalonic--go2--mixi-max-zeta
 88,Top Player,Alpha,GO2,base,Protocol Omega,FW,S,Strikers 2013,90,90,87,80,80,80,Spin Meister (15) · Blast Mine (40) · Gaussian Goal (40) · Omega Assault (85),alpha--go2--base
-88,Top Player,Arion Sherwind,GO2,Chrono Storm,Chrono Storm,MF,S,Strikers 2013,87,88,95,86,86,86,Heart Beat (20) · Hyper-Swiper (8) · Tornado Tunnel (70) · Holy Roller (55) · Easy Breezy (15) · Zephyr Shot (20),matsukaze-tenma--go2--chrono-storm
+88,Top Player,Arion Sherwind,GO2,Chrono Storm,Chrono Storm,MF,S,Strikers 2013,87,88,95,86,86,86,Zephyr Shot (20) · Sword of the King (70) · Ultimate Eleven Assault (85),matsukaze-tenma--go2--chrono-storm
 88,Top Player,Arion Sherwind,GO2,Mixi Max (Victor) «Victarion»,Mixi Max,MF,A,stats del juego,89,91,80,89,79,82,Easy Breezy (15) · Doomsword Slash (15) · Tornado Tunnel (70) · Fire Tornado DD (70),matsukaze-tenma--go2--mixi-max-victor-victarion
 88,Top Player,Astaroth,IE3,base,Devil Army Z,GK,S,Strikers 2013,82,69,79,80,90,90,The End (60) · Breakthrough 3 (48) · Giant Spider (47),astaroth--ie3--base
 88,Top Player,Austin Hobbes,IE3,base,Inazuma Japan,FW,S,Xtreme (balancing),95,82,80,82,80,72,Double Touch (10) · Tiger Drive (40) · Tiger Storm (58) · Gladius Arch (62),utsunomiya-toramaru--ie3--base
@@ -84,7 +84,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 88,Top Player,Nathan Swift,GO2,Inazuma Legend Japan,Inazuma Legend Japan,DF,S,Strikers 2013,81,90,79,91,91,82,Flurry Dash (20) · Ozone Flayer (55) · Tornado Tunnel (70),kazemaru-ichirouta--go2--inazuma-legend-japan
 88,Top Player,Njord Snio,GO1,base,Alpine,FW,S,Xtreme (balancing),94,78,78,90,77,69,Snowstorm Leopard (40) · Frosticle (55) · Warp Step (70),yukimura-hyouga--go1--base
 88,Top Player,Ryoma Nishiki,GO2,Chrono Storm,Chrono Storm,MF,S,Xtreme (balancing),84,93,96,82,82,72,Acrobatic Keep (40) · Black Tide Ride (70),nishiki-ryouma--go2--chrono-storm
-88,Top Player,Sol Daystar,GO2,Chrono Storm,Chrono Storm,FW,S,Xtreme (wiki),91,87,87,82,86,74,Atomic Flare (70) · Plasma Cut (55) · Solar Nexus (70),amemiya-taiyou--go2--chrono-storm
+88,Top Player,Sol Daystar,GO2,Chrono Storm,Chrono Storm,FW,S,Xtreme (wiki),91,87,87,82,86,74,Atomic Flare (70) · Thundertaker (85),amemiya-taiyou--go2--chrono-storm
 88,Top Player,Syon Blaze,IE2,base,Unaffiliated,FW,S,Strikers 2013,90,91,81,83,82,74,Fire Tornado (30) · Inazuma Drop (37) · Gale Dash (42) · Fireball Storm (90),gouenji-masato--ie2--base
 88,Top Player,Victor Blade,GO3,Earth Eleven,Earth Eleven,FW,S,Xtreme (balancing),91,83,82,90,80,72,Bicycle Blade (40) · Supernatural Strike (55) · Fire Tornado DD (70) · The Earth: Infinity (85) · Doomsword Slash (15) · Doom Dive Drive (40),tsurugi-kyousuke--go3--earth-eleven
 88,Top Player,Victor Blade,GO2,Mixi Max (Arion) «Victarion»,Mixi Max,MF,A,stats del juego,89,91,80,89,79,82,Easy Breezy (15) · Doomsword Slash (15) · Tornado Tunnel (70) · Fire Tornado DD (70),tsurugi-kyousuke--go2--mixi-max-arion-victarion
@@ -98,7 +98,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 87,Top Player,David Samford,IE3,Inazuma Japan,Inazuma Japan,FW,S,Strikers 2013,90,81,90,80,79,73,Gale Dash (42) · Emperor Penguin No. 2 (55) · Space Penguin (61),sakuma-jirou--ie3--inazuma-japan
 87,Top Player,Davy Jones,GO1,base,Pirates Cove,FW,S,Strikers 2013,91,88,80,80,77,71,Flying Fish (20) · Wind God's Dance (40) · Ozone Flayer (55) · Emperor Penguin No. 2 (55),namikawa-rensuke--go1--base
 87,Top Player,Fei Rune,GO2,base,The Sherwinds,FW,S,Strikers 2013,91,81,81,90,70,81,Bouncing Bunny (15) · Dance on Air (55) · Ozone Flayer (55) · Splitting Hares (70),fei-rune--go2--base
-87,Top Player,Fei Rune,GO2,Mixi Max (Tyrannosaurus Rex),Mixi Max,FW,S,Strikers 2013,91,81,81,90,70,81,Bouncing Bunny (15) · Dance on Air (55) · Ozone Flayer (55) · Splitting Hares (70),fei-rune--go2--mixi-max-tyrannosaurus-rex
+87,Top Player,Fei Rune,GO2,Mixi Max (Tyrannosaurus Rex),Mixi Max,FW,S,Strikers 2013,91,81,81,90,70,81,Bouncing Bunny (15) · Jurassic Jaws (10),fei-rune--go2--mixi-max-tyrannosaurus-rex
 87,Top Player,Foxtrot,GO2,base,Protocol Omega 2.0,MF,S,Strikers 2013,81,90,88,90,79,81,Spin Out (30) · Pyrokinetic (30) · The Typhoon (40) · Whirlpool (40),drim--go2--base
 87,Top Player,Gentian,GO2,base,The Despairadoes,FW,S,Strikers 2013,90,82,89,81,77,81,Flower Plougher (40) · Floral Fiesta (40) · Magnetism (30),zinnias--go2--base
 87,Top Player,Gigi Blasi,IE3,base,Orpheus,GK,S,Strikers 2013,75,83,69,69,91,91,Colosseum Guard (42) · Earthquake (32) · Gigant Wall (30),gigi-blasi--ie3--base
@@ -240,7 +240,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 84,Top Player,Dvalin,IE3,Neo Japan,Neo Japan,MF,S,Strikers 2013,91,82,83,82,82,81,Illusion Ball (20) · Dash Storm (46) · God Knows (70) · Gungnir (30),saginuma-osamu--ie3--neo-japan
 84,Top Player,Dvalin,GO2,Adult,Adult,MF,S,Strikers 2013,92,84,83,79,79,84,Illusion Ball (20) · Gungnir (30) · Bungee Ball Burst (40) · God Knows (70),saginuma-osamu--go2--adult
 84,Top Player,Dwight Whittaker,GO1,base,Eternal Light,DF,S,Strikers 2013,78,77,83,70,90,81,Blast Mine (40) · Wall of Atlantis (40) · Solar Surprise (40),ejima-kazuya--go1--base
-84,Top Player,Gabriel Garcia,GO2,Chrono Storm,Chrono Storm,DF,S,Strikers 2013,72,90,81,84,84,72,Mystic Mist (40) · Southern Cross (55) · Jungle Jam (55) · Mystifying Mist (15),kirino-ranmaru--go2--chrono-storm
+84,Top Player,Gabriel Garcia,GO2,Chrono Storm,Chrono Storm,DF,S,Strikers 2013,72,90,81,84,84,72,Mystifying Mist (15) · La Flamme (55),kirino-ranmaru--go2--chrono-storm
 84,Top Player,Ganymede,IE2,base,Gemini Storm,DF,S,Strikers 2013,81,74,82,82,88,79,Gravitation (38) · Psycho Shot (20) · Heavy Mettle (42) · Ganymede Ray (55),kanime-iderou--ie2--base
 84,Top Player,Gary Lancaster,IE1,base,Wild,FW,A,stats del juego,88,79,82,80,84,86,Tarzan Kick (20) · Super Armadillo (24) · Bewildered (15) · Utter Gutsiness Bat (40),gori-shingo--ie1--base
 84,Top Player,Gene Whalon,IE3,base,Big Waves,GK,A,stats del juego,79,68,79,77,85,85,Barrier Reef (37) · Tsunami Wall (42) · Kangaroo Kick (20),jean-baker--ie3--base
@@ -260,9 +260,9 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 84,Top Player,Seymour Hillman,IE2,Dark Emperors,Dark Emperors,GK,A,stats del juego,83,80,84,82,83,84,Blazing Knuckle (35),hibiki-seigou--ie2--dark-emperors
 84,Top Player,Seymour Hillman,IE2,Young Inazuma,Young Inazuma,GK,A,stats del juego,79,84,83,77,81,85,God Hand (10) · Blazing Knuckle (35) · Triple God Hand (57),hibiki-seigou--ie2--young-inazuma
 84,Top Player,Sierra,GO2,base,Protocol Omega 3.0,MF,A,stats del juego,82,88,88,82,73,82,Guided Collide (20) · Plasma Ball (30) · Transporter Device (15) · Double Helix (40),dhanna--go2--base
-84,Top Player,Sierra,GO2,Mixi Max (Zanark),Mixi Max,MF,A,stats del juego,82,88,88,82,73,82,Guided Collide (20) · Plasma Ball (30) · Transporter Device (15) · Double Helix (40),dhanna--go2--mixi-max-zanark
+84,Top Player,Sierra,GO2,Mixi Max (Zanark),Mixi Max,MF,A,stats del juego,82,88,88,82,73,82,Transporter Device (15) · Double Helix (40),dhanna--go2--mixi-max-zanark
 84,Top Player,Smarty,GO2,base,The Sherwinds,DF,S,Strikers 2013,81,78,82,69,91,82,Fractal Repeller (10) · Log Roll (10) · The Typhoon (40),wally--go2--base
-84,Top Player,Sor,GO2,Chrono Storm,Chrono Storm,DF,A,stats del juego,79,75,84,83,86,84,Jumbo Sandwich (20) · Acrobatic Keep (40) · Jungle Jam (55),torb--go2--chrono-storm
+84,Top Player,Sor,GO2,Chrono Storm,Chrono Storm,DF,A,stats del juego,79,75,84,83,86,84,Jungle Jam (55) · Pterrordactyl Swoop (55),torb--go2--chrono-storm
 84,Top Player,Sue Sparrow,IE2,base,Royal Academy Redux,MF,S,Xtreme (balancing),80,89,84,81,79,71,Back Tornado (31) · Cyclone (38) · Poison Fog (20) · Clone Faker (42),takanashi-shinobu--ie2--base
 84,Top Player,Thomas Murdock,IE1,base,Kirkwood,FW,A,stats del juego,84,84,84,83,81,82,Moonsault (25) · Back Tornado (31) · Killer Slide (10) · Triangle Z (55),mukata-tomo--ie1--base
 84,Top Player,Tim Saunders,IE2,Dark Emperors,Dark Emperors,MF,S,Xtreme (balancing),83,83,91,82,91,83,Kung Fu Fighting (37) · Shooting Star (47),shourinji-ayumu--ie2--dark-emperors
@@ -1131,7 +1131,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 71,Growing Player,Rashid Hakim,GO3,base,Shamshir,MF,B,stats del juego,69,77,74,65,58,75,Desert Drift (40) · Gusher Crusher (40) · Jumbo Sandwich (20) · Ballista Barrage (55),rashid-hakim--go3--base
 71,Growing Player,Robert Affett,GO1,base,Milky Way Charter,FW,B,stats del juego,76,67,63,69,60,62,Headbanger (10) · Grand Slam (15) · Solar Surprise (40),harusawa-hikaru--go1--base
 71,Growing Player,Romeo,GO2,base,Protocol Omega 3.0,GK,B,stats del juego,58,64,62,68,71,74,Gyro-Blocker (40) · Wormhole (30) · Bridge to Nowhere (55),lugic--go2--base
-71,Growing Player,Romeo,GO2,Mixi Max (Zanark),Mixi Max,GK,B,stats del juego,58,64,62,68,71,74,Gyro-Blocker (40) · Wormhole (30) · Bridge to Nowhere (55),lugic--go2--mixi-max-zanark
+71,Growing Player,Romeo,GO2,Mixi Max (Zanark),Mixi Max,GK,B,stats del juego,58,64,62,68,71,74,Wormhole (30) · Bridge to Nowhere (55),lugic--go2--mixi-max-zanark
 71,Growing Player,Rosso Granato,IE3,base,Team D,MF,B,stats del juego,81,68,65,68,78,68,Breakthrough 2 (42) · Emperor Penguin No. 2 (55) · Divine Stamp (43) · Bamboo Pattern (57),rosso-granato--ie3--base
 71,Growing Player,Servilius Jeeves,IE3,base,Queen's Knights,GK,B,stats del juego,56,76,67,73,76,71,Galatyn (37) · Killer Blade (20) · Drill Smasher (50) · Excalibur (66),gareth-barrett--ie3--base
 71,Growing Player,Skylar Lepton,GO1,base,Ivy Selective,DF,B,stats del juego,66,64,72,68,73,71,Jumping Jack (40) · Whirlpool (40) · Killer Whale (15),hizu-takatoshi--go1--base
@@ -1350,7 +1350,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 68,Growing Player,Terracotta Warrior 11,GO2,base,The Terracotta Army,FW,B,stats del juego,71,67,70,59,59,65,Accelerator Gears (15) · Transporter Device (15) · Chrysanthemum Katana (85),bingmayong-no-juuichi--go2--base
 68,Growing Player,Terry Pinn,IE2,base,Unaffiliated,GK,C,stats del juego,49,68,68,69,66,69,Warp Space (22) · Majin The Hand (60) · Gigant Wall (30),tortoise--ie2--base
 68,Growing Player,Tetrae Charlong,GO3,base,Unaffiliated,MF,C,stats del juego,64,71,70,67,65,68,Illusion Ball (20) · Sleeping Dust (30) · Holograb (70),tetra--go3--base
-68,Growing Player,Tez Beyan,GO2,Mixi Max (Zanark),Mixi Max,FW,B,stats del juego,71,56,74,68,55,62,Gaussian Goal (40) · Plasma Ball (30) · Double Helix (40),mike--go2--mixi-max-zanark
+68,Growing Player,Tez Beyan,GO2,Mixi Max (Zanark),Mixi Max,FW,B,stats del juego,71,56,74,68,55,62,Gaussian Goal (40) · Plasma Ball (30) · Black Ash (70),mike--go2--mixi-max-zanark
 68,Growing Player,Tom Gato,GO1,base,Raimon Second Squad,DF,B,stats del juego,59,70,63,62,72,59,Hey Presto (30) · Hunter's Net (30) · Whirlwind Force (20),sakisaka-satoru--go1--base
 68,Growing Player,Tytan,IE2,base,Epsilon,DF,B,stats del juego,77,65,78,70,63,74,Gravitation (38) · Earthquake (32) · Heavy Mettle (42) · Planet Shield (50),tanba-taiji--ie2--base
 68,Growing Player,Tytan,IE2,Epsilon Plus,Epsilon Plus,DF,B,stats del juego,77,65,78,70,63,74,Heavy Mettle (42) · Gravitation (38),tanba-taiji--ie2--epsilon-plus
@@ -1776,7 +1776,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 63,Common Player,Dee Tarrant,IE3,base,Unaffiliated,GK,C,stats del juego,64,65,50,48,66,66,Flash Upper (45) · Tornado Catch (22) · Power Charge (39) · Gigant Wall (30),power--ie3--base
 63,Common Player,Ed Ison,GO1,base,Prodigy Grammar,MF,B,stats del juego,67,59,73,64,61,58,Future Eye (10) · Optimal Trajectory (10),fukuro-tetsuya--go1--base
 63,Common Player,Edana Naves,GO3,base,Unaffiliated,FW,C,stats del juego,65,58,65,61,50,50,Sonic Shot (10) · Plasma Ball (30) · Ganymede Ray (55),nafshi--go3--base
-63,Common Player,Eoin Geary,GO2,base,Unaffiliated,FW,C,stats del juego,66,60,54,67,53,59,Flying Fish (20) · Killer Whale (15) · Emperor Penguin 7 (70),edomaru--go2--base
 63,Common Player,Esau Tariq,GO1,base,Unaffiliated,MF,C,stats del juego,70,55,70,72,56,56,Card Shark (10) · Illusion Ball (20) · Will-o'-the-Wisp Shot (40) · Spatial Portal (55),atari--go1--base
 63,Common Player,Eunyeong Kim,IE3,base,Fire Dragon,MF,B,stats del juego,61,60,72,59,78,75,Abaddon Drop (33) · Flame Veil (53) · Rolling Hell (46),kim-eun-young--ie3--base
 63,Common Player,Ezra Gin,GO3,base,Unaffiliated,GK,C,stats del juego,57,55,62,56,56,66,Shot Pocket (15) · Wormhole (30) · Negative Feedback (40) · Gravity Point (55),gin-ag--go3--base
@@ -1925,6 +1924,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 62,Common Player,Eira Dynamic,GO1,base,Unaffiliated,GK,C,stats del juego,46,58,62,50,53,65,Flapjack Defence (20) · Land Of Ice (20) · Crystal Barrier (40),sarashina--go1--base
 62,Common Player,Eljas Viisi,GO1,base,Dragon Link,DF,B,stats del juego,61,65,61,63,61,68,Side Swipe (70) · Headbanger (10) · Warp Step (70) · Ozone Flayer (55),gouishi-senma--go1--base
 62,Common Player,Emosuke Rokudo,GO2,base,Unaffiliated,FW,C,stats del juego,65,59,64,57,51,53,Utter Gutsiness Bat (40) · Headbanger (10) · Matchlock Bullet (40) · Falling Planet (70),emosuke--go2--base
+62,Common Player,Eoin Geary,GO2,base,Unaffiliated,FW,C,stats del juego,65,59,53,66,52,58,Flying Fish (20) · Killer Whale (15) · Emperor Penguin 7 (70),edomaru--go2--base
 62,Common Player,Erhard Blower,IE1,base,Unaffiliated,FW,C,stats del juego,61,65,61,60,61,59,Psycho Shot (20) · Blade Attack (24) · Hurricane Arrows (57) · Divine Arrows (46),numaguchi--ie1--base
 62,Common Player,Evan Yielding,IE1,base,Unaffiliated,FW,C,stats del juego,61,59,60,72,63,65,Psycho Shot (20) · Illusion Ball (20) · Twin Boost (37) · Death Zone (52),taira--ie1--base
 62,Common Player,Ferdinand Delafünfe,GO1,base,Dragon Link,MF,B,stats del juego,70,59,55,64,60,60,Rising Dragon (55) · Ballista Barrage (55) · Ball Lightning (70),ikari-gouriki--go1--base
@@ -1965,7 +1965,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 62,Common Player,Lou Fauntleroy,IE2,base,Unaffiliated,MF,C,stats del juego,56,64,64,65,58,64,Gyro Head (25) · Bewildered (15) · Invisible Fake (42) · Divine Stamp (43),bach--ie2--base
 62,Common Player,Mac Gabbon,IE2,base,Unaffiliated,FW,C,stats del juego,68,60,54,53,51,52,Phantom Shot (21) · Freeze Shot (25) · Run Ball Run (28) · Twin Boost (37),yuuky--ie2--base
 62,Common Player,Mac Robat,IE2,base,Unaffiliated,FW,C,stats del juego,61,57,68,66,66,66,Heel Kick (20) · Moonsault (25) · Inazuma Drop (37) · Armadillo Circus (47),kumagai--ie2--base
-62,Common Player,Maia,GO2,base,Sub Character,DF,C,stats del juego,48,60,50,65,67,59,Mystic Mist (40) · Hey Presto (30) · Black Ash (70),mai--go2--base
 62,Common Player,Melody Toontune,IE3,base,Unaffiliated,DF,C,stats del juego,62,61,66,61,60,63,Doppelganger (21) · Double Touch (10) · Ganymede Ray (55) · Gladius Arch (62),martha--ie3--base
 62,Common Player,Men Pukk,GO3,base,Unaffiliated,FW,C,stats del juego,64,53,65,66,47,53,Rapid Fire (20) · No Future (55),menpukku--go3--base
 62,Common Player,Mickey Schmitt,GO1,base,Unaffiliated,DF,C,stats del juego,56,50,65,58,64,53,Thief's Eye (8) · Runaway Train (8) · Warhead (30),tamada-go--go1--base
@@ -2112,6 +2111,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 61,Common Player,Liu Bei,GO2,base,Sub Character,GK,C,stats del juego,55,60,57,44,58,63,Song of the Three Kingdoms (55) · Snakebite (20) · Capable Hands (55),liu-xuande--go2--base
 61,Common Player,Lyle Covet,IE3,base,Unaffiliated,FW,C,stats del juego,66,46,65,59,45,46,The Wall (8) · Utter Gutsiness Bat (40) · Sumo Stomp (20) · Comet Shot (25),jouki--ie3--base
 61,Common Player,Mag Nessium,GO3,base,Unaffiliated,FW,C,stats del juego,63,56,65,56,58,51,Jurassic Jaws (10) · Samba Strike (30) · Odin Sword (55),mag--go3--base
+61,Common Player,Maia,GO2,base,Sub Character,DF,C,stats del juego,47,59,49,64,66,58,Mystic Mist (40) · Hey Presto (30) · Black Ash (70),mai--go2--base
 61,Common Player,Max Hurt,IE1,base,Unaffiliated,GK,C,stats del juego,55,57,61,65,60,61,Killer Blade (20) · Killer Slide (10) · About Face (16) · Counter Strike (40),oosaki--ie1--base
 61,Common Player,Mel O'Drahma,GO1,base,Unaffiliated,FW,C,stats del juego,64,59,52,64,52,57,Sonic Shot (10) · Jumping Jack (40),idehara--go1--base
 61,Common Player,Mia Tior,GO1,base,Unaffiliated,GK,C,stats del juego,53,47,64,58,47,65,Power Spike (10) · All-Star (30),erise--go1--base
@@ -2629,6 +2629,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 58,Common Player,Tim Eisback,IE1,base,Unaffiliated,DF,C,stats del juego,55,57,57,64,57,57,Whirlwind Twister (20) · Afterimage (31) · Quick Draw (20) · Cyclone (38),takagi--ie1--base
 58,Common Player,Tim Toppel,IE1,base,Unaffiliated,GK,C,stats del juego,61,59,60,59,57,58,Pressure Punch (21) · Shot Pocket (15) · Wood Chopper (21) · Whirlwind (32),alumi--ie1--base
 58,Common Player,Tokichiro Kinoshita,GO2,base,Sub Character,DF,C,stats del juego,44,58,56,49,62,59,Overnight Fortress (20) · Vac Attack (40) · Matchlock Bullet (40),kinoshita-toukichirou--go2--base
+58,Common Player,Tommy Wobbal,GO1,base,Unaffiliated,GK,C,stats del juego,42,50,62,58,47,60,Mystifying Mist (15) · Anchors Aweigh (30) · Crystal Barrier (40) · Close Counter (15),dancer--go1--base
 58,Common Player,Tony Sanzang,IE3,base,Unaffiliated,GK,C,stats del juego,55,57,49,54,62,60,Warp Space (22) · Spider Web (20) · Flame Breath (37) · Triple Defence (47),sanzou--ie3--base
 58,Common Player,Tosh Coach,IE1,base,Unaffiliated,DF,C,stats del juego,51,51,52,51,64,54,Coil Turn (20) · Doppelganger (21) · Black Magic (20) · The Wall (8),kouchi--ie1--base
 58,Common Player,Tracy Tracker,IE3,base,Unaffiliated,GK,C,stats del juego,60,56,54,55,61,59,Photon Crash (25) · Kangaroo Kick (20) · Triple Defence (47),tomoka--ie3--base
@@ -2799,7 +2800,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 57,Common Player,Theo Therr,GO1,base,Unaffiliated,DF,C,stats del juego,45,46,57,43,63,53,Killer Whale (15) · Blast Mine (40) · Will-o'-the-Wisp Shot (40),seiya--go1--base
 57,Common Player,Tippi & Tappa,GO3,base,Unaffiliated,FW,C,stats del juego,60,54,57,50,49,50,Butterfly Trance (55) · Boomerang Bluff (20) · Cupid's Arrow (30),mochimowta--go3--base
 57,Common Player,Titch Allhare,GO1,base,Inazuma Kids FC,GK,B,stats del juego,44,59,62,65,51,57,Whip Crack (20) · Ultrasonic (8) · All-Star (30),karai-ataru--go1--base
-57,Common Player,Tommy Wobbal,GO1,base,Unaffiliated,GK,C,stats del juego,41,49,61,57,46,59,Mystifying Mist (15) · Anchors Aweigh (30) · Crystal Barrier (40) · Close Counter (15),dancer--go1--base
 57,Common Player,Tostig Muffler,GO1,base,Unaffiliated,GK,C,stats del juego,50,44,50,46,45,63,Combustion Catch (8) · Great Wall (15) · Mystifying Mist (15) · Crystal Barrier (40),sakanaga--go1--base
 57,Common Player,Ugwis Ann,GO3,base,Unaffiliated,FW,C,stats del juego,61,56,48,53,48,53,Rainbow Bubble Burst (20) · Plasma Ball (30) · Gaussian Goal (40) · Brimstone Rain (55),ugwis--go3--base
 57,Common Player,Vaughn DeVille,IE1,base,Unaffiliated,DF,C,stats del juego,56,56,60,58,55,56,Rodeo Clown (20) · Magic (21) · Teleport Shot (21) · Cyclone (38),ukegawa--ie1--base
@@ -3858,6 +3858,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 49,Common Player,Wowah Zumu,GO2,base,Unaffiliated,MF,C,stats del juego,51,54,40,43,46,51,Double Touch (10) · Heart Beat (20) · The Tower (30) · Warhead (30),coco--go2--base
 48,Common Player,Amanda Jurr,GO1,base,Unaffiliated,MF,C,stats del juego,42,47,47,61,40,48,Future Eye (10) · Log Roll (10) · Whirlwind Force (20),teshigawara--go1--base
 48,Common Player,Amy Sargent,GO1,base,Unaffiliated,MF,C,stats del juego,49,46,47,47,59,43,,mio--go1--base
+48,Common Player,Beatrix Hunny,GO1,base,Unaffiliated,DF,C,stats del juego,53,49,47,49,48,50,Future Eye (10) · Grand Slam (15) · Whirly-Whirly (10),hatchi--go1--base
 48,Common Player,Bert Emmerson,IE2,base,Unaffiliated,FW,C,stats del juego,42,61,51,49,43,43,Dash Accelerator (20) · Gyro Head (25) · Dynamite Shot (31) · Shine Drive (34),sada--ie2--base
 48,Common Player,Bob Stretcher,IE1,base,Unaffiliated,FW,C,stats del juego,47,50,48,47,49,47,Rolling Kick (20) · Phantom Shot (21) · Run Ball Run (28) · Spider Web (20),nakadate--ie1--base
 48,Common Player,Bon Homie,GO2,base,Unaffiliated,MF,C,stats del juego,40,59,40,40,43,53,Mole Fake (10) · Seal Matrix (30),cook--go2--base
@@ -3930,7 +3931,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 47,Common Player,Andy,IE3,base,Unaffiliated,DF,C,stats del juego,52,45,46,56,45,50,,azuma--ie3--base
 47,Common Player,Audry Orange,IE2,base,Unaffiliated,MF,C,stats del juego,49,46,47,46,46,44,Whirlwind Twister (20) · Dirt Ball (22) · Fake Ball (30) · Baby Dragon (25),mikan--ie2--base
 47,Common Player,Aurie Garmer,IE2,base,Unaffiliated,MF,C,stats del juego,49,42,57,45,59,56,Whirlwind Twister (20) · Cross Drive (28) · About Face (16) · Ribbon Shower (40),koyori--ie2--base
-47,Common Player,Beatrix Hunny,GO1,base,Unaffiliated,DF,C,stats del juego,52,48,46,48,47,49,Future Eye (10) · Grand Slam (15) · Whirly-Whirly (10),hatchi--go1--base
 47,Common Player,Brent Cross,IE1,base,Unaffiliated,MF,C,stats del juego,53,45,47,46,46,47,Dash Accelerator (20) · Grenade Shot (20) · Breakthrough (25) · Run Ball Run (28),yuguchi--ie1--base
 47,Common Player,Brutus Pummel,GO1,base,Unaffiliated,DF,C,stats del juego,42,53,35,49,51,37,Thief's Eye (8) · Grand Slam (15) · Runaway Train (8),kobushi--go1--base
 47,Common Player,Buster Locke,IE1,base,Unaffiliated,DF,C,stats del juego,51,48,49,47,46,47,Sumo Stomp (20) · Blade Attack (24) · Super Armadillo (24) · Earthquake (32),maezono--ie1--base
