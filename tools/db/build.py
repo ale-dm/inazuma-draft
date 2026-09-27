@@ -55,6 +55,11 @@ STRIKERS_FORMS = [
     ('teikoku', 'IE1', 'Royal Academy'), ('zeus', 'IE1', 'Zeus'), ('raimon form', 'IE1', 'Raimon'),
     ('shinsei raimon', 'GO1', 'Raimon'), ('tenmas', 'GO1', 'Tenmas'),
 ]
+# Formas de PlayerData (wiki) → equipo de la versión. Real Inazuma, Mixi Max, modos y disfraces quedan fuera.
+WIKI_FORM_TEAM = {'Dark Emperors': 'Dark Emperors', 'Chaos': 'Chaos', 'Epsilon Kai': 'Epsilon Plus',
+                  'Shin Teikoku Gakuen': 'Royal Academy Redux', 'Diamond Dust': 'Diamond Dust', 'Prominence': 'Prominence',
+                  'Neo Japan': 'Neo Japan', 'Fire Dragon': 'Fire Dragon', 'Unicorn': 'Unicorn', 'Zeus': 'Zeus'}
+TEAM_FORM_WORD = {v: k.lower() for k, v in WIKI_FORM_TEAM.items()} | {'Young Inazuma': 'young'}
 ALT_VERSION = ('dark emperors', 'chaos', 'atsuya', 'shirou', 'merged', 'ishido', 'gran', 'chrono storm')
 ILJ = 'Inazuma Legend Japan'
 # nombres de equipo de zukan → los de la base
@@ -99,6 +104,7 @@ def main():
     move_info = load('moves.json')
     teams_wiki = load('teams.json')
     wiki_only_img = load('wiki_only_images.json')
+    form_img = load('form_images.json')
     mods = {m: lua_entries(load(f'PlayerData_{m}.lua')) for m in MODULE.values()}
 
     # --- stats de la wiki: página → juego → [(forma, stats)] + formas de Strikers + nº de spin-offs
@@ -159,6 +165,32 @@ def main():
             if form_word in (lua_field(b, 'form') or '').lower() and lua_moves(b, mod):
                 return b
         return None
+
+    # versiones que define la wiki: (página, juego) → [(equipo, entrada)]
+    wiki_forms = collections.defaultdict(list)
+    for (pg_, mod), es in entries.items():
+        g_ = next(g for g, m in MODULE.items() if m == mod)
+        for b in es.values():
+            f = lua_field(b, 'form') or ''
+            link = re.match(r'\[\[([^|\]]+)\]\] form$', f)
+            if link and link.group(1) in WIKI_FORM_TEAM:
+                tm_ = WIKI_FORM_TEAM[link.group(1)]
+            elif f == 'young form' and mod == 'IE2':
+                tm_ = 'Young Inazuma'
+            elif f in ('adult form', '<i>Galaxy</i> form') and mod in ('CS', 'GX'):
+                tm_ = 'Adult'
+            else:
+                continue
+            if tm_ not in [t for t, _ in wiki_forms[(pg_, g_)]]:
+                wiki_forms[(pg_, g_)].append((tm_, b))
+
+    def form_image(body, game):
+        """render 3D de la forma en la wiki: "(DE) Kazemaru 3D (1).png" (prefijo del sprite de ese juego primero)"""
+        nick = lua_field(body, 'nickname')
+        mine = re.findall(r'\n\t\t\t' + MODULE[game] + r'="\(([^)]+(?:\([^)]*\))?)\) ', body)
+        rest = re.findall(r'="\(([^)]+(?:\([^)]*\))?)\) [^"]*sprite', body)
+        return next((form_img[f'File:({p}) {nick} 3D (1).png'] for p in mine + rest
+                     if f'File:({p}) {nick} 3D (1).png' in form_img), None)
 
     def moves_for(page, game, entry=None, adult=False):
         """moveset del juego: la entrada indicada, o la entrada de la página que más técnicas tenga para ese juego"""
@@ -423,6 +455,20 @@ def main():
         for (p, g, tm), d in proto.items():
             if p == pg and g in stats_by_game:
                 versions.append((g, tm, tm, d, d['entry']))
+        # versiones de la wiki (formas de PlayerData); si la versión ya existe, se le asigna la entrada de su forma
+        for g in MAIN:
+            for tm, body in wiki_forms.get((pg, g), []):
+                if g not in stats_by_game:
+                    continue
+                if tm == 'Adult' and any(v[0] == g and v[2] == ILJ for v in versions):
+                    continue
+                idx = next((i for i, v in enumerate(versions) if v[0] == g and v[2] == tm), None)
+                if idx is None and g == first and tm == old_team.get((name, first)):
+                    idx = 0                  # la forma es la de su carta base (p. ej. Burn en Prominence)
+                if idx is None:
+                    versions.append((g, tm, tm, None, body))
+                elif versions[idx][4] is None:
+                    versions[idx] = versions[idx][:4] + (body,)
         # versiones de zukan (foto propia) de equipos que el personaje aún no tiene: Young Inazuma, Perfect Cascade…
         have = {v[2] for v in versions if v[2]} | {old_team.get((name, first))}
         base_z = [z for z in zs if first in z['games']]
@@ -433,7 +479,8 @@ def main():
             if not zteams or not zgames or any(t in have for t in zteams):
                 continue
             tm = zteams[0]
-            versions.append((zgames[0], tm, tm, {'zukan': z['id']}, None))
+            wf = next((b for g_ in zgames for t_, b in wiki_forms.get((pg, g_), []) if t_ == tm), None)
+            versions.append((zgames[0], tm, tm, {'zukan': z['id']}, wf))
             have.add(tm)
 
         seen = set()
@@ -454,7 +501,7 @@ def main():
                 mm = [x for x in stats_by_game[g] if 'mixi' in x[0].lower() and any(n.lower() in x[0].lower() for n in mixi)]
                 forms = mm or forms
             subm = re.search(r'\((.+)\)$', ver)
-            want = 'adult' if tm == ILJ else (subm.group(1) if subm else (tm or '')).lower()
+            want = 'adult' if tm in (ILJ, 'Adult') else (subm.group(1) if subm else TEAM_FORM_WORD.get(tm, tm or '')).lower()
             if 'adult' in want:
                 forms = [x for x in forms if 'adult' in x[0].lower()] or forms
             elif want:
@@ -478,7 +525,7 @@ def main():
                 team = 'Adult'
 
             # técnicas
-            mids = moves_for(pg, g, entry, adult=(tm == ILJ))
+            mids = moves_for(pg, g, entry, adult=(tm in (ILJ, 'Adult')))
             if not mids and entry and MODULE[g] == 'CS':
                 mids = lua_moves(entry, 'GX')          # formas Mixi Max: técnicas en GX
             moves = [t for t in (technique(m) for m in mids) if t]
@@ -525,7 +572,7 @@ def main():
                 'raw': raw, 'raw_keys': IEK if g.startswith('IE') else GOK, 'q': q, 'ovr_raw': ovr, 'st': st,
                 'moves': moves, 'best_move': best_move, 'is_version': ver != 'base',
                 'zhint': hint.get('zukan') if isinstance(hint, dict) else None,
-                'zukan': zs, 'featured': featured.get(pg),
+                'zukan': zs, 'featured': featured.get(pg), 'form_image': form_image(base_body, g) if base_body else None,
             })
     if skipped_no_stats:
         report.append(f'Personajes sin stats de la saga principal (fuera): {len(skipped_no_stats)}')
@@ -597,21 +644,27 @@ def main():
         by_char[c['character_id']].append(c)
     for group in by_char.values():
         used_z = set()
-        for c in sorted(group, key=lambda c: (c['is_version'], MAIN.index(c['game']))):
+        # base primero; después las versiones cuyo equipo tiene ficha en zukan; las que tienen render de la wiki, al final
+        in_zukan = lambda c: bool(c['zhint']) or any(c['team'] in z['teams'] for z in c['zukan'])
+        for c in sorted(group, key=lambda c: (c['is_version'], not in_zukan(c), bool(c['form_image']), MAIN.index(c['game']))):
             if not c['zukan']:
-                c['zukan_id'], c['image_url'] = None, wiki_only_img.get(c['page'])
+                c['zukan_id'], c['image_url'] = None, wiki_only_img.get(c['page']) or c['form_image']
                 continue
-            ilj, cs = c['version'] == ILJ, c['version'] == 'Chrono Storm'
+            ilj, cs = c['version'] in (ILJ, 'Adult'), c['version'] == 'Chrono Storm'
             scout = c['tier'] == 'C'
             def score(z):
                 teams, games = set(z['teams']), set(z['games'])
                 adult = z.get('age') == 'Adult'
-                return (10 * (z['id'] == c['zhint']) + 4 * (c['team'] in teams) + 5 * (ilj and 'Inazuma Legend National' in teams)
+                return (10 * (z['id'] == c['zhint']) + 4 * (c['team'] in teams) + 5 * (c['version'] == ILJ and 'Inazuma Legend National' in teams)
                         + 3 * (cs and 'Chrono Storm' in teams and not games & {'IE1', 'IE2', 'IE3'})
                         + 2 * (z['id'] not in used_z) + (z['position'] == c['position']) + (c['game'] in games)
                         - 6 * (not games & MAINLINE) - 3 * (teams <= SCOUT_TEAMS and not scout)
                         - 4 * (adult and not ilj) - 4 * (ilj and not adult))
             z = max(c['zukan'], key=score)
+            wrong_age = c['version'] in (ILJ, 'Adult') and z.get('age') != 'Adult'
+            if c['form_image'] and (z['id'] in used_z or wrong_age):
+                c['zukan_id'], c['image_url'] = None, c['form_image']      # zukan no tiene foto de esta forma
+                continue
             used_z.add(z['id'])
             c['zukan_id'], c['image_url'] = z['id'], f"https://dxi4wb638ujep.cloudfront.net/1/{z['id']}.png"
 
