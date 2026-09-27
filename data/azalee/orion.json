@@ -1,0 +1,5752 @@
+[
+ {
+  "zukan_no": 4391,
+  "zukan_id": "k/m/5/m5nqoq8uews",
+  "name": "Basile Hardy",
+  "chara_id": "0xEC3C8E19",
+  "internal_code": "c07010020",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 13,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 190,
+   "control": 179,
+   "technique": 164,
+   "pressure": 129,
+   "physical": 132,
+   "agility": 129,
+   "intelligence": 143
+  },
+  "skills": [
+   {
+    "code": "rhs10040",
+    "level": 0
+   },
+   {
+    "code": "whs02750",
+    "level": 1
+   },
+   {
+    "code": "whs02840",
+    "level": 13
+   },
+   {
+    "code": "who00070",
+    "level": 20
+   },
+   {
+    "code": "whs02830",
+    "level": 30
+   },
+   {
+    "code": "who00070",
+    "level": 43
+   },
+   {
+    "code": "who00270",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4392,
+  "zukan_id": "k/9/r/9rwxfvauzle",
+  "name": "Adriano Donati",
+  "chara_id": "0xF527BF58",
+  "internal_code": "c07010030",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 13,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 190,
+   "control": 179,
+   "technique": 164,
+   "pressure": 129,
+   "physical": 132,
+   "agility": 129,
+   "intelligence": 143
+  },
+  "skills": [
+   {
+    "code": "rhs10020",
+    "level": 0
+   },
+   {
+    "code": "whs02850",
+    "level": 1
+   },
+   {
+    "code": "whs00070",
+    "level": 13
+   },
+   {
+    "code": "whs00270",
+    "level": 20
+   },
+   {
+    "code": "whs01520",
+    "level": 30
+   },
+   {
+    "code": "who00270",
+    "level": 43
+   },
+   {
+    "code": "who00580",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4393,
+  "zukan_id": "k/_/w/_wrtrmi42je",
+  "name": "Sandra Fischer",
+  "chara_id": "0xBA66299F",
+  "internal_code": "c07010040",
+  "position": "GK",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 10,
+   "control": 11,
+   "technique": 11,
+   "pressure": 12,
+   "physical": 11,
+   "agility": 10,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 133,
+   "control": 146,
+   "technique": 137,
+   "pressure": 164,
+   "physical": 157,
+   "agility": 166,
+   "intelligence": 150
+  },
+  "skills": [
+   {
+    "code": "rhk10020",
+    "level": 0
+   },
+   {
+    "code": "whk01400",
+    "level": 1
+   },
+   {
+    "code": "whk01410",
+    "level": 13
+   },
+   {
+    "code": "whk00360",
+    "level": 20
+   },
+   {
+    "code": "whk00590",
+    "level": 30
+   },
+   {
+    "code": "whd01310",
+    "level": 43
+   },
+   {
+    "code": "whd10040",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4394,
+  "zukan_id": "k/o/y/oygmgzucbqs",
+  "name": "Kiko Calavento",
+  "chara_id": "0xA37D18DE",
+  "internal_code": "c07010050",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10030",
+    "level": 0
+   },
+   {
+    "code": "whd01460",
+    "level": 1
+   },
+   {
+    "code": "whd01470",
+    "level": 13
+   },
+   {
+    "code": "whs02800",
+    "level": 20
+   },
+   {
+    "code": "who00160",
+    "level": 30
+   },
+   {
+    "code": "who00550",
+    "level": 43
+   },
+   {
+    "code": "who00250",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4395,
+  "zukan_id": "k/u/3/u3d5vubkuwc",
+  "name": "César Montalbán",
+  "chara_id": "0x88504B1D",
+  "internal_code": "c07010060",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10010",
+    "level": 0
+   },
+   {
+    "code": "whd01470",
+    "level": 1
+   },
+   {
+    "code": "who01470",
+    "level": 13
+   },
+   {
+    "code": "who00130",
+    "level": 20
+   },
+   {
+    "code": "whd00140",
+    "level": 30
+   },
+   {
+    "code": "whd00770",
+    "level": 43
+   },
+   {
+    "code": "whd01250",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4396,
+  "zukan_id": "k/f/f/ffyy4r9wdd0",
+  "name": "Maxime Dassier",
+  "chara_id": "0x914B7A5C",
+  "internal_code": "c07010070",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10020",
+    "level": 0
+   },
+   {
+    "code": "who01410",
+    "level": 1
+   },
+   {
+    "code": "whs02800",
+    "level": 13
+   },
+   {
+    "code": "who00050",
+    "level": 20
+   },
+   {
+    "code": "whs02830",
+    "level": 30
+   },
+   {
+    "code": "whd00130",
+    "level": 43
+   },
+   {
+    "code": "whd00230",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4397,
+  "zukan_id": "k/r/1/r1najc-sk8c",
+  "name": "Trevor Cook",
+  "chara_id": "0x16D36693",
+  "internal_code": "c07010080",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10040",
+    "level": 0
+   },
+   {
+    "code": "who01410",
+    "level": 1
+   },
+   {
+    "code": "whd00130",
+    "level": 13
+   },
+   {
+    "code": "whd00070",
+    "level": 20
+   },
+   {
+    "code": "who00220",
+    "level": 30
+   },
+   {
+    "code": "whs00300",
+    "level": 43
+   },
+   {
+    "code": "whs00320",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4398,
+  "zukan_id": "k/a/d/ad8hkjyojp0",
+  "name": "Cliff Parker",
+  "chara_id": "0x0FC857D2",
+  "internal_code": "c07010090",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10040",
+    "level": 0
+   },
+   {
+    "code": "whd00010",
+    "level": 1
+   },
+   {
+    "code": "who00110",
+    "level": 13
+   },
+   {
+    "code": "whd00100",
+    "level": 20
+   },
+   {
+    "code": "whd00200",
+    "level": 30
+   },
+   {
+    "code": "whs00010",
+    "level": 43
+   },
+   {
+    "code": "whs00330",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4399,
+  "zukan_id": "k/0/1/01ns-irhoju",
+  "name": "Valentin Eisner",
+  "chara_id": "0xDFC886AC",
+  "internal_code": "c07010100",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 13,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10020",
+    "level": 0
+   },
+   {
+    "code": "whs03390",
+    "level": 1
+   },
+   {
+    "code": "whs02780",
+    "level": 13
+   },
+   {
+    "code": "whd00070",
+    "level": 20
+   },
+   {
+    "code": "who00290",
+    "level": 30
+   },
+   {
+    "code": "whs00200",
+    "level": 43
+   },
+   {
+    "code": "whs00440",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4400,
+  "zukan_id": "k/f/d/fdwntd3bfq8",
+  "name": "Nino Nango",
+  "chara_id": "0xC6D3B7ED",
+  "internal_code": "c07010110",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10060",
+    "level": 0
+   },
+   {
+    "code": "whd01470",
+    "level": 1
+   },
+   {
+    "code": "whs02790",
+    "level": 13
+   },
+   {
+    "code": "who00040",
+    "level": 20
+   },
+   {
+    "code": "who00160",
+    "level": 30
+   },
+   {
+    "code": "whd00250",
+    "level": 43
+   },
+   {
+    "code": "whd00060",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4401,
+  "zukan_id": "k/v/x/vxsjctiezes",
+  "name": "Mister Yi",
+  "chara_id": "0x0FA228D9",
+  "internal_code": "c11807020",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 13,
+   "control": 14,
+   "technique": 12,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 177,
+   "control": 173,
+   "technique": 156,
+   "pressure": 135,
+   "physical": 139,
+   "agility": 130,
+   "intelligence": 155
+  },
+  "skills": [
+   {
+    "code": "rhs10050",
+    "level": 0
+   },
+   {
+    "code": "whs00130",
+    "level": 1
+   },
+   {
+    "code": "who00090",
+    "level": 13
+   },
+   {
+    "code": "whs00010",
+    "level": 20
+   },
+   {
+    "code": "whs00310",
+    "level": 30
+   },
+   {
+    "code": "who00610",
+    "level": 43
+   },
+   {
+    "code": "whd00190",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4402,
+  "zukan_id": "k/t/l/tljfqmotmw0",
+  "name": "Li Kobun",
+  "chara_id": "0x1942C47F",
+  "internal_code": "c11808150",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 13,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 160,
+   "control": 174,
+   "technique": 169,
+   "pressure": 141,
+   "physical": 140,
+   "agility": 129,
+   "intelligence": 155
+  },
+  "skills": [
+   {
+    "code": "rhs10040",
+    "level": 0
+   },
+   {
+    "code": "whs01750",
+    "level": 1
+   },
+   {
+    "code": "who00030",
+    "level": 13
+   },
+   {
+    "code": "who00580",
+    "level": 20
+   },
+   {
+    "code": "who00320",
+    "level": 30
+   },
+   {
+    "code": "whd00220",
+    "level": 43
+   },
+   {
+    "code": "whd00500",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4404,
+  "zukan_id": "k/p/4/p4x8po9mskc",
+  "name": "Regina Mulgrave",
+  "chara_id": "0x248F7B1A",
+  "internal_code": "c11807010",
+  "position": "GK",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 133,
+   "control": 146,
+   "technique": 137,
+   "pressure": 164,
+   "physical": 157,
+   "agility": 166,
+   "intelligence": 150
+  },
+  "skills": [
+   {
+    "code": "rhk10020",
+    "level": 0
+   },
+   {
+    "code": "whk00760",
+    "level": 1
+   },
+   {
+    "code": "whk00360",
+    "level": 13
+   },
+   {
+    "code": "whk00350",
+    "level": 20
+   },
+   {
+    "code": "whk00120",
+    "level": 30
+   },
+   {
+    "code": "who00440",
+    "level": 43
+   },
+   {
+    "code": "whd00790",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4405,
+  "zukan_id": "k/v/4/v4l67gewydu",
+  "name": "Aurelia Dingle",
+  "chara_id": "0x91BFE940",
+  "internal_code": "c02024690",
+  "position": "MF",
+  "rarity": "Expérimenté",
+  "rarity_code": 2,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 158,
+   "control": 182,
+   "technique": 184,
+   "pressure": 133,
+   "physical": 138,
+   "agility": 135,
+   "intelligence": 165
+  },
+  "skills": [
+   {
+    "code": "rhd10030",
+    "level": 0
+   },
+   {
+    "code": "whd00720",
+    "level": 1
+   },
+   {
+    "code": "who00690",
+    "level": 13
+   },
+   {
+    "code": "who00040",
+    "level": 20
+   },
+   {
+    "code": "whs01250",
+    "level": 30
+   },
+   {
+    "code": "whd00250",
+    "level": 43
+   },
+   {
+    "code": "whd00230",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4410,
+  "zukan_id": "k/p/o/poj0tfsggps",
+  "name": "Acker Reese",
+  "chara_id": "0xD6EB008C",
+  "internal_code": "c07020070",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 13,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 137,
+   "control": 142,
+   "technique": 146,
+   "pressure": 164,
+   "physical": 158,
+   "agility": 139,
+   "intelligence": 177
+  },
+  "skills": [
+   {
+    "code": "rhd10030",
+    "level": 0
+   },
+   {
+    "code": "whd01490",
+    "level": 1
+   },
+   {
+    "code": "whs00400",
+    "level": 13
+   },
+   {
+    "code": "who01420",
+    "level": 20
+   },
+   {
+    "code": "whd00070",
+    "level": 30
+   },
+   {
+    "code": "who00750",
+    "level": 43
+   },
+   {
+    "code": "who00950",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4416,
+  "zukan_id": "k/a/h/ah_jq5yqice",
+  "name": "Elliot Ember",
+  "chara_id": "0x80B1A70A",
+  "internal_code": "c07020010",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 190,
+   "control": 179,
+   "technique": 164,
+   "pressure": 129,
+   "physical": 132,
+   "agility": 129,
+   "intelligence": 143
+  },
+  "skills": [
+   {
+    "code": "rhs10040",
+    "level": 0
+   },
+   {
+    "code": "whs02870",
+    "level": 1
+   },
+   {
+    "code": "whs02880",
+    "level": 13
+   },
+   {
+    "code": "whd00020",
+    "level": 20
+   },
+   {
+    "code": "whs00080",
+    "level": 30
+   },
+   {
+    "code": "whd01490",
+    "level": 43
+   },
+   {
+    "code": "whd00540",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4425,
+  "zukan_id": "k/g/r/graq5qx3ije",
+  "name": "Duske Grayling",
+  "chara_id": "0x96FCDD79",
+  "internal_code": "c07030020",
+  "position": "GK",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 133,
+   "control": 146,
+   "technique": 137,
+   "pressure": 164,
+   "physical": 157,
+   "agility": 166,
+   "intelligence": 150
+  },
+  "skills": [
+   {
+    "code": "rhk10030",
+    "level": 0
+   },
+   {
+    "code": "whk01460",
+    "level": 1
+   },
+   {
+    "code": "whk01470",
+    "level": 13
+   },
+   {
+    "code": "whk00040",
+    "level": 20
+   },
+   {
+    "code": "whk00800",
+    "level": 30
+   },
+   {
+    "code": "who00750",
+    "level": 43
+   },
+   {
+    "code": "who01010",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4434,
+  "zukan_id": "k/m/-/m-5fq3i_xp0",
+  "name": "Heath Moore",
+  "chara_id": "0xBDD18EBA",
+  "internal_code": "c07030010",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 190,
+   "control": 179,
+   "technique": 164,
+   "pressure": 129,
+   "physical": 132,
+   "agility": 129,
+   "intelligence": 143
+  },
+  "skills": [
+   {
+    "code": "rhs10020",
+    "level": 0
+   },
+   {
+    "code": "whs02890",
+    "level": 1
+   },
+   {
+    "code": "who00810",
+    "level": 13
+   },
+   {
+    "code": "whs00510",
+    "level": 20
+   },
+   {
+    "code": "who00730",
+    "level": 30
+   },
+   {
+    "code": "whd01250",
+    "level": 43
+   },
+   {
+    "code": "whd00790",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4539,
+  "zukan_id": "k/m/a/maq5sorjvom",
+  "name": "Aiden Froste",
+  "chara_id": "0xDC4CC5D8",
+  "internal_code": "c07090020",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 177,
+   "control": 173,
+   "technique": 156,
+   "pressure": 135,
+   "physical": 139,
+   "agility": 130,
+   "intelligence": 155
+  },
+  "skills": [
+   {
+    "code": "rhs10010",
+    "level": 0
+   },
+   {
+    "code": "whd01540",
+    "level": 1
+   },
+   {
+    "code": "whs02920",
+    "level": 13
+   },
+   {
+    "code": "whs00440",
+    "level": 20
+   },
+   {
+    "code": "whs02930",
+    "level": 30
+   },
+   {
+    "code": "whd00240",
+    "level": 43
+   },
+   {
+    "code": "whd00520",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4546,
+  "zukan_id": "k/s/v/sv5c5do761u",
+  "name": "Dave Quagmire",
+  "chara_id": "0x1FC40D2F",
+  "internal_code": "c03030070",
+  "position": "GK",
+  "rarity": "Expérimenté",
+  "rarity_code": 2,
+  "lv1": {
+   "kick": 13,
+   "control": 14,
+   "technique": 12,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 164,
+   "control": 178,
+   "technique": 173,
+   "pressure": 145,
+   "physical": 145,
+   "agility": 133,
+   "intelligence": 159
+  },
+  "skills": [
+   {
+    "code": "rho10050",
+    "level": 0
+   },
+   {
+    "code": "who00040",
+    "level": 1
+   },
+   {
+    "code": "whs00650",
+    "level": 13
+   },
+   {
+    "code": "whs00340",
+    "level": 20
+   },
+   {
+    "code": "whs00260",
+    "level": 30
+   },
+   {
+    "code": "whs00340",
+    "level": 43
+   },
+   {
+    "code": "whs00260",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4555,
+  "zukan_id": "k/_/z/_zskpmplngm",
+  "name": "Hunter Foster",
+  "chara_id": "0x312D27CF",
+  "internal_code": "c07100010",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 13,
+   "control": 14,
+   "technique": 12,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 177,
+   "control": 173,
+   "technique": 156,
+   "pressure": 135,
+   "physical": 139,
+   "agility": 130,
+   "intelligence": 155
+  },
+  "skills": [
+   {
+    "code": "rhs10030",
+    "level": 0
+   },
+   {
+    "code": "whs00510",
+    "level": 1
+   },
+   {
+    "code": "whd00290",
+    "level": 13
+   },
+   {
+    "code": "whs00810",
+    "level": 20
+   },
+   {
+    "code": "who00430",
+    "level": 30
+   },
+   {
+    "code": "who00420",
+    "level": 43
+   },
+   {
+    "code": "who00430",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4562,
+  "zukan_id": "k/d/s/dsqctotk4v8",
+  "name": "Billy Miller",
+  "chara_id": "0x0C4D0E7F",
+  "internal_code": "c07110010",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10040",
+    "level": 0
+   },
+   {
+    "code": "whd00340",
+    "level": 1
+   },
+   {
+    "code": "whd00120",
+    "level": 13
+   },
+   {
+    "code": "whk00480",
+    "level": 20
+   },
+   {
+    "code": "whs01040",
+    "level": 30
+   },
+   {
+    "code": "whs01170",
+    "level": 43
+   },
+   {
+    "code": "whs00960",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4589,
+  "zukan_id": "k/g/p/gpfoqcguqs0",
+  "name": "Salvador Castell",
+  "chara_id": "0x774F3728",
+  "internal_code": "c07130110",
+  "position": "GK",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 133,
+   "control": 146,
+   "technique": 137,
+   "pressure": 164,
+   "physical": 157,
+   "agility": 166,
+   "intelligence": 150
+  },
+  "skills": [
+   {
+    "code": "rhk10020",
+    "level": 0
+   },
+   {
+    "code": "whk01530",
+    "level": 1
+   },
+   {
+    "code": "whk00170",
+    "level": 13
+   },
+   {
+    "code": "whk00690",
+    "level": 20
+   },
+   {
+    "code": "whk00860",
+    "level": 30
+   },
+   {
+    "code": "who00170",
+    "level": 43
+   },
+   {
+    "code": "who00610",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4597,
+  "zukan_id": "k/y/d/ydfy8krhczm",
+  "name": "Leo Segarra",
+  "chara_id": "0x44BB3F9D",
+  "internal_code": "c07130030",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 190,
+   "control": 179,
+   "technique": 164,
+   "pressure": 129,
+   "physical": 132,
+   "agility": 129,
+   "intelligence": 143
+  },
+  "skills": [
+   {
+    "code": "rhs10010",
+    "level": 0
+   },
+   {
+    "code": "whs03160",
+    "level": 1
+   },
+   {
+    "code": "whs00510",
+    "level": 13
+   },
+   {
+    "code": "who00130",
+    "level": 20
+   },
+   {
+    "code": "whs00780",
+    "level": 30
+   },
+   {
+    "code": "whk00150",
+    "level": 43
+   },
+   {
+    "code": "whk00880",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4598,
+  "zukan_id": "k/j/e/jexmco4teku",
+  "name": "Sergi Hernández",
+  "chara_id": "0x768D5D1F",
+  "internal_code": "c07130010",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 13,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10060",
+    "level": 0
+   },
+   {
+    "code": "whs03000",
+    "level": 1
+   },
+   {
+    "code": "whs03140",
+    "level": 13
+   },
+   {
+    "code": "whd01560",
+    "level": 20
+   },
+   {
+    "code": "whs03240",
+    "level": 30
+   },
+   {
+    "code": "whs01290",
+    "level": 43
+   },
+   {
+    "code": "whs02110",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4649,
+  "zukan_id": "k/j/m/jm1ljwt0yjs",
+  "name": "Philip Star",
+  "chara_id": "0x3159AD33",
+  "internal_code": "c08010010",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 13,
+   "control": 14,
+   "technique": 12,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 160,
+   "control": 174,
+   "technique": 169,
+   "pressure": 141,
+   "physical": 140,
+   "agility": 129,
+   "intelligence": 155
+  },
+  "skills": [
+   {
+    "code": "rho10040",
+    "level": 0
+   },
+   {
+    "code": "who00430",
+    "level": 1
+   },
+   {
+    "code": "whd00780",
+    "level": 13
+   },
+   {
+    "code": "who00080",
+    "level": 20
+   },
+   {
+    "code": "whd00790",
+    "level": 30
+   },
+   {
+    "code": "whs00560",
+    "level": 43
+   },
+   {
+    "code": "whs02590",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4650,
+  "zukan_id": "k/p/j/pjw-aty8hpc",
+  "name": "Lucas Star",
+  "chara_id": "0x1A74FEF0",
+  "internal_code": "c08010020",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 13,
+   "control": 14,
+   "technique": 12,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 160,
+   "control": 174,
+   "technique": 169,
+   "pressure": 141,
+   "physical": 140,
+   "agility": 129,
+   "intelligence": 155
+  },
+  "skills": [
+   {
+    "code": "rho10040",
+    "level": 0
+   },
+   {
+    "code": "who01450",
+    "level": 1
+   },
+   {
+    "code": "whs03230",
+    "level": 13
+   },
+   {
+    "code": "whs03280",
+    "level": 20
+   },
+   {
+    "code": "whd00790",
+    "level": 30
+   },
+   {
+    "code": "whs03230",
+    "level": 43
+   },
+   {
+    "code": "whs03280",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4655,
+  "zukan_id": "k/w/w/wwcpkuc__fu",
+  "name": "Park Gom-bull",
+  "chara_id": "0x773BBDD4",
+  "internal_code": "c08020110",
+  "position": "GK",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 133,
+   "control": 146,
+   "technique": 137,
+   "pressure": 164,
+   "physical": 157,
+   "agility": 166,
+   "intelligence": 150
+  },
+  "skills": [
+   {
+    "code": "rhk10010",
+    "level": 0
+   },
+   {
+    "code": "whk01590",
+    "level": 1
+   },
+   {
+    "code": "whk00840",
+    "level": 13
+   },
+   {
+    "code": "whk00660",
+    "level": 20
+   },
+   {
+    "code": "whk00580",
+    "level": 30
+   },
+   {
+    "code": "who00170",
+    "level": 43
+   },
+   {
+    "code": "whd00110",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4656,
+  "zukan_id": "k/n/y/nytunrkfs28",
+  "name": "Hwang Bull-gim",
+  "chara_id": "0x6E208C95",
+  "internal_code": "c08020100",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10040",
+    "level": 0
+   },
+   {
+    "code": "whd00070",
+    "level": 1
+   },
+   {
+    "code": "who00220",
+    "level": 13
+   },
+   {
+    "code": "whd00610",
+    "level": 20
+   },
+   {
+    "code": "who00310",
+    "level": 30
+   },
+   {
+    "code": "who00310",
+    "level": 43
+   },
+   {
+    "code": "whd00110",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4657,
+  "zukan_id": "k/j/w/jw2j9qtmzac",
+  "name": "Kim Bull-bit",
+  "chara_id": "0xBE205DEB",
+  "internal_code": "c08020090",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 10,
+   "control": 11,
+   "technique": 11,
+   "pressure": 12,
+   "physical": 11,
+   "agility": 10,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10010",
+    "level": 0
+   },
+   {
+    "code": "whd00610",
+    "level": 1
+   },
+   {
+    "code": "who00310",
+    "level": 13
+   },
+   {
+    "code": "whd00340",
+    "level": 20
+   },
+   {
+    "code": "whd00310",
+    "level": 30
+   },
+   {
+    "code": "whk01590",
+    "level": 43
+   },
+   {
+    "code": "whk00580",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4658,
+  "zukan_id": "k/4/y/4yhcqvl2ep0",
+  "name": "Suna Bey-bull",
+  "chara_id": "0xA73B6CAA",
+  "internal_code": "c08020080",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10040",
+    "level": 0
+   },
+   {
+    "code": "whd00340",
+    "level": 1
+   },
+   {
+    "code": "whd00310",
+    "level": 13
+   },
+   {
+    "code": "who00460",
+    "level": 20
+   },
+   {
+    "code": "whd00610",
+    "level": 30
+   },
+   {
+    "code": "whs03200",
+    "level": 43
+   },
+   {
+    "code": "whs02470",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4659,
+  "zukan_id": "k/m/y/my4ahyiu5wc",
+  "name": "Han Bull-dang",
+  "chara_id": "0x20A37065",
+  "internal_code": "c08020070",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10050",
+    "level": 0
+   },
+   {
+    "code": "whd00850",
+    "level": 1
+   },
+   {
+    "code": "whd00570",
+    "level": 13
+   },
+   {
+    "code": "whd00110",
+    "level": 20
+   },
+   {
+    "code": "whd00820",
+    "level": 30
+   },
+   {
+    "code": "whd00110",
+    "level": 43
+   },
+   {
+    "code": "who00510",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4660,
+  "zukan_id": "k/9/a/9aj7mnuuul0",
+  "name": "Yeon Bull-say",
+  "chara_id": "0x39B84124",
+  "internal_code": "c08020060",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10030",
+    "level": 0
+   },
+   {
+    "code": "who00320",
+    "level": 1
+   },
+   {
+    "code": "whd00140",
+    "level": 13
+   },
+   {
+    "code": "whd00610",
+    "level": 20
+   },
+   {
+    "code": "who00680",
+    "level": 30
+   },
+   {
+    "code": "whd00610",
+    "level": 43
+   },
+   {
+    "code": "who00680",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4661,
+  "zukan_id": "k/d/1/d1qof6bmhfe",
+  "name": "Lee Bull-gae",
+  "chara_id": "0x129512E7",
+  "internal_code": "c08020050",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10020",
+    "level": 0
+   },
+   {
+    "code": "whd00110",
+    "level": 1
+   },
+   {
+    "code": "who00320",
+    "level": 13
+   },
+   {
+    "code": "whs03200",
+    "level": 20
+   },
+   {
+    "code": "who00500",
+    "level": 30
+   },
+   {
+    "code": "whk01590",
+    "level": 43
+   },
+   {
+    "code": "whk00580",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4662,
+  "zukan_id": "k/s/d/sdbvyf9cm2s",
+  "name": "Seok Tel-bull",
+  "chara_id": "0x0B8E23A6",
+  "internal_code": "c08020040",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10020",
+    "level": 0
+   },
+   {
+    "code": "whd00110",
+    "level": 1
+   },
+   {
+    "code": "who00070",
+    "level": 13
+   },
+   {
+    "code": "who00040",
+    "level": 20
+   },
+   {
+    "code": "whs03310",
+    "level": 30
+   },
+   {
+    "code": "who00710",
+    "level": 43
+   },
+   {
+    "code": "whd00730",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4663,
+  "zukan_id": "k/u/8/u8czccvwjws",
+  "name": "Shin Bull-kot",
+  "chara_id": "0x44CFB561",
+  "internal_code": "c08020030",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10010",
+    "level": 0
+   },
+   {
+    "code": "whd00110",
+    "level": 1
+   },
+   {
+    "code": "who00670",
+    "level": 13
+   },
+   {
+    "code": "whs02470",
+    "level": 20
+   },
+   {
+    "code": "who00770",
+    "level": 30
+   },
+   {
+    "code": "whd00340",
+    "level": 43
+   },
+   {
+    "code": "whd00610",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4664,
+  "zukan_id": "k/_/7/_7oni-8crj0",
+  "name": "Baek Bull-wo",
+  "chara_id": "0x76F9D7E3",
+  "internal_code": "c08020010",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 190,
+   "control": 179,
+   "technique": 164,
+   "pressure": 129,
+   "physical": 132,
+   "agility": 129,
+   "intelligence": 143
+  },
+  "skills": [
+   {
+    "code": "rhs10040",
+    "level": 0
+   },
+   {
+    "code": "whs03200",
+    "level": 1
+   },
+   {
+    "code": "whs03310",
+    "level": 13
+   },
+   {
+    "code": "whd00110",
+    "level": 20
+   },
+   {
+    "code": "whs02470",
+    "level": 30
+   },
+   {
+    "code": "whd00340",
+    "level": 43
+   },
+   {
+    "code": "whd00610",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4665,
+  "zukan_id": "k/f/u/futsxjjkkde",
+  "name": "Lee San-bull",
+  "chara_id": "0x5DD48420",
+  "internal_code": "c08020020",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 190,
+   "control": 179,
+   "technique": 164,
+   "pressure": 129,
+   "physical": 132,
+   "agility": 129,
+   "intelligence": 143
+  },
+  "skills": [
+   {
+    "code": "rhs10050",
+    "level": 0
+   },
+   {
+    "code": "whs03200",
+    "level": 1
+   },
+   {
+    "code": "whd00110",
+    "level": 13
+   },
+   {
+    "code": "whs02470",
+    "level": 20
+   },
+   {
+    "code": "who00780",
+    "level": 30
+   },
+   {
+    "code": "whd00340",
+    "level": 43
+   },
+   {
+    "code": "whd00610",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4666,
+  "zukan_id": "k/2/f/2f_6zj33klk",
+  "name": "Ho Bull-tong",
+  "chara_id": "0x5C16EE17",
+  "internal_code": "c08020120",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 13,
+   "control": 14,
+   "technique": 12,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 177,
+   "control": 173,
+   "technique": 156,
+   "pressure": 135,
+   "physical": 139,
+   "agility": 130,
+   "intelligence": 155
+  },
+  "skills": [
+   {
+    "code": "rhs10010",
+    "level": 0
+   },
+   {
+    "code": "whs03200",
+    "level": 1
+   },
+   {
+    "code": "whd00110",
+    "level": 13
+   },
+   {
+    "code": "who00460",
+    "level": 20
+   },
+   {
+    "code": "whs01540",
+    "level": 30
+   },
+   {
+    "code": "who00460",
+    "level": 43
+   },
+   {
+    "code": "who00870",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4667,
+  "zukan_id": "k/h/3/h3ob02rnnwm",
+  "name": "Son Bull-gong",
+  "chara_id": "0x450DDF56",
+  "internal_code": "c08020130",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10040",
+    "level": 0
+   },
+   {
+    "code": "whd00110",
+    "level": 1
+   },
+   {
+    "code": "who00460",
+    "level": 13
+   },
+   {
+    "code": "whs03200",
+    "level": 20
+   },
+   {
+    "code": "whd00610",
+    "level": 30
+   },
+   {
+    "code": "whd00140",
+    "level": 43
+   },
+   {
+    "code": "whd00610",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4668,
+  "zukan_id": "k/f/w/fwjhavdhiqm",
+  "name": "Harh Bull-gull",
+  "chara_id": "0x0A4C4991",
+  "internal_code": "c08020140",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10010",
+    "level": 0
+   },
+   {
+    "code": "whd00450",
+    "level": 1
+   },
+   {
+    "code": "whd00480",
+    "level": 13
+   },
+   {
+    "code": "whd00110",
+    "level": 20
+   },
+   {
+    "code": "whd00400",
+    "level": 30
+   },
+   {
+    "code": "who00510",
+    "level": 43
+   },
+   {
+    "code": "whs03200",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4669,
+  "zukan_id": "k/y/o/yo_efixk4wk",
+  "name": "An Min-su",
+  "chara_id": "0x7CEC6B4C",
+  "internal_code": "c11808010",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 13,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10030",
+    "level": 0
+   },
+   {
+    "code": "whd00110",
+    "level": 1
+   },
+   {
+    "code": "whs03200",
+    "level": 13
+   },
+   {
+    "code": "who00670",
+    "level": 20
+   },
+   {
+    "code": "who00780",
+    "level": 30
+   },
+   {
+    "code": "whs03310",
+    "level": 43
+   },
+   {
+    "code": "whs02470",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4670,
+  "zukan_id": "k/q/v/qvazwa4qgwk",
+  "name": "Pazuza Ross",
+  "chara_id": "0x4A5B9464",
+  "internal_code": "c08030110",
+  "position": "GK",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 133,
+   "control": 146,
+   "technique": 137,
+   "pressure": 164,
+   "physical": 157,
+   "agility": 166,
+   "intelligence": 150
+  },
+  "skills": [
+   {
+    "code": "rhk10010",
+    "level": 0
+   },
+   {
+    "code": "whk01650",
+    "level": 1
+   },
+   {
+    "code": "whk01300",
+    "level": 13
+   },
+   {
+    "code": "whk01010",
+    "level": 20
+   },
+   {
+    "code": "whk00560",
+    "level": 30
+   },
+   {
+    "code": "who00770",
+    "level": 43
+   },
+   {
+    "code": "whs01510",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4671,
+  "zukan_id": "k/b/h/bhr4dleqndm",
+  "name": "Carlam Buer",
+  "chara_id": "0x5340A525",
+  "internal_code": "c08030100",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10020",
+    "level": 0
+   },
+   {
+    "code": "whd00300",
+    "level": 1
+   },
+   {
+    "code": "whd00540",
+    "level": 13
+   },
+   {
+    "code": "whd00120",
+    "level": 20
+   },
+   {
+    "code": "whd00110",
+    "level": 30
+   },
+   {
+    "code": "whs00280",
+    "level": 43
+   },
+   {
+    "code": "whs00750",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4672,
+  "zukan_id": "k/1/v/1vw1hkxjsvs",
+  "name": "Damon Gorgon",
+  "chara_id": "0x8340745B",
+  "internal_code": "c08030090",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10040",
+    "level": 0
+   },
+   {
+    "code": "whd00540",
+    "level": 1
+   },
+   {
+    "code": "whd00120",
+    "level": 13
+   },
+   {
+    "code": "whd00650",
+    "level": 20
+   },
+   {
+    "code": "whd00200",
+    "level": 30
+   },
+   {
+    "code": "whs02510",
+    "level": 43
+   },
+   {
+    "code": "who00390",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4673,
+  "zukan_id": "k/e/h/ehbuqbxzbce",
+  "name": "Mortam Malius",
+  "chara_id": "0x9A5B451A",
+  "internal_code": "c08030080",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10020",
+    "level": 0
+   },
+   {
+    "code": "whd01070",
+    "level": 1
+   },
+   {
+    "code": "who00670",
+    "level": 13
+   },
+   {
+    "code": "whd00340",
+    "level": 20
+   },
+   {
+    "code": "whd00480",
+    "level": 30
+   },
+   {
+    "code": "who00410",
+    "level": 43
+   },
+   {
+    "code": "whs00790",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4674,
+  "zukan_id": "k/w/t/wt-mbwy7mjs",
+  "name": "Dante Dusias",
+  "chara_id": "0x1DC359D5",
+  "internal_code": "c08030070",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10030",
+    "level": 0
+   },
+   {
+    "code": "whd00650",
+    "level": 1
+   },
+   {
+    "code": "whd00540",
+    "level": 13
+   },
+   {
+    "code": "whs02510",
+    "level": 20
+   },
+   {
+    "code": "whd00900",
+    "level": 30
+   },
+   {
+    "code": "whs02510",
+    "level": 43
+   },
+   {
+    "code": "who00650",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4675,
+  "zukan_id": "k/b/f/bfpt2publqe",
+  "name": "Beel Zebub",
+  "chara_id": "0x04D86894",
+  "internal_code": "c08030060",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10010",
+    "level": 0
+   },
+   {
+    "code": "who00670",
+    "level": 1
+   },
+   {
+    "code": "whd00540",
+    "level": 13
+   },
+   {
+    "code": "whd00820",
+    "level": 20
+   },
+   {
+    "code": "who00700",
+    "level": 30
+   },
+   {
+    "code": "whd00710",
+    "level": 43
+   },
+   {
+    "code": "whd00820",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4676,
+  "zukan_id": "k/h/q/hqsyl0hj-w0",
+  "name": "Malik Sinn",
+  "chara_id": "0x2FF53B57",
+  "internal_code": "c08030050",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10020",
+    "level": 0
+   },
+   {
+    "code": "who00670",
+    "level": 1
+   },
+   {
+    "code": "whd00820",
+    "level": 13
+   },
+   {
+    "code": "who00780",
+    "level": 20
+   },
+   {
+    "code": "who00400",
+    "level": 30
+   },
+   {
+    "code": "whd00090",
+    "level": 43
+   },
+   {
+    "code": "whd00540",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4677,
+  "zukan_id": "k/q/c/qcd5ilhztdc",
+  "name": "Ian Qubus",
+  "chara_id": "0x36EE0A16",
+  "internal_code": "c08030040",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 13,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10020",
+    "level": 0
+   },
+   {
+    "code": "who00610",
+    "level": 1
+   },
+   {
+    "code": "whd00540",
+    "level": 13
+   },
+   {
+    "code": "who00650",
+    "level": 20
+   },
+   {
+    "code": "whd00840",
+    "level": 30
+   },
+   {
+    "code": "whs00430",
+    "level": 43
+   },
+   {
+    "code": "whs01590",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4680,
+  "zukan_id": "k/e/y/eyjdj13wsze",
+  "name": "Seth Bael",
+  "chara_id": "0x0EA8AC47",
+  "internal_code": "c08030031",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 13,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10010",
+    "level": 0
+   },
+   {
+    "code": "whs03130",
+    "level": 1
+   },
+   {
+    "code": "who00230",
+    "level": 1
+   },
+   {
+    "code": "who00690",
+    "level": 20
+   },
+   {
+    "code": "who00670",
+    "level": 30
+   },
+   {
+    "code": "who00800",
+    "level": 38
+   },
+   {
+    "code": "who00690",
+    "level": 43
+   },
+   {
+    "code": "who00670",
+    "level": 30
+   },
+   {
+    "code": "who00800",
+    "level": 38
+   }
+  ]
+ },
+ {
+  "zukan_no": 4681,
+  "zukan_id": "k/d/k/dkixywgtowe",
+  "name": "Serge Atanas",
+  "chara_id": "0x4B99FE53",
+  "internal_code": "c08030010",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 13,
+   "control": 14,
+   "technique": 12,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 177,
+   "control": 173,
+   "technique": 156,
+   "pressure": 135,
+   "physical": 139,
+   "agility": 130,
+   "intelligence": 155
+  },
+  "skills": [
+   {
+    "code": "rhs10050",
+    "level": 0
+   },
+   {
+    "code": "whs01600",
+    "level": 1
+   },
+   {
+    "code": "who00500",
+    "level": 13
+   },
+   {
+    "code": "who00650",
+    "level": 20
+   },
+   {
+    "code": "whs03200",
+    "level": 30
+   },
+   {
+    "code": "who00650",
+    "level": 43
+   },
+   {
+    "code": "whd00610",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4683,
+  "zukan_id": "k/k/a/ka5sjhnyvqu",
+  "name": "Lu Jiver",
+  "chara_id": "0x6176C7A7",
+  "internal_code": "c08030120",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10060",
+    "level": 0
+   },
+   {
+    "code": "whd00020",
+    "level": 1
+   },
+   {
+    "code": "who00770",
+    "level": 13
+   },
+   {
+    "code": "who00580",
+    "level": 20
+   },
+   {
+    "code": "whs01170",
+    "level": 30
+   },
+   {
+    "code": "whd00880",
+    "level": 43
+   },
+   {
+    "code": "whd00180",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4684,
+  "zukan_id": "k/7/o/7oino4ri4j8",
+  "name": "Zagan Barbatos",
+  "chara_id": "0x786DF6E6",
+  "internal_code": "c08030130",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 13,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10020",
+    "level": 0
+   },
+   {
+    "code": "whd00540",
+    "level": 1
+   },
+   {
+    "code": "who00800",
+    "level": 13
+   },
+   {
+    "code": "whd00120",
+    "level": 20
+   },
+   {
+    "code": "whs01170",
+    "level": 30
+   },
+   {
+    "code": "whs01170",
+    "level": 43
+   },
+   {
+    "code": "whs01590",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4685,
+  "zukan_id": "k/4/h/4hcxw_icn2u",
+  "name": "Grant Grimoire",
+  "chara_id": "0x57C1388F",
+  "internal_code": "c11808020",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10020",
+    "level": 0
+   },
+   {
+    "code": "whd00650",
+    "level": 1
+   },
+   {
+    "code": "whd00540",
+    "level": 13
+   },
+   {
+    "code": "whd00820",
+    "level": 20
+   },
+   {
+    "code": "who00700",
+    "level": 30
+   },
+   {
+    "code": "whs01600",
+    "level": 43
+   },
+   {
+    "code": "whs02020",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4686,
+  "zukan_id": "k/j/j/jjtq7ae4gf8",
+  "name": "Baz Azel",
+  "chara_id": "0x4EDA09CE",
+  "internal_code": "c11808030",
+  "position": "GK",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 10,
+   "control": 11,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 10,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 133,
+   "control": 146,
+   "technique": 137,
+   "pressure": 164,
+   "physical": 157,
+   "agility": 166,
+   "intelligence": 150
+  },
+  "skills": [
+   {
+    "code": "rhk10030",
+    "level": 0
+   },
+   {
+    "code": "whk01650",
+    "level": 1
+   },
+   {
+    "code": "whk01300",
+    "level": 13
+   },
+   {
+    "code": "whk01010",
+    "level": 20
+   },
+   {
+    "code": "whk00560",
+    "level": 30
+   },
+   {
+    "code": "whd00300",
+    "level": 43
+   },
+   {
+    "code": "whd00540",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4687,
+  "zukan_id": "k/g/c/gcipr_bovdm",
+  "name": "Bolero Salimov",
+  "chara_id": "0xF9B92243",
+  "internal_code": "c08040010",
+  "position": "GK",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 133,
+   "control": 146,
+   "technique": 137,
+   "pressure": 164,
+   "physical": 157,
+   "agility": 166,
+   "intelligence": 150
+  },
+  "skills": [
+   {
+    "code": "rhk10020",
+    "level": 0
+   },
+   {
+    "code": "whk01670",
+    "level": 1
+   },
+   {
+    "code": "whk00270",
+    "level": 13
+   },
+   {
+    "code": "whk00810",
+    "level": 20
+   },
+   {
+    "code": "whk00790",
+    "level": 30
+   },
+   {
+    "code": "who00830",
+    "level": 43
+   },
+   {
+    "code": "who00570",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4688,
+  "zukan_id": "k/a/t/atrcci0ggj8",
+  "name": "Kizomba Zakharov",
+  "chara_id": "0xD2947180",
+  "internal_code": "c08040020",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10030",
+    "level": 0
+   },
+   {
+    "code": "whd00110",
+    "level": 1
+   },
+   {
+    "code": "whd00850",
+    "level": 13
+   },
+   {
+    "code": "whd00210",
+    "level": 20
+   },
+   {
+    "code": "whd00120",
+    "level": 30
+   },
+   {
+    "code": "whs00310",
+    "level": 43
+   },
+   {
+    "code": "whs00590",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4689,
+  "zukan_id": "k/x/f/xfa9vdsanqu",
+  "name": "Rumba Mansurov",
+  "chara_id": "0xCB8F40C1",
+  "internal_code": "c08040030",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10040",
+    "level": 0
+   },
+   {
+    "code": "whd00110",
+    "level": 1
+   },
+   {
+    "code": "whd00850",
+    "level": 13
+   },
+   {
+    "code": "whd00120",
+    "level": 20
+   },
+   {
+    "code": "who00070",
+    "level": 30
+   },
+   {
+    "code": "whs00180",
+    "level": 43
+   },
+   {
+    "code": "whs00570",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4690,
+  "zukan_id": "k/z/k/zkdhbea2iwu",
+  "name": "Merengue Muratov",
+  "chara_id": "0x84CED606",
+  "internal_code": "c08040040",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10010",
+    "level": 0
+   },
+   {
+    "code": "whd00850",
+    "level": 1
+   },
+   {
+    "code": "whd00880",
+    "level": 13
+   },
+   {
+    "code": "who00510",
+    "level": 20
+   },
+   {
+    "code": "whd00110",
+    "level": 30
+   },
+   {
+    "code": "who00510",
+    "level": 43
+   },
+   {
+    "code": "whs00310",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4691,
+  "zukan_id": "k/c/m/cmsas7mmll8",
+  "name": "Chacha Goncharov",
+  "chara_id": "0x9DD5E747",
+  "internal_code": "c08040050",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10050",
+    "level": 0
+   },
+   {
+    "code": "whd00880",
+    "level": 1
+   },
+   {
+    "code": "who00530",
+    "level": 13
+   },
+   {
+    "code": "whd00130",
+    "level": 20
+   },
+   {
+    "code": "whd00120",
+    "level": 30
+   },
+   {
+    "code": "who00510",
+    "level": 43
+   },
+   {
+    "code": "who00580",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4692,
+  "zukan_id": "k/i/j/ijp1_mteqfm",
+  "name": "Hulan Nazarova",
+  "chara_id": "0xB6F8B484",
+  "internal_code": "c08040060",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10050",
+    "level": 0
+   },
+   {
+    "code": "who00510",
+    "level": 1
+   },
+   {
+    "code": "who00580",
+    "level": 13
+   },
+   {
+    "code": "who00680",
+    "level": 20
+   },
+   {
+    "code": "whd00880",
+    "level": 30
+   },
+   {
+    "code": "whd00330",
+    "level": 43
+   },
+   {
+    "code": "whd00880",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4693,
+  "zukan_id": "k/t/l/tl-usz1-92k",
+  "name": "Polkan Ismailov",
+  "chara_id": "0xAFE385C5",
+  "internal_code": "c08040070",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10040",
+    "level": 0
+   },
+   {
+    "code": "who00860",
+    "level": 1
+   },
+   {
+    "code": "whd00110",
+    "level": 13
+   },
+   {
+    "code": "whd00850",
+    "level": 20
+   },
+   {
+    "code": "who00270",
+    "level": 30
+   },
+   {
+    "code": "whd00850",
+    "level": 43
+   },
+   {
+    "code": "whd00820",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4694,
+  "zukan_id": "k/n/h/nhbmju2cajm",
+  "name": "Jazzar Belikov",
+  "chara_id": "0x287B990A",
+  "internal_code": "c08040080",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10010",
+    "level": 0
+   },
+   {
+    "code": "who00860",
+    "level": 1
+   },
+   {
+    "code": "whd00110",
+    "level": 13
+   },
+   {
+    "code": "whd00850",
+    "level": 20
+   },
+   {
+    "code": "who00870",
+    "level": 30
+   },
+   {
+    "code": "whd00850",
+    "level": 43
+   },
+   {
+    "code": "whd00400",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4695,
+  "zukan_id": "k/w/j/wjwtorqm36k",
+  "name": "Limbo Zakharov",
+  "chara_id": "0x3160A84B",
+  "internal_code": "c08040090",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 13,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10040",
+    "level": 0
+   },
+   {
+    "code": "who00860",
+    "level": 1
+   },
+   {
+    "code": "whd00850",
+    "level": 13
+   },
+   {
+    "code": "whd00110",
+    "level": 20
+   },
+   {
+    "code": "who00310",
+    "level": 30
+   },
+   {
+    "code": "whd00110",
+    "level": 43
+   },
+   {
+    "code": "whd00380",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4696,
+  "zukan_id": "k/4/h/4hrguqzvwwe",
+  "name": "Samba Sokolov",
+  "chara_id": "0xE1607935",
+  "internal_code": "c08040100",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 13,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10030",
+    "level": 0
+   },
+   {
+    "code": "whs03300",
+    "level": 1
+   },
+   {
+    "code": "who00820",
+    "level": 13
+   },
+   {
+    "code": "who01310",
+    "level": 20
+   },
+   {
+    "code": "who00830",
+    "level": 30
+   },
+   {
+    "code": "who00790",
+    "level": 43
+   },
+   {
+    "code": "whs01570",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4697,
+  "zukan_id": "k/j/j/jjab5v_v7ls",
+  "name": "Tango Ahmedov",
+  "chara_id": "0xF87B4874",
+  "internal_code": "c08040110",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 177,
+   "control": 173,
+   "technique": 156,
+   "pressure": 135,
+   "physical": 139,
+   "agility": 130,
+   "intelligence": 155
+  },
+  "skills": [
+   {
+    "code": "rhs10030",
+    "level": 0
+   },
+   {
+    "code": "whs03300",
+    "level": 1
+   },
+   {
+    "code": "who00820",
+    "level": 13
+   },
+   {
+    "code": "who01310",
+    "level": 20
+   },
+   {
+    "code": "whs00650",
+    "level": 30
+   },
+   {
+    "code": "who01310",
+    "level": 43
+   },
+   {
+    "code": "whd00120",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4698,
+  "zukan_id": "k/p/m/pm50qikdofc",
+  "name": "Cancan Popov",
+  "chara_id": "0xD3561BB7",
+  "internal_code": "c08040120",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 13,
+   "control": 14,
+   "technique": 12,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 177,
+   "control": 173,
+   "technique": 156,
+   "pressure": 135,
+   "physical": 139,
+   "agility": 130,
+   "intelligence": 155
+  },
+  "skills": [
+   {
+    "code": "rhs10020",
+    "level": 0
+   },
+   {
+    "code": "whs03300",
+    "level": 1
+   },
+   {
+    "code": "who00590",
+    "level": 13
+   },
+   {
+    "code": "who00320",
+    "level": 20
+   },
+   {
+    "code": "whs02440",
+    "level": 30
+   },
+   {
+    "code": "who00580",
+    "level": 43
+   },
+   {
+    "code": "who00690",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4699,
+  "zukan_id": "k/y/o/yoivh3snj20",
+  "name": "Bhangra Makarov",
+  "chara_id": "0xCA4D2AF6",
+  "internal_code": "c08040130",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10010",
+    "level": 0
+   },
+   {
+    "code": "whd00110",
+    "level": 1
+   },
+   {
+    "code": "who00320",
+    "level": 13
+   },
+   {
+    "code": "who00590",
+    "level": 20
+   },
+   {
+    "code": "who00860",
+    "level": 30
+   },
+   {
+    "code": "whk00280",
+    "level": 43
+   },
+   {
+    "code": "whk00170",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4700,
+  "zukan_id": "k/l/o/loqmvzwuld8",
+  "name": "Ballet Burkhanov",
+  "chara_id": "0x019B9F09",
+  "internal_code": "c11808040",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 13,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 190,
+   "control": 179,
+   "technique": 164,
+   "pressure": 129,
+   "physical": 132,
+   "agility": 129,
+   "intelligence": 143
+  },
+  "skills": [
+   {
+    "code": "rhs10050",
+    "level": 0
+   },
+   {
+    "code": "whs03300",
+    "level": 1
+   },
+   {
+    "code": "who00820",
+    "level": 13
+   },
+   {
+    "code": "who01310",
+    "level": 20
+   },
+   {
+    "code": "who00830",
+    "level": 30
+   },
+   {
+    "code": "who00050",
+    "level": 43
+   },
+   {
+    "code": "whd00110",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4701,
+  "zukan_id": "k/6/a/6abt4mwuiwu",
+  "name": "Carrie Ogrova",
+  "chara_id": "0x1880AE48",
+  "internal_code": "c11808050",
+  "position": "GK",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 133,
+   "control": 146,
+   "technique": 137,
+   "pressure": 164,
+   "physical": 157,
+   "agility": 166,
+   "intelligence": 150
+  },
+  "skills": [
+   {
+    "code": "rhk10030",
+    "level": 0
+   },
+   {
+    "code": "whk01670",
+    "level": 1
+   },
+   {
+    "code": "whs01090",
+    "level": 13
+   },
+   {
+    "code": "whk00810",
+    "level": 20
+   },
+   {
+    "code": "whk00820",
+    "level": 30
+   },
+   {
+    "code": "whs01240",
+    "level": 43
+   },
+   {
+    "code": "who00560",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4702,
+  "zukan_id": "k/c/d/cdo_rx7hk28",
+  "name": "Falcon Al-Saqir",
+  "chara_id": "0xC4D90BF3",
+  "internal_code": "c08050010",
+  "position": "GK",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 133,
+   "control": 146,
+   "technique": 137,
+   "pressure": 164,
+   "physical": 157,
+   "agility": 166,
+   "intelligence": 150
+  },
+  "skills": [
+   {
+    "code": "rhk10030",
+    "level": 0
+   },
+   {
+    "code": "whk01540",
+    "level": 1
+   },
+   {
+    "code": "whk00350",
+    "level": 13
+   },
+   {
+    "code": "whk00830",
+    "level": 20
+   },
+   {
+    "code": "whk00770",
+    "level": 30
+   },
+   {
+    "code": "who10120",
+    "level": 43
+   },
+   {
+    "code": "who00530",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4703,
+  "zukan_id": "k/8/y/8ytk4sop_wm",
+  "name": "Osprey Al-Bahar",
+  "chara_id": "0xEFF45830",
+  "internal_code": "c08050020",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10050",
+    "level": 0
+   },
+   {
+    "code": "whd00910",
+    "level": 1
+   },
+   {
+    "code": "whd01580",
+    "level": 13
+   },
+   {
+    "code": "whd00110",
+    "level": 20
+   },
+   {
+    "code": "who00860",
+    "level": 30
+   },
+   {
+    "code": "whs00110",
+    "level": 43
+   },
+   {
+    "code": "whs00750",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4704,
+  "zukan_id": "k/n/a/nacrvto1slk",
+  "name": "Merlin Al-Yaman",
+  "chara_id": "0xF6EF6971",
+  "internal_code": "c08050030",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10020",
+    "level": 0
+   },
+   {
+    "code": "whd01580",
+    "level": 1
+   },
+   {
+    "code": "whd00910",
+    "level": 13
+   },
+   {
+    "code": "whd00690",
+    "level": 20
+   },
+   {
+    "code": "whd00480",
+    "level": 30
+   },
+   {
+    "code": "whs01510",
+    "level": 43
+   },
+   {
+    "code": "whs00790",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4705,
+  "zukan_id": "k/p/7/p7b37k6zxjk",
+  "name": "Kestrel Al-Sahir",
+  "chara_id": "0xB9AEFFB6",
+  "internal_code": "c08050040",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 10,
+   "control": 11,
+   "technique": 11,
+   "pressure": 12,
+   "physical": 11,
+   "agility": 10,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10050",
+    "level": 0
+   },
+   {
+    "code": "whd00810",
+    "level": 1
+   },
+   {
+    "code": "whd00980",
+    "level": 13
+   },
+   {
+    "code": "who00490",
+    "level": 20
+   },
+   {
+    "code": "who00090",
+    "level": 30
+   },
+   {
+    "code": "whs01490",
+    "level": 43
+   },
+   {
+    "code": "whk00530",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4706,
+  "zukan_id": "k/-/t/-tqww1cj6qm",
+  "name": "Buzzard Al-Sahma",
+  "chara_id": "0xA0B5CEF7",
+  "internal_code": "c08050050",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10050",
+    "level": 0
+   },
+   {
+    "code": "who00800",
+    "level": 1
+   },
+   {
+    "code": "whd01580",
+    "level": 13
+   },
+   {
+    "code": "who00410",
+    "level": 20
+   },
+   {
+    "code": "whd00480",
+    "level": 30
+   },
+   {
+    "code": "whd00480",
+    "level": 43
+   },
+   {
+    "code": "whd00690",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4707,
+  "zukan_id": "k/e/8/e8jjfoprpw8",
+  "name": "Griffon Al-Qahir",
+  "chara_id": "0x8B989D34",
+  "internal_code": "c08050060",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 13,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10010",
+    "level": 0
+   },
+   {
+    "code": "who00580",
+    "level": 1
+   },
+   {
+    "code": "whd00870",
+    "level": 13
+   },
+   {
+    "code": "who00760",
+    "level": 20
+   },
+   {
+    "code": "whd00410",
+    "level": 30
+   },
+   {
+    "code": "whs01510",
+    "level": 43
+   },
+   {
+    "code": "whs00790",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4708,
+  "zukan_id": "k/v/u/vu4coxpridu",
+  "name": "Shrike Al-Jazzar",
+  "chara_id": "0x9283AC75",
+  "internal_code": "c08050070",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 13,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10060",
+    "level": 0
+   },
+   {
+    "code": "who00460",
+    "level": 1
+   },
+   {
+    "code": "whd00270",
+    "level": 13
+   },
+   {
+    "code": "who00270",
+    "level": 20
+   },
+   {
+    "code": "whs01510",
+    "level": 30
+   },
+   {
+    "code": "whs01510",
+    "level": 43
+   },
+   {
+    "code": "whs00790",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4709,
+  "zukan_id": "k/b/-/b-hazamzf88",
+  "name": "Hawke Al-Bazzar",
+  "chara_id": "0x151BB0BA",
+  "internal_code": "c08050080",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10060",
+    "level": 0
+   },
+   {
+    "code": "whd01580",
+    "level": 1
+   },
+   {
+    "code": "who00410",
+    "level": 13
+   },
+   {
+    "code": "who00800",
+    "level": 20
+   },
+   {
+    "code": "whd00270",
+    "level": 30
+   },
+   {
+    "code": "whk00290",
+    "level": 43
+   },
+   {
+    "code": "whk00350",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4710,
+  "zukan_id": "k/e/-/e-t2ukjajj0",
+  "name": "Condor Al-Kundur",
+  "chara_id": "0xDC005085",
+  "internal_code": "c08050100",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 190,
+   "control": 179,
+   "technique": 164,
+   "pressure": 129,
+   "physical": 132,
+   "agility": 129,
+   "intelligence": 143
+  },
+  "skills": [
+   {
+    "code": "rhs10050",
+    "level": 0
+   },
+   {
+    "code": "whd01580",
+    "level": 1
+   },
+   {
+    "code": "whs03190",
+    "level": 13
+   },
+   {
+    "code": "whs00240",
+    "level": 20
+   },
+   {
+    "code": "whs00720",
+    "level": 30
+   },
+   {
+    "code": "whd00480",
+    "level": 43
+   },
+   {
+    "code": "whd00120",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4711,
+  "zukan_id": "k/1/w/1wcxdbf6kqc",
+  "name": "Perry Al-Surah",
+  "chara_id": "0xC51B61C4",
+  "internal_code": "c08050110",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 190,
+   "control": 179,
+   "technique": 164,
+   "pressure": 129,
+   "physical": 132,
+   "agility": 129,
+   "intelligence": 143
+  },
+  "skills": [
+   {
+    "code": "rhs10050",
+    "level": 0
+   },
+   {
+    "code": "who00670",
+    "level": 1
+   },
+   {
+    "code": "whs03190",
+    "level": 13
+   },
+   {
+    "code": "whs01510",
+    "level": 20
+   },
+   {
+    "code": "whs00790",
+    "level": 30
+   },
+   {
+    "code": "whd01580",
+    "level": 43
+   },
+   {
+    "code": "who01230",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4712,
+  "zukan_id": "k/q/w/qw270lqjopu",
+  "name": "Robin Al-Ahmar",
+  "chara_id": "0x0C0081FB",
+  "internal_code": "c08050090",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 13,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10040",
+    "level": 0
+   },
+   {
+    "code": "whd01580",
+    "level": 1
+   },
+   {
+    "code": "who00800",
+    "level": 13
+   },
+   {
+    "code": "who00760",
+    "level": 20
+   },
+   {
+    "code": "who00460",
+    "level": 30
+   },
+   {
+    "code": "whs00540",
+    "level": 43
+   },
+   {
+    "code": "whs00030",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4713,
+  "zukan_id": "k/v/5/v5_iqgwyrws",
+  "name": "Harris Al-Suhra",
+  "chara_id": "0xEE363207",
+  "internal_code": "c08050120",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10050",
+    "level": 0
+   },
+   {
+    "code": "whd01580",
+    "level": 1
+   },
+   {
+    "code": "who00800",
+    "level": 13
+   },
+   {
+    "code": "who00160",
+    "level": 20
+   },
+   {
+    "code": "whs03190",
+    "level": 30
+   },
+   {
+    "code": "whd00730",
+    "level": 43
+   },
+   {
+    "code": "whd00840",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4714,
+  "zukan_id": "k/k/r/krod95wi8de",
+  "name": "Eagle Al-Suhra",
+  "chara_id": "0xF72D0346",
+  "internal_code": "c08050130",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10050",
+    "level": 0
+   },
+   {
+    "code": "whd01580",
+    "level": 1
+   },
+   {
+    "code": "who00410",
+    "level": 13
+   },
+   {
+    "code": "who00160",
+    "level": 20
+   },
+   {
+    "code": "whs03190",
+    "level": 30
+   },
+   {
+    "code": "whd00340",
+    "level": 43
+   },
+   {
+    "code": "whd00480",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4715,
+  "zukan_id": "k/a/v/av4yr7fm9qk",
+  "name": "Anqa Qushchi",
+  "chara_id": "0x33ADFD8B",
+  "internal_code": "c11808060",
+  "position": "GK",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 10,
+   "control": 11,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 10,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 133,
+   "control": 146,
+   "technique": 137,
+   "pressure": 164,
+   "physical": 157,
+   "agility": 166,
+   "intelligence": 150
+  },
+  "skills": [
+   {
+    "code": "rhk10010",
+    "level": 0
+   },
+   {
+    "code": "whk01540",
+    "level": 1
+   },
+   {
+    "code": "whk00350",
+    "level": 13
+   },
+   {
+    "code": "whk00040",
+    "level": 20
+   },
+   {
+    "code": "whk00770",
+    "level": 30
+   },
+   {
+    "code": "whd01580",
+    "level": 43
+   },
+   {
+    "code": "whs03190",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4716,
+  "zukan_id": "k/r/h/rhj5gejcqjm",
+  "name": "Roc Nasr",
+  "chara_id": "0x2AB6CCCA",
+  "internal_code": "c11808070",
+  "position": "GK",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 133,
+   "control": 146,
+   "technique": 137,
+   "pressure": 164,
+   "physical": 157,
+   "agility": 166,
+   "intelligence": 150
+  },
+  "skills": [
+   {
+    "code": "rhk10020",
+    "level": 0
+   },
+   {
+    "code": "whk01540",
+    "level": 1
+   },
+   {
+    "code": "whk00350",
+    "level": 13
+   },
+   {
+    "code": "whk01230",
+    "level": 20
+   },
+   {
+    "code": "whk00770",
+    "level": 30
+   },
+   {
+    "code": "whd01580",
+    "level": 43
+   },
+   {
+    "code": "whs03190",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4717,
+  "zukan_id": "k/q/q/qq1ta_qxpck",
+  "name": "Bruce Lau",
+  "chara_id": "0x83797123",
+  "internal_code": "c08060010",
+  "position": "GK",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 133,
+   "control": 146,
+   "technique": 137,
+   "pressure": 164,
+   "physical": 157,
+   "agility": 166,
+   "intelligence": 150
+  },
+  "skills": [
+   {
+    "code": "rhk10020",
+    "level": 0
+   },
+   {
+    "code": "whk01690",
+    "level": 1
+   },
+   {
+    "code": "whk00290",
+    "level": 13
+   },
+   {
+    "code": "whk00840",
+    "level": 20
+   },
+   {
+    "code": "whk00880",
+    "level": 30
+   },
+   {
+    "code": "whs00530",
+    "level": 43
+   },
+   {
+    "code": "who00270",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4718,
+  "zukan_id": "k/k/f/kfwmtif5c8u",
+  "name": "Coryn Fong",
+  "chara_id": "0xA85422E0",
+  "internal_code": "c08060020",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10050",
+    "level": 0
+   },
+   {
+    "code": "whd00410",
+    "level": 1
+   },
+   {
+    "code": "whd01090",
+    "level": 13
+   },
+   {
+    "code": "whd00660",
+    "level": 20
+   },
+   {
+    "code": "whd00480",
+    "level": 30
+   },
+   {
+    "code": "whs03350",
+    "level": 43
+   },
+   {
+    "code": "whs00150",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4719,
+  "zukan_id": "k/7/t/7tnh-d5dxp8",
+  "name": "Michelle Luo",
+  "chara_id": "0xB14F13A1",
+  "internal_code": "c08060030",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10010",
+    "level": 0
+   },
+   {
+    "code": "whd00410",
+    "level": 1
+   },
+   {
+    "code": "whd00260",
+    "level": 13
+   },
+   {
+    "code": "whd00470",
+    "level": 20
+   },
+   {
+    "code": "whd00660",
+    "level": 30
+   },
+   {
+    "code": "whs03350",
+    "level": 43
+   },
+   {
+    "code": "whs00620",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4720,
+  "zukan_id": "k/5/m/5mgbqerv0j8",
+  "name": "Sammo Tong",
+  "chara_id": "0xFE0E8566",
+  "internal_code": "c08060040",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10020",
+    "level": 0
+   },
+   {
+    "code": "whd01590",
+    "level": 1
+   },
+   {
+    "code": "whd00910",
+    "level": 13
+   },
+   {
+    "code": "whd00740",
+    "level": 20
+   },
+   {
+    "code": "whd00200",
+    "level": 30
+   },
+   {
+    "code": "who00110",
+    "level": 43
+   },
+   {
+    "code": "who00390",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4721,
+  "zukan_id": "k/i/k/ikr697nvz6u",
+  "name": "David Liang",
+  "chara_id": "0xE715B427",
+  "internal_code": "c08060050",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 13,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10040",
+    "level": 0
+   },
+   {
+    "code": "whd00260",
+    "level": 1
+   },
+   {
+    "code": "who00160",
+    "level": 13
+   },
+   {
+    "code": "who00090",
+    "level": 20
+   },
+   {
+    "code": "whs00530",
+    "level": 30
+   },
+   {
+    "code": "whs03350",
+    "level": 43
+   },
+   {
+    "code": "whs00530",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4722,
+  "zukan_id": "k/o/l/olypum4dsak",
+  "name": "Donnie Yang",
+  "chara_id": "0xCC38E7E4",
+  "internal_code": "c08060060",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 13,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10060",
+    "level": 0
+   },
+   {
+    "code": "who01010",
+    "level": 1
+   },
+   {
+    "code": "who00160",
+    "level": 13
+   },
+   {
+    "code": "whd00610",
+    "level": 20
+   },
+   {
+    "code": "who00500",
+    "level": 30
+   },
+   {
+    "code": "whs03350",
+    "level": 43
+   },
+   {
+    "code": "whs00640",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4723,
+  "zukan_id": "k/z/j/zjdudzenbpm",
+  "name": "Bolo Cheung",
+  "chara_id": "0xD523D6A5",
+  "internal_code": "c08060070",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10030",
+    "level": 0
+   },
+   {
+    "code": "whd01260",
+    "level": 1
+   },
+   {
+    "code": "who00060",
+    "level": 13
+   },
+   {
+    "code": "whd00430",
+    "level": 20
+   },
+   {
+    "code": "whd00210",
+    "level": 30
+   },
+   {
+    "code": "whk00290",
+    "level": 43
+   },
+   {
+    "code": "whk00580",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4726,
+  "zukan_id": "k/y/j/yjwafqy2qjs",
+  "name": "Jet Long",
+  "chara_id": "0x9BA02A55",
+  "internal_code": "c08060100",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 177,
+   "control": 173,
+   "technique": 156,
+   "pressure": 135,
+   "physical": 139,
+   "agility": 130,
+   "intelligence": 155
+  },
+  "skills": [
+   {
+    "code": "rhs10020",
+    "level": 0
+   },
+   {
+    "code": "whs00570",
+    "level": 1
+   },
+   {
+    "code": "who00060",
+    "level": 13
+   },
+   {
+    "code": "who00270",
+    "level": 20
+   },
+   {
+    "code": "whs00530",
+    "level": 30
+   },
+   {
+    "code": "whd00340",
+    "level": 43
+   },
+   {
+    "code": "whd00610",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4727,
+  "zukan_id": "k/d/h/dhn7ovumh6e",
+  "name": "Stephen Chang",
+  "chara_id": "0x82BB1B14",
+  "internal_code": "c08060110",
+  "position": "FW",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 177,
+   "control": 173,
+   "technique": 156,
+   "pressure": 135,
+   "physical": 139,
+   "agility": 130,
+   "intelligence": 155
+  },
+  "skills": [
+   {
+    "code": "rhs10010",
+    "level": 0
+   },
+   {
+    "code": "whs00290",
+    "level": 1
+   },
+   {
+    "code": "whs00530",
+    "level": 13
+   },
+   {
+    "code": "who00020",
+    "level": 20
+   },
+   {
+    "code": "who00530",
+    "level": 30
+   },
+   {
+    "code": "whd00130",
+    "level": 43
+   },
+   {
+    "code": "whd00780",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4728,
+  "zukan_id": "k/j/o/joeo7iheya0",
+  "name": "Mars Hung",
+  "chara_id": "0xA99648D7",
+  "internal_code": "c08060120",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 12,
+   "control": 13,
+   "technique": 13,
+   "pressure": 10,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10030",
+    "level": 0
+   },
+   {
+    "code": "who00490",
+    "level": 1
+   },
+   {
+    "code": "whd00670",
+    "level": 13
+   },
+   {
+    "code": "who00840",
+    "level": 20
+   },
+   {
+    "code": "whd01350",
+    "level": 30
+   },
+   {
+    "code": "who00840",
+    "level": 43
+   },
+   {
+    "code": "whs00670",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4729,
+  "zukan_id": "k/s/m/sm1vw3h-fpc",
+  "name": "Gordon Siu",
+  "chara_id": "0xB08D7996",
+  "internal_code": "c08060130",
+  "position": "DF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 9,
+   "intelligence": 11
+  },
+  "lv99": {
+   "kick": 131,
+   "control": 136,
+   "technique": 132,
+   "pressure": 170,
+   "physical": 164,
+   "agility": 140,
+   "intelligence": 190
+  },
+  "skills": [
+   {
+    "code": "rhd10040",
+    "level": 0
+   },
+   {
+    "code": "whd00070",
+    "level": 1
+   },
+   {
+    "code": "who00490",
+    "level": 13
+   },
+   {
+    "code": "whd00260",
+    "level": 20
+   },
+   {
+    "code": "who00840",
+    "level": 30
+   },
+   {
+    "code": "who00840",
+    "level": 43
+   },
+   {
+    "code": "whs00670",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4730,
+  "zukan_id": "k/u/f/ufhaa2geavm",
+  "name": "Wilson Ip",
+  "chara_id": "0xB435E144",
+  "internal_code": "c11808090",
+  "position": "GK",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 10,
+   "control": 11,
+   "technique": 12,
+   "pressure": 11,
+   "physical": 11,
+   "agility": 10,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 133,
+   "control": 146,
+   "technique": 137,
+   "pressure": 164,
+   "physical": 157,
+   "agility": 166,
+   "intelligence": 150
+  },
+  "skills": [
+   {
+    "code": "rhk10020",
+    "level": 0
+   },
+   {
+    "code": "whk00650",
+    "level": 1
+   },
+   {
+    "code": "whk00320",
+    "level": 13
+   },
+   {
+    "code": "whk00800",
+    "level": 20
+   },
+   {
+    "code": "whk00890",
+    "level": 30
+   },
+   {
+    "code": "who00310",
+    "level": 43
+   },
+   {
+    "code": "who00230",
+    "level": 30
+   }
+  ]
+ },
+ {
+  "zukan_no": 4732,
+  "zukan_id": "k/f/t/ft2h3jg-3ck",
+  "name": "Lucy Wongfu",
+  "chara_id": "0xAD2ED005",
+  "internal_code": "c11808080",
+  "position": "MF",
+  "rarity": "Normal",
+  "rarity_code": 0,
+  "lv1": {
+   "kick": 11,
+   "control": 12,
+   "technique": 13,
+   "pressure": 11,
+   "physical": 10,
+   "agility": 9,
+   "intelligence": 12
+  },
+  "lv99": {
+   "kick": 155,
+   "control": 179,
+   "technique": 181,
+   "pressure": 130,
+   "physical": 132,
+   "agility": 130,
+   "intelligence": 160
+  },
+  "skills": [
+   {
+    "code": "rho10010",
+    "level": 0
+   },
+   {
+    "code": "whs00140",
+    "level": 1
+   },
+   {
+    "code": "whs03340",
+    "level": 13
+   },
+   {
+    "code": "who00430",
+    "level": 20
+   },
+   {
+    "code": "whd00880",
+    "level": 30
+   },
+   {
+    "code": "whd00090",
+    "level": 43
+   },
+   {
+    "code": "whd00380",
+    "level": 30
+   }
+  ]
+ }
+]

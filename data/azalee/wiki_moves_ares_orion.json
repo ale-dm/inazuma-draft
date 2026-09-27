@@ -1,0 +1,362 @@
+{
+ "Angel Ray": {
+  "name_jp": "エンジェルレイ",
+  "name_dub": "Divine Dummy"
+ },
+ "Bakugui Shishi": {
+  "name_jp": "爆喰獅子",
+  "name_dub": "Last Lion of Defence"
+ },
+ "Banana Shoot": {
+  "name_jp": "バナナシュート",
+  "name_dub": "*Banana Shoot (game)"
+ },
+ "Bison Horn": {
+  "name_jp": "バイソンホーン",
+  "name_dub": "Bull Rush"
+ },
+ "Black Field": {
+  "name_jp": "ブラックフィールド",
+  "name_dub": "Shadow Swarm"
+ },
+ "Black Shield": {
+  "name_jp": "ブラックシールド",
+  "name_dub": "Shadow Shield"
+ },
+ "Blue Stardust": {
+  "name_jp": "ブルー・スターダスト",
+  "name_dub": "Starstruck"
+ },
+ "Boukyaku no Sonata": {
+  "name_jp": "忘却のソナタ",
+  "name_dub": "Behind Bars"
+ },
+ "Bousou Chariot": {
+  "name_jp": "暴走チャリオット",
+  "name_dub": "*Twin Spur"
+ },
+ "Burning Hi no Tori": {
+  "name_jp": "バーニング・火の鳥",
+  "name_dub": "Flaming Firebird"
+ },
+ "Carnival Shake": {
+  "name_jp": "カーニバルシェイク",
+  "name_dub": "Capoeira Kick"
+ },
+ "Carronade Hou": {
+  "name_jp": "カロネード砲",
+  "name_dub": "Cannonball"
+ },
+ "Casting Arm": {
+  "name_jp": "キャスティングアーム",
+  "name_dub": "Grabber Arm"
+ },
+ "Death Crater": {
+  "name_jp": "デスクレーター",
+  "name_dub": "Desecrater"
+ },
+ "Death Samba": {
+  "name_jp": "デス・サンバ",
+  "name_dub": "Beyond the Sambadrome"
+ },
+ "Deep Diver": {
+  "name_jp": "ディープダイバー",
+  "name_dub": "Deep Diver"
+ },
+ "Diamond Edge": {
+  "name_jp": "ダイヤモンドエッジ",
+  "name_dub": "Diamond Cutter"
+ },
+ "Diamond Ray": {
+  "name_jp": "ダイヤモンドレイ",
+  "name_dub": "Diamond Ray"
+ },
+ "Doublehead Eagle": {
+  "name_jp": "ダブルヘッド・イーグル",
+  "name_dub": "Regal Eagle"
+ },
+ "Dynamic Corona": {
+  "name_jp": "ダイナミック・コロナ",
+  "name_dub": "Sun Block"
+ },
+ "Fire Lemonade": {
+  "name_jp": "ファイアレモネード",
+  "name_dub": "{{PAGENAME}}"
+ },
+ "Fire Lemonade Rising": {
+  "name_jp": "ファイアレモネード・ライジング",
+  "name_dub": "Fizzy Fire Lemonade"
+ },
+ "Fire Wall": {
+  "name_jp": "ファイアウォール",
+  "name_dub": "Burning Bulwark"
+ },
+ "Flash Dance": {
+  "name_jp": "フラッシュダンス",
+  "name_dub": "*Fancy Footwork"
+ },
+ "Franken-shu-tein": {
+  "name_jp": "フランケン守タイン",
+  "name_dub": "Frankenstun"
+ },
+ "Fuujin Raijin": {
+  "name_jp": "風神雷神",
+  "name_dub": "Mega Majin"
+ },
+ "Fuujin Raijin Ghost": {
+  "name_jp": "風神雷神ゴースト",
+  "name_dub": "Mega Majin Trio"
+ },
+ "God Knows Impact": {
+  "name_jp": "ゴッドノウズ・インパクト",
+  "name_dub": "God Alone Knows"
+ },
+ "Gravity Cage": {
+  "name_jp": "グラビティケージ",
+  "name_dub": "Gravity Cage"
+ },
+ "Gunji Eisei Phobos": {
+  "name_jp": "軍事衛星フォボス",
+  "name_dub": "*Bigman's Hammer"
+ },
+ "Hidaruma Bakunetsudan": {
+  "name_jp": "火だるまバクネツ弾",
+  "name_dub": "Daruma Boomer"
+ },
+ "High Beast Fang": {
+  "name_jp": "ハイビーストファング",
+  "name_dub": "Savage Beast Fang"
+ },
+ "Hissatsu Kumagoroshi Baku": {
+  "name_jp": "必殺クマゴロシ縛",
+  "name_dub": "Ursa Binder"
+ },
+ "Hissatsu Kumagoroshi Zan": {
+  "name_jp": "必殺クマゴロシ斬",
+  "name_dub": "Ursa Rager"
+ },
+ "Hokkyoku Guma 2gou": {
+  "name_jp": "北極グマ２号",
+  "name_dub": "Polar Bear No. 2"
+ },
+ "Inabikari Dash": {
+  "name_jp": "イナビカリ・ダッシュ",
+  "name_dub": "Flash Dash"
+ },
+ "Innocent Drive": {
+  "name_jp": "イノセント・ドライブ",
+  "name_dub": "Divine Drive"
+ },
+ "King's Lance": {
+  "name_jp": "キングス・ランス",
+  "name_dub": "Royal Lancer"
+ },
+ "Koori no Ya": {
+  "name_jp": "氷の矢",
+  "name_dub": "Cold Snap"
+ },
+ "Last Resort": {
+  "name_jp": "ラストリゾート",
+  "name_dub": "Last Resort"
+ },
+ "Last Resort D": {
+  "name_jp": "ラストリゾートＤ",
+  "name_dub": "{{PAGENAME}}"
+ },
+ "Last Resort Σ": {
+  "name_jp": "ラストリゾートΣ",
+  "name_dub": "{{PAGENAME}}"
+ },
+ "Macaroni Spaghetti": {
+  "name_jp": "マカロニスパゲッティ",
+  "name_dub": "Marinara Barrier"
+ },
+ "Macaroni Spaghetti Sauce Zouryou": {
+  "name_jp": "マカロニスパゲッティソース増量",
+  "name_dub": "*Mega Marinara Barrier"
+ },
+ "Magaru Diamond Ray": {
+  "name_jp": "曲がるダイヤモンドレイ",
+  "name_dub": "*Curving Diamond Ray"
+ },
+ "Majin The Wave": {
+  "name_jp": "マジン・ザ・ウェイブ",
+  "name_dub": "Majin the Wave"
+ },
+ "Mermaid Veil": {
+  "name_jp": "マーメイドヴェール",
+  "name_dub": "Mermaid's Veil"
+ },
+ "Meteor Drop": {
+  "name_jp": "メテオドロップ",
+  "name_dub": "Meteor Strike"
+ },
+ "Moja Catch": {
+  "name_jp": "もじゃキャッチ",
+  "name_dub": "Fur Trapper"
+ },
+ "Ninpou Gamagaeru": {
+  "name_jp": "忍法ガマガエル",
+  "name_dub": "Ninja Toad"
+ },
+ "Orion Crossviper": {
+  "name_jp": "オリオン・クロスバイパー",
+  "name_dub": "Orion's Shade"
+ },
+ "Ouke no Tate": {
+  "name_jp": "王家の盾",
+  "name_dub": "Lunar Eclipse"
+ },
+ "Overcyclone": {
+  "name_jp": "オーバーサイクロン",
+  "name_dub": "Brawl of the Wild"
+ },
+ "Overglow": {
+  "name_jp": "オーバーグロウ",
+  "name_dub": "Grand Glow"
+ },
+ "Overhead Penguin": {
+  "name_jp": "オーバーヘッドぺンギン",
+  "name_dub": "Penguin Volley"
+ },
+ "Perfect Penguin": {
+  "name_jp": "パーフェクトペンギン",
+  "name_dub": "{{PAGENAME}}"
+ },
+ "Perseus Orb": {
+  "name_jp": "ペルセウスオーブ",
+  "name_dub": "Perseus Strike"
+ },
+ "Planet Break": {
+  "name_jp": "プラネットブレイク",
+  "name_dub": "Starstriker"
+ },
+ "Red Break": {
+  "name_jp": "レッドブレイク",
+  "name_dub": "Bullseye Blaze"
+ },
+ "Red Hot Chili Meteor": {
+  "name_jp": "レッドホットチリ・メテオ",
+  "name_dub": "Red Hot Shower"
+ },
+ "Requiem Dust": {
+  "name_jp": "レクイエムダスト",
+  "name_dub": "Hollow Blare"
+ },
+ "Ryuujin Tessen": {
+  "name_jp": "龍神鉄扇",
+  "name_dub": "Fantastic Save"
+ },
+ "Shining Bird": {
+  "name_jp": "シャイニングバード",
+  "name_dub": "Golden Gull"
+ },
+ "Shinjitsu no Ooguchi": {
+  "name_jp": "真実の大口",
+  "name_dub": "Maw-Ment of Truth"
+ },
+ "Shirousagi Dashoot": {
+  "name_jp": "シロウサギダッシュート",
+  "name_dub": "Rabbit Run"
+ },
+ "Shooting Cut": {
+  "name_jp": "シューティングカット",
+  "name_dub": "Twister Trap"
+ },
+ "Spark Wind": {
+  "name_jp": "スパークウィンド",
+  "name_dub": "Sparky Spin"
+ },
+ "Spectre Magna": {
+  "name_jp": "スペクトルマグナ",
+  "name_dub": "Centrifugal Blast"
+ },
+ "Spinning Fence": {
+  "name_jp": "スピニングフェンス",
+  "name_dub": "*Cyclone"
+ },
+ "Sunrise Blitz": {
+  "name_jp": "サンライズブリッツ",
+  "name_dub": "Solar Flex"
+ },
+ "Sword of d'Artagnan": {
+  "name_jp": "ソードオブダルタニアン",
+  "name_dub": "One for All"
+ },
+ "Taiyou no Guillotine": {
+  "name_jp": "太陽のギロチン",
+  "name_dub": "Raiser Blade"
+ },
+ "Tenhou Chiretsu": {
+  "name_jp": "天崩地裂",
+  "name_dub": "Crack Shot"
+ },
+ "Tenkuu Hayabusadan": {
+  "name_jp": "天空隼弾",
+  "name_dub": "Avenging Eagle"
+ },
+ "Tenkuu no Yaiba": {
+  "name_jp": "天空の刃",
+  "name_dub": "Celestial Saw"
+ },
+ "Tenryuu": {
+  "name_jp": "天竜",
+  "name_dub": "*Dragon Drive"
+ },
+ "The Boyon": {
+  "name_jp": "ザ・ボヨン",
+  "name_dub": "Wetsuit"
+ },
+ "The Explosion": {
+  "name_jp": "ザ・エクスプロージョン",
+  "name_dub": "The Detonator"
+ },
+ "The Labyrinth": {
+  "name_jp": "ザ・ラビリンス",
+  "name_dub": "Short Circuit"
+ },
+ "The Shelter": {
+  "name_jp": "ザ・シェルター",
+  "name_dub": "Formidable Fortress"
+ },
+ "Time Trance": {
+  "name_jp": "タイムトランス",
+  "name_dub": "Time Trance"
+ },
+ "Tricera Shield": {
+  "name_jp": "トリケラ・シールド",
+  "name_dub": "Tricera Stops"
+ },
+ "Tsuumande Goran": {
+  "name_jp": "ツーマンデ・ゴラン",
+  "name_dub": "Pinch and Save"
+ },
+ "Twin Lancer": {
+  "name_jp": "ツインランサー",
+  "name_dub": "Double-Trouble"
+ },
+ "Unbalance Pisa": {
+  "name_jp": "アンバランス・ピサ",
+  "name_dub": "*Pisa the Headshot"
+ },
+ "Uzumaki The Hand": {
+  "name_jp": "ウズマキ・ザ・ハンド",
+  "name_dub": "*Splash Guard"
+ },
+ "Victory Line": {
+  "name_jp": "ビクトリーライン",
+  "name_dub": "Flying Colours"
+ },
+ "White Double Impact": {
+  "name_jp": "*ホワイトダブルインパクト",
+  "name_dub": "Cold Front"
+ },
+ "Zigzag Strike": {
+  "name_jp": "ジグザグストライク",
+  "name_dub": "Zigzag Zoom"
+ },
+ "Zone of Pentagram": {
+  "name_jp": "ゾーン・オブ・ペンタグラム",
+  "name_dub": "Containment Field"
+ }
+}
