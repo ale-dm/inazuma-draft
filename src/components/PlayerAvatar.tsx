@@ -24,7 +24,7 @@ const SIZES = {
 
 export default function PlayerAvatar({ player, size = 'md', variant = 'round', className = '', showRating }: Props) {
   const [failed, setFailed] = useState(false)
-  const src = getPlayerImage(player.name)
+  const src = getPlayerImage(player)
   const dim = SIZES[variant][size]
   const isZukan = variant === 'zukan'
 
