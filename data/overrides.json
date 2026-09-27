@@ -182,5 +182,11 @@
     "#3496": "Kimoro",
     "#301": "Sakamoto (scout character)",
     "#2948": "Goudatsu"
+  },
+  "drop_cards": {
+    "_doc": "Cartas descartadas a mano (id de carta).",
+    "ids": [
+      "hibiki-seigou--ie2--dark-emperors"
+    ]
   }
 }
