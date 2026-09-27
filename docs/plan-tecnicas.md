@@ -1,6 +1,6 @@
 # Plan: supertécnicas (hissatsu)
 
-> Estado: **aparcado**. Investigación hecha y verificada con datos reales; falta implementar.
+> Estado: **aparcado**. Ver también [`plan-base-jugadores.md`](./plan-base-jugadores.md). Investigación hecha y verificada con datos reales; falta implementar.
 
 ## Objetivo
 
@@ -27,10 +27,11 @@ Correspondencia de juegos: IE1→`IE`, IE2→`IE2`, IE3→`IE3`, GO1→`GO`, GO2
 ## Reglas decididas
 
 1. **Técnicas:** las del juego del jugador (`moveset[<juego>]`).
-2. **Coste:** `tp_iego3` (Galaxy) → si no, `tp_ie3` (IE3) → respaldo `tp_iego2` (Chrono Stones) → `tp_ie2` (IE2).
-   Galaxy (8–85) e IE3 (12–76) tienen escalas parecidas, así que se mezclan sin normalizar.
-   No se usa la **potencia**: las escalas varían mucho entre juegos (Fire Tornado: Galaxy 70, IE3 28).
-   Tampoco Victory Road: es demasiado tosca (casi todo 50–70).
+2. **Coste** (actualizado):
+   - **Para valorar** la técnica (p. ej. subir a un scout): coste **de la saga del jugador** — saga original: `tp_ie3` → `tp_ie2` → `tp_ie`; saga GO: `tp_iego3` → `tp_iego2` → `tp_iego`. Así una técnica fuerte en Galaxy no infla a un jugador de IE1.
+   - **Para mostrar** en la carta: coste de **Galaxy** (`tp_iego3`) si existe; si no, el primero disponible (`tp_ie3`, `tp_iego2`, `tp_ie2`, `tp_iego`, `tp_ie`).
+   - Ojo: a veces cambia mucho entre juegos (Gungnir: 66 en IE3, 30 en Galaxy).
+   No se usa la **potencia**: las escalas varían mucho entre juegos (Fire Tornado: Galaxy 70, IE3 28). Tampoco Victory Road: demasiado tosca (casi todo 50–70).
 3. **Tipos útiles:** `Shoot`, `Dribble`, `Block`, `Catch`. Se descartan las habilidades pasivas (`Parameter`, `Field`, `Command kyouka`…).
 4. **Limpieza de nombres:** `{{PAGENAME}}` → nombre de la página; quitar `*` inicial y sufijos `(game)`, `(games)`, `(EU)`, `(games & anime)`…; si hay varias versiones del nombre, preferir la del juego.
 
@@ -39,7 +40,8 @@ Correspondencia de juegos: IE1→`IE`, IE2→`IE2`, IE3→`IE3`, GO1→`GO`, GO2
 - Jugadores con técnicas en su juego: **2.500 / 2.530**. Los que faltan son secundarios (Andy, Othello Go…) sin datos en ese juego.
 - Técnicas por jugador: 4 → 1.406 · 3 → 896 · 2 → 140 · 1 → 13 · 5–6 → 6 · media 3,5.
 - Técnicas distintas usadas: 573 (215 tiro, 126 bloqueo, 116 regate, 112 parada).
-- Coste desde la ficha: **Galaxy 320 + IE3 253 = 573 (100 %)**.
+- Coste desde la ficha: **Galaxy 320 + IE3 253 = 573 (100 %)** (para mostrar).
+- Umbral de "técnica top" (5 % más cara de su saga): saga original ≥ 61 · saga GO ≥ 70.
 
 ## Equipos que añadir: Second Raimon (IE2)
 
