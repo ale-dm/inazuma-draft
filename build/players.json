@@ -89,7 +89,7 @@
     },
     {
      "type": "mixi",
-     "name": "Zhuge Kongming"
+     "name": "Zhuge Liang"
     }
    ],
    "extra_teams": [],
@@ -104,10 +104,8 @@
     "Catch": 62
    },
    "techniques": [
-    "DragonBlaster",
-    "SprintWarp",
     "WhiteHurricane",
-    "ZeroMagnum"
+    "TenchiRaimei"
    ]
   },
   {
@@ -248,7 +246,7 @@
     },
     {
      "type": "mixi",
-     "name": null
+     "name": "Queen of Dragons"
     }
    ],
    "extra_teams": [],
@@ -263,9 +261,8 @@
     "Catch": 95
    },
    "techniques": [
+    "KirakiraIllusion",
     "MochimochiKinakoMochi",
-    "YakimochiScrew",
-    "SkyWalk",
     "FireTornadoTC"
    ]
   },
@@ -794,7 +791,7 @@
     },
     {
      "type": "mixi",
-     "name": "Clara Jane"
+     "name": "Cao Cao"
     }
    ],
    "extra_teams": [],
@@ -810,8 +807,7 @@
    },
    "techniques": [
     "DisasterBreak",
-    "BungeeThrust",
-    "Screwdriver"
+    "DimensionCut"
    ]
   },
   {
@@ -1801,9 +1797,7 @@
    },
    "techniques": [
     "BouncerRabbit",
-    "SkyWalk",
-    "AirBullet",
-    "ExtremeRabbit"
+    "OujaNoKiba"
    ]
   },
   {
@@ -1950,7 +1944,7 @@
     },
     {
      "type": "mixi",
-     "name": null
+     "name": "Liu Bei"
     }
    ],
    "extra_teams": [],
@@ -1965,10 +1959,8 @@
     "Catch": 136
    },
    "techniques": [
-    "BurningCatch",
     "ButtobiPunch",
-    "KattobiDefense",
-    "MugenTheHand"
+    "TaikokuOuka"
    ]
   },
   {
@@ -2751,7 +2743,7 @@
     },
     {
      "type": "mixi",
-     "name": "Okita Souji"
+     "name": "Soji"
     }
    ],
    "extra_teams": [],
@@ -3035,8 +3027,7 @@
    },
    "techniques": [
     "DisasterBreak",
-    "BungeeThrust",
-    "Screwdriver"
+    "DimensionCut"
    ]
   },
   {
@@ -3143,12 +3134,9 @@
     "Catch": 88
    },
    "techniques": [
-    "AggressiveBeat",
-    "WonderTrap",
-    "KazaanaDrive",
-    "GodWind",
-    "SoyokazeStep",
-    "MachWind"
+    "MachWind",
+    "OuNoTsurugi",
+    "SaikyouElevenHadou"
    ]
   },
   {
@@ -4221,7 +4209,7 @@
     },
     {
      "type": "mixi",
-     "name": "Sakamoto Ryouma"
+     "name": "Ryoma"
     }
    ],
    "extra_teams": [],
@@ -4276,7 +4264,7 @@
     },
     {
      "type": "mixi",
-     "name": null
+     "name": "Zhuge Liang"
     }
    ],
    "extra_teams": [],
@@ -4292,8 +4280,7 @@
    },
    "techniques": [
     "AtomicFlare",
-    "SparkEdgeDribble",
-    "SunshineStorm"
+    "TenchiRaimei"
    ]
   },
   {
@@ -4986,9 +4973,7 @@
    },
    "techniques": [
     "BouncerRabbit",
-    "SkyWalk",
-    "AirBullet",
-    "ExtremeRabbit"
+    "KodaiNoKiba"
    ]
   },
   {
@@ -6034,7 +6019,7 @@
     },
     {
      "type": "mixi",
-     "name": "Oda Nobunaga"
+     "name": "Nobunaga"
     }
    ],
    "extra_teams": [],
@@ -11710,7 +11695,7 @@
     },
     {
      "type": "mixi",
-     "name": "Jeanne d'Arc"
+     "name": "Joan of Arc"
     }
    ],
    "extra_teams": [],
@@ -11725,10 +11710,8 @@
     "Catch": 50
    },
    "techniques": [
-    "DeepMist",
-    "SouthernCrosscut",
-    "DeepJungle",
-    "TheMist"
+    "TheMist",
+    "LaFlamme"
    ]
   },
   {
@@ -12644,8 +12627,6 @@
     "Catch": 100
    },
    "techniques": [
-    "LinearDrive",
-    "PlasmaBall",
     "Transmove",
     "SpringArrow"
    ]
@@ -12731,7 +12712,7 @@
     },
     {
      "type": "mixi",
-     "name": null
+     "name": "Pa"
     }
    ],
    "extra_teams": [],
@@ -12746,9 +12727,8 @@
     "Catch": 116
    },
    "techniques": [
-    "ElephantPress",
-    "AcrobatKeep",
-    "DeepJungle"
+    "DeepJungle",
+    "KodaiNoTsubasa"
    ]
   },
   {
@@ -53054,7 +53034,6 @@
     "Catch": 146
    },
    "techniques": [
-    "GyroSaving",
     "Wormhole",
     "KillBridge"
    ]
@@ -63150,7 +63129,7 @@
    "techniques": [
     "GaussShot",
     "PlasmaBall",
-    "SpringArrow"
+    "BlackAsh"
    ]
   },
   {
@@ -82667,51 +82646,6 @@
    ]
   },
   {
-   "id": "edomaru--go2--base",
-   "character_id": "edomaru",
-   "name": "Eoin Geary",
-   "game": "GO2",
-   "saga": "GO",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "FW",
-   "element": "air",
-   "ovr": 63,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 66,
-   "control": 60,
-   "physical": 54,
-   "speed": 67,
-   "defense": 53,
-   "goalkeeping": 59,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/s/-/s-wuktzx658.png",
-   "zukan_id": "k/s/-/s-wuktzx658",
-   "zukan_no": 3875,
-   "is_version": false,
-   "description": "This lover of football and sushi has a spicy hint of wasabi to his playing.",
-   "description_es": null,
-   "no": 3875,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 146,
-    "Dribbling": 107,
-    "Technique": 109,
-    "Block": 90,
-    "Speed": 133,
-    "Stamina": 88,
-    "Catch": 85
-   },
-   "techniques": [
-    "FlyingFish",
-    "KillerWhale",
-    "KouteiPenguin7"
-   ]
-  },
-  {
    "id": "atari--go1--base",
    "character_id": "atari",
    "name": "Esau Tariq",
@@ -89522,6 +89456,51 @@
    ]
   },
   {
+   "id": "edomaru--go2--base",
+   "character_id": "edomaru",
+   "name": "Eoin Geary",
+   "game": "GO2",
+   "saga": "GO",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "FW",
+   "element": "air",
+   "ovr": 62,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 65,
+   "control": 59,
+   "physical": 53,
+   "speed": 66,
+   "defense": 52,
+   "goalkeeping": 58,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/s/-/s-wuktzx658.png",
+   "zukan_id": "k/s/-/s-wuktzx658",
+   "zukan_no": 3875,
+   "is_version": false,
+   "description": "This lover of football and sushi has a spicy hint of wasabi to his playing.",
+   "description_es": null,
+   "no": 3875,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 146,
+    "Dribbling": 107,
+    "Technique": 109,
+    "Block": 90,
+    "Speed": 133,
+    "Stamina": 88,
+    "Catch": 85
+   },
+   "techniques": [
+    "FlyingFish",
+    "KillerWhale",
+    "KouteiPenguin7"
+   ]
+  },
+  {
    "id": "numaguchi--ie1--base",
    "character_id": "numaguchi",
    "name": "Erhard Blower",
@@ -91366,51 +91345,6 @@
     "Moonsault",
     "InazumaOtoshi",
     "ArmadilloCircus"
-   ]
-  },
-  {
-   "id": "mai--go2--base",
-   "character_id": "mai",
-   "name": "Maia",
-   "game": "GO2",
-   "saga": "GO",
-   "version": "base",
-   "team": "Sub Character",
-   "position": "DF",
-   "element": "wood",
-   "ovr": 62,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 48,
-   "control": 60,
-   "physical": 50,
-   "speed": 65,
-   "defense": 67,
-   "goalkeeping": 59,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/m/d/md4ccde2eus.png",
-   "zukan_id": "k/m/d/md4ccde2eus",
-   "zukan_no": 2821,
-   "is_version": false,
-   "description": "Tezcat's gentle sister, who was cast off into the sea to save her village.",
-   "description_es": "La hermana de Tezcat. Su pueblo la envió sola al mar para salvarse.",
-   "no": 2821,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 57,
-    "Dribbling": 81,
-    "Technique": 131,
-    "Block": 149,
-    "Speed": 123,
-    "Stamina": 78,
-    "Catch": 83
-   },
-   "techniques": [
-    "DeepMist",
-    "PrestoTurn",
-    "BlackAsh"
    ]
   },
   {
@@ -98073,6 +98007,51 @@
     "KodaiNoKiba",
     "StrikeSamba",
     "OdinSword"
+   ]
+  },
+  {
+   "id": "mai--go2--base",
+   "character_id": "mai",
+   "name": "Maia",
+   "game": "GO2",
+   "saga": "GO",
+   "version": "base",
+   "team": "Sub Character",
+   "position": "DF",
+   "element": "wood",
+   "ovr": 61,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 47,
+   "control": 59,
+   "physical": 49,
+   "speed": 64,
+   "defense": 66,
+   "goalkeeping": 58,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/m/d/md4ccde2eus.png",
+   "zukan_id": "k/m/d/md4ccde2eus",
+   "zukan_no": 2821,
+   "is_version": false,
+   "description": "Tezcat's gentle sister, who was cast off into the sea to save her village.",
+   "description_es": "La hermana de Tezcat. Su pueblo la envió sola al mar para salvarse.",
+   "no": 2821,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 57,
+    "Dribbling": 81,
+    "Technique": 131,
+    "Block": 149,
+    "Speed": 123,
+    "Stamina": 78,
+    "Catch": 83
+   },
+   "techniques": [
+    "DeepMist",
+    "PrestoTurn",
+    "BlackAsh"
    ]
   },
   {
@@ -121704,6 +121683,52 @@
    ]
   },
   {
+   "id": "dancer--go1--base",
+   "character_id": "dancer",
+   "name": "Tommy Wobbal",
+   "game": "GO1",
+   "saga": "GO",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "GK",
+   "element": "earth",
+   "ovr": 58,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 42,
+   "control": 50,
+   "physical": 62,
+   "speed": 58,
+   "defense": 47,
+   "goalkeeping": 60,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/v/xvfuk2gukym.png",
+   "zukan_id": "k/x/v/xvfuk2gukym",
+   "zukan_no": 2870,
+   "is_version": false,
+   "description": "Teaches belly dancing after school, though he'd never tell his classmates.",
+   "description_es": null,
+   "no": 2870,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 64,
+    "Dribbling": 99,
+    "Technique": 97,
+    "Block": 84,
+    "Speed": 120,
+    "Stamina": 132,
+    "Catch": 115
+   },
+   "techniques": [
+    "TheMist",
+    "HydroAnchor",
+    "CrystalBarrier",
+    "CounterdriveGK"
+   ]
+  },
+  {
    "id": "sanzou--ie3--base",
    "character_id": "sanzou",
    "name": "Tony Sanzang",
@@ -129485,52 +129510,6 @@
     "RapidWhip",
     "BatAttack",
     "StarReflection"
-   ]
-  },
-  {
-   "id": "dancer--go1--base",
-   "character_id": "dancer",
-   "name": "Tommy Wobbal",
-   "game": "GO1",
-   "saga": "GO",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "GK",
-   "element": "earth",
-   "ovr": 57,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 41,
-   "control": 49,
-   "physical": 61,
-   "speed": 57,
-   "defense": 46,
-   "goalkeeping": 59,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/v/xvfuk2gukym.png",
-   "zukan_id": "k/x/v/xvfuk2gukym",
-   "zukan_no": 2870,
-   "is_version": false,
-   "description": "Teaches belly dancing after school, though he'd never tell his classmates.",
-   "description_es": null,
-   "no": 2870,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 64,
-    "Dribbling": 99,
-    "Technique": 97,
-    "Block": 84,
-    "Speed": 120,
-    "Stamina": 132,
-    "Catch": 115
-   },
-   "techniques": [
-    "TheMist",
-    "HydroAnchor",
-    "CrystalBarrier",
-    "CounterdriveGK"
    ]
   },
   {
@@ -177965,6 +177944,51 @@
    "techniques": []
   },
   {
+   "id": "hatchi--go1--base",
+   "character_id": "hatchi",
+   "name": "Beatrix Hunny",
+   "game": "GO1",
+   "saga": "GO",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "DF",
+   "element": "fire",
+   "ovr": 48,
+   "category": "Common Player",
+   "tier": "C",
+   "source": "stats del juego",
+   "shooting": 53,
+   "control": 49,
+   "physical": 47,
+   "speed": 49,
+   "defense": 48,
+   "goalkeeping": 50,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/s/y/syaa1ycqqb8.png",
+   "zukan_id": "k/s/y/syaa1ycqqb8",
+   "zukan_no": 2860,
+   "is_version": false,
+   "description": "Is from a family of beekeepers, but has a fear of insects.",
+   "description_es": null,
+   "no": 2860,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "default",
+    "Kick": 107,
+    "Dribbling": 87,
+    "Technique": 124,
+    "Block": 106,
+    "Speed": 111,
+    "Stamina": 99,
+    "Catch": 66
+   },
+   "techniques": [
+    "FutureEye",
+    "MadJuggler",
+    "SpiralDraw"
+   ]
+  },
+  {
    "id": "sada--ie2--base",
    "character_id": "sada",
    "name": "Bert Emmerson",
@@ -181243,51 +181267,6 @@
     "CrossDrive",
     "UshiroNoShoumen",
     "RibbonShower"
-   ]
-  },
-  {
-   "id": "hatchi--go1--base",
-   "character_id": "hatchi",
-   "name": "Beatrix Hunny",
-   "game": "GO1",
-   "saga": "GO",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "DF",
-   "element": "fire",
-   "ovr": 47,
-   "category": "Common Player",
-   "tier": "C",
-   "source": "stats del juego",
-   "shooting": 52,
-   "control": 48,
-   "physical": 46,
-   "speed": 48,
-   "defense": 47,
-   "goalkeeping": 49,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/s/y/syaa1ycqqb8.png",
-   "zukan_id": "k/s/y/syaa1ycqqb8",
-   "zukan_no": 2860,
-   "is_version": false,
-   "description": "Is from a family of beekeepers, but has a fear of insects.",
-   "description_es": null,
-   "no": 2860,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "default",
-    "Kick": 107,
-    "Dribbling": 87,
-    "Technique": 124,
-    "Block": 106,
-    "Speed": 111,
-    "Stamina": 99,
-    "Catch": 66
-   },
-   "techniques": [
-    "FutureEye",
-    "MadJuggler",
-    "SpiralDraw"
    ]
   },
   {
@@ -193243,61 +193222,6 @@
    ]
   },
   {
-   "id": "WonderTrap",
-   "name": "Hyper-Swiper",
-   "name_es": "Robo fantástico",
-   "name_jp": "ワンダートラップ",
-   "type": "Block",
-   "element": "air",
-   "cost": 8,
-   "cost_game": "GO3",
-   "costs": {
-    "GO3": 8,
-    "GO2": 19
-   },
-   "description": "Run in a way that leaves an afterimage to distract the opponent while you steal the ball.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/3/9/39ji9l8rihm.jpg",
-   "zukan_types": [
-    "Defence"
-   ]
-  },
-  {
-   "id": "ZSlash",
-   "name": "Zed Zag",
-   "name_es": null,
-   "name_jp": "Ｚスラッシュ",
-   "type": "Dribble",
-   "element": "wood",
-   "cost": 30,
-   "cost_game": "GO3",
-   "costs": {
-    "GO3": 30
-   },
-   "description": "Break their balance with a sharp feint, slicing past in a flash that traces a perfect Z.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/6/e/6eipnvd6age.jpg",
-   "zukan_types": [
-    "Offence"
-   ]
-  },
-  {
-   "id": "ArashiTatsumakiHurricane",
-   "name": "Typhoon, Tornado, Hurricane!",
-   "name_es": "¡Tormenta, tornado, huracán!",
-   "name_jp": "嵐・竜巻・ハリケーン",
-   "type": "Shoot",
-   "element": "air",
-   "cost": 85,
-   "cost_game": "GO3",
-   "costs": {
-    "GO3": 85
-   },
-   "description": "Unleash a raging hurricane from the ball and send it barreling toward the goal.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/-/a/-anqfb3bc3m.jpg",
-   "zukan_types": [
-    "Shot"
-   ]
-  },
-  {
    "id": "AcrobatKeep",
    "name": "Acrobatic Keep",
    "name_es": "Guardia acrobática",
@@ -193334,6 +193258,24 @@
    "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/z/6/z6t02iipbmu.jpg",
    "zukan_types": [
     "Offence"
+   ]
+  },
+  {
+   "id": "ArashiTatsumakiHurricane",
+   "name": "Typhoon, Tornado, Hurricane!",
+   "name_es": "¡Tormenta, tornado, huracán!",
+   "name_jp": "嵐・竜巻・ハリケーン",
+   "type": "Shoot",
+   "element": "air",
+   "cost": 85,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 85
+   },
+   "description": "Unleash a raging hurricane from the ball and send it barreling toward the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/-/a/-anqfb3bc3m.jpg",
+   "zukan_types": [
+    "Shot"
    ]
   },
   {
@@ -196985,6 +196927,43 @@
    "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/g/4/g4cdo2cnhes.jpg",
    "zukan_types": [
     "Defence"
+   ]
+  },
+  {
+   "id": "WonderTrap",
+   "name": "Hyper-Swiper",
+   "name_es": "Robo fantástico",
+   "name_jp": "ワンダートラップ",
+   "type": "Block",
+   "element": "air",
+   "cost": 8,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 8,
+    "GO2": 19
+   },
+   "description": "Run in a way that leaves an afterimage to distract the opponent while you steal the ball.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/3/9/39ji9l8rihm.jpg",
+   "zukan_types": [
+    "Defence"
+   ]
+  },
+  {
+   "id": "ZSlash",
+   "name": "Zed Zag",
+   "name_es": null,
+   "name_jp": "Ｚスラッシュ",
+   "type": "Dribble",
+   "element": "wood",
+   "cost": 30,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 30
+   },
+   "description": "Break their balance with a sharp feint, slicing past in a flash that traces a perfect Z.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/6/e/6eipnvd6age.jpg",
+   "zukan_types": [
+    "Offence"
    ]
   },
   {

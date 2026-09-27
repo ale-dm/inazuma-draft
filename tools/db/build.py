@@ -593,17 +593,39 @@ def main(extra_z=None, write=True):
                     mid_by_es.setdefault(t_['name_es'].lower(), mid_)
         return mid_by_es
 
+    def es_mixi_blocks(sec):
+        """bloques de técnicas por forma en la wiki española: [(pestaña de juego, etiqueta, [nombres])]"""
+        out = []
+        for m in re.finditer(r'\|-\|(IE GO(?: \d)?)=(.*?)(?=\n\|-\||</tabber>|\Z)', sec, re.S):
+            tab, body = m.group(1), m.group(2)
+            for b in re.split(r'\{\{ST/Set \(J\) \(Usu\)', body)[1:]:          # formato {{ST/Set (J) (Usu) |F = [Miximax - Okita]}}
+                label = (re.search(r'\|\s*F\s*=\s*([^}]*)\}\}', b) or [None, ''])[1]
+                out.append((tab, label, [n.strip() for c_, n in re.findall(r'\{\{Stec\|(\w+)\|([^|}]+)', b) if c_ != 'TA']))
+            parts = re.split(r'(?:\{\{!\}\}-\{\{!\}\}|\{\{#tag: ?tabber\|\s*)([^=\n{}|]+)=', body)
+            for i in range(1, len(parts) - 1, 2):                                # formato de pestañas "Miximax con …=" + lista
+                names = [n.strip() for img, n in re.findall(r'\[\[Archivo:([^\]]+)\]\]\s*\[\[([^\]|]+)', parts[i + 1])
+                         if 'talento' not in img.lower()]
+                out.append((tab, parts[i].strip(), names))
+            segs = re.split(r'\n;([^\n]+)', body)                            # formato ";Sol (Miximax con Zhuge Liang)" + lista
+            for i in range(1, len(segs) - 1, 2):
+                names = [n.strip() for code, n in re.findall(r'\{\{ST\|T\|(\w+)\}\}\s*\[\[([^\]|]+)', segs[i + 1]) if code != 'TA']
+                names += [n.strip() for img, n in re.findall(r'\[\[Archivo:([^\]]+)\]\]\s*\[\[([^\]|]+)', segs[i + 1])
+                          if 'talento' not in img.lower()]
+                out.append((tab, segs[i].strip(), names))
+        return out
+
     def es_mixi_moves(page, partners):
         sec = (es_desc.get(page) or {}).get('techniques') or ''
-        sec = sec[sec.find('===Videojuegos'):] if '===Videojuegos' in sec else sec
-        words = [w.lower() for p_ in partners for w in re.split(r"[\s|]+", p_ or '') if len(w) > 3]
-        for b in re.split(r'\{\{ST/Set \(J\) \(Usu\)', sec)[1:]:
-            b = b.split('|-|')[0]
-            label = (re.search(r'\|\s*F\s*=\s*([^}]*)\}\}', b) or [None, ''])[1].lower()
-            if 'mixi' not in label or (words and not any(w[:5] in label for w in words)):
-                continue
-            names = [n.strip() for code, n in re.findall(r'\{\{Stec\|(\w+)\|([^|}]+)', b) if code != 'TA']
-            mids = [es_index().get(n.lower()) for n in names]
+        alias = {'arthur': 'arturo', 'joan': 'juana', 'jeanne': 'juana', 'tyrannosaurus': 'tirano', 'queen': 'reina',
+                 'dragons': 'dragones', 'soji': 'okita', 'souji': 'okita'}
+        words = [w.lower() for p_ in partners for w in re.split(r"[\s|']+", p_ or '') if len(w) > 1 and w.lower() not in ('the', 'of', 'and')]
+        words = [x[:5] for w in words for x in {w, alias.get(w, w)}]
+        blocks = es_mixi_blocks(sec)
+        for tab in ('IE GO 3', 'IE GO 2'):                                      # la de Galaxy primero
+            mixis = [(l, n) for t_, l, n in blocks if t_ == tab and 'mixi' in l.lower() and n]
+            pick = next((n for l, n in mixis if any(w in l.lower() for w in words)), None) \
+                or (mixis[0][1] if len(mixis) == 1 else None)
+            mids = [es_index().get(n.lower()) for n in pick or []]
             if any(mids):
                 return [m for m in mids if m]
         return []
@@ -720,7 +742,9 @@ def main(extra_z=None, write=True):
             pick = next((z for z, p in mixi_z if any(same_partner(p, n) for n in names)), None) \
                 or next((z for z, p in mixi_z if 'Chrono Storm' in z['teams'] and re.search(r"'s? miximax", zdesc_of(z))), None)
             if pick:
-                versions[cs_i] = versions[cs_i][:3] + ({**versions[cs_i][3], 'zukan': pick['id']},) + versions[cs_i][4:]
+                # el compañero es el de la ficha de zukan (la wiki a veces no lo da o da otra forma: Zanark → Cao Cao)
+                zp = next(p for z, p in mixi_z if z is pick)
+                versions[cs_i] = versions[cs_i][:3] + ({**versions[cs_i][3], 'zukan': pick['id'], 'mixi': ([zp] if zp else []) + names},) + versions[cs_i][4:]
                 mixi_z = [(z, p) for z, p in mixi_z if z is not pick]
         for z, partner in mixi_z:
             g = next(g for g in MAIN if g in z['games'] and g in stats_by_game)
