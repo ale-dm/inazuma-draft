@@ -37,7 +37,7 @@ export default function Landing({ mode, seed, onModeChange, onStart }: Props) {
           <div className="iz-panel-head text-center">{t('landing.subtitle')}</div>
           <div className="iz-panel-body text-center">
             <p className="text-sm font-heading font-bold uppercase tracking-widest text-iz-muted mb-5">
-              Mode
+              {t('landing.mode.label')}
             </p>
 
             <div className="grid grid-cols-2 gap-2.5 sm:gap-3 mb-4">

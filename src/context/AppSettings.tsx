@@ -33,9 +33,18 @@ function readStored<T extends string>(key: string, fallback: T, allowed: T[]): T
   }
 }
 
+function browserLocale(): Locale {
+  try {
+    const lang = navigator.language.slice(0, 2).toLowerCase()
+    return lang === 'es' || lang === 'en' ? lang : 'fr'
+  } catch {
+    return 'fr'
+  }
+}
+
 export function AppSettingsProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(() => readStored('iz-theme', 'light', ['dark', 'light']))
-  const [locale, setLocaleState] = useState<Locale>(() => readStored('iz-locale', 'fr', ['fr', 'en']))
+  const [locale, setLocaleState] = useState<Locale>(() => readStored('iz-locale', browserLocale(), ['fr', 'en', 'es']))
   const [sound, setSoundState] = useState(() => readStored('iz-sound', 'on', ['on', 'off']) === 'on')
 
   useEffect(() => {

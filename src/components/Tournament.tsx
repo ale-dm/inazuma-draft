@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import type { Player, MatchResult, GroupStanding } from '../types'
-import { rollTournamentField } from '../data/ffi-teams'
+import { localizeCountry, rollTournamentField } from '../data/ffi-teams'
 import { ffiKnockoutPairings } from '../data/ffi-tournament'
 import { simulateMatch, simulateGroupStage, simulateRemainingGroupMatches, matchWinner } from '../engine/sim'
 import { useAppSettings } from '../context/AppSettings'
@@ -18,7 +18,7 @@ interface Props {
 const PLAYER_NAME = 'Inazuma Japan'
 
 export default function Tournament({ playerTeam, onEnd }: Props) {
-  const { t } = useAppSettings()
+  const { t, locale } = useAppSettings()
   const [phase, setPhase] = useState<TourneyPhase>('intro')
   const [matchIdx, setMatchIdx] = useState(0)
   const [currentMatch, setCurrentMatch] = useState<MatchResult | null>(null)
@@ -205,7 +205,7 @@ export default function Tournament({ playerTeam, onEnd }: Props) {
                   {t('tournament.vs', { home: PLAYER_NAME, away: playerOpponents[matchIdx].name })}
                 </p>
                 <p className="text-iz-muted text-sm mb-6">
-                  {playerOpponents[matchIdx].flag} {playerOpponents[matchIdx].country}
+                  {playerOpponents[matchIdx].flag} {localizeCountry(playerOpponents[matchIdx].country, locale)}
                 </p>
                 <button type="button" onClick={runCurrentMatch} className="btn-primary w-full">
                   {t('tournament.playMatch')}

@@ -20,7 +20,7 @@ export default function TopBar() {
 
           <a
             href={SITE.url}
-            className="absolute left-1/2 -translate-x-1/2 flex items-center gap-1.5 sm:gap-2 hover:opacity-90 transition-opacity iz-nav-title max-w-[50%]"
+            className="min-w-0 sm:absolute sm:left-1/2 sm:-translate-x-1/2 flex items-center gap-1.5 sm:gap-2 hover:opacity-90 transition-opacity iz-nav-title max-w-[50%]"
           >
             <img src="/favicon.svg" alt="" className="w-7 h-7 sm:w-8 sm:h-8 rounded shadow-md shrink-0" width={32} height={32} />
             <span className="font-heading font-black text-xs sm:text-sm tracking-tight truncate">
@@ -31,7 +31,7 @@ export default function TopBar() {
 
           <div className="flex items-center gap-1 shrink-0 z-10 min-w-[4.5rem] justify-end">
             <div className="seg-group">
-              {(['fr', 'en'] as const).map(l => (
+              {(['es', 'fr', 'en'] as const).map(l => (
                 <button
                   key={l}
                   type="button"
