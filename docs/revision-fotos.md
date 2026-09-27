@@ -1,8 +1,10 @@
-# Fotos pendientes de revisar
+# Revisión de fotos
+
+> **Estado: cerrada.** Decisión: la lista 1 se deja con la foto de zukan y la lista 2 se queda tal cual (no hay sprite en ninguna wiki). Casos nuevos a mano: `data/overrides.json` → `sprite_force`.
 
 > Generado a partir de `build/players.json` y `build/sprites_review.json`. Criterio: foto de zukan. Si la foto está repetida entre versiones, no hay foto de zukan / es un render 3D, o es del Inazuma Japón Legendario, se busca el sprite de Victory Road: (1) galería de la wiki española, (2) índice de ficheros de la wiki española `(iniciales) Nombre (HVR)`, (3) avatar de Victory Road de la wiki inglesa `(código) Nombre sprite (VR)`. A mano: `data/overrides.json` → `sprite_force`.
 
-## 1. Zukan tiene foto propia, pero hay sprite de Victory Road que encaja con la versión
+## 1. Zukan tiene foto propia y hay sprite de Victory Road — se deja la de zukan
 
 | Carta | Zukan | Sprite |
 |---|---|---|
@@ -38,7 +40,7 @@
 | Falco Flashman · GO3 base | [0ks2lhuo2sm.png](https://dxi4wb638ujep.cloudfront.net/1/k/0/k/0ks2lhuo2sm.png) | [(EE) Falco (HVR).png](https://static.wikia.nocookie.net/inazuma/images/e/e9/%28EE%29_Falco_%28HVR%29.png/revision/latest?cb=20260717112619&path-prefix=es) |
 | Falco Flashman · GO3 Earth Eleven (Nº 3960) | [pgc9ollbn5e.png](https://dxi4wb638ujep.cloudfront.net/1/k/p/g/pgc9ollbn5e.png) | [(EE) Falco (HVR).png](https://static.wikia.nocookie.net/inazuma/images/e/e9/%28EE%29_Falco_%28HVR%29.png/revision/latest?cb=20260717112619&path-prefix=es) |
 
-## 2. Sin sprite de Victory Road en ninguna de las dos wikis
+## 2. Sin sprite de Victory Road en ninguna de las dos wikis — se dejan tal cual
 
 - **Joseph King** · IE3 Neo Japan
 - **Alan Master** · IE3 Neo Japan
