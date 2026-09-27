@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import type { Player } from '../types'
-import { getCharacterVersions } from '../data/catalog'
+import { getCharacterVersions, techniqueName } from '../data/catalog'
 import { GAME_LABEL } from '../data/games'
 import { ALL_STAT_KEYS } from '../lib/power'
 import { useAppSettings } from '../context/AppSettings'
@@ -16,7 +16,7 @@ interface Props {
 }
 
 export default function PlayerDetail({ player, onClose, onOpen }: Props) {
-  const { t } = useAppSettings()
+  const { t, locale } = useAppSettings()
   const versions = getCharacterVersions(player.characterId).filter(v => v.id !== player.id)
 
   useEffect(() => {
@@ -69,7 +69,7 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
                 {player.techniques.map(tech => (
                   <li key={tech.id} className="flex items-center gap-2 text-sm">
                     <span aria-hidden>{TECH_ICON[tech.type]}</span>
-                    <span className="font-heading font-bold text-hissatsu truncate">{tech.name}</span>
+                    <span className="font-heading font-bold text-hissatsu truncate" title={tech.name}>{techniqueName(tech, locale)}</span>
                     <span className="text-[0.65rem] text-iz-muted">{t(`tech.${tech.type}`)}</span>
                     {tech.cost != null && (
                       <span className="ml-auto text-xs tabular-nums text-iz-text" title={tech.costGame ?? undefined}>

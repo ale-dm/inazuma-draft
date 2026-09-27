@@ -1,6 +1,7 @@
 import type { Player } from '../types'
 import { POSITION_STAT_KEYS, displayStatValue, playerRating } from '../lib/power'
 import { useAppSettings } from '../context/AppSettings'
+import { techniqueName } from '../data/catalog'
 import PlayerAvatar from './PlayerAvatar'
 
 const POS_CLASS: Record<string, string> = {
@@ -27,7 +28,7 @@ interface Props {
 }
 
 export default function PlayerCard({ player, mode, onClick, onCompare, inCompare, selected, compact, disabled, teamLabel }: Props) {
-  const { t } = useAppSettings()
+  const { t, locale } = useAppSettings()
 
   if (compact) {
     return (
@@ -97,8 +98,8 @@ export default function PlayerCard({ player, mode, onClick, onCompare, inCompare
             ))}
           </div>
         )}
-        {mode === 'classic' && player.hissatsu[0] && (
-          <div className="text-[0.65rem] text-hissatsu truncate font-heading mt-1.5">⚡ {player.hissatsu[0]}</div>
+        {mode === 'classic' && player.techniques[0] && (
+          <div className="text-[0.65rem] text-hissatsu truncate font-heading mt-1.5">⚡ {techniqueName(player.techniques[0], locale)}</div>
         )}
       </div>
     </button>

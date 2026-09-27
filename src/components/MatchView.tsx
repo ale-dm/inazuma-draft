@@ -1,6 +1,12 @@
+import { getTechnique, techniqueName } from '../data/catalog'
 import type { MatchResult } from '../types'
 import { matchWinner } from '../engine/sim'
 import { useAppSettings } from '../context/AppSettings'
+
+function moveLabel(id: string | undefined, fallback: string, locale: string): string {
+  const tech = id ? getTechnique(id) : undefined
+  return tech ? techniqueName(tech, locale) : fallback
+}
 
 interface Props {
   result: MatchResult
@@ -8,7 +14,7 @@ interface Props {
 }
 
 export default function MatchView({ result, highlightTeam }: Props) {
-  const { t } = useAppSettings()
+  const { t, locale } = useAppSettings()
   const [s1, s2] = result.score
   const winner = matchWinner(result)
   const regEvents = result.events.filter(e => e.type !== 'penalty')
@@ -50,7 +56,7 @@ export default function MatchView({ result, highlightTeam }: Props) {
             return (
               <div key={i} className={`text-sm flex gap-2 ${highlight ? 'text-hissatsu font-heading' : 'text-iz-muted'}`}>
                 <span className="w-8 text-right tabular-nums">{e.minute}'</span>
-                <span>⚽ {e.player}{e.move ? ` — ${e.move}` : ''}</span>
+                <span>⚽ {e.player}{e.move ? ` — ${moveLabel(e.moveId, e.move, locale)}` : ''}</span>
               </div>
             )
           })}

@@ -16,10 +16,13 @@ Reglas:
    - Ej.: Nathan Swift → IE1 (Raimon), IE2 (Raimon) + IE2 (Dark Emperors), IE3 (Inazuma Japan), adulto GO.
 3. **Protagonistas de la saga GO** (Strikers 2013 no cubre Galaxy y apenas las épocas GO): versiones como en la saga original:
    - **GO2:** Raimon (GO2) y **Chrono Storm**, con los jugadores en su **forma Mixi Max directa** (pre-mixed).
+   - **GO2:** además, **Inazuma Japón Legendario** (Inazuma Legend Japan): los adultos del partido contra el Protocolo Omega, con sus técnicas de adulto y foto de adulto (en zukan están como «Inazuma Legend National», algunos con rol *Coach*).
    - **GO3 (Galaxy):** Inazuma Japan / Earth Eleven.
-4. **Fuera por ahora:** los ~1.156 personajes que solo aparecen en Ares, Orion o Victory Road (no tienen stats de los juegos clásicos). Otro tema.
-5. **Formas especiales fuera de las cartas base** (irán como cartas especiales más adelante): Real Inazuma y Mixi Max (salvo el Chrono Storm de GO2).
-6. **Jugadores que no están en Victory Road** (licencias): importarlos de la wiki, con su imagen de la wiki:
+4. **Subformas de Strikers:** cada forma con nombre propio es una carta aparte (p. ej. Shawn Frost: Raimon (Atsuya) DEL y Raimon (Shirou) DEF, con sus técnicas).
+5. **Versiones de zukan:** si zukan tiene una ficha del personaje en otro equipo de la saga principal que aún no tiene carta (Young Inazuma, Perfect Cascade, Protocol Omega 2.0/3.0, The Sherwinds…), se crea esa versión con su foto. Nombres de zukan normalizados: Inazuma National → Inazuma Japan, Neo National → Neo Japan.
+6. **Fuera por ahora:** los ~1.156 personajes que solo aparecen en Ares, Orion o Victory Road (no tienen stats de los juegos clásicos). Otro tema.
+7. **Formas especiales fuera de las cartas base** (irán como cartas especiales más adelante): Real Inazuma y Mixi Max (salvo el Chrono Storm de GO2).
+8. **Jugadores que no están en Victory Road** (licencias): importarlos de la wiki, con su imagen de la wiki:
    - **Hide Nakata** (`Nakata Hidetoshi`): MED, stats en IE2/IE3.
    - **Pants** (`Pants`, "Riku 'Pants' Matsushita"): DEF, stats en IE3, GO2, GO3.
    - *(El "Poseidon" de IE3 es Paul Siddon, portero del Zeus: ya existe.)*
@@ -92,6 +95,10 @@ Distribución del prototipo (2.451 cartas actuales): mediana 64 · p90 80 · p99
 - **Para mostrar** en la carta: coste de **Galaxy** si existe; si no, el que haya.
   - Ojo: a veces cambia mucho (Gungnir: 66 en IE3, 30 en Galaxy).
 
+### Técnicas en castellano
+
+Los nombres en castellano salen de la [wiki en español](https://inazuma.fandom.com/es/wiki) (categoría *Supertécnicas*, 862 fichas): se cruzan por **nombre japonés** (campo `Nombre Japonés`) y, si no, por nombre inglés (`Nombre DOB` / `Nombre Inglés`). Se guardan en `techniques.name_es` (570/588); la app los muestra en castellano y cae al inglés si falta.
+
 ## 6. Problemas conocidos a corregir
 
 - Cruces de nombres aproximados con la wiki/doc del Xtreme: hacen falta **equivalencias a mano** (Goldie Lemmon, Tezcat y Aum Nirvana recibieron stats ajenas; faltan Nepper, Rhionne, IC, Kino Aki, Yukimura Hyouga…).
@@ -131,7 +138,7 @@ python3 tools/db/build.py            # genera build/players.json, build/review.c
 - **Ajustar:** editar `data/overrides.json` (destacados, posiciones por versión, equivalencias de nombres, OVR manual) y volver a ejecutar `build.py`.
 - **Cargar en Supabase:** al hacer push a `main` de cambios en `supabase/`, el workflow `.github/workflows/db-load.yml` aplica `schema.sql` + `seed.sql` con el secreto del repo `SUPABASE_DB_URL` (también se puede lanzar a mano desde Actions → "Load player database into Supabase").
 
-Primera generación: **3.903 cartas** (3.806 personajes + 97 versiones), 587 técnicas · Legendary 36 · Top 233 · Advanced 516 · Growing 771 · Common 2.347 · OVR mediana 61, p90 79, máx 92.
+Generación actual: **3.926 cartas** (3.806 personajes + 120 versiones), 588 técnicas (570 en castellano). Primera generación: 3.903 cartas (3.806 personajes + 97 versiones), 587 técnicas · Legendary 36 · Top 233 · Advanced 516 · Growing 771 · Common 2.347 · OVR mediana 61, p90 79, máx 92.
 
 ## 10. La app
 

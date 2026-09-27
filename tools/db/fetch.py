@@ -21,13 +21,14 @@ import urllib.request
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', '..'))
 CACHE = os.path.join(ROOT, 'tools', '.cache', 'db')
 WIKI_API = 'https://inazuma-eleven.fandom.com/api.php'
+WIKI_ES_API = 'https://inazuma.fandom.com/es/api.php'
 XTREME_API = 'https://iegos13xtreme.fandom.com/api.php'
 ZUKAN_LIST = 'https://zukan.inazuma.jp/en/chara_list/?page='
 BALANCING_DOC = 'https://docs.google.com/document/d/1PT3LSxd1CUyhkHUD9xtpZdm4zmhScg-ZvIW6Yz1wy0M/export?format=txt'
 UA = {'User-Agent': 'Mozilla/5.0 (inazuma-draft data tools)'}
 MODULES = ['IE', 'IE2', 'IE3', 'GO', 'CS', 'GX']
 GAMES = ['IE1', 'IE2', 'IE3', 'GO1', 'GO2', 'GO3', 'ARES', 'ORION', 'VR']
-TEAM_PAGES = ['Chrono Storm', 'Shinsei Raimon', 'Inazuma Japan (GO)', 'Earth Eleven']
+TEAM_PAGES = ['Chrono Storm', 'Shinsei Raimon', 'Inazuma Japan (GO)', 'Earth Eleven', 'Inazuma Legend Japan']
 WIKI_ONLY = ['Nakata Hidetoshi', 'Pants']   # no están en Victory Road (licencias)
 
 REFRESH = '--refresh' in sys.argv
@@ -88,7 +89,7 @@ def fetch_zukan():
             marks = cells[-9:]
             rows.append({
                 'id': m.group(1), 'name': html.unescape(m.group(2)).strip(),
-                'element': cells[6], 'position': cells[7], 'role': cells[8],
+                'element': cells[6], 'position': cells[7], 'role': cells[8], 'age': cells[9],
                 'teams': [t.strip() for t in cells[11].split(' / ') if t.strip()],
                 'games': [g for g, x in zip(GAMES, marks) if x == '○'],
             })
@@ -211,7 +212,35 @@ def main():
         return {p['title']: (p.get('original') or {}).get('source') for p in d['pages']}
     cached('wiki_only_images.json', wiki_only)
 
-    log('8/8 Xtreme (balancing doc + wiki)')
+    log('8/9 supertécnicas en castellano (inazuma.fandom.com/es)')
+    def es_techniques():
+        titles_, cont = [], {}
+        while True:
+            d = api(WIKI_ES_API, action='query', list='categorymembers', cmtitle='Categoría:Supertécnicas', cmlimit=500, **cont)
+            titles_ += [m['title'] for m in d['query']['categorymembers'] if m.get('ns') == 0]
+            if 'continue' not in d:
+                break
+            cont = {'cmcontinue': d['continue']['cmcontinue']}
+        out = {}
+        for i in range(0, len(titles_), 50):
+            d = api(WIKI_ES_API, action='query', prop='revisions', rvprop='content', rvslots='main', titles='|'.join(titles_[i:i + 50]))
+            for p in d['query']['pages']:
+                if p.get('missing') or not p.get('revisions'):
+                    continue
+                c = p['revisions'][0]['slots']['main']['content']
+                jsec = re.search(r'\|\s*Nombre Japonés\s*=(.*?)\n\|', c, re.S)
+                jsec = jsec.group(1) if jsec else ''
+                jp = re.findall(r'\|\s*K\s*=\s*([^}|]+)', jsec) + re.findall(r'<span[^>]*>([^<]+)</span>', jsec)
+                dob = re.search(r'\|\s*Nombre DOB\s*=(.*?)\n\|', c, re.S)
+                en = re.findall(r'\*?\s*([^*{}\n\']+?)\s*\{\{(?:EN|US)\}\}', dob.group(1)) if dob else []
+                en += re.findall(r'\|\s*Nombre Inglés\s*=\s*([^\n|]+)', c)
+                out[p['title']] = {'jp': [j.strip() for j in jp if j.strip()], 'en': [e.strip() for e in en if e.strip() not in ('/', '')]}
+            log(f'  técnicas ES {min(i + 50, len(titles_))}/{len(titles_)}')
+            time.sleep(0.3)
+        return out
+    cached('es_techniques.json', es_techniques)
+
+    log('9/9 Xtreme (balancing doc + wiki)')
     cached('xtreme_balancing.txt', lambda: get(BALANCING_DOC).decode('utf-8-sig'))
     def xtreme_wiki():
         d = api(XTREME_API, action='query', list='allpages', aplimit=500)['query']['allpages']
