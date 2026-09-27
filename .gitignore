@@ -7,3 +7,4 @@ scripts/
 .DS_Store
 *.tsbuildinfo
 .vite/
+tools/.cache/
