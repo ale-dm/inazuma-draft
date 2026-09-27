@@ -1,0 +1,231 @@
+#!/usr/bin/env python3
+"""
+Descarga (con caché) todas las fuentes de la base de jugadores.
+Ver docs/plan-base-jugadores.md.
+
+Uso:  python3 tools/db/fetch.py [--refresh]
+      --refresh  vuelve a descargarlo todo (si no, reutiliza tools/.cache/db/)
+
+Solo usa la librería estándar. Las páginas normales de Fandom están tras
+Cloudflare, pero la API de MediaWiki (api.php) funciona.
+"""
+import html
+import json
+import os
+import re
+import sys
+import time
+import urllib.parse
+import urllib.request
+
+ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', '..'))
+CACHE = os.path.join(ROOT, 'tools', '.cache', 'db')
+WIKI_API = 'https://inazuma-eleven.fandom.com/api.php'
+XTREME_API = 'https://iegos13xtreme.fandom.com/api.php'
+ZUKAN_LIST = 'https://zukan.inazuma.jp/en/chara_list/?page='
+BALANCING_DOC = 'https://docs.google.com/document/d/1PT3LSxd1CUyhkHUD9xtpZdm4zmhScg-ZvIW6Yz1wy0M/export?format=txt'
+UA = {'User-Agent': 'Mozilla/5.0 (inazuma-draft data tools)'}
+MODULES = ['IE', 'IE2', 'IE3', 'GO', 'CS', 'GX']
+GAMES = ['IE1', 'IE2', 'IE3', 'GO1', 'GO2', 'GO3', 'ARES', 'ORION', 'VR']
+TEAM_PAGES = ['Chrono Storm', 'Shinsei Raimon', 'Inazuma Japan (GO)', 'Earth Eleven']
+WIKI_ONLY = ['Nakata Hidetoshi', 'Pants']   # no están en Victory Road (licencias)
+
+REFRESH = '--refresh' in sys.argv
+
+
+def log(*a):
+    print(*a, flush=True)
+
+
+def get(url, params=None, tries=5):
+    if params:
+        url += ('&' if '?' in url else '?') + urllib.parse.urlencode(params)
+    for i in range(tries):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=120) as r:
+                return r.read()
+        except Exception as e:  # red inestable / 429
+            if i == tries - 1:
+                raise
+            time.sleep(2 ** i)
+
+
+def api(base, **params):
+    params.update(format='json', formatversion=2)
+    return json.loads(get(base, params))
+
+
+def cached(name, producer):
+    path = os.path.join(CACHE, name)
+    if not REFRESH and os.path.exists(path):
+        with open(path, encoding='utf-8') as f:
+            return json.load(f) if name.endswith('.json') else f.read()
+    data = producer()
+    os.makedirs(CACHE, exist_ok=True)
+    with open(path, 'w', encoding='utf-8') as f:
+        if name.endswith('.json'):
+            json.dump(data, f, ensure_ascii=False)
+        else:
+            f.write(data)
+    return data
+
+
+# ---------------------------------------------------------------- zukan
+def fetch_zukan():
+    def text(s):
+        s = re.sub(r'<br\s*/?>', ' / ', s)
+        return html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', s))).strip()
+    first = get(ZUKAN_LIST + '1').decode('utf-8')
+    last = max(int(n) for n in re.findall(r'chara_list/\?page=(\d+)', first))
+    rows = []
+    for page in range(1, last + 1):
+        h = first if page == 1 else get(ZUKAN_LIST + str(page)).decode('utf-8')
+        for block in h.split('<tbody>')[1:]:
+            m = re.search(r'data-chara-id="([^"]+)"\s*data-chara-name="([^"]*)"', block)
+            if not m:
+                continue
+            cells = [text(c) for c in re.findall(r'<td[^>]*>(.*?)</td>', block, re.S)]
+            marks = cells[-9:]
+            rows.append({
+                'id': m.group(1), 'name': html.unescape(m.group(2)).strip(),
+                'element': cells[6], 'position': cells[7], 'role': cells[8],
+                'teams': [t.strip() for t in cells[11].split(' / ') if t.strip()],
+                'games': [g for g, x in zip(GAMES, marks) if x == '○'],
+            })
+        log(f'  zukan {page}/{last}')
+        time.sleep(0.3)
+    return rows
+
+
+# ---------------------------------------------------------------- wiki
+def wikitext(base, title):
+    d = api(base, action='parse', page=title, prop='wikitext', redirects=1)
+    return d['parse']['wikitext']
+
+
+def resolve_titles(names):
+    """nombre inglés → título de la ficha (sigue redirecciones)"""
+    out = {}
+    names = sorted(set(names))
+    for i in range(0, len(names), 50):
+        batch = names[i:i + 50]
+        d = api(WIKI_API, action='query', titles='|'.join(batch), redirects=1)['query']
+        norm = {n['from']: n['to'] for n in d.get('normalized', [])}
+        red = {r['from']: r['to'] for r in d.get('redirects', [])}
+        exist = {p['title'] for p in d['pages'] if not p.get('missing')}
+        for n in batch:
+            t = norm.get(n, n)
+            t = red.get(t, t)
+            out[n] = t if t in exist else None
+        log(f'  redirecciones {min(i + 50, len(names))}/{len(names)}')
+        time.sleep(0.3)
+    return out
+
+
+def page_contents(titles, keep):
+    """título → keep(contenido) para muchas páginas (lotes de 25)"""
+    out = {}
+    titles = sorted(set(titles))
+    for i in range(0, len(titles), 25):
+        batch = titles[i:i + 25]
+        d = api(WIKI_API, action='query', prop='revisions', rvprop='content', rvslots='main',
+                titles='|'.join(batch), redirects=1)['query']
+        red = {r['from']: r['to'] for r in d.get('redirects', []) + d.get('normalized', [])}
+        got = {p['title']: p['revisions'][0]['slots']['main']['content']
+               for p in d['pages'] if not p.get('missing') and p.get('revisions')}
+        for t in batch:
+            tt = red.get(t, t)
+            tt = red.get(tt, tt)
+            out[t] = keep(got[tt]) if tt in got else None
+        log(f'  páginas {min(i + 25, len(titles))}/{len(titles)}')
+        time.sleep(0.3)
+    return out
+
+
+def parameters_section(content):
+    i = content.find('==Parameters==')
+    if i < 0:
+        return None
+    j = content.find('\n==', i + 14)
+    while j > 0 and content[j + 3:j + 4] == '=':   # saltar subsecciones ===
+        j = content.find('\n==', j + 4)
+    return content[i:j if j > 0 else None]
+
+
+def infobox(content):
+    fields = {}
+    for k in ('name_dub', 'name_jp', 'type', 'type2', 'element', 'position', 'image'):
+        m = re.search(r'\|\s*' + k + r'\s*=\s*([^\n]*)', content)
+        if m:
+            fields[k] = m.group(1).strip()
+    for k in ('tp_iego3', 'tp_ie3', 'tp_iego2', 'tp_ie2', 'tp_iego', 'tp_ie'):
+        m = re.search(r'\|\s*' + k + r'\s*=\s*([^\n|]*)', content)
+        n = re.search(r'\d+', m.group(1)) if m else None
+        if n:
+            fields[k] = int(n.group())
+    return fields
+
+
+def lua_entries(text):
+    """módulo Lua → {clave: cuerpo} (entradas de primer nivel)"""
+    starts = [(m.start(), m.group(1)) for m in re.finditer(r'\n\t(\w+)=\{', text)]
+    return {k: text[p:(starts[i + 1][0] if i + 1 < len(starts) else len(text))]
+            for i, (p, k) in enumerate(starts)}
+
+
+def main():
+    log('1/8 zukan')
+    zukan = cached('zukan.json', fetch_zukan)
+    log(f'    {len(zukan)} fichas')
+
+    log('2/8 módulos de la wiki (PlayerData, WazaData)')
+    mods = {m: cached(f'PlayerData_{m}.lua', lambda m=m: wikitext(WIKI_API, f'Module:PlayerData/{m}')) for m in MODULES}
+    waza = cached('WazaData.lua', lambda: wikitext(WIKI_API, 'Module:WazaData'))
+
+    log('3/8 nombres de zukan → fichas de la wiki')
+    names = [z['name'] for z in zukan if z['role'].startswith('Player')]
+    titles = cached('redirects.json', lambda: resolve_titles(names))
+
+    log('4/8 fichas de jugadores (Parameters + infobox)')
+    pages = sorted({t for t in titles.values() if t} | set(WIKI_ONLY))
+    params = cached('params.json', lambda: page_contents(pages, lambda c: {'params': parameters_section(c), 'info': infobox(c)}))
+
+    log('5/8 técnicas (ficha de cada técnica)')
+    used = set()
+    for m in MODULES:
+        used |= set(re.findall(r'\{"(\w+)"', mods[m]))
+    wz = lua_entries(waza)
+    move_page = {}
+    for k in used:
+        pm = re.search(r'page="([^"]+)"', wz.get(k, ''))
+        move_page[k] = pm.group(1).split('#')[0] if pm else k
+    move_info = cached('moves.json', lambda: page_contents(sorted(set(move_page.values())), infobox))
+    cached('move_page.json', lambda: move_page)
+
+    log('6/8 equipos protagonistas de GO')
+    cached('teams.json', lambda: {t: wikitext(WIKI_API, t) for t in TEAM_PAGES})
+
+    log('7/8 jugadores solo de la wiki (imagen)')
+    def wiki_only():
+        d = api(WIKI_API, action='query', titles='|'.join(WIKI_ONLY), prop='pageimages', piprop='original')['query']
+        return {p['title']: (p.get('original') or {}).get('source') for p in d['pages']}
+    cached('wiki_only_images.json', wiki_only)
+
+    log('8/8 Xtreme (balancing doc + wiki)')
+    cached('xtreme_balancing.txt', lambda: get(BALANCING_DOC).decode('utf-8-sig'))
+    def xtreme_wiki():
+        d = api(XTREME_API, action='query', list='allpages', aplimit=500)['query']['allpages']
+        titles_ = [p['title'] for p in d]
+        d = api(XTREME_API, action='query', prop='revisions', rvprop='content', rvslots='main', titles='|'.join(titles_))
+        out = {}
+        for p in d['query']['pages']:
+            m = re.search(r'\{\{Stats\|([^}]*)\}\}', p['revisions'][0]['slots']['main']['content'])
+            if m:
+                out[p['title']] = m.group(1)
+        return out
+    cached('xtreme_wiki.json', xtreme_wiki)
+    log(f'Listo. Caché en {os.path.relpath(CACHE, ROOT)}/')
+
+
+if __name__ == '__main__':
+    main()
