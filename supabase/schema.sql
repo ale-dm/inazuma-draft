@@ -28,7 +28,7 @@ create table if not exists public.cards (
   id           text primary key,             -- <personaje>--<juego>--<versión>
   character_id text not null references public.characters(id) on delete cascade,
   name         text not null,
-  game         text not null,                -- IE1 | IE2 | IE3 | GO1 | GO2 | GO3
+  game         text not null,                -- IE1 | IE2 | IE3 | GO1 | GO2 | GO3 | ARES
   saga         text not null,                -- IE | GO
   version      text not null,                -- p. ej. "Raimon", "Dark Emperors", "Chrono Storm"
   team         text,
