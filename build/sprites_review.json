@@ -1,0 +1,298 @@
+[
+ {
+  "id": "endou-mamoru--ie1--base",
+  "name": "Mark Evans",
+  "game": "IE1",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/d/w/dwho-wi8ruk.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/9/94/%28R%29_Mark_%28HVR%29.png/revision/latest?cb=20251203220035&path-prefix=es"
+ },
+ {
+  "id": "endou-mamoru--ie2--raimon",
+  "name": "Mark Evans",
+  "game": "IE2",
+  "version": "Raimon",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/4/g/4g1p9bwrwx0.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/4/46/%28R%29_Mark_%28HVR-LB%29.png/revision/latest?cb=20260502205332&path-prefix=es"
+ },
+ {
+  "id": "endou-mamoru--go2--inazuma-legend-japan",
+  "name": "Mark Evans",
+  "game": "GO2",
+  "version": "Inazuma Legend Japan",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/_/k/_k2bq4onqie.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/0/01/%28IJL%29_Mark_%28HVR%29.png/revision/latest?cb=20260520020406&path-prefix=es"
+ },
+ {
+  "id": "endou-mamoru--go2--mixi-max-arion-markion",
+  "name": "Mark Evans",
+  "game": "GO2",
+  "version": "Mixi Max (Arion) «Markion»",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/q/y/qywocbe-mme.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/a/a8/%28IJ%29_Mark_%28HVR_Miximax%29.png/revision/latest?cb=20260511193159&path-prefix=es"
+ },
+ {
+  "id": "gouenji-shuuya--ie1--base",
+  "name": "Axel Blaze",
+  "game": "IE1",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/f/1/f1kh7d67sbs.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/0/0b/%28R%29_Axel_%28HVR%29.png/revision/latest?cb=20251203220407&path-prefix=es"
+ },
+ {
+  "id": "gouenji-shuuya--go2--inazuma-legend-japan",
+  "name": "Axel Blaze",
+  "game": "GO2",
+  "version": "Inazuma Legend Japan",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/w/b/wbkpcsww-ek.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/9/9f/%28IJL%29_Axel_%28HVR%29.png/revision/latest?cb=20260518181659&path-prefix=es"
+ },
+ {
+  "id": "gouenji-shuuya--go2--mixi-max-shawn-shaxel",
+  "name": "Axel Blaze",
+  "game": "GO2",
+  "version": "Mixi Max (Shawn) «Shaxel»",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/b/a/babjxk4eh_s.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/6/6a/%28IJ%29_Axel_%28HVR_Miximax%29.png/revision/latest?cb=20260518190327&path-prefix=es"
+ },
+ {
+  "id": "kabeyama-heigorou--ie1--base",
+  "name": "Jack Wallside",
+  "game": "IE1",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/m/r/mrvaa0xojh8.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/c/c7/%28R%29_Jack_%28HVR%29.png/revision/latest?cb=20260401203522&path-prefix=es"
+ },
+ {
+  "id": "kabeyama-heigorou--go2--inazuma-legend-japan",
+  "name": "Jack Wallside",
+  "game": "GO2",
+  "version": "Inazuma Legend Japan",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/u/n/unkvua7_ixc.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/5/5e/%28IJL%29_Jack_%28HVR%29.png/revision/latest?cb=20260715152633&path-prefix=es"
+ },
+ {
+  "id": "kazemaru-ichirouta--ie1--base",
+  "name": "Nathan Swift",
+  "game": "IE1",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/9/5/95k7tlx0k0u.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/4/4e/%28R%29_Nathan_%28HVR%29.png/revision/latest?cb=20251204124152&path-prefix=es"
+ },
+ {
+  "id": "kazemaru-ichirouta--ie2--dark-emperors",
+  "name": "Nathan Swift",
+  "game": "IE2",
+  "version": "Dark Emperors",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/j/x/jxwu6ywqhfe.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/4/45/%28EO%29_Nathan_%28HVR%29.png/revision/latest?cb=20260203164014&path-prefix=es"
+ },
+ {
+  "id": "kazemaru-ichirouta--go2--inazuma-legend-japan",
+  "name": "Nathan Swift",
+  "game": "GO2",
+  "version": "Inazuma Legend Japan",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/d/e/desox8ppge0.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/3/3f/%28IJL%29_Nathan_%28HVR%29.png/revision/latest?cb=20260714185004&path-prefix=es"
+ },
+ {
+  "id": "someoka-ryuugo--ie1--base",
+  "name": "Kevin Dragonfly",
+  "game": "IE1",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/0/d/0dvmw8cb_ye.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/2/23/%28R%29_Kevin_%28HVR%29.png/revision/latest?cb=20251204130826&path-prefix=es"
+ },
+ {
+  "id": "ichinose-kazuya--ie1--base",
+  "name": "Erik Eagle",
+  "game": "IE1",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/e/4/e4qtt3lwf_m.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/1/1a/%28R%29_Erik_%28HVR%29.png/revision/latest?cb=20251205014423&path-prefix=es"
+ },
+ {
+  "id": "oono-densuke--ie1--base",
+  "name": "Peter Drent",
+  "game": "IE1",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/d/5/d5w9zd0i6nc.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/3/34/%28RA%29_Drent_%28HVR%29.png/revision/latest?cb=20260129194122&path-prefix=es"
+ },
+ {
+  "id": "kidou-yuuto--ie1--base",
+  "name": "Jude Sharp",
+  "game": "IE1",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/l/1/l1wbplzhm4k.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/1/1d/%28RA%29_Jude_%28HVR%29.png/revision/latest?cb=20251203221440&path-prefix=es"
+ },
+ {
+  "id": "kidou-yuuto--ie2--raimon",
+  "name": "Jude Sharp",
+  "game": "IE2",
+  "version": "Raimon",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/y/p/ypw6ucjzj3e.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/4/43/%28R%29_Jude_%28HVR%29.png/revision/latest?cb=20260502150037&path-prefix=es"
+ },
+ {
+  "id": "kidou-yuuto--go2--inazuma-legend-japan",
+  "name": "Jude Sharp",
+  "game": "GO2",
+  "version": "Inazuma Legend Japan",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/m/d/mda8pecb4xs.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/2/2c/%28IJL%29_Jude_%28HVR%29.png/revision/latest?cb=20260710205134&path-prefix=es"
+ },
+ {
+  "id": "kidou-yuuto--go2--mixi-max-caleb-juleb",
+  "name": "Jude Sharp",
+  "game": "GO2",
+  "version": "Mixi Max (Caleb) «Juleb»",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/x/0/x0f7z1ua1mm.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/a/ad/%28IJ%29_Jude_%28HVR-Miximax_Caleb%29.png/revision/latest?cb=20260709011803&path-prefix=es"
+ },
+ {
+  "id": "afuro-terumi--ie1--base",
+  "name": "Byron Love",
+  "game": "IE1",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/d/y/dykb3jbxeis.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/c/ce/%28Z%29_Byron_%28HVR%29.png/revision/latest?cb=20251204133144&path-prefix=es"
+ },
+ {
+  "id": "ishidaira-hanzou--ie2--base",
+  "name": "Zohen",
+  "game": "IE2",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/z/9/z9hwm3ap04u.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/4/45/%28G%29_Zohen_%28HVR%29.png/revision/latest?cb=20260204220049&path-prefix=es"
+ },
+ {
+  "id": "komazawa-kyouma--ie2--base",
+  "name": "Kormer",
+  "game": "IE2",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/i/6/i6zcyvt9srm.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/7/7a/%28G%29_Kormer_%28HVR%29.png/revision/latest?cb=20260204220040&path-prefix=es"
+ },
+ {
+  "id": "izuno-yuu--ie2--base",
+  "name": "Wittz",
+  "game": "IE2",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/8/q/8qmadyqfluk.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/a/a5/%28G%29_Wittz_%28HVR%29.png/revision/latest?cb=20260204220033&path-prefix=es"
+ },
+ {
+  "id": "kiyama-hiroto--ie2--base",
+  "name": "Xene",
+  "game": "IE2",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/j/q/jqm20m_shls.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/f/f6/%28G%29_Xene_%28HVR%29.png/revision/latest?cb=20260204220025&path-prefix=es"
+ },
+ {
+  "id": "zaizen-touko--ie2--base",
+  "name": "Victoria Vanguard",
+  "game": "IE2",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/a/b/abvgyltmhds.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/d/d2/%28SS%29_Tori_%28HVR%29.png/revision/latest?cb=20260713133310&path-prefix=es"
+ },
+ {
+  "id": "fubuki-shirou--ie2--base",
+  "name": "Shawn Froste",
+  "game": "IE2",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/i/g/iggcoacccik.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/7/73/%28A%29_Shawn_%28HVR-DF%29.png/revision/latest?cb=20260203000229&path-prefix=es"
+ },
+ {
+  "id": "fubuki-shirou--ie2--raimon-shirou",
+  "name": "Shawn Froste",
+  "game": "IE2",
+  "version": "Raimon (Shirou)",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/o/p/opancch54ie.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/a/ad/%28R%29_Shawn_%28HVR-DF%29.png/revision/latest?cb=20260502205338&path-prefix=es"
+ },
+ {
+  "id": "fubuki-shirou--ie2--raimon-atsuya",
+  "name": "Shawn Froste",
+  "game": "IE2",
+  "version": "Raimon (Atsuya)",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/i/3/i30spf7yhce.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/a/ad/%28R%29_Shawn_%28HVR-DF%29.png/revision/latest?cb=20260502205338&path-prefix=es"
+ },
+ {
+  "id": "fubuki-shirou--ie3--inazuma-japan",
+  "name": "Shawn Froste",
+  "game": "IE3",
+  "version": "Inazuma Japan",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/w/k/wk5ezxf-7dm.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/3/3a/%28IJ%29_Shawn_%28HVR%29.png/revision/latest?cb=20260503122143&path-prefix=es"
+ },
+ {
+  "id": "fubuki-shirou--go2--inazuma-legend-japan",
+  "name": "Shawn Froste",
+  "game": "GO2",
+  "version": "Inazuma Legend Japan",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/n/p/npvivtwkt3m.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/a/ab/%28IJL%29_Shawn_%28HVR%29.png/revision/latest?cb=20260612142949&path-prefix=es"
+ },
+ {
+  "id": "fubuki-shirou--go2--mixi-max-axel-shaxel",
+  "name": "Shawn Froste",
+  "game": "GO2",
+  "version": "Mixi Max (Axel) «Shaxel»",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/m/c/mc0a0kigy_k.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/e/e2/%28IJ%29_Shawn_%28HVR_Miximax%29.png/revision/latest?cb=20260711220339&path-prefix=es"
+ },
+ {
+  "id": "tachimukai-yuuki--ie2--base",
+  "name": "Darren LaChance",
+  "game": "IE2",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/o/y/oy1sibyz7wc.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/e/ee/%28Fa%29_Darren_%28HVR%29.png/revision/latest?cb=20260711143852&path-prefix=es"
+ },
+ {
+  "id": "tsunami-jousuke--ie2--base",
+  "name": "Hurley Kane",
+  "game": "IE2",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/i/0/i0spbukph8c.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/c/c5/%28MT%29_Hurley_%28HVR%29.png/revision/latest?cb=20260710200532&path-prefix=es"
+ },
+ {
+  "id": "tsunami-jousuke--go2--inazuma-legend-japan",
+  "name": "Hurley Kane",
+  "game": "GO2",
+  "version": "Inazuma Legend Japan",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/s/s/ssjj6dptn3c.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/3/31/%28IJL%29_Hurley_%28HVR%29.png/revision/latest?cb=20260710200542&path-prefix=es"
+ },
+ {
+  "id": "tsurugi-kyousuke--go2--raimon",
+  "name": "Victor Blade",
+  "game": "GO2",
+  "version": "Raimon",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/q/3/q3kql_cttdk.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/9/93/%28R_%28GO%29%29_Victor_%28HVR%29.png/revision/latest?cb=20251208153437&path-prefix=es"
+ },
+ {
+  "id": "beta--go2--base",
+  "name": "Beta",
+  "game": "GO2",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/u/h/uhsign1h3ek.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/5/54/%28PO_2.0%29_Beta_%28HVR%29.png/revision/latest?cb=20260203001908&path-prefix=es"
+ },
+ {
+  "id": "beta--go2--protocol-omega-2-0",
+  "name": "Beta",
+  "game": "GO2",
+  "version": "Protocol Omega 2.0",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/i/j/ijgn8lthcc8.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/5/54/%28PO_2.0%29_Beta_%28HVR%29.png/revision/latest?cb=20260203001908&path-prefix=es"
+ }
+]
