@@ -99,7 +99,8 @@ EN_TEAM_CODE = {('Raimon', 'GO'): ['SR', 'R (GO)'], ('Raimon', 'IE'): ['R', 'SR'
                 ('Earth Eleven', 'GO'): ['EE'], ('Zeus', 'IE'): ['Z'], ('Royal Academy', 'IE'): ['TG'],
                 ('Royal Academy Redux', 'IE'): ['STG'], ('Dark Emperors', 'IE'): ['DE'], ('Young Inazuma', 'IE'): ['YI'],
                 ('Protocol Omega', 'GO'): ['PO'], ('Protocol Omega 2.0', 'GO'): ['PO2'], ('Protocol Omega 3.0', 'GO'): ['PO3'],
-                ('Inazuma Legend Japan', 'GO'): ['ILJ'], ('Alpine', 'IE'): ['H'], ('Genesis', 'IE'): ['G']}
+                ('Inazuma Legend Japan', 'GO'): ['ILJ'], ('Alpine', 'IE'): ['H'], ('Genesis', 'IE'): ['G'],
+                ('The Sherwinds', 'GO'): ['T']}
 
 
 def load_opt(name, default):
@@ -1045,6 +1046,12 @@ def main(extra_z=None, write=True):
     keyset = collections.Counter((c['character_id'], c['game'], c['team']) for c in cards)
     cards = [c for c in cards if not (c['version'] == 'Adult' and keyset[(c['character_id'], c['game'], c['team'])] > 1)]
 
+    # equipos con un solo jugador en ese juego: de momento fuera (el jugador pasa a sin equipo)
+    solo = collections.Counter((c['game'], c['team']) for c in cards)
+    for c in cards:
+        if c['team'] and c['team'] not in SCOUT_TEAMS | {'Mixi Max'} and solo[(c['game'], c['team'])] == 1:
+            report.append(f"Equipo con un solo jugador, fuera: {c['team']} ({c['game']}) → {c['name']} sin equipo")
+            c['team'] = 'Unaffiliated'
     # --- imágenes: por personaje, cada versión con la ficha de zukan que mejor encaja (sin repetir si hay otra)
     MAINLINE = set(MAIN)
     by_char = collections.defaultdict(list)

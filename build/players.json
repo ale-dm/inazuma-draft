@@ -1570,7 +1570,7 @@
    "game": "GO3",
    "saga": "GO",
    "version": "Japanese Resistance",
-   "team": "Japanese Resistance",
+   "team": "Unaffiliated",
    "position": "MF",
    "element": "fire",
    "ovr": 89,
@@ -8779,7 +8779,7 @@
    "speed": 83,
    "defense": 83,
    "goalkeeping": 83,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/o/o/ooxd-ldeoym.png",
+   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/ed/%28T%29_Matsukaze_Tenma_sprite_%28VR%29.png/revision/latest?cb=20260808233408",
    "zukan_id": "k/o/o/ooxd-ldeoym",
    "zukan_no": 2436,
    "is_version": true,
@@ -22516,7 +22516,7 @@
    "game": "GO2",
    "saga": "GO",
    "version": "base",
-   "team": "El Dorado 02",
+   "team": "Unaffiliated",
    "position": "GK",
    "element": "earth",
    "ovr": 79,
@@ -28525,7 +28525,7 @@
    "game": "GO2",
    "saga": "GO",
    "version": "base",
-   "team": "The Golden Bears",
+   "team": "Unaffiliated",
    "position": "GK",
    "element": "earth",
    "ovr": 77,
@@ -32844,7 +32844,7 @@
    "game": "GO1",
    "saga": "GO",
    "version": "base",
-   "team": "Demon's Horn",
+   "team": "Unaffiliated",
    "position": "FW",
    "element": "air",
    "ovr": 76,
@@ -39312,7 +39312,7 @@
    "game": "GO2",
    "saga": "GO",
    "version": "base",
-   "team": "The Crimson Hounds",
+   "team": "Unaffiliated",
    "position": "FW",
    "element": "fire",
    "ovr": 75,
@@ -39596,7 +39596,7 @@
    "game": "GO2",
    "saga": "GO",
    "version": "base",
-   "team": "The Snow Weasels",
+   "team": "Unaffiliated",
    "position": "FW",
    "element": "air",
    "ovr": 75,
@@ -39839,7 +39839,7 @@
    "game": "GO2",
    "saga": "GO",
    "version": "base",
-   "team": "The Aquatic Wings",
+   "team": "Unaffiliated",
    "position": "MF",
    "element": "air",
    "ovr": 75,
@@ -43453,7 +43453,7 @@
    "game": "GO2",
    "saga": "GO",
    "version": "base",
-   "team": "The Night Vipers",
+   "team": "Unaffiliated",
    "position": "DF",
    "element": "wood",
    "ovr": 74,
@@ -51947,7 +51947,7 @@
    "game": "IE3",
    "saga": "IE",
    "version": "base",
-   "team": "Team Sharp",
+   "team": "Unaffiliated",
    "position": "FW",
    "element": "wood",
    "ovr": 71,
@@ -219940,10 +219940,6 @@
    "name_es": "Emperadores Oscuros"
   },
   {
-   "name": "Demon's Horn",
-   "name_es": "Cuerno Demoníaco"
-  },
-  {
    "name": "Desert Lions",
    "name_es": "Leones del Desierto"
   },
@@ -219962,10 +219958,6 @@
   {
    "name": "Earth Eleven",
    "name_es": "Earth Eleven"
-  },
-  {
-   "name": "El Dorado 02",
-   "name_es": "El Dorado Equipo 02"
   },
   {
    "name": "Epsilon",
@@ -220042,10 +220034,6 @@
   {
    "name": "Ixar Fleet",
    "name_es": "Flota Ixar"
-  },
-  {
-   "name": "Japanese Resistance",
-   "name_es": "Resistencia de Japón"
   },
   {
    "name": "Kirkwood",
@@ -220236,10 +220224,6 @@
    "name_es": "Equipo Ogro"
   },
   {
-   "name": "Team Sharp",
-   "name_es": null
-  },
-  {
    "name": "Team Zero",
    "name_es": "Equipo Zero"
   },
@@ -220248,16 +220232,8 @@
    "name_es": "Zoolan Team"
   },
   {
-   "name": "The Aquatic Wings",
-   "name_es": null
-  },
-  {
    "name": "The Cape Crusaders",
    "name_es": "Caimanes del Cabo"
-  },
-  {
-   "name": "The Crimson Hounds",
-   "name_es": null
   },
   {
    "name": "The Despairadoes",
@@ -220268,24 +220244,12 @@
    "name_es": "Los Emperadores"
   },
   {
-   "name": "The Golden Bears",
-   "name_es": null
-  },
-  {
    "name": "The Kingdom",
    "name_es": "Os Reis"
   },
   {
-   "name": "The Night Vipers",
-   "name_es": null
-  },
-  {
    "name": "The Sherwinds",
    "name_es": "Los Arions"
-  },
-  {
-   "name": "The Snow Weasels",
-   "name_es": null
   },
   {
    "name": "The Terracotta Army",
@@ -220336,8 +220300,16 @@
    "name_es": "El Dorado Equipo 01"
   },
   {
+   "name": "El Dorado 02",
+   "name_es": "El Dorado Equipo 02"
+  },
+  {
    "name": "El Dorado 03",
    "name_es": "El Dorado Equipo 03"
+  },
+  {
+   "name": "Japanese Resistance",
+   "name_es": "Resistencia de Japón"
   }
  ],
  "staff": [
