@@ -86,10 +86,11 @@ def fetch_zukan():
             if not m:
                 continue
             cells = [text(c) for c in re.findall(r'<td[^>]*>(.*?)</td>', block, re.S)]
+            q = re.search(r'href="/en/chara_param/\?q=([^"]+)"', block)
             marks = cells[-9:]
             rows.append({
                 'no': int(cells[1]) if cells[1].isdigit() else None,          # nº oficial del zukan
-                'id': m.group(1), 'name': html.unescape(m.group(2)).strip(),
+                'id': m.group(1), 'name': html.unescape(m.group(2)).strip(), 'q': q.group(1) if q else None,
                 'element': cells[6], 'position': cells[7], 'role': cells[8], 'age': cells[9],
                 'teams': [t.strip() for t in cells[11].split(' / ') if t.strip()],
                 'games': [g for g, x in zip(GAMES, marks) if x == '○'],
@@ -97,6 +98,40 @@ def fetch_zukan():
         log(f'  zukan {page}/{last}')
         time.sleep(0.3)
     return rows
+
+
+ZUKAN_PARAM = 'https://zukan.inazuma.jp/en/chara_param/?q='
+MAINLINE = {'IE1', 'IE2', 'IE3', 'GO1', 'GO2', 'GO3'}
+
+
+def fetch_zukan_desc(zukan):
+    """nº de zukan → descripción oficial (texto tras 'Character Viewer Game: …') y juego de estreno"""
+    from concurrent.futures import ThreadPoolExecutor
+    todo = [z for z in zukan if z.get('q') and set(z['games']) & MAINLINE]
+    def one(z):
+        t = get(ZUKAN_PARAM + z['q']).decode('utf-8')
+        t = re.sub(r'<script.*?</script>|<style.*?</style>', '', t, flags=re.S)
+        t = html.unescape(re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', t)))
+        m = re.search(r'Character Viewer Game: (.+?) (?:How to Obtain|Position )', t)
+        game, desc = (None, None)
+        if m:
+            g = re.match(r'(Inazuma Eleven(?: GO Chrono Stones: Wildfire / Thunderflash| GO Galaxy: Big Bang / Supernova| GO: Light / Shadow'
+                         r'| 2: Firestorm / Blizzard| 3: Lightning Bolt / Bomb Blast / Team Ogre Attacks!| Ares| Orion|: Victory Road)?) (.*)', m.group(1))
+            game, desc = (g.group(1), g.group(2)) if g else (None, m.group(1))
+        stats = {k: int(v) for k, v in re.findall(r'(Kick|Control|Technique|Pressure|Physical|Agility|Intelligence) Lv50 (\d+)', t)}
+        return str(z['no']), {'game': game, 'desc': desc, 'vr_lv50': stats or None}
+    part = os.path.join(CACHE, 'zukan_desc.partial.json')      # progreso parcial: se puede reanudar
+    out = json.load(open(part, encoding='utf-8')) if os.path.exists(part) else {}
+    todo = [z for z in todo if str(z['no']) not in out]
+    with ThreadPoolExecutor(4) as ex:
+        for i, (k, v) in enumerate(ex.map(one, todo), 1):
+            out[k] = v
+            if i % 100 == 0 or i == len(todo):
+                with open(part, 'w', encoding='utf-8') as f:
+                    json.dump(out, f, ensure_ascii=False)
+                log(f'  fichas {i}/{len(todo)}')
+    os.remove(part) if os.path.exists(part) else None
+    return out
 
 
 # ---------------------------------------------------------------- wiki
@@ -179,6 +214,9 @@ def main():
     log('1/8 zukan')
     zukan = cached('zukan.json', fetch_zukan)
     log(f'    {len(zukan)} fichas')
+
+    log('1b ficha de cada personaje de zukan (descripción oficial) — solo saga principal')
+    cached('zukan_desc.json', lambda: fetch_zukan_desc(zukan))
 
     log('2/8 módulos de la wiki (PlayerData, WazaData)')
     mods = {m: cached(f'PlayerData_{m}.lua', lambda m=m: wikitext(WIKI_API, f'Module:PlayerData/{m}')) for m in MODULES}

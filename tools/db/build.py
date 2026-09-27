@@ -60,7 +60,7 @@ WIKI_FORM_TEAM = {'Dark Emperors': 'Dark Emperors', 'Chaos': 'Chaos', 'Epsilon K
                   'Shin Teikoku Gakuen': 'Royal Academy Redux', 'Diamond Dust': 'Diamond Dust', 'Prominence': 'Prominence',
                   'Neo Japan': 'Neo Japan', 'Fire Dragon': 'Fire Dragon', 'Unicorn': 'Unicorn', 'Zeus': 'Zeus'}
 TEAM_FORM_WORD = {v: k.lower() for k, v in WIKI_FORM_TEAM.items()} | {'Young Inazuma': 'young'}
-ALT_VERSION = ('dark emperors', 'chaos', 'atsuya', 'shirou', 'merged', 'ishido', 'gran', 'chrono storm')
+ALT_VERSION = ('mixi', 'dark emperors', 'chaos', 'atsuya', 'shirou', 'merged', 'ishido', 'gran', 'chrono storm')
 ILJ = 'Inazuma Legend Japan'
 # nombres de equipo de zukan → los de la base
 ZUKAN_TEAM = {'Inazuma National': 'Inazuma Japan', 'Inazuma Legend National': ILJ, 'Neo National': 'Neo Japan'}
@@ -103,6 +103,12 @@ def main(extra_z=None, write=True):
     report = []
     ov = json.load(open(os.path.join(ROOT, 'data', 'overrides.json'), encoding='utf-8'))
     zukan = load('zukan.json')
+    zdesc = load('zukan_desc.json')
+    GAME_TITLE = re.compile(r'^(?:Inazuma Eleven )?(?:GO Chrono Stones: Wildfire / Thunderflash|GO Galaxy: Big Bang / Supernova|'
+                            r'GO: Light / Shadow|2: Firestorm / Blizzard|3: Lightning Bolt / Bomb Blast / Team Ogre Attacks!|'
+                            r'Ares|Orion|: Victory Road)\s+')
+    for v in zdesc.values():
+        v['desc'] = GAME_TITLE.sub('', v.get('desc') or '') or None
     titles = load('redirects.json')
     params = load('params.json')
     move_page = load('move_page.json')
@@ -188,6 +194,40 @@ def main(extra_z=None, write=True):
                 continue
             if tm_ not in [t for t, _ in wiki_forms[(pg_, g_)]]:
                 wiki_forms[(pg_, g_)].append((tm_, b))
+
+    PARTNER_ALIAS = {'jeanne': 'joan', 'kongming': 'zhugeliang', 'ryubi': 'liubei', 'nobunaga': 'odanobunaga', 'tyrano': 'tyranosaurus'}
+    def pnorm(x):
+        x = re.sub(r'[^a-z]', '', x.lower()).replace('ou', 'o').replace('uu', 'u').replace('nn', 'n')
+        x = re.sub(r'^(the|king|queen)', '', x)
+        return PARTNER_ALIAS.get(x, x)
+
+    def same_partner(a, b):
+        """'Joan of Arc' ~ "Jeanne d'Arc|Jeanne", 'Soji' ~ 'Okita Souji', 'Cao Cao' ~ 'Caocao'"""
+        wa = [pnorm(w) for w in re.split(r"[\s|]+", a) if len(w) > 2] + [pnorm(a)]
+        wb = [pnorm(w) for w in re.split(r"[\s|]+", b) if len(w) > 2] + [pnorm(b)]
+        return any(x and y and (x.startswith(y[:5]) or y.startswith(x[:5])) for x in wa for y in wb)
+
+    def zdesc_of(z):
+        return (zdesc.get(str(z.get('no'))) or {}).get('desc') or ''
+
+    def mixi_partner(z, char_name):
+        """None si la descripción de zukan no habla de Mixi Max; si no, el nombre del compañero ('' si no se lee)"""
+        desc = (zdesc.get(str(z.get('no'))) or {}).get('desc') or ''
+        if not re.search(r'mixi[\s-]?max', desc, re.I):
+            return None
+        m = re.match(r"(.+?) and (?:the )?(.+?)'s? miximax(?:ed form)?\b", desc)       # "Arion and King Arthur's miximaxed form"
+        if m and re.search(r"'s? miximax", desc):                                     # minúscula: figura histórica / animal
+            return m.group(2)
+        m = re.search(r'Miximaxed with ([A-Z][\w-]*)', desc)                           # "Miximaxed with Zanark, …"
+        if m:
+            return m.group(1)
+        m = re.search(r"Miximax of ([A-Z][\w'-]*(?: [A-Z][\w'-]*)?) and ([A-Z][\w'-]*)", desc) \
+            or re.match(r"([A-Z][\w'-]*(?: [A-Z][\w'-]*)?) and ([A-Z][\w'-]*)'s Miximax", desc)
+        if not m:
+            return ''
+        mine = [w[:3].lower() for w in char_name.split()]                             # "Gabi" ↔ Gabriel
+        a, b = m.group(1), m.group(2)
+        return b if a.split()[0][:3].lower() in mine else a if b.split()[0][:3].lower() in mine else b
 
     def zukan_entry(page, game, z, used):
         """entrada de PlayerData que corresponde a una ficha de zukan (por edad y equipo) + palabra de su forma"""
@@ -302,8 +342,8 @@ def main(extra_z=None, write=True):
         chars.setdefault(pg, []).append(z)
     for z in zukan:
         pg = titles.get(z['name'])
-        if not z['role'].startswith('Player') and pg in chars and set(z['games']) & set(MAIN):
-            chars[pg].append(z)                         # p. ej. Mark adulto figura como 'Coach', Axel 'Manager' de El Dorado 03
+        if not z['role'].startswith('Player') and pg in chars and 'Inazuma Legend National' in z['teams']:
+            chars[pg].append(z)                         # solo para la foto: Mark adulto figura como 'Coach'
     for pg in ('Nakata Hidetoshi', 'Pants'):
         chars.setdefault(pg, [])
     if no_page:
@@ -492,6 +532,26 @@ def main(extra_z=None, write=True):
                     versions.append((g, tm, tm, None, body))
                 elif versions[idx][4] is None:
                     versions[idx] = versions[idx][:4] + (body,)
+        # fichas de zukan que su descripción oficial define como Mixi Max ("The Miximax of Axel and Shawn…")
+        mixi_z = [(z, p) for z in zs for p in [mixi_partner(z, name)]
+                  if p is not None and any(g in z['games'] and g in stats_by_game for g in MAIN)]
+        cs_i = next((i for i, v in enumerate(versions) if v[1] == 'Chrono Storm' and isinstance(v[3], dict)), None)
+        if cs_i is not None and mixi_z:
+            # la forma del Chrono Storm protagonista (compañero de la wiki; si no cuadra, su "X and <figura>'s miximaxed form")
+            names = versions[cs_i][3].get('mixi') or []
+            pick = next((z for z, p in mixi_z if any(same_partner(p, n) for n in names)), None) \
+                or next((z for z, p in mixi_z if 'Chrono Storm' in z['teams'] and re.search(r"'s? miximax", zdesc_of(z))), None)
+            if pick:
+                versions[cs_i] = versions[cs_i][:3] + ({**versions[cs_i][3], 'zukan': pick['id']},) + versions[cs_i][4:]
+                mixi_z = [(z, p) for z, p in mixi_z if z is not pick]
+        for z, partner in mixi_z:
+            g = next(g for g in MAIN if g in z['games'] and g in stats_by_game)
+            ver = f'Mixi Max ({partner})' if partner else 'Mixi Max'
+            mm = next((b for b in entries.get((pg, MODULE[g]), {}).values()
+                       if 'mixi' in (lua_field(b, 'form') or '').lower() and partner
+                       and same_partner(partner, re.sub(r'.*form', '', lua_field(b, 'form') or ''))), None)
+            versions.append((g, ver, 'Mixi Max', {'zukan': z['id'], 'force': True, 'mixi': [partner] if partner else ['mixi']}, mm))
+
         # versiones de zukan (foto propia) de equipos que el personaje aún no tiene: Young Inazuma, Perfect Cascade…
         have = {v[2] for v in versions if v[2]} | {old_team.get((name, first))}
         base_z = [z for z in zs if first in z['games']]
@@ -499,7 +559,7 @@ def main(extra_z=None, write=True):
         for z in zs:
             zteams = [ZUKAN_TEAM.get(t, t) for t in z['teams'] if t not in SCOUT_TEAMS]
             zgames = [g for g in MAIN if g in z['games'] and g in stats_by_game]
-            if not zteams or not zgames or any(t in have for t in zteams):
+            if not zteams or not zgames or any(t in have for t in zteams) or mixi_partner(z, name) is not None:
                 continue
             tm = zteams[0]
             wf = next((b for g_ in zgames for t_, b in wiki_forms.get((pg, g_), []) if t_ == tm), None)
@@ -522,7 +582,7 @@ def main(extra_z=None, write=True):
             tm = label if zteams or label == 'Adult' else (z['teams'] or ['Unaffiliated'])[0]
             body, want = zukan_entry(pg, g, z, [v[4] for v in versions if v[0] == g])
             hint = {'zukan': z['id'], 'force': True, 'want': want}
-            if g.startswith('GO') and first.startswith('IE') and z['age'] == 'Middle School' and zteams:
+            if g.startswith('GO') and first.startswith('IE') and z['age'] == 'Middle School' and zteams and mixi_partner(z, name) is None:
                 # la versión de niño que sale en Chrono Stone / Galaxy (viaje al pasado): equipo propio y técnicas de su época
                 ver = tm = f'{label} (Past)'
                 ie = next((x for x in ('IE3', 'IE2', 'IE1') if base_entry(pg, x) and lua_moves(base_entry(pg, x), MODULE[x])), None)
@@ -709,7 +769,8 @@ def main(extra_z=None, write=True):
                         + 2 * (z['id'] not in used_z) + (z['position'] == c['position']) + 3 * (c['game'] in games)
                         + 2 * (next((g for g in MAIN if g in games), None) == c['game'])
                         - 6 * (not games & MAINLINE) - 3 * (teams <= SCOUT_TEAMS and not scout and c['version'] != 'Adult')
-                        - 4 * (adult and not ilj) - 4 * (ilj and not adult))
+                        - 4 * (adult and not ilj) - 4 * (ilj and not adult)
+                        - 8 * (mixi_partner(z, c['name']) is not None and c['team'] not in ('Mixi Max', 'Chrono Storm')))
             z = max(c['zukan'], key=score)
             wrong_age = c['version'] in (ILJ, 'Adult') and z.get('age') != 'Adult'
             if c['form_image'] and (z['id'] in used_z or wrong_age):
@@ -754,8 +815,24 @@ def main(extra_z=None, write=True):
     if uncovered:
         left = [f"{z['name']} (Nº {z['no']})" for zs in uncovered.values() for z in zs]
         report.append(f'Fichas de zukan de la saga principal sin carta ({len(left)}; sin stats en esos juegos o sin entrada): ' + ', '.join(left))
+    # --- cuerpo técnico (zukan: Manager = entrenador, Coach = segundo entrenador, Coordinator = gerente), sin stats
+    staff = []
+    for z in zukan:
+        role = next((r for r in ('Manager', 'Coach', 'Coordinator') if r in z['role']), None)
+        if not role or not set(z['games']) & MAINLINE:
+            continue
+        zteams = [ZUKAN_TEAM.get(t, t) for t in z['teams']]
+        staff.append({'zukan_no': z['no'], 'name': z['name'], 'role': role, 'team': zteams[0] if zteams else None,
+                      'teams': zteams, 'games': [g for g in MAIN if g in z['games']], 'age': z['age'],
+                      'element': ELEMENT.get(z['element']), 'image_url': f"https://dxi4wb638ujep.cloudfront.net/1/{z['id']}.png",
+                      'description': (zdesc.get(str(z['no'])) or {}).get('desc'), 'wiki_page': titles.get(z['name'])})
+    known = {t['name'] for t in teams}
+    for tm in sorted({t for st in staff for t in st['teams']} - known):
+        teams.append({'name': tm, 'name_es': manual_es.get(tm) or es_team.get(tnorm(tm))})
+    for c in cards:
+        c['description'] = (zdesc.get(str(c.get('zukan_no'))) or {}).get('desc')
     if write:
-        write_outputs(cards, chars_out, techniques, teams, report)
+        write_outputs(cards, chars_out, techniques, teams, staff, report)
     return uncovered
 
 
@@ -779,7 +856,7 @@ def insert(table, cols, rows, chunk=500):
     return '\n'.join(out)
 
 
-def write_outputs(cards, chars, techniques, teams, report):
+def write_outputs(cards, chars, techniques, teams, staff, report):
     os.makedirs(OUT, exist_ok=True)
     used = {t['id'] for c in cards for t in c['moves']}
     techs = [{k: v for k, v in t.items() if k != '_inf'} for t in techniques.values() if t and t['id'] in used]
@@ -793,11 +870,12 @@ def write_outputs(cards, chars, techniques, teams, report):
             'version': c['version'], 'team': c['team'], 'position': c['position'], 'element': c['element'],
             'ovr': c['ovr'], 'category': c['category'], 'tier': c['tier'], 'source': c['source'], **c['stats'],
             'image_url': c['image_url'], 'zukan_id': c['zukan_id'], 'zukan_no': c.get('zukan_no'), 'is_version': c['is_version'],
+            'description': c.get('description'),
             'raw_stats': {'form': c['form_label'], **dict(zip(c['raw_keys'], c['raw']))},
             'techniques': [t['id'] for t in c['moves']],
         })
     with open(os.path.join(OUT, 'players.json'), 'w', encoding='utf-8') as f:
-        json.dump({'cards': public, 'techniques': techs, 'characters': chars, 'teams': teams}, f, ensure_ascii=False, indent=1)
+        json.dump({'cards': public, 'techniques': techs, 'characters': chars, 'teams': teams, 'staff': staff}, f, ensure_ascii=False, indent=1)
 
     tname = {t['id']: f"{t['name']} ({t['cost']})" for t in techs}
     with open(os.path.join(OUT, 'review.csv'), 'w', encoding='utf-8', newline='') as f:
@@ -811,11 +889,12 @@ def write_outputs(cards, chars, techniques, teams, report):
 
     card_cols = ['id', 'character_id', 'name', 'game', 'saga', 'version', 'team', 'position', 'element', 'ovr', 'category',
                  'tier', 'source', 'shooting', 'control', 'physical', 'speed', 'defense', 'goalkeeping', 'image_url',
-                 'zukan_id', 'zukan_no', 'raw_stats', 'is_version']
+                 'zukan_id', 'zukan_no', 'description', 'raw_stats', 'is_version']
     links = [{'card_id': c['id'], 'technique_id': t, 'slot': i + 1}
              for c in public for i, t in enumerate(dict.fromkeys(c['techniques']))]
     seed = ['-- Generado por tools/db/build.py — no editar a mano.', 'begin;',
-            'truncate public.card_techniques, public.cards, public.techniques, public.characters, public.teams;',
+            'truncate public.card_techniques, public.cards, public.techniques, public.characters, public.teams, public.staff;',
+            insert('staff', ['zukan_no', 'name', 'role', 'team', 'teams', 'games', 'age', 'element', 'image_url', 'description', 'wiki_page'], staff),
             insert('teams', ['name', 'name_es'], teams),
             insert('characters', ['id', 'name', 'wiki_page', 'zukan_no'], [{**c} for c in chars]),
             insert('techniques', ['id', 'name', 'name_es', 'name_jp', 'type', 'element', 'cost', 'cost_game', 'costs'], techs),
