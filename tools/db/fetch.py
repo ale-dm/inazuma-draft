@@ -240,7 +240,29 @@ def main():
         return out
     cached('es_techniques.json', es_techniques)
 
-    log('9/9 Xtreme (balancing doc + wiki)')
+    log('9/10 renders 3D de las formas (wiki): "(DE) Kazemaru 3D (1).png"')
+    def form_images():
+        cands = set()
+        for m in MODULES:
+            for body in lua_entries(mods[m]).values():
+                nick = re.search(r'\n\t\tnickname="([^"]+)"', body)
+                if not nick:
+                    continue
+                for pre in re.findall(r'="\(([^)]+(?:\([^)]*\))?)\) [^"]*sprite', body):
+                    cands.add(f'File:({pre}) {nick.group(1)} 3D (1).png')
+        cands, out = sorted(cands), {}
+        for i in range(0, len(cands), 50):
+            d = api(WIKI_API, action='query', titles='|'.join(cands[i:i + 50]), prop='imageinfo', iiprop='url')['query']
+            norm = {n['to']: n['from'] for n in d.get('normalized', [])}
+            for pg in d['pages']:
+                if not pg.get('missing') and pg.get('imageinfo'):
+                    out[norm.get(pg['title'], pg['title'])] = pg['imageinfo'][0]['url']
+            log(f'  renders {min(i + 50, len(cands))}/{len(cands)}')
+            time.sleep(0.3)
+        return out
+    cached('form_images.json', form_images)
+
+    log('10/10 Xtreme (balancing doc + wiki)')
     cached('xtreme_balancing.txt', lambda: get(BALANCING_DOC).decode('utf-8-sig'))
     def xtreme_wiki():
         d = api(XTREME_API, action='query', list='allpages', aplimit=500)['query']['allpages']
