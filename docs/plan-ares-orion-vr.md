@@ -1,6 +1,20 @@
 # Plan: Ares, Orion y Victory Road
 
-> Estado: **pendiente** (propuesta aprobada para hacer más adelante).
+> Estado: **Ares hecho** (juego `ARES`, 199 cartas; `tools/db/ares.py`). Orion y Victory Road: pendientes (datos de Orion ya guardados en `data/azalee` y `data/roadtoultimate`, sin revisar).
+
+## Ares (hecho)
+
+- Una carta por ficha de zukan de jugador de Ares, con su nº oficial, en su equipo de Ares (los personajes clásicos que se van del Raimon, en su otro equipo: Kirkwood, Polestar, Everytown…).
+- Nota:
+  1. Banda por el **tier de potencial** de Victory Road (0–3).
+  2. Dentro de la banda, **potencia de sus supertécnicas** de Victory Road.
+  3. Protagonistas con versión héroe/basara (Sonny, Elliot, Heath): suelo de Top.
+  4. Personajes antiguos: media con su carta de **IE2** (salvo Shawn).
+  5. Todo repartido con la **curva de los equipos de IE2**: Ares es IE2 en otra línea temporal. Orion hará lo mismo con IE3.
+- Stats de Victory Road de la carta (`raw_stats`): plantilla Lv50 × rareza de su categoría (Común = Normal ×1,0 … Legendario ×1,4).
+- Supertécnicas de Victory Road: la misma técnica de la base si existe (por nombre japonés); si no, una nueva `vr_<código>` con su potencia.
+- Cuerpo técnico de Ares: a la pestaña de staff.
+- Datos y fórmulas: `docs/victory-road-stats.md`, `data/azalee/`, `data/roadtoultimate/`.
 
 ## Qué hay
 

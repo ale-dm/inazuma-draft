@@ -17,6 +17,8 @@ import json
 import os
 import re
 
+import ares                                  # tools/db/ares.py (cartas de Ares)
+
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', '..'))
 CACHE = os.path.join(ROOT, 'tools', '.cache', 'db')
 OUT = os.path.join(ROOT, 'build')
@@ -1323,6 +1325,10 @@ def main(extra_z=None, write=True):
 
     # nº de cada carta: el de su ficha de zukan (la primera carta que la usa); las nuestras, a partir del último de zukan
     max_no = max(z['no'] for z in zukan if z.get('no'))
+    zgames = {z['no']: set(z['games']) for z in zukan if z.get('no')}
+    for c in cards:                     # ficha de zukan solo de Ares/Orion/VR (Ulvida IE2 = Isabelle Trick de Ares): ese nº es de su carta de Ares
+        if c.get('zukan_no') and not zgames.get(c['zukan_no'], set()) & MAINLINE:
+            c['zukan_no'] = None
     taken = set()
     for c in cards:
         if c.get('no_force'):
@@ -1359,11 +1365,11 @@ def main(extra_z=None, write=True):
     staff = []
     for z in zukan:
         role = next((r for r in ('Manager', 'Coach', 'Coordinator') if r in z['role']), None)
-        if not role or not set(z['games']) & MAINLINE:
+        if not role or not set(z['games']) & (MAINLINE | {'ARES'}):
             continue
         zteams = [ZUKAN_TEAM.get(t, t) for t in z['teams']]
         staff.append({'zukan_no': z['no'], 'name': z['name'], 'role': role, 'team': zteams[0] if zteams else None,
-                      'teams': zteams, 'games': [g for g in MAIN if g in z['games']], 'age': z['age'],
+                      'teams': zteams, 'games': [g for g in MAIN + ['ARES'] if g in z['games']], 'age': z['age'],
                       'element': ELEMENT.get(z['element']), 'image_url': f"https://dxi4wb638ujep.cloudfront.net/1/{z['id']}.png",
                       'description': (zdesc.get(str(z['no'])) or {}).get('desc'), 'wiki_page': page_of(z)})
     known = {t['name'] for t in teams}
@@ -1376,6 +1382,18 @@ def main(extra_z=None, write=True):
         c['description_es'] = es_description(d.get('section'), c['game'], c['version'], c['team'] in (ILJ, 'Adult'),
                                              c['team'] in ('Mixi Max', 'Chrono Storm'), d.get('es_page') or '',
                                              manual_es.get(c['version']) or es_team.get(tnorm(c['version'])) or '', partner)
+    # --- Ares (Ares no Tenbin): cartas de Victory Road + wiki, con la curva de IE2 (tools/db/ares.py)
+    a_cards, a_chars = ares.build(ROOT, CACHE, zukan, zdesc, page_of, cards, techniques, es_by_jp, es_by_en, norm_jp,
+                                  zskills, zskills_en, ELEMENT, ZUKAN_TEAM, category, es_desc, report)
+    cards += a_cards
+    for k, v in a_chars.items():
+        chars_out.setdefault(k, v)
+    known = {t['name'] for t in teams}
+    for tm in sorted({c['team'] for c in a_cards} - known):
+        teams.append({'name': tm, 'name_es': manual_es.get(tm) or es_team.get(tnorm(tm))})
+    sin_es = sorted(t['name'] for t in teams if not t['name_es'] and t['name'] in {c['team'] for c in a_cards})
+    if sin_es:
+        report.append(f'Ares: equipos sin nombre en castellano ({len(sin_es)}): añadir a overrides.team_es → ' + ', '.join(sin_es))
     names_ja = json.load(open(os.path.join(ZUKAN_DIR, 'chara_names_ja.json'), encoding='utf-8')) \
         if os.path.exists(os.path.join(ZUKAN_DIR, 'chara_names_ja.json')) else {}
     zukan_rows = [{'no': z['no'], 'image_id': z['id'], 'name': z['name'], 'name_ja': names_ja.get(z['id']), 'role': z['role'], 'age': z['age'],
