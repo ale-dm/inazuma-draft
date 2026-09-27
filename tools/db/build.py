@@ -1139,6 +1139,55 @@ def main(extra_z=None, write=True):
         for g in groups:
             if g['era'].lower().startswith(('saga de mark', 'saga de arion')) and norm_label(g['label']) not in have_lab[pg_]:
                 extra_sprites.append(f"{pg_}: {g['label']} ({g['era']})")
+    # índice de sprites de Victory Road de la wiki española: "(EO) Steve (HVR).png" = iniciales del equipo en castellano + nombre
+    hvr = load_opt('es_hvr_files.json', {})
+    import unicodedata
+    plain = lambda x: ''.join(ch for ch in unicodedata.normalize('NFD', x or '') if unicodedata.category(ch) != 'Mn').lower()
+    hvr_idx = collections.defaultdict(list)
+    for fname, url in hvr.items():
+        m_ = re.match(r'\((.+?)\)\s+(.+?)\s*\((HVR[^)]*)\)', fname)
+        if m_:
+            hvr_idx[m_.group(1)].append((plain(m_.group(2)), m_.group(3), fname, url))
+    def initials(team_es):
+        words = [w for w in re.split(r'[\s-]+', plain(team_es)) if w and w not in ('de', 'del', 'la', 'las', 'los', 'el')]
+        return ''.join(w[0] for w in words).upper()
+    es_char = {k: v.get('es_page') for k, v in es_desc.items()}
+    def hvr_sprite(c):
+        team_es = manual_es.get(c['team']) or es_team.get(tnorm(c['team'] or '')) or c['team'] or ''
+        ver_es = manual_es.get(c['version']) or es_team.get(tnorm(c['version'])) or ''
+        codes = []
+        for t_ in (ver_es, team_es):
+            if t_:
+                ini = initials(t_)
+                # en GO, el Raimon es "R (GO)": el "(R)" a secas es el de la saga original (otro Peabody…)
+                codes += ([f'{ini} (GO)'] + ([] if ini == 'R' else [ini])) if c['game'].startswith('GO') else [ini]
+        names = {w for n_ in (c['name'], es_char.get(c['page'])) for w in re.split(r'[\s"\']+', plain(n_)) if len(w) > 2}
+        best, best_sc = None, 0
+        for code in codes:
+            for nick, var, fname, url in hvr_idx.get(code, []):
+                if not (set(nick.split()) & names):
+                    continue
+                v = var.lower()
+                sc = 10 + 2 * (('pr' in v) == (c['position'] == 'GK')) + (('df' in v) == (c['position'] == 'DF'))
+                sc += 2 * (('adult' in v) == (c['version'] in (ILJ, 'Adult'))) - 2 * ('joven' in v and c['version'] in (ILJ, 'Adult'))
+                if sc > best_sc:
+                    best, best_sc = url, sc
+            if best:
+                break
+        return best
+    dup_img = collections.Counter((c['character_id'], c['image_url']) for c in cards)
+    first_img = {}
+    for c in sorted(cards, key=lambda c: (c['is_version'], MAIN.index(c['game']))):
+        first_img.setdefault((c['character_id'], c['image_url']), c['id'])
+    for c in cards:
+        key = (c['character_id'], c['image_url'])
+        pending = (dup_img[key] > 1 and first_img[key] != c['id']) or '3D' in (c['image_url'] or '') \
+            or (c['version'] == ILJ and '/inazuma/images' not in (c['image_url'] or ''))
+        if pending:
+            url = hvr_sprite(c)
+            if url:
+                c['image_url'] = url
+
     for c in cards:                                   # a mano: overrides.sprite_force
         f_ = sprite_force.get(c['id'])
         if f_:
