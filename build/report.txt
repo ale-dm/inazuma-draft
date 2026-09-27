@@ -1,7 +1,7 @@
 Cartas: 4228 (217 versiones extra) · personajes: 3933 · técnicas: 682
-Categorías: Legendary Player 59 · Top Player 320 · Advanced Player 614 · Growing Player 855 · Common Player 2380
+Categorías: Legendary Player 82 · Top Player 342 · Advanced Player 662 · Growing Player 776 · Common Player 2366
 Niveles: S 409 · A 169 · B 1109 · C 2541
-OVR: mediana 62 · p90 82 · p99 89 · máx 92
+OVR: mediana 62 · p90 83 · p99 90 · máx 92
 
 Balancing doc del Xtreme sin ficha (7): añadir a overrides.xtreme_balancing_pages → Rhionne (Chaos), Dante Diavolo (Orpheus), Kino Aki (Girls Team), Oogu (Zanark Domain), Yasha (Zanark Domain), Goburis (Zanark Domain), Yamana Akane (Secret players (GO))
 Wiki del Xtreme: "Kino Aki" sin ficha (Kino Aki)

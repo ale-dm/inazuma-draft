@@ -1044,12 +1044,13 @@ def main(extra_z=None, write=True):
             if not grp:
                 report.append(f'team_tuning: {g_} {tm} sin cartas')
                 continue
-            capt = [c for c in grp if c['page'] == cfg.get('captain') and not c['is_version']]
+            capt = [c for c in grp if c['page'] == cfg.get('captain')]
+            top_ = max(CEIL.get(g_, 88), 88)       # techo de las subidas: el del juego (mín. 88); nadie baja por él
 
             def tuned(c, delta):
-                new = max(25, min(max(c['ovr'], 88), c['ovr'] + delta))
+                new = max(25, min(max(c['ovr'], top_), c['ovr'] + delta))
                 if c in capt:                      # capitán: +2 y cerca de 4 por encima del once (subida máx. +6)
-                    new = min(88, max(new + 2, min(round(cfg['top11']) + 4, new + 6), c['ovr']))
+                    new = min(max(top_, c['ovr']), max(new + 2, min(round(cfg['top11']) + 4, new + 6), c['ovr']))
                 return new
             # desplazamiento entero más alto que no pasa del objetivo (con el capitán ya subido) y +1 a los más flojos del
             # once hasta clavar la media: así el orden de la historia se cumple exacto
@@ -1059,7 +1060,7 @@ def main(extra_z=None, write=True):
             once = sorted(grp, key=lambda c: tuned(c, delta))[-11:]
             extra = {id(c) for c in once[:round((cfg['top11'] - mean11(delta)) * n11)] if c not in capt}
             for c in grp:
-                new = min(88, tuned(c, delta) + (id(c) in extra))
+                new = min(max(top_, c['ovr']), tuned(c, delta) + (id(c) in extra))
                 d_ = new - c['ovr']
                 c.setdefault('ovr_untuned', c['ovr'])
                 c['ovr'] = new

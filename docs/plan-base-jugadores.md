@@ -162,6 +162,11 @@ python3 tools/db/build.py            # genera build/players.json, build/review.c
     - `top11` es la media objetivo del once titular (sus 11 mejores cartas). Todo el equipo se mueve lo mismo, más +1 a los más flojos del once hasta clavar la media.
     - `captain` es la ficha de la wiki del capitán: +2 y cerca de 4 por encima del once (subida máx. +6, tope 88).
     - IE1: Occult 73,5 → Wild 74 → Brain 74,5 → Otaku 75 → Royal Academy 80,5 → Veteranos 80,9 → Shuriken 81,3 → Farm 81,7 → Kirkwood 82,1 → Zeus 82,6.
+    - IE2: Gemini Storm 76,5 → Alpino 77 → Épsilon 77,5 → Claustro Sagrado 78 → Royal Redux 79 → Triple C 79,5 → Épsilon Plus 80,5 → Diamond Dust 82 → Prominence 82,5 → Emperadores Oscuros 84,5 → Génesis 86.
+    - IE3: Big Waves 77 → Leones del Desierto 77,5 → Neo Japón 79 → Dragones de Fuego 80 → Knights of Queen 81 → Equipo D 81,5 → Unicorn 82,5 → Orfeo 83,5 → Los Emperadores 84 → Os Reis 84,5 → Zoolan 85 → Little Gigantes 86,5.
+    - GO1: Vía Láctea 74 → Poderosa Fe 74,5 → Royal Academy 75,5 → Cala Pirata 76 → Mar de Luna 76,5 → Alpino 77,5 → Kirkwood 78 → Espejismo 78,5 → Universal 79,5 → Monte Olimpo 80,5 → Dragon Link 81,5 → Luz Eterna 83 → Oscuridad Ancestral 84.
+    - Fuera de la curva (sitio en la historia sin confirmar): Mary Times, Fauxshore, Servicio Secreto (IE2); los equipos del anime de GO (Caballeros Templarios, Empollones, Edad Dorada, Equipo B del Raimon).
+    - Techo de las subidas: el del juego (mín. 88). Nadie baja por el techo.
   - `zukan_wiki_pages`: nombre de zukan (o `#Nº` si el nombre se repite) → ficha de la wiki inglesa, para los que no cruzan solos (Dante Diavolo → Dante Diavlo; Creepy Nº 3496 → Kimoro).
   - `extra_versions`: versiones a mano sin ficha de zukan: juego, equipo, nº e imagen. Nakata IE3 va en Orfeo con el Nº 1922, el hueco de zukan entre Cannavaro (1921) y The Kingdom (1923), con el sprite "(O)" de la wiki.
 - **Cargar en Supabase:** al hacer push a `main` de cambios en `supabase/`, el workflow `.github/workflows/db-load.yml` aplica `schema.sql` + `seed.sql` con el secreto del repo `SUPABASE_DB_URL` (también se puede lanzar a mano desde Actions → "Load player database into Supabase").
