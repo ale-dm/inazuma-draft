@@ -547,6 +547,23 @@ def main():
         return out
     cached('es_sprites.json', es_sprites)
 
+    log('6f índice de sprites de Victory Road de la wiki española: "(EO) Steve (HVR).png"…')
+    def es_hvr_files():
+        out, cont = {}, {}
+        while True:
+            d = api(WIKI_ES_API, action='query', list='allimages', ailimit=500, aiprop='url', **cont)
+            for im in d['query']['allimages']:
+                n = im['name'].replace('_', ' ')
+                if 'HVR' in n and '3D' not in n and n.startswith('('):
+                    out[n] = im['url']
+            if 'continue' not in d:
+                break
+            cont = {'aicontinue': d['continue']['aicontinue']}
+            time.sleep(0.2)
+        log(f'  {len(out)} sprites de Victory Road')
+        return out
+    cached('es_hvr_files.json', es_hvr_files)
+
     log('7/8 jugadores solo de la wiki (imagen)')
     def wiki_only():
         d = api(WIKI_API, action='query', titles='|'.join(WIKI_ONLY), prop='pageimages', piprop='original')['query']
