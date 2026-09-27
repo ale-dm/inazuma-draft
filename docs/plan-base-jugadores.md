@@ -158,6 +158,7 @@ python3 tools/db/build.py            # genera build/players.json, build/review.c
 - **Revisar:** `build/review.csv` (todas las cartas con OVR, categoría, stats y técnicas) y `build/report.txt` (avisos).
 - **Ajustar:** editar `data/overrides.json` (destacados, posiciones por versión, equivalencias de nombres, OVR manual) y volver a ejecutar `build.py`.
   - `team_force`: equipo a la fuerza por id de carta (Nakata IE2 → Secundarios).
+  - `zukan_wiki_pages`: nombre de zukan (o `#Nº` si el nombre se repite) → ficha de la wiki inglesa, para los que no cruzan solos (Dante Diavolo → Dante Diavlo; Creepy Nº 3496 → Kimoro).
   - `extra_versions`: versiones a mano sin ficha de zukan: juego, equipo, nº e imagen. Nakata IE3 va en Orfeo con el Nº 1922, el hueco de zukan entre Cannavaro (1921) y The Kingdom (1923), con el sprite "(O)" de la wiki.
 - **Cargar en Supabase:** al hacer push a `main` de cambios en `supabase/`, el workflow `.github/workflows/db-load.yml` aplica `schema.sql` + `seed.sql` con el secreto del repo `SUPABASE_DB_URL` (también se puede lanzar a mano desde Actions → "Load player database into Supabase").
 

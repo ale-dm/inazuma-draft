@@ -96,7 +96,7 @@ def lua_moves(body, module):
 # códigos de equipo de los avatares de Victory Road en la wiki inglesa: (equipo, saga) → prefijos
 EN_TEAM_CODE = {('Raimon', 'GO'): ['SR', 'R (GO)'], ('Raimon', 'IE'): ['R', 'SR'], ('Fire Dragon', 'IE'): ['FD'],
                 ('Epsilon Plus', 'IE'): ['EK', 'EK-F', 'EK-GK'], ('Neo Japan', 'IE'): ['NJ'], ('Inazuma Japan', 'IE'): ['IJ'],
-                ('Earth Eleven', 'GO'): ['EE'], ('Zeus', 'IE'): ['Z'], ('Royal Academy', 'IE'): ['TG'],
+                ('Earth Eleven', 'GO'): ['EE', 'EE-F', 'EE-A'], ('Zeus', 'IE'): ['Z'], ('Royal Academy', 'IE'): ['TG'],
                 ('Royal Academy Redux', 'IE'): ['STG'], ('Dark Emperors', 'IE'): ['DE'], ('Young Inazuma', 'IE'): ['YI'],
                 ('Protocol Omega', 'GO'): ['PO'], ('Protocol Omega 2.0', 'GO'): ['PO2'], ('Protocol Omega 3.0', 'GO'): ['PO3'],
                 ('Inazuma Legend Japan', 'GO'): ['ILJ'], ('Alpine', 'IE'): ['H'], ('Genesis', 'IE'): ['G'],
@@ -214,6 +214,9 @@ def main(extra_z=None, write=True):
     for v in zdesc.values():
         v['desc'] = GAME_TITLE.sub('', v.get('desc') or '') or None
     titles = load('redirects.json')
+    zalias = {k: v for k, v in ov.get('zukan_wiki_pages', {}).items() if not k.startswith('_')}
+    titles.update({k: v for k, v in zalias.items() if not k.startswith('#')})
+    page_of = lambda z: zalias.get(f"#{z['no']}") or titles.get(z['name'])     # '#Nº': nombres repetidos en zukan
     params = load('params.json')
     move_page = load('move_page.json')
     move_info = load('moves.json')
@@ -502,13 +505,13 @@ def main(extra_z=None, write=True):
     for z in zukan:
         if not z['role'].startswith('Player'):
             continue
-        pg = titles.get(z['name'])
+        pg = page_of(z)
         if not pg:
             no_page.append(z['name'])
             continue
         chars.setdefault(pg, []).append(z)
     for z in zukan:
-        pg = titles.get(z['name'])
+        pg = page_of(z)
         if not z['role'].startswith('Player') and pg in chars and 'Inazuma Legend National' in z['teams']:
             chars[pg].append(z)                         # solo para la foto: Mark adulto figura como 'Coach'
     for pg in ('Nakata Hidetoshi', 'Pants'):
@@ -1036,8 +1039,10 @@ def main(extra_z=None, write=True):
         if c['team'] and c['team'] in team_classic and not team_classic[c['team']] and c['team'] not in SCOUT_TEAMS:
             alt = next((ZUKAN_TEAM.get(t, t) for z in c['zukan'] for t in z['teams']
                         if c['game'] in team_classic.get(ZUKAN_TEAM.get(t, t), ()) and t not in SCOUT_TEAMS), None)
-            report.append(f"Equipo de Ares/Orion/VR en {c['name']} {c['game']}: {c['team']} → {alt or 'Unaffiliated'}")
-            c['team'] = alt or 'Unaffiliated'
+            # si no, su equipo de zukan de secundarios/sin equipo (Cao Cao → Sub Character); los personajes solo de Ares/Orion/VR no llegan aquí (sin stats de la saga)
+            alt = alt or next((t for z in c['zukan'] for t in z['teams'] if t in SCOUT_TEAMS), 'Unaffiliated')
+            report.append(f"Equipo de Ares/Orion/VR en {c['name']} {c['game']}: {c['team']} → {alt}")
+            c['team'] = alt
         # el primer equipo del Raimon de GO se llama Raimon en Chrono Stone y Galaxy
         if c['team'] == 'Raimon First Squad' and c['game'] in ('GO2', 'GO3'):
             c['team'] = 'Raimon'
@@ -1139,7 +1144,7 @@ def main(extra_z=None, write=True):
     def norm_label(x):
         x = re.sub(r'\((?:GO|HVR|PR|IE HVR)\)', '', x or '')
         return re.sub(r'[^a-záéíóúñ0-9]', '', x.lower())
-    LABEL_ALIAS = {'nuevoinazumajapón': 'earthelevel', 'inazumajapónalterno': 'earthelevel'}
+    LABEL_ALIAS = {}          # el Nuevo Inazuma Japón / Inazuma Japón Alterno (IJA) es de Victory Road, no el Earth Eleven
     def label_keys(label):
         """'Nuevo Inazuma Japón / Inazuma Japón Alterno' → cada nombre por separado (+ alias: Earth Eleven)"""
         out = set()
@@ -1219,9 +1224,16 @@ def main(extra_z=None, write=True):
             cands.append(f'{m_.group(1)} {m_.group(2)} sprite (VR)')
         # por código de equipo de la wiki inglesa + nombre (romaji de la ficha o apodo): "(EK) Zel sprite (VR)"
         codes = EN_TEAM_CODE.get((c['team'], c['game'][:2]), []) + EN_TEAM_CODE.get((c['version'], c['game'][:2]), [])
+        # porteros: la equipación de portero primero ("(EE-A)", "(SR-GK)")
+        codes = sorted(codes, key=lambda k: (c['position'] == 'GK') != bool(re.search(r'-(A|GK)$', k)))
         names = {c['page']} | {lua_field(b, 'nickname') for b in by_page.get(c['page'], []) if lua_field(b, 'nickname')} \
             | {f for b in by_page.get(c['page'], []) for f in re.findall(r'\bfile="([^"(]+)"', b)}
-        cands += [f'({code}) {n_} sprite (VR)' for code in codes for n_ in sorted(names)]
+        team_c = [f'({code}) {n_} sprite (VR)' for code in codes for n_ in sorted(names)]
+        # versiones de equipo (Earth Eleven…): primero el avatar de ese equipo; el de su PlayerData es el de la carta base
+        own = re.match(r'\((.+?)\) ', c.get('vr_file') or '')
+        first_team = c['is_version'] and c['team'] not in ('Mixi Max', 'Chrono Storm') \
+            and not (own and own.group(1) in codes)         # su PlayerData ya trae el de ese equipo (Desarm "(EK-GK)")
+        cands = team_c + cands if first_team else cands + team_c
         if c['version'] in ('Adult', ILJ):                 # adultos: avatar de entrenador / adulto con cualquier prefijo
             cands += sorted(k for k in en_vr_index for n_ in names
                             if k.endswith((f'{n_} sprite (coach) (VR)', f'{n_} sprite (adult) (VR)')))
@@ -1349,7 +1361,7 @@ def main(extra_z=None, write=True):
         staff.append({'zukan_no': z['no'], 'name': z['name'], 'role': role, 'team': zteams[0] if zteams else None,
                       'teams': zteams, 'games': [g for g in MAIN if g in z['games']], 'age': z['age'],
                       'element': ELEMENT.get(z['element']), 'image_url': f"https://dxi4wb638ujep.cloudfront.net/1/{z['id']}.png",
-                      'description': (zdesc.get(str(z['no'])) or {}).get('desc'), 'wiki_page': titles.get(z['name'])})
+                      'description': (zdesc.get(str(z['no'])) or {}).get('desc'), 'wiki_page': page_of(z)})
     known = {t['name'] for t in teams}
     for tm in sorted({t for st in staff for t in st['teams']} - known):
         teams.append({'name': tm, 'name_es': manual_es.get(tm) or es_team.get(tnorm(tm))})
@@ -1365,7 +1377,7 @@ def main(extra_z=None, write=True):
     zukan_rows = [{'no': z['no'], 'image_id': z['id'], 'name': z['name'], 'name_ja': names_ja.get(z['id']), 'role': z['role'], 'age': z['age'],
                    'element': ELEMENT.get(z['element']), 'position': z['position'], 'teams': z['teams'], 'games': z['games'],
                    'description': (zdesc.get(str(z['no'])) or {}).get('desc'), 'vr_lv50': (zdesc.get(str(z['no'])) or {}).get('vr_lv50'),
-                   'wiki_page': titles.get(z['name'])} for z in zukan if z.get('no')]
+                   'wiki_page': page_of(z)} for z in zukan if z.get('no')]
     if write:
         write_outputs(cards, chars_out, techniques, teams, staff, zukan_rows, report)
     return uncovered
