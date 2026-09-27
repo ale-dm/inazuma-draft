@@ -46,6 +46,9 @@ alter table public.techniques add column if not exists name_es text;
 alter table public.characters add column if not exists zukan_no int;
 alter table public.cards add column if not exists zukan_no int;
 alter table public.cards add column if not exists description text;
+alter table public.cards add column if not exists description_es text;   -- descripción en castellano (inazuma.fandom.com/es)
+alter table public.cards add column if not exists no int;                -- nº de la carta: el de zukan o, las nuestras, desde el último de zukan
+alter table public.cards add column if not exists specials jsonb;        -- Keshin / Keshin Armed / Soul (tótem) / Mixi Max
 
 create index if not exists cards_character_idx on public.cards(character_id);
 create index if not exists cards_ovr_idx on public.cards(ovr desc);
@@ -70,6 +73,21 @@ create table if not exists public.staff (      -- cuerpo técnico (zukan), de mo
   wiki_page    text
 );
 
+create table if not exists public.zukan (      -- réplica de las fichas oficiales de zukan.inazuma.jp (todas las sagas)
+  no           int primary key,              -- nº oficial
+  image_id     text,                         -- ruta de la imagen (dxi4wb638ujep.cloudfront.net/1/<id>.png)
+  name         text not null,
+  role         text,                         -- Player | Manager | Coach | Coordinator…
+  age          text,
+  element      text,
+  position     text,
+  teams        jsonb,
+  games        jsonb,
+  description  text,                         -- descripción oficial (inglés)
+  vr_lv50      jsonb,                        -- stats oficiales de Victory Road a nivel 50
+  wiki_page    text
+);
+
 create table if not exists public.card_techniques (
   card_id      text not null references public.cards(id) on delete cascade,
   technique_id text not null references public.techniques(id) on delete cascade,
@@ -81,7 +99,7 @@ create table if not exists public.card_techniques (
 do $$
 declare t text;
 begin
-  foreach t in array array['characters','techniques','cards','card_techniques','teams','staff'] loop
+  foreach t in array array['characters','techniques','cards','card_techniques','teams','staff','zukan'] loop
     execute format('alter table public.%I enable row level security', t);
     execute format('drop policy if exists "public read" on public.%I', t);
     execute format('create policy "public read" on public.%I for select using (true)', t);

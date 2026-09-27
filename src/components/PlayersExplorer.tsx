@@ -74,10 +74,10 @@ function SearchView({ players, onOpen }: { players: Player[]; onOpen: (p: Player
   const results = useMemo(() => {
     const q = query.trim().toLowerCase()
     const list = players.filter(p =>
-      (!q || p.name.toLowerCase().includes(q) || String(p.zukanNo) === q || p.team.toLowerCase().includes(q) || teamName(p.team, locale).toLowerCase().includes(q)) &&
+      (!q || p.name.toLowerCase().includes(q) || String(p.no) === q || String(p.zukanNo) === q || p.team.toLowerCase().includes(q) || teamName(p.team, locale).toLowerCase().includes(q)) &&
       (!pos || p.position === pos) && (!cat || p.category === cat) && (!game || p.game === game) &&
       (!element || p.element === element) && (!team || p.team === team) && p.ovr >= minOvr)
-    if (sort === 'no') return list.sort((a, b) => (a.zukanNo ?? Infinity) - (b.zukanNo ?? Infinity) || MAIN_ORDER(a) - MAIN_ORDER(b))
+    if (sort === 'no') return list.sort((a, b) => (a.no ?? Infinity) - (b.no ?? Infinity) || MAIN_ORDER(a) - MAIN_ORDER(b))
     return sort === 'ovr'
       ? list.sort((a, b) => b.ovr - a.ovr || a.name.localeCompare(b.name))
       : list.sort((a, b) => a.name.localeCompare(b.name) || b.ovr - a.ovr)
@@ -259,8 +259,9 @@ function PlayerGrid({ players, onOpen }: { players: Player[]; onOpen: (p: Player
           <PlayerCard player={p} mode="classic" onClick={() => onOpen(p)}
             teamLabel={`${cardTeamLabel(p, locale)} · ${p.game}`} />
           <span className={`cat-pill ${CATEGORY_CLASS[p.category]} absolute bottom-2 right-2`}>{p.category.replace(' Player', '')}</span>
-          {p.zukanNo != null && (
-            <span className="absolute top-2 right-2 text-[0.6rem] tabular-nums text-iz-muted font-heading" title="zukan.inazuma.jp">Nº {p.zukanNo}</span>
+          {p.no != null && (
+            <span className="absolute top-2 right-2 text-[0.6rem] tabular-nums text-iz-muted font-heading"
+              title={p.zukanNo === p.no ? 'zukan.inazuma.jp' : undefined}>Nº {p.no}</span>
           )}
         </div>
       ))}

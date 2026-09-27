@@ -107,7 +107,7 @@ MAINLINE = {'IE1', 'IE2', 'IE3', 'GO1', 'GO2', 'GO3'}
 def fetch_zukan_desc(zukan):
     """nº de zukan → descripción oficial (texto tras 'Character Viewer Game: …') y juego de estreno"""
     from concurrent.futures import ThreadPoolExecutor
-    todo = [z for z in zukan if z.get('q') and set(z['games']) & MAINLINE]
+    todo = [z for z in zukan if z.get('q')]
     def one(z):
         t = get(ZUKAN_PARAM + z['q']).decode('utf-8')
         t = re.sub(r'<script.*?</script>|<style.*?</style>', '', t, flags=re.S)
@@ -210,13 +210,23 @@ def lua_entries(text):
             for i, (p, k) in enumerate(starts)}
 
 
+def load_fusions():
+    path = os.path.join(CACHE, 'fusions.json')
+    return json.load(open(path, encoding='utf-8')) if os.path.exists(path) else {}
+
+
 def main():
     log('1/8 zukan')
     zukan = cached('zukan.json', fetch_zukan)
     log(f'    {len(zukan)} fichas')
 
-    log('1b ficha de cada personaje de zukan (descripción oficial) — solo saga principal')
-    cached('zukan_desc.json', lambda: fetch_zukan_desc(zukan))
+    log('1b ficha de cada personaje de zukan (descripción oficial y stats de Victory Road) — todas')
+    path = os.path.join(CACHE, 'zukan_desc.json')
+    have = {} if REFRESH or not os.path.exists(path) else json.load(open(path, encoding='utf-8'))
+    if any(z.get('q') and str(z['no']) not in have for z in zukan):          # incremental: solo las que faltan
+        have.update(fetch_zukan_desc([z for z in zukan if str(z['no']) not in have]))
+        with open(path, 'w', encoding='utf-8') as f:
+            json.dump(have, f, ensure_ascii=False)
 
     log('2/8 módulos de la wiki (PlayerData, WazaData)')
     mods = {m: cached(f'PlayerData_{m}.lua', lambda m=m: wikitext(WIKI_API, f'Module:PlayerData/{m}')) for m in MODULES}
@@ -244,6 +254,121 @@ def main():
 
     log('6/8 equipos protagonistas de GO')
     cached('teams.json', lambda: {t: wikitext(WIKI_API, t) for t in TEAM_PAGES})
+
+    log('6b fusiones Mixi Max de la wiki (Gousetsuji = Axel + Shawn "Shaxel"…)')
+    def fusions():
+        titles_ = []
+        for cat in ('Category:Galaxy scouts', 'Category:Chrono Stone scouts'):
+            cont = {}
+            while True:
+                d = api(WIKI_API, action='query', list='categorymembers', cmtitle=cat, cmlimit=500, **cont)
+                titles_ += [m['title'] for m in d['query']['categorymembers'] if m['ns'] == 0]
+                if 'continue' not in d:
+                    break
+                cont = {'cmcontinue': d['continue']['cmcontinue']}
+        out = {}
+        def keep(c):
+            prof = re.search(r'\{\{Profile/Entry[^\n]*', c)
+            if not prof or 'Mixi Max' not in prof.group(0):
+                return None
+            dub = re.search(r'\|name_dub=\s*([^\n]*)', c)
+            return {'pair': [x for x in re.findall(r'\[\[([^|\]]+)', prof.group(0)) if x != 'Mixi Max'],
+                    'dub': dub.group(1).strip() if dub else None, 'params': parameters_section(c), 'info': infobox(c)}
+        return {t: v for t, v in page_contents(sorted(set(titles_)), keep).items() if v}
+    cached('fusions.json', fusions)
+
+    log('6c Keshin (espíritus guerreros) y Souls (tótems): módulos de la wiki y nombres en castellano')
+    cached('KeshinData.lua', lambda: wikitext(WIKI_API, 'Module:KeshinData'))
+    cached('SoulData.lua', lambda: wikitext(WIKI_API, 'Module:SoulData'))
+    def es_category(cat, tpl_fields=('Nombre Japonés', 'Nombre Inglés')):
+        titles_, cont = [], {}
+        while True:
+            d = api(WIKI_ES_API, action='query', list='categorymembers', cmtitle=cat, cmlimit=500, **cont)
+            titles_ += [m['title'] for m in d['query']['categorymembers'] if m.get('ns') == 0]
+            if 'continue' not in d:
+                break
+            cont = {'cmcontinue': d['continue']['cmcontinue']}
+        out = {}
+        for i in range(0, len(titles_), 50):
+            d = api(WIKI_ES_API, action='query', prop='revisions', rvprop='content', rvslots='main', titles='|'.join(titles_[i:i + 50]))
+            for p in d['query']['pages']:
+                if p.get('missing') or not p.get('revisions'):
+                    continue
+                c = p['revisions'][0]['slots']['main']['content']
+                jp = re.search(r'\|\s*Nombre Japonés\s*=(.*?)\n\|', c, re.S)
+                en = re.search(r'\|\s*Nombre Inglés\s*=\s*([^\n]*)', c)
+                out[p['title']] = {'jp': re.findall(r'(?:<br>|\n)\s*([A-Za-z][^<{\n]*)', jp.group(1)) + re.findall(r'title="([^"]+)"', jp.group(1)) if jp else [],
+                                   'en': [en.group(1).strip()] if en else []}
+            time.sleep(0.3)
+        return out
+    cached('es_keshin.json', lambda: es_category('Categoría:Espíritus Guerreros'))
+    cached('es_souls.json', lambda: es_category('Categoría:Tótem'))
+
+    log('6d descripciones en castellano (inazuma.fandom.com/es, sección Descripciones)')
+    def query_all(base, **params):
+        """api(query) siguiendo 'continue' (las respuestas grandes llegan en trozos) → páginas fusionadas por título"""
+        pages, red, cont = {}, {}, {}
+        while True:
+            d = api(base, action='query', **params, **cont)
+            q = d.get('query', {})
+            for r in q.get('redirects', []) + q.get('normalized', []):
+                red[r['to']] = r['from']
+            for p in q.get('pages', []):
+                cur = pages.setdefault(p['title'], {'title': p['title']})
+                for k in ('langlinks', 'revisions'):
+                    if p.get(k):
+                        cur.setdefault(k, []).extend(p[k])
+            if 'continue' not in d:
+                return pages, red
+            cont = d['continue']
+            time.sleep(0.2)
+
+    def es_descriptions():
+        pages_ = sorted({t for t in titles.values() if t} | set(WIKI_ONLY) | set(load_fusions()))
+        es = {}
+        for i in range(0, len(pages_), 50):                  # ficha inglesa → ficha española (enlace interlingüístico)
+            pg_, red = query_all(WIKI_API, titles='|'.join(pages_[i:i + 50]), prop='langlinks', lllang='es', lllimit=500, redirects=1)
+            for t, p in pg_.items():
+                for ll in p.get('langlinks', []):
+                    es[red.get(t, t)] = ll['title']
+        log(f'  {len(es)} fichas con enlace a la wiki en castellano')
+        # sin enlace: probar con el nombre inglés de zukan (la wiki española usa los nombres del doblaje: Axel Blaze…)
+        name_of = {}
+        for n, t in titles.items():
+            if t and t not in es:
+                name_of.setdefault(t, n)
+        cand = sorted(set(name_of.values()))
+        for i in range(0, len(cand), 50):
+            d = api(WIKI_ES_API, action='query', titles='|'.join(cand[i:i + 50]), redirects=1)['query']
+            red = {r['from']: r['to'] for r in d.get('normalized', []) + d.get('redirects', [])}
+            exist = {p['title'] for p in d['pages'] if not p.get('missing') and not p.get('invalid')}
+            for n in cand[i:i + 50]:
+                t = red.get(n, n)
+                t = red.get(t, t)
+                if t in exist:
+                    for pg_en, nn in name_of.items():
+                        if nn == n:
+                            es.setdefault(pg_en, t)
+            time.sleep(0.2)
+        log(f'  {len(es)} fichas con versión en castellano (enlace o nombre)')
+        inv = {v: k for k, v in es.items()}
+        out, es_titles = {}, sorted(inv)
+        for i in range(0, len(es_titles), 20):
+            pg_, red = query_all(WIKI_ES_API, titles='|'.join(es_titles[i:i + 20]), prop='revisions', rvprop='content', rvslots='main', redirects=1)
+            for t, p in pg_.items():
+                if not p.get('revisions'):
+                    continue
+                c = p['revisions'][0]['slots']['main']['content']
+                m = re.search(r'\n==\s*Descripci(?:ón|ones)\s*==', c)
+                if not m:
+                    continue
+                b2 = re.search(r'\n==[^=]', c[m.end():])
+                sec = c[m.start():m.end() + b2.start()] if b2 else c[m.start():]
+                out[inv.get(red.get(t, t), inv.get(t, t))] = {'es_page': t, 'section': sec}
+            if i % 400 == 0:
+                log(f'  descripciones {i}/{len(es_titles)}')
+        return out
+    cached('es_descriptions.json', es_descriptions)
 
     log('7/8 jugadores solo de la wiki (imagen)')
     def wiki_only():
