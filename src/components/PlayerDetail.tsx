@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import type { Player } from '../types'
-import { getCharacterVersions, techniqueName } from '../data/catalog'
+import { getCharacterVersions, teamName, techniqueName } from '../data/catalog'
 import { GAME_LABEL } from '../data/games'
 import { ALL_STAT_KEYS } from '../lib/power'
 import { useAppSettings } from '../context/AppSettings'
@@ -41,7 +41,7 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
                 {player.position} · <span className={`element-${player.element}`}>{t(`element.${player.element}`)}</span>
               </p>
               <p className="text-sm text-iz-text">
-                {player.team}{player.version !== 'base' && player.version !== player.team ? ` · ${player.version}` : ''}
+                {teamName(player.team, locale)}{player.version !== 'base' && player.version !== player.team ? ` · ${teamName(player.version, locale)}` : ''}
               </p>
               <p className="text-xs text-iz-muted">{player.game} · {GAME_LABEL[player.game]}</p>
             </div>
@@ -91,7 +91,7 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
                     className="team-tile !w-auto flex items-center gap-2 !py-1.5">
                     <PlayerAvatar player={v} size="xs" variant="zukan" />
                     <span className="text-xs">
-                      <strong className="tabular-nums">{v.ovr}</strong> · {v.game} · {v.version === 'base' ? v.team : v.version}
+                      <strong className="tabular-nums">{v.ovr}</strong> · {v.game} · {teamName(v.version === 'base' ? v.team : v.version, locale)}
                     </span>
                   </button>
                 ))}

@@ -675,7 +675,24 @@ def main():
         if seen_ids[c['id']] > 1:
             c['id'] += f"-{seen_ids[c['id']]}"
 
-    write_outputs(cards, chars_out, techniques, report)
+    # --- nombres de equipo en castellano (wiki en español: plantilla Equipo; cruce por nombre inglés o japonés)
+    SUF = r'\b(jr\.? high|junior high|middle school|merchant marine academy|military academy|academy|school)\b|^order of |^the '
+    tnorm = lambda s: re.sub(r'[^a-z0-9]', '', re.sub(SUF, '', s.lower()))
+    es_team = {}
+    for title, d in sorted(load('es_teams.json').items(), key=lambda kv: '(' in kv[0]):     # fichas principales primero
+        es = re.sub(r'^Instituto ', '', d['es'] or re.sub(r'\s*\(.*\)$', '', title))
+        for k in d['en'] + d['jp'] + [title]:
+            if k != '/' and tnorm(k):
+                es_team.setdefault(tnorm(k), es)
+    manual_es = {k: v for k, v in ov.get('team_es', {}).items() if not k.startswith('_')}
+    teams = []
+    for tm in sorted({c['team'] for c in cards if c['team']}):
+        teams.append({'name': tm, 'name_es': manual_es.get(tm) or es_team.get(tnorm(tm))})
+    sin_es = [t['name'] for t in teams if not t['name_es']]
+    if sin_es:
+        report.append(f'Equipos sin nombre en castellano ({len(sin_es)}): añadir a overrides.team_es → ' + ', '.join(sin_es))
+
+    write_outputs(cards, chars_out, techniques, teams, report)
 
 
 def sql(v):
@@ -698,7 +715,7 @@ def insert(table, cols, rows, chunk=500):
     return '\n'.join(out)
 
 
-def write_outputs(cards, chars, techniques, report):
+def write_outputs(cards, chars, techniques, teams, report):
     os.makedirs(OUT, exist_ok=True)
     used = {t['id'] for c in cards for t in c['moves']}
     techs = [{k: v for k, v in t.items() if k != '_inf'} for t in techniques.values() if t and t['id'] in used]
@@ -716,7 +733,7 @@ def write_outputs(cards, chars, techniques, report):
             'techniques': [t['id'] for t in c['moves']],
         })
     with open(os.path.join(OUT, 'players.json'), 'w', encoding='utf-8') as f:
-        json.dump({'cards': public, 'techniques': techs, 'characters': chars}, f, ensure_ascii=False, indent=1)
+        json.dump({'cards': public, 'techniques': techs, 'characters': chars, 'teams': teams}, f, ensure_ascii=False, indent=1)
 
     tname = {t['id']: f"{t['name']} ({t['cost']})" for t in techs}
     with open(os.path.join(OUT, 'review.csv'), 'w', encoding='utf-8', newline='') as f:
@@ -734,7 +751,8 @@ def write_outputs(cards, chars, techniques, report):
     links = [{'card_id': c['id'], 'technique_id': t, 'slot': i + 1}
              for c in public for i, t in enumerate(dict.fromkeys(c['techniques']))]
     seed = ['-- Generado por tools/db/build.py — no editar a mano.', 'begin;',
-            'truncate public.card_techniques, public.cards, public.techniques, public.characters;',
+            'truncate public.card_techniques, public.cards, public.techniques, public.characters, public.teams;',
+            insert('teams', ['name', 'name_es'], teams),
             insert('characters', ['id', 'name', 'wiki_page'], [{**c} for c in chars]),
             insert('techniques', ['id', 'name', 'name_es', 'name_jp', 'type', 'element', 'cost', 'cost_game', 'costs'], techs),
             insert('cards', card_cols, public),

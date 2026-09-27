@@ -184583,5 +184583,471 @@
    "name": "Riku Pants Matsushita",
    "wiki_page": "Pants"
   }
+ ],
+ "teams": [
+  {
+   "name": "Adult",
+   "name_es": "Adultos"
+  },
+  {
+   "name": "Alia Academy",
+   "name_es": "Academia Alia"
+  },
+  {
+   "name": "Almighty Faith",
+   "name_es": "Colegio Poderosa Fe"
+  },
+  {
+   "name": "Alpine",
+   "name_es": "Alpino"
+  },
+  {
+   "name": "Ancient Darkness",
+   "name_es": "Oscuridad Ancestral"
+  },
+  {
+   "name": "Apostles from the Sky",
+   "name_es": "Sky Team"
+  },
+  {
+   "name": "Big Bang",
+   "name_es": "Big Bang"
+  },
+  {
+   "name": "Big Waves",
+   "name_es": "Big Waves"
+  },
+  {
+   "name": "Black Templars",
+   "name_es": "Orden de los Caballeros Templarios"
+  },
+  {
+   "name": "Brainwashing",
+   "name_es": "Brain"
+  },
+  {
+   "name": "Brocken Brigade",
+   "name_es": "Brocken Brigade"
+  },
+  {
+   "name": "Chaos",
+   "name_es": "Caos"
+  },
+  {
+   "name": "Chrono Storm",
+   "name_es": "Chrono Storm"
+  },
+  {
+   "name": "Cloister Divinity",
+   "name_es": "Claustro Sagrado"
+  },
+  {
+   "name": "Dark Emperors",
+   "name_es": "Emperadores Oscuros"
+  },
+  {
+   "name": "Demon's Horn",
+   "name_es": "Cuerno Demoníaco"
+  },
+  {
+   "name": "Desert Lions",
+   "name_es": "Leones del Desierto"
+  },
+  {
+   "name": "Devil Army Z",
+   "name_es": "Dark Team"
+  },
+  {
+   "name": "Diamond Dust",
+   "name_es": "Diamond"
+  },
+  {
+   "name": "Dragon Link",
+   "name_es": "Dragon Link"
+  },
+  {
+   "name": "Earth Eleven",
+   "name_es": "Earth Eleven"
+  },
+  {
+   "name": "El Dorado 02",
+   "name_es": "El Dorado Equipo 02"
+  },
+  {
+   "name": "Epsilon",
+   "name_es": "Épsilon"
+  },
+  {
+   "name": "Epsilon Plus",
+   "name_es": "Épsilon Plus"
+  },
+  {
+   "name": "Eternal Light",
+   "name_es": "Luz Eterna"
+  },
+  {
+   "name": "Falam Medius",
+   "name_es": "Falam Medius"
+  },
+  {
+   "name": "Farm",
+   "name_es": "Farm"
+  },
+  {
+   "name": "Fauxshore",
+   "name_es": "Fauxshore"
+  },
+  {
+   "name": "Fertilia Eleven",
+   "name_es": "Los Fertilia"
+  },
+  {
+   "name": "Fire Dragon",
+   "name_es": "Dragones de Fuego"
+  },
+  {
+   "name": "Forest Team",
+   "name_es": "Mar de Árboles"
+  },
+  {
+   "name": "Gahl",
+   "name_es": "Gar"
+  },
+  {
+   "name": "Gemini Storm",
+   "name_es": "Tormenta de Géminis"
+  },
+  {
+   "name": "Genesis",
+   "name_es": "Génesis"
+  },
+  {
+   "name": "Gihl",
+   "name_es": "Gir"
+  },
+  {
+   "name": "Golden Oldies",
+   "name_es": "Edad Dorada"
+  },
+  {
+   "name": "Inazuma Japan",
+   "name_es": "Inazuma Japón"
+  },
+  {
+   "name": "Inazuma Kids FC",
+   "name_es": "Inazuma Kids FC"
+  },
+  {
+   "name": "Inazuma Legend Japan",
+   "name_es": "Inazuma Japón Legendario"
+  },
+  {
+   "name": "Ivy Selective",
+   "name_es": "Colegio Ultramegahiedra"
+  },
+  {
+   "name": "Ixar Fleet",
+   "name_es": "Flota Ixar"
+  },
+  {
+   "name": "Japanese Resistance",
+   "name_es": "Resistencia de Japón"
+  },
+  {
+   "name": "Kirkwood",
+   "name_es": "Kirkwood"
+  },
+  {
+   "name": "Little Gigantes",
+   "name_es": "The Little Giants"
+  },
+  {
+   "name": "Lunar Howl",
+   "name_es": "Aullido Lunar"
+  },
+  {
+   "name": "Lunar Sea",
+   "name_es": "Academia Militar Mar de Luna"
+  },
+  {
+   "name": "Magmavia Eleven",
+   "name_es": "Los Magmavís"
+  },
+  {
+   "name": "Mary Times",
+   "name_es": "Mary Times"
+  },
+  {
+   "name": "Milky Way Charter",
+   "name_es": "Colegio Concertado Vía Láctea"
+  },
+  {
+   "name": "Mirage",
+   "name_es": "Espejismo"
+  },
+  {
+   "name": "Mount Olympus",
+   "name_es": "Colegio Monte Olimpo"
+  },
+  {
+   "name": "Muay Tigers",
+   "name_es": "Muay Tigers"
+  },
+  {
+   "name": "Naiadi Eleven",
+   "name_es": "Los Naiadi"
+  },
+  {
+   "name": "Neo Japan",
+   "name_es": "Neo Japón"
+  },
+  {
+   "name": "Northern Fang",
+   "name_es": "Colmillos del Norte"
+  },
+  {
+   "name": "Nosfanatica",
+   "name_es": "Nosfanáticos"
+  },
+  {
+   "name": "Occult",
+   "name_es": "Occult"
+  },
+  {
+   "name": "Orpheus",
+   "name_es": "Orfeo"
+  },
+  {
+   "name": "Otaku",
+   "name_es": "Otaku"
+  },
+  {
+   "name": "Perfect Cascade",
+   "name_es": "Cascada Perfecta"
+  },
+  {
+   "name": "Pirates Cove",
+   "name_es": "Academia Cala Pirata"
+  },
+  {
+   "name": "Prodigy Grammar",
+   "name_es": "Colegio de Empollones"
+  },
+  {
+   "name": "Prominence",
+   "name_es": "Prominence"
+  },
+  {
+   "name": "Protocol Omega",
+   "name_es": "Protocolo Omega"
+  },
+  {
+   "name": "Protocol Omega 2.0",
+   "name_es": "Protocolo Omega 2.0"
+  },
+  {
+   "name": "Protocol Omega 3.0",
+   "name_es": "Protocolo Omega 3.0"
+  },
+  {
+   "name": "Queen's Knights",
+   "name_es": "Knights of Queen"
+  },
+  {
+   "name": "Ragnah",
+   "name_es": "Ragnah"
+  },
+  {
+   "name": "Raimon",
+   "name_es": "Raimon"
+  },
+  {
+   "name": "Raimon First Squad",
+   "name_es": "Raimon (primer equipo)"
+  },
+  {
+   "name": "Raimon Second Squad",
+   "name_es": "Equipo B del Instituto Raimon"
+  },
+  {
+   "name": "Raimon Veterans",
+   "name_es": "Inazuma Eleven"
+  },
+  {
+   "name": "Red Matador",
+   "name_es": "Los Rojos"
+  },
+  {
+   "name": "Rose Griffons",
+   "name_es": "Grifos de la Rosa"
+  },
+  {
+   "name": "Royal Academy",
+   "name_es": "Royal Academy"
+  },
+  {
+   "name": "Royal Academy Redux",
+   "name_es": "Royal Redux"
+  },
+  {
+   "name": "Secret Service",
+   "name_es": "Servicio Secreto"
+  },
+  {
+   "name": "Sekai Senbatsu",
+   "name_es": "Selección Mundial"
+  },
+  {
+   "name": "Shamshir",
+   "name_es": "Los Cimitarras"
+  },
+  {
+   "name": "Shuriken",
+   "name_es": "Shuriken"
+  },
+  {
+   "name": "Silica Eleven",
+   "name_es": "Los Sílice"
+  },
+  {
+   "name": "Southern Claw",
+   "name_es": "Garras del Sur"
+  },
+  {
+   "name": "Storm Wolves",
+   "name_es": "Storm Wolves"
+  },
+  {
+   "name": "Street Sally's",
+   "name_es": "Sallys"
+  },
+  {
+   "name": "Sub Character",
+   "name_es": "Secundarios"
+  },
+  {
+   "name": "Super Triple C",
+   "name_es": "Triple C"
+  },
+  {
+   "name": "Supernova",
+   "name_es": "Supernova"
+  },
+  {
+   "name": "Team D",
+   "name_es": "Equipo D"
+  },
+  {
+   "name": "Team Ogre",
+   "name_es": "Equipo Ogro"
+  },
+  {
+   "name": "Team Sharp",
+   "name_es": null
+  },
+  {
+   "name": "Team Zero",
+   "name_es": "Equipo Zero"
+  },
+  {
+   "name": "Team Zoolan",
+   "name_es": "Zoolan Team"
+  },
+  {
+   "name": "Tenmas",
+   "name_es": "Los Arions"
+  },
+  {
+   "name": "The Aquatic Wings",
+   "name_es": null
+  },
+  {
+   "name": "The Cape Crusaders",
+   "name_es": "Caimanes del Cabo"
+  },
+  {
+   "name": "The Crimson Hounds",
+   "name_es": null
+  },
+  {
+   "name": "The Despairadoes",
+   "name_es": "Desesperdidos"
+  },
+  {
+   "name": "The Empire",
+   "name_es": "Los Emperadores"
+  },
+  {
+   "name": "The Golden Bears",
+   "name_es": null
+  },
+  {
+   "name": "The Kingdom",
+   "name_es": "Os Reis"
+  },
+  {
+   "name": "The Night Vipers",
+   "name_es": null
+  },
+  {
+   "name": "The Sambassadors",
+   "name_es": "Olé de Samba"
+  },
+  {
+   "name": "The Sherwinds",
+   "name_es": "Los Arions"
+  },
+  {
+   "name": "The Snow Weasels",
+   "name_es": null
+  },
+  {
+   "name": "The Terracotta Army",
+   "name_es": "Ejército de Terracota"
+  },
+  {
+   "name": "Umbrella MS",
+   "name_es": "Umbrella"
+  },
+  {
+   "name": "Unaffiliated",
+   "name_es": "Sin equipo"
+  },
+  {
+   "name": "Unicorn",
+   "name_es": "Unicorn"
+  },
+  {
+   "name": "Universal",
+   "name_es": "Universal"
+  },
+  {
+   "name": "White Deer",
+   "name_es": "Banda del Ciervo Blanco"
+  },
+  {
+   "name": "Wild",
+   "name_es": "Wild"
+  },
+  {
+   "name": "Young Inazuma",
+   "name_es": "Jóvenes Inazuma"
+  },
+  {
+   "name": "Zan",
+   "name_es": "Zan"
+  },
+  {
+   "name": "Zanark's Domain",
+   "name_es": "Zanark Domain"
+  },
+  {
+   "name": "Zanark's Outsiders",
+   "name_es": "Zanark Outsiders"
+  },
+  {
+   "name": "Zeus",
+   "name_es": "Zeus"
+  }
  ]
 }

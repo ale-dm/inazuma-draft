@@ -101,6 +101,10 @@ Distribución del prototipo (2.451 cartas actuales): mediana 64 · p90 80 · p99
 
 Los nombres en castellano salen de la [wiki en español](https://inazuma.fandom.com/es/wiki) (categoría *Supertécnicas*, 862 fichas): se cruzan por **nombre japonés** (campo `Nombre Japonés`) y, si no, por nombre inglés (`Nombre DOB` / `Nombre Inglés`). Se guardan en `techniques.name_es` (570/588); la app los muestra en castellano y cae al inglés si falta.
 
+### Equipos en castellano
+
+Tabla `teams (name, name_es)`: los nombres salen de la wiki en español (páginas con la plantilla `{{Equipo}}`: campo `Nombre` con `{{ES}}`, o el título), cruzados con el nombre inglés (`Nombre DOB`, sin sufijos tipo *Jr. High*) o japonés. Los que no cruzan van a mano en `overrides.team_es`. La app los muestra solo con el idioma en castellano (`teamName` / `teamLabel` en `src/data/catalog.ts`); internamente los equipos siguen identificándose por su nombre inglés.
+
 ## 6. Problemas conocidos a corregir
 
 - Cruces de nombres aproximados con la wiki/doc del Xtreme: hacen falta **equivalencias a mano** (Goldie Lemmon, Tezcat y Aum Nirvana recibieron stats ajenas; faltan Nepper, Rhionne, IC, Kino Aki, Yukimura Hyouga…).

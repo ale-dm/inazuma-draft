@@ -1,4 +1,4 @@
-import { getTechnique, techniqueName } from '../data/catalog'
+import { getTechnique, teamLabel, techniqueName } from '../data/catalog'
 import type { MatchResult } from '../types'
 import { matchWinner } from '../engine/sim'
 import { useAppSettings } from '../context/AppSettings'
@@ -26,7 +26,7 @@ export default function MatchView({ result, highlightTeam }: Props) {
       <div className="iz-panel-body">
       <div className="flex items-center justify-center gap-6 mb-4">
         <div className={`text-center flex-1 ${winner === 0 ? 'text-accent' : 'text-iz-text'}`}>
-          <div className="text-sm text-iz-muted mb-1 font-heading">{result.team1Name}</div>
+          <div className="text-sm text-iz-muted mb-1 font-heading">{teamLabel(result.team1Name, locale)}</div>
           <div className="text-4xl font-heading font-black">{s1}</div>
           {result.penalties && (
             <div className="text-xs text-iz-cyan mt-1 tabular-nums">({result.penalties[0]})</div>
@@ -34,7 +34,7 @@ export default function MatchView({ result, highlightTeam }: Props) {
         </div>
         <div className="text-iz-cyan font-heading font-bold">—</div>
         <div className={`text-center flex-1 ${winner === 1 ? 'text-accent' : 'text-iz-text'}`}>
-          <div className="text-sm text-iz-muted mb-1 font-heading">{result.team2Name}</div>
+          <div className="text-sm text-iz-muted mb-1 font-heading">{teamLabel(result.team2Name, locale)}</div>
           <div className="text-4xl font-heading font-black">{s2}</div>
           {result.penalties && (
             <div className="text-xs text-iz-cyan mt-1 tabular-nums">({result.penalties[1]})</div>

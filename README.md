@@ -59,7 +59,7 @@ Formaciones reales de Inazuma Eleven (F-Basic, F-Three Top, F-Death Zone 2, F-Bu
 - **Categorías:** Legendary (89+), Top (83+), Advanced (75+), Growing (65+) y Common.
 - **Supertécnicas reales** de cada juego, con su coste (TP) y **nombre en castellano** ([wiki en español](https://inazuma.fandom.com/es/wiki)).
 - **Sección Jugadores** (botón 👥 o [`#/jugadores`](https://inazuma-draft-alpha.vercel.app/#/jugadores)): buscador con filtros (posición, categoría, juego, elemento, equipo, OVR mínimo), navegación **Juego → Equipos → Plantilla** y ficha de cada jugador con sus stats, supertécnicas y otras versiones.
-- Idiomas **español, francés e inglés** · tema claro / oscuro.
+- Idiomas **español, francés e inglés** (en español, también supertécnicas y equipos: *Emperadores Oscuros*, *Inazuma Japón Legendario*…) · tema claro / oscuro.
 
 ### Cómo se calcula la nota
 

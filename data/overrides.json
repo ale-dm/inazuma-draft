@@ -137,5 +137,15 @@
   },
   "ovr_manual": {
     "_doc": "OVR fijado a mano por carta: \"<page>|<game>|<versión>\": ovr"
+  },
+  "team_es": {
+    "_doc": "Nombre en castellano de equipos que no cruzan con la wiki en español (inazuma.fandom.com/es). El resto sale solo.",
+    "Unaffiliated": "Sin equipo",
+    "Sub Character": "Secundarios",
+    "Adult": "Adultos",
+    "Raimon First Squad": "Raimon (primer equipo)",
+    "Umbrella MS": "Umbrella",
+    "Epsilon Plus": "Épsilon Plus",
+    "Sekai Senbatsu": "Selección Mundial"
   }
 }
