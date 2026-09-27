@@ -155895,7 +155895,7 @@
   },
   {
    "id": "HyakuretsuShot",
-   "name": "Wrath Shot (anime & games)",
+   "name": "Wrath Shot",
    "name_jp": "百烈ショット",
    "type": "Shoot",
    "element": "wood",
@@ -155975,7 +155975,7 @@
   },
   {
    "id": "KouteiPenguin2gou",
-   "name": "Emperor Penguin No. 2 (anime & games)",
+   "name": "Emperor Penguin No. 2",
    "name_jp": "皇帝ペンギン２号",
    "type": "Shoot",
    "element": "wood",
@@ -156410,7 +156410,7 @@
   },
   {
    "id": "ShootPocket",
-   "name": "Shot Pocket (game &  anime)",
+   "name": "Shot Pocket",
    "name_jp": "シュートポケット",
    "type": "Catch",
    "element": "wood",

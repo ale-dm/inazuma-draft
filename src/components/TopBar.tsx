@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { useAppSettings } from '../context/AppSettings'
 import RulesModal from './RulesModal'
+import { PLAYERS_HASH, useHashRoute } from '../lib/route'
 
 export default function TopBar() {
   const { theme, locale, sound, setLocale, toggleTheme, toggleSound, t } = useAppSettings()
   const [rulesOpen, setRulesOpen] = useState(false)
+  const inPlayers = useHashRoute() === PLAYERS_HASH
 
   return (
     <>
@@ -15,6 +17,10 @@ export default function TopBar() {
               <span aria-hidden>📖</span>
               <span className="hidden sm:inline ml-1">{t('nav.rules')}</span>
             </button>
+            <a href={inPlayers ? '#/' : PLAYERS_HASH} className="iz-nav-btn min-h-[2.25rem] inline-flex items-center">
+              <span aria-hidden>{inPlayers ? '⚽' : '👥'}</span>
+              <span className="hidden sm:inline ml-1">{t(inPlayers ? 'nav.play' : 'nav.players')}</span>
+            </a>
           </div>
 
           <a

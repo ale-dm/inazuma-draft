@@ -11,25 +11,47 @@ export interface DraftPool {
 
 export type DraftPoolKey = `${GameId}:${string}`
 
+/** Stats de la carta (escala 25–99, base de datos Supabase) */
 export interface PlayerStats {
-  kick: number
-  body: number
+  shooting: number
   control: number
-  guard: number
+  physical: number
   speed: number
-  stamina: number
-  guts: number
+  defense: number
+  goalkeeping: number
+}
+
+export type Category = 'Legendary Player' | 'Top Player' | 'Advanced Player' | 'Growing Player' | 'Common Player'
+
+export interface Technique {
+  id: string
+  name: string
+  type: 'Shoot' | 'Dribble' | 'Block' | 'Catch'
+  element: Element | null
+  /** Coste mostrado (Galaxy si existe) */
+  cost: number | null
+  costGame: string | null
 }
 
 export interface Player {
   id: string
+  characterId: string
   name: string
   game: GameId
   team: string
+  /** 'base' o versión (Dark Emperors, Chrono Storm, Adult…) */
+  version: string
   element: Element
   position: Position
   stats: PlayerStats
+  ovr: number
+  category: Category
+  tier: 'S' | 'A' | 'B' | 'C'
+  image: string | null
+  techniques: Technique[]
+  /** Nombres de las técnicas (compatibilidad con el motor) */
   hissatsu: string[]
+  isVersion: boolean
 }
 
 export interface MatchEvent {

@@ -61,26 +61,28 @@ Déploiement live : [ffi-6-0.vercel.app](https://ffi-6-0.vercel.app)
 
 ## Contenu
 
-- **~2525 joueurs** · **~101 pools jouables** (IE1 → GO3)
-- Données : [zukan.inazuma.jp](https://zukan.inazuma.jp) (Lv50) + stats IE3 Fandom lv99 conservées
-- Rosters canon : `src/data/canonical-rosters.ts`
-- Dédup automatique des doublons zukan (même perso listé plusieurs fois dans un pool)
-- Portraits joueurs (zukan + fallbacks)
+- **~3 900 cartes** (joueurs + versions) de IE1 à GO Galaxy, chargées depuis **Supabase**
+- Note globale **OVR** style FIFA (44–94), 6 stats, catégories Legendary / Top / Advanced / Growing / Common
+- Supertechniques réelles de chaque jeu, portraits zukan
+- Section **Joueurs** (`#/jugadores`) : recherche avec filtres, navigation jeu → équipes → effectif
 - **FR / EN / ES** · thème clair / sombre
 
-### Scripts data (dossier `scripts/`, gitignored)
+### Base de données
 
-| Commande | Rôle |
-|----------|------|
-| `npm run data:zukan` | Regénère joueurs / pools / images depuis zukan |
-| `npm run data:rebuild` | Rebuild DB legacy IE3 |
-| `npm run data:audit` | Audit rosters vs canon |
+Générée par des scripts (sources : zukan, wiki Fandom, Strikers 2013 / Xtreme) — voir `docs/plan-base-jugadores.md` :
+
+```bash
+python3 tools/db/fetch.py   # téléchargement (cache tools/.cache/db/)
+python3 tools/db/build.py   # cartes → supabase/seed.sql + build/review.csv
+```
+
+Un push sur `main` qui modifie `supabase/` recharge la base (workflow `db-load.yml`, secret `SUPABASE_DB_URL`).
 
 ---
 
 ## Stack
 
-React 19 · TypeScript · Vite 6 · Tailwind CSS 3 · Vercel Analytics · PostHog (optionnel, `VITE_PUBLIC_POSTHOG_KEY`)
+React 19 · TypeScript · Vite 6 · Tailwind CSS 3 · Supabase · Vercel Analytics · PostHog (optionnel, `VITE_PUBLIC_POSTHOG_KEY`)
 
 ---
 

@@ -6,7 +6,7 @@
 
 ## 1. Qué cartas existen
 
-**Fuente de personajes: zukan** (`https://zukan.inazuma.jp/en/chara_list/?page=N`, 110 páginas, 5.456 fichas, 5.283 jugadores). Cada ficha trae nombre inglés oficial, posición, elemento, equipos, juegos donde aparece y el id de imagen (`data-chara-id`, ver `tools/zukan-images.mjs`).
+**Fuente de personajes: zukan** (`https://zukan.inazuma.jp/en/chara_list/?page=N`, 110 páginas, 5.456 fichas, 5.283 jugadores). Cada ficha trae nombre inglés oficial, posición, elemento, equipos, juegos donde aparece y el id de imagen (`data-chara-id`), que `tools/db/build.py` asigna a cada carta.
 
 Reglas:
 
@@ -110,9 +110,9 @@ Distribución del prototipo (2.451 cartas actuales): mediana 64 · p90 80 · p99
 
 ```
 tools/
-  zukan-images.mjs          (ya existe)
   db/                       descarga con caché (zukan, wiki, Strikers, Xtreme) + cálculo
 data/
+  legacy-teams.json         equipos por juego del draft original ("nombre|juego" → equipo)
   overrides.json            excepciones editables: equivalencias de nombres, posiciones por forma,
                             destacados, ajustes manuales
 supabase/
@@ -132,3 +132,10 @@ python3 tools/db/build.py            # genera build/players.json, build/review.c
 - **Cargar en Supabase:** al hacer push a `main` de cambios en `supabase/`, el workflow `.github/workflows/db-load.yml` aplica `schema.sql` + `seed.sql` con el secreto del repo `SUPABASE_DB_URL` (también se puede lanzar a mano desde Actions → "Load player database into Supabase").
 
 Primera generación: **3.903 cartas** (3.806 personajes + 97 versiones), 587 técnicas · Legendary 36 · Top 233 · Advanced 516 · Growing 771 · Common 2.347 · OVR mediana 61, p90 79, máx 92.
+
+## 10. La app
+
+- La app carga el catálogo desde Supabase al arrancar (`src/data/catalog.ts`, clave publishable) y ya no incluye datos de jugadores en el código.
+- **Draft/torneo:** los pools son los grupos juego + equipo con ≥ 8 cartas (sin scouts ni adultos).
+- **Sección Jugadores** (`#/jugadores`): buscador con filtros (posición, categoría, juego, elemento, equipo, OVR mínimo), navegación Juego → Equipos → Plantilla y ficha con stats, supertécnicas y otras versiones.
+- Para usar otro proyecto de Supabase: variables `VITE_SUPABASE_URL` y `VITE_SUPABASE_KEY` (clave publishable).

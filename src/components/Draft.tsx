@@ -1,7 +1,6 @@
 import { useState, useMemo } from 'react'
 import type { DraftPool, Player } from '../types'
-import { getDraftPools, getTeamRoster, isPlayerInPoolRoster } from '../data/players'
-import { displayPoolLabel, draftPoolKey } from '../data/draft-pools'
+import { displayPoolLabel, draftPoolKey, getDraftPools, getTeamRoster, isPlayerInPoolRoster } from '../data/catalog'
 import {
   autoPlacePlayer,
   compatibleEmptySlots,

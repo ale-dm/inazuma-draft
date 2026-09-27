@@ -1,10 +1,6 @@
 import type { Player, Position } from '../types'
-import { rosterIdentityKey } from './players'
 
-function rating(p: Player): number {
-  const s = p.stats
-  return s.kick + s.body + s.control + s.guard + s.speed + s.stamina + s.guts
-}
+const rating = (p: Player) => p.ovr
 
 type Shape = Record<Position, number>
 
@@ -40,7 +36,7 @@ function fillShape(byPos: Record<Position, Player[]>, shape: Shape): Player[] {
 export function pickBestXI(roster: Player[]): Player[] {
   const unique = new Map<string, Player>()
   for (const p of roster) {
-    const k = rosterIdentityKey(p)
+    const k = p.characterId
     const cur = unique.get(k)
     if (!cur || rating(p) > rating(cur)) unique.set(k, p)
   }

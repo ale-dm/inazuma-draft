@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import type { Player } from '../types'
-import { getPlayerImage } from '../data/player-images'
 
 const ELEMENT_BG: Record<string, string> = {
   fire: 'from-orange-500 to-red-700',
@@ -24,7 +23,7 @@ const SIZES = {
 
 export default function PlayerAvatar({ player, size = 'md', variant = 'round', className = '', showRating }: Props) {
   const [failed, setFailed] = useState(false)
-  const src = getPlayerImage(player)
+  const src = player.image ?? undefined
   const dim = SIZES[variant][size]
   const isZukan = variant === 'zukan'
 

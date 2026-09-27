@@ -27,7 +27,9 @@ function generateGoalEvents(scoringTeam: 0 | 1, players: Player[], count: number
   if (scorers.length === 0) return []
   return matchMinutes.slice(0, count).map(minute => {
     const player = scorers[Math.floor(random() * scorers.length)]
-    const move = player.hissatsu[Math.floor(random() * player.hissatsu.length)]
+    const shots = player.techniques.filter(t => t.type === 'Shoot').map(t => t.name)
+    const moves = shots.length ? shots : player.hissatsu
+    const move = moves.length ? moves[Math.floor(random() * moves.length)] : undefined
     return { minute, type: 'goal' as const, team: scoringTeam, player: player.name, move }
   })
 }
@@ -41,13 +43,13 @@ function clampGoals(goals: number, ratio: number, isFavourite: boolean): number 
 function penShooters(team: Player[]): Player[] {
   const outfield = team.filter(p => p.position !== 'GK')
   const pool = outfield.length > 0 ? outfield : team
-  return [...pool].sort((a, b) => b.stats.kick + b.stats.guts - (a.stats.kick + a.stats.guts))
+  return [...pool].sort((a, b) => b.stats.shooting + b.stats.control - (a.stats.shooting + a.stats.control))
 }
 
 function penChance(shooter: Player, gk: Player): number {
-  const shoot = shooter.stats.kick * 0.55 + shooter.stats.guts * 0.25 + shooter.stats.control * 0.2
-  const save = gk.stats.guard * 0.65 + gk.stats.guts * 0.35
-  return Math.max(0.18, Math.min(0.82, 0.48 + (shoot - save) / 175 + (random() - 0.5) * 0.12))
+  const shoot = shooter.stats.shooting * 0.7 + shooter.stats.control * 0.3
+  const save = gk.stats.goalkeeping * 0.7 + gk.stats.defense * 0.3
+  return Math.max(0.18, Math.min(0.82, 0.48 + (shoot - save) / 120 + (random() - 0.5) * 0.12))
 }
 
 function takePenalty(
