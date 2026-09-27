@@ -93,6 +93,15 @@ def lua_moves(body, module):
     return re.findall(r'\{"(\w+)"', m.group(1)) if m else []
 
 
+# códigos de equipo de los avatares de Victory Road en la wiki inglesa: (equipo, saga) → prefijos
+EN_TEAM_CODE = {('Raimon', 'GO'): ['SR', 'R (GO)'], ('Raimon', 'IE'): ['R', 'SR'], ('Fire Dragon', 'IE'): ['FD'],
+                ('Epsilon Plus', 'IE'): ['EK', 'EK-F', 'EK-GK'], ('Neo Japan', 'IE'): ['NJ'], ('Inazuma Japan', 'IE'): ['IJ'],
+                ('Earth Eleven', 'GO'): ['EE'], ('Zeus', 'IE'): ['Z'], ('Royal Academy', 'IE'): ['TG'],
+                ('Royal Academy Redux', 'IE'): ['STG'], ('Dark Emperors', 'IE'): ['DE'], ('Young Inazuma', 'IE'): ['YI'],
+                ('Protocol Omega', 'GO'): ['PO'], ('Protocol Omega 2.0', 'GO'): ['PO2'], ('Protocol Omega 3.0', 'GO'): ['PO3'],
+                ('Inazuma Legend Japan', 'GO'): ['ILJ'], ('Alpine', 'IE'): ['H'], ('Genesis', 'IE'): ['G']}
+
+
 def load_opt(name, default):
     """caché opcional (pasos de fetch.py añadidos después)"""
     return load(name) if os.path.exists(os.path.join(CACHE, name)) else default
@@ -916,6 +925,8 @@ def main(extra_z=None, write=True):
                 'form_label': label, 'team': team, 'position': position, 'element': element, 'tier': tier, 'source': src,
                 'raw': raw, 'raw_keys': IEK if g.startswith('IE') else GOK, 'q': q, 'ovr_raw': ovr, 'st': st,
                 'moves': moves, 'best_move': best_move, 'is_version': ver != 'base', 'specials': specials, 'fusion': fusion,
+                'vr_file': (re.search(r'\n\t\t\tVR="([^"]+)"', entry or base_body or '') or [None, None])[1],
+                'game_file': (re.search(r'\n\t\t\t' + MODULE[g] + r'="([^"]+)"', entry or base_body or '') or [None, None])[1],
                 'zhint': hint.get('zukan') if isinstance(hint, dict) else None,
                 'zukan': zs, 'featured': featured.get(pg), 'form_image': form_image(base_body, g) if base_body else None,
             })
@@ -1141,6 +1152,34 @@ def main(extra_z=None, write=True):
                 extra_sprites.append(f"{pg_}: {g['label']} ({g['era']})")
     # índice de sprites de Victory Road de la wiki española: "(EO) Steve (HVR).png" = iniciales del equipo en castellano + nombre
     hvr = load_opt('es_hvr_files.json', {})
+    en_vr = load_opt('en_vr_sprites.json', {})
+    en_vr_index = load_opt('en_vr_index.json', {})
+    def en_vr_sprite(c):
+        """avatar de Victory Road (wiki inglesa) de la forma de la carta: el de su PlayerData, o el que corresponde
+        al sprite de su juego: "(SR) Kurama Norihito sprite" → "(SR) Kurama Norihito sprite (VR)\""""
+        mixi = c['team'] in ('Mixi Max', 'Chrono Storm')
+        cands = []
+        if c.get('vr_file'):
+            cands.append(c['vr_file'])
+        gf = c.get('game_file') or ''
+        m_ = re.match(r'(\([^)]*(?:\([^)]*\))?[^)]*\))\s+(.+?) sprite', gf)
+        if m_:
+            cands.append(f'{m_.group(1)} {m_.group(2)} sprite (VR)')
+        # por código de equipo de la wiki inglesa + nombre (romaji de la ficha o apodo): "(EK) Zel sprite (VR)"
+        codes = EN_TEAM_CODE.get((c['team'], c['game'][:2]), []) + EN_TEAM_CODE.get((c['version'], c['game'][:2]), [])
+        names = {c['page']} | {lua_field(b, 'nickname') for b in by_page.get(c['page'], []) if lua_field(b, 'nickname')} \
+            | {f for b in by_page.get(c['page'], []) for f in re.findall(r'\bfile="([^"(]+)"', b)}
+        cands += [f'({code}) {n_} sprite (VR)' for code in codes for n_ in sorted(names)]
+        if c['version'] in ('Adult', ILJ):                 # adultos: avatar de entrenador / adulto con cualquier prefijo
+            cands += sorted(k for k in en_vr_index for n_ in names
+                            if k.endswith((f'{n_} sprite (coach) (VR)', f'{n_} sprite (adult) (VR)')))
+        for n_ in cands:
+            if ('(MM' in n_ or 'Mixi' in n_) and not mixi:
+                continue
+            url = en_vr.get(n_) or en_vr_index.get(n_)
+            if url:
+                return url
+        return None
     import unicodedata
     plain = lambda x: ''.join(ch for ch in unicodedata.normalize('NFD', x or '') if unicodedata.category(ch) != 'Mn').lower()
     hvr_idx = collections.defaultdict(list)
@@ -1184,7 +1223,8 @@ def main(extra_z=None, write=True):
         pending = (dup_img[key] > 1 and first_img[key] != c['id']) or '3D' in (c['image_url'] or '') \
             or (c['version'] == ILJ and '/inazuma/images' not in (c['image_url'] or ''))
         if pending:
-            url = hvr_sprite(c)
+            # 1) sprite de la wiki española por iniciales + nombre; 2) avatar de Victory Road de su forma en la wiki inglesa
+            url = hvr_sprite(c) or en_vr_sprite(c)
             if url:
                 c['image_url'] = url
 
