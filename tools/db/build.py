@@ -1072,7 +1072,12 @@ def main(extra_z=None, write=True):
     def norm_label(x):
         x = re.sub(r'\((?:GO|HVR|PR|IE HVR)\)', '', x or '')
         return re.sub(r'[^a-záéíóúñ0-9]', '', x.lower())
-    unmatched = collections.Counter()
+    # solo donde hace falta: foto repetida entre versiones del mismo personaje, o sin foto de zukan
+    img_count = collections.Counter((c['character_id'], c['image_url']) for c in cards)
+    first_holder = {}                                  # la primera carta con esa foto (la base) se la queda
+    for c in sorted(cards, key=lambda c: (c['is_version'], MAIN.index(c['game']))):
+        first_holder.setdefault((c['character_id'], c['image_url']), c['id'])
+    sprite_review = []
     for c in cards:
         groups = sprites.get(c['page'])
         if not groups:
@@ -1101,7 +1106,14 @@ def main(extra_z=None, write=True):
                 if s2 > best_sc:
                     best, best_sc = im['url'], s2
         if best:
-            c['image_url'] = best
+            key = (c['character_id'], c['image_url'])
+            repeated = img_count[key] > 1 and first_holder[key] != c['id']
+            no_zukan = 'cloudfront.net' not in (c['image_url'] or '')
+            if repeated or no_zukan:
+                c['image_url'] = best
+            else:
+                sprite_review.append({'id': c['id'], 'name': c['name'], 'game': c['game'], 'version': c['version'],
+                                      'zukan': c['image_url'], 'sprite': best})
     have_lab = collections.defaultdict(set)
     for c in cards:
         have_lab[c['page']] |= {norm_label(x) for x in (c['team'], c['version'], es_team.get(tnorm(c['team'] or '')), manual_es.get(c['team']),
@@ -1113,6 +1125,8 @@ def main(extra_z=None, write=True):
         for g in groups:
             if g['era'].lower().startswith(('saga de mark', 'saga de arion')) and norm_label(g['label']) not in have_lab[pg_]:
                 extra_sprites.append(f"{pg_}: {g['label']} ({g['era']})")
+    with open(os.path.join(OUT, 'sprites_review.json'), 'w', encoding='utf-8') as f:
+        json.dump(sprite_review, f, ensure_ascii=False, indent=1)
     if extra_sprites:
         report.append(f'Versiones con sprite de Victory Road sin carta ({len(extra_sprites)}): ' + '; '.join(extra_sprites))
 
