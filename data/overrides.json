@@ -188,5 +188,60 @@
     "ids": [
       "hibiki-seigou--ie2--dark-emperors"
     ]
+  },
+  "team_tuning": {
+    "_doc": "Ajuste fino por equipo y juego (orden de rivales de la historia). top11: media objetivo del once titular (las 11 mejores cartas); todo el equipo se mueve lo mismo. captain: ficha de la wiki del capitán: +2 y al menos 4 por encima de esa media (máx. 88).",
+    "IE1": {
+      "Royal Academy": {
+        "top11": 80.5,
+        "captain": "Kidou Yuuto",
+        "note": "1 amistoso / 6 final regional"
+      },
+      "Occult": {
+        "top11": 73.5,
+        "captain": "Yuukoku Hiroyuki",
+        "note": "2"
+      },
+      "Wild": {
+        "top11": 74.0,
+        "captain": "Torii Ryouta",
+        "note": "3"
+      },
+      "Brainwashing": {
+        "top11": 74.5,
+        "captain": "Sugimori Takeshi",
+        "note": "4"
+      },
+      "Otaku": {
+        "top11": 75.0,
+        "captain": "Karisawa Sou",
+        "note": "5"
+      },
+      "Raimon Veterans": {
+        "top11": 80.9,
+        "captain": "Hibiki Seigou",
+        "note": "7"
+      },
+      "Shuriken": {
+        "top11": 81.3,
+        "captain": "Kirigakure Saiji",
+        "note": "8"
+      },
+      "Farm": {
+        "top11": 81.7,
+        "captain": "Harano Tooru",
+        "note": "9"
+      },
+      "Kirkwood": {
+        "top11": 82.1,
+        "captain": "Mukata Masaru",
+        "note": "10"
+      },
+      "Zeus": {
+        "top11": 82.6,
+        "captain": "Afuro Terumi",
+        "note": "11 final"
+      }
+    }
   }
 }

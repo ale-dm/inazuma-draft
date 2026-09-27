@@ -181,9 +181,9 @@ def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_j
                 r['ovr'] = max(r['ovr'], 84)
             fc = ref_card.get(slug(r['page'])) if r['page'] and r['page'] not in NO_ANCHOR else None
             r['anchor'] = fc and fc['id']
-            r['ovr_mix'] = round((r['ovr'] + fc['ovr']) / 2) if fc else r['ovr']
+            r['ovr_mix'] = round((r['ovr'] + fc.get('ovr_untuned', fc['ovr'])) / 2) if fc else r['ovr']   # sin el ajuste de team_tuning
     # 5: curva de los equipos de IE2 (mismo orden)
-    ref = sorted(c['ovr'] for c in classic_cards if c['game'] == 'IE2' and c['team'] not in ('Unaffiliated', 'Sub Character'))
+    ref = sorted(c.get('ovr_untuned', c['ovr']) for c in classic_cards if c['game'] == 'IE2' and c['team'] not in ('Unaffiliated', 'Sub Character'))
     src = sorted(r['ovr_mix'] for r in rows)
     for r in rows:
         v = r['ovr_mix']

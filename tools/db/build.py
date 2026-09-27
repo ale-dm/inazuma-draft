@@ -1035,6 +1035,39 @@ def main(extra_z=None, write=True):
         ver = c['version'] if c['version'] != 'base' else 'base'
         c['id'] = f"{c['character_id']}--{c['game'].lower()}--{slug(ver)}"
 
+    # a mano: overrides.team_tuning — curva de rivales de la historia: media del once titular y capitán que destaca
+    for g_, tms in ov.get('team_tuning', {}).items():
+        if g_.startswith('_'):
+            continue
+        for tm, cfg in tms.items():
+            grp = [c for c in cards if c['game'] == g_ and c['team'] == tm]
+            if not grp:
+                report.append(f'team_tuning: {g_} {tm} sin cartas')
+                continue
+            capt = [c for c in grp if c['page'] == cfg.get('captain') and not c['is_version']]
+
+            def tuned(c, delta):
+                new = max(25, min(max(c['ovr'], 88), c['ovr'] + delta))
+                if c in capt:                      # capitán: +2 y cerca de 4 por encima del once (subida máx. +6)
+                    new = min(88, max(new + 2, min(round(cfg['top11']) + 4, new + 6), c['ovr']))
+                return new
+            # desplazamiento entero más alto que no pasa del objetivo (con el capitán ya subido) y +1 a los más flojos del
+            # once hasta clavar la media: así el orden de la historia se cumple exacto
+            n11 = min(11, len(grp))
+            mean11 = lambda d: sum(sorted(tuned(c, d) for c in grp)[-11:]) / n11
+            delta = max((d for d in range(-10, 11) if mean11(d) <= cfg['top11'] + 1e-9), default=-10)
+            once = sorted(grp, key=lambda c: tuned(c, delta))[-11:]
+            extra = {id(c) for c in once[:round((cfg['top11'] - mean11(delta)) * n11)] if c not in capt}
+            for c in grp:
+                new = min(88, tuned(c, delta) + (id(c) in extra))
+                d_ = new - c['ovr']
+                c.setdefault('ovr_untuned', c['ovr'])
+                c['ovr'] = new
+                c['stats'] = {k: max(25, min(99, v + d_)) for k, v in c['stats'].items()}
+                c['category'] = category(new)
+            if cfg.get('captain') and not capt:
+                report.append(f"team_tuning: capitán {cfg['captain']} no está en {g_} {tm}")
+
     # a mano: overrides.drop_cards (versiones descartadas)
     drop = set(ov.get('drop_cards', {}).get('ids', []))
     cards = [c for c in cards if c['id'] not in drop]
