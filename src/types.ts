@@ -26,6 +26,8 @@ export type Category = 'Legendary Player' | 'Top Player' | 'Advanced Player' | '
 export interface Technique {
   id: string
   name: string
+  /** Nombre en castellano (inazuma.fandom.com/es), si se conoce */
+  nameEs: string | null
   type: 'Shoot' | 'Dribble' | 'Block' | 'Catch'
   element: Element | null
   /** Coste mostrado (Galaxy si existe) */
@@ -60,6 +62,8 @@ export interface MatchEvent {
   team: 0 | 1
   player: string
   move?: string
+  /** Id de la técnica (para mostrarla en el idioma elegido) */
+  moveId?: string
 }
 
 export interface MatchResult {

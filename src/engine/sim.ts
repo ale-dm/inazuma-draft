@@ -27,10 +27,10 @@ function generateGoalEvents(scoringTeam: 0 | 1, players: Player[], count: number
   if (scorers.length === 0) return []
   return matchMinutes.slice(0, count).map(minute => {
     const player = scorers[Math.floor(random() * scorers.length)]
-    const shots = player.techniques.filter(t => t.type === 'Shoot').map(t => t.name)
-    const moves = shots.length ? shots : player.hissatsu
+    const shots = player.techniques.filter(t => t.type === 'Shoot')
+    const moves = shots.length ? shots : player.techniques
     const move = moves.length ? moves[Math.floor(random() * moves.length)] : undefined
-    return { minute, type: 'goal' as const, team: scoringTeam, player: player.name, move }
+    return { minute, type: 'goal' as const, team: scoringTeam, player: player.name, move: move?.name, moveId: move?.id }
   })
 }
 

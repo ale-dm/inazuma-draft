@@ -11,6 +11,7 @@ create table if not exists public.characters (
 create table if not exists public.techniques (
   id          text primary key,              -- clave de Module:WazaData
   name        text not null,                 -- nombre inglés (name_dub)
+  name_es     text,                          -- nombre en castellano (inazuma.fandom.com/es)
   name_jp     text,
   type        text,                          -- Shoot | Dribble | Block | Catch
   element     text,
@@ -39,6 +40,8 @@ create table if not exists public.cards (
   raw_stats    jsonb,                        -- stats originales del juego (nivel 99)
   is_version   boolean not null default false -- true = versión extra (Strikers / protagonistas GO)
 );
+alter table public.techniques add column if not exists name_es text;
+
 create index if not exists cards_character_idx on public.cards(character_id);
 create index if not exists cards_ovr_idx on public.cards(ovr desc);
 create index if not exists cards_game_pos_idx on public.cards(game, position);

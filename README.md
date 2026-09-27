@@ -54,10 +54,10 @@ Formaciones reales de Inazuma Eleven (F-Basic, F-Three Top, F-Death Zone 2, F-Bu
 
 ## Jugadores
 
-- **~3.900 cartas** de IE1 a GO Galaxy: cada personaje en su primer juego, más **versiones** para quien las tiene (Raimon / Second Raimon / Inazuma Japan, Dark Emperors, adultos, Chrono Storm con Mixi Max, Earth Eleven…).
+- **~3.900 cartas** de IE1 a GO Galaxy: cada personaje en su primer juego, más **versiones** para quien las tiene (Raimon / Second Raimon / Inazuma Japan, Dark Emperors, subformas como Shawn/Shirou, Young Inazuma, Inazuma Japón Legendario adulto, Chrono Storm con Mixi Max, Earth Eleven…).
 - **Nota global (OVR) estilo FIFA** (44–94) y 6 estadísticas: Tiro, Control, Físico, Velocidad, Defensa y Parada.
 - **Categorías:** Legendary (89+), Top (83+), Advanced (75+), Growing (65+) y Common.
-- **Supertécnicas reales** de cada juego, con su coste (TP).
+- **Supertécnicas reales** de cada juego, con su coste (TP) y **nombre en castellano** ([wiki en español](https://inazuma.fandom.com/es/wiki)).
 - **Sección Jugadores** (botón 👥 o [`#/jugadores`](https://inazuma-draft-alpha.vercel.app/#/jugadores)): buscador con filtros (posición, categoría, juego, elemento, equipo, OVR mínimo), navegación **Juego → Equipos → Plantilla** y ficha de cada jugador con sus stats, supertécnicas y otras versiones.
 - Idiomas **español, francés e inglés** · tema claro / oscuro.
 

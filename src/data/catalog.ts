@@ -45,6 +45,7 @@ interface CardRow {
 interface TechniqueRow {
   id: string
   name: string
+  name_es: string | null
   type: Technique['type']
   element: Element | null
   cost: number | null
@@ -52,6 +53,7 @@ interface TechniqueRow {
 }
 
 let players: Player[] = []
+let techniquesById = new Map<string, Technique>()
 let byId = new Map<string, Player>()
 let pools: DraftPool[] = []
 let poolRosters = new Map<string, Player[]>()
@@ -70,11 +72,12 @@ const CARD_COLUMNS = [
 
 export async function loadCatalog(): Promise<void> {
   if (players.length) return
-  const techniques = await rest<TechniqueRow[]>('techniques?select=id,name,type,element,cost,cost_game')
+  const techniques = await rest<TechniqueRow[]>('techniques?select=*')
   const techById = new Map<string, Technique>(techniques.map(t => [t.id, {
-    id: t.id, name: t.name, type: t.type, element: t.element, cost: t.cost, costGame: t.cost_game,
+    id: t.id, name: t.name, nameEs: t.name_es ?? null, type: t.type, element: t.element, cost: t.cost, costGame: t.cost_game,
   }]))
 
+  techniquesById = techById
   const rows: CardRow[] = []
   for (let offset = 0; ; offset += PAGE) {
     const page = await rest<CardRow[]>(`cards?select=${CARD_COLUMNS}&order=id&limit=${PAGE}&offset=${offset}`)
@@ -120,6 +123,15 @@ export async function loadCatalog(): Promise<void> {
   poolRosters = new Map([...groups].filter(([, list]) => list.length >= MIN_POOL_SIZE))
   // Orden estable: las partidas con semilla deben sortear igual en todos los navegadores
   pools = [...poolRosters.keys()].sort().map(parseDraftPoolKey)
+}
+
+export function getTechnique(id: string): Technique | undefined {
+  return techniquesById.get(id)
+}
+
+/** Nombre de la técnica en el idioma de la interfaz (castellano si existe) */
+export function techniqueName(t: Technique, locale: string): string {
+  return locale === 'es' && t.nameEs ? t.nameEs : t.name
 }
 
 export function getAllPlayers(): Player[] {
