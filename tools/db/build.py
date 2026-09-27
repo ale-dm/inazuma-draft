@@ -991,6 +991,10 @@ def main(extra_z=None, write=True):
         ver = c['version'] if c['version'] != 'base' else 'base'
         c['id'] = f"{c['character_id']}--{c['game'].lower()}--{slug(ver)}"
 
+    # versión de adulto que coincide con otra carta del mismo personaje, juego y equipo (Caleb en la Resistencia de Japón): fuera
+    keyset = collections.Counter((c['character_id'], c['game'], c['team']) for c in cards)
+    cards = [c for c in cards if not (c['version'] == 'Adult' and keyset[(c['character_id'], c['game'], c['team'])] > 1)]
+
     # --- imágenes: por personaje, cada versión con la ficha de zukan que mejor encaja (sin repetir si hay otra)
     MAINLINE = set(MAIN)
     by_char = collections.defaultdict(list)
@@ -1072,6 +1076,15 @@ def main(extra_z=None, write=True):
     def norm_label(x):
         x = re.sub(r'\((?:GO|HVR|PR|IE HVR)\)', '', x or '')
         return re.sub(r'[^a-záéíóúñ0-9]', '', x.lower())
+    LABEL_ALIAS = {'nuevoinazumajapón': 'earthelevel', 'inazumajapónalterno': 'earthelevel'}
+    def label_keys(label):
+        """'Nuevo Inazuma Japón / Inazuma Japón Alterno' → cada nombre por separado (+ alias: Earth Eleven)"""
+        out = set()
+        for part in re.split(r'\s*(?:/|&)\s*', label or ''):
+            k = norm_label(part)
+            out |= {k, LABEL_ALIAS.get(k, k).replace('earthelevel', 'eartheleven')}
+        return out
+    sprite_force = {k: v for k, v in ov.get('sprite_force', {}).items() if not k.startswith('_')}
     # solo donde hace falta: foto repetida entre versiones del mismo personaje, o sin foto de zukan
     img_count = collections.Counter((c['character_id'], c['image_url']) for c in cards)
     first_holder = {}                                  # la primera carta con esa foto (la base) se la queda
@@ -1093,7 +1106,7 @@ def main(extra_z=None, write=True):
             era = g['era'].lower()
             if mixi_card != era.startswith('miximax'):
                 continue
-            if norm_label(g['label']) not in es_names and not (mixi_card and partner and partner.split()[0].lower()[:4] in era):
+            if not (label_keys(g['label']) & es_names) and not (mixi_card and partner and partner.split()[0].lower()[:4] in era):
                 continue
             sc = 5 + 3 * (('mark' in era and c['game'].startswith('IE')) or ('arion' in era and c['game'].startswith('GO')) or not era)
             for im in g['images']:
@@ -1109,7 +1122,8 @@ def main(extra_z=None, write=True):
             key = (c['character_id'], c['image_url'])
             repeated = img_count[key] > 1 and first_holder[key] != c['id']
             no_zukan = 'cloudfront.net' not in (c['image_url'] or '')
-            if repeated or no_zukan:
+            always = c['version'] == ILJ                                # Legendario: siempre su sprite
+            if repeated or no_zukan or always:
                 c['image_url'] = best
             else:
                 sprite_review.append({'id': c['id'], 'name': c['name'], 'game': c['game'], 'version': c['version'],
@@ -1125,6 +1139,15 @@ def main(extra_z=None, write=True):
         for g in groups:
             if g['era'].lower().startswith(('saga de mark', 'saga de arion')) and norm_label(g['label']) not in have_lab[pg_]:
                 extra_sprites.append(f"{pg_}: {g['label']} ({g['era']})")
+    for c in cards:                                   # a mano: overrides.sprite_force
+        f_ = sprite_force.get(c['id'])
+        if f_:
+            url = next((im.get('url') for g in sprites.get(c['page'], []) for im in g['images'] if im['file'] == f_ and im.get('url')), None)
+            if url:
+                c['image_url'] = url
+                sprite_review = [x for x in sprite_review if x['id'] != c['id']]
+            else:
+                report.append(f'sprite_force sin imagen: {c["id"]} → {f_}')
     with open(os.path.join(OUT, 'sprites_review.json'), 'w', encoding='utf-8') as f:
         json.dump(sprite_review, f, ensure_ascii=False, indent=1)
     if extra_sprites:
