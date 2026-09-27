@@ -36,7 +36,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 89,Legendary Player,Dracon Yale,GO1,base,Royal Academy,DF,S,Xtreme (balancing),77,87,85,79,95,82,Whirlpool (40) · Criss-Cross (70) · Emperor Penguin 7 (70) · Side Swipe (70),ryuuzaki-ouji--go1--base
 89,Legendary Player,Fei Rune,GO2,Chrono Storm,Chrono Storm,FW,S,Strikers 2013,93,83,83,92,72,83,Bouncing Bunny (15) · Dance on Air (55) · Ozone Flayer (55) · Splitting Hares (70),fei-rune--go2--chrono-storm
 89,Legendary Player,Gamma,GO2,base,Protocol Omega 3.0,FW,S,Xtreme (balancing),90,83,91,91,78,80,Atomic Spin (70) · Format Disk (85) · Omega Assault (85),gamma--go2--base
-89,Legendary Player,Gamma,GO2,Mixi Max (Zanark),Mixi Max,FW,S,Xtreme (balancing),90,83,91,91,78,80,Atomic Spin (70) · Format Disk (85),gamma--go2--mixi-max-zanark
+89,Legendary Player,Gamma,GO2,Mixi Max (Zanark),Mixi Max,FW,S,Xtreme (balancing),90,83,91,91,78,80,Atomic Spin (70) · Format Disk (85) · Omega Assault (85),gamma--go2--mixi-max-zanark
 89,Legendary Player,Jean-Pierre Lapin,GO2,Chrono Storm,Chrono Storm,GK,S,Strikers 2013,72,82,84,83,83,93,Combustion Catch (8) · Jumping Whack (30) · Flapjack Defence (20) · Mugen The Hand (55),nishizono-shinsuke--go2--chrono-storm
 89,Legendary Player,Joseph King,IE2,Royal Academy Redux,Royal Academy Redux,GK,S,Xtreme (balancing),82,82,74,71,90,94,Beast Fang (52) · Power Shield (20) · Full Power Shield (32),genda-koujirou--ie2--royal-academy-redux
 89,Legendary Player,Jude Sharp,GO2,Mixi Max (Caleb) «Juleb»,Mixi Max,MF,A,stats del juego,88,94,77,88,86,83,Illusion Ball (20) · Killer Slide (10) · Inazuma Break (55) · Final Death Zone (85),kidou-yuuto--go2--mixi-max-caleb-juleb
@@ -1350,7 +1350,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 68,Growing Player,Terracotta Warrior 11,GO2,base,The Terracotta Army,FW,B,stats del juego,71,67,70,59,59,65,Accelerator Gears (15) · Transporter Device (15) · Chrysanthemum Katana (85),bingmayong-no-juuichi--go2--base
 68,Growing Player,Terry Pinn,IE2,base,Unaffiliated,GK,C,stats del juego,49,68,68,69,66,69,Warp Space (22) · Majin The Hand (60) · Gigant Wall (30),tortoise--ie2--base
 68,Growing Player,Tetrae Charlong,GO3,base,Unaffiliated,MF,C,stats del juego,64,71,70,67,65,68,Illusion Ball (20) · Sleeping Dust (30) · Holograb (70),tetra--go3--base
-68,Growing Player,Tez Beyan,GO2,Mixi Max (Zanark),Mixi Max,FW,B,stats del juego,71,56,74,68,55,62,Plasma Ball (30) · Double Helix (40),mike--go2--mixi-max-zanark
+68,Growing Player,Tez Beyan,GO2,Mixi Max (Zanark),Mixi Max,FW,B,stats del juego,71,56,74,68,55,62,Gaussian Goal (40) · Plasma Ball (30) · Double Helix (40),mike--go2--mixi-max-zanark
 68,Growing Player,Tom Gato,GO1,base,Raimon Second Squad,DF,B,stats del juego,59,70,63,62,72,59,Hey Presto (30) · Hunter's Net (30) · Whirlwind Force (20),sakisaka-satoru--go1--base
 68,Growing Player,Tytan,IE2,base,Epsilon,DF,B,stats del juego,77,65,78,70,63,74,Gravitation (38) · Earthquake (32) · Heavy Mettle (42) · Planet Shield (50),tanba-taiji--ie2--base
 68,Growing Player,Tytan,IE2,Epsilon Plus,Epsilon Plus,DF,B,stats del juego,77,65,78,70,63,74,Heavy Mettle (42) · Gravitation (38),tanba-taiji--ie2--epsilon-plus
