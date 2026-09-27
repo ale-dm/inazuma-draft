@@ -8,3 +8,4 @@ Wiki del Xtreme: "Kino Aki" sin ficha (Kino Aki)
 Wiki del Xtreme: "Sorano Aoi" sin ficha (Sorano Aoi)
 Jugadores de zukan sin ficha en la wiki (6): Bill Steakspear, Fred Ferrell, Dante Diavolo, Seraph Sharpe, Miriam Sharpe, Josephine
 Personajes sin stats de la saga principal (fuera): 1174
+Equipos sin nombre en castellano (6): añadir a overrides.team_es → Team Sharp, The Aquatic Wings, The Crimson Hounds, The Golden Bears, The Night Vipers, The Snow Weasels

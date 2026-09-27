@@ -262,7 +262,36 @@ def main():
         return out
     cached('form_images.json', form_images)
 
-    log('10/10 Xtreme (balancing doc + wiki)')
+    log('10/11 equipos en castellano (inazuma.fandom.com/es, plantilla Equipo)')
+    def es_teams():
+        titles_, cont = [], {}
+        while True:
+            d = api(WIKI_ES_API, action='query', list='embeddedin', eititle='Plantilla:Equipo', einamespace=0, eilimit=500, **cont)
+            titles_ += [m['title'] for m in d['query']['embeddedin']]
+            if 'continue' not in d:
+                break
+            cont = {'eicontinue': d['continue']['eicontinue']}
+        out = {}
+        for i in range(0, len(titles_), 50):
+            d = api(WIKI_ES_API, action='query', prop='revisions', rvprop='content', rvslots='main', titles='|'.join(titles_[i:i + 50]))
+            for p in d['query']['pages']:
+                if p.get('missing') or not p.get('revisions'):
+                    continue
+                c = p['revisions'][0]['slots']['main']['content']
+                field = lambda k: (re.search(r'\|\s*' + k + r'\s*=(.*?)\n\|', c, re.S) or [None, ''])[1]
+                nombre = field('Nombre')
+                es = re.match(r'\s*([^{<\n]+?)\s*\{\{ES\}\}', nombre)
+                jsec = field('Nombre Japonés')
+                jp = re.findall(r'\|\s*K\s*=\s*([^}|]+)', jsec) + re.findall(r'<br>\s*([^<{\n]+)', jsec)
+                en = re.findall(r'\*?\s*([^*{}\n]+?)\s*\{\{(?:EN|US)\}\}', field('Nombre DOB'))
+                out[p['title']] = {'es': es.group(1).strip() if es else None, 'jp': [j.strip() for j in jp if j.strip()],
+                                   'en': [e.strip() for e in en if e.strip()]}
+            log(f'  equipos ES {min(i + 50, len(titles_))}/{len(titles_)}')
+            time.sleep(0.3)
+        return out
+    cached('es_teams.json', es_teams)
+
+    log('11/11 Xtreme (balancing doc + wiki)')
     cached('xtreme_balancing.txt', lambda: get(BALANCING_DOC).decode('utf-8-sig'))
     def xtreme_wiki():
         d = api(XTREME_API, action='query', list='allpages', aplimit=500)['query']['allpages']

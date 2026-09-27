@@ -1,7 +1,7 @@
 import type { Player } from '../types'
 import { POSITION_STAT_KEYS, displayStatValue, playerRating } from '../lib/power'
 import { useAppSettings } from '../context/AppSettings'
-import { techniqueName } from '../data/catalog'
+import { teamName, techniqueName } from '../data/catalog'
 import PlayerAvatar from './PlayerAvatar'
 
 const POS_CLASS: Record<string, string> = {
@@ -86,7 +86,7 @@ export default function PlayerCard({ player, mode, onClick, onCompare, inCompare
           </span>
         </div>
         <p className={`text-[0.65rem] element-${player.element} mb-1.5 truncate`}>
-          {ELEMENT_LABELS[player.element]} {teamLabel ?? player.team}
+          {ELEMENT_LABELS[player.element]} {teamLabel ?? teamName(player.team, locale)}
         </p>
         {mode === 'classic' && (
           <div className="flex flex-wrap gap-1">

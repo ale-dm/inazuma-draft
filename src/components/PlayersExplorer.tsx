@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import type { Category, Element, GameId, Player, Position } from '../types'
-import { CATEGORIES, ELEMENTS, GAMES, POSITIONS, getAllPlayers } from '../data/catalog'
+import { CATEGORIES, ELEMENTS, GAMES, POSITIONS, getAllPlayers, teamName } from '../data/catalog'
 import { GAME_LABEL } from '../data/games'
 import { useAppSettings } from '../context/AppSettings'
 import PlayerCard from './PlayerCard'
@@ -17,7 +17,7 @@ type Tab = 'search' | 'games'
 type Sort = 'ovr' | 'name'
 
 export default function PlayersExplorer() {
-  const { t } = useAppSettings()
+  const { t, locale } = useAppSettings()
   const all = getAllPlayers()
   const [tab, setTab] = useState<Tab>('search')
   const [detail, setDetail] = useState<Player | null>(null)
@@ -51,7 +51,7 @@ export default function PlayersExplorer() {
 }
 
 function SearchView({ players, onOpen }: { players: Player[]; onOpen: (p: Player) => void }) {
-  const { t } = useAppSettings()
+  const { t, locale } = useAppSettings()
   const [query, setQuery] = useState('')
   const [pos, setPos] = useState<Position | ''>('')
   const [cat, setCat] = useState<Category | ''>('')
@@ -64,13 +64,13 @@ function SearchView({ players, onOpen }: { players: Player[]; onOpen: (p: Player
 
   const teams = useMemo(() => {
     const set = new Set(players.filter(p => !game || p.game === game).map(p => p.team))
-    return [...set].sort((a, b) => a.localeCompare(b))
-  }, [players, game])
+    return [...set].sort((a, b) => teamName(a, locale).localeCompare(teamName(b, locale)))
+  }, [players, game, locale])
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase()
     const list = players.filter(p =>
-      (!q || p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q)) &&
+      (!q || p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q) || teamName(p.team, locale).toLowerCase().includes(q)) &&
       (!pos || p.position === pos) && (!cat || p.category === cat) && (!game || p.game === game) &&
       (!element || p.element === element) && (!team || p.team === team) && p.ovr >= minOvr)
     return sort === 'ovr'
@@ -100,7 +100,7 @@ function SearchView({ players, onOpen }: { players: Player[]; onOpen: (p: Player
           <Select label={t('players.filter.element')} value={element} onChange={onFilter(setElement)}
             options={ELEMENTS.map(e => [e, t(`element.${e}`)])} />
           <Select label={t('players.filter.team')} value={team} onChange={onFilter(setTeam)}
-            options={teams.map(tm => [tm, tm])} />
+            options={teams.map(tm => [tm, teamName(tm, locale)])} />
           <label>
             <span className="iz-label">{t('players.filter.minOvr')} · <strong className="tabular-nums">{minOvr}</strong></span>
             <input type="range" min={40} max={94} value={minOvr} className="w-full accent-[var(--iz-orange)]"
@@ -139,7 +139,7 @@ function SearchView({ players, onOpen }: { players: Player[]; onOpen: (p: Player
 }
 
 function GamesView({ players, onOpen }: { players: Player[]; onOpen: (p: Player) => void }) {
-  const { t } = useAppSettings()
+  const { t, locale } = useAppSettings()
   const [game, setGame] = useState<GameId | null>(null)
   const [team, setTeam] = useState<string | null>(null)
 
@@ -173,7 +173,7 @@ function GamesView({ players, onOpen }: { players: Player[]; onOpen: (p: Player)
     return entry ? [...entry.list].sort((a, b) => POS_ORDER[a.position] - POS_ORDER[b.position] || b.ovr - a.ovr) : []
   }, [teams, team])
 
-  const teamName = (name: string) => (name === SCOUTS ? t('players.scouts') : name)
+  const teamTitle = (name: string) => (name === SCOUTS ? t('players.scouts') : teamName(name, locale))
 
   return (
     <>
@@ -191,7 +191,7 @@ function GamesView({ players, onOpen }: { players: Player[]; onOpen: (p: Player)
         </>}
         {team && <>
           <span className="text-iz-muted">›</span>
-          <span className="font-heading font-bold text-iz-heading">{teamName(team)}</span>
+          <span className="font-heading font-bold text-iz-heading">{teamTitle(team)}</span>
         </>}
       </nav>
 
@@ -219,7 +219,7 @@ function GamesView({ players, onOpen }: { players: Player[]; onOpen: (p: Player)
             <button key={tm.name} type="button" className="team-tile flex items-center gap-3" onClick={() => setTeam(tm.name)}>
               <PlayerAvatar player={tm.best} size="sm" variant="zukan" />
               <div className="min-w-0 flex-1">
-                <div className="font-heading font-bold text-iz-heading truncate">{teamName(tm.name)}</div>
+                <div className="font-heading font-bold text-iz-heading truncate">{teamTitle(tm.name)}</div>
                 <div className="text-[0.7rem] text-iz-muted">
                   {t('players.results', { n: tm.list.length })} · {t('players.avgOvr')} <strong className="tabular-nums text-iz-text">{tm.avg}</strong>
                 </div>
@@ -246,12 +246,13 @@ function GamesView({ players, onOpen }: { players: Player[]; onOpen: (p: Player)
 }
 
 function PlayerGrid({ players, onOpen }: { players: Player[]; onOpen: (p: Player) => void }) {
+  const { locale } = useAppSettings()
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2.5">
       {players.map(p => (
         <div key={p.id} className="relative">
           <PlayerCard player={p} mode="classic" onClick={() => onOpen(p)}
-            teamLabel={`${p.team}${p.version !== 'base' && p.version !== p.team ? ` · ${p.version}` : ''} · ${p.game}`} />
+            teamLabel={`${teamName(p.team, locale)}${p.version !== 'base' && p.version !== p.team ? ` · ${teamName(p.version, locale)}` : ''} · ${p.game}`} />
           <span className={`cat-pill ${CATEGORY_CLASS[p.category]} absolute bottom-2 right-2`}>{p.category.replace(' Player', '')}</span>
         </div>
       ))}
@@ -262,7 +263,7 @@ function PlayerGrid({ players, onOpen }: { players: Player[]; onOpen: (p: Player
 function Select<T extends string>({ label, value, onChange, options }: {
   label: string; value: T | ''; onChange: (v: T | '') => void; options: [T, string][]
 }) {
-  const { t } = useAppSettings()
+  const { t, locale } = useAppSettings()
   return (
     <label>
       <span className="iz-label">{label}</span>

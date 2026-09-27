@@ -46,6 +46,11 @@ create index if not exists cards_character_idx on public.cards(character_id);
 create index if not exists cards_ovr_idx on public.cards(ovr desc);
 create index if not exists cards_game_pos_idx on public.cards(game, position);
 
+create table if not exists public.teams (
+  name        text primary key,              -- nombre del equipo en las cartas (inglés)
+  name_es     text                           -- nombre en castellano (inazuma.fandom.com/es)
+);
+
 create table if not exists public.card_techniques (
   card_id      text not null references public.cards(id) on delete cascade,
   technique_id text not null references public.techniques(id) on delete cascade,
@@ -57,7 +62,7 @@ create table if not exists public.card_techniques (
 do $$
 declare t text;
 begin
-  foreach t in array array['characters','techniques','cards','card_techniques'] loop
+  foreach t in array array['characters','techniques','cards','card_techniques','teams'] loop
     execute format('alter table public.%I enable row level security', t);
     execute format('drop policy if exists "public read" on public.%I', t);
     execute format('create policy "public read" on public.%I for select using (true)', t);

@@ -4,6 +4,7 @@ import { localizeCountry, rollTournamentField } from '../data/ffi-teams'
 import { ffiKnockoutPairings } from '../data/ffi-tournament'
 import { simulateMatch, simulateGroupStage, simulateRemainingGroupMatches, matchWinner } from '../engine/sim'
 import { useAppSettings } from '../context/AppSettings'
+import { teamLabel } from '../data/catalog'
 import { playSfx } from '../lib/sfx'
 import type { TournamentOutcome } from '../lib/local-stats'
 import MatchView from './MatchView'
@@ -202,7 +203,7 @@ export default function Tournament({ playerTeam, onEnd }: Props) {
               <div className="iz-panel">
                 <div className="iz-panel-body text-center">
                 <p className="text-iz-text mb-2 font-heading text-lg">
-                  {t('tournament.vs', { home: PLAYER_NAME, away: playerOpponents[matchIdx].name })}
+                  {t('tournament.vs', { home: teamLabel(PLAYER_NAME, locale), away: teamLabel(playerOpponents[matchIdx].name, locale) })}
                 </p>
                 <p className="text-iz-muted text-sm mb-6">
                   {playerOpponents[matchIdx].flag} {localizeCountry(playerOpponents[matchIdx].country, locale)}
@@ -296,13 +297,14 @@ export default function Tournament({ playerTeam, onEnd }: Props) {
 }
 
 function TeamList({ title, teams, highlight }: { title: string; teams: string[]; highlight?: string }) {
+  const { locale } = useAppSettings()
   return (
     <div className="iz-panel text-left">
       <div className="iz-panel-head !text-[0.65rem]">{title}</div>
       <div className="iz-panel-body !py-2 !px-3">
       <ul className="text-xs space-y-1">
         {teams.map(team => (
-          <li key={team} className={team === highlight ? 'text-accent font-bold' : 'text-iz-text'}>{team}</li>
+          <li key={team} className={team === highlight ? 'text-accent font-bold' : 'text-iz-text'}>{teamLabel(team, locale)}</li>
         ))}
       </ul>
       </div>
@@ -321,7 +323,7 @@ function StandingsTable({
   highlight?: string
   className?: string
 }) {
-  const { t } = useAppSettings()
+  const { t, locale } = useAppSettings()
 
   return (
     <div className={`card p-3 text-left ${className}`}>
@@ -339,7 +341,7 @@ function StandingsTable({
           {standings.map((s, i) => (
             <tr key={s.teamName} className={s.teamName === highlight ? 'text-accent font-bold' : 'text-iz-text'}>
               <td className="py-1">{i + 1}</td>
-              <td>{s.teamName}</td>
+              <td>{teamLabel(s.teamName, locale)}</td>
               <td className="text-center">{s.points}</td>
               <td className="text-center">{s.gf - s.ga}</td>
             </tr>

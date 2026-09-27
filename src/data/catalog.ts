@@ -52,7 +52,13 @@ interface TechniqueRow {
   cost_game: string | null
 }
 
+interface TeamRow {
+  name: string
+  name_es: string | null
+}
+
 let players: Player[] = []
+let teamsEs = new Map<string, string>()
 let techniquesById = new Map<string, Technique>()
 let byId = new Map<string, Player>()
 let pools: DraftPool[] = []
@@ -78,6 +84,9 @@ export async function loadCatalog(): Promise<void> {
   }]))
 
   techniquesById = techById
+  // la tabla de equipos es opcional: sin ella se muestran los nombres en inglés
+  const teams = await rest<TeamRow[]>('teams?select=*').catch(() => [] as TeamRow[])
+  teamsEs = new Map(teams.filter(t => t.name_es).map(t => [t.name, t.name_es as string]))
   const rows: CardRow[] = []
   for (let offset = 0; ; offset += PAGE) {
     const page = await rest<CardRow[]>(`cards?select=${CARD_COLUMNS}&order=id&limit=${PAGE}&offset=${offset}`)
@@ -132,6 +141,24 @@ export function getTechnique(id: string): Technique | undefined {
 /** Nombre de la técnica en el idioma de la interfaz (castellano si existe) */
 export function techniqueName(t: Technique, locale: string): string {
   return locale === 'es' && t.nameEs ? t.nameEs : t.name
+}
+
+/** Nombre del equipo en el idioma de la interfaz (castellano si existe) */
+export function teamName(team: string, locale: string): string {
+  return (locale === 'es' && teamsEs.get(team)) || team
+}
+
+/**
+ * Traduce una etiqueta que contiene un equipo: "Dark Emperors", "Dark Emperors (Inazuma Eleven 2)"
+ * o "🇯🇵 Dark Emperors (…)". Lo que no sea un equipo conocido se deja igual.
+ */
+export function teamLabel(label: string, locale: string): string {
+  if (locale !== 'es') return label
+  const [, head, suffix = ''] = label.match(/^(.*?)( \([^()]*\))?$/u) ?? [label, label]
+  if (teamsEs.has(head)) return teamsEs.get(head) + suffix
+  const sp = head.indexOf(' ')                                   // prefijo de bandera: "🇯🇵 Equipo"
+  if (sp > 0 && teamsEs.has(head.slice(sp + 1))) return head.slice(0, sp + 1) + teamsEs.get(head.slice(sp + 1)) + suffix
+  return label
 }
 
 export function getAllPlayers(): Player[] {

@@ -1,6 +1,7 @@
 import type { Player } from '../types'
 import { POSITION_STAT_KEYS, displayStatValue, playerRating } from '../lib/power'
 import { useAppSettings } from '../context/AppSettings'
+import { teamName } from '../data/catalog'
 import PlayerAvatar from './PlayerAvatar'
 
 interface Props {
@@ -11,7 +12,7 @@ interface Props {
 }
 
 export default function PlayerComparator({ a, b, mode, onClear }: Props) {
-  const { t } = useAppSettings()
+  const { t, locale } = useAppSettings()
   const statKeys = POSITION_STAT_KEYS[a.position]
 
   return (
@@ -28,7 +29,7 @@ export default function PlayerComparator({ a, b, mode, onClear }: Props) {
             <PlayerAvatar player={player} size="md" variant="zukan" showRating={mode === 'classic' ? playerRating(player) : undefined} />
             <div className="text-center w-full min-w-0">
               <p className="font-heading font-bold text-sm text-iz-heading truncate">{player.name}</p>
-              <p className="text-[0.65rem] text-iz-muted truncate">{player.position} · {player.team}</p>
+              <p className="text-[0.65rem] text-iz-muted truncate">{player.position} · {teamName(player.team, locale)}</p>
             </div>
           </div>
         ))}

@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import type { DraftPool, Player } from '../types'
-import { displayPoolLabel, draftPoolKey, getDraftPools, getTeamRoster, isPlayerInPoolRoster } from '../data/catalog'
+import { displayPoolLabel, draftPoolKey, getDraftPools, getTeamRoster, isPlayerInPoolRoster, teamLabel } from '../data/catalog'
 import {
   autoPlacePlayer,
   compatibleEmptySlots,
@@ -33,7 +33,7 @@ interface Props {
 }
 
 export default function Draft({ mode, seed, onCopySeed, onComplete }: Props) {
-  const { t } = useAppSettings()
+  const { t, locale } = useAppSettings()
   const [round, setRound] = useState(1)
   const [drafted, setDrafted] = useState<Player[]>([])
   const [lineup, setLineup] = useState<LineupMap>({})
@@ -112,7 +112,7 @@ export default function Draft({ mode, seed, onCopySeed, onComplete }: Props) {
       return false
     }
     if (!isPlayerInPoolRoster(player, rolledPool) || !rolledRoster.some(p => p.id === player.id)) {
-      setError(t('draft.err.notInRoster', { name: player.name, team: displayPoolLabel(rolledPool) }))
+      setError(t('draft.err.notInRoster', { name: player.name, team: teamLabel(displayPoolLabel(rolledPool), locale) }))
       return false
     }
     return true
@@ -236,7 +236,7 @@ export default function Draft({ mode, seed, onCopySeed, onComplete }: Props) {
             {rolledPool && !rolling && (
               <div className="animate-slide-up flex flex-col flex-1">
                 <div className="iz-panel-head text-center !text-base !tracking-wide">
-                  {displayPoolLabel(rolledPool)}
+                  {teamLabel(displayPoolLabel(rolledPool), locale)}
                 </div>
                 <div className="px-4 py-2 text-center text-xs text-iz-muted border-b divider-iz">
                   {t('draft.pool', { left: pool.length, total: rolledRoster.length })}
@@ -274,7 +274,7 @@ export default function Draft({ mode, seed, onCopySeed, onComplete }: Props) {
                                 key={p.id}
                                 player={p}
                                 mode={mode}
-                                teamLabel={displayPoolLabel(rolledPool)}
+                                teamLabel={teamLabel(displayPoolLabel(rolledPool), locale)}
                                 onClick={canPick ? () => pick(p) : undefined}
                                 onCompare={() => toggleCompare(p)}
                                 inCompare={compare.some(c => c.id === p.id)}
