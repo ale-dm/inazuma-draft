@@ -28,6 +28,9 @@ export interface Technique {
   name: string
   /** Nombre en castellano (inazuma.fandom.com/es), si se conoce */
   nameEs: string | null
+  /** Nombres del doblaje francés e italiano (wikis fr/it), si se conocen */
+  nameFr?: string | null
+  nameIt?: string | null
   type: 'Shoot' | 'Dribble' | 'Block' | 'Catch'
   element: Element | null
   /** Coste mostrado (Galaxy si existe) */
@@ -75,11 +78,15 @@ export interface Special {
   type: 'keshin' | 'soul' | 'mixi'
   name: string | null
   name_es?: string | null
+  name_fr?: string | null
+  name_it?: string | null
   /** El Keshin puede usar Keshin Armed (armadura) */
   armed?: boolean
   /** Hipertécnica del espíritu guerrero */
   hyper?: string | null
   hyper_es?: string | null
+  hyper_fr?: string | null
+  hyper_it?: string | null
 }
 
 export type StaffRole = 'Manager' | 'Coach' | 'Coordinator'

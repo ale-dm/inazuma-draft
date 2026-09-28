@@ -33,10 +33,10 @@ const TeamShareCard = forwardRef<HTMLDivElement, Props>(function TeamShareCard(
         <span>FFI 6-0 · Inazuma Draft</span>
         {won && <span>🏆</span>}
       </div>
-      <h2 className="team-share-card__title text-inazuma">INAZUMA JAPAN</h2>
+      <h2 className="team-share-card__title text-inazuma">{t('draft.team').toUpperCase()}</h2>
       <p className="team-share-card__meta">
         {t(formation.nameKey)} ({formation.layout})
-        {power != null && <> · Power <strong>{power}</strong></>}
+        {power != null && <> · {t('lineup.power')} <strong>{power}</strong></>}
       </p>
       <div className="team-share-card__grid">
         {ordered.map(p => (

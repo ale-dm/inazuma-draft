@@ -64,7 +64,7 @@ export default function PlayerCard({ player, mode, onClick, onCompare, inCompare
         <span
           role="button"
           tabIndex={0}
-          aria-label="Compare"
+          aria-label={t('compare.pin')}
           onClick={e => { e.stopPropagation(); onCompare() }}
           onKeyDown={e => { if (e.key === 'Enter') { e.stopPropagation(); onCompare() } }}
           className={`compare-pin-btn ${inCompare ? 'compare-pin-btn--on' : ''}`}

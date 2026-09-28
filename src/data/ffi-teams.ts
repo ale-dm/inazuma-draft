@@ -29,21 +29,21 @@ const META: Partial<Record<DraftPoolKey, { country: string; flag: string }>> = {
   'IE2:Epsilon': { country: 'Japon', flag: '🇯🇵' },
 }
 
-const COUNTRY_I18N: Record<string, { en: string; es: string }> = {
-  Allemagne: { en: 'Germany', es: 'Alemania' },
-  Argentine: { en: 'Argentina', es: 'Argentina' },
-  Brésil: { en: 'Brazil', es: 'Brasil' },
-  Espagne: { en: 'Spain', es: 'España' },
-  France: { en: 'France', es: 'Francia' },
-  Grèce: { en: 'Greece', es: 'Grecia' },
-  Italie: { en: 'Italy', es: 'Italia' },
-  Japon: { en: 'Japan', es: 'Japón' },
-  Suisse: { en: 'Switzerland', es: 'Suiza' },
-  USA: { en: 'USA', es: 'EE. UU.' },
+const COUNTRY_I18N: Record<string, { en: string; es: string; it: string }> = {
+  Allemagne: { en: 'Germany', es: 'Alemania', it: 'Germania' },
+  Argentine: { en: 'Argentina', es: 'Argentina', it: 'Argentina' },
+  Brésil: { en: 'Brazil', es: 'Brasil', it: 'Brasile' },
+  Espagne: { en: 'Spain', es: 'España', it: 'Spagna' },
+  France: { en: 'France', es: 'Francia', it: 'Francia' },
+  Grèce: { en: 'Greece', es: 'Grecia', it: 'Grecia' },
+  Italie: { en: 'Italy', es: 'Italia', it: 'Italia' },
+  Japon: { en: 'Japan', es: 'Japón', it: 'Giappone' },
+  Suisse: { en: 'Switzerland', es: 'Suiza', it: 'Svizzera' },
+  USA: { en: 'USA', es: 'EE. UU.', it: 'USA' },
 }
 
 /** Nom de pays affiché selon la langue (les clés META sont en français) */
-export function localizeCountry(country: string, locale: 'fr' | 'en' | 'es'): string {
+export function localizeCountry(country: string, locale: 'en' | 'es' | 'fr' | 'it'): string {
   if (locale === 'fr') return country
   return COUNTRY_I18N[country]?.[locale] ?? country
 }

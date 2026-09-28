@@ -46,6 +46,8 @@ create table if not exists public.cards (
   is_version   boolean not null default false -- true = versión extra (Strikers / protagonistas GO)
 );
 alter table public.techniques add column if not exists name_es text;
+alter table public.techniques add column if not exists name_fr text;   -- doblaje francés (wikis es/fr)
+alter table public.techniques add column if not exists name_it text;   -- doblaje italiano (wikis es/it)
 alter table public.characters add column if not exists zukan_no int;
 alter table public.cards add column if not exists zukan_no int;
 alter table public.cards add column if not exists description text;
@@ -62,6 +64,8 @@ create table if not exists public.teams (
   name        text primary key,              -- nombre del equipo en las cartas (inglés)
   name_es     text                           -- nombre en castellano (inazuma.fandom.com/es)
 );
+alter table public.teams add column if not exists name_fr text;        -- doblaje francés
+alter table public.teams add column if not exists name_it text;        -- doblaje italiano
 
 create table if not exists public.staff (      -- cuerpo técnico (zukan), de momento sin stats
   zukan_no     int primary key,              -- nº oficial en zukan.inazuma.jp

@@ -351,7 +351,7 @@ def main(extra_z=None, write=True):
             hk = re.search(r'\n\t\thissatsu="(\w+)"', kd)                     # hipertécnica del espíritu guerrero
             ht = technique_any(hk.group(1)) if hk else None
             out.append({'type': 'keshin', 'name': en or page, 'name_es': es, 'armed': armed,
-                        'hyper': ht and ht['name'], 'hyper_es': ht and ht.get('name_es')})
+                        'hyper': ht and ht['name'], 'hyper_es': ht and ht.get('name_es'), 'hyper_jp': ht and ht.get('name_jp')})
         for key, _ in lua_game_list(body, 'soul', MODULE[game]):
             sd = soul_data.get(key, '')
             page = (re.search(r'page="([^"]+)"', sd) or [None, key])[1]
@@ -669,7 +669,7 @@ def main(extra_z=None, write=True):
         dub = re.sub(r'\{\{[^}]*\}\}|\[\[(?:[^|\]]*\|)?([^\]]*)\]\]', lambda m: m.group(1) or '', (inf.get('name_dub') or '').replace('{{PAGENAME}}', page))
         dub = re.split(r'\*|<br', dub.lstrip('*'))[0].strip() or re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', mid)
         name_es = es_by_jp.get(norm_jp(inf.get('name_jp'))) or es_by_en.get(dub.lower())
-        return {'name': dub, 'name_es': name_es}
+        return {'name': dub, 'name_es': name_es, 'name_jp': inf.get('name_jp')}
 
     def rank_cost(t, g):
         return next((t['_inf'][k] for k in RANK_COST[g[:2]] if k in t['_inf']), 0)
@@ -1492,7 +1492,8 @@ def main(extra_z=None, write=True):
             hk = re.search(r'\n\t\thissatsu="(\w+)"', kd)
             ht = technique_any(hk.group(1)) if hk else None
             sp.append({'type': 'keshin', 'name': en or kpage, 'name_es': es or special_es.get(en or kpage), 'armed': False,
-                       'hyper': ht and ht['name'], 'hyper_es': ht and (ht.get('name_es') or special_es.get(ht['name']))})
+                       'hyper': ht and ht['name'], 'hyper_es': ht and (ht.get('name_es') or special_es.get(ht['name'])),
+                       'hyper_jp': ht and ht.get('name_jp')})
         if outsider:
             sp.append({'type': 'mixi', 'name': 'Zanark' if c['character_id'] != 'zanark-avalonic' else 'Zanark (futuro)'})
         c['specials'] = sp
@@ -1514,6 +1515,71 @@ def main(extra_z=None, write=True):
                    'element': ELEMENT.get(z['element']), 'position': z['position'], 'teams': z['teams'], 'games': z['games'],
                    'description': (zdesc.get(str(z['no'])) or {}).get('desc'), 'vr_lv50': (zdesc.get(str(z['no'])) or {}).get('vr_lv50'),
                    'wiki_page': page_of(z)} for z in zukan if z.get('no')]
+    # --- nombres en francés e italiano: doblaje de la ficha española ("Nombre DOB") o, si no, las wikis fr/it (fichas por nombre
+    # japonés o rōmaji). Lo que no se encuentre se queda en inglés en la app.
+    fr_wiki, it_wiki = load_opt('fr_wiki.json', {}), load_opt('it_wiki.json', {})
+    def wiki_idx(w, tpls, key):
+        idx = {}
+        for tpl in tpls:
+            for title, v in sorted(w.get(tpl, {}).items(), key=lambda kv: '(' in kv[0]):   # fichas principales primero
+                for j in v['jp']:
+                    k = key(j)
+                    if k:
+                        idx.setdefault(k, re.sub(r'\s*\([^)]*\)$', '', v['name']))     # "Tir en Spirale (Jeu)" → "Tir en Spirale"
+        return idx
+    lat = lambda j: romaji(j) if re.search(r'[A-Za-z]', j) else None
+    tech_idx = {'fr': wiki_idx(fr_wiki, ['Supertechnique'], norm_jp), 'it': wiki_idx(it_wiki, ['Tecnica', 'Tecniche'], norm_jp)}
+    kesh_idx = {'fr': wiki_idx(fr_wiki, ['Esprit Guerrier'], lat), 'it': wiki_idx(it_wiki, ['Spirito Guerriero', 'Avatar'], lat)}
+    team_idx = {'fr': {**wiki_idx(fr_wiki, ['Equipe'], lambda j: tnorm(j) or None), **wiki_idx(fr_wiki, ['Equipe'], norm_jp)},
+                'it': {**wiki_idx(it_wiki, ['Squadra'], lambda j: tnorm(j) or None), **wiki_idx(it_wiki, ['Squadra'], norm_jp)}}
+    es_tech_dub = {}
+    for title, d in {**load_opt('es_hyper.json', {}), **load('es_techniques.json')}.items():
+        es_tech_dub.setdefault(re.sub(r'\s*\([^)]*\)$', '', title).strip(), d)
+    es_kesh_raw = {re.sub(r'\s*\(Tótem\)$', '', t): d for t, d in {**load_opt('es_souls.json', {}), **load_opt('es_keshin.json', {})}.items()}
+    es_team_raw = {}
+    for title, d in sorted(load('es_teams.json').items(), key=lambda kv: '(' in kv[0]):
+        for k in d['en'] + d['jp'] + [title]:
+            if k != '/' and tnorm(k):
+                es_team_raw.setdefault(tnorm(k), d)
+    first = lambda xs: (xs or [None])[0]
+    manual_i18n = {k: v for k, v in ov.get('names_i18n', {}).items() if not k.startswith('_')}   # a mano: {"inglés": {"fr":…, "it":…}}
+
+    def tech_local(en, es, jp):
+        d, k = es_tech_dub.get(es) or {}, norm_jp(jp)
+        return {lg: (manual_i18n.get(en) or {}).get(lg) or first(d.get(lg)) or (k and tech_idx[lg].get(k)) or None for lg in ('fr', 'it')}
+
+    def spirit_local(en, es):
+        d = es_kesh_raw.get(es) or {}
+        keys = [romaji(x) for x in [en] + d.get('jp', [])[:1] + d.get('en', []) if x]   # solo el 1.º: hay fichas con el de otro
+        return {lg: (manual_i18n.get(en) or {}).get(lg) or first(d.get(lg)) or next((kesh_idx[lg][k] for k in keys if k in kesh_idx[lg]), None)
+                for lg in ('fr', 'it')}
+
+    def team_local(tm):
+        d = es_team_raw.get(tnorm(tm)) or {}
+        keys = [tnorm(tm)] + [x for j in d.get('jp', []) + d.get('en', []) for x in (tnorm(j), norm_jp(j)) if x]
+        return {lg: (manual_i18n.get(tm) or {}).get(lg) or first(d.get(lg)) or next((team_idx[lg][k] for k in keys if k in team_idx[lg]), None)
+                for lg in ('fr', 'it')}
+
+    for t_ in techniques.values():
+        if t_:
+            loc = tech_local(t_['name'], t_.get('name_es'), t_.get('name_jp'))
+            t_['name_fr'], t_['name_it'] = loc['fr'], loc['it']
+    for c in cards:
+        for sp in c.get('specials') or []:
+            if sp['type'] in ('keshin', 'soul'):
+                loc = spirit_local(sp['name'], sp.get('name_es'))
+                sp['name_fr'], sp['name_it'] = loc['fr'], loc['it']
+            if sp.get('hyper'):
+                loc = tech_local(sp['hyper'], sp.get('hyper_es'), sp.get('hyper_jp'))
+                sp['hyper_fr'], sp['hyper_it'] = loc['fr'], loc['it']
+            sp.pop('hyper_jp', None)
+    for tm in teams:
+        loc = team_local(tm['name'])
+        tm['name_fr'], tm['name_it'] = loc['fr'], loc['it']
+    for lg in ('fr', 'it'):
+        n_t = sum(1 for t_ in techniques.values() if t_ and t_.get('name_' + lg))
+        n_e = sum(1 for tm in teams if tm.get('name_' + lg))
+        report.append(f'Nombres {lg}: técnicas {n_t}/{sum(1 for t_ in techniques.values() if t_)} · equipos {n_e}/{len(teams)}')
     if write:
         write_outputs(cards, chars_out, techniques, teams, staff, zukan_rows, report)
     return uncovered
@@ -1580,9 +1646,9 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
             'truncate public.card_techniques, public.cards, public.techniques, public.characters, public.teams, public.staff, public.zukan;',
             insert('zukan', ['no', 'image_id', 'name', 'name_ja', 'role', 'age', 'element', 'position', 'teams', 'games', 'description', 'vr_lv50', 'wiki_page'], zukan_rows),
             insert('staff', ['zukan_no', 'name', 'role', 'team', 'teams', 'games', 'age', 'element', 'image_url', 'description', 'wiki_page'], staff),
-            insert('teams', ['name', 'name_es'], teams),
+            insert('teams', ['name', 'name_es', 'name_fr', 'name_it'], teams),
             insert('characters', ['id', 'name', 'wiki_page', 'zukan_no'], [{**c} for c in chars]),
-            insert('techniques', ['id', 'name', 'name_es', 'name_jp', 'type', 'element', 'cost', 'cost_game', 'costs',
+            insert('techniques', ['id', 'name', 'name_es', 'name_fr', 'name_it', 'name_jp', 'type', 'element', 'cost', 'cost_game', 'costs',
                                   'description', 'image_url', 'zukan_types'], techs),
             insert('cards', card_cols, public),
             insert('card_techniques', ['card_id', 'technique_id', 'slot'], links),
