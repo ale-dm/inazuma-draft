@@ -183,12 +183,6 @@
     repeating-linear-gradient(180deg, rgba(40, 160, 90, .30) 0 10%, rgba(30, 130, 75, .30) 10% 20%);
   border: 1px solid rgba(255, 255, 255, .15);
 }
-.fd-lines { position: absolute; inset: 0; width: 100%; height: 100%; }
-.fd-line { stroke-width: 3; vector-effect: non-scaling-stroke; stroke-linecap: round; }
-.fd-line--none { stroke: rgba(255, 255, 255, .12); stroke-dasharray: 4 5; }
-.fd-line--red { stroke: #ff4d4d; }
-.fd-line--yellow { stroke: #ffd23d; }
-.fd-line--green { stroke: #3dff8a; filter: drop-shadow(0 0 3px rgba(61, 255, 138, .7)); }
 .fd-slot { position: absolute; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; z-index: 1; }
 .fd-empty {
   width: 3.4rem; aspect-ratio: 5 / 7; display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -197,15 +191,6 @@
   animation: fd-pulse 1.6s ease-in-out infinite;
 }
 .fd-empty small { font-size: .7rem; letter-spacing: .06em; }
-.fd-chem { margin-top: -2px; padding: 0 .35rem; border-radius: 99px; font-size: .6rem; line-height: 1.2rem; background: rgba(0, 0, 0, .7); white-space: nowrap; }
-.fd-chem { display: inline-flex; align-items: center; gap: 2px; }
-.fd-chem b { color: #ffe566; margin-right: .2rem; }
-.fd-chem i { width: 5px; height: 5px; border-radius: 99px; background: rgba(255, 255, 255, .25); }
-.fd-chem i.on { background: currentColor; }
-.fd-chem--0 { color: #ff4d4d; }
-.fd-chem--1 { color: #ffb03d; }
-.fd-chem--2 { color: #ffd23d; }
-.fd-chem--3 { color: #3dff8a; }
 .fd-cta { margin-top: .5rem; }
 .fd-bench { display: grid; grid-template-columns: repeat(5, 1fr); gap: .3rem; justify-items: center; padding: .6rem .3rem; border-radius: 16px; background: rgba(0, 0, 0, .3); border: 1px solid rgba(255, 255, 255, .1); }
 .fd-bench__spot { display: flex; justify-content: center; }
@@ -424,3 +409,33 @@ button.ic:active { transform: scale(.95); }
 .reward-inline { display: inline-flex; align-items: center; gap: .3rem; }
 .hub-icon-btn svg { display: block; }
 .sheet-choice b svg { display: block; }
+
+/* ---------------------------------------------------------------- química (estilo MADFUT/FC actual) */
+.slot-tag {
+  display: inline-flex; align-items: center; gap: .25rem; margin-top: 2px; padding: .05rem .35rem; border-radius: 6px;
+  font-size: .62rem; font-weight: 800; letter-spacing: .03em; color: #bfefff; background: rgba(4, 16, 28, .85); border: 1px solid rgba(61, 242, 255, .35);
+}
+.slot-tag b { color: #ffe566; }
+.chem-dots { display: inline-flex; gap: 2px; transform: rotate(45deg); }
+.chem-dots i { width: 5px; height: 5px; background: rgba(255, 255, 255, .18); }
+.chem-dots i.on { background: var(--hub-cyan); box-shadow: 0 0 4px var(--hub-cyan); }
+.fd-stat--btn { color: inherit; }
+.fd-stat--btn em { font-style: normal; font-size: .7em; opacity: .6; }
+.fd-stat--btn small { display: inline-flex; align-items: center; gap: .15rem; }
+.fd-empty { font-size: 1.8rem; }
+
+.chem-help { margin-bottom: 1.1rem; }
+.chem-help__head {
+  display: flex; align-items: center; justify-content: center; gap: .6rem; margin-bottom: .6rem;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-style: italic; font-size: 1.4rem; text-transform: uppercase;
+}
+.chem-help__head::before, .chem-help__head::after { content: ''; flex: 1; height: 1px; background: rgba(143, 179, 201, .35); }
+.chem-help__els { display: inline-flex; gap: 2px; }
+.chem-help__els img { width: 1.2rem; height: 1.2rem; }
+.chem-help__row { display: grid; grid-template-columns: 1fr auto; margin-bottom: .4rem; border-radius: 12px; overflow: hidden; background: rgba(255, 255, 255, .05); }
+.chem-help__who { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .25rem; padding: .55rem .6rem; font-size: .8rem; font-weight: 700; text-transform: uppercase; text-align: center; }
+.chem-help__who b { font-size: 1.2rem; font-style: italic; margin-right: .2rem; }
+.chem-help__people { display: flex; gap: 1px; color: #3aa0ff; }
+.chem-help__pts { display: flex; align-items: center; gap: .6rem; padding: 0 .9rem; background: rgba(255, 255, 255, .06); }
+.chem-help__pts b { font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; font-style: italic; }
+.chem-help__pts .chem-dots i { width: 8px; height: 8px; }

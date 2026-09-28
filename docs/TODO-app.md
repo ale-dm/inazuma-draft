@@ -17,7 +17,8 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] Textos en inglés, español, francés e italiano
 
 ## Fase 2 · Draft MADFUT
-- [x] Química: enlaces entre puestos vecinos; verde (2 coincidencias de equipo / juego / elemento), amarillo (1), rojo (0)
+- [x] Química nueva (estilo FC actual): mismo juego 4/6/8, misma afinidad 4/7/10, mismo equipo 2/4/7 → +1/+2/+3; 0–3 por jugador, 33 el equipo; capitán doble; ventana "Cómo funciona la química"
+- [x] ~~Química por enlaces entre vecinos~~ (sustituida)
 - [x] Química por jugador (0–3), del equipo (0–100) y bonus de capitán
 - [x] Media del equipo (fórmula FUT)
 - [x] Elegir formación (1 de 5) y capitán (1 de 5)
@@ -32,7 +33,7 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 
 ## Arreglos y revisiones
 - [x] Imágenes de la wiki (Fandom) bloqueadas por el Referer → `<meta name="referrer" content="no-referrer">`
-- [ ] Llevar ese arreglo también a `main` (la web actual tiene ~85 imágenes de la wiki rotas por lo mismo)
+- [x] Llevar ese arreglo también a `main` (PR #53)
 - [x] Revisar las cartas con iniciales: las 6.074 URL de imagen responden bien (eran fotos aún cargando en el navegador de pruebas)
 
 ## Fase 3 · Economía local

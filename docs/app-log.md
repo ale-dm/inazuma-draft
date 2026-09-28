@@ -109,3 +109,21 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
   - La química de cada jugador en el campo: 3 puntos en vez de ◆.
   - Banderas de países del torneo fuera (eran emojis; en Windows salen como letras).
 - Las flechas → de los botones se quedan: son tipografía, no emojis.
+
+## 2026-09-28 (tarde)
+
+### Arreglo de imágenes en `main`
+- PR #53 (fusionado): `<meta name="referrer" content="no-referrer">` en la web actual; ~85 imágenes de Fandom volvían 404.
+
+### Química nueva (estilo MADFUT/FC actual)
+- Se sustituye la química de enlaces entre vecinos (antigua) por la de ahora: cada jugador suma puntos según cuántos del
+  once comparten algo con él, sin líneas. Adaptación a Inazuma:
+  - liga → **mismo juego** (4 → +1 · 6 → +2 · 8 → +3)
+  - nación → **misma afinidad** (4 → +1 · 7 → +2 · 10 → +3)
+  - club → **mismo equipo** (2 → +1 · 4 → +2 · 7 → +3), las cartas sin equipo no suman aquí
+  - máximo 3 por jugador y **33 el equipo**; el **capitán cuenta doble** para los umbrales (como Iconos/Héroes en FC)
+- Umbrales ajustados con 400 onces al azar del catálogo: con los de FC (3/5/8, 2/5/8, 2/4/7) un once al azar sacaba
+  23/33 porque solo hay 4 afinidades y 9 juegos (VR con 943 cartas); con los de arriba, ≈ 10/33. Raimon IE1 completo: 33.
+- `src/lib/chemistry.ts` reescrito; `src/components/pitch/Pitch.tsx` (campo reutilizable: carta + etiqueta con puesto y
+  3 rombos de química, como MADFUT) y `pitch/ChemHelp.tsx` ("Cómo funciona la química", como la ventana de MADFUT).
+- La química del partido pasa a 0–33 (de −5 % a +5 %; la mitad, neutra); el objetivo diario pasa a 24 de química.

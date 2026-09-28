@@ -2,11 +2,13 @@ import { useMemo, useState } from 'react'
 import type { Player, Position } from '../../types'
 import { useAppSettings } from '../../context/AppSettings'
 import { getFormation, nextEmptySlot, type FormationId, type LineupMap, type SlotId } from '../../lib/lineup'
-import { chemistry, formationLinks, teamRating } from '../../lib/chemistry'
+import { MAX_TEAM_CHEM, chemistry, teamRating } from '../../lib/chemistry'
 import { BENCH, benchOptions, captainOptions, formationOptions, slotOptions } from '../../lib/fut-draft'
 import InaCard from '../InaCard'
 import Sheet from '../hub/Sheet'
-import { X } from 'lucide-react'
+import { CircleHelp, X } from 'lucide-react'
+import Pitch, { fieldY } from '../pitch/Pitch'
+import ChemHelp from '../pitch/ChemHelp'
 
 interface Props {
   onComplete: (lineup: LineupMap, formation: FormationId, captain: SlotId, chemistry: number, bench: Player[]) => void
@@ -17,10 +19,6 @@ interface Props {
 type Spot = SlotId | `bench-${number}`
 const benchSpot = (i: number): Spot => `bench-${i}`
 const benchIndex = (s: Spot) => (s.startsWith('bench-') ? Number(s.slice(6)) : -1)
-
-/** Coordenada y (0–100 de la formación) dentro del campo: margen arriba y el portero en su propia fila abajo,
- *  para que no se pise con los centrales en las defensas de 5 */
-const fieldY = (y: number) => (y >= 85 ? 91 : 8 + y * 0.84)
 
 /** Draft al estilo MADFUT: formación 1 de 5 → capitán 1 de 5 → cada hueco 1 de 5 → banquillo, con química y media */
 export default function FutDraft({ onComplete, onExit }: Props) {
@@ -38,8 +36,8 @@ export default function FutDraft({ onComplete, onExit }: Props) {
   const [options, setOptions] = useState<Partial<Record<Spot, Player[]>>>({})
 
   const def = formation ? getFormation(formation) : null
-  const links = useMemo(() => (def ? formationLinks(def.slots) : []), [def])
-  const chem = useMemo(() => chemistry(lineup, links, captain ?? undefined), [lineup, links, captain])
+  const chem = useMemo(() => chemistry(lineup, captain ?? undefined), [lineup, captain])
+  const [help, setHelp] = useState(false)
   const placed = Object.values(lineup).filter((p): p is Player => !!p)
   const rating = teamRating(placed)
   const full = !!def && placed.length === def.slots.length
@@ -110,8 +108,10 @@ export default function FutDraft({ onComplete, onExit }: Props) {
         {def && (
           <div className="hub-bar fd-bar">
             <span className="fd-stat"><small>{t('fd.rating')}</small>{rating || '—'}</span>
-            <span className="fd-stat"><small>{t('fd.chemistry')}</small>{chem.team}</span>
-            <span className="fd-chem-track"><span style={{ width: `${chem.team}%` }} /></span>
+            <button type="button" className="fd-stat fd-stat--btn" onClick={() => setHelp(true)} aria-label={t('chem.title')}>
+              <small>{t('fd.chemistry')} <CircleHelp size={11} /></small><span>{chem.team}<em>/{MAX_TEAM_CHEM}</em></span>
+            </button>
+            <span className="fd-chem-track"><span style={{ width: `${(chem.team / MAX_TEAM_CHEM) * 100}%` }} /></span>
             <span className="fd-stat"><small>{def.layout}</small>{placed.length}/{def.slots.length}</span>
           </div>
         )}
@@ -150,33 +150,15 @@ export default function FutDraft({ onComplete, onExit }: Props) {
         {def && captain && (
           <section className="fd-step">
             <p className="fd-hint">{selected ? t('fd.swap') : full ? t('fd.benchHint') : t('fd.tapSlot')}</p>
-            <div className="fd-pitch">
-              <svg className="fd-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden>
-                {links.map(([a, b]) => {
-                  const sa = def.slots.find(s => s.id === a)!
-                  const sb = def.slots.find(s => s.id === b)!
-                  const color = chem.links.find(l => l.link[0] === a && l.link[1] === b)?.color ?? 'none'
-                  return <line key={`${a}-${b}`} x1={sa.x} y1={fieldY(sa.y)} x2={sb.x} y2={fieldY(sb.y)} className={`fd-line fd-line--${color}`} />
-                })}
-              </svg>
-              {def.slots.map(s => {
-                const p = lineup[s.id]
-                return (
-                  <div key={s.id} className="fd-slot" style={{ left: `${s.x}%`, top: `${fieldY(s.y)}%` }}>
-                    {p ? (
-                      <>
-                        {card(s.id, p)}
-                        <span className={`fd-chem fd-chem--${chem.players[s.id] ?? 0}`}>
-                          {s.id === captain && <b>C</b>}{[0, 1, 2].map(i => <i key={i} className={i < (chem.players[s.id] ?? 0) ? 'on' : ''} />)}
-                        </span>
-                      </>
-                    ) : (
-                      <button type="button" className="fd-empty" onClick={() => openSpot(s.id)}>+<small>{s.role}</small></button>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
+            <Pitch
+              slots={def.slots}
+              lineup={lineup}
+              chem={chem}
+              captain={captain}
+              selected={selected && benchIndex(selected) < 0 ? (selected as SlotId) : null}
+              onTapPlaced={id => tap(id)}
+              onTapEmpty={id => openSpot(id)}
+            />
 
             {full && (
               <>
@@ -212,6 +194,7 @@ export default function FutDraft({ onComplete, onExit }: Props) {
           {(picking && options[picking] || []).map(p => <InaCard key={p.id} player={p} onClick={() => pick(p)} />)}
         </div>
       </Sheet>
+      <ChemHelp open={help} onClose={() => setHelp(false)} />
     </div>
   )
 }

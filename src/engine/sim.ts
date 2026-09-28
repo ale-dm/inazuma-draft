@@ -9,12 +9,12 @@ const ELEMENT_ADVANTAGE: Record<string, string> = {
 export interface SimulateOptions {
   /** Si true, égalité → tirs au but (demi / finale) */
   decisive?: boolean
-  /** Química del equipo 1 (draft MADFUT, 0–100): de −5 % a +5 % de fuerza; 50 no cambia nada */
+  /** Química del equipo 1 (draft MADFUT, 0–33): de −5 % a +5 % de fuerza; la mitad (16,5) no cambia nada */
   chemistry1?: number
 }
 
 export function chemistryBonus(chemistry?: number): number {
-  return chemistry == null ? 0 : (Math.max(0, Math.min(100, chemistry)) - 50) / 1000
+  return chemistry == null ? 0 : ((Math.max(0, Math.min(33, chemistry)) - 16.5) / 16.5) * 0.05
 }
 
 function elementBonus(attackers: Player[], defenders: Player[]): number {

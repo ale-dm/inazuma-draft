@@ -53,7 +53,7 @@ export interface Objective {
 export const DAILY_OBJECTIVES: Objective[] = [
   { id: 'draft', event: 'drafts', goal: 1, reward: { coins: 300 } },
   { id: 'packs', event: 'packs', goal: 2, reward: { coins: 300 } },
-  { id: 'chem', event: 'chem', goal: 60, reward: { coins: 500 } },
+  { id: 'chem', event: 'chem', goal: 24, reward: { coins: 500 } },   // química de 0–33
   { id: 'semis', event: 'semis', goal: 1, reward: { coins: 400 } },
   { id: 'title', event: 'titles', goal: 1, reward: { pack: 'gold' } },
 ]
