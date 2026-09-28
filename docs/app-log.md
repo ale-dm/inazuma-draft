@@ -139,3 +139,9 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
   formaciones por nombre, el mismo campo y la misma química que el draft; tocar un hueco → tus cartas de ese puesto (sin
   repetir personaje); tocar una carta → capitán, cambiar o quitar. Al cambiar de formación se recolocan las cartas.
 - El campo es más alto (3:4,6) para que en 4-4-2 los medios no pisen a los defensas.
+
+### Torneo y alineación con el estilo nuevo
+- En vez de reescribir cada componente antiguo, sus clases compartidas (`iz-panel`, `iz-panel-head`, `btn-primary`,
+  `btn-secondary`, colores `--iz-*`) toman el estilo de la app **solo dentro del marco nuevo** (`.hub`): paneles de cristal,
+  cabeceras en cursiva, botón principal lima, secundarios tipo píldora. La web de `main` no cambia.
+- Probado: partida completa (draft → torneo → partidos → campeón) con capturas del torneo, un partido y el resultado.

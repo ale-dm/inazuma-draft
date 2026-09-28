@@ -445,3 +445,30 @@ button.ic:active { transform: scale(.95); }
 .hub-stats span { display: flex; flex-direction: column; align-items: center; }
 .hub-stats b { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-style: italic; font-size: 1.8rem; line-height: 1; }
 .hub-stats small { font-size: .6rem; color: var(--hub-dim); text-transform: uppercase; font-weight: 800; }
+
+/* ---------------------------------------------------------------- pantallas antiguas (draft FFI, alineación, torneo, jugadores)
+   dentro del marco nuevo: sus clases compartidas (paneles, cabeceras, botones, colores) toman el estilo de la app */
+.hub {
+  --iz-card: transparent; --iz-panel-border: rgba(61, 242, 255, .22); --iz-text: #dcecf7; --iz-muted: #8fb3c9; --iz-heading: #fff;
+  --iz-cyan: #3df2ff; --iz-blue: #3aa0ff; --iz-blue-light: #74c6ff; --iz-blue-dark: #0d4f9e; --iz-deep: #081626; --iz-navy: #06121c;
+}
+.hub .iz-panel {
+  border-radius: 20px; border: 1px solid var(--iz-panel-border);
+  background: var(--hub-mesh), linear-gradient(160deg, rgba(20, 70, 95, .55), rgba(8, 20, 35, .88));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 10px 26px rgba(0, 0, 0, .45);
+}
+.hub .iz-panel-head {
+  background: transparent; color: #fff; border-bottom: 1px solid rgba(255, 255, 255, .1); padding: .8rem 1rem .6rem;
+  font-family: 'Barlow Condensed', sans-serif; font-style: italic; font-weight: 900; font-size: 1.05rem; letter-spacing: .06em;
+}
+.hub .btn-primary {
+  border: 0; border-radius: 14px; color: #0a1a05; font-family: 'Barlow Condensed', sans-serif; font-style: italic; font-weight: 900;
+  background: linear-gradient(180deg, #e2ff7a, #9be01d); box-shadow: 0 0 18px rgba(198, 255, 61, .4), inset 0 -3px 0 rgba(0, 0, 0, .2);
+}
+.hub .btn-primary:active { box-shadow: 0 0 10px rgba(198, 255, 61, .3); }
+.hub .btn-primary:disabled { opacity: .5; filter: grayscale(.6); box-shadow: none; }
+.hub .btn-secondary {
+  border: 1px solid rgba(255, 255, 255, .2); border-radius: 99px; background: rgba(255, 255, 255, .06); color: #eaf6ff; box-shadow: none;
+}
+.hub .btn-secondary:hover { background: rgba(198, 255, 61, .12); border-color: var(--hub-neon); }
+.hub .divider-iz { border-color: rgba(255, 255, 255, .1); }

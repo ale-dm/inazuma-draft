@@ -45,7 +45,8 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] Premio diario con racha de 7 días y 5 objetivos del día
 - [ ] Objetivos semanales y de carrera
 - [x] Draft FFI, alineación, torneo, resultado y jugadores dentro del marco nuevo (fuera la barra y el pie antiguos; créditos en Ajustes)
-- [ ] Rediseño por dentro del torneo, la alineación y el explorador de jugadores (siguen con los paneles antiguos)
+- [x] Torneo, alineación y explorador con el estilo nuevo (paneles, cabeceras, botones y colores dentro del marco)
+- [ ] Tabla de clasificación y cuadro del torneo con diseño propio (ahora son los antiguos con colores nuevos)
 
 - [x] Mis plantillas: onces con tus cartas, con química y media
 
