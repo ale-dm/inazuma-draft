@@ -20,16 +20,16 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] Tocar un hueco → elegir 1 de 5 jugadores de ese puesto (sin repetir personaje)
 - [x] Campo con líneas de química de colores
 - [x] Resumen (media y química) → jugar el torneo FFI con ese once
-- [ ] Banquillo (5 suplentes)
-- [ ] Cambiar jugadores de sitio en el campo
-- [ ] La química influye en la simulación del partido
-- [ ] Guardar un draft y jugarlo más tarde
-- [ ] El panel grande dice "Sortea equipos…": texto nuevo que valga para los dos modos
+- [x] Banquillo (5 suplentes, 1 de 5 de cualquier puesto; entran al campo si el puesto coincide)
+- [x] Cambiar jugadores de sitio en el campo (mismo puesto; el capitán va con su carta)
+- [x] La química influye en la simulación del partido (−5 % a +5 % de fuerza; 50 = neutro)
+- [ ] Guardar un draft y jugarlo más tarde (con la economía local, fase 3)
+- [x] Texto del panel grande válido para los dos modos
 
 ## Arreglos y revisiones
 - [x] Imágenes de la wiki (Fandom) bloqueadas por el Referer → `<meta name="referrer" content="no-referrer">`
 - [ ] Llevar ese arreglo también a `main` (la web actual tiene ~85 imágenes de la wiki rotas por lo mismo)
-- [ ] Revisar las cartas que salen con iniciales en vez de foto (URL de imagen que falla)
+- [~] Revisar las cartas que salen con iniciales en vez de foto (comprobando las 6.000+ URL de imagen)
 
 ## Fase 3 · Economía local
 - [ ] Monedas y XP por jugar

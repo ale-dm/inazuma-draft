@@ -40,3 +40,11 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
   `no-referrer` en `index.html`. Afecta también a la web de `main` (pendiente en el TODO).
 - Probado en navegador (Chromium, móvil 400×860, catálogo servido desde `build/players.json`): pantalla principal,
   panel de modo, formaciones, capitán, elegir jugador y campo completo (media y química se actualizan).
+- Segunda tanda de la fase 2:
+  - **Química en el partido**: `SimulateOptions.chemistry1` → la fuerza del equipo va de −5 % (química 0) a +5 % (100);
+    50 no cambia nada. Solo en el draft MADFUT; el Draft FFI simula como siempre.
+  - **Cambiar de sitio**: tocar una carta y otra del mismo puesto las intercambia; el capitán se mueve con su carta.
+  - **Banquillo**: 5 suplentes (1 de 5, cualquier puesto) cuando el once está completo; un suplente entra al campo si su
+    puesto coincide con el del titular. Los suplentes cuentan como cartas conseguidas (colección).
+  - Probado: once + banquillo completos, cambio suplente → titular (química 27 → 21, se recalcula) y "Jugar el FFI" abre
+    el torneo.

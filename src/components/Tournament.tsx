@@ -13,12 +13,14 @@ type TourneyPhase = 'intro' | 'groups' | 'qualified' | 'eliminated' | 'semis' | 
 
 interface Props {
   playerTeam: Player[]
+  /** Química del draft MADFUT (0–100); sin ella, la simulación de siempre */
+  chemistry?: number
   onEnd: (outcome: TournamentOutcome) => void
 }
 
 const PLAYER_NAME = 'Inazuma Japan'
 
-export default function Tournament({ playerTeam, onEnd }: Props) {
+export default function Tournament({ playerTeam, chemistry, onEnd }: Props) {
   const { t, locale } = useAppSettings()
   const [phase, setPhase] = useState<TourneyPhase>('intro')
   const [matchIdx, setMatchIdx] = useState(0)
@@ -64,7 +66,7 @@ export default function Tournament({ playerTeam, onEnd }: Props) {
 
   function playPlayerMatch(idx: number): MatchResult {
     const opp = playerOpponents[idx]
-    return simulateMatch(playerTeam, opp.players, PLAYER_NAME, opp.name)
+    return simulateMatch(playerTeam, opp.players, PLAYER_NAME, opp.name, { chemistry1: chemistry })
   }
 
   function startGroups() {
@@ -131,7 +133,7 @@ export default function Tournament({ playerTeam, onEnd }: Props) {
       teamPlayers(playerSemiOpponent),
       PLAYER_NAME,
       playerSemiOpponent,
-      { decisive: true },
+      { decisive: true, chemistry1: chemistry },
     )
     setSemiResult(result)
     setPhase('semis')
@@ -144,7 +146,7 @@ export default function Tournament({ playerTeam, onEnd }: Props) {
       teamPlayers(finalOpponentName),
       PLAYER_NAME,
       finalOpponentName,
-      { decisive: true },
+      { decisive: true, chemistry1: chemistry },
     )
     setFinalResult(result)
     setPhase('final')

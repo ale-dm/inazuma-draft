@@ -243,6 +243,9 @@ button.fut-card:active { transform: scale(.95); }
 .fd-chem--2 { color: #ffd23d; }
 .fd-chem--3 { color: #3dff8a; }
 .fd-cta { margin-top: .5rem; }
+.fd-bench { display: grid; grid-template-columns: repeat(5, 1fr); gap: .3rem; justify-items: center; padding: .6rem .3rem; border-radius: 16px; background: rgba(0, 0, 0, .3); border: 1px solid rgba(255, 255, 255, .1); }
+.fd-bench__spot { display: flex; justify-content: center; }
+.fd-selected { display: block; border-radius: 12px; animation: fd-pulse 1.2s ease-in-out infinite; outline: 2px solid var(--hub-neon); outline-offset: 2px; }
 @keyframes fd-pulse { 50% { box-shadow: 0 0 20px rgba(198, 255, 61, .55); } }
 @media (prefers-reduced-motion: reduce) { .fd-empty { animation: none; } }
 

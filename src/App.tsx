@@ -42,6 +42,8 @@ export default function App() {
   const [lineup, setLineup] = useState<LineupMap>({})
   const [formationId, setFormationId] = useState<FormationId>(DEFAULT_FORMATION)
   const [won, setWon] = useState(false)
+  /** Química del draft MADFUT; null en el draft FFI (sorteo) */
+  const [chem, setChem] = useState<number | null>(null)
   const inPlayers = useHashRoute() === PLAYERS_HASH
 
   function startRun(kind: 'fut' | 'ffi') {
@@ -63,6 +65,7 @@ export default function App() {
     setFormationId(DEFAULT_FORMATION)
     setRunSeed(null)
     setWon(false)
+    setChem(null)
     const url = new URL(window.location.href)
     url.searchParams.delete('seed')
     url.searchParams.delete('mode')
@@ -93,14 +96,15 @@ export default function App() {
       return (
         <FutDraft
           onExit={reset}
-          onComplete={(l, formation) => {
+          onComplete={(l, formation, _captain, chemistry, bench) => {
             const players = lineupToArray(l, formation)
-            recordDraftComplete(players, [])
+            recordDraftComplete([...players, ...bench], [])
             recordGlobalDraftComplete()
             trackEvent('draft_complete', { players: players.length, teams_rolled: 0, kind: 'fut' })
             setDrafted(players)
             setLineup(l)
             setFormationId(formation)
+            setChem(chemistry)
             setPhase('tournament')
           }}
         />
@@ -148,6 +152,7 @@ export default function App() {
         <AppLayout>
           <Tournament
             playerTeam={lineupToArray(lineup, formationId)}
+            chemistry={chem ?? undefined}
             onEnd={(outcome: TournamentOutcome) => {
               recordTournamentOutcome(outcome)
               if (outcome.stage === 'final') {
