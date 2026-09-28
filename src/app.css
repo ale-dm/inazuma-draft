@@ -472,3 +472,33 @@ button.ic:active { transform: scale(.95); }
 }
 .hub .btn-secondary:hover { background: rgba(198, 255, 61, .12); border-color: var(--hub-neon); }
 .hub .divider-iz { border-color: rgba(255, 255, 255, .1); }
+
+/* ---------------------------------------------------------------- escudo del equipo (en vez del nombre en la carta) */
+.ic__badge { display: inline-block; width: 1em; height: 1em; object-fit: contain; vertical-align: -.15em; margin-right: .35em; filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .5)); }
+
+/* ---------------------------------------------------------------- carta de Duelo (estilo MADFUT/FC): 3 números de
+   combate en flechas de color a la derecha de la carta — verde ataque, azul control, rojo defensa. Se calculan de
+   las estadísticas propias del jugador (src/lib/duel.ts); esto solo es la parte visual. */
+.duel-card { position: relative; display: inline-flex; vertical-align: top; }
+.duel-card--sm { --dw: 5rem; }
+.duel-card--md { --dw: 7.5rem; }
+.duel-card--lg { --dw: 11rem; }
+/* hueco reservado a la derecha para que la columna de números no se pise con la carta de al lado en una fila/rejilla */
+.duel-card { padding-right: calc(var(--dw) * .24); }
+.duel-card__stats {
+  position: absolute; top: 9%; bottom: 11%; right: calc(var(--dw) * -0.02); width: calc(var(--dw) * .32);
+  display: flex; flex-direction: column; justify-content: space-between; gap: calc(var(--dw) * .035); z-index: 2;
+}
+.duel-card__n {
+  flex: 1 1 0; display: flex; align-items: center; justify-content: center; min-height: 0;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-style: italic; color: #fff;
+  font-size: calc(var(--dw) * .155); line-height: 1; font-variant-numeric: tabular-nums;
+  clip-path: polygon(32% 0, 100% 0, 100% 100%, 32% 100%, 0 50%);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .6);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .4);
+}
+.duel-card__n--att { background: linear-gradient(180deg, #7bec6f, #1e9c3f); }
+.duel-card__n--con { background: linear-gradient(180deg, #6fc0f2, #1a6fd6); }
+.duel-card__n--def { background: linear-gradient(180deg, #f27a6f, #d62a1f); }
+.duel-card__n.is-on { outline: 2px solid #fff; outline-offset: -2px; }
+.duel-card--sm .duel-card__n { font-size: calc(var(--dw) * .17); }

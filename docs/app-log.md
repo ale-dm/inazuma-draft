@@ -145,3 +145,22 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
   `btn-secondary`, colores `--iz-*`) toman el estilo de la app **solo dentro del marco nuevo** (`.hub`): paneles de cristal,
   cabeceras en cursiva, botón principal lima, secundarios tipo píldora. La web de `main` no cambia.
 - Probado: partida completa (draft → torneo → partidos → campeón) con capturas del torneo, un partido y el resultado.
+
+### Duelo (estadísticas de combate) y escudos de equipo en la carta
+- **`src/lib/duel.ts`**: las 3 estadísticas de duelo (estilo MADFUT/FC: ataque/verde, control de balón/azul,
+  defensa/rojo) se calculan a partir de las 6 del jugador, sin inventar una fórmula nueva: ataque = tiro, control =
+  control, defensa = defensa (los porteros mezclan defensa y parada, ya que no tienen buena defensa de campo).
+  `resolveDuel()` decide quién gana una acción del futuro modo Duelo (fase 4, sin construir aún).
+- **`src/components/DuelCard.tsx`** + CSS en `app.css`: columna de 3 flechas de color a la derecha de la carta. Como
+  `clip-path` recorta también lo que se sale de la carta, la columna es un *hermano* de `InaCard` (no un hijo) dentro
+  de un `<span>` envoltorio con `padding-right` para reservar el hueco; así no se pisa con la carta de al lado en una
+  rejilla. Probado con una captura aislada (3 cartas, una con la acción resaltada).
+- **Escudos de equipo** (en vez del nombre en la carta): `tools/db/fetch.py` descarga
+  `Category:Team emblem images` de la wiki inglesa (7 subcategorías, ~1149 archivos) y las redirecciones de nuestros
+  nombres de equipo (caché `team_emblems.json`). `tools/db/logos.py` (nuevo, mismo patrón que `i18n.py`) cruza cada
+  equipo con su escudo por nombre normalizado (`tnorm`), probando también su redirección, su alias de
+  `WIKI_FORM_TEAM` y el plural sin la "s" ("Rose Griffons" → "Rose Griffon"), y se queda con la categoría más oficial
+  (serie original > GO > Victory Road > Strikers > SD > Cross > varios). Cobertura: 171/187 equipos (los 16 sin
+  escudo son pseudo-equipos como "Mixi Max"/"Sub Character" o equipos muy secundarios sin arte propio en la wiki).
+  `logo_url` se añade a la tabla `teams` (`schema.sql`, `output.py`) y a `catalog.ts`/`InaCard.tsx`/`PlayerCard.tsx`:
+  si hay escudo se muestra en vez del nombre del equipo (con `onError` por si la imagen falla, vuelve al texto).

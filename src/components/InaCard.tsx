@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type { Player } from '../types'
 import { useAppSettings } from '../context/AppSettings'
-import { teamName } from '../data/catalog'
+import { teamLogo, teamName } from '../data/catalog'
 import { RARITY_CLASS } from '../lib/packs'
 import { ElementIcon, PositionIcon } from './GameIcon'
 
@@ -23,8 +23,10 @@ interface Props {
 export default function InaCard({ player, showRating = true, size = 'md', onClick }: Props) {
   const { locale } = useAppSettings()
   const [failed, setFailed] = useState(false)
+  const [badgeFailed, setBadgeFailed] = useState(false)
   const Tag = onClick ? 'button' : 'div'
   const surname = player.name.split(' ').slice(-1)[0]
+  const logo = !NO_TEAM.has(player.team) && !badgeFailed ? teamLogo(player.team) : undefined
 
   return (
     <Tag
@@ -45,7 +47,14 @@ export default function InaCard({ player, showRating = true, size = 'md', onClic
       <span className="ic__foot">
         <span className="ic__name">{size === 'xs' ? surname : player.name}</span>
         {size !== 'xs' && (
-          <span className="ic__team">{NO_TEAM.has(player.team) ? player.game : `${teamName(player.team, locale)} · ${player.game}`}</span>
+          <span className="ic__team">
+            {!NO_TEAM.has(player.team) && (
+              logo
+                ? <img className="ic__badge" src={logo} alt="" onError={() => setBadgeFailed(true)} />
+                : <>{teamName(player.team, locale)}{' · '}</>
+            )}
+            {logo ? ' · ' : ''}{player.game}
+          </span>
         )}
       </span>
     </Tag>

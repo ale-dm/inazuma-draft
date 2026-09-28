@@ -1,7 +1,7 @@
 import type { Player } from '../types'
 import { POSITION_STAT_KEYS, displayStatValue, playerRating } from '../lib/power'
 import { useAppSettings } from '../context/AppSettings'
-import { teamName, techniqueName } from '../data/catalog'
+import { teamLogo, teamName, techniqueName } from '../data/catalog'
 import PlayerAvatar from './PlayerAvatar'
 import { ElementIcon, PositionIcon, TechniqueIcon } from './GameIcon'
 import { ArrowLeftRight } from 'lucide-react'
@@ -73,8 +73,10 @@ export default function PlayerCard({ player, mode, onClick, onCompare, inCompare
           <h4 className="font-heading font-bold text-sm text-iz-heading truncate leading-tight">{player.name}</h4>
           <PositionIcon position={player.position} className="h-4 shrink-0" />
         </div>
-        <p className={`text-[0.65rem] element-${player.element} mb-1.5 truncate`}>
-          <ElementIcon element={player.element} className="w-4 h-4 align-text-bottom" /> {teamLabel ?? teamName(player.team, locale)}
+        <p className={`text-[0.65rem] element-${player.element} mb-1.5 truncate flex items-center gap-1`}>
+          <ElementIcon element={player.element} className="w-4 h-4 align-text-bottom shrink-0" />
+          {!teamLabel && teamLogo(player.team) && <img className="ic__badge" src={teamLogo(player.team)} alt="" />}
+          <span className="truncate">{teamLabel ?? (teamLogo(player.team) ? player.game : teamName(player.team, locale))}</span>
         </p>
         {mode === 'classic' && (
           <div className="flex flex-wrap gap-1">

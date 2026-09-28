@@ -66,6 +66,7 @@ create table if not exists public.teams (
 );
 alter table public.teams add column if not exists name_fr text;        -- doblaje francés
 alter table public.teams add column if not exists name_it text;        -- doblaje italiano
+alter table public.teams add column if not exists logo_url text;       -- escudo (inazuma-eleven.fandom.com)
 
 create table if not exists public.staff (      -- cuerpo técnico (zukan), de momento sin stats
   zukan_no     int primary key,              -- nº oficial en zukan.inazuma.jp

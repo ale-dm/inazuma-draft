@@ -10,7 +10,7 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] Carta con estilo propio (nada de FIFA): media, icono de puesto, foto, afinidad y equipo; color por rareza de Victory Road (Common verde · Growing azul · Advanced morado · Top amarillo · Legendary naranja; sin Hero)
 - [x] Iconos de Victory Road: puestos, afinidades, tipos de supertécnica, espíritu guerrero, Mixi Max, tótem
 - [x] Fuera los emojis de la interfaz: iconos de línea (lucide) y moneda propia
-- [ ] Escudos de los equipos en la carta (la wiki solo tiene los de unos 12 equipos de Victory Road)
+- [x] Escudos de los equipos en la carta (Category:Team emblem images de la wiki: 171/187 equipos)
 - [ ] Iconos de Tiro largo y Bloqueo de tiros (hay imagen, falta saber qué técnicas lo son: dato `zukan_types`)
 - [x] Paneles inferiores: modo de juego y ajustes (idioma, sonido, tema)
 - [x] Tema oscuro por defecto; fuera la portada antigua
@@ -49,6 +49,7 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [ ] Tabla de clasificación y cuadro del torneo con diseño propio (ahora son los antiguos con colores nuevos)
 
 - [x] Mis plantillas: onces con tus cartas, con química y media
+- [x] Estadísticas de duelo (ataque/control/defensa) calculadas y listas en `DuelCard` (falta el modo en sí, fase 4)
 
 ## Fase 4 · Modos
 - [ ] Duelo (Fatal con supertécnicas y ventaja de elemento)

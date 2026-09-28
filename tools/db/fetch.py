@@ -745,6 +745,46 @@ def main():
     cached('it_wiki.json', lambda: lang_wiki(WIKI_IT_API, ['Template:Tecniche', 'Template:Tecnica', 'Template:Avatar', 'Template:Spirito Guerriero',
                                                            'Template:Squadra'], ('nome',), ('nome_jp', 'nome_rom', 'nome_originale')))
 
+    log('10c escudos de equipo (inazuma-eleven.fandom.com, Category:Team emblem images + redirecciones)')
+    def team_emblems():
+        # categorías con escudo (de más a menos preferida para elegir uno solo por equipo en build.py)
+        order = ['Original series emblem images', 'GO series emblem images', 'Victory Road emblem images',
+                  'Strikers emblem images', 'SD emblem images', 'Cross emblem images', 'Miscellaneous emblem images']
+        files = {}
+        for cat in order:
+            titles_, cont = [], {}
+            while True:
+                d = api(WIKI_API, action='query', list='categorymembers', cmtitle='Category:' + cat, cmlimit=500, **cont)
+                titles_ += [m['title'] for m in d['query']['categorymembers']]
+                if 'continue' not in d:
+                    break
+                cont = {'cmcontinue': d['continue']['cmcontinue']}
+            files[cat] = titles_
+            log(f'  {cat}: {len(titles_)}')
+        all_titles = sorted({t for ts in files.values() for t in ts})
+        urls = {}
+        for i in range(0, len(all_titles), 50):
+            d = api(WIKI_API, action='query', titles='|'.join(all_titles[i:i + 50]), prop='imageinfo', iiprop='url')
+            for p in d['query']['pages']:
+                if p.get('imageinfo'):
+                    urls[p['title']] = p['imageinfo'][0]['url']
+            time.sleep(0.2)
+        # redirecciones: nuestros nombres de equipo (zukan + alias conocidos) → título canónico de la wiki inglesa
+        # (la wiki usa a menudo el nombre japonés romanizado; zukan, su nombre en inglés: "Almighty Faith" → "Mannouzaka")
+        zukan_teams = {t for c in json.load(open(os.path.join(ZUKAN_DIR, 'chara_list.json'), encoding='utf-8')) for t in c.get('teams', [])}
+        candidates = zukan_teams | {k for k in OVERRIDES.get('team_es', {}) if not k.startswith('_')}
+        candidates = {re.sub(r'\s*\([^)]*\)$', '', c).strip() for c in candidates} | candidates
+        candidates = sorted(c for c in candidates if c)
+        redirects = {}
+        for i in range(0, len(candidates), 50):
+            d = api(WIKI_API, action='query', titles='|'.join(candidates[i:i + 50]), redirects=1)
+            for r in d['query'].get('redirects', []):
+                redirects[r['from']] = r['to']
+            log(f'  redirecciones {min(i + 50, len(candidates))}/{len(candidates)}')
+            time.sleep(0.2)
+        return {'order': order, 'files': files, 'urls': urls, 'redirects': redirects}
+    cached('team_emblems.json', team_emblems)
+
     log('11/11 Xtreme (balancing doc + wiki)')
     cached('xtreme_balancing.txt', lambda: get(BALANCING_DOC).decode('utf-8-sig'))
     def xtreme_wiki():

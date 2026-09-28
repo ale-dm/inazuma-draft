@@ -33,6 +33,7 @@ from common import (AGE_VERSION, ALT_VERSION, BAND, CACHE, CAP, CAP_C, CEIL, COS
 from es_text import es_description
 from tuning import apply_tuning
 from i18n import localize
+from logos import assign_logos
 from output import write_outputs
 
 
@@ -1284,6 +1285,7 @@ def main(extra_z=None, write=True):
                    'description': (zdesc.get(str(z['no'])) or {}).get('desc'), 'vr_lv50': (zdesc.get(str(z['no'])) or {}).get('vr_lv50'),
                    'wiki_page': page_of(z)} for z in zukan if z.get('no')]
     localize(cards, techniques, teams, ov, report)           # nombres en francés e italiano (i18n.py)
+    assign_logos(teams, report)                              # escudo de cada equipo (logos.py)
     if write:
         write_outputs(cards, chars_out, techniques, teams, staff, zukan_rows, report)
     return uncovered

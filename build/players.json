@@ -295350,1123 +295350,1310 @@
    "name": "Almighty Faith",
    "name_es": "Colegio Poderosa Fe",
    "name_fr": "Collège de la Foi toute-puissante",
-   "name_it": "Collegio Fiducia Incrollabile"
+   "name_it": "Collegio Fiducia Incrollabile",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/b/b2/Mannouzaka_emblem.png/revision/latest?cb=20240411184619"
   },
   {
    "name": "Alpine",
    "name_es": "Alpino",
    "name_fr": "Alpin",
-   "name_it": "Alpine"
+   "name_it": "Alpine",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/1/1c/Hakuren_emblem.png/revision/latest?cb=20240410111140"
   },
   {
    "name": "Ancient Darkness",
    "name_es": "Oscuridad Ancestral",
    "name_fr": "Ombre ancestrale",
-   "name_it": "Ombra Ancestrale"
+   "name_it": "Ombra Ancestrale",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/b/be/Ancient_Dark_emblem.png/revision/latest?cb=20171126181240"
   },
   {
    "name": "Apostles from the Sky",
    "name_es": "Sky Team",
    "name_fr": "Sky Team",
-   "name_it": "Daystar"
+   "name_it": "Daystar",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/d7/Tenkuu_no_Shito_emblem.png/revision/latest?cb=20240410103626"
   },
   {
    "name": "Big Bang",
    "name_es": "Big Bang",
    "name_fr": "Big Bang",
-   "name_it": "Big Bang"
+   "name_it": "Big Bang",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/f9/Big_Bang_emblem.png/revision/latest?cb=20171115063223"
   },
   {
    "name": "Big Waves",
    "name_es": "Big Waves",
    "name_fr": "Big Waves",
-   "name_it": "Big Waves"
+   "name_it": "Big Waves",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/a6/Big_Waves_emblem.png/revision/latest?cb=20240410095826"
   },
   {
    "name": "Black Templars",
    "name_es": "Orden de los Caballeros Templarios",
    "name_fr": "Chevaliers Noirs",
-   "name_it": "Cavalieri Oscuri"
+   "name_it": "Cavalieri Oscuri",
+   "logo_url": null
   },
   {
    "name": "Brainwashing",
    "name_es": "Brain",
    "name_fr": "Cybertech",
-   "name_it": "Brainwashing"
+   "name_it": "Brainwashing",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/b/b7/Mikage_Sennou_emblem.png/revision/latest?cb=20240410110714"
   },
   {
    "name": "Brocken Brigade",
    "name_es": "Brocken Brigade",
    "name_fr": "Brocken Bogue",
-   "name_it": "Brigata Brocken"
+   "name_it": "Brigata Brocken",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/7/76/Brockenborg_emblem.png/revision/latest?cb=20240410103448"
   },
   {
    "name": "Chaos",
    "name_es": "Caos",
    "name_fr": "Chaos",
-   "name_it": "Chaos"
+   "name_it": "Chaos",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/5/5a/Chaos_emblem.png/revision/latest?cb=20230907165417"
   },
   {
    "name": "Chrono Storm",
    "name_es": "Chrono Storm",
    "name_fr": "Chrono Storm",
-   "name_it": "Chrono Storm"
+   "name_it": "Chrono Storm",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/7/79/Chrono_Storm_emblem.png/revision/latest?cb=20171126225651"
   },
   {
    "name": "Cloister Divinity",
    "name_es": "Claustro Sagrado",
    "name_fr": "Cloître Sacré",
-   "name_it": "Cloister Divinity"
+   "name_it": "Cloister Divinity",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/9/9d/Manyuuji_emblem.png/revision/latest?cb=20240410111220"
   },
   {
    "name": "Dark Emperors",
    "name_es": "Emperadores Oscuros",
    "name_fr": "Empereurs noirs",
-   "name_it": "Dark Emperors"
+   "name_it": "Dark Emperors",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/62/Dark_Emperors_emblem.png/revision/latest?cb=20230907164524"
   },
   {
    "name": "Desert Lions",
    "name_es": "Leones del Desierto",
    "name_fr": "Lions du désert",
-   "name_it": "Leoni del Deserto"
+   "name_it": "Leoni del Deserto",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/0e/Desert_Lion_emblem.png/revision/latest?cb=20240410100903"
   },
   {
    "name": "Devil Army Z",
    "name_es": "Dark Team",
    "name_fr": "Dark Team",
-   "name_it": "Nightstar"
+   "name_it": "Nightstar",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/7/76/Makai_Gundan_Z_emblem.png/revision/latest?cb=20240410103707"
   },
   {
    "name": "Diamond Dust",
    "name_es": "Diamond",
    "name_fr": "Diamond Dust",
-   "name_it": "Diamond Dust"
+   "name_it": "Diamond Dust",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/a2/Diamond_Dust_emblem.png/revision/latest?cb=20230907164908"
   },
   {
    "name": "Dragon Link",
    "name_es": "Dragon Link",
    "name_fr": "Alliance du dragon",
-   "name_it": "Dragon Link"
+   "name_it": "Dragon Link",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/1/1a/Dragonlink_emblem.png/revision/latest?cb=20240411185637"
   },
   {
    "name": "Earth Eleven",
    "name_es": "Earth Eleven",
    "name_fr": "Onze Terrestre",
-   "name_it": "Earth Eleven"
+   "name_it": "Earth Eleven",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/1/1d/Earth_Eleven_emblem.png/revision/latest?cb=20171115064621"
   },
   {
    "name": "Epsilon",
    "name_es": "Épsilon",
    "name_fr": "Epsilon",
-   "name_it": "Epsilon"
+   "name_it": "Epsilon",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/a8/Epsilon_emblem.png/revision/latest?cb=20230907162041"
   },
   {
    "name": "Epsilon Plus",
    "name_es": "Épsilon Plus",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/b/b4/Epsilon_Kai_emblem.png/revision/latest?cb=20230907164116"
   },
   {
    "name": "Eternal Light",
    "name_es": "Luz Eterna",
    "name_fr": "Lumière éternelle",
-   "name_it": "Luce Sfavillante"
+   "name_it": "Luce Sfavillante",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/b/b3/Unlimited_Shining_emblem.png/revision/latest?cb=20171126184725"
   },
   {
    "name": "Falam Medius",
    "name_es": "Falam Medius",
    "name_fr": "Falam Medius",
-   "name_it": "Falam Medius"
+   "name_it": "Falam Medius",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/dc/Faram_Dite_emblem.png/revision/latest?cb=20171115063505"
   },
   {
    "name": "Farm",
    "name_es": "Farm",
    "name_fr": "Collège Terria",
-   "name_it": "Istituto Farm"
+   "name_it": "Istituto Farm",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/e8/Senbayama_emblem.png/revision/latest?cb=20240410111013"
   },
   {
    "name": "Fauxshore",
    "name_es": "Fauxshore",
    "name_fr": "Collège Fauxshore",
-   "name_it": "Istituto Fauxshore"
+   "name_it": "Istituto Fauxshore",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/65/Yokato_emblem.png/revision/latest?cb=20240410111302"
   },
   {
    "name": "Fertilia Eleven",
    "name_es": "Los Fertilia",
    "name_fr": "Onze de Fertilia",
-   "name_it": "Fertilia Eleven"
+   "name_it": "Fertilia Eleven",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/2b/Ratoniik_Eleven_emblem.png/revision/latest?cb=20171115063633"
   },
   {
    "name": "Fire Dragon",
    "name_es": "Dragones de Fuego",
    "name_fr": "Dragons de Feu",
-   "name_it": "Fire Dragon"
+   "name_it": "Fire Dragon",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/09/Fire_Dragon_emblem.png/revision/latest?cb=20240410100114"
   },
   {
    "name": "Forest Team",
    "name_es": "Mar de Árboles",
    "name_fr": "Sous-Bois FC",
-   "name_it": "Fuji Forest"
+   "name_it": "Fuji Forest",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/e0/Jukai_Team_emblem.png/revision/latest?cb=20230907165608"
   },
   {
    "name": "Gahl",
    "name_es": "Gar",
    "name_fr": "Gahl",
-   "name_it": "Team Gahr"
+   "name_it": "Team Gahr",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/7/7b/Garu_emblem.png/revision/latest?cb=20171126225653"
   },
   {
    "name": "Gemini Storm",
    "name_es": "Tormenta de Géminis",
    "name_fr": "Tempête des Gémeaux",
-   "name_it": "Gemini Storm"
+   "name_it": "Gemini Storm",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/db/Gemini_Storm_emblem.png/revision/latest?cb=20230907161339"
   },
   {
    "name": "Genesis",
    "name_es": "Génesis",
    "name_fr": "Genesis",
-   "name_it": "Genesis"
+   "name_it": "Genesis",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/6f/The_Genesis_emblem.png/revision/latest?cb=20230907163539"
   },
   {
    "name": "Gihl",
    "name_es": "Gir",
    "name_fr": "Gihl",
-   "name_it": "Team Ghir"
+   "name_it": "Team Ghir",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/60/Giru_emblem.png/revision/latest?cb=20171126225653"
   },
   {
    "name": "Golden Oldies",
    "name_es": "Edad Dorada",
    "name_fr": "L'Âge d'or",
-   "name_it": "Età dell'Oro"
+   "name_it": "Età dell'Oro",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/c/cb/Akizora_Challengers_emblem.png/revision/latest?cb=20240411184321"
   },
   {
    "name": "Inazuma Japan",
    "name_es": "Inazuma Japón",
    "name_fr": "Inazuma Japon",
-   "name_it": "Inazuma Japan"
+   "name_it": "Inazuma Japan",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/a1/Inazuma_Japan_emblem.png/revision/latest?cb=20230907155817"
   },
   {
    "name": "Inazuma Kids FC",
    "name_es": "Inazuma Kids FC",
    "name_fr": "Inazuma",
-   "name_it": "Inazuma Kids FC"
+   "name_it": "Inazuma Kids FC",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/5/59/Inazuma_KFC_emblem.png/revision/latest?cb=20240410111505"
   },
   {
    "name": "Inazuma Legend Japan",
    "name_es": "Inazuma Japón Legendario",
    "name_fr": "Inazuma Japon Évolution",
-   "name_it": "Inazuma Legend Japan"
+   "name_it": "Inazuma Legend Japan",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/7/7b/Inazuma_Legend_Japan_emblem.png/revision/latest?cb=20240411183955"
   },
   {
    "name": "Ivy Selective",
    "name_es": "Colegio Ultramegahiedra",
    "name_fr": "Ultramégatétra",
-   "name_it": "Ultramegaedera"
+   "name_it": "Ultramegaedera",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/03/Aoba_Gakuen_emblem.png/revision/latest?cb=20171126181240"
   },
   {
    "name": "Ixar Fleet",
    "name_es": "Flota Ixar",
    "name_fr": "Armada Ixar",
-   "name_it": "Flotta Ixar"
+   "name_it": "Flotta Ixar",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/31/Ixal_Fleet_emblem.png/revision/latest?cb=20171115063358"
   },
   {
    "name": "Kirkwood",
    "name_es": "Kirkwood",
    "name_fr": "Collège Kirkwood",
-   "name_it": "Istituto Kirkwood"
+   "name_it": "Istituto Kirkwood",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/ad/Kidokawa_Seishuu_emblem.png/revision/latest?cb=20230907155257"
   },
   {
    "name": "Little Gigantes",
    "name_es": "The Little Giants",
    "name_fr": "Little Gigantes",
-   "name_it": "Piccoli Giganti"
+   "name_it": "Piccoli Giganti",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/fc/Little_Gigant_emblem.png/revision/latest?cb=20240410103009"
   },
   {
    "name": "Lunar Howl",
    "name_es": "Aullido Lunar",
    "name_fr": "Enfants sauvages",
-   "name_it": "Ululo Lunare"
+   "name_it": "Ululo Lunare",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/7/72/Tsukigami_no_Ichizoku_emblem.png/revision/latest?cb=20171126230750"
   },
   {
    "name": "Lunar Sea",
    "name_es": "Academia Militar Mar de Luna",
    "name_fr": "Académie Militaire des Mers Lunaires",
-   "name_it": "Accademia Militare Mare Lunare"
+   "name_it": "Accademia Militare Mare Lunare",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/c/c7/Gassan_Kunimitsu_emblem.png/revision/latest?cb=20240411185114"
   },
   {
    "name": "Magmavia Eleven",
    "name_es": "Los Magmavís",
    "name_fr": "Onze de Magmavia",
-   "name_it": "Magmavia Eleven"
+   "name_it": "Magmavia Eleven",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/1/12/Gurdon_Eleven_emblem.png/revision/latest?cb=20171115063748"
   },
   {
    "name": "Mary Times",
    "name_es": "Mary Times",
    "name_fr": "Collège Mary Times",
-   "name_it": "Istituto Mary Times"
+   "name_it": "Istituto Mary Times",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/ff/Oumihara_emblem.png/revision/latest?cb=20240410111402"
   },
   {
    "name": "Milky Way Charter",
    "name_es": "Colegio Concertado Vía Láctea",
    "name_fr": "Collège de la Voie lactée",
-   "name_it": "Collegio Via Lattea"
+   "name_it": "Collegio Via Lattea",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/ea/Tengawara_emblem.png/revision/latest?cb=20240411184441"
   },
   {
    "name": "Mirage",
    "name_es": "Espejismo",
    "name_fr": "Collège des Mirages",
-   "name_it": "Istituto Miraggio"
+   "name_it": "Istituto Miraggio",
+   "logo_url": null
   },
   {
    "name": "Mixi Max",
    "name_es": "Mixi Max",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": null
   },
   {
    "name": "Mount Olympus",
    "name_es": "Colegio Monte Olimpo",
    "name_fr": "Collège Mont Olympe",
-   "name_it": "Collegio Monte Olimpo"
+   "name_it": "Collegio Monte Olimpo",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/30/Seidouzan_emblem.png/revision/latest?cb=20240411185544"
   },
   {
    "name": "Muay Tigers",
    "name_es": "Muay Tigers",
    "name_fr": "Tigres de Thaïlande",
-   "name_it": "Tigri Supersoniche"
+   "name_it": "Tigri Supersoniche",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/9/9e/Mach_Tiger_emblem.png/revision/latest?cb=20171115065016"
   },
   {
    "name": "Naiadi Eleven",
    "name_es": "Los Naiadi",
    "name_fr": "Onze de Naiadi",
-   "name_it": "Naiadi Eleven"
+   "name_it": "Naiadi Eleven",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/c/cc/Sazanaara_Eleven_emblem.png/revision/latest?cb=20171115063837"
   },
   {
    "name": "Neo Japan",
    "name_es": "Neo Japón",
    "name_fr": "Néo Japon",
-   "name_it": "Neo Japan"
+   "name_it": "Neo Japan",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/b/bb/Neo_Japan_emblem.png/revision/latest?cb=20240410095657"
   },
   {
    "name": "Northern Fang",
    "name_es": "Colmillos del Norte",
    "name_fr": "Crocs du nord",
-   "name_it": "Zanna del Nord"
+   "name_it": "Zanna del Nord",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/34/Northern_Fang_emblem.png/revision/latest?cb=20171126183138"
   },
   {
    "name": "Nosfanatica",
    "name_es": "Nosfanáticos",
    "name_fr": "Traqueurs nocturnes",
-   "name_it": "Nosfanatici"
+   "name_it": "Nosfanatici",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/25/Vamptym_emblem.png/revision/latest?cb=20171126230750"
   },
   {
    "name": "Occult",
    "name_es": "Occult",
    "name_fr": "Collège Occulte",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/dd/Occult_emblem.png/revision/latest?cb=20240410110547"
   },
   {
    "name": "Orpheus",
    "name_es": "Orfeo",
    "name_fr": "Orphée",
-   "name_it": "Orfeo"
+   "name_it": "Orfeo",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/8/82/Orpheus_emblem.png/revision/latest?cb=20240410102408"
   },
   {
    "name": "Otaku",
    "name_es": "Otaku",
    "name_fr": "Collège Otaku",
-   "name_it": "Istituto Otaku"
+   "name_it": "Istituto Otaku",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/aa/O%EF%BD%A5T%EF%BD%A5A%EF%BD%A5K%EF%BD%A5U_emblem.png/revision/latest?cb=20240410144542"
   },
   {
    "name": "Perfect Cascade",
    "name_es": "Cascada Perfecta",
    "name_fr": "Équipe Excellence",
-   "name_it": "Squadra Perfetta"
+   "name_it": "Squadra Perfetta",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/7/74/Perfect_Cascade_emblem.png/revision/latest?cb=20240411181053"
   },
   {
    "name": "Pirates Cove",
    "name_es": "Academia Cala Pirata",
    "name_fr": "Académie Baie des Pirates",
-   "name_it": "Accademia Baia dei Pirati"
+   "name_it": "Accademia Baia dei Pirati",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/20/Kaiou_Gakuen_emblem.png/revision/latest?cb=20240411185002"
   },
   {
    "name": "Prodigy Grammar",
    "name_es": "Colegio de Empollones",
    "name_fr": "Collège des Surdoués",
-   "name_it": "Istituto Superiore per Prodigi"
+   "name_it": "Istituto Superiore per Prodigi",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/fc/Eito_Gakuen_emblem.png/revision/latest?cb=20171126181242"
   },
   {
    "name": "Prominence",
    "name_es": "Prominence",
    "name_fr": "Prominence",
-   "name_it": "Prominence"
+   "name_it": "Prominence",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/5/55/Prominence_emblem.png/revision/latest?cb=20230907165242"
   },
   {
    "name": "Protocol Omega",
    "name_es": "Protocolo Omega",
    "name_fr": "Protocole Oméga",
-   "name_it": "Protocollo Omega"
+   "name_it": "Protocollo Omega",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/ad/Protocol_Omega_emblem.png/revision/latest?cb=20240411175538"
   },
   {
    "name": "Protocol Omega 2.0",
    "name_es": "Protocolo Omega 2.0",
    "name_fr": "Protocole Oméga 2.0",
-   "name_it": "Protocollo Omega 2.0"
+   "name_it": "Protocollo Omega 2.0",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/7/78/Protocol_Omega_2.0_emblem.png/revision/latest?cb=20240411175800"
   },
   {
    "name": "Protocol Omega 3.0",
    "name_es": "Protocolo Omega 3.0",
    "name_fr": "Protocole Oméga 3.0",
-   "name_it": "Protocollo Omega 3.0"
+   "name_it": "Protocollo Omega 3.0",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/e8/Protocol_Omega_3.0_emblem.png/revision/latest?cb=20240411175956"
   },
   {
    "name": "Queen's Knights",
    "name_es": "Knights of Queen",
    "name_fr": "Knights of Queen",
-   "name_it": "Cavalieri della Regina"
+   "name_it": "Cavalieri della Regina",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/60/Knights_of_Queen_emblem.png/revision/latest?cb=20240410101802"
   },
   {
    "name": "Ragnah",
    "name_es": "Ragnah",
    "name_fr": "Ragna",
-   "name_it": "Lagoon"
+   "name_it": "Lagoon",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/af/The_Lagoon_emblem.png/revision/latest?cb=20240411182104"
   },
   {
    "name": "Raimon",
    "name_es": "Raimon",
    "name_fr": "Collège Raimon",
-   "name_it": "Raimon"
+   "name_it": "Raimon",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/d0/Raimon_emblem.png/revision/latest?cb=20230907155258"
   },
   {
    "name": "Raimon First Squad",
    "name_es": "Raimon (primer equipo)",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": null
   },
   {
    "name": "Raimon Second Squad",
    "name_es": "Equipo B del Instituto Raimon",
    "name_fr": "Équipe Réserve",
-   "name_it": "Riserve Raimon"
+   "name_it": "Riserve Raimon",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/3f/Raimon_2gun_emblem.png/revision/latest?cb=20171126183139"
   },
   {
    "name": "Raimon Veterans",
    "name_es": "Inazuma Eleven",
    "name_fr": "Onze d'Inazuma",
-   "name_it": "Vecchie Glorie"
+   "name_it": "Vecchie Glorie",
+   "logo_url": null
   },
   {
    "name": "Red Matador",
    "name_es": "Los Rojos",
    "name_fr": "Toreros Rouges",
-   "name_it": "Matador Scarlatti"
+   "name_it": "Matador Scarlatti",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/3b/Red_Matador_emblem.png/revision/latest?cb=20240410103326"
   },
   {
    "name": "Rose Griffons",
    "name_es": "Grifos de la Rosa",
    "name_fr": "Rose Griffon",
-   "name_it": "Grifoni della Rosa"
+   "name_it": "Grifoni della Rosa",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/62/Rose_Griffon_emblem.png/revision/latest?cb=20240410103213"
   },
   {
    "name": "Royal Academy",
    "name_es": "Royal Academy",
    "name_fr": "Royal Academy",
-   "name_it": "Royal Academy"
+   "name_it": "Royal Academy",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/34/Teikoku_Gakuen_emblem.png/revision/latest?cb=20230907144604"
   },
   {
    "name": "Royal Academy Redux",
    "name_es": "Royal Redux",
    "name_fr": "Nouvelle Royal Academy",
-   "name_it": "Absolute Royal Academy"
+   "name_it": "Absolute Royal Academy",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/25/Shin_Teikoku_Gakuen_emblem.png/revision/latest?cb=20230907162834"
   },
   {
    "name": "Secret Service",
    "name_es": "Servicio Secreto",
    "name_fr": "Services Secrets",
-   "name_it": "Service Secret"
+   "name_it": "Service Secret",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/e2/SP_Fixers_emblem.png/revision/latest?cb=20240410111650"
   },
   {
    "name": "Shamshir",
    "name_es": "Los Cimitarras",
    "name_fr": "Sabres du désert",
-   "name_it": "Le Scimitarre"
+   "name_it": "Le Scimitarre",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/d4/Shamshir_emblem.png/revision/latest?cb=20171115064935"
   },
   {
    "name": "Shuriken",
    "name_es": "Shuriken",
    "name_fr": "Collège Shuriken",
-   "name_it": "Istituto Shuriken"
+   "name_it": "Istituto Shuriken",
+   "logo_url": null
   },
   {
    "name": "Silica Eleven",
    "name_es": "Los Sílice",
    "name_fr": "Onze de Silica",
-   "name_it": "Silica Eleven"
+   "name_it": "Silica Eleven",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/7/71/Sandorius_Eleven_emblem.png/revision/latest?cb=20171115063952"
   },
   {
    "name": "Southern Claw",
    "name_es": "Garras del Sur",
    "name_fr": "Griffe du sud",
-   "name_it": "Artigilo del Sud"
+   "name_it": "Artigilo del Sud",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/b/b7/Southern_Claw_emblem.png/revision/latest?cb=20171126183140"
   },
   {
    "name": "Storm Wolves",
    "name_es": "Storm Wolves",
    "name_fr": "Loups d'Ouzbekistan",
-   "name_it": "Lupi della Bufera"
+   "name_it": "Lupi della Bufera",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/b/b2/Storm_Wolf_emblem.png/revision/latest?cb=20171115065135"
   },
   {
    "name": "Street Sally's",
    "name_es": "Sallys",
    "name_fr": "Street Sally's",
-   "name_it": "Street Sally's"
+   "name_it": "Street Sally's",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/3b/Ichibangai_Sally%27s_emblem.png/revision/latest?cb=20240410111549"
   },
   {
    "name": "Sub Character",
    "name_es": "Secundarios",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": null
   },
   {
    "name": "Super Triple C",
    "name_es": "Triple C",
    "name_fr": "Triple C",
-   "name_it": "Tripla C"
+   "name_it": "Tripla C",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/c/c2/Super_Oosaka_CCC_emblem.png/revision/latest?cb=20230919163522"
   },
   {
    "name": "Supernova",
    "name_es": "Supernova",
    "name_fr": "Supernova",
-   "name_it": "Supernova"
+   "name_it": "Supernova",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/1/1e/Supernova_emblem.png/revision/latest?cb=20171115063145"
   },
   {
    "name": "Team D",
    "name_es": "Equipo D",
    "name_fr": "Équipe D",
-   "name_it": "Team D"
+   "name_it": "Team D",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/09/Team_K_emblem.png/revision/latest?cb=20240410101908"
   },
   {
    "name": "Team Ogre",
    "name_es": "Equipo Ogro",
    "name_fr": "Ogre",
-   "name_it": "Ogre Academy"
+   "name_it": "Ogre Academy",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/1/19/Ogre_emblem.png/revision/latest?cb=20240410101303"
   },
   {
    "name": "Team Zero",
    "name_es": "Equipo Zero",
    "name_fr": "Equipe Zéro",
-   "name_it": "Team Zero"
+   "name_it": "Team Zero",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/9/9f/Zero_emblem.png/revision/latest?cb=20240411185730"
   },
   {
    "name": "Team Zoolan",
    "name_es": "Zoolan Team",
    "name_fr": "Zoolan Team",
-   "name_it": "Zoolan Team"
+   "name_it": "Zoolan Team",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/e9/Team_Garshield_emblem.png/revision/latest?cb=20240410102748"
   },
   {
    "name": "The Cape Crusaders",
    "name_es": "Caimanes del Cabo",
    "name_fr": "Antilopes",
-   "name_it": "Antilopi della Savana"
+   "name_it": "Antilopi della Savana",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/aa/The_Great_Horn_emblem.png/revision/latest?cb=20240410103547"
   },
   {
    "name": "The Despairadoes",
    "name_es": "Desesperdidos",
    "name_fr": "Roses du désespoir",
-   "name_it": "Distruttori"
+   "name_it": "Distruttori",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/02/Destructchers_emblem.png/revision/latest?cb=20240411184211"
   },
   {
    "name": "The Empire",
    "name_es": "Los Emperadores",
    "name_fr": "Les Empereurs",
-   "name_it": "L'Impero"
+   "name_it": "L'Impero",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/d1/The_Empire_emblem.png/revision/latest?cb=20240410102030"
   },
   {
    "name": "The Kingdom",
    "name_es": "Os Reis",
    "name_fr": "Rois du Football",
-   "name_it": "Il Regno"
+   "name_it": "Il Regno",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/21/The_Kingdom_emblem.png/revision/latest?cb=20240410102625"
   },
   {
    "name": "The Sherwinds",
    "name_es": "Los Arions",
    "name_fr": "Sherwinds",
-   "name_it": "Sherwinds"
+   "name_it": "Sherwinds",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/8/81/Tenmas_emblem.png/revision/latest?cb=20240411191313"
   },
   {
    "name": "The Terracotta Army",
    "name_es": "Ejército de Terracota",
    "name_fr": "Statues d'Argile",
-   "name_it": "Escercito di Terracotta"
+   "name_it": "Escercito di Terracotta",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/9/93/Karakuri_Bingmayong_emblem.png/revision/latest?cb=20171126230146"
   },
   {
    "name": "Umbrella MS",
    "name_es": "Umbrella",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": null
   },
   {
    "name": "Unaffiliated",
    "name_es": "Sin equipo",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": null
   },
   {
    "name": "Unicorn",
    "name_es": "Unicorn",
    "name_fr": "Licornes",
-   "name_it": "Unicorno"
+   "name_it": "Unicorno",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/67/Unicorn_emblem.png/revision/latest?cb=20240410102230"
   },
   {
    "name": "Universal",
    "name_es": "Universal",
    "name_fr": "Collège Universel",
-   "name_it": "Istituto Galattico"
+   "name_it": "Istituto Galattico",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/5/5b/Arakumo_Gakuen_emblem.png/revision/latest?cb=20240411185449"
   },
   {
    "name": "White Deer",
    "name_es": "Banda del Ciervo Blanco",
    "name_fr": "Bande du cerf blanc",
-   "name_it": "Cervi Bianchi"
+   "name_it": "Cervi Bianchi",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/b/b4/Shiroshika_Gumi_emblem.png/revision/latest?cb=20240411180117"
   },
   {
    "name": "Wild",
    "name_es": "Wild",
    "name_fr": "Collège Wild",
-   "name_it": "Wild"
+   "name_it": "Wild",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/b/b3/Nose_emblem.png/revision/latest?cb=20240410110626"
   },
   {
    "name": "Young Inazuma",
    "name_es": "Jóvenes Inazuma",
    "name_fr": "Jeunes Inazuma",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/61/Young_Inazuma_emblem.png/revision/latest?cb=20230907165654"
   },
   {
    "name": "Zan",
    "name_es": "Zan",
    "name_fr": "Zan",
-   "name_it": "Zan"
+   "name_it": "Zan",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/f0/Zan_emblem.png/revision/latest?cb=20171126230750"
   },
   {
    "name": "Zanark's Domain",
    "name_es": "Zanark Domain",
    "name_fr": "Zanark Domination",
-   "name_it": "Zanark Domain"
+   "name_it": "Zanark Domain",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/8/89/Zanark_Domain_emblem.png/revision/latest?cb=20240411180525"
   },
   {
    "name": "Zeus",
    "name_es": "Zeus",
    "name_fr": "Collège Zeus",
-   "name_it": "Istituto Zeus"
+   "name_it": "Istituto Zeus",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/e0/Zeus_emblem.png/revision/latest?cb=20230907151715"
   },
   {
    "name": "AI Academy",
    "name_es": "Academia IA",
    "name_fr": "AI Academy",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/9/95/AI_Gakuen_emblem.png/revision/latest?cb=20251118014811"
   },
   {
    "name": "Ace Invaders",
    "name_es": "Navy Invader",
    "name_fr": "Navy Invaders",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/9/95/Navy_Invader_emblem.png/revision/latest?cb=20251118122113"
   },
   {
    "name": "Alia Academy",
    "name_es": "Academia Alia",
    "name_fr": "École Alia",
-   "name_it": "Accademia Alia"
+   "name_it": "Accademia Alia",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/aa/Eisei_Gakuen_emblem.png/revision/latest?cb=20251118125404"
   },
   {
    "name": "Arabian Firebirds",
    "name_es": "Ejército del Fénix Árabe",
    "name_fr": "Phénix d'Arabie",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/a5/Arab_no_Hi_no_Tori_Gundan_emblem.png/revision/latest?cb=20251118122155"
   },
   {
    "name": "Avenging Acrobats",
    "name_es": "Tropa Acrobática del Fútbol",
    "name_fr": "Acrobates Vengeurs",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/7/7e/Soccer_Zatsugidan_emblem.png/revision/latest?cb=20251118122145"
   },
   {
    "name": "Back Alley Kickers",
    "name_es": "Goleadores del Callejón",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/7/7f/Rojiura_Backkicks_emblem.png/revision/latest?cb=20251118014836"
   },
   {
    "name": "Barcelona Orb",
    "name_es": "Barcelona Orb",
    "name_fr": "Barcelona Orb",
-   "name_it": "Barcelona Orb"
+   "name_it": "Barcelona Orb",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/8/84/Barcelona_Orb_emblem.png/revision/latest?cb=20251118125403"
   },
   {
    "name": "Crosswind-Fauxshore",
    "name_es": "Secundaria Crosswind-Fauxshore",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/37/Batten-Yokato_emblem.png/revision/latest?cb=20251118014813"
   },
   {
    "name": "Destroyers",
    "name_es": "Destructores",
    "name_fr": "Destructeurs",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/e7/Destroyers_emblem.png/revision/latest?cb=20260401235041"
   },
   {
    "name": "Eastwind",
    "name_es": "Eastwind",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/8/83/Toufuu_Ikokukan_emblem.png/revision/latest?cb=20251118014851"
   },
   {
    "name": "El Dorado 01",
    "name_es": "El Dorado Equipo 01",
    "name_fr": "El Dorado 1",
-   "name_it": "El Dorado 1"
+   "name_it": "El Dorado 1",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/f6/El_Dorado_Team_01_emblem.png/revision/latest?cb=20171126225651"
   },
   {
    "name": "El Dorado 02",
    "name_es": "El Dorado Equipo 02",
    "name_fr": "El Dorado 2",
-   "name_it": "El Dorado 2"
+   "name_it": "El Dorado 2",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/26/El_Dorado_Team_02_emblem.png/revision/latest?cb=20171126225652"
   },
   {
    "name": "El Dorado 03",
    "name_es": "El Dorado Equipo 03",
    "name_fr": "El Dorado 3",
-   "name_it": "El Dorado 3"
+   "name_it": "El Dorado 3",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/1/1b/El_Dorado_Team_03_emblem.png/revision/latest?cb=20171126225652"
   },
   {
    "name": "Eternal Dancers",
    "name_es": "Bailarines Eternos",
    "name_fr": "Danseurs Éternels",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/5/5c/Eternal_Dancers_emblem.png/revision/latest?cb=20251118122053"
   },
   {
    "name": "Everytown",
    "name_es": "Ribera",
    "name_fr": "Collège Lambda",
-   "name_it": "Liceo Simplicio"
+   "name_it": "Liceo Simplicio",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/9/9a/Tonegawa_Tousen_emblem.png/revision/latest?cb=20251118125413"
   },
   {
    "name": "Fallen Angels",
    "name_es": "Demonios Brillantes",
    "name_fr": "Anges Déchus",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/fa/Shining_Satans_emblem.png/revision/latest?cb=20251118122139"
   },
   {
    "name": "Gatekeepers",
    "name_es": "Guardianas",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/e4/Gatekeepers_emblem.png/revision/latest?cb=20251224125241"
   },
   {
    "name": "Guardians of the Queen",
    "name_es": "Guardianes de la Reina",
    "name_fr": "Gardiens de la Reine",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/c/c0/Guardians_of_Queen_emblem.png/revision/latest?cb=20251118122059"
   },
   {
    "name": "Japanese Resistance",
    "name_es": "Resistencia de Japón",
    "name_fr": "Rébellion Japon",
-   "name_it": "Resistenza del Sol Levante"
+   "name_it": "Resistenza del Sol Levante",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/64/Resistance_Japan_emblem.png/revision/latest?cb=20171115064350"
   },
   {
    "name": "Lawcrest",
    "name_es": "Lawcrest",
    "name_fr": "Lawcrest",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/c/c2/Houreikan_emblem.png/revision/latest?cb=20251118014817"
   },
   {
    "name": "Los Invencibles",
    "name_es": "Gigantes Invencibles",
    "name_fr": "Los Invencibles",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/ea/Muteki_no_Giant_emblem.png/revision/latest?cb=20251118122107"
   },
   {
    "name": "Lunar Prime Academy",
    "name_es": "Academia Plenilunio",
    "name_fr": "Collège Sélène",
-   "name_it": "Liceo Altaluna"
+   "name_it": "Liceo Altaluna",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/6b/Outei_Tsukinomiya_emblem.png/revision/latest?cb=20240331224724"
   },
   {
    "name": "Noble Insight",
    "name_es": "Visión Noble",
    "name_fr": "Nobles Visionnaires",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/5/5a/Ijin_Meibundou_emblem.png/revision/latest?cb=20251118014818"
   },
   {
    "name": "Northbright",
    "name_es": "Secundaria Northbright",
    "name_fr": "Collège Northbright",
-   "name_it": "Accademia Northbright"
+   "name_it": "Accademia Northbright",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/ff/Hokuyou_Gakuen_emblem.png/revision/latest?cb=20240520202939"
   },
   {
    "name": "Orchid Academy",
    "name_es": "Academia Orchid",
    "name_fr": "Orchid Academy",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/a2/Meiran_Gakuin_emblem.png/revision/latest?cb=20251118014824"
   },
   {
    "name": "Orion Eclipse",
    "name_es": "Eclipse de Orión",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/a1/Shadow_of_Orion_emblem.png/revision/latest?cb=20251118122137"
   },
   {
    "name": "Pitch Perfectionists",
    "name_es": "Chispas Perfectas",
    "name_fr": "Perfect Spark",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/f3/Perfect_Spark_emblem.png/revision/latest?cb=20251118122129"
   },
   {
    "name": "Platos",
    "name_es": "Plathos",
    "name_fr": "Platos",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/4/49/Platos_emblem.png/revision/latest?cb=20260129210946"
   },
   {
    "name": "Polestar Academy",
    "name_es": "Academia Polaris",
    "name_fr": "Académie Polaris",
-   "name_it": "Accademia Stella"
+   "name_it": "Accademia Stella",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/23/Seishou_Gakuen_emblem.png/revision/latest?cb=20240331224724"
   },
   {
    "name": "Raging Bulls",
    "name_es": "Bisonte Rojo",
    "name_fr": "Taureaux Enragés",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/9/9b/Red_Bison_emblem.png/revision/latest?cb=20251118122131"
   },
   {
    "name": "Rampart Junior High",
    "name_es": "Bastión",
    "name_fr": "Collège Bastion",
-   "name_it": "Liceo Bastione"
+   "name_it": "Liceo Bastione",
+   "logo_url": null
   },
   {
    "name": "Seagull FC",
    "name_es": "Gaviotas FC",
    "name_fr": "FC Mouettes",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/b/bf/Umi_Kamome_Soccer_Club_emblem.png/revision/latest?cb=20251118014856"
   },
   {
    "name": "Solaria-Zeus",
    "name_es": "Secundaria Solaria-Zeus",
    "name_fr": "Solaria-Zeus",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/24/Tenshou-Zeus_emblem.png/revision/latest?cb=20251118014849"
   },
   {
    "name": "South Cirrus Junior High",
    "name_es": "Secundaria South Cirrus",
    "name_fr": "Collège Nagumohara",
-   "name_it": "South Cirrus Jr. High"
+   "name_it": "South Cirrus Jr. High",
+   "logo_url": null
   },
   {
    "name": "South Cirrus Shopkeepers",
    "name_es": "Vendedores de South Cirrus",
    "name_fr": "Commerçants de Nagumohara",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/35/Nagumohara_Shopkeepers_emblem.png/revision/latest?cb=20251118014827"
   },
   {
    "name": "Stormridge",
    "name_es": "Secundaria Stormridge",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/8/83/Keizen_Arashiyama_emblem.png/revision/latest?cb=20251118014820"
   },
   {
    "name": "Student Council",
    "name_es": "Consejo Estudiantil",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": null
   },
   {
    "name": "The Sambassadors",
    "name_es": "Olé de Samba",
    "name_fr": "Les  Embassableurs",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/b/b4/Ol%C3%A9_de_Samba_emblem.png/revision/latest?cb=20251118122120"
   },
   {
    "name": "Twinford",
    "name_es": "Twinford",
    "name_fr": "Twinford",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/69/Nikogawa_emblem.png/revision/latest?cb=20251118014829"
   },
   {
    "name": "West Manor",
    "name_es": "Academia West Manor",
    "name_fr": "West Manor Academy",
-   "name_it": "Scuola media West Manor"
+   "name_it": "Scuola media West Manor",
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/d2/Nishinomiya_emblem.png/revision/latest?cb=20251118014831"
   },
   {
    "name": "Zanark's Outsiders",
    "name_es": "Zanark Outsiders",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/8/86/Zanark_Strangers_emblem.png/revision/latest?cb=20251120205758"
   },
   {
    "name": "Art Club",
    "name_es": "Club de Arte",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/7/76/Bijutsu_Bu_emblem.png/revision/latest?cb=20251121004038"
   },
   {
    "name": "Badminton Club",
    "name_es": "Club de Bádminton",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/d6/Badminton_Bu_emblem.png/revision/latest?cb=20251121004035"
   },
   {
    "name": "Baseball Club Team",
    "name_es": "Equipo del Club de Béisbol del South Cirrus",
    "name_fr": "Club de Baseball",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/69/Yakyuu_Bu_Team_emblem.png/revision/latest?cb=20251118014857"
   },
   {
    "name": "Basketball Club",
    "name_es": "Club de Baloncesto",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/c/cd/Basketball_Bu_emblem.png/revision/latest?cb=20251121004036"
   },
   {
    "name": "Bodybuilding Club",
    "name_es": "Club de Culturismo",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/21/Bodybuilder_Bu_emblem.png/revision/latest?cb=20251121004039"
   },
   {
    "name": "Cheerleading Squad",
    "name_es": "Animadoras",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": null
   },
   {
    "name": "Choir Club",
    "name_es": "Club de Coro",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/1/1f/Gasshou_Bu_emblem.png/revision/latest?cb=20251121004045"
   },
   {
    "name": "Cleanup Committee Member",
    "name_es": "Comité de Limpieza",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": null
   },
   {
    "name": "Computer Club",
    "name_es": "Club de Informática",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/c/c8/Denshikeisanki_Bu_emblem.png/revision/latest?cb=20251121004041"
   },
   {
    "name": "Dance Club",
    "name_es": "Club de Baile",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/0c/Dance_Bu_emblem.png/revision/latest?cb=20251121004040"
   },
   {
    "name": "Drama Club",
    "name_es": "Club de Teatro",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/d6/Engeki_Bu_emblem.png/revision/latest?cb=20251121004042"
   },
   {
    "name": "Esports Club",
    "name_es": "Club de eSports",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/09/Esports_Bu_emblem.png/revision/latest?cb=20251121004044"
   },
   {
    "name": "Folk Dance Club",
    "name_es": "Club de Danza Folclórica",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/37/Nihonbuyou_Bu_emblem.png/revision/latest?cb=20251121004013"
   },
   {
    "name": "Go & Shogi Club",
    "name_es": "Club de Go y Shogi",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/7/76/Igo-Shougi_Bu_emblem.png/revision/latest?cb=20251121004051"
   },
   {
    "name": "Green Hill",
    "name_es": "Colina Verde",
    "name_fr": "Midorigaoka",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/f1/Midorigaoka_emblem.png/revision/latest?cb=20260130165500"
   },
   {
    "name": "Handball Club",
    "name_es": "Club de Balonmano",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/66/Handball_Bu_emblem.png/revision/latest?cb=20251121004046"
   },
   {
    "name": "Idol-Lovers Club",
    "name_es": "Club de Fans de Ídolos",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/c/c9/Idol_Doukoukai_emblem.png/revision/latest?cb=20251121004049"
   },
   {
    "name": "Judo Club",
    "name_es": "Club de Judo",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/fc/Juudou_Bu_emblem.png/revision/latest?cb=20251121004053"
   },
   {
    "name": "Karuta Club",
    "name_es": "Club de Karuta",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/f8/Hyakunin_Isshu_Club_emblem.png/revision/latest?cb=20251121004048"
   },
   {
    "name": "Kendo Club",
    "name_es": "Club de Kendo",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/63/Kendou_Bu_emblem.png/revision/latest?cb=20251121004008"
   },
   {
    "name": "Magic Society",
    "name_es": "Sociedad de Magia",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/e7/Magic_Kenkyuukai_emblem.png/revision/latest?cb=20251121004009"
   },
   {
    "name": "Manga Club",
    "name_es": "Club de Manga",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/a8/Manga_Kenkyuukai_emblem.png/revision/latest?cb=20251121004011"
   },
   {
    "name": "Marine Biology Club",
    "name_es": "Club de Biología Marina",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/a0/Kaiyou_Seibutsu_Bu_emblem.png/revision/latest?cb=20251121004004"
   },
   {
    "name": "Martial Arts Club",
    "name_es": "Club de Artes Marciales",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/1/19/Kakutougi_Bu_emblem.png/revision/latest?cb=20251121004005"
   },
   {
    "name": "Metal Club",
    "name_es": "Club de Metal",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/b/bc/Metal_Kenkyuukai_emblem.png/revision/latest?cb=20251121004012"
   },
   {
    "name": "Modern Music Club",
    "name_es": "Club de Música Moderna",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/4/44/Keiongaku_Bu_emblem.png/revision/latest?cb=20251121004006"
   },
   {
    "name": "Newspaper Club",
    "name_es": "Club de Periodismo",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/36/Shinbun_Bu_emblem.png/revision/latest?cb=20251121004022"
   },
   {
    "name": "Occult Society",
    "name_es": "Sociedad Ocultista",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/4/45/Occult_Kenkyuukai_emblem.png/revision/latest?cb=20251121004015"
   },
   {
    "name": "Quiz Society",
    "name_es": "Club de Preguntas",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/af/Quiz_Kenkyuukai_emblem.png/revision/latest?cb=20251121004016"
   },
   {
    "name": "Rugby Club",
    "name_es": "Club de Rugby",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/d8/Rugby_Bu_emblem.png/revision/latest?cb=20251121004019"
   },
   {
    "name": "School Committee",
    "name_es": "Comité Escolar",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": null
   },
   {
    "name": "Space Laboratory",
    "name_es": "Laboratorio Espacial",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/f8/Uchuu_Kenkyuukai_emblem.png/revision/latest?cb=20251121004032"
   },
   {
    "name": "Star-Spangled Unicorns",
    "name_es": "Star Unicorn",
    "name_fr": "Licornes Étoilées",
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/d1/Star_Unicorn_emblem.png/revision/latest?cb=20251118122149"
   },
   {
    "name": "Street Howlers",
    "name_es": "Street Howlers",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": null
   },
   {
    "name": "Sumo Club",
    "name_es": "Club de Sumo",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/ae/Sumou_Bu_emblem.png/revision/latest?cb=20251121004027"
   },
   {
    "name": "Surf Club",
    "name_es": "Club de Surf",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/4/43/Surfin%27_Bu_emblem.png/revision/latest?cb=20251121004029"
   },
   {
    "name": "Swimming Club",
    "name_es": "Club de Natación",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/ee/Suiei_Bu_emblem.png/revision/latest?cb=20251121004024"
   },
   {
    "name": "Table Tennis Club",
    "name_es": "Club de Tenis de Mesa",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/24/Takkyuu_Bu_emblem.png/revision/latest?cb=20251121004030"
   },
   {
    "name": "Tea Ceremony Club",
    "name_es": "Club de Ceremonia del Té",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/69/Sadou_Bu_emblem.png/revision/latest?cb=20251121004020"
   },
   {
    "name": "Tennis Club",
    "name_es": "Club de Tenis",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/c/cb/Tennis_Bu_emblem.png/revision/latest?cb=20251121004031"
   },
   {
    "name": "Track and Field Club",
    "name_es": "Club de Atletismo",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/8/87/Rikujou_Bu_emblem.png/revision/latest?cb=20251121004018"
   },
   {
    "name": "Volleyball Club",
    "name_es": "Club de Voleibol",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/e2/Volleyball_Bu_emblem.png/revision/latest?cb=20251121004033"
   },
   {
    "name": "Water Polo Club",
    "name_es": "Club de Waterpolo",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/2d/Suikyuu_Bu_emblem.png/revision/latest?cb=20251121004025"
   },
   {
    "name": "Wind Orchestra Club",
    "name_es": "Club de Banda de Viento",
    "name_fr": null,
-   "name_it": null
+   "name_it": null,
+   "logo_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/0b/Suisougaku_Bu_emblem.png/revision/latest?cb=20251121004026"
   }
  ],
  "staff": [
