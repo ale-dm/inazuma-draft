@@ -1,10 +1,21 @@
 import { useSyncExternalStore } from 'react'
 import type { Category } from '../types'
+import type { FormationId, SlotId } from './lineup'
 
 /**
  * El club del jugador (fase 3, solo en este dispositivo): monedas, XP, cartas con duplicados, sobres guardados,
  * racha diaria y objetivos. Más adelante irá a Supabase (fase 6). Ver docs/app-log.md.
  */
+/** Plantilla hecha con cartas del club (Mis plantillas) */
+export interface Squad {
+  id: string
+  name: string
+  formation: FormationId
+  /** puesto → id de carta */
+  cards: Partial<Record<SlotId, string>>
+  captain: SlotId | null
+}
+
 export interface ClubState {
   coins: number
   xp: number
@@ -21,6 +32,7 @@ export interface ClubState {
   claimed: string[]
   /** Colecciones con el premio ya cobrado */
   collections: string[]
+  squads: Squad[]
 }
 
 const KEY = 'ffi-club-v1'
@@ -29,7 +41,7 @@ export const STARTER_PACKS = ['starter']
 
 const fresh = (): ClubState => ({
   coins: STARTER_COINS, xp: 0, cards: {}, packs: [...STARTER_PACKS], streak: 0, lastDaily: null,
-  day: null, counters: {}, claimed: [], collections: [],
+  day: null, counters: {}, claimed: [], collections: [], squads: [],
 })
 
 function read(): ClubState {
@@ -143,6 +155,14 @@ export function trackMax(event: string, value: number) {
     counters[event] = Math.max(counters[event] ?? 0, value)
     return { ...s, day: today(), counters, claimed: fresh_ ? [] : s.claimed }
   })
+}
+
+export function saveSquad(squad: Squad) {
+  updateClub(s => ({ ...s, squads: s.squads.some(q => q.id === squad.id) ? s.squads.map(q => (q.id === squad.id ? squad : q)) : [...s.squads, squad] }))
+}
+
+export function deleteSquad(id: string) {
+  updateClub(s => ({ ...s, squads: s.squads.filter(q => q.id !== id) }))
 }
 
 export function resetClub() {

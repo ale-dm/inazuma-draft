@@ -19,7 +19,8 @@ import LineupReview from './components/LineupReview'
 import Tournament from './components/Tournament'
 import ExportTeamButton from './components/ExportTeamButton'
 import PlayersExplorer from './components/PlayersExplorer'
-import { CLUB_HASH, COLLECTIONS_HASH, OBJECTIVES_HASH, PLAYERS_HASH, STORE_HASH, useHashRoute } from './lib/route'
+import { CLUB_HASH, COLLECTIONS_HASH, OBJECTIVES_HASH, PLAYERS_HASH, SQUADS_HASH, STORE_HASH, useHashRoute } from './lib/route'
+import Squads from './components/club/Squads'
 import Store from './components/club/Store'
 import MyCards from './components/club/MyCards'
 import Collections from './components/club/Collections'
@@ -241,7 +242,7 @@ export default function App() {
     )
   }
 
-  const clubScreen = { [STORE_HASH]: <Store />, [CLUB_HASH]: <MyCards />, [COLLECTIONS_HASH]: <Collections />, [OBJECTIVES_HASH]: <Objectives /> }[route]
+  const clubScreen = { [STORE_HASH]: <Store />, [CLUB_HASH]: <MyCards />, [COLLECTIONS_HASH]: <Collections />, [OBJECTIVES_HASH]: <Objectives />, [SQUADS_HASH]: <Squads /> }[route]
 
   return (
     <>

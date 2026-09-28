@@ -3,12 +3,12 @@ import type { Player } from '../../types'
 import { useAppSettings } from '../../context/AppSettings'
 import { getAllPlayers, getCharacterVersions } from '../../data/catalog'
 import { loadProgress, uniqueCharacters } from '../../lib/progress'
-import { CLUB_HASH, COLLECTIONS_HASH, OBJECTIVES_HASH, PLAYERS_HASH, STORE_HASH } from '../../lib/route'
+import { CLUB_HASH, COLLECTIONS_HASH, OBJECTIVES_HASH, PLAYERS_HASH, SQUADS_HASH, STORE_HASH } from '../../lib/route'
 import { useClub } from '../../lib/club'
 import { pendingRewards } from '../../lib/objectives'
 import InaCard from '../InaCard'
 import Coin from '../Coin'
-import { BookOpen, ClipboardList, Cloud, Layers, Puzzle, Settings, Shield, ShoppingBag, Target, Zap } from 'lucide-react'
+import { ArrowLeftRight, BookOpen, ClipboardList, Cloud, Layers, Puzzle, Settings, Shield, ShoppingBag, Target, TrendingUp, Zap } from 'lucide-react'
 import RulesModal from '../RulesModal'
 import StatsModal from '../StatsModal'
 import Sheet from './Sheet'
@@ -74,38 +74,37 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
         className="hub-pager"
         onScroll={e => setPage(Math.round(e.currentTarget.scrollLeft / e.currentTarget.clientWidth))}
       >
-        {/* 1 · Jugar */}
+        {/* 1 · Sobres (como el "Pack" de MADFUT) + Duelo + modos */}
         <section className="hub-page hub-page--teal">
-          <HeroTile title={t('hub.draft')} sub={t('hub.draftSub')} image={heroes.draft} onClick={() => setSheet('mode')} />
-          <button type="button" className="tile tile--wide hub-ffi" onClick={() => setSheet('stats')}>
-            <span className="hub-ffi__title">FFI</span>
-            <span className="hub-ffi__cols">
-              {([['hub.titles', progress.titles], ['hub.finals', progress.finals], ['hub.drafts', progress.drafts]] as const).map(([k, v]) => (
-                <span key={k}><b>{t(k)}</b><small>{v}</small></span>
+          <HeroTile title={t('hub.packs')} sub={club.packs.length ? t('store.saved', { n: club.packs.length }) : undefined} image={heroes.packs} onClick={go(STORE_HASH)} />
+          <div className="tile tile--wide hub-duel">
+            <span className="hub-duel__title">{t('hub.duel')}</span>
+            <span className="hub-duel__cols">
+              {(['hub.duelClub', 'hub.duelSim', 'hub.draft'] as const).map(k => (
+                <span key={k}><b>{t(k)}</b><small>{t('hub.soon')}</small></span>
               ))}
             </span>
-          </button>
-          <div className="hub-grid">
-            <Tile label={t('hub.players')} onClick={goPlayers}>
+          </div>
+          <div className="hub-grid hub-grid--tall">
+            <Tile label={t('hub.modeFfi')} onClick={() => setSheet('mode')}>
+              <span className="tile__big">FFI</span>
+            </Tile>
+            <Tile label={t('hub.draftModes')} onClick={() => setSheet('mode')} tall>
               <CardFan players={progress.showcase} />
             </Tile>
-            <Tile label={t('hub.modes')} onClick={() => setSheet('mode')}>
-              <span className="tile__big">{mode === 'classic' ? t('landing.mode.classic') : t('landing.mode.memory')}</span>
-            </Tile>
-            <Tile label={t('hub.rules')} onClick={() => setSheet('rules')} wide>
-              <BookOpen className="tile__icon" strokeWidth={1.6} aria-hidden />
-            </Tile>
+            <Tile label={t('hub.trading')} soon={t('hub.soon')}><ArrowLeftRight className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
           </div>
         </section>
 
-        {/* 2 · Sobres y tienda (próximamente) */}
+        {/* 2 · Draft + tienda, últimas cartas, objetivos, retos, evoluciones */}
         <section className="hub-page hub-page--violet">
-          <HeroTile title={t('hub.packs')} sub={club.packs.length ? t('store.saved', { n: club.packs.length }) : undefined} image={heroes.packs} onClick={go(STORE_HASH)} />
+          <HeroTile title={t('hub.draft')} sub={t('hub.draftSub')} image={heroes.draft} onClick={() => setSheet('mode')} />
           <div className="hub-grid">
             <Tile label={t('hub.store')} onClick={go(STORE_HASH)}><ShoppingBag className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
             <Tile label={t('hub.latest')} onClick={goPlayers}><CardFan players={latest} /></Tile>
             <Tile label={t('hub.objectives')} onClick={go(OBJECTIVES_HASH)} badge={pending}><Target className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
             <Tile label={t('hub.sbc')} soon={t('hub.soon')}><Puzzle className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
+            <Tile label={t('hub.evolutions')} soon={t('hub.soon')} wide><TrendingUp className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
           </div>
         </section>
 
@@ -119,8 +118,14 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
               <span className="hub-ring" style={{ ['--pct' as string]: `${progress.collectionPct}%` }}>{progress.collectionPct}%</span>
             </Tile>
             <Tile label={t('hub.badges')} soon={t('hub.soon')}><Shield className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
-            <Tile label={t('hub.myStats')} onClick={() => setSheet('stats')}><span className="tile__big">{progress.drafts}</span></Tile>
-            <Tile label={t('hub.squads')} soon={t('hub.soon')}><ClipboardList className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
+            <Tile label={t('hub.myStats')} onClick={() => setSheet('stats')}>
+              <span className="hub-stats">
+                {([['hub.titles', progress.titles], ['hub.finals', progress.finals], ['hub.drafts', progress.drafts]] as const).map(([k, v]) => (
+                  <span key={k}><b>{v}</b><small>{t(k)}</small></span>
+                ))}
+              </span>
+            </Tile>
+            <Tile label={t('hub.squads')} onClick={go(SQUADS_HASH)}><ClipboardList className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
           </div>
           <div className="hub-grid hub-grid--3">
             <Tile label={t('hub.settings')} onClick={() => setSheet('settings')}><Settings className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
@@ -175,9 +180,11 @@ function HeroTile({ title, sub, image, soon, onClick }: { title: string; sub?: s
   )
 }
 
-function Tile({ label, children, onClick, soon, wide, badge }: { label: string; children?: ReactNode; onClick?: () => void; soon?: string; wide?: boolean; badge?: number }) {
+function Tile({ label, children, onClick, soon, wide, tall, badge }: {
+  label: string; children?: ReactNode; onClick?: () => void; soon?: string; wide?: boolean; tall?: boolean; badge?: number
+}) {
   return (
-    <button type="button" className={`tile ${wide ? 'tile--wide' : ''} ${soon ? 'tile--soon' : ''}`} onClick={onClick} disabled={!onClick}>
+    <button type="button" className={`tile ${wide ? 'tile--wide' : ''} ${tall ? 'tile--tall' : ''} ${soon ? 'tile--soon' : ''}`} onClick={onClick} disabled={!onClick}>
       <span className="tile__body">{children}</span>
       <span className="tile__label">{label}</span>
       {soon && <span className="tile__soon">{soon}</span>}

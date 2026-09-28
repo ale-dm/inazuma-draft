@@ -6,7 +6,7 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 ## Fase 1 · Base
 - [x] PWA instalable (manifest, iconos, service worker; caché de catálogo, fotos y fuentes)
 - [x] Manifest con credenciales (instalable en las previews protegidas de Vercel)
-- [x] Pantalla principal de 3 páginas deslizables + barra de nivel, títulos y cartas
+- [x] Pantalla principal de 3 páginas deslizables + barra de nivel, cartas y monedas; en el orden de MADFUT (1 Sobres · 2 Draft · 3 Club)
 - [x] Carta con estilo propio (nada de FIFA): media, icono de puesto, foto, afinidad y equipo; color por rareza de Victory Road (Common verde · Growing azul · Advanced morado · Top amarillo · Legendary naranja; sin Hero)
 - [x] Iconos de Victory Road: puestos, afinidades, tipos de supertécnica, espíritu guerrero, Mixi Max, tótem
 - [x] Fuera los emojis de la interfaz: iconos de línea (lucide) y moneda propia
@@ -46,6 +46,8 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [ ] Objetivos semanales y de carrera
 - [x] Draft FFI, alineación, torneo, resultado y jugadores dentro del marco nuevo (fuera la barra y el pie antiguos; créditos en Ajustes)
 - [ ] Rediseño por dentro del torneo, la alineación y el explorador de jugadores (siguen con los paneles antiguos)
+
+- [x] Mis plantillas: onces con tus cartas, con química y media
 
 ## Fase 4 · Modos
 - [ ] Duelo (Fatal con supertécnicas y ventaja de elemento)

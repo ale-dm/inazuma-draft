@@ -127,3 +127,15 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
 - `src/lib/chemistry.ts` reescrito; `src/components/pitch/Pitch.tsx` (campo reutilizable: carta + etiqueta con puesto y
   3 rombos de química, como MADFUT) y `pitch/ChemHelp.tsx` ("Cómo funciona la química", como la ventana de MADFUT).
 - La química del partido pasa a 0–33 (de −5 % a +5 %; la mitad, neutra); el objetivo diario pasa a 24 de química.
+
+### Inicio en el orden de MADFUT y Mis plantillas
+- Pedido: respetar la interfaz de MADFUT (página 1 = "Pack", página 2 = "Draft", página 3 = el club).
+  - **Página 1**: Sobres (grande) → panel **Duelo** (como FATAL: Mi club · Simulación · Draft, próximamente) → Draft FFI,
+    Intercambios (próximamente) y **Modos de draft** (alto, a la derecha, como en MADFUT).
+  - **Página 2**: **Draft** (grande) → Tienda, Últimas cartas, Objetivos, Retos, Evoluciones (ancho).
+  - **Página 3**: Mis cartas → Colección, Insignias, Mis estadísticas (títulos, finales, drafts), **Mis plantillas** →
+    Ajustes, Copia de seguridad, Reglas.
+- **Mis plantillas** (`#/plantillas`, `club/Squads.tsx`): plantillas guardadas en el club (`squads`), con las 10
+  formaciones por nombre, el mismo campo y la misma química que el draft; tocar un hueco → tus cartas de ese puesto (sin
+  repetir personaje); tocar una carta → capitán, cambiar o quitar. Al cambiar de formación se recolocan las cartas.
+- El campo es más alto (3:4,6) para que en 4-4-2 los medios no pisen a los defensas.

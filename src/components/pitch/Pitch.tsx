@@ -13,7 +13,7 @@ interface Props {
 }
 
 /** Coordenada y (0–100 de la formación) dentro del campo: margen arriba y el portero en su propia fila abajo */
-export const fieldY = (y: number) => (y >= 85 ? 91 : 8 + y * 0.84)
+export const fieldY = (y: number) => (y >= 85 ? 92 : 6 + y * 0.9)
 
 /** Tres puntos de química (0–3) */
 export function ChemDots({ value }: { value: number }) {

@@ -129,18 +129,6 @@
 .hub-page--violet .tile { --edge: var(--hub-violet); --glass: linear-gradient(160deg, rgba(70, 40, 150, .78), rgba(14, 16, 48, .92)); }
 .hub-page--blue .tile { --edge: var(--hub-cyan); --glass: linear-gradient(160deg, rgba(20, 70, 140, .78), rgba(8, 18, 44, .92)); }
 
-/* panel FFI: título grande y tres columnas */
-.hub-ffi { min-height: 8.5rem; justify-content: center; gap: .6rem; }
-.hub-ffi__title {
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-style: italic; font-size: 3rem; line-height: 1;
-  background: linear-gradient(180deg, #ffd23d, #ff4d1a); -webkit-background-clip: text; background-clip: text; color: transparent;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .6));
-}
-.hub-ffi__cols { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; }
-.hub-ffi__cols span { display: flex; flex-direction: column; gap: .15rem; padding-top: .35rem; border-top: 1px solid rgba(255, 255, 255, .2); margin: 0 .4rem; }
-.hub-ffi__cols b { font-family: 'Barlow Condensed', sans-serif; font-style: italic; font-size: 1.2rem; text-transform: uppercase; }
-.hub-ffi__cols small { color: var(--hub-dim); font-weight: 800; }
-
 /* anillo de colección */
 .hub-ring {
   --pct: 0%;
@@ -176,7 +164,7 @@
 .fd-options { display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem; }
 
 .fd-pitch {
-  position: relative; width: 100%; aspect-ratio: 3 / 4.2; border-radius: 18px; overflow: visible;
+  position: relative; width: 100%; aspect-ratio: 3 / 4.6; border-radius: 18px; overflow: visible;
   background:
     linear-gradient(rgba(255, 255, 255, .08), rgba(255, 255, 255, .08)) 50% 50% / 100% 1px no-repeat,
     radial-gradient(circle at 50% 50%, transparent 17%, rgba(255, 255, 255, .08) 17.3%, transparent 17.8%),
@@ -439,3 +427,21 @@ button.ic:active { transform: scale(.95); }
 .chem-help__pts { display: flex; align-items: center; gap: .6rem; padding: 0 .9rem; background: rgba(255, 255, 255, .06); }
 .chem-help__pts b { font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; font-style: italic; }
 .chem-help__pts .chem-dots i { width: 8px; height: 8px; }
+
+/* ---------------------------------------------------------------- inicio en el orden de MADFUT */
+.hub-grid--tall { grid-template-rows: auto auto; }
+.tile--tall { grid-column: 2; grid-row: 1 / span 2; }
+.hub-duel { min-height: 8.5rem; justify-content: center; gap: .6rem; cursor: default; }
+.hub-duel__title {
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-style: italic; font-size: 3.2rem; line-height: 1; text-transform: uppercase;
+  background: linear-gradient(180deg, #ffd23d, #ff4d1a); -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .6));
+}
+.hub-duel__cols { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; }
+.hub-duel__cols span { display: flex; flex-direction: column; gap: .15rem; padding-top: .35rem; margin: 0 .4rem; border-top: 1px solid rgba(255, 255, 255, .2); }
+.hub-duel__cols b { font-family: 'Barlow Condensed', sans-serif; font-style: italic; font-size: 1.15rem; text-transform: uppercase; }
+.hub-duel__cols small { color: var(--hub-dim); font-weight: 800; font-size: .7rem; text-transform: uppercase; }
+.hub-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: .3rem; width: 100%; }
+.hub-stats span { display: flex; flex-direction: column; align-items: center; }
+.hub-stats b { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-style: italic; font-size: 1.8rem; line-height: 1; }
+.hub-stats small { font-size: .6rem; color: var(--hub-dim); text-transform: uppercase; font-weight: 800; }

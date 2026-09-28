@@ -6,6 +6,7 @@ export const STORE_HASH = '#/tienda'
 export const CLUB_HASH = '#/club'
 export const COLLECTIONS_HASH = '#/colecciones'
 export const OBJECTIVES_HASH = '#/objetivos'
+export const SQUADS_HASH = '#/plantillas'
 
 /** Ruta mínima por hash: '#/jugadores' abre el explorador sin perder la partida en curso */
 export function useHashRoute(): string {
