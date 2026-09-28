@@ -1,7 +1,7 @@
 # Duelo
 
-Modo de la fase 4 (rama `app`). Código: `src/lib/duel.ts` (reglas y números), `src/components/modes/Duel.tsx`
-(pantalla), `src/components/DuelCard.tsx` (carta con la columna de 3 números).
+Modo de la fase 4 (rama `app`). La carta del duelo es `src/components/DuelCard.tsx` (la carta normal con los 3
+números siempre a la vista y la diferencia por química/boost).
 
 ## Cómo funciona ahora: el Fatal de MADFUT
 
@@ -37,7 +37,9 @@ simulación), `src/lib/duel.ts` (números de cada carta), `src/components/modes/
   responde, estima tu número por la pista y juega la carta más floja que lo supera, o "tira" la peor.
 - **Premio**: victoria 400 monedas + 60 XP · empate 150 + 30 · derrota 50 + 15.
 
-## Supertécnicas: qué se podría hacer (sin hacer todavía)
+## Supertécnicas en el partido: qué se podría hacer (sin hacer todavía)
+
+Ya cuentan en los **números** de la carta (punto 3 de arriba); lo de abajo serían efectos dentro del partido.
 
 Datos que ya tenemos por técnica: tipo (Tiro, Regate, Bloqueo, Parada), afinidad, coste de TP, rasgos (`traits`:
 tiro largo, bloqueo de tiros, encadenable, despeje de puños) y, en los juegos, su potencia (`power` en WazaData, aún
