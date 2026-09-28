@@ -3121,13 +3121,10 @@
     "Intelligence": 129
    },
    "techniques": [
-    "vr_whs03140",
-    "vr_whs03240",
+    "KakuranStep",
     "vr_whs03000",
     "vr_whd01560",
-    "Slingshot",
-    "OgreBlade",
-    "KakuranStep"
+    "vr_whs03240"
    ]
   },
   {
@@ -3575,13 +3572,10 @@
     "Intelligence": 121
    },
    "techniques": [
-    "vr_whd01540",
-    "vr_whs02930",
     "vr_whs02920",
-    "EternalBlizzard",
-    "IceGround",
-    "FrozenSteal",
-    "LoopShoot"
+    "es_remate-cazaosos",
+    "vr_whs02930",
+    "vr_whs02950"
    ]
   },
   {
@@ -3812,13 +3806,11 @@
     "Intelligence": 121
    },
    "techniques": [
-    "Slingshot",
-    "DoubleTornado",
-    "UnicornBoost",
-    "ScissorsBomb",
+    "YusaburiFeint",
     "MatadorFeint",
-    "RapidFire",
-    "YusaburiFeint"
+    "Slingshot",
+    "ScissorsBomb",
+    "DoubleTornado"
    ]
   },
   {
@@ -4095,13 +4087,11 @@
     "Intelligence": 119
    },
    "techniques": [
-    "GladiusArch",
+    "HippariCut",
     "VolcanoCut",
     "HurricaneArrow",
     "GodHand_Blue",
-    "TigerDrive",
-    "Gunshot",
-    "HippariCut"
+    "GladiusArch"
    ]
   },
   {
@@ -4377,13 +4367,8 @@
     "Intelligence": 126
    },
    "techniques": [
-    "vr_whk01470",
     "vr_whk01460",
-    "WhiteBlade",
-    "TsubameGaeshi",
-    "ShootPocket",
-    "vr_whk00800",
-    "PowerHandCatch"
+    "vr_whk01470"
    ]
   },
   {
@@ -4471,13 +4456,11 @@
     "Intelligence": 116
    },
    "techniques": [
-    "SpacePenguin",
-    "TheMist",
+    "FeintNuki",
     "vr_who01420",
     "CoilTurn",
-    "QuickDraw",
-    "PlasmaBall",
-    "FeintNuki"
+    "TheMist",
+    "QuickDraw"
    ]
   },
   {
@@ -4717,12 +4700,7 @@
    },
    "techniques": [
     "vr_whs02890",
-    "RyuuseiBlade",
-    "SkyWalk",
-    "PrestoTurn",
-    "AirBullet",
-    "TracePress",
-    "MagaruShoot"
+    "SkyWalk"
    ]
   },
   {
@@ -4819,12 +4797,8 @@
     "Intelligence": 131
    },
    "techniques": [
-    "Supernova",
     "RyuuseiBlade",
-    "SouthernCrosscut",
-    "MeteorShower",
-    "PhotonFlash",
-    "WanbanShoot"
+    "vr_whs02980_or_02"
    ]
   },
   {
@@ -4867,12 +4841,11 @@
     "Intelligence": 130
    },
    "techniques": [
-    "MegaQuake",
+    "ShoulderCharge",
     "TheWall",
-    "SuperArmadillo",
-    "MoguraFeint",
-    "DashAccel",
-    "HippariCut"
+    "TheMountain",
+    "ElephantPress",
+    "SuperArmadillo"
    ]
   },
   {
@@ -5048,13 +5021,11 @@
     "Intelligence": 119
    },
    "techniques": [
-    "vr_whs02790",
-    "DualStrike",
-    "GodHand_Blue",
+    "YusaburiFeint",
     "KangarooKick",
+    "vr_whs02790",
     "TatsumakiSenpuu",
-    "Tsumuji",
-    "YusaburiFeint"
+    "DualStrike"
    ]
   },
   {
@@ -5235,13 +5206,10 @@
     "Intelligence": 120
    },
    "techniques": [
-    "DoubleTornado",
-    "vr_whs03160",
+    "LoopShoot",
     "RyuuseiBlade",
-    "BuraiHand",
-    "RocketKobushi",
     "SuperScanOF",
-    "LoopShoot"
+    "DoubleTornado"
    ]
   },
   {
@@ -5330,12 +5298,7 @@
    },
    "techniques": [
     "MajinTheHand_K",
-    "vr_whk01490",
-    "MegatonHead",
-    "Inazuma1gou",
-    "GodHand_Blue",
-    "NekketsuPunch",
-    "PowerHandCatch"
+    "vr_whk01490"
    ]
   },
   {
@@ -5852,13 +5815,11 @@
     "Intelligence": 122
    },
    "techniques": [
-    "OmegaTheHand",
+    "FunbariCatch",
     "vr_whk01530",
     "GigantWall",
-    "StarReflection",
-    "MoguraFeint",
-    "DogRun",
-    "FunbariCatch"
+    "OmegaTheHand",
+    "StarReflection"
    ]
   },
   {
@@ -5947,13 +5908,11 @@
     "Intelligence": 122
    },
    "techniques": [
-    "MajinTheHand_K",
-    "Slingshot",
-    "TripleDefense",
+    "PowerHandCatch",
     "GodHand_Blue",
     "BakuretsuPunch",
-    "DualStrike",
-    "PowerHandCatch"
+    "MajinTheHand_K",
+    "TripleDefense"
    ]
   },
   {
@@ -5997,11 +5956,7 @@
    },
    "techniques": [
     "vr_whs02930",
-    "AuroraDribble",
-    "IceGround",
-    "WhiteBlade",
-    "FreezeShot",
-    "MagaruShoot"
+    "vr_whs02950"
    ]
   },
   {
@@ -6708,13 +6663,7 @@
     "Intelligence": 129
    },
    "techniques": [
-    "vr_whd01490",
-    "KouteiPenguin2gou",
-    "KazaanaDrive",
-    "Cyclone",
-    "WhiteBlade",
-    "vr_who01420",
-    "TrickCut"
+    "vr_whd01490"
    ]
   },
   {
@@ -6910,13 +6859,11 @@
     "Intelligence": 121
    },
    "techniques": [
-    "vr_who00590",
-    "DashStorm",
+    "TrickCut",
     "StonePrison",
     "EchoBall",
-    "FlameVeil",
-    "DogRun",
-    "TrickCut"
+    "vr_who00590",
+    "FlameVeil"
    ]
   },
   {
@@ -7005,12 +6952,13 @@
     "Intelligence": 121
    },
    "techniques": [
-    "vr_whs02840",
+    "FireTornado",
+    "vr_whs02770",
+    "vr_whs02780",
+    "BakunetsuStorm_K",
+    "CounterdriveGK",
     "vr_whs02830",
-    "vr_who00270",
-    "vr_whs02750",
-    "HeatTackle",
-    "PowerShoot"
+    "vr_whs02840"
    ]
   },
   {
@@ -7234,13 +7182,11 @@
     "Intelligence": 121
    },
    "techniques": [
-    "FireBlizzard_Wind",
+    "WanbanShoot",
     "NorthernImpact",
-    "VanishingCut",
-    "AuroraDribble",
-    "SouthernCrosscut",
     "WaterVeil",
-    "WanbanShoot"
+    "FireBlizzard_Wind",
+    "VanishingCut"
    ]
   },
   {
@@ -7329,12 +7275,7 @@
     "Intelligence": 130
    },
    "techniques": [
-    "vr_whs02900",
-    "HeavensTime",
-    "GodBreak",
-    "GodKnows",
-    "vr_whd00190",
-    "Matanuki"
+    "vr_whs02900"
    ]
   },
   {
@@ -7422,13 +7363,11 @@
     "Intelligence": 116
    },
    "techniques": [
-    "Slingshot",
-    "DesertStorm",
+    "TrickCut",
     "LiarShot",
     "SuperElastico",
     "WelcomeBack",
-    "MeteorAttack",
-    "TrickCut"
+    "DesertStorm"
    ]
   },
   {
@@ -7571,13 +7510,11 @@
     "Intelligence": 121
    },
    "techniques": [
-    "FireBlizzard_Wind",
+    "MagaruShoot",
     "AtomicFlare",
-    "MeteorShower",
-    "TheIkaros",
-    "CrazySunlight",
     "FlameVeil",
-    "MagaruShoot"
+    "FireBlizzard_Wind",
+    "CrazySunlight"
    ]
   },
   {
@@ -7921,13 +7858,10 @@
     "Intelligence": 130
    },
    "techniques": [
-    "vr_whs02880",
-    "vr_whd01490",
-    "vr_whs02870",
     "DeathZone",
-    "DemonCut",
-    "KillerSlide",
-    "PowerShoot"
+    "es_chilena-de-ping-ino",
+    "vr_whs02880",
+    "HitoriOneTwo"
    ]
   },
   {
@@ -8024,13 +7958,11 @@
     "Intelligence": 116
    },
    "techniques": [
-    "SigmaZone",
+    "ShoulderCharge",
     "MaboroshiDribble",
     "vr_whd00150",
     "DimensionCut",
-    "BunshinFeint",
-    "MoguraFeint",
-    "ShoulderCharge"
+    "SigmaZone"
    ]
   },
   {
@@ -8582,13 +8514,11 @@
     "Intelligence": 116
    },
    "techniques": [
-    "TenkuuOtoshi",
-    "vr_whs03160",
-    "HeatTackle",
-    "Hellfire",
-    "DogRun",
-    "FlameVeil",
-    "MagaruShoot"
+    "RollingCut",
+    "LaFlamme",
+    "TrickBall",
+    "TheMist",
+    "DeepMist"
    ]
   },
   {
@@ -8677,13 +8607,11 @@
     "Intelligence": 121
    },
    "techniques": [
-    "Slingshot",
-    "GoToHeaven",
+    "TrickCut",
     "StonePrison",
+    "GoToHeaven",
     "WelcomeBack",
-    "Hellfire",
-    "BoundFlame",
-    "TrickCut"
+    "Hellfire"
    ]
   },
   {
@@ -9065,13 +8993,11 @@
     "Intelligence": 116
    },
    "techniques": [
-    "vr_whk01460",
-    "KagomeKagome",
+    "FeintPlay",
+    "vr_whd01460",
     "ShippuuDash",
     "SkyWalk",
-    "CrystalBarrier",
-    "vr_whd01460",
-    "FeintPlay"
+    "KagomeKagome"
    ]
   },
   {
@@ -9160,13 +9086,11 @@
     "Intelligence": 120
    },
    "techniques": [
-    "NoEscape",
-    "TwinMixer",
-    "QuickDraw",
-    "GrenadeShot",
-    "SuperScanOF",
-    "ThiefEye",
-    "TrickCut"
+    "Matanuki",
+    "SouthernCrosscut",
+    "SpiralDraw",
+    "ZigzagSpark",
+    "AirBullet"
    ]
   },
   {
@@ -9209,13 +9133,11 @@
     "Intelligence": 121
    },
    "techniques": [
-    "vr_whd00190",
-    "TheIkaros",
-    "ShootingStar",
-    "SparkEdgeDribble",
+    "HippariCut",
     "SpinningCut",
     "BladeAttack",
-    "HippariCut"
+    "ShootingStar",
+    "vr_whd00190"
    ]
   },
   {
@@ -11405,13 +11327,11 @@
     "Intelligence": 108
    },
    "techniques": [
-    "Slingshot",
-    "TheTower",
+    "HoppingTrick",
     "MatadorFeint",
+    "Slingshot",
     "RapidFire",
-    "BoundFlame",
-    "DogRun",
-    "HoppingTrick"
+    "BoundFlame"
    ]
   },
   {
@@ -11817,7 +11737,7 @@
    "zukan_no": null,
    "is_version": false,
    "description": null,
-   "description_es": null,
+   "description_es": "Una princesa guerrera de sangre fría a la que no afectan los sentimientos.",
    "no": 5954,
    "specials": [],
    "extra_teams": [],
@@ -12024,13 +11944,11 @@
     "Intelligence": 120
    },
    "techniques": [
-    "DragonTornado",
-    "WyvernBlizzard",
-    "WyvernCrash",
-    "HitoriOneTwo",
-    "SuperElastico",
-    "DragonCrash",
-    "GrounderShoot"
+    "PowerShoot",
+    "DragonSlayer",
+    "DenraiHoutou",
+    "WhiteHurricane",
+    "vr_whs02990"
    ]
   },
   {
@@ -13480,13 +13398,11 @@
     "Intelligence": 116
    },
    "techniques": [
+    "HeelLift",
     "GoToHeaven",
     "UltraMoon",
     "SuperElastico",
-    "Hellfire",
-    "Sargasso",
-    "KageNui",
-    "HeelLift"
+    "Hellfire"
    ]
   },
   {
@@ -14289,13 +14205,11 @@
     "Intelligence": 119
    },
    "techniques": [
-    "MagicalFlower",
-    "AuroraDribble",
+    "PowerShoot",
     "vr_whs02940",
+    "AuroraDribble",
     "BouncerRabbit",
-    "CrystalBarrier",
-    "Tsumuji",
-    "PowerShoot"
+    "MagicalFlower"
    ]
   },
   {
@@ -14619,13 +14533,7 @@
     "Intelligence": 121
    },
    "techniques": [
-    "KouteiPenguin2gou",
-    "UltraMoon",
-    "DivineArrow",
-    "BunshinFeint",
-    "KillerSlide",
-    "TrickBall",
-    "PowerShoot"
+    "KouteiPenguin2gou"
    ]
   },
   {
@@ -15239,13 +15147,11 @@
     "Intelligence": 130
    },
    "techniques": [
-    "InazumaBreak",
-    "TwinBoostF",
-    "KouteiPenguin2gou",
-    "TwinBoost",
+    "HoppingTrick",
     "IllusionBall",
-    "SpinningCut",
-    "FeintNuki"
+    "LastDeathZone",
+    "KouteiPenguin2gou",
+    "KillerFields"
    ]
   },
   {
@@ -15571,13 +15477,11 @@
     "Intelligence": 107
    },
    "techniques": [
-    "MajinTheHand_K",
-    "vr_whk01460",
+    "FeintNuki",
+    "vr_whs03170",
+    "MaboroshiDribble",
     "SouthernCrosscut",
-    "IllusionBall",
-    "PrestoTurn",
-    "vr_whd01460",
-    "HeelLift"
+    "SuperElastico"
    ]
   },
   {
@@ -16572,8 +16476,11 @@
    },
    "techniques": [
     "vr_who01400",
+    "vr_whs02770",
+    "vr_whs02780",
     "vr_whs02760",
-    "PowerShoot"
+    "CounterdriveGK",
+    "vr_whs02830"
    ]
   },
   {
@@ -17295,13 +17202,8 @@
     "Intelligence": 121
    },
    "techniques": [
-    "InazumaOtoshi",
-    "Inazuma1gou",
-    "vr_who00270",
-    "DashStorm",
     "FireTornado",
-    "HeatTackle",
-    "WanbanShoot"
+    "BakunetsuStorm_K"
    ]
   },
   {
@@ -18512,13 +18414,10 @@
     "Intelligence": 107
    },
    "techniques": [
-    "Slingshot",
-    "vr_whs02990",
-    "SneakingRaid",
-    "DualStrike",
+    "Matanuki",
     "MonkeyTurn",
     "MoguraFeint",
-    "Matanuki"
+    "SneakingRaid"
    ]
   },
   {
@@ -18701,12 +18600,8 @@
     "Intelligence": 131
    },
    "techniques": [
-    "Supernova",
     "RyuuseiBlade",
-    "SouthernCrosscut",
-    "MeteorShower",
-    "PhotonFlash",
-    "WanbanShoot"
+    "vr_whs02980_or_02"
    ]
   },
   {
@@ -18884,12 +18779,11 @@
     "Intelligence": 134
    },
    "techniques": [
-    "SpacePenguin",
-    "Supernova",
-    "MeteorShower",
+    "FeintNuki",
     "AstroBreak",
-    "ZigzagSpark",
-    "FeintNuki"
+    "MeteorShower",
+    "SpacePenguin",
+    "ZigzagSpark"
    ]
   },
   {
@@ -19069,13 +18963,9 @@
     "Intelligence": 135
    },
    "techniques": [
-    "vr_whd01490",
-    "DemonCut",
-    "JudgeThrough",
-    "ShootingStar",
-    "TheTower",
-    "SpinningShoot",
-    "HoppingTrick"
+    "FeintNuki",
+    "TatsumakiSenpuu",
+    "vr_whd00220"
    ]
   },
   {
@@ -19118,12 +19008,11 @@
     "Intelligence": 116
    },
    "techniques": [
-    "GoodSmell",
-    "AuroraDribble",
+    "TrickCut",
     "IceGround",
+    "GoodSmell",
     "RainbowLoop",
-    "TsuchiDaruma",
-    "TrickCut"
+    "AuroraDribble"
    ]
   },
   {
@@ -19211,13 +19100,11 @@
     "Intelligence": 107
    },
    "techniques": [
-    "vr_who00270",
-    "TheIkaros",
+    "WanbanShoot",
     "FireTornado",
     "HeatTackle",
-    "TsubameGaeshi",
     "CrossDrive",
-    "WanbanShoot"
+    "vr_who00270"
    ]
   },
   {
@@ -19630,13 +19517,11 @@
     "Intelligence": 116
    },
    "techniques": [
-    "PatriotShoot",
-    "FireTornado",
-    "Gungnir",
-    "ThiefEye",
-    "ButtobiJump",
-    "SuperScanOF",
-    "WanbanShoot"
+    "PowerShoot",
+    "HitoriOneTwo",
+    "RCShoot",
+    "DokonjouBat",
+    "HonooNoKazamidori"
    ]
   },
   {
@@ -19913,13 +19798,11 @@
     "Intelligence": 107
    },
    "techniques": [
+    "HeelLift",
     "vr_whs02910",
-    "PrestoTurn",
-    "SpringArrow",
     "vr_who01420",
-    "DashAccel",
-    "Fortissimo",
-    "HeelLift"
+    "PrestoTurn",
+    "DashAccel"
    ]
   },
   {
@@ -19962,13 +19845,11 @@
     "Intelligence": 107
    },
    "techniques": [
-    "Shinkuuma",
+    "HeelLift",
     "SkyWalk",
     "Zanzou",
-    "AirBullet",
     "QuickDraw",
-    "SpiralDraw",
-    "HeelLift"
+    "SpiralDraw"
    ]
   },
   {
@@ -20066,13 +19947,11 @@
     "Intelligence": 111
    },
    "techniques": [
-    "DesertStorm",
+    "KakuranStep",
+    "KangarooKick",
     "SuperElastico",
     "RollingSlide",
-    "HitoriOneTwo",
-    "JibashiriKaen",
-    "KangarooKick",
-    "KakuranStep"
+    "DesertStorm"
    ]
   },
   {
@@ -20115,13 +19994,9 @@
     "Intelligence": 122
    },
    "techniques": [
-    "vr_whk01410",
-    "vr_whk01400",
-    "Waterfall",
-    "GreatBarrierReef",
-    "vr_whd10040",
-    "vr_whk00360",
-    "FunbariCatch"
+    "es_parada-remolino",
+    "vr_whs02770",
+    "es_velo-de-sirena"
    ]
   },
   {
@@ -20802,13 +20677,11 @@
     "Intelligence": 107
    },
    "techniques": [
+    "Matanuki",
     "vr_whs02910",
-    "IllusionBall",
-    "WhiteBlade",
-    "DivineArrow",
-    "SonicShot",
     "vr_who01420",
-    "Matanuki"
+    "IllusionBall",
+    "WhiteBlade"
    ]
   },
   {
@@ -20899,7 +20772,7 @@
    "techniques": [
     "vr_whs02960",
     "vr_whs02970",
-    "MagaruShoot"
+    "vr_whs02980_or_02"
    ]
   },
   {
@@ -21367,13 +21240,11 @@
     "Intelligence": 111
    },
    "techniques": [
-    "OlympusHarmony",
+    "FeintPlay",
+    "SpinningCut",
     "SkyWalk",
     "Harvest",
-    "HuntersNet",
-    "SpinningCut",
-    "BunshinFeint",
-    "FeintPlay"
+    "HuntersNet"
    ]
   },
   {
@@ -21416,12 +21287,8 @@
     "Intelligence": 130
    },
    "techniques": [
-    "TripleBoost",
-    "KouteiPenguin2gou",
-    "DeathZone",
-    "JudgeThrough",
-    "KillerSlide",
-    "HoppingTrick"
+    "TwinBoost",
+    "KouteiPenguin2gou"
    ]
   },
   {
@@ -21935,13 +21802,11 @@
     "Intelligence": 129
    },
    "techniques": [
-    "ThePhoenix",
-    "PegasusShot",
-    "IllusionBall",
+    "Matanuki",
     "SpinningShoot",
     "SpinningCut",
-    "SpiralShot",
-    "Matanuki"
+    "IllusionBall",
+    "ThePhoenix"
    ]
   },
   {
@@ -21984,12 +21849,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "KonohaRoll",
-    "DragonGround",
-    "TheMist",
+    "KakuranStep",
     "KangarooKick",
+    "KonohaRoll",
     "DashAccel",
-    "KakuranStep"
+    "DragonGround"
    ]
   },
   {
@@ -22628,13 +22492,7 @@
     "Intelligence": 126
    },
    "techniques": [
-    "FullPowerShield",
-    "vr_whk01480",
-    "TheIkaros",
-    "PowerShield",
-    "NarakuOtoshi",
-    "BladeAttack",
-    "PowerHandCatch"
+    "vr_whk01480"
    ]
   },
   {
@@ -23242,13 +23100,8 @@
     "Intelligence": 134
    },
    "techniques": [
-    "vr_who01410",
-    "vr_whs02830",
     "vr_whs02800",
-    "ShootingStar",
-    "DashAccel",
-    "SpinningCut",
-    "YusaburiFeint"
+    "vr_whs02830"
    ]
   },
   {
@@ -24313,13 +24166,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "BodyShield",
-    "YakimochiScrew",
+    "FeintNuki",
     "Oouchiwa",
     "Harvest",
-    "MochimochiKinakoMochi",
-    "DogRun",
-    "FeintNuki"
+    "YakimochiScrew",
+    "DogRun"
    ]
   },
   {
@@ -24406,13 +24257,11 @@
     "Intelligence": 129
    },
    "techniques": [
-    "TheIkaros",
-    "MaboroshiDribble",
-    "NarakuOtoshi",
+    "TrickCut",
     "SpinningCut",
     "MonkeyTurn",
     "RunBallRun",
-    "TrickCut"
+    "MaboroshiDribble"
    ]
   },
   {
@@ -24455,13 +24304,11 @@
     "Intelligence": 129
    },
    "techniques": [
+    "HippariCut",
     "vr_who01410",
-    "DashStorm",
-    "Cyclone",
-    "ShineDrive",
-    "BackTornado",
     "SpinningCut",
-    "HippariCut"
+    "Cyclone",
+    "DashStorm"
    ]
   },
   {
@@ -24552,7 +24399,7 @@
    "techniques": [
     "vr_whs02960",
     "vr_whs02970",
-    "MagaruShoot"
+    "vr_whs02980_or_02"
    ]
   },
   {
@@ -24845,13 +24692,11 @@
     "Intelligence": 116
    },
    "techniques": [
-    "DashStorm",
-    "GoToHeaven",
+    "RollingCut",
+    "vr_whd00190",
     "ShineDrive",
-    "BunshinDefense",
-    "CrazySunlight",
-    "BunshinFeint",
-    "HippariCut"
+    "Magic",
+    "DashStorm"
    ]
   },
   {
@@ -24894,13 +24739,11 @@
     "Intelligence": 116
    },
    "techniques": [
+    "YusaburiFeint",
     "HeavensTime",
-    "DoubleCyclone",
-    "GoToHeaven",
+    "vr_whd00190",
     "Cyclone",
-    "StonePrison",
-    "MoguraFeint",
-    "HeelLift"
+    "Tsumuji"
    ]
   },
   {
@@ -24988,13 +24831,11 @@
     "Intelligence": 116
    },
    "techniques": [
+    "KakuranStep",
     "HeavensTime",
-    "GoToHeaven",
     "DivineArrow",
     "IllusionBall",
-    "Cyclone",
-    "Doppelganger",
-    "KakuranStep"
+    "Doppelganger"
    ]
   },
   {
@@ -25181,13 +25022,11 @@
     "Intelligence": 119
    },
    "techniques": [
-    "TheIkaros",
-    "BackTornado",
-    "HurricaneArrow",
+    "RollingCut",
     "KillerSlide",
-    "BladeAttack",
-    "DogRun",
-    "RollingCut"
+    "VolcanoCut",
+    "BackTornado",
+    "HurricaneArrow"
    ]
   },
   {
@@ -25412,13 +25251,11 @@
     "Intelligence": 116
    },
    "techniques": [
+    "HippariCut",
     "MegaQuake",
-    "DashStorm",
-    "vr_who00590",
-    "ReflectBuster",
     "ZigzagSpark",
     "Earthquake",
-    "HippariCut"
+    "ReflectBuster"
    ]
   },
   {
@@ -25607,11 +25444,8 @@
     "Intelligence": 129
    },
    "techniques": [
-    "GodKnows",
-    "TriangleZ",
-    "IllusionBall",
-    "Gungnir",
-    "FeintNuki"
+    "Wormhole",
+    "DrillSmasher"
    ]
   },
   {
@@ -26047,13 +25881,11 @@
     "Intelligence": 107
    },
    "techniques": [
-    "KattobiDefense",
-    "KonohaRoll",
+    "KakuranStep",
     "NininSankyaku",
     "Harvest",
     "RunBallRun",
-    "vr_whd00220",
-    "KakuranStep"
+    "vr_whd00220"
    ]
   },
   {
@@ -26155,13 +25987,11 @@
     "Intelligence": 107
    },
    "techniques": [
-    "DoubleCyclone",
-    "DragonGround",
+    "FeintNuki",
     "Oouchiwa",
+    "DoubleCyclone",
     "StonePrison",
-    "JibashiriKaen",
-    "TwinMixer",
-    "FeintNuki"
+    "DragonGround"
    ]
   },
   {
@@ -26614,13 +26444,11 @@
     "Intelligence": 98
    },
    "techniques": [
-    "vr_whs02990",
-    "ThunderBeast",
-    "ShippuuDash",
-    "DashAccel",
-    "vr_whd00220",
-    "PlasmaBall",
-    "FeintNuki"
+    "LoopShoot",
+    "vr_whs03080",
+    "DinosaurBreak",
+    "FakeBall",
+    "Doukasen"
    ]
   },
   {
@@ -26892,13 +26720,11 @@
     "Intelligence": 108
    },
    "techniques": [
-    "DashStorm",
-    "vr_who00640",
-    "TheIkaros",
+    "GrounderShoot",
     "ReflectBuster",
-    "DivineArrow",
-    "HornTrain",
-    "MagaruShoot"
+    "DashStorm",
+    "HeatTackle",
+    "DivineArrow"
    ]
   },
   {
@@ -26986,12 +26812,11 @@
     "Intelligence": 129
    },
    "techniques": [
-    "UniverseBlast",
-    "LightningAccel",
+    "PowerShoot",
     "AstroBreak",
-    "WarpDrive",
-    "vr_whs01260",
-    "YusaburiFeint"
+    "LightningAccel",
+    "UniverseBlast",
+    "DeepMist"
    ]
   },
   {
@@ -27126,13 +26951,11 @@
     "Intelligence": 116
    },
    "techniques": [
-    "HeavensTime",
-    "DashStorm",
+    "RollingCut",
+    "vr_whd00190",
     "vr_whd00150",
-    "VolcanoCut",
-    "SuperElastico",
-    "ButtobiJump",
-    "HippariCut"
+    "JudgeThrough",
+    "vr_who00060"
    ]
   },
   {
@@ -27362,13 +27185,11 @@
     "Intelligence": 108
    },
    "techniques": [
+    "GrounderShoot",
     "TriangleZ",
-    "BoostGlider",
     "BackTornado",
     "IllusionBall",
-    "GrenadeShot",
-    "ButtobiJump",
-    "GrounderShoot"
+    "GrenadeShot"
    ]
   },
   {
@@ -27465,12 +27286,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "IllusionBall",
-    "BackTornado",
+    "Matanuki",
     "QuickDraw",
-    "SpiralShot",
-    "BunshinFeint",
-    "LoopShoot"
+    "CrossDrive",
+    "IllusionBall",
+    "DashStorm"
    ]
   },
   {
@@ -27704,12 +27524,11 @@
     "Intelligence": 108
    },
    "techniques": [
-    "MeteorShower",
-    "AtomicFlare",
-    "UltraMoon",
+    "WanbanShoot",
     "GanymedeProton",
     "IgniteSteal",
-    "WanbanShoot"
+    "MeteorShower",
+    "AtomicFlare"
    ]
   },
   {
@@ -27962,13 +27781,10 @@
     "Intelligence": 106
    },
    "techniques": [
-    "vr_whs02990",
+    "GrounderShoot",
     "vr_who00270",
-    "DragonGround",
-    "GodHand_Blue",
     "BunshinFeint",
-    "Tsumuji",
-    "GrounderShoot"
+    "DragonGround"
    ]
   },
   {
@@ -28241,13 +28057,11 @@
     "Intelligence": 113
    },
    "techniques": [
-    "ShiningHole",
-    "HolyZone",
+    "FunbariCatch",
     "vr_whk00200",
     "GigantWall",
-    "GodKnows",
-    "RainbowLoop",
-    "FunbariCatch"
+    "HolyZone",
+    "ShiningHole"
    ]
   },
   {
@@ -28290,13 +28104,11 @@
     "Intelligence": 119
    },
    "techniques": [
-    "TwinBoost",
-    "Cyclone",
-    "VolcanoCut",
-    "Gorimuchuu",
+    "KakuranStep",
     "GrenadeShot",
+    "Gorimuchuu",
     "FakeBall",
-    "HeelLift"
+    "DoubleGrenade"
    ]
   },
   {
@@ -28475,12 +28287,11 @@
     "Intelligence": 119
    },
    "techniques": [
+    "HeelLift",
     "Cyclone",
     "RollingKick",
-    "ZigzagSpark",
-    "FreezeShot",
-    "SpinningCut",
-    "YusaburiFeint"
+    "ShootingStar",
+    "RevolutionV"
    ]
   },
   {
@@ -28722,13 +28533,11 @@
     "Intelligence": 119
    },
    "techniques": [
-    "Senpuujin",
+    "HoppingTrick",
     "TatsumakiSenpuu",
     "KungFuHead",
     "BunshinFeint",
-    "BunshinShoot",
-    "SpinningCut",
-    "HoppingTrick"
+    "BunshinShoot"
    ]
   },
   {
@@ -28862,13 +28671,9 @@
     "Intelligence": 119
    },
    "techniques": [
-    "vr_whs02780",
-    "AuroraDribble",
     "vr_whs03390",
-    "Cyclone",
-    "EternalBlizzard",
-    "FreezeShot",
-    "YusaburiFeint"
+    "vr_whs02780",
+    "vr_whs02810"
    ]
   },
   {
@@ -28957,13 +28762,11 @@
     "Intelligence": 119
    },
    "techniques": [
-    "GodBreak",
-    "UltraMoon",
-    "DivineArrow",
-    "MaboroshiDribble",
+    "WanbanShoot",
     "MeganeCrash",
     "vr_who00090",
-    "WanbanShoot"
+    "DivineArrow",
+    "GodBreak"
    ]
   },
   {
@@ -29466,13 +29269,10 @@
     "Intelligence": 121
    },
    "techniques": [
-    "UltraMoon",
-    "MeteorShower",
+    "RollingCut",
     "IgniteSteal",
-    "ZigzagFlame",
     "SuperScanOF",
-    "SuperScanOF",
-    "RollingCut"
+    "ZigzagFlame"
    ]
   },
   {
@@ -29609,13 +29409,7 @@
     "Intelligence": 119
    },
    "techniques": [
-    "MegaQuake",
-    "InazumaOtoshi",
-    "TheWall",
-    "SuperArmadillo",
-    "Shikofumi",
-    "TarzanKick",
-    "HippariCut"
+    "TheWall"
    ]
   },
   {
@@ -29749,13 +29543,10 @@
     "Intelligence": 119
    },
    "techniques": [
-    "vr_who01470",
+    "HoppingTrick",
     "vr_whd01470",
-    "SuperScanOF",
-    "SuperScanOF",
-    "ThiefEye",
-    "TracePress",
-    "HoppingTrick"
+    "vr_who01470",
+    "SuperScanOF"
    ]
   },
   {
@@ -29798,13 +29589,11 @@
     "Intelligence": 113
    },
    "techniques": [
-    "UBoat",
-    "LiarShot",
-    "SecurityShot",
-    "SuperScanOF",
-    "ThiefEye",
-    "TracePress",
-    "HoppingTrick"
+    "FunbariCatch",
+    "GodHand_Blue",
+    "MajinTheHand_K",
+    "MugenTheHand",
+    "MaouTheHand"
    ]
   },
   {
@@ -29984,13 +29773,10 @@
     "Intelligence": 116
    },
    "techniques": [
-    "KonohaRendezvous",
+    "HippariCut",
     "vr_whd01490",
-    "vr_whd01570",
-    "vr_whs02870",
-    "vr_whd01460",
-    "vr_who01420",
-    "HippariCut"
+    "KonohaRendezvous",
+    "vr_whd01460"
    ]
   },
   {
@@ -30585,13 +30371,11 @@
     "Intelligence": 119
    },
    "techniques": [
-    "Zanzou",
-    "KageNui",
+    "FeintPlay",
     "CoilTurn",
-    "vr_whd00220",
-    "NekketsuPunch",
-    "vr_whk00800",
-    "RollingCut"
+    "KageNui",
+    "Zanzou",
+    "KagomeKagome"
    ]
   },
   {
@@ -30634,13 +30418,11 @@
     "Intelligence": 108
    },
    "techniques": [
+    "MagaruShoot",
     "FireTornado",
-    "WhiteBlade",
     "BunshinFeint",
     "ZigzagSpark",
-    "FutureEye",
-    "ThiefEye",
-    "MagaruShoot"
+    "FutureEye"
    ]
   },
   {
@@ -30729,13 +30511,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "DoubleTornado",
-    "TheMountain",
+    "HeelLift",
+    "KangarooKick",
     "SuperElastico",
     "RollingSlide",
-    "KangarooKick",
-    "HornTrain",
-    "HeelLift"
+    "DoubleTornado"
    ]
   },
   {
@@ -31246,13 +31026,11 @@
     "Intelligence": 124
    },
    "techniques": [
+    "KakuranStep",
     "vr_whd01470",
     "vr_whs02790",
     "IllusionBall",
-    "Zanzou",
-    "BunshinDefense",
-    "vr_whd00060",
-    "KakuranStep"
+    "Zanzou"
    ]
   },
   {
@@ -31637,13 +31415,11 @@
     "Intelligence": 116
    },
    "techniques": [
+    "KakuranStep",
     "GaiaBreak",
     "WarpDrive",
-    "AstroBreak",
-    "GanymedeProton",
-    "RevolutionV",
     "CrossDrive",
-    "KakuranStep"
+    "AstroBreak"
    ]
   },
   {
@@ -31776,13 +31552,11 @@
     "Intelligence": 120
    },
    "techniques": [
-    "MegaQuake",
-    "KattobiDefense",
-    "vr_whd00360",
-    "FrozenSteal",
+    "KakuranStep",
     "vr_whd00220",
-    "Earthquake",
-    "KakuranStep"
+    "vr_whd00360",
+    "MegaQuake",
+    "Earthquake"
    ]
   },
   {
@@ -32098,13 +31872,11 @@
     "Intelligence": 113
    },
    "techniques": [
-    "TriangleZ",
-    "BoostGlider",
-    "BackTornado",
-    "Kamaitachi",
-    "Moonsault",
-    "KillerSlide",
-    "WanbanShoot"
+    "FunbariCatch",
+    "RocketKobushi",
+    "ShootPocket",
+    "DoubleRocket",
+    "DualSmash"
    ]
   },
   {
@@ -32569,13 +32341,11 @@
     "Intelligence": 108
    },
    "techniques": [
-    "GaiaBreak",
-    "Wormhole",
-    "ProcyonNet",
+    "MagaruShoot",
     "GanymedeProton",
-    "ReflectBuster",
-    "Electrap",
-    "MagaruShoot"
+    "Wormhole",
+    "GaiaBreak",
+    "ReflectBuster"
    ]
   },
   {
@@ -33135,13 +32905,11 @@
     "Intelligence": 116
    },
    "techniques": [
-    "Wormhole",
-    "AuroraDribble",
+    "FeintPlay",
     "WaterVeil",
+    "Wormhole",
     "PhotonFlash",
-    "FrozenSteal",
-    "WhiteBlade",
-    "FeintPlay"
+    "FrozenSteal"
    ]
   },
   {
@@ -33801,12 +33569,11 @@
     "Intelligence": 107
    },
    "techniques": [
+    "HippariCut",
     "LiarShot",
     "Gravestone",
     "WelcomeBack",
-    "FlameVeil",
-    "MatadorFeint",
-    "HippariCut"
+    "FlameVeil"
    ]
   },
   {
@@ -34167,12 +33934,11 @@
     "Intelligence": 116
    },
    "techniques": [
-    "MaboroshiDribble",
-    "FrozenSteal",
-    "IceGround",
+    "KakuranStep",
     "TatsumakiSenpuu",
     "vr_whd00220",
-    "KakuranStep"
+    "MaboroshiDribble",
+    "vr_who00060"
    ]
   },
   {
@@ -34397,13 +34163,8 @@
     "Intelligence": 130
    },
    "techniques": [
-    "FuujinNoMai",
-    "DashStorm",
-    "ShippuuDash",
-    "BunshinDefense",
-    "HonooNoKazamidori",
-    "BunshinFeint",
-    "FeintPlay"
+    "ThePhoenix",
+    "ShippuuDash"
    ]
   },
   {
@@ -34775,13 +34536,11 @@
     "Intelligence": 116
    },
    "techniques": [
-    "NorthernImpact",
+    "LoopShoot",
+    "FreezeShot",
     "IceGround",
     "EternalBlizzard",
-    "SnowAngel",
-    "FrozenSteal",
-    "FreezeShot",
-    "LoopShoot"
+    "NorthernImpact"
    ]
   },
   {
@@ -34869,13 +34628,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "MajinTheHand_K",
-    "GravityPoint",
+    "KakuranStep",
     "TheWall",
     "SuperArmadillo",
     "MoguraFeint",
-    "Sidewinder",
-    "KakuranStep"
+    "Sidewinder"
    ]
   },
   {
@@ -34918,13 +34675,11 @@
     "Intelligence": 111
    },
    "techniques": [
-    "vr_who00590",
-    "WhiteBlade",
+    "FeintPlay",
     "SpinningCut",
     "Moonsault",
     "SuperScanOF",
-    "QuickDraw",
-    "FeintPlay"
+    "QuickDraw"
    ]
   },
   {
@@ -34967,13 +34722,11 @@
     "Intelligence": 103
    },
    "techniques": [
-    "RocketKobushi",
-    "SonicShot",
+    "PowerHandCatch",
     "ShootPocket",
     "vr_whk00800",
-    "PowerSpike",
-    "KungFuAttack",
-    "PowerHandCatch"
+    "RocketKobushi",
+    "PowerSpike"
    ]
   },
   {
@@ -35335,13 +35088,11 @@
     "Intelligence": 108
    },
    "techniques": [
-    "TriangleZ",
-    "BoostGlider",
-    "BackTornado",
-    "JudgeThrough",
-    "SuperElastico",
+    "GrounderShoot",
     "SpinningCut",
-    "MagaruShoot"
+    "BackTornado",
+    "TriangleZ",
+    "TripleBoost"
    ]
   },
   {
@@ -35429,13 +35180,11 @@
     "Intelligence": 121
    },
    "techniques": [
-    "TwinBoost",
-    "KageNui",
-    "FireTornado",
-    "FutureEye",
-    "ThiefEye",
-    "PlasmaBall",
-    "HoppingTrick"
+    "Matanuki",
+    "AuroraDribble",
+    "Kamaitachi",
+    "HurricaneArrow",
+    "SonicShot"
    ]
   },
   {
@@ -35524,12 +35273,10 @@
     "Intelligence": 116
    },
    "techniques": [
+    "HeelLift",
     "DashStorm",
-    "GoToHeaven",
     "ReflectBuster",
-    "HurricaneArrow",
-    "SuperScanOF",
-    "HeelLift"
+    "SuperScanOF"
    ]
   },
   {
@@ -35627,12 +35374,11 @@
     "Intelligence": 115
    },
    "techniques": [
-    "DoubleCyclone",
-    "AuroraCurtain",
-    "IceGround",
-    "FrozenSteal",
-    "vr_whk00180",
-    "KiaiNoPunch"
+    "GrounderShoot",
+    "vr_whs03300",
+    "SprintWarp",
+    "DiffuseChord",
+    "MelodyWave"
    ]
   },
   {
@@ -35903,13 +35649,11 @@
     "Intelligence": 116
    },
    "techniques": [
-    "vr_whd01490",
-    "vr_who01410",
-    "Kamaitachi",
-    "SuperElastico",
+    "FeintPlay",
     "KillerSlide",
+    "vr_whd01490",
     "SuperScanOF",
-    "FeintPlay"
+    "vr_who01410"
    ]
   },
   {
@@ -36750,12 +36494,10 @@
     "Intelligence": 129
    },
    "techniques": [
-    "UltraMoon",
-    "NarakuOtoshi",
+    "RollingCut",
     "KillerSlide",
     "BunshinFeint",
-    "SuperScanOF",
-    "RollingCut"
+    "SuperScanOF"
    ]
   },
   {
@@ -37026,13 +36768,11 @@
     "Intelligence": 131
    },
    "techniques": [
-    "JudgeThrough3",
-    "TwinBoost",
-    "Cyclone",
+    "Matanuki",
     "KillerSlide",
-    "FreezeShot",
-    "HyakuretsuShot",
-    "Matanuki"
+    "JudgeThrough",
+    "DeathZone",
+    "Cyclone"
    ]
   },
   {
@@ -37677,13 +37417,11 @@
     "Intelligence": 121
    },
    "techniques": [
-    "TheIkaros",
-    "Cyclone",
+    "TrickCut",
     "DashAccel",
     "SpinningCut",
     "HyakuretsuShot",
-    "ZigzagSpark",
-    "TrickCut"
+    "Cyclone"
    ]
   },
   {
@@ -38107,13 +37845,11 @@
     "Intelligence": 107
    },
    "techniques": [
-    "TsubameGaeshi",
-    "SpringArrow",
+    "FeintPlay",
     "SuperScanOF",
     "vr_whd01460",
     "DashAccel",
-    "Fortissimo",
-    "FeintPlay"
+    "TsubameGaeshi"
    ]
   },
   {
@@ -39604,13 +39340,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "KagomeKagome",
+    "TrickCut",
+    "SuperArmadillo",
     "ArmadilloCircus",
     "RockWallDam",
-    "AcrobatKeep",
-    "SuperElastico",
-    "SuperArmadillo",
-    "TrickCut"
+    "KagomeKagome"
    ]
   },
   {
@@ -39653,13 +39387,11 @@
     "Intelligence": 121
    },
    "techniques": [
+    "YusaburiFeint",
     "vr_whd01490",
-    "KattobiDefense",
-    "DemonCut",
     "Megalodon",
-    "ReflectBuster",
     "TsuchiDaruma",
-    "YusaburiFeint"
+    "ReflectBuster"
    ]
   },
   {
@@ -39848,13 +39580,11 @@
     "Intelligence": 110
    },
    "techniques": [
+    "HippariCut",
+    "TheWall",
     "DesertStorm",
     "ElephantPress",
-    "FlameDance",
-    "TheWall",
-    "VolcanoCut",
-    "SuperElastico",
-    "HippariCut"
+    "FlameDance"
    ]
   },
   {
@@ -39986,13 +39716,11 @@
     "Intelligence": 116
    },
    "techniques": [
-    "FlameDance",
-    "UltraMoon",
-    "DevilBall",
-    "IllusionBall",
-    "WhiteBlade",
+    "HippariCut",
     "vr_who01420",
-    "HippariCut"
+    "FlameDance",
+    "IllusionBall",
+    "WhiteBlade"
    ]
   },
   {
@@ -40035,13 +39763,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "KagomeKagome",
-    "Gravestone",
-    "BunshinDefense",
-    "MoguraShuffle",
-    "SuperElastico",
-    "MoguraFeint",
-    "HippariCut"
+    "RollingCut",
+    "DashAccel",
+    "BlockCircus",
+    "NininSankyaku",
+    "SuperElastico"
    ]
   },
   {
@@ -40176,13 +39902,11 @@
     "Intelligence": 106
    },
    "techniques": [
-    "KonohaRoll",
-    "KattobiDefense",
-    "SneakingRaid",
+    "MagaruShoot",
     "BunshinShoot",
+    "KonohaRoll",
     "RunBallRun",
-    "vr_whd00220",
-    "MagaruShoot"
+    "SneakingRaid"
    ]
   },
   {
@@ -40689,13 +40413,11 @@
     "Intelligence": 120
    },
    "techniques": [
+    "ShoulderCharge",
     "Gravitation",
-    "MegaQuake",
     "GanymedeProton",
     "DoubleGrenade",
-    "EagleBuster",
-    "BallistaShot",
-    "ShoulderCharge"
+    "MegaQuake"
    ]
   },
   {
@@ -40874,13 +40596,11 @@
     "Intelligence": 121
    },
    "techniques": [
+    "FeintPlay",
     "vr_whd00190",
     "DashStorm",
     "GoToHeaven",
-    "TheIkaros",
-    "vr_who00640",
-    "DivineArrow",
-    "FeintPlay"
+    "DivineArrow"
    ]
   },
   {
@@ -40923,13 +40643,11 @@
     "Intelligence": 116
    },
    "techniques": [
+    "HippariCut",
     "vr_whd01490",
-    "UltraMoon",
-    "Kamaitachi",
     "KillerSlide",
     "SuperScanOF",
-    "Moonsault",
-    "HippariCut"
+    "Moonsault"
    ]
   },
   {
@@ -41243,13 +40961,11 @@
     "Intelligence": 121
    },
    "techniques": [
-    "JudgeThrough3",
-    "DeathZone",
-    "TwinBoost",
+    "YusaburiFeint",
     "KillerSlide",
+    "JudgeThrough",
     "HyakuretsuShot",
-    "FreezeShot",
-    "HoppingTrick"
+    "FreezeShot"
    ]
   },
   {
@@ -42160,13 +41876,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "KagomeKagome",
+    "TrickCut",
     "NininSankyaku",
-    "BigSpider",
-    "GodHand_Blue",
     "QuickDraw",
     "BladeAttack",
-    "TrickCut"
+    "KagomeKagome"
    ]
   },
   {
@@ -42477,13 +42191,10 @@
     "Intelligence": 98
    },
    "techniques": [
-    "vr_whs02990",
-    "vr_who00590",
-    "HitoriOneTwo",
-    "DualStrike",
+    "PowerShoot",
     "CrossDrive",
-    "vr_who00090",
-    "PowerShoot"
+    "HitoriOneTwo",
+    "DualStrike"
    ]
   },
   {
@@ -42892,13 +42603,11 @@
     "Intelligence": 108
    },
    "techniques": [
-    "HeavensTime",
+    "LoopShoot",
     "vr_whs02910",
+    "HeavensTime",
     "GoToHeaven",
-    "GodKnows",
-    "TheIkaros",
-    "SparkEdgeDribble",
-    "LoopShoot"
+    "GodKnows"
    ]
   },
   {
@@ -43167,13 +42876,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "PantherBlizzard",
-    "MaboroshiDribble",
+    "Matanuki",
     "vr_whs00140",
     "CrossDrive",
     "HawkShot",
-    "FreezeShot",
-    "Matanuki"
+    "MaboroshiDribble"
    ]
   },
   {
@@ -43725,13 +43432,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "AuroraDribble",
-    "vr_whd00060",
-    "KageNui",
+    "ShoulderCharge",
     "vr_who00090",
     "Doppelganger",
-    "TrickBall",
-    "ShoulderCharge"
+    "vr_whd00060",
+    "KageNui"
    ]
   },
   {
@@ -44818,13 +44523,8 @@
     "Intelligence": 119
    },
    "techniques": [
-    "vr_whs02850",
-    "vr_who00270",
-    "DokonjouBat",
-    "LiarShot",
-    "GrenadeShot",
-    "HeadBazooka",
-    "MagaruShoot"
+    "vr_whs02820",
+    "vr_whs02850"
    ]
   },
   {
@@ -45228,13 +44928,11 @@
     "Intelligence": 108
    },
    "techniques": [
-    "BodyShield",
+    "PowerShoot",
     "ReflectBuster",
-    "EagleBuster",
-    "NininSankyaku",
-    "BlockCircus",
     "KungFuAttack",
-    "PowerShoot"
+    "EagleBuster",
+    "NininSankyaku"
    ]
   },
   {
@@ -45684,12 +45382,7 @@
    },
    "techniques": [
     "KouteiPenguin2gou",
-    "DeathZone",
-    "Cyclone",
-    "WelcomeBack",
-    "HyakuretsuShot",
-    "KillerSlide",
-    "GrounderShoot"
+    "es_arrollador"
    ]
   },
   {
@@ -45778,12 +45471,11 @@
     "Intelligence": 121
    },
    "techniques": [
-    "DeathZone",
+    "HoppingTrick",
     "BunshinFeint",
     "KillerSlide",
     "FreezeShot",
-    "HyakuretsuShot",
-    "KakuranStep"
+    "DeathZone"
    ]
   },
   {
@@ -45961,13 +45653,11 @@
     "Intelligence": 121
    },
    "techniques": [
+    "KakuranStep",
     "DeathZone",
-    "vr_whs01440",
-    "JudgeThrough",
-    "HinawaBullet",
     "vr_whs02860",
-    "KillerSlide",
-    "KakuranStep"
+    "JudgeThrough",
+    "KillerSlide"
    ]
   },
   {
@@ -46674,13 +46364,11 @@
     "Intelligence": 101
    },
    "techniques": [
-    "MugenNoKabe",
-    "HolyZone",
-    "FenceOfGaia",
-    "AirBullet",
-    "TheTower",
+    "PowerHandCatch",
     "vr_whk00360",
-    "PowerHandCatch"
+    "FenceOfGaia",
+    "MugenNoKabe",
+    "HolyZone"
    ]
   },
   {
@@ -47688,13 +47376,11 @@
     "Intelligence": 124
    },
    "techniques": [
+    "TrickCut",
+    "vr_whd01460",
     "vr_whd01470",
     "vr_whs02800",
-    "Zanzou",
-    "MaboroshiDribble",
-    "vr_whd01460",
-    "MatadorFeint",
-    "TrickCut"
+    "Zanzou"
    ]
   },
   {
@@ -48150,13 +47836,10 @@
     "Intelligence": 107
    },
    "techniques": [
-    "Gravitation",
-    "VolcanoCut",
-    "ProfileZone",
-    "Earthquake",
+    "TrickCut",
     "SuperScanOF",
-    "ThiefEye",
-    "RollingCut"
+    "PsychoShot",
+    "Earthquake"
    ]
   },
   {
@@ -48618,13 +48301,11 @@
     "Intelligence": 113
    },
    "techniques": [
-    "vr_whs02770",
+    "PowerHandCatch",
     "GodHand_Blue",
-    "BakuretsuPunch",
-    "CorodraShoot",
     "BurningCatch",
-    "NekketsuPunch",
-    "PowerHandCatch"
+    "BakuretsuPunch",
+    "NekketsuPunch"
    ]
   },
   {
@@ -49784,13 +49465,11 @@
     "Intelligence": 121
    },
    "techniques": [
+    "KakuranStep",
     "BoostGlider",
-    "BackTornado",
-    "TkachevBomber",
-    "WyvernCrash",
     "HawkShot",
     "MonkeyTurn",
-    "KakuranStep"
+    "BackTornado"
    ]
   },
   {
@@ -50062,12 +49741,11 @@
     "Intelligence": 121
    },
    "techniques": [
-    "UltraMoon",
-    "HurricaneArrow",
-    "IllusionBall",
+    "HippariCut",
     "QuickDraw",
-    "SpinningCut",
-    "TrickCut"
+    "HurricaneArrow",
+    "Moonsault",
+    "IllusionBall"
    ]
   },
   {
@@ -50246,13 +49924,11 @@
     "Intelligence": 116
    },
    "techniques": [
+    "KakuranStep",
     "IgniteSteal",
     "FakeBomber",
-    "JibashiriKaen",
-    "ZigzagFlame",
     "SuperArmadillo",
-    "HornTrain",
-    "KakuranStep"
+    "JibashiriKaen"
    ]
   },
   {
@@ -51442,13 +51118,10 @@
     "Intelligence": 110
    },
    "techniques": [
-    "KazaanaDrive",
-    "PatriotShoot",
-    "ThiefEye",
-    "QuickDraw",
-    "FutureEye",
-    "ButtobiJump",
-    "FeintPlay"
+    "TrickCut",
+    "SuperScanOF",
+    "vr_whd00220",
+    "PatriotShoot"
    ]
   },
   {
@@ -51957,13 +51630,11 @@
     "Intelligence": 113
    },
    "techniques": [
-    "DemonCut",
-    "VanishingCut",
+    "KiaiNoPunch",
     "VolcanoCut",
     "BigScissors",
     "DashTrain",
-    "Shikofumi",
-    "KiaiNoPunch"
+    "Shikofumi"
    ]
   },
   {
@@ -53258,13 +52929,11 @@
     "Intelligence": 107
    },
    "techniques": [
+    "YusaburiFeint",
+    "SuperScanOF",
     "Aikidou",
     "FuujinNoMai",
-    "MegaWall",
-    "TheTower",
-    "SuperScanOF",
-    "CrossDrive",
-    "YusaburiFeint"
+    "CrossDrive"
    ]
   },
   {
@@ -53942,13 +53611,10 @@
     "Intelligence": 110
    },
    "techniques": [
-    "VolcanoCut",
-    "RCShoot",
-    "PatriotShoot",
-    "FutureEye",
-    "KungFuHead",
-    "ThiefEye",
-    "FeintPlay"
+    "TrickCut",
+    "SuperScanOF",
+    "PsychoShot",
+    "KungFuHead"
    ]
   },
   {
@@ -54219,13 +53885,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "UltraMoon",
-    "SkyWalk",
-    "BlockCircus",
-    "DivineArrow",
-    "DashAccel",
-    "PlasmaBall",
-    "Matanuki"
+    "YusaburiFeint",
+    "AuroraDribble",
+    "WhiteBlade",
+    "ShineDrive",
+    "NarakuOtoshi"
    ]
   },
   {
@@ -55493,13 +55157,10 @@
     "Intelligence": 107
    },
    "techniques": [
-    "KageNui",
-    "IllusionBall",
-    "PatriotShoot",
-    "GearDrive",
-    "Gunshot",
-    "FutureEye",
-    "HeelLift"
+    "HeelLift",
+    "SuperScanOF",
+    "PsychoShot",
+    "KageNui"
    ]
   },
   {
@@ -56637,13 +56298,11 @@
     "Intelligence": 100
    },
    "techniques": [
+    "KakuranStep",
     "Kamaitachi",
     "FireTornado",
-    "RevolutionV",
     "BladeAttack",
-    "DogRun",
-    "FreezeShot",
-    "KakuranStep"
+    "DogRun"
    ]
   },
   {
@@ -57005,13 +56664,11 @@
     "Intelligence": 112
    },
    "techniques": [
-    "vr_whk01450",
-    "DeathZone",
+    "FunbariCatch",
     "vr_whk01440",
+    "vr_whk01450",
     "ToughnessBlock",
-    "BlackHole",
-    "BunshinShoot",
-    "FunbariCatch"
+    "BlackHole"
    ]
   },
   {
@@ -57326,13 +56983,11 @@
     "Intelligence": 120
    },
    "techniques": [
+    "PowerHandCatch",
     "SigmaZone",
-    "DemonCut",
-    "IjigenTheHand",
     "DualSmash",
     "KageNui",
-    "BigSpider",
-    "PowerHandCatch"
+    "DemonCut"
    ]
   },
   {
@@ -57465,13 +57120,11 @@
     "Intelligence": 116
    },
    "techniques": [
-    "MajinTheHand_K",
+    "HippariCut",
     "Wormhole",
     "DeepMist",
-    "DemonCut",
-    "IjigenTheHand",
     "vr_whd00060",
-    "HippariCut"
+    "DemonCut"
    ]
   },
   {
@@ -57667,13 +57320,11 @@
     "Intelligence": 116
    },
    "techniques": [
+    "PowerShoot",
     "ElephantPress",
-    "MegatonHead",
-    "KagomeKagome",
-    "AtlantisWall",
     "ShineDrive",
     "MeganeCrash",
-    "PowerShoot"
+    "MegatonHead"
    ]
   },
   {
@@ -58337,13 +57988,11 @@
     "Intelligence": 120
    },
    "techniques": [
-    "MueiRanbu",
+    "FeintNuki",
     "Gravitation",
-    "TheMountain",
-    "NoboriRyuu",
     "NininSankyaku",
-    "SuperElastico",
-    "FeintNuki"
+    "MueiRanbu",
+    "TheMountain"
    ]
   },
   {
@@ -58839,13 +58488,11 @@
     "Intelligence": 121
    },
    "techniques": [
+    "YusaburiFeint",
+    "KillerSlide",
     "IllusionBall",
     "DynamiteShoot",
-    "BunshinDefense",
-    "KillerSlide",
-    "SpinningCut",
-    "ProfileZone",
-    "YusaburiFeint"
+    "SpinningCut"
    ]
   },
   {
@@ -59028,13 +58675,11 @@
     "Intelligence": 107
    },
    "techniques": [
-    "MegaQuake",
+    "ShoulderCharge",
     "TheWall",
     "RockWallDam",
-    "SuperArmadillo",
-    "MoguraFeint",
-    "FuusenGum",
-    "ShoulderCharge"
+    "MegaQuake",
+    "SuperArmadillo"
    ]
   },
   {
@@ -59077,13 +58722,11 @@
     "Intelligence": 121
    },
    "techniques": [
-    "DevilBall",
+    "ShoulderCharge",
     "Cyclone",
-    "IllusionBall",
-    "NarakuOtoshi",
     "KillerSlide",
-    "CrossDrive",
-    "ShoulderCharge"
+    "IllusionBall",
+    "CrossDrive"
    ]
   },
   {
@@ -59354,13 +58997,11 @@
     "Intelligence": 98
    },
    "techniques": [
-    "LaFlamme",
-    "PerfectTower",
-    "DokonjouBat",
-    "HonooNoKazamidori",
-    "JibashiriKaen",
+    "FeintPlay",
     "GrenadeShot",
-    "FeintPlay"
+    "LaFlamme",
+    "DokonjouBat",
+    "HonooNoKazamidori"
    ]
   },
   {
@@ -59403,13 +59044,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "PegasusShot",
-    "ShineDrive",
-    "WyvernCrash",
+    "ShoulderCharge",
     "SpinningCut",
     "Earthquake",
     "KungFuHead",
-    "FeintPlay"
+    "ShineDrive"
    ]
   },
   {
@@ -59681,13 +59320,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "DesertStorm",
+    "KakuranStep",
     "TheWall",
+    "DesertStorm",
     "BlockCircus",
-    "PaladinStrike",
-    "SuperScanOF",
-    "HawkShot",
-    "KakuranStep"
+    "SuperScanOF"
    ]
   },
   {
@@ -59886,13 +59523,11 @@
     "Intelligence": 107
    },
    "techniques": [
-    "MushroomHop",
-    "BoostGlider",
+    "HippariCut",
     "HurricaneArrow",
     "ShootingStar",
-    "ShineDrive",
-    "DoubleJaw",
-    "HippariCut"
+    "BoostGlider",
+    "MushroomHop"
    ]
   },
   {
@@ -60392,13 +60027,11 @@
     "Intelligence": 107
    },
    "techniques": [
-    "AuroraDribble",
-    "ExtendZone",
+    "YusaburiFeint",
     "MaboroshiDribble",
     "HitoriOneTwo",
     "KurukuruHead",
-    "FreezeShot",
-    "YusaburiFeint"
+    "AuroraDribble"
    ]
   },
   {
@@ -60712,13 +60345,11 @@
     "Intelligence": 99
    },
    "techniques": [
-    "OlympusHarmony",
+    "LoopShoot",
+    "FreezeShot",
     "ShippuuDash",
     "Kamaitachi",
-    "EternalBlizzard",
-    "FreezeShot",
-    "BunshinFeint",
-    "LoopShoot"
+    "EternalBlizzard"
    ]
   },
   {
@@ -60852,13 +60483,11 @@
     "Intelligence": 107
    },
    "techniques": [
-    "DesertStorm",
-    "TheWall",
-    "BlockCircus",
-    "DarkTornado",
-    "GanymedeProton",
-    "Shikofumi",
-    "HoppingTrick"
+    "HoppingTrick",
+    "WonderTrap",
+    "SoyoyagiStep",
+    "WhiteBlade",
+    "KazaanaDrive"
    ]
   },
   {
@@ -61492,13 +61121,11 @@
     "Intelligence": 107
    },
    "techniques": [
-    "HeavensTime",
-    "PerfectTower",
-    "DashStorm",
-    "FuujinNoMai",
-    "HurricaneArrow",
+    "FeintNuki",
     "CoilTurn",
-    "FeintNuki"
+    "DashStorm",
+    "HeavensTime",
+    "FuujinNoMai"
    ]
   },
   {
@@ -61596,13 +61223,11 @@
     "Intelligence": 106
    },
    "techniques": [
-    "vr_whs00630",
-    "BritanniaCross",
+    "PowerShoot",
     "ReflectBuster",
     "Hellfire",
     "TheWall",
-    "Moonsault",
-    "PowerShoot"
+    "vr_whs00630"
    ]
   },
   {
@@ -61689,13 +61314,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "TwinBoost",
+    "Matanuki",
+    "HawkShot",
     "IllusionBall",
-    "HurricaneArrow",
-    "BackTornado",
-    "QuickDraw",
-    "FreezeShot",
-    "FeintNuki"
+    "TwinBoost",
+    "BoostGlider"
    ]
   },
   {
@@ -61976,13 +61599,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "TenkuuOtoshi",
+    "GrounderShoot",
     "LightningAccel",
-    "TheIkaros",
     "DoubleGrenade",
     "BungeeThrust",
-    "Hellfire",
-    "GrounderShoot"
+    "TheIkaros"
    ]
   },
   {
@@ -62025,13 +61646,11 @@
     "Intelligence": 107
    },
    "techniques": [
-    "HeavensTime",
-    "DashStorm",
-    "vr_who00640",
-    "KillBridge",
+    "YusaburiFeint",
     "IceBlock",
-    "Galatyn",
-    "YusaburiFeint"
+    "DashStorm",
+    "HeavensTime",
+    "vr_who00640"
    ]
   },
   {
@@ -62165,13 +61784,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "ElephantPress",
+    "FeintPlay",
     "TheWall",
     "RockWallDam",
-    "MoguraShuffle",
-    "SuperElastico",
-    "Earthquake",
-    "FeintPlay"
+    "ElephantPress",
+    "Earthquake"
    ]
   },
   {
@@ -62578,13 +62195,11 @@
     "Intelligence": 107
    },
    "techniques": [
-    "KirakiraIllusion",
-    "OlympusHarmony",
-    "GoToHell",
+    "Matanuki",
     "FakeBall",
     "MatadorFeint",
     "TrickBall",
-    "Matanuki"
+    "OlympusHarmony"
    ]
   },
   {
@@ -62627,13 +62242,11 @@
     "Intelligence": 98
    },
    "techniques": [
+    "KakuranStep",
     "vr_whs00630",
-    "IronWall",
     "BlockCircus",
     "DinosaurBreak",
-    "Gravestone",
-    "TheTower",
-    "KakuranStep"
+    "Gravestone"
    ]
   },
   {
@@ -62945,13 +62558,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "KillerFields",
+    "TrickCut",
     "SouthernCrosscut",
-    "GoToHell",
     "Harvest",
-    "KageNui",
     "MatadorFeint",
-    "TrickCut"
+    "KillerFields"
    ]
   },
   {
@@ -63082,13 +62693,11 @@
     "Intelligence": 98
    },
    "techniques": [
-    "HeavensTime",
-    "Aikidou",
-    "KazaanaDrive",
-    "EternalBlizzard",
-    "RevolutionV",
+    "FeintNuki",
     "CondorDive",
-    "FeintNuki"
+    "Aikidou",
+    "EternalBlizzard",
+    "RevolutionV"
    ]
   },
   {
@@ -63221,13 +62830,11 @@
     "Intelligence": 110
    },
    "techniques": [
+    "ShoulderCharge",
     "MokkoriOkaNoMoai",
     "TheWall",
-    "TigerDrive",
-    "OgreBlade",
     "MoguraFeint",
-    "SuperArmadillo",
-    "ShoulderCharge"
+    "SuperArmadillo"
    ]
   },
   {
@@ -63563,13 +63170,11 @@
     "Intelligence": 101
    },
    "techniques": [
-    "vr_whs00640",
+    "FunbariCatch",
     "ToughnessBlock",
     "Burnout",
     "PowerShield",
-    "PaladinStrike",
-    "BurningCatch",
-    "FunbariCatch"
+    "BurningCatch"
    ]
   },
   {
@@ -63658,13 +63263,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "OdinSword",
+    "FeintPlay",
+    "vr_whd01510",
     "TheWall",
     "BlockCircus",
-    "Gravestone",
-    "vr_whd01510",
-    "TsuchiDaruma",
-    "FeintPlay"
+    "Gravestone"
    ]
   },
   {
@@ -63987,13 +63590,11 @@
     "Intelligence": 107
    },
    "techniques": [
-    "OlympusHarmony",
-    "SonicShot",
-    "ShineDrive",
+    "YusaburiFeint",
     "vr_who01420",
     "vr_whs02860",
-    "SpiralShot",
-    "YusaburiFeint"
+    "OlympusHarmony",
+    "SpiralShot"
    ]
   },
   {
@@ -64173,13 +63774,11 @@
     "Intelligence": 110
    },
    "techniques": [
+    "GrounderShoot",
+    "NaminoriPierrot",
     "TatsumakiOtoshi",
     "DashStorm",
-    "FuujinNoMai",
-    "TheTyphoon",
-    "NaminoriPierrot",
-    "PlasmaBall",
-    "GrounderShoot"
+    "FuujinNoMai"
    ]
   },
   {
@@ -64916,13 +64515,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "vr_whs00640",
+    "YusaburiFeint",
     "TheWall",
     "Harvest",
     "FakeBomber",
-    "MoguraFeint",
-    "HawkShot",
-    "YusaburiFeint"
+    "MoguraFeint"
    ]
   },
   {
@@ -66030,13 +65627,11 @@
     "Intelligence": 101
    },
    "techniques": [
-    "DoubleRocket",
+    "KiaiNoPunch",
+    "ShootPocket",
     "RocketKobushi",
     "Shootrap",
-    "FireTornado",
-    "ShootPocket",
-    "MeteorAttack",
-    "KiaiNoPunch"
+    "DoubleRocket"
    ]
   },
   {
@@ -67049,13 +66644,11 @@
     "Intelligence": 110
    },
    "techniques": [
+    "TrickCut",
     "vr_whd00150",
     "IceGround",
-    "Cyclone",
-    "Megalodon",
     "RunBallRun",
-    "FreezeShot",
-    "TrickCut"
+    "Cyclone"
    ]
   },
   {
@@ -67235,13 +66828,11 @@
     "Intelligence": 116
    },
    "techniques": [
-    "MegaQuake",
-    "DeathZone",
-    "MegatonHead",
-    "IllusionBall",
-    "ReflectBuster",
-    "Earthquake",
-    "FeintPlay"
+    "HoppingTrick",
+    "BladeAttack",
+    "GrenadeShot",
+    "BunshinFeint",
+    "Aikidou"
    ]
   },
   {
@@ -68976,13 +68567,11 @@
     "Intelligence": 98
    },
    "techniques": [
-    "FlameDance",
-    "vr_who00270",
-    "DeathZone",
-    "IgniteSteal",
-    "SpinningCut",
-    "Gunshot",
-    "TrickCut"
+    "Matanuki",
+    "HyakuretsuShot",
+    "UltraMoon",
+    "TkachevBomber",
+    "WyvernCrash"
    ]
   },
   {
@@ -69850,13 +69439,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "DemonCut",
-    "UltraMoon",
-    "DevilBall",
+    "HeelLift",
     "vr_whd00150",
-    "KageNui",
     "MatadorFeint",
-    "HeelLift"
+    "KageNui",
+    "DemonCut"
    ]
   },
   {
@@ -70037,13 +69624,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "TriangleZ",
+    "HeelLift",
+    "Moonsault",
     "BackTornado",
-    "ShootingStar",
     "QuickDraw",
-    "SpinningShoot",
-    "BunshinShoot",
-    "HoppingTrick"
+    "SpinningShoot"
    ]
   },
   {
@@ -70132,13 +69717,11 @@
     "Intelligence": 101
    },
    "techniques": [
-    "TaikokuOuka",
-    "KodaiNoKiba",
-    "vr_whk00510",
-    "SerpentFang",
-    "GearDrive",
+    "PowerHandCatch",
     "TarzanKick",
-    "PowerHandCatch"
+    "vr_whk00510",
+    "TaikokuOuka",
+    "SerpentFang"
    ]
   },
   {
@@ -71294,13 +70877,11 @@
     "Intelligence": 107
    },
    "techniques": [
-    "DemonCut",
-    "DeathZone",
+    "HippariCut",
+    "DragonCrash",
     "KageNui",
     "HuntersNet",
-    "SecurityShot",
-    "DragonCrash",
-    "HippariCut"
+    "DemonCut"
    ]
   },
   {
@@ -71526,13 +71107,11 @@
     "Intelligence": 96
    },
    "techniques": [
-    "DashStorm",
+    "MagaruShoot",
     "DragonCrash",
     "CondorDive",
     "MoguraFeint",
-    "Sidewinder",
-    "FuusenGum",
-    "MagaruShoot"
+    "Sidewinder"
    ]
   },
   {
@@ -71848,13 +71427,10 @@
     "Intelligence": 106
    },
    "techniques": [
-    "vr_whs03210",
+    "WanbanShoot",
     "vr_whs02850",
     "DokonjouBat",
-    "FakeBomber",
-    "BigScissors",
-    "vr_whs00570",
-    "WanbanShoot"
+    "vr_whs00570"
    ]
   },
   {
@@ -71943,13 +71519,11 @@
     "Intelligence": 106
    },
    "techniques": [
+    "PowerShoot",
     "Ichiyajou",
-    "TheMountain",
     "DoubleGrenade",
     "FireTornado",
-    "HinawaBullet",
-    "RollingSlide",
-    "PowerShoot"
+    "HinawaBullet"
    ]
   },
   {
@@ -72943,13 +72517,11 @@
     "Intelligence": 110
    },
    "techniques": [
+    "PowerShoot",
     "AggressiveBeat",
-    "TheIkaros",
     "RCShoot",
     "HeatTackle",
-    "DeathSword",
-    "MaximumFire",
-    "PowerShoot"
+    "TheIkaros"
    ]
   },
   {
@@ -72992,13 +72564,11 @@
     "Intelligence": 111
    },
    "techniques": [
-    "Galatyn",
+    "HeelLift",
     "QuickDraw",
     "DashAccel",
     "vr_whd00220",
-    "TatsumakiSenpuu",
-    "MoonsaultStamp",
-    "HeelLift"
+    "TatsumakiSenpuu"
    ]
   },
   {
@@ -73498,13 +73068,11 @@
     "Intelligence": 100
    },
    "techniques": [
-    "ReflectBuster",
-    "CoilUpper",
+    "YusaburiFeint",
     "PsychoShot",
     "SuperScanOF",
-    "BlitzBridge",
-    "SuperScanOF",
-    "YusaburiFeint"
+    "ReflectBuster",
+    "BlitzBridge"
    ]
   },
   {
@@ -74367,13 +73935,11 @@
     "Intelligence": 107
    },
    "techniques": [
-    "DeathZone",
-    "vr_whs00640",
-    "IllusionBall",
-    "DoubleJaw",
-    "vr_whs02860",
-    "SuperScanOF",
-    "HeelLift"
+    "FeintPlay",
+    "CoilUpper",
+    "ExcellentBreast",
+    "Sidewinder",
+    "MagnetDraw"
    ]
   },
   {
@@ -77039,13 +76605,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "IronWall",
-    "HurricaneArrow",
-    "BackTornado",
-    "ShineDrive",
+    "TrickCut",
     "CoilTurn",
-    "TsuchiDaruma",
-    "HippariCut"
+    "HurricaneArrow",
+    "MeteorAttack",
+    "BackTornado"
    ]
   },
   {
@@ -87028,13 +86592,11 @@
     "Intelligence": 110
    },
    "techniques": [
-    "BoostGlider",
+    "FeintNuki",
     "HurricaneArrow",
     "BackTornado",
-    "Sargasso",
-    "JibashiriKaen",
-    "vr_whs00140",
-    "FeintNuki"
+    "BoostGlider",
+    "vr_whs00140"
    ]
   },
   {
@@ -89146,13 +88708,11 @@
     "Intelligence": 101
    },
    "techniques": [
-    "GigantWall",
+    "PowerHandCatch",
     "ToughnessBlock",
     "RocketKobushi",
-    "ShineDrive",
-    "BurningCatch",
-    "MeteorAttack",
-    "PowerHandCatch"
+    "GigantWall",
+    "BurningCatch"
    ]
   },
   {
@@ -90105,13 +89665,11 @@
     "Intelligence": 96
    },
    "techniques": [
-    "vr_whs00630",
-    "GoldFever",
+    "PowerShoot",
     "Gorimuchuu",
+    "vr_whs00630",
     "MeganeCrash",
-    "MonkeyTurn",
-    "SuperScanOF",
-    "PowerShoot"
+    "GoldFever"
    ]
   },
   {
@@ -90153,7 +89711,13 @@
     "Agility": 109,
     "Intelligence": 94
    },
-   "techniques": []
+   "techniques": [
+    "FunbariCatch",
+    "ExcellentBreast",
+    "DokonjouCatch",
+    "GigantWall",
+    "vr_whk01080"
+   ]
   },
   {
    "id": "hazekura--ie2--base",
@@ -101586,13 +101150,11 @@
     "Intelligence": 101
    },
    "techniques": [
-    "YakimochiScrew",
-    "ToughnessBlock",
-    "PowerShield",
-    "DokonjouBat",
+    "KiaiNoPunch",
     "vr_whk00180",
     "DokonjouCatch",
-    "KiaiNoPunch"
+    "ToughnessBlock",
+    "PowerShield"
    ]
   },
   {
@@ -196099,6 +195661,28 @@
    ]
   },
   {
+   "id": "BakunetsuStorm_K",
+   "name": "Fireball Storm",
+   "name_es": "Tormenta de fuego",
+   "name_jp": "爆熱ストーム",
+   "type": "Shoot",
+   "element": "fire",
+   "cost": 90,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 90,
+    "IE3": 46,
+    "GO2": 90,
+    "IE2": 62,
+    "GO1": 75
+   },
+   "description": "Passion ignites, exploding into a scorching storm that burns all in its path.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/b/c/bcvrcipsube.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
    "id": "TsubameGaeshi",
    "name": "Swallow Counter",
    "name_es": "Ataque de garza",
@@ -205854,24 +205438,6 @@
    "zukan_types": null
   },
   {
-   "id": "MaximumFire",
-   "name": "Maximum Fire",
-   "name_es": "Fuego supremo",
-   "name_jp": "マキシマムファイア",
-   "type": "Shoot",
-   "element": "fire",
-   "cost": 58,
-   "cost_game": "IE3",
-   "costs": {
-    "IE3": 58
-   },
-   "description": "Infuse the right foot with a blazing sword that rips through the ground on its way to the goal.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/h/p/hppuehosr6u.jpg",
-   "zukan_types": [
-    "Shot"
-   ]
-  },
-  {
    "id": "MochimochiKinakoMochi",
    "name": "Goopy Gloopy Goo",
    "name_es": "Grumo pegapasta",
@@ -206906,6 +206472,25 @@
    ]
   },
   {
+   "id": "SoyoyagiStep",
+   "name": "Easy Breezy Kid",
+   "name_es": "Brisa encabritada",
+   "name_jp": "そよヤギステップ",
+   "type": "Dribble",
+   "element": "air",
+   "cost": 55,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 55,
+    "GO2": 40
+   },
+   "description": "Save the goat kid that suddenly appears on the pitch by executing an Easy Breezy!",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/9/i9bgiab9d1m.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
+  },
+  {
    "id": "SpinningTransam",
    "name": "Spin Meister",
    "name_es": "Tiro rotativo",
@@ -207503,6 +207088,25 @@
    ]
   },
   {
+   "id": "vr_whk01080",
+   "name": "Dust Devil",
+   "name_jp": "暴れ車",
+   "name_es": "Ciclón humano",
+   "type": "Catch",
+   "element": "earth",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 360
+   },
+   "description": "Spin like a wheel and barrel across the pitch, knocking back every shot that comes your way.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/8/o/8obcitgevme.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
+  },
+  {
    "id": "vr_who01400",
    "name": "Flash Dash",
    "name_jp": "イナビカリ・ダッシュ",
@@ -207521,6 +207125,42 @@
    ]
   },
   {
+   "id": "vr_whs02770",
+   "name": "Polar Bear No. 2",
+   "name_jp": "北極グマ２号",
+   "name_es": "Oso polar n.º 2",
+   "type": "Shoot",
+   "element": "earth",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 440
+   },
+   "description": "Encase the ball in frigid air, driving it toward the goal with the ferocity of a polar bear.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/j/h/jhgag8kevue.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
+   "id": "vr_whs02780",
+   "name": "Meteor Strike",
+   "name_jp": "メテオドロップ",
+   "name_es": "Tiro meteórico",
+   "type": "Shoot",
+   "element": "fire",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 540
+   },
+   "description": "Leap skyward with the power of your allies and smash the ball down in a meteor-like overhead strike.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/l/xlfc3xjmyrs.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
    "id": "vr_whs02760",
    "name": "Golden Gull",
    "name_jp": "シャイニングバード",
@@ -207534,24 +207174,6 @@
    },
    "description": "Harnessing the power of the sun, this overhead kick turns the ball into a radiant bird that flies forth with unstoppable force.",
    "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/s/j/sjr7rds-4ds.jpg",
-   "zukan_types": [
-    "Shot"
-   ]
-  },
-  {
-   "id": "vr_whs02840",
-   "name": "Daruma Boomer",
-   "name_jp": "火だるまバクネツ弾",
-   "name_es": "Daruma de fuego",
-   "type": "Shoot",
-   "element": "fire",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 540
-   },
-   "description": "Ignite the ball into a blazing fireball and blast it across the ground like a speeding bullet.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/u/p/upf47kwkrv8.jpg",
    "zukan_types": [
     "Shot"
    ]
@@ -207575,37 +207197,37 @@
    ]
   },
   {
-   "id": "vr_who00270",
-   "name": "Gale Dash",
-   "name_jp": "烈風ダッシュ",
-   "name_es": "Avance flamígero",
-   "type": "Dribble",
+   "id": "vr_whs02840",
+   "name": "Daruma Boomer",
+   "name_jp": "火だるまバクネツ弾",
+   "name_es": "Daruma de fuego",
+   "type": "Shoot",
+   "element": "fire",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 540
+   },
+   "description": "Ignite the ball into a blazing fireball and blast it across the ground like a speeding bullet.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/u/p/upf47kwkrv8.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
+   "id": "vr_whs02820",
+   "name": "Hot Head",
+   "name_jp": "バックドラフト",
+   "name_es": "Cabezazo fiero",
+   "type": "Shoot",
    "element": "fire",
    "cost": null,
    "cost_game": null,
    "costs": {
     "VR_power": 440
    },
-   "description": "Unleash a souped-up Flurry Dash and blaze past opponents in a streak of fire.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/j/c/jcjii4ijzou.jpg",
-   "zukan_types": [
-    "Offence"
-   ]
-  },
-  {
-   "id": "vr_whs02750",
-   "name": "Fire Tornado A",
-   "name_jp": "ファイアトルネードＡ",
-   "name_es": null,
-   "type": "Shoot",
-   "element": "fire",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 360
-   },
-   "description": "A blazing shot cloaked in fierce flames, launched into the air with a fiery right-foot strike.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/y/m/ymyo4ez2n9c.jpg",
+   "description": "Apply backspin with a header and unleash a flaming ball that rushes at the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/d/g/dgpf4sic5au.jpg",
    "zukan_types": [
     "Shot"
    ]
@@ -207629,78 +207251,49 @@
    ]
   },
   {
-   "id": "vr_whk01410",
-   "name": "Mermaid's Veil",
-   "name_jp": "マーメイドヴェール",
-   "name_es": null,
+   "id": "es_parada-remolino",
+   "name": "Parada remolino",
+   "name_es": "Parada remolino",
+   "name_jp": null,
    "type": "Catch",
-   "element": "air",
+   "element": null,
    "cost": null,
    "cost_game": null,
-   "costs": {
-    "VR_power": 640
-   },
-   "description": "Dive beneath the waves and dance like a mermaid, wrapping the ball in a veil of water to stop it.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/t/o/toybv-sd0r0.jpg",
-   "zukan_types": [
-    "Success",
-    "Failure"
-   ]
+   "costs": {},
+   "description": null,
+   "image_url": null,
+   "zukan_types": null
   },
   {
-   "id": "vr_whk01400",
-   "name": "Maelstrom the Hand",
-   "name_jp": "ウズマキ・ザ・ハンド",
-   "name_es": "Mano oceánica",
+   "id": "es_velo-de-sirena",
+   "name": "Velo de sirena",
+   "name_es": "Velo de sirena",
+   "name_jp": null,
    "type": "Catch",
-   "element": "air",
+   "element": null,
    "cost": null,
    "cost_game": null,
-   "costs": {
-    "VR_power": 540
-   },
-   "description": "Summon swirling waves that coalesce and form a colossal hand to reel in incoming shots.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/9/_/9_f-cxexdgm.jpg",
-   "zukan_types": [
-    "Success",
-    "Failure"
-   ]
+   "costs": {},
+   "description": null,
+   "image_url": null,
+   "zukan_types": null
   },
   {
-   "id": "vr_whd10040",
-   "name": "Deep Diver",
-   "name_jp": "ディープダイバー",
-   "name_es": null,
+   "id": "vr_whd01460",
+   "name": "Twister Trap",
+   "name_jp": "シューティングカット",
+   "name_es": "Torbellino interceptor",
    "type": "Block",
-   "element": "air",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 360
-   },
-   "description": "Drag foes into the depths in a swirling plunge and snatch the ball with relentless force.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/g/w/gwcsy6jr-z8.jpg",
-   "zukan_types": [
-    "Defence"
-   ]
-  },
-  {
-   "id": "vr_whk00360",
-   "name": "Flower Power",
-   "name_jp": "花吹雪",
-   "name_es": "Tormenta de pétalos",
-   "type": "Catch",
    "element": "air",
    "cost": null,
    "cost_game": null,
    "costs": {
     "VR_power": 300
    },
-   "description": "Use flower petals dancing daintily on the pitch to reduce the power of incoming shots.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/e/ietuyfxwig8.jpg",
+   "description": "Whip up a tornado with nimble footwork to weaken the ball and seize it instantly.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/v/p/vpivivf7ui0.jpg",
    "zukan_types": [
-    "Success",
-    "Failure"
+    "Defence"
    ]
   },
   {
@@ -207741,24 +207334,6 @@
    ]
   },
   {
-   "id": "vr_whd01460",
-   "name": "Twister Trap",
-   "name_jp": "シューティングカット",
-   "name_es": "Torbellino interceptor",
-   "type": "Block",
-   "element": "air",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 300
-   },
-   "description": "Whip up a tornado with nimble footwork to weaken the ball and seize it instantly.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/v/p/vpivivf7ui0.jpg",
-   "zukan_types": [
-    "Defence"
-   ]
-  },
-  {
    "id": "vr_who01470",
    "name": "Short Circuit",
    "name_jp": "ザ・ラビリンス",
@@ -207795,24 +207370,6 @@
    ]
   },
   {
-   "id": "vr_whs02780",
-   "name": "Meteor Strike",
-   "name_jp": "メテオドロップ",
-   "name_es": "Tiro meteórico",
-   "type": "Shoot",
-   "element": "fire",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 540
-   },
-   "description": "Leap skyward with the power of your allies and smash the ball down in a meteor-like overhead strike.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/l/xlfc3xjmyrs.jpg",
-   "zukan_types": [
-    "Shot"
-   ]
-  },
-  {
    "id": "vr_whs03390",
    "name": "Cold Snap",
    "name_jp": "氷の矢",
@@ -207826,6 +207383,24 @@
    },
    "description": "Kick an ice-coated ball along an arcing path to freeze the opposition in their tracks.",
    "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/e/i/eiackngrivk.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
+   "id": "vr_whs02810",
+   "name": "Polar Pike",
+   "name_jp": "氷の槍",
+   "name_es": "Lanza polar",
+   "type": "Shoot",
+   "element": "air",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 540
+   },
+   "description": "Charge the ball with overflowing cold and turn it into unbreakable ice that pierces the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/9/p/9pkwrxxum6k.jpg",
    "zukan_types": [
     "Shot"
    ]
@@ -207849,21 +207424,22 @@
    ]
   },
   {
-   "id": "vr_whd00060",
-   "name": "Spider Web",
-   "name_jp": "蜘蛛の糸",
-   "name_es": "Telaraña",
-   "type": "Block",
+   "id": "vr_whk01440",
+   "name": "Fur Trapper",
+   "name_jp": "もじゃキャッチ",
+   "name_es": "Parada peliaguda",
+   "type": "Catch",
    "element": "wood",
    "cost": null,
    "cost_game": null,
    "costs": {
     "VR_power": 360
    },
-   "description": "Spread a spider web on the ground that makes movement difficult.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/n/o/nowq2wk25vu.jpg",
+   "description": "Send forth a giant tangle of fisty fur to entangle the ball and weaken its force.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/o/3/o3y-1rb85tk.jpg",
    "zukan_types": [
-    "Defence"
+    "Success",
+    "Failure"
    ]
   },
   {
@@ -207880,25 +207456,6 @@
    },
    "description": "Smash the ground with all your might, sinking the goalposts and deflecting the shot.",
    "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/e/g/eg1bgexoqic.jpg",
-   "zukan_types": [
-    "Success",
-    "Failure"
-   ]
-  },
-  {
-   "id": "vr_whk01440",
-   "name": "Fur Trapper",
-   "name_jp": "もじゃキャッチ",
-   "name_es": "Parada peliaguda",
-   "type": "Catch",
-   "element": "wood",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 360
-   },
-   "description": "Send forth a giant tangle of fisty fur to entangle the ball and weaken its force.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/o/3/o3y-1rb85tk.jpg",
    "zukan_types": [
     "Success",
     "Failure"
@@ -207941,96 +207498,6 @@
    ]
   },
   {
-   "id": "vr_whs02860",
-   "name": "Centrifugal Blast",
-   "name_jp": "スペクトルマグナ",
-   "name_es": "Tiro centrífugo",
-   "type": "Shoot",
-   "element": "air",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 300
-   },
-   "description": "Spin the ball with both feet to charge energy and fire it like a devastating plasma cannon.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/_/u/_unsfof4j8k.jpg",
-   "zukan_types": [
-    "Shot"
-   ]
-  },
-  {
-   "id": "vr_whs00640",
-   "name": "Double Wrath Shot",
-   "name_jp": "二百烈ショット",
-   "name_es": "Chut de los 200 toques",
-   "type": "Shoot",
-   "element": "wood",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 440
-   },
-   "description": "A blistering two-man Wrath Shot barrage that hammers the goal with relentless strikes.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/k/q/kqkmbvsudlk.jpg",
-   "zukan_types": [
-    "Shot"
-   ]
-  },
-  {
-   "id": "vr_whs01440",
-   "name": "Clone Death Zone",
-   "name_jp": "分身デスゾーン",
-   "name_es": null,
-   "type": "Shoot",
-   "element": "wood",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 440
-   },
-   "description": "Create a deadly triangle with your own power in a fearsome clone version of Death Zone.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/6/9/69zvcszaqdu.jpg",
-   "zukan_types": [
-    "Shot"
-   ]
-  },
-  {
-   "id": "vr_whs02880",
-   "name": "Perfect Penguin",
-   "name_jp": "パーフェクトペンギン",
-   "name_es": "Pingüino perfecto",
-   "type": "Shoot",
-   "element": "wood",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 540
-   },
-   "description": "Unite elite forces into the ball to form a flawless penguin that rushes straight for the goal.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/6/s/6sdvzaggdwk.jpg",
-   "zukan_types": [
-    "Shot"
-   ]
-  },
-  {
-   "id": "vr_whs02870",
-   "name": "Penguin Volley",
-   "name_jp": "オーバーヘッドペンギン",
-   "name_es": "Chilena de pingüino",
-   "type": "Shoot",
-   "element": "fire",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 440
-   },
-   "description": "Gather the penguins' power into the ball, then strike a fierce overhead toward the goal!",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/o/g/og8noxjckpm.jpg",
-   "zukan_types": [
-    "Shot"
-   ]
-  },
-  {
    "id": "vr_whd00220",
    "name": "About Face",
    "name_jp": "後ろの正面",
@@ -208049,22 +207516,53 @@
    ]
   },
   {
-   "id": "vr_whk01470",
-   "name": "Grabber Arm",
-   "name_jp": "キャスティングアーム",
-   "name_es": "Brazo extensible",
-   "type": "Catch",
+   "id": "vr_whs02860",
+   "name": "Centrifugal Blast",
+   "name_jp": "スペクトルマグナ",
+   "name_es": "Tiro centrífugo",
+   "type": "Shoot",
+   "element": "air",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 300
+   },
+   "description": "Spin the ball with both feet to charge energy and fire it like a devastating plasma cannon.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/_/u/_unsfof4j8k.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
+   "id": "es_chilena-de-ping-ino",
+   "name": "Chilena de pingüino",
+   "name_es": "Chilena de pingüino",
+   "name_jp": null,
+   "type": "Shoot",
+   "element": null,
+   "cost": null,
+   "cost_game": null,
+   "costs": {},
+   "description": null,
+   "image_url": null,
+   "zukan_types": null
+  },
+  {
+   "id": "vr_whs02880",
+   "name": "Perfect Penguin",
+   "name_jp": "パーフェクトペンギン",
+   "name_es": "Pingüino perfecto",
+   "type": "Shoot",
    "element": "wood",
    "cost": null,
    "cost_game": null,
    "costs": {
-    "VR_power": 640
+    "VR_power": 540
    },
-   "description": "Unleash an arm-like aura to snatch any shot from the air—no matter the angle.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/-/p/-puqga6rdbs.jpg",
+   "description": "Unite elite forces into the ball to form a flawless penguin that rushes straight for the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/6/s/6sdvzaggdwk.jpg",
    "zukan_types": [
-    "Success",
-    "Failure"
+    "Shot"
    ]
   },
   {
@@ -208087,40 +207585,22 @@
    ]
   },
   {
-   "id": "vr_whk00800",
-   "name": "Shadow Catch",
-   "name_jp": "影掴み",
-   "name_es": "Presa de sombras",
+   "id": "vr_whk01470",
+   "name": "Grabber Arm",
+   "name_jp": "キャスティングアーム",
+   "name_es": "Brazo extensible",
    "type": "Catch",
    "element": "wood",
    "cost": null,
    "cost_game": null,
    "costs": {
-    "VR_power": 300
+    "VR_power": 640
    },
-   "description": "Manipulate shadows to catch the ball using a hand filled with eerie dark energy.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/t/3/t39astljhcc.jpg",
+   "description": "Unleash an arm-like aura to snatch any shot from the air—no matter the angle.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/-/p/-puqga6rdbs.jpg",
    "zukan_types": [
     "Success",
     "Failure"
-   ]
-  },
-  {
-   "id": "vr_who00590",
-   "name": "Air Ride",
-   "name_jp": "エアライド",
-   "name_es": "Patín aéreo",
-   "type": "Dribble",
-   "element": "air",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 440
-   },
-   "description": "Transform the ball into a surfboard that can be mounted and used to jump past opponents.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/d/d/ddyvvkpvdbk.jpg",
-   "zukan_types": [
-    "Offence"
    ]
   },
   {
@@ -208179,6 +207659,61 @@
    ]
   },
   {
+   "id": "vr_who00270",
+   "name": "Gale Dash",
+   "name_jp": "烈風ダッシュ",
+   "name_es": "Avance flamígero",
+   "type": "Dribble",
+   "element": "fire",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 440
+   },
+   "description": "Unleash a souped-up Flurry Dash and blaze past opponents in a streak of fire.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/j/c/jcjii4ijzou.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
+  },
+  {
+   "id": "vr_whs03170",
+   "name": "Beyond the Sambadrome",
+   "name_jp": "デス・サンバ",
+   "name_es": "Samba letal",
+   "type": "Shoot",
+   "element": "wood",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 440
+   },
+   "description": "Dance to a savage samba rhythm and sweep past the keeper with a deadly flourish.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/h/g/hgajm3m1cgs.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
+   "id": "vr_whk00800",
+   "name": "Shadow Catch",
+   "name_jp": "影掴み",
+   "name_es": "Presa de sombras",
+   "type": "Catch",
+   "element": "wood",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 300
+   },
+   "description": "Manipulate shadows to catch the ball using a hand filled with eerie dark energy.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/t/3/t39astljhcc.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
+  },
+  {
    "id": "vr_whd00150",
    "name": "Ghost Pull",
    "name_jp": "怨霊",
@@ -208233,6 +207768,25 @@
    ]
   },
   {
+   "id": "vr_whk00360",
+   "name": "Flower Power",
+   "name_jp": "花吹雪",
+   "name_es": "Tormenta de pétalos",
+   "type": "Catch",
+   "element": "air",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 300
+   },
+   "description": "Use flower petals dancing daintily on the pitch to reduce the power of incoming shots.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/e/ietuyfxwig8.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
+  },
+  {
    "id": "vr_whs00140",
    "name": "Comet Shot",
    "name_jp": "彗星シュート",
@@ -208268,6 +207822,20 @@
     "Success",
     "Failure"
    ]
+  },
+  {
+   "id": "es_arrollador",
+   "name": "Arrollador",
+   "name_es": "Arrollador",
+   "name_jp": null,
+   "type": "Dribble",
+   "element": null,
+   "cost": null,
+   "cost_game": null,
+   "costs": {},
+   "description": null,
+   "image_url": null,
+   "zukan_types": null
   },
   {
    "id": "vr_whk00180",
@@ -208308,19 +207876,19 @@
    ]
   },
   {
-   "id": "vr_who00640",
-   "name": "Angel Ball",
-   "name_jp": "エンゼルボール",
-   "name_es": "Balón angelical",
+   "id": "vr_who00060",
+   "name": "Rolling Hell",
+   "name_jp": "地獄車",
+   "name_es": null,
    "type": "Dribble",
-   "element": "air",
+   "element": "earth",
    "cost": null,
    "cost_game": null,
    "costs": {
     "VR_power": 440
    },
-   "description": "The ball grows a pair of angelic white wings, making the opponent lose their will to fight.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/7/x7zn8pk-so8.jpg",
+   "description": "Two players form a whirling wheel and slam into opponents, sending them flying.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/y/q/yqsf7pnpqe0.jpg",
    "zukan_types": [
     "Offence"
    ]
@@ -208344,6 +207912,24 @@
    ]
   },
   {
+   "id": "vr_whs03300",
+   "name": "Hollow Blare",
+   "name_jp": "レクイエムダスト",
+   "name_es": "Polvo de réquiem",
+   "type": "Shoot",
+   "element": "earth",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 360
+   },
+   "description": "Envelop the ball in a holy melody of light and sound, then strike it to purify everything in its path.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/d/b/dbt5wmxlhfk.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
    "id": "vr_who00090",
    "name": "Rodeo Clown",
    "name_jp": "玉乗りピエロ",
@@ -208359,6 +207945,24 @@
    "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/g/a/gatdkcotn7c.jpg",
    "zukan_types": [
     "Offence"
+   ]
+  },
+  {
+   "id": "vr_whd00060",
+   "name": "Spider Web",
+   "name_jp": "蜘蛛の糸",
+   "name_es": "Telaraña",
+   "type": "Block",
+   "element": "wood",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 360
+   },
+   "description": "Spread a spider web on the ground that makes movement difficult.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/n/o/nowq2wk25vu.jpg",
+   "zukan_types": [
+    "Defence"
    ]
   },
   {
@@ -208399,22 +208003,21 @@
    ]
   },
   {
-   "id": "vr_whd01540",
-   "name": "Ursa Binder",
-   "name_jp": "必殺クマゴロシ縛",
-   "name_es": "Nudo atrapaosos",
-   "type": "Block",
-   "element": "earth",
+   "id": "vr_whs02950",
+   "name": "Triple Blizzard",
+   "name_jp": "トリプルブリザード",
+   "name_es": "Ventisca triple",
+   "type": "Shoot",
+   "element": "air",
    "cost": null,
    "cost_game": null,
    "costs": {
-    "VR_power": 440
+    "VR_power": 540
    },
-   "description": "Block your target with force strong enough to stop even the fiercest bear.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/w/-/w-vnbxyjag0.jpg",
+   "description": "Strike with a sharp, freezing kick to unleash a three-fold blizzard at the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/2/k/2k8x-fons60.jpg",
    "zukan_types": [
-    "Defence",
-    "Shot Block"
+    "Shot"
    ]
   },
   {
@@ -208436,6 +208039,20 @@
    ]
   },
   {
+   "id": "es_remate-cazaosos",
+   "name": "Remate cazaosos",
+   "name_es": "Remate cazaosos",
+   "name_jp": null,
+   "type": "Shoot",
+   "element": null,
+   "cost": null,
+   "cost_game": null,
+   "costs": {},
+   "description": null,
+   "image_url": null,
+   "zukan_types": null
+  },
+  {
    "id": "vr_whs02940",
    "name": "Rabbit Run",
    "name_jp": "シロウサギダッシュート",
@@ -208454,19 +208071,37 @@
    ]
   },
   {
-   "id": "vr_whs01260",
-   "name": "Astro Gate",
-   "name_jp": "アストロゲート",
-   "name_es": "Puerta astral",
+   "id": "vr_whs02990",
+   "name": "Heavenly Tianlong",
+   "name_jp": "天竜",
+   "name_es": "Ímpetu de dragón",
+   "type": "Shoot",
+   "element": "earth",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 440
+   },
+   "description": "Channel the power of a mighty dragon into your foot and strike with a sharp, roaring shot.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/p/ipgccp4nals.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
+   "id": "vr_whs02980_or_02",
+   "name": "Cosmic Blaster",
+   "name_jp": "コズミックブラスター",
+   "name_es": "Combo cósmico",
    "type": "Shoot",
    "element": "wood",
    "cost": null,
    "cost_game": null,
    "costs": {
-    "VR_power": 360
+    "VR_power": 880
    },
-   "description": "Summon a massive black hole to crush all in its path, powering up Astro Break to devastating effect.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/5/s/5ssnb0wrsvc.jpg",
+   "description": "Send the ball streaking like a meteor to produce a supernova-level strike of unimaginable power.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/t/n/tnr9xwedtwe.jpg",
    "zukan_types": [
     "Shot"
    ]
@@ -208527,19 +208162,19 @@
    ]
   },
   {
-   "id": "vr_whs02990",
-   "name": "Heavenly Tianlong",
-   "name_jp": "天竜",
-   "name_es": "Ímpetu de dragón",
+   "id": "vr_whs03080",
+   "name": "Cannonball",
+   "name_jp": "カロネード砲",
+   "name_es": "Bala de cañón",
    "type": "Shoot",
    "element": "earth",
    "cost": null,
    "cost_game": null,
    "costs": {
-    "VR_power": 440
+    "VR_power": 360
    },
-   "description": "Channel the power of a mighty dragon into your foot and strike with a sharp, roaring shot.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/p/ipgccp4nals.jpg",
+   "description": "Launch a cannon with a fiery kick and send the ball hurtling toward the net.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/8/b/8bttvqbqv5k.jpg",
    "zukan_types": [
     "Shot"
    ]
@@ -208564,57 +208199,21 @@
    ]
   },
   {
-   "id": "vr_whs03160",
-   "name": "Double-Trouble",
-   "name_jp": "ツインランサー",
-   "name_es": "Torbellino gemelo",
-   "type": "Shoot",
-   "element": "fire",
+   "id": "vr_who00590",
+   "name": "Air Ride",
+   "name_jp": "エアライド",
+   "name_es": "Patín aéreo",
+   "type": "Dribble",
+   "element": "air",
    "cost": null,
    "cost_game": null,
    "costs": {
     "VR_power": 440
    },
-   "description": "Split the ball and drill through with a glowing, high-intensity combination strike.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/q/i/qixchiapxte.jpg",
+   "description": "Transform the ball into a surfboard that can be mounted and used to jump past opponents.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/d/d/ddyvvkpvdbk.jpg",
    "zukan_types": [
-    "Shot"
-   ]
-  },
-  {
-   "id": "vr_whs03140",
-   "name": "Diamond Cutter",
-   "name_jp": "ダイヤモンドエッジ",
-   "name_es": "Hoja diamantina",
-   "type": "Shoot",
-   "element": "earth",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 640
-   },
-   "description": "Polish the ball with a diamond-hardened kick to send it arcing just before the goal.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/b/p/bpjwfqt9pac.jpg",
-   "zukan_types": [
-    "Shot"
-   ]
-  },
-  {
-   "id": "vr_whs03240",
-   "name": "Perseus Strike",
-   "name_jp": "ペルセウスオーブ",
-   "name_es": "Orbe de Perseo",
-   "type": "Shoot",
-   "element": "wood",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 640
-   },
-   "description": "Call a great hero forth whose heart of justice drives the ball straight toward the goal.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/e/iel4dio8zf0.jpg",
-   "zukan_types": [
-    "Shot"
+    "Offence"
    ]
   },
   {
@@ -208655,6 +208254,24 @@
    ]
   },
   {
+   "id": "vr_whs03240",
+   "name": "Perseus Strike",
+   "name_jp": "ペルセウスオーブ",
+   "name_es": "Orbe de Perseo",
+   "type": "Shoot",
+   "element": "wood",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 640
+   },
+   "description": "Call a great hero forth whose heart of justice drives the ball straight toward the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/e/iel4dio8zf0.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
    "id": "vr_whk00510",
    "name": "Hammer of Fury",
    "name_jp": "怒りの鉄槌",
@@ -208674,58 +208291,21 @@
    ]
   },
   {
-   "id": "vr_whs02770",
-   "name": "Polar Bear No. 2",
-   "name_jp": "北極グマ２号",
-   "name_es": "Oso polar n.º 2",
-   "type": "Shoot",
-   "element": "earth",
+   "id": "vr_who00640",
+   "name": "Angel Ball",
+   "name_jp": "エンゼルボール",
+   "name_es": "Balón angelical",
+   "type": "Dribble",
+   "element": "air",
    "cost": null,
    "cost_game": null,
    "costs": {
     "VR_power": 440
    },
-   "description": "Encase the ball in frigid air, driving it toward the goal with the ferocity of a polar bear.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/j/h/jhgag8kevue.jpg",
+   "description": "The ball grows a pair of angelic white wings, making the opponent lose their will to fight.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/7/x7zn8pk-so8.jpg",
    "zukan_types": [
-    "Shot"
-   ]
-  },
-  {
-   "id": "vr_whd01570",
-   "name": "Tornado Barrier",
-   "name_jp": "スピニングフェンス",
-   "name_es": "Huracán múltiple",
-   "type": "Block",
-   "element": "air",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 540
-   },
-   "description": "Spin at blazing speed to create five colossal tornadoes and snatch the ball away.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/m/g/mgjjogje6y8.jpg",
-   "zukan_types": [
-    "Defence",
-    "Shot Block"
-   ]
-  },
-  {
-   "id": "vr_whs03210",
-   "name": "Fizzy Fire Lemonade",
-   "name_jp": "ファイアレモネード・ライジング",
-   "name_es": "Granizado de fuego alto",
-   "type": "Shoot",
-   "element": "wood",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 540
-   },
-   "description": "Strike with a blow carrying the hopes of your allies, sending the ball soaring onward with overwhelming power.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/b/i/biwwtzpieks.jpg",
-   "zukan_types": [
-    "Shot"
+    "Offence"
    ]
   },
   {
