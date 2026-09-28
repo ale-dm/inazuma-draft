@@ -1,7 +1,7 @@
-Cartas: 4435 (220 versiones extra) · personajes: 4090 · técnicas: 720
-Categorías: Legendary Player 86 · Top Player 507 · Advanced Player 815 · Growing Player 701 · Common Player 2326
-Niveles: S 409 · A 233 · B 1152 · C 2641
-OVR: mediana 63 · p90 84 · p99 90 · máx 92
+Cartas: 5378 (255 versiones extra) · personajes: 4974 · técnicas: 772
+Categorías: Legendary Player 86 · Top Player 564 · Advanced Player 1290 · Growing Player 947 · Common Player 2491
+Niveles: S 409 · A 350 · B 1263 · C 3356
+OVR: mediana 67 · p90 84 · p99 90 · máx 92
 
 Balancing doc del Xtreme sin ficha (7): añadir a overrides.xtreme_balancing_pages → Rhionne (Chaos), Dante Diavolo (Orpheus), Kino Aki (Girls Team), Oogu (Zanark Domain), Yasha (Zanark Domain), Goburis (Zanark Domain), Yamana Akane (Secret players (GO))
 Wiki del Xtreme: "Kino Aki" sin ficha (Kino Aki)
@@ -27,3 +27,6 @@ Ares: jugadores sin supertécnicas de VR (1): Chester Horse Sr
 Ares: supertécnicas de la carta — rtu 173, anime 26 (anime = wiki española «Desde Ares»; rtu = Road to Ultimate, comunes + rama principal; vr = todas las de VR)
 Orion: jugadores sin supertécnicas de VR (3): Chester Horse Sr, André, Rio
 Orion: supertécnicas de la carta — rtu 179, anime 28 (anime = wiki española «Desde Orion»; rtu = Road to Ultimate, comunes + rama principal; vr = todas las de VR)
+Victory Road: jugadores sin supertécnicas de VR (5): Philip Star, Lucas Star, Alexander Allegrov, Cade Shelby, Josephine
+Victory Road: supertécnicas de la carta — rtu 943 (anime = wiki española «Desde Victory Road»; rtu = Road to Ultimate, comunes + rama principal; vr = todas las de VR)
+Equipo con un solo jugador, fuera: Queens (VR) → Romica Glimmerly sin equipo

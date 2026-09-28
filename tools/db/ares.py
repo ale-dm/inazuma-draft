@@ -28,6 +28,9 @@ CFG = {
                  mark=r"Desde Ares\s*=|Inazuma Eleven Ares'|\{\{Medio\|A\|AR\}\}", words=('Ares',), other=('Orion', 'Orión')),
     'ORION': dict(label='Orion', ref='IE3', data='orion.json', module='PlayerData_OK.lua',
                   mark=r"Desde Orion\s*=|Desde Orión\s*=|Inazuma Eleven Orion'|\{\{Medio\|A\|OR\}\}", words=('Orion', 'Orión'), other=('Ares',)),
+    # Victory Road: los personajes que se estrenan en el juego (fichas de zukan solo de VR); no hay anime; curva de IE1
+    'VR': dict(label='Victory Road', ref='IE1', data='vr.json', module='PlayerData_VR.lua',
+               mark=r"(?!x)x", words=('Saga de Destin',), other=('Ares', 'Orion', 'Orión')),
 }
 KEYS = ['kick', 'control', 'technique', 'pressure', 'physical', 'agility', 'intelligence']
 VR_KEYS = ['Kick', 'Control', 'Technique', 'Pressure', 'Physical', 'Agility', 'Intelligence']
@@ -220,7 +223,7 @@ def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_j
     orion_teams = {t for z in zukan if 'ORION' in z['games'] and 'ARES' not in z['games'] for t in z['teams']}
     rows, no_tech = [], []
     for z in zukan:
-        if GAME not in z['games'] or not z['role'].startswith('Player'):
+        if not z['role'].startswith('Player') or (set(z['games']) != {'VR'} if game == 'VR' else GAME not in z['games']):
             continue
         x = AZ.get(z['id'])
         pg = page_of(z)
@@ -236,7 +239,7 @@ def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_j
         top = sorted((s['max'] for s in sk), reverse=True)
         rx = RTU.get(z['id'], [])
         key = next((x_['stat_key'] for x_ in rx if x_['type'] == 'normal' and x_.get('stat_key')), None)
-        if game == 'ARES':
+        if game in ('ARES', 'VR'):
             team = next((t for t in z['teams'] if t != 'Inazuma National'), z['teams'][0] if z['teams'] else 'Unaffiliated')
         else:                                         # Orion: Inazuma Japón primero; si no, su equipo de Orion
             team = 'Inazuma National' if 'Inazuma National' in z['teams'] else \

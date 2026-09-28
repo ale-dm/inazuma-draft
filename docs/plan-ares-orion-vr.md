@@ -3,7 +3,20 @@
 > Estado:
 > - **Ares hecho**: juego `ARES`, 199 cartas.
 > - **Orion hecho**: juego `ORION`, 207 cartas.
-> - Los dos salen de `tools/db/ares.py`. Victory Road queda pendiente.
+> - **Victory Road hecho**: juego `VR`, 943 cartas.
+> - Los tres salen de `tools/db/ares.py`.
+
+## Victory Road (hecho)
+
+- **Qué entra**: los personajes que se estrenan en el juego (fichas de zukan solo de VR), cada uno en su equipo de zukan.
+  - Nagumohara (Secundaria South Cirrus) es el protagonista.
+  - También los equipos de la historia, los de entrenamiento, los de la crónica (Platos, Destructores…) y los clubes del instituto.
+- **Nota**: mismo método que Ares/Orion, con la curva de **IE1**. No hay anclas, porque no son personajes clásicos.
+- **Técnicas**: no hay anime, así que salen de Road to Ultimate (comunes + rama principal, sin las básicas).
+- **Curva de rivales** (`team_tuning.VR`, como IE1/GO1: 73,5 → 83,5), ordenada por el nivel de la historia en la wiki:
+  - Tenderos → Seagull FC → Twinford → West Manor → Orchid → Northbright → Crosswind → Back Alley → Eastwind → Noble Insight / Lawcrest / AI Academy → Stormridge → Alpino → **Raimon (final)** → Solaria-Zeus → Zanark Outsiders → Guardianas → Plathos → Destructores.
+  - Techo 88.
+- **Nombres en castellano de los clubes**: traducidos a mano en `overrides.team_es`.
 
 ## Orion (hecho)
 
