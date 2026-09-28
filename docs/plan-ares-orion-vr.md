@@ -4,7 +4,7 @@
 
 ## Ares (hecho)
 
-- Una carta por ficha de zukan de jugador de Ares, con su nº oficial, en su equipo de Ares (los personajes clásicos que se van del Raimon, en su otro equipo: Kirkwood, Polestar, Everytown…).
+- Una carta por ficha de zukan de jugador de Ares, con su nº oficial, en su equipo de Ares (los personajes clásicos que se van del Raimon, en su otro equipo: Kirkwood, Polestar, Everytown…). El Raimon de Ares es solo el de los nuevos: los del Raimon original que salen en Ares (Erik, Tod, Bobby, Max, Sam, Steve, Tim, Willy, Jim) van a Secundarios.
 - Nota:
   1. Banda por el **tier de potencial** de Victory Road (0–3).
   2. Dentro de la banda, **potencia de sus supertécnicas** de Victory Road.
