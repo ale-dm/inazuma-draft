@@ -75,6 +75,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 88,Top Player,Arion Sherwind,GO2,Chrono Storm,Chrono Storm,MF,S,Strikers 2013,87,88,95,86,86,86,Zephyr Shot (20) · Sword of the King (70) · Ultimate Eleven Assault (85),matsukaze-tenma--go2--chrono-storm
 88,Top Player,Arion Sherwind,GO2,Mixi Max (Victor) «Victarion»,Mixi Max,MF,A,stats del juego,89,91,80,89,79,82,Easy Breezy (15) · Doomsword Slash (15) · Tornado Tunnel (70) · Fire Tornado DD (70),matsukaze-tenma--go2--mixi-max-victor-victarion
 88,Top Player,Astaroth,IE3,base,Devil Army Z,GK,S,Strikers 2013,82,69,79,80,90,90,The End (60) · Breakthrough 3 (48) · Giant Spider (47),astaroth--ie3--base
+88,Top Player,Augusto Gomez,ARES,base,Barcelona Orb,MF,B,Victory Road (tier 1) + técnicas,89,90,83,88,83,84,Slingshot (49) · Double Tornado (55) · Unicorn Boost (58) · Bewilder Blast (39) · Matador Feint (47) · Rapid Fire (20) · Crosscut Feint (None),agapito-gom-z--ares--base
 88,Top Player,Austin Hobbes,IE3,base,Inazuma Japan,FW,S,Xtreme (balancing),95,82,80,82,80,72,Double Touch (10) · Tiger Drive (40) · Tiger Storm (58) · Gladius Arch (62),utsunomiya-toramaru--ie3--base
 88,Top Player,Austin Hobbes,GO2,Adult,Sub Character,FW,S,Xtreme (balancing),95,83,79,81,78,71,Dragster (30) · Tiger Drive (40) · Guided Collide (20) · Fire Tornado DD (70),utsunomiya-toramaru--go2--adult
 88,Top Player,Axel Blaze,IE3,Inazuma Japan,Inazuma Japan,FW,S,Strikers 2013,91,82,91,82,81,74,Fire Tornado (30) · Fireball Storm (90) · Fireball Screw (55) · Grand Fire (76),gouenji-shuuya--ie3--inazuma-japan
@@ -104,6 +105,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 88,Top Player,Kiburn,IE2,base,Genesis,DF,S,Xtreme (balancing),86,97,90,87,85,77,Lightning Sprint (70) · Gravitation (38) · Black Hole (35) · Procyon Net (52),kii-fumiko--ie2--base
 88,Top Player,Kiwill,IE2,base,Genesis,MF,S,Strikers 2013,86,89,86,89,87,87,Southern Cross (55) · Rodeo Clown (20) · Bubble Gum (30) · Sigma Zone (57),kui-lulu--ie2--base
 88,Top Player,Kormer,IE2,base,Genesis,MF,A,stats del juego,84,93,82,88,84,85,Lightning Sprint (70) · Teleport Shot (21) · Moonsault (25) · Space Penguin (61),komazawa-kyouma--ie2--base
+88,Top Player,Leo Segarra,ARES,base,Barcelona Orb,FW,A,Victory Road (tier 2) + técnicas,92,91,79,80,79,91,Double Tornado (55) · Double-Trouble (None) · Meteor Blade (55) · Capable Hands (55) · Rocket Kobushi (25) · Attack Scan (25) · Chip Shot (None),luther-fandam--ares--base
 88,Top Player,Lucian Dark,GO2,Raimon,Raimon,FW,S,Xtreme (balancing),90,80,90,90,77,70,Emperor Penguin No. 2 (55) · In-Line Stampede (55) · Dark Energy Star (70),kageyama-hikaru--go2--raimon
 88,Top Player,Mark Evans,ARES,base,Everytown,GK,A,Victory Road (tier 3) + técnicas + endou-mamoru--ie2--raimon,88,84,85,84,85,90,Majin The Hand (60) · Mega Majin (None) · Megaton Head (28) · Inazuma-1 (40) · God Hand (10) · Fireball Knuckle (20) · Mighty Save (None),endou-mamoru--ares--base
 88,Top Player,Marvin Murdock,IE1,base,Kirkwood,FW,A,stats del juego,89,87,86,86,88,89,Triangle Z (55) · Illusion Ball (20) · Grenade Shot (20) · Boost Glider (57),mukata-masaru--ie1--base
@@ -116,7 +118,9 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 88,Top Player,Paul Siddon,IE1,base,Zeus,GK,S,Strikers 2013,82,74,81,62,90,90,Tsunami Wall (42) · Gigant Wall (30) · The Wall (8) · Sumo Stomp (20),posei-donichi--ie1--base
 88,Top Player,Ron Innwater,GO2,base,Nosfanatica,DF,B,stats del juego,82,82,86,87,91,87,Wall of Atlantis (40) · Transporter Device (15) · Ozone Flayer (55),zinc--go2--base
 88,Top Player,Ryoma Nishiki,GO2,Chrono Storm,Chrono Storm,MF,S,Xtreme (balancing),84,93,96,82,82,72,Acrobatic Keep (40) · Black Tide Ride (70),nishiki-ryouma--go2--chrono-storm
+88,Top Player,Salvador Castell,ARES,base,Barcelona Orb,GK,A,Victory Road (tier 2) + técnicas,81,90,84,90,84,91,Omega Hand (60) · Wetsuit (None) · Gigant Wall (30) · All-Star (30) · Mole Fake (10) · Dog Run (39) · Power Catch (None),alonso-fibiano--ares--base
 88,Top Player,Scott Banyan,IE2,base,Cloister Divinity,DF,S,Xtreme (balancing),75,83,83,91,91,83,Whirlwind Force (20) · Whirlwind Twister (20) · About Face (16) · Bewildered (15),kogure-yuuya--ie2--base
+88,Top Player,Sergi Hernández,ARES,base,Barcelona Orb,MF,A,"Victory Road (tier 2, héroe) + técnicas",89,90,89,83,89,84,Diamond Cutter (None) · Perseus Strike (None) · Diamond Ray (None) · Formidable Fortress (None) · Slingshot (49) · Falling Planet (70) · Deceptive Step (None),clario-orvan--ares--base
 88,Top Player,Seymour Hillman,ARES,base,Everytown,GK,A,Victory Road (tier 2) + técnicas + hibiki-seigou--ie2--young-inazuma,89,84,85,84,85,90,Majin The Hand (60) · Slingshot (49) · Triple Defence (47) · God Hand (10) · Blazing Knuckle (35) · Dual Strike (46) · Mighty Save (None),hibiki-seigou--ares--base
 88,Top Player,Shawn Froste,ARES,base,Alpine,FW,A,Victory Road (tier 3) + técnicas,90,88,89,89,89,86,Cold Front (None) · Aurora Dribble (39) · Land Of Ice (20) · Frosticle (55) · Freeze Shot (25) · Curve Shot (None),fubuki-shirou--ares--base
 88,Top Player,Sol Daystar,GO2,Chrono Storm,Chrono Storm,FW,S,Xtreme (wiki),91,87,87,82,86,74,Atomic Flare (70) · Thundertaker (85),amemiya-taiyou--go2--chrono-storm
@@ -137,6 +141,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 87,Top Player,Aimé Quintet,GO1,base,Dragon Link,DF,S,Xtreme (balancing),82,72,82,81,94,84,Side Swipe (70) · Wind God's Dance (40) · Ozone Flayer (55),gomaki-tetsurou--go1--base
 87,Top Player,Albion Lumina,GO1,base,Eternal Light,GK,S,Strikers 2013,73,88,73,81,81,93,Snakebite (20) · Hunter's Net (30) · Crystal Barrier (40),hebino-makito--go1--base
 87,Top Player,Alessandro il Grande,GO1,base,Lunar Sea,GK,S,Strikers 2013,78,80,79,79,80,92,Fingers of Gaia (40) · Power Spike (10) · Capable Hands (55),hyoudou-tsukasa--go1--base
+87,Top Player,Antoni Valls,ARES,base,Barcelona Orb,DF,B,Victory Road (tier 1) + técnicas,80,88,86,88,89,83,Air Ride (None) · Dash Storm (46) · Stone Prison (42) · Echo Ball (44) · Flame Veil (53) · Dog Run (39) · Curving Cut (None),oscar-agito--ares--base
 87,Top Player,Axel Blaze,IE2,Raimon,Raimon,FW,S,Strikers 2013,91,83,82,83,74,73,Fire Tornado (30) · Heat Tackle (27) · Inazuma Drop (37) · Fireball Storm (90),gouenji-shuuya--ie2--raimon
 87,Top Player,Basile Hardy,ARES,base,Raimon,FW,A,Victory Road (tier 3) + técnicas,90,89,78,80,78,79,Daruma Boomer (None) · Flying Colours (None) · Gale Dash (None) · Fire Tornado A (None) · Heat Tackle (27) · Power Shot (None),kozoumaru-sasuke--ares--base
 87,Top Player,Beacon Noor,GO1,base,Eternal Light,MF,B,stats del juego,83,90,87,90,77,86,Warp Step (70) · Zephyr Shot (20) · Mystifying Mist (15),nitta-miru--go1--base
@@ -147,6 +152,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 87,Top Player,Byron Love,IE1,base,Zeus,MF,S,Strikers 2013,94,86,85,86,78,77,God Knows (70) · Heaven's Time (70) · Divine Stamp (43) · Divine Arrows (46),afuro-terumi--ie1--base
 87,Top Player,Byron Love,ARES,base,Zeus,MF,A,Victory Road (tier 3) + técnicas + afuro-terumi--ie1--base,88,89,85,87,85,83,God Alone Knows (None) · Heaven's Time (70) · God Break (64) · God Knows (70) · Divine Stamp (None) · Nutmeg (None),afuro-terumi--ares--base
 87,Top Player,Candido Glow,GO1,base,Eternal Light,DF,S,Strikers 2013,80,78,82,88,91,73,Hey Presto (30) · Solar Surprise (40) · The Wall (8),saki-yukio--go1--base
+87,Top Player,Carles Ripoll,ARES,base,Barcelona Orb,DF,B,Victory Road (tier 1) + técnicas,88,84,88,85,89,83,Slingshot (49) · Desert Blast (30) · Liar Shot (44) · Super Elastico (56) · Yo-Yo Ball (36) · Meteor Attack (22) · Curving Cut (None),daniel-madrone--ares--base
 87,Top Player,Changsu Choi,IE3,base,Fire Dragon,MF,S,Strikers 2013,83,94,92,75,85,78,Abaddon Drop (33) · Dragon Cannon (46) · Land Dragon (46),choi-chang-soo--ie3--base
 87,Top Player,Chitoh,GO2,base,Gahl,GK,B,stats del juego,72,83,81,79,86,89,Rejection (70) · Jumping Whack (30) · Shadow Catch (20) · Gravity Point (55),chet--go2--base
 87,Top Player,Claude Beacons,ARES,base,Alia Academy,FW,A,Victory Road (tier 3) + técnicas + nagumo-haruya--ie2--base,89,85,88,88,88,85,Fire Blizzard (64) · Atomic Flare (70) · Meteor Shower (38) · The Ikaros (57) · Solar Surprise (40) · Flame Veil (53) · Curve Shot (None),nagumo-haruya--ares--base
@@ -169,7 +175,9 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 87,Top Player,Janus,GO2,Adult,Sub Character,MF,S,Strikers 2013,82,91,81,89,80,71,Astro Break (30) · Transporter Device (15) · Southern Cross (55) · No Future (55),midorikawa-ryuuji--go2--adult
 87,Top Player,Jean-Pierre Lapin,GO2,Raimon,Raimon,GK,S,Strikers 2013,70,80,82,81,81,91,Combustion Catch (8) · Jumping Whack (30) · Flapjack Defence (20) · Mugen The Hand (55),nishizono-shinsuke--go2--raimon
 87,Top Player,Jean-Pierre Lapin,GO3,Earth Eleven,Earth Eleven,GK,S,Strikers 2013,70,79,81,81,81,91,Combustion Catch (8) · Jumping Whack (30) · Mugen The Hand (55) · We Have Liftoff! (70) · Flapjack Defence (20),nishizono-shinsuke--go3--earth-eleven
+87,Top Player,Joan Asensi,ARES,base,Barcelona Orb,FW,B,Victory Road (tier 1) + técnicas,89,84,86,88,83,85,Celestial Smash (55) · Double-Trouble (None) · Heat Tackle (27) · Hellfire (46) · Dog Run (39) · Flame Veil (53) · Curve Shot (None),bergamo-regult--ares--base
 87,Top Player,John Neville,IE1,base,Kirkwood,GK,A,stats del juego,90,83,82,80,94,86,Toughness Block (20) · Counter Strike (40) · The Wall (8) · Gigant Wall (30),nanzan-yowami--ie1--base
+87,Top Player,Jordi Belloch,ARES,base,Barcelona Orb,DF,B,Victory Road (tier 1) + técnicas,88,81,88,81,89,83,Slingshot (49) · Heaven's Ascent (56) · Stone Prison (42) · Yo-Yo Ball (36) · Hellfire (46) · Bouncing Bomb (30) · Curving Cut (None),federico-dazzlo--ares--base
 87,Top Player,Joss Fool,GO3,base,Big Bang,MF,B,stats del juego,86,90,88,87,76,86,Atlas Sword (85) · Supernatural Strike (55) · Black Ash (70),joss-fool--go3--base
 87,Top Player,Jude Sharp,GO2,Inazuma Legend Japan,Inazuma Legend Japan,MF,S,Strikers 2013,89,90,87,81,81,80,Illusion Ball (20) · Inazuma Break (55) · Emperor Penguin No. 3 (70) · Final Death Zone (85),kidou-yuuto--go2--inazuma-legend-japan
 87,Top Player,Jynx Jenkins,IE3,base,Team Ogre,DF,S,Strikers 2013,79,78,91,72,91,83,Volcano Cut (42) · Power Charge (39) · Illusion Ball (20),jinis-jinkins--ie3--base
@@ -193,6 +201,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 87,Top Player,Tyler Murdock,IE1,base,Kirkwood,FW,S,Strikers 2013,86,93,84,84,84,75,Spinning Cut (30) · Back Tornado (31) · Breakthrough (25) · Triangle Z (55),mukata-tsutomu--ie1--base
 87,Top Player,Tynan Crowe,GO1,base,Ancient Darkness,MF,S,Strikers 2013,95,83,85,86,91,76,Will-o'-the-Wisp Shot (40) · Blast Mine (40) · Entropic Arrows (55),yuuki-jou--go1--base
 87,Top Player,Victor Blade,GO2,Raimon,Raimon,FW,S,Xtreme (balancing),90,82,82,88,80,71,Doomsword Slash (15) · Doom Dive Drive (40) · Fire Tornado DD (70) · Great Blaster (70),tsurugi-kyousuke--go2--raimon
+87,Top Player,Xavi Casals,ARES,base,Barcelona Orb,MF,B,Victory Road (tier 1) + técnicas,83,89,88,88,88,83,Heaven's Ascent (56) · Ultra Moon (44) · Super Elastico (56) · Hellfire (46) · Whirlpool (40) · Shadow Stitch (39) · Heel Flick (None),trancy-cornet--ares--base
 87,Top Player,Xene,IE3,Inazuma Japan,Inazuma Japan,FW,S,Strikers 2013,91,83,81,83,82,82,Meteor Blade (55) · Photon Crash (25) · The Dawn (58) · Celestial Smash (55),kiyama-hiroto--ie3--inazuma-japan
 87,Top Player,Yang,GO1,base,Ancient Darkness,FW,S,Xtreme (balancing),89,89,85,78,84,71,Doom Dive Drive (40) · Criss-Cross (70) · Eternal Blizzard (30) · Warp Step (70),kai--go1--base
 87,Top Player,Yuh,GO2,base,Gahl,FW,B,stats del juego,89,86,81,88,79,80,Legendary Wolf (40) · Decoy Deploy (70) · Land Of Ice (20) · White Hurricane (70),yuuchi--go2--base
@@ -224,6 +233,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 86,Top Player,Gabriel Garcia,GO2,Mixi Max (Aitor) «Aitriel»,Mixi Max,DF,A,stats del juego,80,84,83,86,88,83,Mystifying Mist (15) · Hunter's Net (30) · Mystic Mist (40),kirino-ranmaru--go2--mixi-max-aitor-aitriel
 86,Top Player,Garreau,GO2,base,Zan,MF,B,stats del juego,87,92,87,78,78,82,Gungnir (30) · Slice and Dice (15) · Blast Mine (40) · Ballista Barrage (55),garo--go2--base
 86,Top Player,Gentian,GO2,base,The Despairadoes,FW,S,Strikers 2013,89,81,88,80,76,80,Flower Plougher (40) · Floral Fiesta (40) · Magnetism (30),zinnias--go2--base
+86,Top Player,Geraldo Enrique,ARES,base,Barcelona Orb,FW,B,Victory Road (tier 1) + técnicas,90,89,78,78,78,78,Slingshot (49) · The Tower (30) · Matador Feint (47) · Rapid Fire (20) · Bouncing Bomb (30) · Dog Run (39) · Dust Kick (None),gerard-enrique--ares--base
 86,Top Player,Gigi Blasi,IE3,base,Orpheus,GK,S,Strikers 2013,74,82,68,68,90,90,Colosseum Guard (42) · Earthquake (32) · Gigant Wall (30),gigi-blasi--ie3--base
 86,Top Player,Gus Martin,GO1,Team Zero,Team Zero,DF,S,Xtreme (balancing),77,81,81,80,92,78,Spatial Portal (55) · Future Eye (10) · Side Swipe (70),gojou-masaru--go1--team-zero
 86,Top Player,Herb Sherman,IE1,base,Farm,DF,A,stats del juego,78,83,84,78,90,85,Harvest (48) · Grenade Shot (20) · About Face (16) · Infinite Wall (55),shiotani-hiro--ie1--base
@@ -328,7 +338,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 85,Top Player,Sail Bluesea,IE1,base,Shuriken,FW,S,Strikers 2013,79,96,88,88,79,87,Dirt Ball (22) · Poison Fog (20) · Afterimage (31) · Fire Rooster (62),kirigakure-saiji--ie1--base
 85,Top Player,Sam Samurai,IE1,base,Shuriken,FW,A,stats del juego,85,85,85,83,85,83,Clone Shot (46) · Quick Draw (20) · Shadow Stitch (39) · Fire Rooster (62),yagyuu-juurou--ie1--base
 85,Top Player,Sanctus,IE3,base,Apostles from the Sky,FW,S,Strikers 2013,82,91,81,90,82,82,Heavenly Drive (70) · Ultra Moon (44) · Shadow Ray (67) · Excalibur (66),sein--ie3--base
-85,Top Player,Sergi Hernández,ARES,base,Barcelona Orb,MF,A,"Victory Road (tier 2, héroe) + técnicas",86,87,86,80,86,81,Diamond Cutter (None) · Perseus Strike (None) · Diamond Ray (None) · Formidable Fortress (None) · Slingshot (49) · Falling Planet (70) · Deceptive Step (None),clario-orvan--ares--base
 85,Top Player,Sid Viper,GO2,base,Nosfanatica,MF,B,stats del juego,81,89,73,86,86,87,Athena's Anthem (70) · Spatial Portal (55) · Bouncing Bunny (15),snaker--go2--base
 85,Top Player,Sonny Wright,ARES,base,Raimon,FW,A,"Victory Road (tier 3, héroe) + técnicas",87,86,86,86,81,83,Flash Dash (None) · Golden Gull (None) · Power Shot (None),inamori-asuto--ares--base
 85,Top Player,Terracotta Warrior 8,GO2,base,The Terracotta Army,MF,B,stats del juego,79,91,88,81,78,85,Transporter Device (15) · Zigzag Spark (55),bingmayong-no-hachi--go2--base
@@ -404,6 +413,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 84,Top Player,Raven Vale,ARES,base,Lunar Prime Academy,MF,B,Victory Road (tier 1) + técnicas,85,86,80,84,80,80,Celestial Saw (None) · Hey Presto (30) · Double Helix (40) · Divine Dummy (None) · Dash Accelerator (20) · Fortissimo Foot (20) · Heel Flick (None),kusaka-gen--ares--base
 84,Top Player,Raylon Highmoor,ARES,base,Lunar Prime Academy,MF,B,Victory Road (tier 1) + técnicas,79,86,85,84,85,80,Vac Attack (40) · Dance on Air (55) · Afterimage (31) · Ozone Flayer (55) · Quick Draw (20) · Whirly-Whirly (10) · Heel Flick (None),yamashiro-reihou--ares--base
 84,Top Player,Riccardo Di Rigo,GO1,base,Raimon First Squad,MF,S,Strikers 2013,81,89,80,80,81,71,Fortissimo Foot (20) · Hey Presto (30) · Brimstone Rain (55) · Athena's Anthem (70),shindou-takuto--go1--base
+84,Top Player,Ronaldo Ramallets,ARES,base,Barcelona Orb,MF,B,Victory Road (tier 1) + técnicas,79,86,85,84,85,80,Desert Blast (30) · Super Elastico (56) · Rolling Slide (42) · Double Touch (10) · Racing Flame (15) · Kangaroo Kick (20) · Deceptive Step (None),donnell-gotti--ares--base
 84,Top Player,Sandra Fischer,ARES,base,Raimon,GK,A,Victory Road (tier 2) + técnicas,77,80,85,80,85,86,Mermaid's Veil (None) · Maelstrom the Hand (None) · Waterwall (55) · Barrier Reef (37) · Deep Diver (None) · Flower Power (None) · Power Catch (None),umihara-norika--ares--base
 84,Top Player,Seymour Hillman,IE2,Young Inazuma,Young Inazuma,GK,A,stats del juego,79,84,83,77,81,85,God Hand (10) · Blazing Knuckle (35) · Triple God Hand (57),hibiki-seigou--ie2--young-inazuma
 84,Top Player,Sierra,GO2,Mixi Max (Zanark),Mixi Max,MF,A,stats del juego,82,88,88,82,73,82,Transporter Device (15) · Double Helix (40),dhanna--go2--mixi-max-zanark
@@ -469,7 +479,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 83,Top Player,Keith Ryan,IE3,base,Little Gigantes,MF,S,Strikers 2013,87,86,86,74,78,87,Double Grenade (31) · Fake Bomber (29) · Leaping Thunder (34),keat-liando--ie3--base
 83,Top Player,Krypto,IE2,base,Epsilon,MF,S,Strikers 2013,82,83,83,85,81,74,Astro Break (30) · Meteor Shower (38) · Sleeping Dust (30) · Southern Cross (55),kuri-fuuko--ie2--base
 83,Top Player,Kyon Canis,GO2,base,Ragnah,FW,B,stats del juego,86,82,75,83,72,76,Doom Spear (40) · Spin Out (30) · Snowstorm Leopard (40) · Northern Impact (55),imus--go2--base
-83,Top Player,Leo Segarra,ARES,base,Barcelona Orb,FW,A,Victory Road (tier 2) + técnicas,87,86,74,75,74,86,Double Tornado (55) · Double-Trouble (None) · Meteor Blade (55) · Capable Hands (55) · Rocket Kobushi (25) · Attack Scan (25) · Chip Shot (None),luther-fandam--ares--base
 83,Top Player,Lima,GO2,base,Protocol Omega,MF,S,Strikers 2013,82,83,89,82,81,83,Spin Out (30) · Guided Collide (20) · Sidewinder (20),quorth--go2--base
 83,Top Player,Malcolm Night,IE2,Dark Emperors,Dark Emperors,DF,S,Strikers 2013,83,83,83,83,83,83,Spinning Cut (30) · Triple Boost (66),nishigaki-mamoru--ie2--dark-emperors
 83,Top Player,Maxime Dassier,ARES,base,Raimon,MF,A,Victory Road (tier 2) + técnicas,83,85,79,84,79,79,Sparky Spin (None) · Flying Colours (None) · Flash Dance (None) · Shooting Star (47) · Dash Accelerator (20) · Spinning Cut (30) · Crosscut Feint (None),michinari-tatsumi--ares--base
@@ -481,7 +490,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 83,Top Player,Porphyria Filia,GO2,base,Nosfanatica,MF,B,stats del juego,74,88,73,87,83,86,Frosticle (55) · Floral Fiesta (40) · Flower Plougher (40) · Decoy Deploy (70),belia--go2--base
 83,Top Player,Rhine,IE2,base,Diamond Dust,MF,S,Strikers 2013,77,85,86,84,83,83,Leaping Thunder (34) · Lightning Sprint (70) · Spiral Shot (20) · Northern Impact (55),kurione-yuki--ie2--base
 83,Top Player,Ruger Baran,GO3,base,Fertilia Eleven,FW,B,stats del juego,86,84,75,79,82,80,Scream of Eden (85) · Illusion Ball (20),ryugel-baran--go3--base
-83,Top Player,Salvador Castell,ARES,base,Barcelona Orb,GK,A,Victory Road (tier 2) + técnicas,76,85,79,85,79,86,Omega Hand (60) · Wetsuit (None) · Gigant Wall (30) · All-Star (30) · Mole Fake (10) · Dog Run (39) · Power Catch (None),alonso-fibiano--ares--base
 83,Top Player,Sam Kincaid,IE2,Dark Emperors,Dark Emperors,MF,S,Strikers 2013,83,83,83,83,83,83,Double Grenade (31) · Breakthrough 2 (42),shishido-sakichi--ie2--dark-emperors
 83,Top Player,Samguk Han,GO1,base,Raimon First Squad,GK,S,Strikers 2013,69,78,70,80,72,91,Combustion Catch (8) · Fingers of Gaia (40) · Capable Hands (55),sangoku-taichi--go1--base
 83,Top Player,Samguk Han,GO2,Raimon,Raimon,GK,S,Strikers 2013,70,79,70,80,72,91,Combustion Catch (8) · Fingers of Gaia (40) · Capable Hands (55) · God Hand X (70),sangoku-taichi--go2--raimon
@@ -631,6 +639,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 81,Advanced Player,Jim Wraith,ARES,base,Raimon,DF,A,Victory Road (tier 2) + técnicas + kageno-jin--ie2--dark-emperors,74,82,81,82,83,82,Afterimage (31) · Shadow Stitch (39) · Coil Turn (20) · About Face (None) · Fireball Knuckle (20) · Shadow Catch (None) · Rolling Steal (None),kageno-jin--ares--base
 81,Advanced Player,Jonathan Seller,ARES,base,Brainwashing,FW,B,Victory Road (tier 1) + técnicas + yamagishi-seri--ie1--base,83,81,82,82,80,79,Fire Tornado (30) · Frosticle (55) · Clone Faker (42) · Zigzag Spark (55) · Future Eye (10) · Thief's Eye (8) · Curve Shot (None),yamagishi-seri--ares--base
 81,Advanced Player,Jonny Gascoigne,IE3,base,Queen's Knights,DF,B,stats del juego,69,82,81,79,82,79,Stone Prison (42) · No Escape (52) · Heat Tackle (27) · Fake Ball (30),johnny-gascoigne--ie3--base
+81,Advanced Player,Josep Anglesola,ARES,base,Barcelona Orb,MF,C,Victory Road (tier 0) + técnicas,82,83,82,77,82,82,Double Tornado (55) · The Mountain (56) · Super Elastico (56) · Rolling Slide (42) · Kangaroo Kick (20) · Horn Train (20) · Heel Flick (None),rub-rn-boigk--ares--base
 81,Advanced Player,K'aran,GO3,base,Silica Eleven,MF,B,stats del juego,80,85,86,74,75,80,Major Miner (55) · Sandwinder (55) · Under Miner (55) · Falling Planet (70),kazerma-worg--go3--base
 81,Advanced Player,Lane War,IE1,base,Zeus,DF,S,Strikers 2013,82,83,82,72,83,90,Divine Stamp (43) · Ghost Pull (22) · Breakthrough (25) · Rolling Hell (46),aresu-ran--ie1--base
 81,Advanced Player,Light Nobel,IE1,base,Otaku,MF,A,stats del juego,82,81,77,82,81,82,Fake Ball (30) · Utter Gutsiness Bat (40) · Dash Accelerator (20) · Bewildered (15),noberu-raito--ie1--base
@@ -695,6 +704,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 80,Advanced Player,Filbert Weissman,GO1,base,Eternal Light,FW,B,stats del juego,86,70,80,73,73,77,Ballista Barrage (55) · Acrobatic Keep (40) · Entropic Arrows (55) · Ball Lightning (70),hoda-mitsuhiro--go1--base
 80,Advanced Player,Finn Stoned,IE1,base,Shuriken,DF,A,stats del juego,81,81,79,80,80,82,Sumo Stomp (20) · Shadow Stitch (39) · Fake Ball (30) · Mole Fake (10),ishikawa-goeta--ie1--base
 80,Advanced Player,Gene Ghiskhan,GO1,base,Lunar Sea,DF,B,stats del juego,70,64,84,67,85,77,Slice and Dice (15) · Jumbo Sandwich (20) · The Wall (8),kanehira-tessai--go1--base
+80,Advanced Player,Gerard Carbonell,ARES,base,Barcelona Orb,DF,B,Victory Road (tier 1) + técnicas,73,81,80,81,82,76,Liar Shot (44) · Gravestone (36) · Yo-Yo Ball (36) · Flame Veil (53) · Matador Feint (47) · Cunning Pull (None),gregorio-jaballo--ares--base
 80,Advanced Player,Gus Gamer,IE1,base,Otaku,FW,A,stats del juego,81,81,77,79,78,82,Utter Gutsiness Bat (40) · Bewildered (15) · Fake Ball (30) · Shine Drive (34),geimu-konomu--ie1--base
 80,Advanced Player,Heterocera Mothlin,GO3,base,Fertilia Eleven,DF,B,stats del juego,78,69,77,80,84,80,Bindweed (55) · Fungusmungous (55) · Tesla Coil (15) · Hunter's Net (30),moth-gar--go3--base
 80,Advanced Player,Heyze,GO2,base,Zan,MF,B,stats del juego,77,84,70,81,80,82,Flurry Dash (20) · Decoy Deploy (70) · Wind God's Dance (40),haze--go2--base
@@ -740,7 +750,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 79,Advanced Player,Andy Chronic,IE1,base,Zeus,DF,B,stats del juego,70,75,76,75,83,81,Heaven's Time (70) · Kung Fu Header (31) · Illusion Ball (20) · Dash Accelerator (20),kurono-tokio--ie1--base
 79,Advanced Player,Antonio Bagre,IE3,base,The Kingdom,DF,B,stats del juego,66,79,80,66,83,83,Dual Storm (46) · Acrobat Bomber (34) · Harvest (48),bagre-antonio--ie3--base
 79,Advanced Player,Ari Zimmerman,ARES,base,Polestar Academy,DF,B,Victory Road (tier 1) + técnicas,72,79,79,79,81,75,Containment Field (None) · Sparky Spin (None) · Whirlwind Cut (36) · Super Elastico (56) · Killer Slide (10) · Attack Scan (25) · Feint Play (None),yagihara-katsumi--ares--base
-79,Advanced Player,Augusto Gomez,ARES,base,Barcelona Orb,MF,B,Victory Road (tier 1) + técnicas,80,81,74,79,74,75,Slingshot (49) · Double Tornado (55) · Unicorn Boost (58) · Bewilder Blast (39) · Matador Feint (47) · Rapid Fire (20) · Crosscut Feint (None),agapito-gom-z--ares--base
 79,Advanced Player,Balen,IE2,base,Diamond Dust,MF,B,stats del juego,75,82,81,80,74,76,Water Veil (53) · Spinning Cut (30) · Photon Crash (25) · Kung Fu Fighting (37),toba-ren--ie2--base
 79,Advanced Player,Ben Simmons,IE1,base,Royal Academy,DF,S,Strikers 2013,79,81,79,80,78,79,Breakthrough (25) · Cyclone (38) · Illusion Ball (20) · Cross Drive (28),banjou-kazumichi--ie1--base
 79,Advanced Player,Cal Trops,IE1,base,Shuriken,MF,B,stats del juego,77,83,76,77,75,74,Hawk Shot (34) · Twin Boost (37) · Harvest (48) · Rolling Hell (46),ideura-kiyomori--ie1--base
@@ -943,7 +952,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 77,Advanced Player,Braveon Halvors,ARES,base,Polestar Academy,FW,B,Victory Road (tier 1) + técnicas,79,76,78,78,78,75,Body Shield (57) · Reflect Buster (40) · Eagle Buster (62) · Three-Legged Rush (50) · Circus Block (47) · Kung Fu Fighting (37) · Power Shot (None),shishitani-yuusuke--ares--base
 77,Advanced Player,Cam Mando,IE2,base,Forest Team,GK,B,stats del juego,77,76,77,74,77,77,Gigant Wall (30) · Wild Claw (25),bunkou-susumu--ie2--base
 77,Advanced Player,Cannon Random,IE2,base,Fauxshore,MF,A,stats del juego,72,77,80,83,71,70,Quick Draw (20) · Armadillo Circus (47) · Fireball Head (30) · Flame Breath (37),shika-kaneaki--ie2--base
-77,Advanced Player,Carles Ripoll,ARES,base,Barcelona Orb,DF,B,Victory Road (tier 1) + técnicas,78,74,78,75,79,73,Slingshot (49) · Desert Blast (30) · Liar Shot (44) · Super Elastico (56) · Yo-Yo Ball (36) · Meteor Attack (22) · Curving Cut (None),daniel-madrone--ares--base
 77,Advanced Player,Chase Faithfull,IE2,base,Forest Team,MF,B,stats del juego,76,77,77,77,76,77,Land Dragon (46) · Bewildered (15),kurashibe-reiichi--ie2--base
 77,Advanced Player,Chikka,GO2,base,Gahl,MF,B,stats del juego,74,79,69,82,73,79,Decoy Deploy (70) · Mole Fake (10) · Guided Collide (20) · Hey Presto (30),chikka--go2--base
 77,Advanced Player,Chris Ticker,IE2,base,Forest Team,FW,B,stats del juego,76,78,78,78,75,76,Hawk Shot (34),biku-suguru--ie2--base
@@ -982,11 +990,9 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 77,Advanced Player,Jacques Cinquini,GO1,base,Dragon Link,FW,B,stats del juego,81,71,74,75,66,73,Warp Step (70) · Ballista Barrage (55) · Entropic Arrows (55),mito-shou--go1--base
 77,Advanced Player,Jamila Wali,IE3,base,Desert Lions,DF,B,stats del juego,62,72,77,79,77,76,Desert Blast (30) · Double Cyclone (46) · Breakthrough (25) · Cross Drive (28),djamel-djammadu--ie3--base
 77,Advanced Player,Jim Wraith,IE1,base,Raimon,DF,S,Strikers 2013,78,81,78,70,78,70,Coil Turn (20) · About Face (16) · Afterimage (31) · Shadow Stitch (39),kageno-jin--ie1--base
-77,Advanced Player,Joan Asensi,ARES,base,Barcelona Orb,FW,B,Victory Road (tier 1) + técnicas,79,74,76,78,73,75,Celestial Smash (55) · Double-Trouble (None) · Heat Tackle (27) · Hellfire (46) · Dog Run (39) · Flame Veil (53) · Curve Shot (None),bergamo-regult--ares--base
 77,Advanced Player,Joe Ingram,IE1,base,Umbrella MS,GK,B,stats del juego,66,68,73,66,78,78,Tornado Catch (22) · Spinning Shot (20) · Whirlwind (32) · Back Tornado (31),ikegaki-jou--ie1--base
 77,Advanced Player,John Bloom,IE1,base,Royal Academy,MF,S,Strikers 2013,71,79,79,81,72,79,Killer Slide (10) · Breakthrough (25) · Wrath Shot (22) · Freeze Shot (25),sakiyama-shuuji--ie1--base
 77,Advanced Player,Jonas Polk,IE3,base,Brocken Brigade,MF,B,stats del juego,78,78,78,78,69,72,Gun Shot (43) · Gravitation (38) · Rocket Kobushi (25) · The Galaxy (64),jonas-pollack--ie3--base
-77,Advanced Player,Jordi Belloch,ARES,base,Barcelona Orb,DF,B,Victory Road (tier 1) + técnicas,78,71,78,71,79,73,Slingshot (49) · Heaven's Ascent (56) · Stone Prison (42) · Yo-Yo Ball (36) · Hellfire (46) · Bouncing Bomb (30) · Curving Cut (None),federico-dazzlo--ares--base
 77,Advanced Player,Josh Nathaniel,IE1,base,Raimon Veterans,MF,B,stats del juego,73,79,75,78,77,75,Zigzag Spark (55) · Utter Gutsiness Bat (40) · Blade Attack (24) · Rocket Kobushi (25),nakama-you--ie1--base
 77,Advanced Player,Josh Nathaniel,IE2,Dark Emperors,Dark Emperors,MF,B,stats del juego,74,78,77,77,78,78,Zigzag Spark (55) · Breakthrough (25),nakama-you--ie2--dark-emperors
 77,Advanced Player,Josh Nathaniel,IE2,Young Inazuma,Young Inazuma,MF,B,stats del juego,75,78,78,78,74,78,Zigzag Spark (55) · Breakthrough (25) · Spider Web (20) · Big Fan (41),nakama-you--ie2--young-inazuma
@@ -1048,7 +1054,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 76,Advanced Player,Alan Most,IE1,base,Umbrella MS,DF,B,stats del juego,77,75,75,76,77,78,Dash Accelerator (20) · Super Armadillo (24) · Sumo Stomp (20) · Pressure Punch (21),marude-tameo--ie1--base
 76,Advanced Player,Alex Hawke,IE3,base,Unicorn,GK,B,stats del juego,83,62,69,61,64,83,Counter Strike (40) · Hawk Shot (34) · Afterimage (31) · Eagle Buster (62),alex-hawk--ie3--base
 76,Advanced Player,Alfred Meenan,ARES,base,Kirkwood,DF,B,Victory Road (tier 1) + técnicas + megawa-akihi--ie1--base,69,77,75,77,78,72,Ultra Moon (44) · Hurricane Arrows (57) · Illusion Ball (20) · Quick Draw (20) · Spinning Cut (30) · Curving Cut (None),megawa-akihi--ares--base
-76,Advanced Player,Antoni Valls,ARES,base,Barcelona Orb,DF,B,Victory Road (tier 1) + técnicas,69,77,75,77,78,72,Air Ride (None) · Dash Storm (46) · Stone Prison (42) · Echo Ball (44) · Flame Veil (53) · Dog Run (39) · Curving Cut (None),oscar-agito--ares--base
 76,Advanced Player,Azzurro Zaffiro,IE3,base,Team D,DF,B,stats del juego,64,82,71,63,81,77,Killer Slide (10) · Whirlwind Cut (36) · Diabolical Cut (53),azzurro-zaffire--ie3--base
 76,Advanced Player,Balcke,IE2,base,Prominence,DF,B,stats del juego,82,73,77,72,77,78,Gravitation (38) · Southern Cross (55) · Triple Boost (66) · Burnout (50),hagakure-koutarou--ie2--base
 76,Advanced Player,Beldio Smeraldo,IE3,base,Team D,MF,B,stats del juego,66,86,69,71,72,85,Breakthrough (25) · Clone Defence (42) · Heavy Mettle (42),verdio-smeraldo--ie3--base
@@ -1075,7 +1080,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 76,Advanced Player,Galen Thunderbird,IE1,base,Shuriken,DF,B,stats del juego,78,78,75,73,77,77,Sumo Stomp (20) · Poison Fog (20) · Shadow Stitch (39) · Spider Web (20),jiraiya-gamasuke--ie1--base
 76,Advanced Player,Garret Hairtown,IE2,Young Inazuma,Young Inazuma,DF,B,stats del juego,76,75,79,75,75,77,Spinning Cut (30) · Fire Rooster (62) · Cyclone (38) · Circus Block (47),kamimura-kirito--ie2--young-inazuma
 76,Advanced Player,Gayle Revel,IE2,base,Super Triple C,MF,B,stats del juego,81,74,77,77,70,77,Spiral Shot (20) · Moonsault (25) · Dynamite Shot (31) · Big Fan (41),kishiwada-matsuri--ie2--base
-76,Advanced Player,Geraldo Enrique,ARES,base,Barcelona Orb,FW,B,Victory Road (tier 1) + técnicas,80,79,68,68,68,68,Slingshot (49) · The Tower (30) · Matador Feint (47) · Rapid Fire (20) · Bouncing Bomb (30) · Dog Run (39) · Dust Kick (None),gerard-enrique--ares--base
 76,Advanced Player,Giallo Topazio,IE3,base,Team D,MF,B,stats del juego,85,70,67,87,70,80,Breakthrough 2 (42) · Fire Tornado (30) · Triangle Z (55) · Asteroid Belt (46),giallo-topazio--ie3--base
 76,Advanced Player,Grigio Quarzo,IE3,base,Team D,GK,B,stats del juego,65,68,85,65,85,70,Power Shield (20) · Gigant Wall (30) · Rainbow Arc (37) · Ghost Pull (22),grigio-gesso--ie3--base
 76,Advanced Player,Hamilton Reith,IE3,base,Big Waves,FW,B,stats del juego,79,75,72,71,71,75,Megalodon (30) · Moonsault (25) · Comet Shot (25),reef-hamilton--ie3--base
@@ -1140,7 +1144,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 76,Advanced Player,Veneth,GO2,base,Gihl,FW,B,stats del juego,79,76,74,67,68,72,Double Helix (40) · Sidewinder (20) · Acrobatic Keep (40),veneto--go2--base
 76,Advanced Player,William Glass,IE1,base,Raimon,FW,S,Strikers 2013,78,79,69,70,70,71,Defence Scan (28) · Attack Scan (25) · Divine Arrows (46) · Rodeo Clown (20),megane-kakeru--ie1--base
 76,Advanced Player,Wolfe Redwood,ARES,base,Lunar Prime Academy,MF,C,Victory Road (tier 0) + técnicas,73,78,74,77,74,72,Ultra Moon (44) · Dance on Air (55) · Circus Block (47) · Divine Arrows (46) · Dash Accelerator (20) · Plasma Ball (30) · Nutmeg (None),okano-kousuke--ares--base
-76,Advanced Player,Xavi Casals,ARES,base,Barcelona Orb,MF,B,Victory Road (tier 1) + técnicas,72,78,77,77,77,72,Heaven's Ascent (56) · Ultra Moon (44) · Super Elastico (56) · Hellfire (46) · Whirlpool (40) · Shadow Stitch (39) · Heel Flick (None),trancy-cornet--ares--base
 76,Advanced Player,Xavier Shotwell,GO1,base,Southern Claw,GK,B,stats del juego,68,75,73,64,62,81,Fingers of Gaia (40) · Ballista Barrage (55) · Snakebite (20),seirou-kazuma--go1--base
 75,Advanced Player,A'tac,GO3,base,Silica Eleven,FW,B,stats del juego,76,72,79,70,74,74,Sandwinder (55) · Major Miner (55) · Dinosaur Roar (30) · Twin Sun Smash (70),acker-tamal--go3--base
 75,Advanced Player,Adam Marunga,IE3,base,The Cape Crusaders,MF,B,stats del juego,80,68,80,81,74,76,Liar Shot (44) · Abaddon Drop (33) · Ultra Moon (44) · Wind God's Dance (40),abari-malinga--ie3--base
@@ -1356,7 +1359,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 73,Growing Player,Plumian Whitlock,ARES,base,Green Hill,MF,C,Victory Road (tier 0) + técnicas,74,75,66,74,66,69,Whirlwind Drop (49) · Dash Storm (46) · Wind God's Dance (40) · The Typhoon (40) · Log Roll (10) · Plasma Ball (30) · Low Drive (None),haneari-akiho--ares--base
 73,Growing Player,Qamar Sadir,GO3,base,Shamshir,DF,B,stats del juego,60,61,74,70,76,74,Desert Blast (30) · Whirlwind Force (20) · Hey Presto (30),kamil-sadid--go3--base
 73,Growing Player,Romeo,GO2,base,Protocol Omega 3.0,GK,B,stats del juego,60,66,64,70,73,76,Gyro-Blocker (40) · Wormhole (30) · Bridge to Nowhere (55),lugic--go2--base
-73,Growing Player,Ronaldo Ramallets,ARES,base,Barcelona Orb,MF,B,Victory Road (tier 1) + técnicas,68,75,74,73,74,69,Desert Blast (30) · Super Elastico (56) · Rolling Slide (42) · Double Touch (10) · Racing Flame (15) · Kangaroo Kick (20) · Deceptive Step (None),donnell-gotti--ares--base
 73,Growing Player,Sempiterno Bliss,GO1,base,Almighty Faith,MF,B,stats del juego,70,74,70,77,70,67,Boomerang Bluff (20) · Whirly-Whirly (10) · Warp Step (70),okano-shunpei--go1--base
 73,Growing Player,Seth Hedges,IE3,base,Team Zoolan,MF,B,stats del juego,68,70,82,77,76,79,Dark Whirlwind (35) · Toughness Block (20) · Body Shield (57) · Heavy Mettle (42),hedgehog--ie3--base
 73,Growing Player,Sothern Newman,IE1,base,Inazuma Kids FC,DF,A,stats del juego,71,72,70,70,76,72,The Wall (8) · Super Armadillo (24) · Pressure Punch (21) · Gigant Wall (30),shintake-souta--ie1--base
@@ -1457,7 +1459,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 71,Growing Player,Isaac Glass,IE3,base,Unaffiliated,FW,B,stats del juego,72,80,61,65,58,58,Flurry Dash (20) · Spectacle Crash (37) · Sigma Zone (57),megane-kazuto--ie3--base
 71,Growing Player,Jim Hillfort,IE1,base,Shuriken,DF,B,stats del juego,71,73,74,70,69,71,Afterimage (31) · Spider Web (20) · Shadow Stitch (39) · Clone Shot (46),kousaka-jin--ie1--base
 71,Growing Player,Joe Bloggs,GO1,base,Unaffiliated,MF,C,stats del juego,68,74,71,76,56,57,Criss-Cross (70) · Blast Mine (40) · Fugue Wave (40),murder-1--go1--base
-71,Growing Player,Josep Anglesola,ARES,base,Barcelona Orb,MF,C,Victory Road (tier 0) + técnicas,72,73,72,67,72,72,Double Tornado (55) · The Mountain (56) · Super Elastico (56) · Rolling Slide (42) · Kangaroo Kick (20) · Horn Train (20) · Heel Flick (None),rub-rn-boigk--ares--base
 71,Growing Player,Kilo,GO2,base,Protocol Omega 2.0,DF,S,Strikers 2013,66,64,68,66,76,67,Tesla Coil (15) · Pyrokinetic (30) · Magnetism (30),ward--go2--base
 71,Growing Player,Larry Lyre,ARES,base,Polestar Academy,DF,C,Victory Road (tier 0) + técnicas,72,71,71,72,73,67,Flame Dance (39) · Gale Dash (None) · Death Zone (52) · Ignite Steal (53) · Spinning Cut (30) · Gun Shot (43) · Curving Cut (None),kotono-tomio--ares--base
 71,Growing Player,Mansur Jasim,IE3,base,Desert Lions,MF,B,stats del juego,71,73,79,60,75,71,Bewilder Blast (39) · Dirt Ball (22) · Breakthrough 2 (42) · Body Shield (57),messer-jassim--ie3--base
@@ -1511,7 +1512,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 70,Growing Player,Francis Tuffnot,GO1,base,Ivy Selective,DF,B,stats del juego,62,76,72,68,69,64,Easy Breezy (15) · Zephyr Shot (20) · Whirlwind Force (20) · Land Of Ice (20),sougetsu-nozomi--go1--base
 70,Growing Player,Garvin Cliffmarch,ARES,base,Green Hill,DF,C,Victory Road (tier 0) + técnicas,71,64,71,64,72,66,Diabolical Cut (53) · Death Zone (52) · Shadow Stitch (39) · Hunter's Net (30) · Security Shot (37) · Dragon Crash (30) · Cunning Pull (None),tonobata-gakuto--ares--base
 70,Growing Player,Gaston Cooley,IE2,base,Mary Times,GK,B,stats del juego,64,59,67,65,69,71,Swan Dive (20) · Whirlwind Twister (20) · Mistral (27) · Tsunami Wall (42),amuro-mikio--ie2--base
-70,Growing Player,Gerard Carbonell,ARES,base,Barcelona Orb,DF,B,Victory Road (tier 1) + técnicas,63,71,70,71,72,66,Liar Shot (44) · Gravestone (36) · Yo-Yo Ball (36) · Flame Veil (53) · Matador Feint (47) · Cunning Pull (None),gregorio-jaballo--ares--base
 70,Growing Player,Grizzler Bruin,IE3,base,Team Zoolan,GK,B,stats del juego,81,68,73,69,75,67,Killer Slide (10) · Giant Spider (47) · Swan Dive (20) · Planet Shield (50),goliath--ie3--base
 70,Growing Player,Hanbee Yabe,GO2,base,White Deer,DF,B,stats del juego,70,76,61,69,74,75,Okehazama Ravine (30) · Utter Gutsiness Bat (40) · Matchlock Bullet (40),yabe-hanbee--go2--base
 70,Growing Player,Ian Smith,IE2,base,Secret Service,DF,B,stats del juego,77,74,76,66,67,69,Body Shield (57) · Toughness Block (20) · Defence Scan (28) · Safety First (40),sumisu-eiji--ie2--base
