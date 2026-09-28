@@ -1,5 +1,12 @@
 {
   "_doc": "Excepciones editables a mano para tools/db/build.py. Las claves 'page' son títulos de ficha de la wiki de Fandom (inazuma-eleven.fandom.com). Ver docs/plan-base-jugadores.md.",
+  "special_es": {
+    "_doc": "Nombre en castellano de espíritus guerreros e hipertécnicas de VR que la wiki española no enlaza (sacados de sus fichas)",
+    "Goddess Victoria": "Victoria, diosa del triunfo",
+    "Jinkou Keshin Plasma Shadow GK": "Guerrero artificial Sombra de plasma PA",
+    "Jinkou Keshin Plasma Shadow SH": "Guerrero artificial Sombra de plasma DE",
+    "Meteoric Fire Tornado V": "Tornado de fuego meteoro V"
+  },
   "position_by_version": [
     {
       "page": "Endou Mamoru",
@@ -842,22 +849,23 @@
         "note": "16 · nv 60 · historia extendida"
       },
       "Zanark's Outsiders": {
-        "top11": 83.0,
+        "top11": 85.0,
+        "floor": 84,
         "captain": "Zanark Avalonic",
         "note": "17 · nv 87–99 · crónica"
       },
       "Gatekeepers": {
-        "top11": 83.5,
+        "top11": 85.5,
         "captain": "Lindalin Bernie",
         "note": "18 · nv 91–99 · crónica"
       },
       "Platos": {
-        "top11": 84.0,
+        "top11": 86.0,
         "captain": "Victorio Arno",
         "note": "19 · nv 96–99 · crónica"
       },
       "Destroyers": {
-        "top11": 84.5,
+        "top11": 86.5,
         "captain": "Kinis Elvim",
         "note": "20 · nv 99 · crónica"
       }
