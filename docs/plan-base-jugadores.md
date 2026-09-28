@@ -169,6 +169,7 @@ python3 tools/db/build.py            # genera build/players.json, build/review.c
       - Las notas de más de 84 se comprimen a la mitad (92 → 88) y las subidas no pasan de 87.
     - GO2 (orden por el nivel de la historia en la wiki): Protocolo Omega 76 → Omega 2.0 77,5 → Ciervo Blanco 78 → Omega 3.0 79,5 → Terracota 80 → Zanark Domain 81 → Cascada Perfecta 82 → Zan 83 → Gir 83,5 → Gar 84 → Ragnah 85,5; después de la historia: Desesperdidos 86,5, Nosfanáticos y Aullido Lunar 87. Techo 90.
     - GO3 (nivel de la historia): Dragones de Fuego 73 → Big Waves 73,5 → Cimitarras 74,5 → Muay Tigers 75 → Storm Wolves 76 → Sílice 77 → Naiadi 78 → Magmavís 79 → Fertilia 80 → Falam Medius 81 → Flota Ixar 82,5; después de la historia: Supernova y Big Bang 84,5. Techo 90.
+    - Ares (equivalente a IE2 y GO2; orden por episodios del anime): Bastión 76,5 → Kirkwood 77,5 → Brain 78 → Royal Academy 79 → Academia Polaris 80,5 → Zeus 81,5 → Alpino 82,5 → Academia Alia 83,5 → Ribera 84,5 → Academia Plenilunio 86. Techo 88. Se aplica después de crear las cartas de Ares.
     - Opciones por juego en `team_tuning._game`: `cap` (techo de las subidas), `compress_above` y `compress_factor`.
     - Fuera de la curva (sitio en la historia sin confirmar): Mary Times, Fauxshore, Servicio Secreto (IE2); los equipos del anime de GO (Caballeros Templarios, Empollones, Edad Dorada, Equipo B del Raimon).
     - Techo de las subidas: el del juego (mín. 88). Nadie baja por el techo.

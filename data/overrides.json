@@ -578,6 +578,61 @@
       },
       "GO3": {
         "cap": 90
+      },
+      "ARES": {
+        "cap": 88
+      }
+    },
+    "ARES": {
+      "Rampart Junior High": {
+        "top11": 76.5,
+        "captain": "Iwagaki Noborou",
+        "note": "1 · ep. 3–4, regional"
+      },
+      "Kirkwood": {
+        "top11": 77.5,
+        "captain": "Mukata Masaru",
+        "note": "2 · ep. 5–7, regional"
+      },
+      "Brainwashing": {
+        "top11": 78.0,
+        "captain": "Shimozuru Arata",
+        "note": "3 · ep. 8, regional"
+      },
+      "Royal Academy": {
+        "top11": 79.0,
+        "captain": "Sakuma Jirou",
+        "note": "4 · ep. 9–10, final regional"
+      },
+      "Polestar Academy": {
+        "top11": 80.5,
+        "captain": "Mizukamiya Seiryuu",
+        "note": "5 · ep. 11–13, nacional"
+      },
+      "Zeus": {
+        "top11": 81.5,
+        "captain": "Afuro Terumi",
+        "note": "6 · ep. 14–15, nacional"
+      },
+      "Alpine": {
+        "top11": 82.5,
+        "captain": "Fubuki Shirou",
+        "note": "7 · ep. 16–17, nacional"
+      },
+      "Alia Academy": {
+        "top11": 83.5,
+        "captain": "Kiyama Hiroto",
+        "note": "8 · ep. 18–20, nacional"
+      },
+      "Everytown": {
+        "top11": 84.5,
+        "captain": "Endou Mamoru",
+        "note": "9 · ep. 21–23, semifinal"
+      },
+      "Lunar Prime Academy": {
+        "top11": 86.0,
+        "captain": "Nosaka Yuuma",
+        "note": "10 · ep. 24–26, final"
       }
     }
   }
