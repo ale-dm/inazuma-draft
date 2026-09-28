@@ -1082,6 +1082,11 @@ def main(extra_z=None, write=True):
                     c['ovr'] = new
                     c['stats'] = {k: max(25, min(99, v + d_)) for k, v in c['stats'].items()}
                     c['category'] = category(new)
+                for c in grp:                          # suelo del equipo: nadie por debajo (Zanark Outsiders en VR: 84)
+                    if c['ovr'] < cfg.get('floor', 0):
+                        c['stats'] = {k: max(25, min(99, v + cfg['floor'] - c['ovr'])) for k, v in c['stats'].items()}
+                        c['ovr'] = cfg['floor']
+                        c['category'] = category(c['ovr'])
                 if cfg.get('captain') and not capt:
                     report.append(f"team_tuning: capitán {cfg['captain']} no está en {g_} {tm}")
         # estrellas del juego: suelo de nota después de la curva (Harper Evans, los que tienen versión héroe/basara en VR)
@@ -1466,6 +1471,7 @@ def main(extra_z=None, write=True):
     # Mixi Max con Zanark (su ficha de forma Mixi Max, con su keshin si lo tiene)
     vr_path = os.path.join(CACHE, 'PlayerData_VR.lua')
     vr_by_page = collections.defaultdict(list)
+    special_es = {k: v for k, v in ov.get('special_es', {}).items() if not k.startswith('_')}   # a mano: los que la wiki no enlaza
     for b_ in (lua_entries(open(vr_path, encoding='utf-8').read()).values() if os.path.exists(vr_path) else []):
         pg_ = re.search(r'\n\t\tpage="([^"]+)"', b_)
         if pg_:
@@ -1485,8 +1491,8 @@ def main(extra_z=None, write=True):
             es, en = es_keshin.get(romaji(kpage), (None, None))
             hk = re.search(r'\n\t\thissatsu="(\w+)"', kd)
             ht = technique_any(hk.group(1)) if hk else None
-            sp.append({'type': 'keshin', 'name': en or kpage, 'name_es': es, 'armed': False,
-                       'hyper': ht and ht['name'], 'hyper_es': ht and ht.get('name_es')})
+            sp.append({'type': 'keshin', 'name': en or kpage, 'name_es': es or special_es.get(en or kpage), 'armed': False,
+                       'hyper': ht and ht['name'], 'hyper_es': ht and (ht.get('name_es') or special_es.get(ht['name']))})
         if outsider:
             sp.append({'type': 'mixi', 'name': 'Zanark' if c['character_id'] != 'zanark-avalonic' else 'Zanark (futuro)'})
         c['specials'] = sp
