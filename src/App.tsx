@@ -38,6 +38,8 @@ import {
   recordTournamentOutcome,
   type TournamentOutcome,
 } from './lib/local-stats'
+import Coin from './components/Coin'
+import { Package, Trophy } from 'lucide-react'
 
 export default function App() {
   const { t } = useAppSettings()
@@ -197,7 +199,7 @@ export default function App() {
         <div className="flex flex-col items-center justify-center p-6 animate-fade-in min-h-[60vh]">
           {won ? (
             <>
-              <div className="text-6xl mb-4">🏆</div>
+              <Trophy className="w-16 h-16 mb-4 text-[#ffd23d]" strokeWidth={1.5} aria-hidden />
               <h1 className="font-heading text-5xl md:text-6xl font-black text-inazuma text-center mb-4 drop-shadow-lg">
                 {t('result.champion')}
               </h1>
@@ -216,7 +218,8 @@ export default function App() {
           </div>
           {reward && (
             <p className="reward-line mb-6">
-              +🪙 {reward.coins.toLocaleString()} · +{reward.xp} XP{reward.pack ? ` · +📦 ${t(getPack(reward.pack).nameKey)}` : ''}
+              +<Coin className="w-5 h-5" /> {reward.coins.toLocaleString()} · +{reward.xp} XP
+              {reward.pack && <> · +<Package className="w-5 h-5" /> {t(getPack(reward.pack).nameKey)}</>}
             </p>
           )}
           <div className="flex flex-wrap gap-2 justify-center mb-8">

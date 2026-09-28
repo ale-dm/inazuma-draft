@@ -133,7 +133,6 @@ export interface GroupStanding {
 export interface FFITeam {
   name: string
   country: string
-  flag: string
   block: 'A' | 'B'
   players: Player[]
 }

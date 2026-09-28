@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { useAppSettings } from '../../context/AppSettings'
+import { ArrowLeft, X } from 'lucide-react'
 
 interface Props {
   title: string
@@ -18,8 +19,8 @@ export default function GameShell({ title, children, onExit, backHref }: Props) 
       <header className="hub-top safe-top">
         <div className="hub-top__row">
           {backHref
-            ? <a href={backHref} className="hub-icon-btn" aria-label={t('players.back')}>←</a>
-            : <button type="button" className="hub-icon-btn" onClick={onExit} aria-label={t('fd.exit')}>✕</button>}
+            ? <a href={backHref} className="hub-icon-btn" aria-label={t('players.back')}><ArrowLeft size={20} /></a>
+            : <button type="button" className="hub-icon-btn" onClick={onExit} aria-label={t('fd.exit')}><X size={20} /></button>}
           <span className="hub-logo">{title}</span>
           <span className="w-10" />
         </div>

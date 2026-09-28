@@ -8,6 +8,7 @@ import InaCard from '../InaCard'
 import CardInfo from '../CardInfo'
 import Sheet from '../hub/Sheet'
 import Screen from './Screen'
+import Coin from '../Coin'
 
 const POSITIONS: (Position | 'all')[] = ['all', 'GK', 'DF', 'MF', 'FW']
 
@@ -51,7 +52,7 @@ export default function MyCards() {
       <p className="fd-hint">{t('club.count', { n: owned.length, shown: shown.length })}</p>
       {dupeValue > 0 && (
         <button type="button" className="sheet-choice sheet-choice--row" onClick={sellAllDupes}>
-          <small>{t('club.sellDupes')}</small><b>🪙 {dupeValue.toLocaleString()}</b>
+          <small>{t('club.sellDupes')}</small><b className="inline-flex items-center gap-1"><Coin /> {dupeValue.toLocaleString()}</b>
         </button>
       )}
       {owned.length === 0 && <p className="fd-hint">{t('club.empty')}</p>}
@@ -70,7 +71,7 @@ export default function MyCards() {
             <InaCard player={open} size="lg" />
             {(club.cards[open.id] ?? 0) > 1 && (
               <button type="button" className="sheet-cta" onClick={() => quickSell(open.id, club.cards[open.id] - 1, QUICK_SELL[open.category])}>
-                {t('club.sell', { n: club.cards[open.id] - 1 })} · 🪙 {((club.cards[open.id] - 1) * QUICK_SELL[open.category]).toLocaleString()}
+                {t('club.sell', { n: club.cards[open.id] - 1 })} · <Coin className="w-5 h-5" /> {((club.cards[open.id] - 1) * QUICK_SELL[open.category]).toLocaleString()}
               </button>
             )}
             <div className="w-full"><CardInfo player={open} /></div>

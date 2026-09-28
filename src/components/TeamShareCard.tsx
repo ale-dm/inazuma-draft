@@ -4,6 +4,7 @@ import { getFormation, lineupToArray } from '../lib/lineup'
 import { lineupPower, playerRating } from '../lib/power'
 import { useAppSettings } from '../context/AppSettings'
 import PlayerAvatar from './PlayerAvatar'
+import { Trophy } from 'lucide-react'
 
 interface Props {
   lineup: LineupMap
@@ -31,7 +32,7 @@ const TeamShareCard = forwardRef<HTMLDivElement, Props>(function TeamShareCard(
     >
       <div className="team-share-card__head">
         <span>FFI 6-0 · Inazuma Draft</span>
-        {won && <span>🏆</span>}
+        {won && <Trophy size={20} aria-hidden />}
       </div>
       <h2 className="team-share-card__title text-inazuma">{t('draft.team').toUpperCase()}</h2>
       <p className="team-share-card__meta">

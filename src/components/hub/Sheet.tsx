@@ -1,5 +1,6 @@
 import { useEffect, type ReactNode } from 'react'
 import { useAppSettings } from '../../context/AppSettings'
+import { X } from 'lucide-react'
 
 interface Props {
   open: boolean
@@ -25,7 +26,7 @@ export default function Sheet({ open, title, onClose, children }: Props) {
       <div className="sheet safe-bottom" role="dialog" aria-modal="true" aria-label={title} onClick={e => e.stopPropagation()}>
         <div className="sheet__head">
           <h2>{title}</h2>
-          <button type="button" onClick={onClose} className="hub-icon-btn" aria-label={t('players.close')}>✕</button>
+          <button type="button" onClick={onClose} className="hub-icon-btn" aria-label={t('players.close')}><X size={20} /></button>
         </div>
         {children}
       </div>

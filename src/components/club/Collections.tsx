@@ -5,6 +5,7 @@ import { GAME_SHORT } from '../../data/games'
 import { updateClub, useClub } from '../../lib/club'
 import { COLLECTION_REWARD, giveReward } from '../../lib/objectives'
 import Screen from './Screen'
+import { Check } from 'lucide-react'
 
 /** Colecciones: cada equipo de cada juego (su plantilla del draft); premio al completarla */
 export default function Collections() {
@@ -44,7 +45,7 @@ export default function Collections() {
               <span className="obj__bar"><span style={{ width: `${r.pct}%` }} /></span>
             </span>
             {r.pct === 100
-              ? <button type="button" className="chip on" disabled={claimed.has(r.key)} onClick={() => claim(r.key)}>{claimed.has(r.key) ? '✓' : t('obj.claim')}</button>
+              ? <button type="button" className="chip on" disabled={claimed.has(r.key)} onClick={() => claim(r.key)}>{claimed.has(r.key) ? <Check size={16} /> : t('obj.claim')}</button>
               : <span className="chip">{r.pct}%</span>}
           </li>
         ))}

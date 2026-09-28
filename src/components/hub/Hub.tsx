@@ -7,6 +7,8 @@ import { CLUB_HASH, COLLECTIONS_HASH, OBJECTIVES_HASH, PLAYERS_HASH, STORE_HASH 
 import { useClub } from '../../lib/club'
 import { pendingRewards } from '../../lib/objectives'
 import InaCard from '../InaCard'
+import Coin from '../Coin'
+import { BookOpen, ClipboardList, Cloud, Layers, Puzzle, Settings, Shield, ShoppingBag, Target, Zap } from 'lucide-react'
 import RulesModal from '../RulesModal'
 import StatsModal from '../StatsModal'
 import Sheet from './Sheet'
@@ -53,13 +55,13 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
       <header className="hub-top safe-top">
         <div className="hub-top__row">
           <span className="hub-logo">FFI <b>6-0</b></span>
-          <button type="button" className="hub-icon-btn" onClick={() => setSheet('settings')} aria-label={t('hub.settings')}>⚙️</button>
+          <button type="button" className="hub-icon-btn" onClick={() => setSheet('settings')} aria-label={t('hub.settings')}><Settings size={20} /></button>
         </div>
         <div className="hub-bar">
-          <span className="hub-bar__crest" aria-hidden>⚡</span>
+          <span className="hub-bar__crest" aria-hidden><Zap size={18} fill="currentColor" /></span>
           <span className="hub-bar__lvl"><small>{t('hub.level')}</small>{progress.level}</span>
-          <span className="hub-bar__item" title={t('hub.cards')}>🃏 {progress.owned}</span>
-          <span className="hub-bar__item">🪙 {club.coins.toLocaleString()}</span>
+          <span className="hub-bar__item" title={t('hub.cards')}><Layers size={16} /> {progress.owned}</span>
+          <span className="hub-bar__item"><Coin /> {club.coins.toLocaleString()}</span>
           <span className="hub-bar__pct">
             <span className="hub-bar__track"><span style={{ width: `${progress.levelPct}%` }} /></span>
             {progress.levelPct}%
@@ -91,7 +93,7 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
               <span className="tile__big">{mode === 'classic' ? t('landing.mode.classic') : t('landing.mode.memory')}</span>
             </Tile>
             <Tile label={t('hub.rules')} onClick={() => setSheet('rules')} wide>
-              <span className="tile__icon" aria-hidden>📖</span>
+              <BookOpen className="tile__icon" strokeWidth={1.6} aria-hidden />
             </Tile>
           </div>
         </section>
@@ -100,10 +102,10 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
         <section className="hub-page hub-page--violet">
           <HeroTile title={t('hub.packs')} sub={club.packs.length ? t('store.saved', { n: club.packs.length }) : undefined} image={heroes.packs} onClick={go(STORE_HASH)} />
           <div className="hub-grid">
-            <Tile label={t('hub.store')} onClick={go(STORE_HASH)}><span className="tile__icon" aria-hidden>🛒</span></Tile>
+            <Tile label={t('hub.store')} onClick={go(STORE_HASH)}><ShoppingBag className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
             <Tile label={t('hub.latest')} onClick={goPlayers}><CardFan players={latest} /></Tile>
-            <Tile label={t('hub.objectives')} onClick={go(OBJECTIVES_HASH)} badge={pending}><span className="tile__icon" aria-hidden>🎯</span></Tile>
-            <Tile label={t('hub.sbc')} soon={t('hub.soon')}><span className="tile__icon" aria-hidden>🧩</span></Tile>
+            <Tile label={t('hub.objectives')} onClick={go(OBJECTIVES_HASH)} badge={pending}><Target className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
+            <Tile label={t('hub.sbc')} soon={t('hub.soon')}><Puzzle className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
           </div>
         </section>
 
@@ -116,14 +118,14 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
             <Tile label={t('hub.collection')} onClick={go(COLLECTIONS_HASH)}>
               <span className="hub-ring" style={{ ['--pct' as string]: `${progress.collectionPct}%` }}>{progress.collectionPct}%</span>
             </Tile>
-            <Tile label={t('hub.badges')} soon={t('hub.soon')}><span className="tile__icon" aria-hidden>🛡️</span></Tile>
+            <Tile label={t('hub.badges')} soon={t('hub.soon')}><Shield className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
             <Tile label={t('hub.myStats')} onClick={() => setSheet('stats')}><span className="tile__big">{progress.drafts}</span></Tile>
-            <Tile label={t('hub.squads')} soon={t('hub.soon')}><span className="tile__icon" aria-hidden>📋</span></Tile>
+            <Tile label={t('hub.squads')} soon={t('hub.soon')}><ClipboardList className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
           </div>
           <div className="hub-grid hub-grid--3">
-            <Tile label={t('hub.settings')} onClick={() => setSheet('settings')}><span className="tile__icon" aria-hidden>⚙️</span></Tile>
-            <Tile label={t('hub.backup')} soon={t('hub.soon')}><span className="tile__icon" aria-hidden>☁️</span></Tile>
-            <Tile label={t('hub.rules')} onClick={() => setSheet('rules')}><span className="tile__icon" aria-hidden>📖</span></Tile>
+            <Tile label={t('hub.settings')} onClick={() => setSheet('settings')}><Settings className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
+            <Tile label={t('hub.backup')} soon={t('hub.soon')}><Cloud className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
+            <Tile label={t('hub.rules')} onClick={() => setSheet('rules')}><BookOpen className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
           </div>
           {heroes.club && <img className="hub-page__ghost" src={heroes.club} alt="" aria-hidden />}
         </section>

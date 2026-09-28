@@ -98,3 +98,14 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
   recuperados del commit anterior.
 - Probado: sobre de bienvenida (8 cartas), campo del draft, ficha en Mis cartas. Las cartas sin foto en las capturas son
   fallos de red del navegador de pruebas (`ERR_TOO_MANY_RETRIES` del proxy), no de la app.
+
+### Fuera los emojis
+- Pedido: no usar tantos emojis. Se quitan todos los de la interfaz (inicio, club, sobres, objetivos, ajustes, draft,
+  torneo, partido, resumen, imagen para compartir y los textos de los 4 idiomas). En su lugar:
+  - Iconos de Victory Road (`GameIcon`) para lo del juego: puestos, afinidades, supertécnicas, especiales.
+  - Iconos de línea `lucide-react` (solo se incluyen los que se usan) para la interfaz: ajustes, tienda, objetivos,
+    insignias, copia de seguridad, reglas, volver/cerrar, sonido, tema, trofeo, sobre, gol, fallo, comprobado.
+  - Moneda propia `src/components/Coin.tsx` (disco dorado con un rayo).
+  - La química de cada jugador en el campo: 3 puntos en vez de ◆.
+  - Banderas de países del torneo fuera (eran emojis; en Windows salen como letras).
+- Las flechas → de los botones se quedan: son tipografía, no emojis.

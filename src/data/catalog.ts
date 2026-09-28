@@ -236,7 +236,7 @@ export function teamLabel(label: string, locale: string): string {
   if (locale === 'en') return label
   const [, head, suffix = ''] = label.match(/^(.*?)( \([^()]*\))?$/u) ?? [label, label]
   if (teamNames.has(head)) return teamName(head, locale) + suffix
-  const sp = head.indexOf(' ')                                   // prefijo de bandera: "🇯🇵 Equipo"
+  const sp = head.indexOf(' ')                                   // prefijo antes del equipo: "XX Equipo"
   if (sp > 0 && teamNames.has(head.slice(sp + 1))) return head.slice(0, sp + 1) + teamName(head.slice(sp + 1), locale) + suffix
   return label
 }

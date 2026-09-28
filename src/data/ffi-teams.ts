@@ -8,25 +8,24 @@ export interface TournamentOpponent {
   key: DraftPoolKey
   name: string
   country: string
-  flag: string
   players: Player[]
 }
 
-const META: Partial<Record<DraftPoolKey, { country: string; flag: string }>> = {
-  'IE3:Orpheus': { country: 'Italie', flag: '🇮🇹' },
-  'IE3:Unicorn': { country: 'USA', flag: '🇺🇸' },
-  'IE3:The Empire': { country: 'Argentine', flag: '🇦🇷' },
-  'IE3:The Kingdom': { country: 'Brésil', flag: '🇧🇷' },
-  'IE3:Red Matador': { country: 'Espagne', flag: '🇪🇸' },
-  'IE3:Rose Griffons': { country: 'France', flag: '🇫🇷' },
-  'IE3:Brocken Brigade': { country: 'Allemagne', flag: '🇩🇪' },
-  'IE3:Little Gigantes': { country: 'Cotarl', flag: '🌍' },
-  'IE1:Zeus': { country: 'Grèce', flag: '🇬🇷' },
-  'IE1:Royal Academy': { country: 'Japon', flag: '🇯🇵' },
-  'IE1:Raimon': { country: 'Japon', flag: '🇯🇵' },
-  'IE1:Occult': { country: 'Japon', flag: '🇯🇵' },
-  'IE2:Alpine': { country: 'Suisse', flag: '🇨🇭' },
-  'IE2:Epsilon': { country: 'Japon', flag: '🇯🇵' },
+const META: Partial<Record<DraftPoolKey, { country: string }>> = {
+  'IE3:Orpheus': { country: 'Italie' },
+  'IE3:Unicorn': { country: 'USA' },
+  'IE3:The Empire': { country: 'Argentine' },
+  'IE3:The Kingdom': { country: 'Brésil' },
+  'IE3:Red Matador': { country: 'Espagne' },
+  'IE3:Rose Griffons': { country: 'France' },
+  'IE3:Brocken Brigade': { country: 'Allemagne' },
+  'IE3:Little Gigantes': { country: 'Cotarl' },
+  'IE1:Zeus': { country: 'Grèce' },
+  'IE1:Royal Academy': { country: 'Japon' },
+  'IE1:Raimon': { country: 'Japon' },
+  'IE1:Occult': { country: 'Japon' },
+  'IE2:Alpine': { country: 'Suisse' },
+  'IE2:Epsilon': { country: 'Japon' },
 }
 
 const COUNTRY_I18N: Record<string, { en: string; es: string; it: string }> = {
@@ -52,14 +51,13 @@ export function makeTournamentOpponent(key: DraftPoolKey): TournamentOpponent | 
   const pool = parseDraftPoolKey(key)
   const roster = getTeamRoster(pool)
   if (roster.length < 7) return null
-  const meta = META[key] ?? { country: pool.game, flag: '⚽' }
+  const meta = META[key] ?? { country: pool.game }
   const xi = pickBestXI(roster)
   if (xi.length < 7) return null
   return {
     key,
     name: displayPoolLabel(pool),
     country: meta.country,
-    flag: meta.flag,
     players: xi,
   }
 }

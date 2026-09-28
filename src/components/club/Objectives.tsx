@@ -7,13 +7,21 @@ import {
 import { getPack } from '../../lib/packs'
 import type { TranslationKey } from '../../i18n/translations'
 import Screen from './Screen'
+import Coin from '../Coin'
+import { Check, Package } from 'lucide-react'
 
 /** Premio diario con racha de 7 días y objetivos del día */
 export default function Objectives() {
   const { t } = useAppSettings()
   useClub()                                            // se vuelve a pintar al cobrar
   const day = dailyDay()
-  const rewardText = (r: Reward) => [r.coins && `🪙 ${r.coins.toLocaleString()}`, r.pack && `📦 ${t(getPack(r.pack).nameKey)}`].filter(Boolean).join(' + ')
+  const rewardText = (r: Reward) => (
+    <span className="reward-inline">
+      {r.coins ? <><Coin /> {r.coins.toLocaleString()}</> : null}
+      {r.coins && r.pack ? ' + ' : null}
+      {r.pack ? <><Package size={14} /> {t(getPack(r.pack).nameKey)}</> : null}
+    </span>
+  )
 
   return (
     <Screen title={t('hub.objectives')}>
@@ -22,12 +30,12 @@ export default function Objectives() {
         {DAILY.map((r, i) => (
           <span key={i} className={`streak__day ${i + 1 < day || (i + 1 === day && !dailyAvailable()) ? 'done' : ''} ${i + 1 === day ? 'today' : ''}`}>
             <small>{t('obj.day', { n: i + 1 })}</small>
-            <b>{r.pack ? '📦' : r.coins}</b>
+            <b>{r.pack ? <Package size={18} /> : r.coins}</b>
           </span>
         ))}
       </div>
       <button type="button" className="sheet-cta" disabled={!dailyAvailable()} onClick={() => claimDaily()}>
-        {dailyAvailable() ? `${t('obj.claim')} · ${rewardText(DAILY[day - 1])}` : t('obj.comeBack')}
+        {dailyAvailable() ? <>{t('obj.claim')} · {rewardText(DAILY[day - 1])}</> : t('obj.comeBack')}
       </button>
 
       <h3 className="sheet-label">{t('obj.today')}</h3>
@@ -43,7 +51,7 @@ export default function Objectives() {
                 <span className="obj__bar"><span style={{ width: `${(got / o.goal) * 100}%` }} /></span>
               </span>
               <button type="button" className="chip on" disabled={claimed || got < o.goal} onClick={() => claimObjective(o)}>
-                {claimed ? '✓' : `${got}/${o.goal}`}
+                {claimed ? <Check size={16} /> : `${got}/${o.goal}`}
               </button>
             </li>
           )

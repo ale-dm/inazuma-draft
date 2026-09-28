@@ -8,6 +8,7 @@ import { teamLabel } from '../data/catalog'
 import { playSfx } from '../lib/sfx'
 import type { TournamentOutcome } from '../lib/local-stats'
 import MatchView from './MatchView'
+import { CircleCheck, Trophy } from 'lucide-react'
 
 type TourneyPhase = 'intro' | 'groups' | 'qualified' | 'eliminated' | 'semis' | 'final' | 'done'
 
@@ -182,7 +183,7 @@ export default function Tournament({ playerTeam, chemistry, onEnd }: Props) {
               />
               <TeamList
                 title={t('tournament.blocB')}
-                teams={blockBTeams.map(o => `${o.flag} ${o.name}`)}
+                teams={blockBTeams.map(o => o.name)}
               />
             </div>
             <button type="button" onClick={startGroups} className="btn-primary">{t('tournament.start')}</button>
@@ -208,7 +209,7 @@ export default function Tournament({ playerTeam, chemistry, onEnd }: Props) {
                   {t('tournament.vs', { home: teamLabel(PLAYER_NAME, locale), away: teamLabel(playerOpponents[matchIdx].name, locale) })}
                 </p>
                 <p className="text-iz-muted text-sm mb-6">
-                  {playerOpponents[matchIdx].flag} {localizeCountry(playerOpponents[matchIdx].country, locale)}
+                  {localizeCountry(playerOpponents[matchIdx].country, locale)}
                 </p>
                 <button type="button" onClick={runCurrentMatch} className="btn-primary w-full">
                   {t('tournament.playMatch')}
@@ -237,7 +238,7 @@ export default function Tournament({ playerTeam, chemistry, onEnd }: Props) {
 
         {phase === 'qualified' && groupAStandings && groupBStandings && (
           <div className="animate-fade-in text-center">
-            <div className="text-4xl mb-4">✅</div>
+            <CircleCheck className="w-12 h-12 mb-4 mx-auto text-[#3dff8a]" strokeWidth={1.6} aria-hidden />
             <h3 className="font-heading text-2xl font-bold text-inazuma mb-2">{t('tournament.qualified')}</h3>
             <p className="text-iz-muted mb-2">
               {t(playerRank === 1 ? 'tournament.qualifiedHint1' : 'tournament.qualifiedHint2')}
@@ -275,7 +276,7 @@ export default function Tournament({ playerTeam, chemistry, onEnd }: Props) {
 
         {phase === 'final' && finalResult && (
           <div className="animate-fade-in">
-            <h3 className="font-heading text-3xl font-black text-inazuma text-center mb-6">🏆 {t('tournament.final')}</h3>
+            <h3 className="font-heading text-3xl font-black text-inazuma text-center mb-6"><Trophy className="inline w-8 h-8 -mt-1 mr-1" aria-hidden />{t('tournament.final')}</h3>
             <MatchView result={finalResult} highlightTeam={PLAYER_NAME} />
             <button type="button" onClick={finishTournament} className="btn-primary mt-6 w-full">{t('tournament.finish')}</button>
           </div>

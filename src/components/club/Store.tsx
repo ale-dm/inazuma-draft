@@ -6,6 +6,7 @@ import type { Category } from '../../types'
 import { playSfx } from '../../lib/sfx'
 import Screen from './Screen'
 import PackOpening from './PackOpening'
+import Coin from '../Coin'
 
 /** Tienda: sobres a la venta y los sobres guardados (comprados o ganados) listos para abrir */
 export default function Store() {
@@ -51,7 +52,7 @@ export default function Store() {
             <span className="pack__odds">
               {(Object.entries(p.odds) as [Category, number][]).map(([c, w]) => <i key={c} className={`odds odds--${RARITY_CLASS[c]}`}>{w}%</i>)}
             </span>
-            <span className="pack__buy">🪙 {p.price!.toLocaleString()}</span>
+            <span className="pack__buy"><Coin /> {p.price!.toLocaleString()}</span>
           </button>
         ))}
       </div>

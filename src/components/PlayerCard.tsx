@@ -3,7 +3,8 @@ import { POSITION_STAT_KEYS, displayStatValue, playerRating } from '../lib/power
 import { useAppSettings } from '../context/AppSettings'
 import { teamName, techniqueName } from '../data/catalog'
 import PlayerAvatar from './PlayerAvatar'
-import { ElementIcon, PositionIcon } from './GameIcon'
+import { ElementIcon, PositionIcon, TechniqueIcon } from './GameIcon'
+import { ArrowLeftRight } from 'lucide-react'
 
 
 interface Props {
@@ -58,7 +59,7 @@ export default function PlayerCard({ player, mode, onClick, onCompare, inCompare
           onKeyDown={e => { if (e.key === 'Enter') { e.stopPropagation(); onCompare() } }}
           className={`compare-pin-btn ${inCompare ? 'compare-pin-btn--on' : ''}`}
         >
-          ⇄
+          <ArrowLeftRight size={14} />
         </span>
       )}
       <PlayerAvatar
@@ -86,7 +87,9 @@ export default function PlayerCard({ player, mode, onClick, onCompare, inCompare
           </div>
         )}
         {mode === 'classic' && player.techniques[0] && (
-          <div className="text-[0.65rem] text-hissatsu truncate font-heading mt-1.5">⚡ {techniqueName(player.techniques[0], locale)}</div>
+          <div className="text-[0.65rem] text-hissatsu truncate font-heading mt-1.5 flex items-center gap-1">
+            <TechniqueIcon type={player.techniques[0].type} className="w-4 h-4 shrink-0" /> {techniqueName(player.techniques[0], locale)}
+          </div>
         )}
       </div>
     </button>

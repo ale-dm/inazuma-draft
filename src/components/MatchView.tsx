@@ -2,6 +2,7 @@ import { getTechnique, teamLabel, techniqueName } from '../data/catalog'
 import type { MatchResult } from '../types'
 import { matchWinner } from '../engine/sim'
 import { useAppSettings } from '../context/AppSettings'
+import { Goal, X } from 'lucide-react'
 
 function moveLabel(id: string | undefined, fallback: string, locale: string): string {
   const tech = id ? getTechnique(id) : undefined
@@ -56,7 +57,8 @@ export default function MatchView({ result, highlightTeam }: Props) {
             return (
               <div key={i} className={`text-sm flex gap-2 ${highlight ? 'text-hissatsu font-heading' : 'text-iz-muted'}`}>
                 <span className="w-8 text-right tabular-nums">{e.minute}'</span>
-                <span>⚽ {e.player}{e.move ? ` — ${moveLabel(e.moveId, e.move, locale)}` : ''}</span>
+                <Goal size={16} className="shrink-0 mt-0.5" aria-hidden />
+                <span>{e.player}{e.move ? ` — ${moveLabel(e.moveId, e.move, locale)}` : ''}</span>
               </div>
             )
           })}
@@ -69,11 +71,13 @@ export default function MatchView({ result, highlightTeam }: Props) {
           {penEvents.map((e, i) => {
             const teamName = e.team === 0 ? result.team1Name : result.team2Name
             const highlight = highlightTeam === teamName
-            const icon = e.move === 'miss' ? '❌' : '⚽'
             return (
               <div key={i} className={`text-sm flex gap-2 ${highlight ? 'text-hissatsu font-heading' : 'text-iz-muted'}`}>
                 <span className="w-8 text-right tabular-nums">P{i + 1}</span>
-                <span>{icon} {e.player}</span>
+                {e.move === 'miss'
+                  ? <X size={16} className="shrink-0 mt-0.5 text-red-400" aria-hidden />
+                  : <Goal size={16} className="shrink-0 mt-0.5" aria-hidden />}
+                <span>{e.player}</span>
               </div>
             )
           })}

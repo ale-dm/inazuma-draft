@@ -3,6 +3,7 @@ import { DEFAULT_FORMATION, getFormationSlotsByLine, type FormationId, type Line
 import { lineupPower, playerRating } from '../lib/power'
 import { useAppSettings } from '../context/AppSettings'
 import PlayerAvatar from './PlayerAvatar'
+import { Check, X } from 'lucide-react'
 
 interface Props {
   lineup: LineupMap
@@ -55,7 +56,7 @@ export default function BoxScore({ lineup, formationId = DEFAULT_FORMATION, onSl
                     {showPower && (
                       <span className="text-iz-blue mr-1 tabular-nums">{playerRating(player)}</span>
                     )}
-                    {valid ? '✓' : '✗'}
+                    {valid ? <Check size={14} className="inline" /> : <X size={14} className="inline" />}
                   </span>
                 </>
               ) : (

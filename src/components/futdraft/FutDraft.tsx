@@ -6,6 +6,7 @@ import { chemistry, formationLinks, teamRating } from '../../lib/chemistry'
 import { BENCH, benchOptions, captainOptions, formationOptions, slotOptions } from '../../lib/fut-draft'
 import InaCard from '../InaCard'
 import Sheet from '../hub/Sheet'
+import { X } from 'lucide-react'
 
 interface Props {
   onComplete: (lineup: LineupMap, formation: FormationId, captain: SlotId, chemistry: number, bench: Player[]) => void
@@ -102,7 +103,7 @@ export default function FutDraft({ onComplete, onExit }: Props) {
     <div className="hub fd">
       <header className="hub-top safe-top">
         <div className="hub-top__row">
-          <button type="button" className="hub-icon-btn" onClick={onExit} aria-label={t('fd.exit')}>✕</button>
+          <button type="button" className="hub-icon-btn" onClick={onExit} aria-label={t('fd.exit')}><X size={20} /></button>
           <span className="hub-logo">{t('hub.draft')}</span>
           <span className="w-10" />
         </div>
@@ -166,7 +167,7 @@ export default function FutDraft({ onComplete, onExit }: Props) {
                       <>
                         {card(s.id, p)}
                         <span className={`fd-chem fd-chem--${chem.players[s.id] ?? 0}`}>
-                          {s.id === captain && <b>C</b>}{'◆'.repeat(chem.players[s.id] ?? 0) || '·'}
+                          {s.id === captain && <b>C</b>}{[0, 1, 2].map(i => <i key={i} className={i < (chem.players[s.id] ?? 0) ? 'on' : ''} />)}
                         </span>
                       </>
                     ) : (

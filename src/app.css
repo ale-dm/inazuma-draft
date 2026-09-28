@@ -1,4 +1,4 @@
-/* Interfaz de la app (rama app): pantalla principal estilo MADFUT y carta estilo FUT. Siempre oscura. */
+/* Interfaz de la app (rama app): pantalla principal estilo MADFUT, carta de Inazuma con estilo propio. Siempre oscura. */
 
 :root {
   --hub-ink: #eaf6ff;
@@ -50,7 +50,7 @@
 }
 .hub-bar__lvl { display: flex; flex-direction: column; line-height: 1; font-style: italic; font-size: 1.15rem; }
 .hub-bar__lvl small { color: var(--hub-cyan); font-size: .6rem; letter-spacing: .08em; }
-.hub-bar__item { font-variant-numeric: tabular-nums; }
+.hub-bar__item { display: inline-flex; align-items: center; gap: .35rem; font-variant-numeric: tabular-nums; }
 .hub-bar__pct { margin-left: auto; display: flex; align-items: center; gap: .45rem; font-style: italic; }
 .hub-bar__track { width: 3.2rem; height: .35rem; border-radius: 99px; background: rgba(255, 255, 255, .12); overflow: hidden; }
 .hub-bar__track span { display: block; height: 100%; background: linear-gradient(90deg, var(--hub-cyan), var(--hub-neon)); }
@@ -98,7 +98,7 @@
 .tile--soon .tile__body { opacity: .45; filter: grayscale(.6); }
 .tile__body { flex: 1; display: grid; place-items: center; width: 100%; }
 .tile__label { font-size: 1.05rem; font-weight: 700; text-shadow: 0 2px 6px rgba(0, 0, 0, .6); }
-.tile__icon { font-size: 2.6rem; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, .5)); }
+.tile__icon { width: 2.8rem; height: 2.8rem; color: #eaf6ff; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, .5)); }
 .tile__big { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-style: italic; font-size: 2.2rem; line-height: 1; }
 .tile__soon {
   position: absolute; top: .7rem; right: .7rem; padding: .15rem .55rem; border-radius: 99px; font-size: .65rem; font-weight: 800;
@@ -120,8 +120,10 @@
 .hub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .hub-grid--3 { grid-template-columns: repeat(3, 1fr); }
 .hub-grid--3 .tile { min-height: 7.5rem; }
-.hub-grid--3 .tile__icon { font-size: 2rem; }
+.hub-grid--3 .tile__icon { width: 2.1rem; height: 2.1rem; }
 .hub-grid--3 .tile__label { font-size: .85rem; }
+.hub-grid--3 .tile__soon { top: .45rem; right: 50%; transform: translateX(50%); font-size: .55rem; padding: .1rem .45rem; white-space: nowrap; }
+.tile--wide .card-fan--md { margin-top: .8rem; }
 
 /* páginas: cada una con su tono (verde azulado · violeta · azul) */
 .hub-page--violet .tile { --edge: var(--hub-violet); --glass: linear-gradient(160deg, rgba(70, 40, 150, .78), rgba(14, 16, 48, .92)); }
@@ -196,7 +198,10 @@
 }
 .fd-empty small { font-size: .7rem; letter-spacing: .06em; }
 .fd-chem { margin-top: -2px; padding: 0 .35rem; border-radius: 99px; font-size: .6rem; line-height: 1.2rem; background: rgba(0, 0, 0, .7); white-space: nowrap; }
+.fd-chem { display: inline-flex; align-items: center; gap: 2px; }
 .fd-chem b { color: #ffe566; margin-right: .2rem; }
+.fd-chem i { width: 5px; height: 5px; border-radius: 99px; background: rgba(255, 255, 255, .25); }
+.fd-chem i.on { background: currentColor; }
 .fd-chem--0 { color: #ff4d4d; }
 .fd-chem--1 { color: #ffb03d; }
 .fd-chem--2 { color: #ffd23d; }
@@ -246,12 +251,12 @@
 }
 
 /* ---------------------------------------------------------------- club: tienda, sobres, mis cartas, colecciones, objetivos */
-.coin-badge { padding: .3rem .7rem; border-radius: 99px; font-weight: 800; font-variant-numeric: tabular-nums; background: rgba(0, 0, 0, .5); border: 1px solid rgba(255, 210, 61, .5); }
+.coin-badge { display: inline-flex; align-items: center; gap: .35rem; padding: .3rem .7rem; border-radius: 99px; font-weight: 800; font-variant-numeric: tabular-nums; background: rgba(0, 0, 0, .5); border: 1px solid rgba(255, 210, 61, .5); }
 .tile__badge {
   position: absolute; top: .6rem; right: .6rem; min-width: 1.5rem; height: 1.5rem; padding: 0 .35rem; border-radius: 99px;
   display: grid; place-items: center; font-size: .8rem; font-weight: 900; color: #fff; background: #ff3d5a; box-shadow: 0 0 10px rgba(255, 61, 90, .6);
 }
-.reward-line { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.3rem; color: #ffe566; text-align: center; }
+.reward-line { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .3rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.3rem; color: #ffe566; text-align: center; }
 
 .pack-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .8rem; }
 .pack {
@@ -271,7 +276,7 @@
 .pack--saga { --p1: #3df2ff; --p2: #1d3fa8; }
 .pack__name { font-weight: 900; font-style: italic; font-size: 1.35rem; line-height: 1; text-transform: uppercase; }
 .pack__count { font-weight: 800; font-size: 2rem; line-height: 1; opacity: .85; }
-.pack__buy { padding: .25rem .8rem; border-radius: 99px; font-weight: 800; background: rgba(0, 0, 0, .45); color: #fff; }
+.pack__buy { display: inline-flex; align-items: center; gap: .35rem; padding: .25rem .8rem; border-radius: 99px; font-weight: 800; background: rgba(0, 0, 0, .45); color: #fff; }
 .pack__stack { position: absolute; top: .5rem; right: .5rem; width: 1.6rem; height: 1.6rem; border-radius: 99px; display: grid; place-items: center; background: #ff3d5a; color: #fff; font-weight: 900; }
 .pack__odds { display: flex; flex-wrap: wrap; justify-content: center; gap: .25rem; }
 .pack__odds i { font-style: normal; font-size: .75rem; font-weight: 800; padding: 0 .3rem; border-radius: 6px; background: rgba(0, 0, 0, .35); color: #fff; }
@@ -414,3 +419,8 @@ button.ic:active { transform: scale(.95); }
 .card-info__techs b { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .card-info__techs small { font-size: .7rem; opacity: .75; font-variant-numeric: tabular-nums; }
 .card-info__tech-icon { width: 1.8rem; height: 1.8rem; flex-shrink: 0; }
+
+.coin { display: inline-block; flex-shrink: 0; vertical-align: -.15em; }
+.reward-inline { display: inline-flex; align-items: center; gap: .3rem; }
+.hub-icon-btn svg { display: block; }
+.sheet-choice b svg { display: block; }

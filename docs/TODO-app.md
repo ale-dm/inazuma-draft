@@ -9,6 +9,7 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] Pantalla principal de 3 páginas deslizables + barra de nivel, títulos y cartas
 - [x] Carta con estilo propio (nada de FIFA): media, icono de puesto, foto, afinidad y equipo; color por rareza de Victory Road (Common verde · Growing azul · Advanced morado · Top amarillo · Legendary naranja; sin Hero)
 - [x] Iconos de Victory Road: puestos, afinidades, tipos de supertécnica, espíritu guerrero, Mixi Max, tótem
+- [x] Fuera los emojis de la interfaz: iconos de línea (lucide) y moneda propia
 - [ ] Escudos de los equipos en la carta (la wiki solo tiene los de unos 12 equipos de Victory Road)
 - [ ] Iconos de Tiro largo y Bloqueo de tiros (hay imagen, falta saber qué técnicas lo son: dato `zukan_types`)
 - [x] Paneles inferiores: modo de juego y ajustes (idioma, sonido, tema)

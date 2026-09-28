@@ -2,6 +2,7 @@ import { useAppSettings } from '../../context/AppSettings'
 import { LOCALES, type Locale } from '../../i18n/translations'
 import Sheet from './Sheet'
 import { SITE } from '../../config/site'
+import { Coffee, ExternalLink, Moon, Sun, Volume2, VolumeX } from 'lucide-react'
 
 const LANGUAGE_NAME: Record<Locale, string> = { en: 'English', es: 'Español', fr: 'Français', it: 'Italiano' }
 
@@ -22,18 +23,18 @@ export default function SettingsSheet({ open, onClose }: { open: boolean; onClos
       <div className="grid grid-cols-2 gap-2">
         <button type="button" onClick={toggleSound} className="sheet-choice sheet-choice--row">
           <small>{t('settings.sound')}</small>
-          <b>{sound ? '🔊' : '🔇'}</b>
+          <b>{sound ? <Volume2 size={20} /> : <VolumeX size={20} />}</b>
         </button>
         <button type="button" onClick={toggleTheme} className="sheet-choice sheet-choice--row">
           <small>{t('settings.theme')}</small>
-          <b>{theme === 'dark' ? '🌙' : '☀️'}</b>
+          <b>{theme === 'dark' ? <Moon size={20} /> : <Sun size={20} />}</b>
         </button>
       </div>
       {/* créditos del proyecto original (antes en el pie de la web) */}
       <footer className="settings-credits">
         <p>{t('footer.tagline')}</p>
         <p>{t('footer.byBefore')}<a href={SITE.github} target="_blank" rel="noopener noreferrer">{SITE.author}</a></p>
-        <a href={SITE.paypal} target="_blank" rel="noopener noreferrer">☕ {t('footer.support')} ↗</a>
+        <a href={SITE.paypal} target="_blank" rel="noopener noreferrer"><Coffee size={14} /> {t('footer.support')} <ExternalLink size={12} /></a>
       </footer>
     </Sheet>
   )
