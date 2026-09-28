@@ -15,7 +15,11 @@
 - **Técnicas**: no hay anime, así que salen de Road to Ultimate (comunes + rama principal, sin las básicas).
 - **Curva de rivales** (`team_tuning.VR`, como IE1/GO1: 73,5 → 83,5), ordenada por el nivel de la historia en la wiki:
   - Tenderos → Seagull FC → Twinford → West Manor → Orchid → Northbright → Crosswind → Back Alley → Eastwind → Noble Insight / Lawcrest / AI Academy → Stormridge → Alpino → **Raimon (final)** → Solaria-Zeus → Zanark Outsiders → Guardianas → Plathos → Destructores.
-  - Techo 88.
+  - Techo 88. La curva está un punto por encima (74,5 → 84,5) y el reparto general sigue a IE1 + GO1 con su curva ya aplicada.
+  - Los capitanes destacan más que en otros juegos: hasta +6 sobre el once y subida máxima de 15.
+- **Estrellas** (`team_tuning._game.VR`, se aplican después de la curva):
+  - Harper Evans (Endou Haru, hijo de Mark), el mejor jugador del juego: **90**.
+  - Los que tienen versión héroe/basara en el juego (Nagumohara, Nikas, Victorio…): mínimo **86**.
 - **Nombres en castellano de los clubes**: traducidos a mano en `overrides.team_es`.
 
 ## Orion (hecho)

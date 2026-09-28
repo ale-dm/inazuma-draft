@@ -1065,7 +1065,8 @@ def main(extra_z=None, write=True):
                     new = max(25, min(max(c['ovr'], top_), c['ovr'] + delta))
                     if c in capt:                      # capitán: +2 y cerca de 4 por encima del once (subida máx. +6)
                         cap_c = cfg.get('captain_cap', top_)      # techo propio del capitán (Barcelona Orb en Ares: 89)
-                        new = min(max(cap_c, c['ovr']), max(new + 2, min(round(cfg['top11']) + 4, new + 6), c['ovr']))
+                        cp_, cr_ = game_cfg.get(g_, {}).get('captain_plus', 4), game_cfg.get(g_, {}).get('captain_raise', 6)
+                        new = min(max(cap_c, c['ovr']), max(new + 2, min(round(cfg['top11']) + cp_, new + cr_), c['ovr']))
                     return new
                 # desplazamiento entero más alto que no pasa del objetivo (con el capitán ya subido) y +1 a los más flojos del
                 # once hasta clavar la media: así el orden de la historia se cumple exacto
@@ -1083,6 +1084,20 @@ def main(extra_z=None, write=True):
                     c['category'] = category(new)
                 if cfg.get('captain') and not capt:
                     report.append(f"team_tuning: capitán {cfg['captain']} no está en {g_} {tm}")
+        # estrellas del juego: suelo de nota después de la curva (Harper Evans, los que tienen versión héroe/basara en VR)
+        for g_, gc in game_cfg.items():
+            if g_ not in games or not (gc.get('stars') or gc.get('hero_floor')):
+                continue
+            stars = {k: v for k, v in (gc.get('stars') or {}).items() if not k.startswith('_')}
+            for c in cards:
+                if c['game'] != g_:
+                    continue
+                fl = max(stars.get(c['page'], 0), gc.get('hero_floor', 0) if c.get('hero') else 0)
+                if c['ovr'] < fl:
+                    c.setdefault('ovr_untuned', c['ovr'])
+                    c['stats'] = {k: max(25, min(99, v + fl - c['ovr'])) for k, v in c['stats'].items()}
+                    c['ovr'] = fl
+                    c['category'] = category(fl)
 
     apply_tuning(cards, set(MAIN))
 
