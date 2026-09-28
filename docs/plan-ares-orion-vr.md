@@ -15,7 +15,7 @@
   - Descripción marcada «Orion:».
 - **Inazuma Japón**: los jugadores de Ares que están en el Inazuma Japón de Orion tienen **dos cartas**, la de Ares (en su equipo de Ares) y la de Orion (Inazuma Japón). Como la ficha de zukan es la misma, el nº oficial es de la carta de Ares y la de Orion lleva un nº propio.
 - El resto, en su equipo de Orion: los de las fichas que se estrenan en Orion (Gigantes Invencibles, Chispas Perfectas…).
-- Pendiente: curva de rivales de Orion (`team_tuning.ORION`).
+- Curva de rivales de Orion: `team_tuning.ORION`, igual que IE3 (ver `docs/plan-base-jugadores.md`).
 
 ## Ares (hecho)
 
