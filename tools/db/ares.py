@@ -80,6 +80,37 @@ def es_ares_desc(section, ares_only):
     return None
 
 
+ICON_TYPE = {'TI': 'Shoot', 'RE': 'Dribble', 'BL': 'Block', 'AT': 'Catch',
+             'tiro': 'Shoot', 'regate': 'Dribble', 'bloqueo': 'Block', 'atajo': 'Catch', 'parada': 'Catch'}
+ARES_MARK = re.compile(r"Desde Ares\s*=|Inazuma Eleven Ares'|\{\{Medio\|A\|AR\}\}")
+
+
+def anime_ares_moves(section):
+    """supertécnicas del anime de Ares (wiki española, «Supertécnicas → Anime → Desde Ares»; en los clásicos es el
+    bloque de la segunda línea temporal) → [(nombre en castellano, tipo)]"""
+    anime = (section or '').split('===Videojuegos')[0]
+    m = ARES_MARK.search(anime)
+    if not m:
+        return []
+    out, started = [], False
+    for line in anime[m.end():].split('\n')[1:] if not anime[m.end():].startswith('\n') else anime[m.end():].split('\n')[1:]:
+        line = line.strip()
+        if not line.startswith('*'):
+            if started or (line and 'Desde' in line and 'AR' not in line and 'Ares' not in line):
+                break
+            continue
+        started = True
+        if '(Errónea)' in line:
+            continue
+        link = next((l for l in re.findall(r'\[\[([^\]]+)\]\]', line) if not l.lower().startswith(('archivo:', 'file:'))), None)
+        if not link:
+            continue
+        ic = re.search(r'\{\{ST\|T\|(\w+)\}\}|Archivo:(\w+)\.gif', line, re.I)
+        typ = ICON_TYPE.get(ic.group(1) or ic.group(2).lower()) if ic else None
+        out.append((link.split('|')[0].strip(), typ))
+    return out
+
+
 def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_jp, es_by_en, norm_jp, zskills, zskills_en,
           element_map, zukan_team, category, es_desc, report):
     """→ (cartas de Ares, personajes nuevos {id: fila})"""
@@ -126,6 +157,43 @@ def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_j
                                'description': zs_ and zs_.get('description'), 'image_url': zs_ and zs_.get('image'),
                                'zukan_types': zs_ and zs_.get('types')}
         return techniques[tid]
+
+    by_es = {norm(t['name_es']): t for t in techniques.values() if t and t.get('name_es')}
+    es_to_jp = {}
+    for jp_, es_ in es_by_jp.items():
+        es_to_jp.setdefault(norm(es_), jp_)
+    az_jp, az_fr = {}, {}
+    for code, v in sorted(SK.items(), key=lambda kv: (kv[0].endswith('_mm'), -kv[1].get('uses', 0))):
+        if v.get('max'):
+            az_jp.setdefault(norm_jp(v.get('name_ja')), code)
+            az_fr.setdefault(norm(v.get('name_fr')), code)
+
+    def technique_es(name, typ):
+        """supertécnica por su nombre en castellano: la de la base, la de VR (por el japonés) o una nueva solo con ese nombre"""
+        t = by_es.get(norm(name))
+        if t:
+            return t
+        jp = es_to_jp.get(norm(name))
+        t = by_jp.get(jp) if jp else None
+        if not t and jp in az_jp:
+            t = technique_vr(az_jp[jp])
+        if t:
+            t['name_es'] = t.get('name_es') or name
+            return t
+        tid = 'es_' + slug(name)
+        techniques.setdefault(tid, {'id': tid, 'name': name, 'name_es': name, 'name_jp': None, 'type': typ, 'element': None,
+                                    'cost': None, 'cost_game': None, 'costs': {}, 'description': None, 'image_url': None,
+                                    'zukan_types': None})
+        return techniques[tid]
+
+    def rtu_moves(zid):
+        """Road to Ultimate, la ficha de Ares del personaje: técnicas comunes + rama principal (nombres en francés)"""
+        x = next((x for x in RTU.get(zid, []) if x['type'] == 'normal'), None)
+        if not x:
+            return []
+        names = [n for k in ('commonTechniqueIds', 'baseBranchTechniqueIds') for s_ in (x['techniques'].get(k) or [])
+                 for n in re.findall(r'\s*([^|]+?)\s*\(Lv\d+\)', s_)]
+        return [technique_vr(az_fr[norm(n)]) for n in dict.fromkeys(names) if norm(n) in az_fr]
 
     at_by_page = {}
     for m in re.finditer(r'\n\t(\w+)=\{\n\t\tpage="([^"]+)"(.*?)\n\t\}', AT, re.S):
@@ -213,6 +281,7 @@ def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_j
 
     cards, new_chars = [], {}
     classic_ids = {c['character_id'] for c in classic_cards}
+    move_src = collections.Counter()
     seen = collections.Counter()
     for r in rows:
         z = r['z']
@@ -223,6 +292,14 @@ def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_j
         mult = next(x['multiplierPct'] for x in TAB['rarities'] if x['name'] == rar) / 100
         tpl = TAB['templates'].get(r['key'] or '', {}).get('50') or [r['st'][k] for k in KEYS]
         es = es_desc.get(r['page']) or {} if r['page'] else {}
+        moves = [technique_es(n, t_) for n, t_ in anime_ares_moves(es.get('techniques'))]
+        src_m = 'anime'
+        if not moves:
+            moves, src_m = rtu_moves(z['id']), 'rtu'
+        if not moves:
+            moves, src_m = [technique_vr(s['code']) for s in r['skills']], 'vr'
+        moves = list({id(t): t for t in moves}.values())
+        move_src[src_m] += 1
         # el Raimon de Ares es el de los nuevos: los del Raimon original que salen en Ares van a secundarios
         team = 'Sub Character' if r['team'] == 'Raimon' and char_id in classic_ids else r['team']
         cards.append({
@@ -235,7 +312,9 @@ def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_j
             'zukan_id': z['id'], 'zukan_no': z['no'], 'no': z['no'], 'is_version': ver != 'base', 'zukan': [z],
             'description': (zdesc.get(str(z['no'])) or {}).get('desc'), 'description_es': es_ares_desc(es.get('section'), not r['anchor'] and char_id not in classic_ids),
             'specials': [], 'extra_teams': [], 'form_label': f'Victory Road Lv50 · {rar}', 'raw_keys': VR_KEYS,
-            'raw': [round(v * mult) for v in tpl], 'moves': [technique_vr(s['code']) for s in r['skills']],
+            'raw': [round(v * mult) for v in tpl], 'moves': moves,
         })
         new_chars.setdefault(char_id, {'id': char_id, 'name': z['name'], 'wiki_page': r['page'], 'zukan_no': z['no']})
+    report.append('Ares: supertécnicas de la carta — ' + ', '.join(f'{k} {v}' for k, v in move_src.items())
+                  + ' (anime = wiki española «Desde Ares»; rtu = Road to Ultimate, comunes + rama principal; vr = todas las de VR)')
     return cards, new_chars
