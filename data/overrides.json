@@ -1,5 +1,8 @@
 {
   "_doc": "Excepciones editables a mano para tools/db/build.py. Las claves 'page' son títulos de ficha de la wiki de Fandom (inazuma-eleven.fandom.com). Ver docs/plan-base-jugadores.md.",
+  "names_i18n": {
+    "_doc": "Nombres en francés/italiano a mano (técnica, espíritu guerrero, tótem o equipo, por su nombre inglés): {\"Raimon\": {\"fr\": \"…\", \"it\": \"…\"}}. Sin entrada: doblaje de la wiki española (Nombre DOB) o wikis fr/it por nombre japonés; si no, inglés"
+  },
   "special_es": {
     "_doc": "Nombre en castellano de espíritus guerreros e hipertécnicas de VR que la wiki española no enlaza (sacados de sus fichas)",
     "Goddess Victoria": "Victoria, diosa del triunfo",

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useAppSettings } from '../context/AppSettings'
+import { LOCALES } from '../i18n/translations'
 import RulesModal from './RulesModal'
 import { PLAYERS_HASH, useHashRoute } from '../lib/route'
 
@@ -36,7 +37,7 @@ export default function TopBar() {
 
           <div className="flex items-center gap-1 shrink-0 z-10 min-w-[4.5rem] justify-end">
             <div className="seg-group">
-              {(['es', 'fr', 'en'] as const).map(l => (
+              {LOCALES.map(l => (
                 <button
                   key={l}
                   type="button"

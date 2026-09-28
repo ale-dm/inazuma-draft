@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
-import { translations, type Locale, type TranslationKey } from '../i18n/translations'
+import { LOCALES, translations, type Locale, type TranslationKey } from '../i18n/translations'
 import { setSfxEnabled } from '../lib/sfx'
 
 export type Theme = 'dark' | 'light'
@@ -33,18 +33,23 @@ function readStored<T extends string>(key: string, fallback: T, allowed: T[]): T
   }
 }
 
+/** Idioma del dispositivo: el primero de sus idiomas preferidos que tengamos (es-MX → es, it-IT → it…); si no, inglés */
 function browserLocale(): Locale {
   try {
-    const lang = navigator.language.slice(0, 2).toLowerCase()
-    return lang === 'es' || lang === 'en' ? lang : 'fr'
+    const prefs = navigator.languages?.length ? navigator.languages : [navigator.language]
+    for (const tag of prefs) {
+      const lang = tag.slice(0, 2).toLowerCase() as Locale
+      if (LOCALES.includes(lang)) return lang
+    }
   } catch {
-    return 'fr'
+    /* sin navigator (prerender) */
   }
+  return 'en'
 }
 
 export function AppSettingsProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(() => readStored('iz-theme', 'light', ['dark', 'light']))
-  const [locale, setLocaleState] = useState<Locale>(() => readStored('iz-locale', browserLocale(), ['fr', 'en', 'es']))
+  const [locale, setLocaleState] = useState<Locale>(() => readStored('iz-lang', browserLocale(), [...LOCALES]))
   const [sound, setSoundState] = useState(() => readStored('iz-sound', 'on', ['on', 'off']) === 'on')
 
   useEffect(() => {
@@ -54,7 +59,6 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = locale
-    localStorage.setItem('iz-locale', locale)
   }, [locale])
 
   useEffect(() => {
@@ -63,7 +67,15 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
   }, [sound])
 
   const setTheme = (t: Theme) => setThemeState(t)
-  const setLocale = (l: Locale) => setLocaleState(l)
+  // solo se guarda la elección manual: sin ella, cada visita sigue el idioma del dispositivo
+  const setLocale = (l: Locale) => {
+    setLocaleState(l)
+    try {
+      localStorage.setItem('iz-lang', l)
+    } catch {
+      /* almacenamiento bloqueado */
+    }
+  }
   const toggleTheme = () => setThemeState(t => (t === 'dark' ? 'light' : 'dark'))
   const toggleSound = () => setSoundState(s => !s)
 

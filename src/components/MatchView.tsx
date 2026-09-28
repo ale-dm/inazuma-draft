@@ -22,7 +22,7 @@ export default function MatchView({ result, highlightTeam }: Props) {
 
   return (
     <div className="iz-panel animate-fade-in">
-      <div className="iz-panel-head text-center">Match</div>
+      <div className="iz-panel-head text-center">{t('match.title')}</div>
       <div className="iz-panel-body">
       <div className="flex items-center justify-center gap-6 mb-4">
         <div className={`text-center flex-1 ${winner === 0 ? 'text-accent' : 'text-iz-text'}`}>

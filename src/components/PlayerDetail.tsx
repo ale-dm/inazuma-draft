@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import type { Player } from '../types'
-import { cardTeamLabel, getCharacterVersions, teamName, techniqueName } from '../data/catalog'
+import { cardTeamLabel, getCharacterVersions, hyperName, specialName, teamName, techniqueName } from '../data/catalog'
 import { GAME_LABEL } from '../data/games'
 import { ALL_STAT_KEYS } from '../lib/power'
 import { useAppSettings } from '../context/AppSettings'
@@ -82,7 +82,7 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
                     <span aria-hidden>{SPECIAL_ICON[sp.type]}</span>
                     <span className="text-[0.65rem] text-iz-muted">{t(`special.${sp.type}`)}</span>
                     <span className="font-heading font-bold text-iz-heading truncate">
-                      {(locale === 'es' && sp.name_es) || sp.name || '—'}
+                      {specialName(sp, locale)}
                     </span>
                     {sp.armed && <span className="ml-auto text-xs text-accent font-heading">{t('special.armed')}</span>}
                   </li>
@@ -91,7 +91,7 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
                   <li key={`h${i}`} className="flex items-center gap-2 text-sm">
                     <span aria-hidden>💥</span>
                     <span className="text-[0.65rem] text-iz-muted">{t('special.hyper')}</span>
-                    <span className="font-heading font-bold text-hissatsu truncate">{(locale === 'es' && sp.hyper_es) || sp.hyper}</span>
+                    <span className="font-heading font-bold text-hissatsu truncate">{hyperName(sp, locale)}</span>
                   </li>
                 ))}
               </ul>

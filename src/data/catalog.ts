@@ -52,6 +52,8 @@ interface TechniqueRow {
   id: string
   name: string
   name_es: string | null
+  name_fr?: string | null
+  name_it?: string | null
   type: Technique['type']
   element: Element | null
   cost: number | null
@@ -74,10 +76,19 @@ interface StaffRow {
 interface TeamRow {
   name: string
   name_es: string | null
+  name_fr?: string | null
+  name_it?: string | null
+}
+
+type LocalNames = Partial<Record<'es' | 'fr' | 'it', string | null | undefined>>
+
+/** El nombre en el idioma de la interfaz si se conoce; si no, el inglés */
+function localName(en: string, names: LocalNames | undefined, locale: string): string {
+  return (locale !== 'en' && names?.[locale as keyof LocalNames]) || en
 }
 
 let players: Player[] = []
-let teamsEs = new Map<string, string>()
+let teamNames = new Map<string, LocalNames>()
 let staff: Staff[] = []
 let techniquesById = new Map<string, Technique>()
 let byId = new Map<string, Player>()
@@ -97,14 +108,14 @@ export async function loadCatalog(): Promise<void> {
   if (players.length) return
   const techniques = await rest<TechniqueRow[]>('techniques?select=*')
   const techById = new Map<string, Technique>(techniques.map(t => [t.id, {
-    id: t.id, name: t.name, nameEs: t.name_es ?? null, type: t.type, element: t.element, cost: t.cost, costGame: t.cost_game,
+    id: t.id, name: t.name, nameEs: t.name_es ?? null, nameFr: t.name_fr ?? null, nameIt: t.name_it ?? null, type: t.type, element: t.element, cost: t.cost, costGame: t.cost_game,
     description: t.description ?? null, image: t.image_url ?? null,
   }]))
 
   techniquesById = techById
   // la tabla de equipos es opcional: sin ella se muestran los nombres en inglés
   const teams = await rest<TeamRow[]>('teams?select=*').catch(() => [] as TeamRow[])
-  teamsEs = new Map(teams.filter(t => t.name_es).map(t => [t.name, t.name_es as string]))
+  teamNames = new Map(teams.map(t => [t.name, { es: t.name_es, fr: t.name_fr, it: t.name_it }]))
   // cuerpo técnico: también opcional
   const staffRows = await rest<StaffRow[]>('staff?select=*&order=zukan_no').catch(() => [] as StaffRow[])
   staff = staffRows.map(s => ({
@@ -181,14 +192,24 @@ export function getTechnique(id: string): Technique | undefined {
   return techniquesById.get(id)
 }
 
-/** Nombre de la técnica en el idioma de la interfaz (castellano si existe) */
+/** Nombre de la técnica en el idioma de la interfaz (inglés si no se conoce) */
 export function techniqueName(t: Technique, locale: string): string {
-  return locale === 'es' && t.nameEs ? t.nameEs : t.name
+  return localName(t.name, { es: t.nameEs, fr: t.nameFr, it: t.nameIt }, locale)
 }
 
-/** Nombre del equipo en el idioma de la interfaz (castellano si existe) */
+/** Nombre del equipo en el idioma de la interfaz (inglés si no se conoce) */
 export function teamName(team: string, locale: string): string {
-  return (locale === 'es' && teamsEs.get(team)) || team
+  return localName(team, teamNames.get(team), locale)
+}
+
+/** Espíritu guerrero / tótem en el idioma de la interfaz */
+export function specialName(sp: Special, locale: string): string {
+  return localName(sp.name ?? '—', { es: sp.name_es, fr: sp.name_fr, it: sp.name_it }, locale)
+}
+
+/** Hipertécnica del espíritu guerrero en el idioma de la interfaz */
+export function hyperName(sp: Special, locale: string): string {
+  return localName(sp.hyper ?? '', { es: sp.hyper_es, fr: sp.hyper_fr, it: sp.hyper_it }, locale)
 }
 
 /** "Equipo · Versión" de una carta, sin repetir ("Mixi Max (Shawn)", no "Mixi Max · Mixi Max (Shawn)") */
@@ -203,11 +224,11 @@ export function cardTeamLabel(p: Pick<Player, 'team' | 'version'>, locale: strin
  * o "🇯🇵 Dark Emperors (…)". Lo que no sea un equipo conocido se deja igual.
  */
 export function teamLabel(label: string, locale: string): string {
-  if (locale !== 'es') return label
+  if (locale === 'en') return label
   const [, head, suffix = ''] = label.match(/^(.*?)( \([^()]*\))?$/u) ?? [label, label]
-  if (teamsEs.has(head)) return teamsEs.get(head) + suffix
+  if (teamNames.has(head)) return teamName(head, locale) + suffix
   const sp = head.indexOf(' ')                                   // prefijo de bandera: "🇯🇵 Equipo"
-  if (sp > 0 && teamsEs.has(head.slice(sp + 1))) return head.slice(0, sp + 1) + teamsEs.get(head.slice(sp + 1)) + suffix
+  if (sp > 0 && teamNames.has(head.slice(sp + 1))) return head.slice(0, sp + 1) + teamName(head.slice(sp + 1), locale) + suffix
   return label
 }
 

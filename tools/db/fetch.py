@@ -25,6 +25,8 @@ OVERRIDES = json.load(open(os.path.join(ROOT, 'data', 'overrides.json'), encodin
 ZUKAN_BASE = 'https://zukan.inazuma.jp'
 WIKI_API = 'https://inazuma-eleven.fandom.com/api.php'
 WIKI_ES_API = 'https://inazuma.fandom.com/es/api.php'
+WIKI_FR_API = 'https://inazuma-eleven.fandom.com/fr/api.php'
+WIKI_IT_API = 'https://inazumaeleven.fandom.com/it/api.php'
 XTREME_API = 'https://iegos13xtreme.fandom.com/api.php'
 ZUKAN_LIST = 'https://zukan.inazuma.jp/en/chara_list/?page='
 BALANCING_DOC = 'https://docs.google.com/document/d/1PT3LSxd1CUyhkHUD9xtpZdm4zmhScg-ZvIW6Yz1wy0M/export?format=txt'
@@ -301,6 +303,18 @@ def load_fusions():
     return json.load(open(path, encoding='utf-8')) if os.path.exists(path) else {}
 
 
+def dub_names(c):
+    """nombres de los doblajes europeos del campo "Nombre DOB" de la wiki española: *Main céleste {{FR}} → {'fr': [...], 'it': [...]}"""
+    m = re.search(r'\|\s*Nombre DOB\s*=(.*?)\n\|', c, re.S)
+    out = {'fr': [], 'it': []}
+    for line in (m.group(1).split('\n') if m else []):
+        name = re.sub(r"<[^>]+>|'{2,3}|\[\[(?:[^|\]]*\|)?([^\]]*)\]\]", r'\1', line.split('{{')[0]).strip(' *\t/,')
+        for tg in re.findall(r'\{\{(FR|IT)\}\}', line):
+            if name:
+                out[tg.lower()].append(name)
+    return out
+
+
 def main():
     log('1/8 zukan')
     zukan = cached('chara_list.json', fetch_zukan, ZUKAN_DIR)
@@ -411,7 +425,7 @@ def main():
                 jp = re.search(r'\|\s*Nombre Japonés\s*=(.*?)\n\|', c, re.S)
                 en = re.search(r'\|\s*Nombre Inglés\s*=\s*([^\n]*)', c)
                 out[p['title']] = {'jp': re.findall(r'(?:<br>|\n)\s*([A-Za-z][^<{\n]*)', jp.group(1)) + re.findall(r'title="([^"]+)"', jp.group(1)) if jp else [],
-                                   'en': [en.group(1).strip()] if en else []}
+                                   'en': [en.group(1).strip()] if en else [], **dub_names(c)}
             time.sleep(0.3)
         return out
     cached('es_keshin.json', lambda: es_category('Categoría:Espíritus Guerreros'))
@@ -640,7 +654,7 @@ def main():
                 dob = re.search(r'\|\s*Nombre DOB\s*=(.*?)\n\|', c, re.S)
                 en = re.findall(r'\*?\s*([^*{}\n\']+?)\s*\{\{(?:EN|US)\}\}', dob.group(1)) if dob else []
                 en += re.findall(r'\|\s*Nombre Inglés\s*=\s*([^\n|]+)', c)
-                out[p['title']] = {'jp': [j.strip() for j in jp if j.strip()], 'en': [e.strip() for e in en if e.strip() not in ('/', '')]}
+                out[p['title']] = {'jp': [j.strip() for j in jp if j.strip()], 'en': [e.strip() for e in en if e.strip() not in ('/', '')], **dub_names(c)}
             log(f'  técnicas ES {min(i + 50, len(titles_))}/{len(titles_)}')
             time.sleep(0.3)
         return out
@@ -692,11 +706,46 @@ def main():
                 jp = re.findall(r'\|\s*K\s*=\s*([^}|]+)', jsec) + re.findall(r'<br>\s*([^<{\n]+)', jsec)
                 en = re.findall(r'\*?\s*([^*{}\n]+?)\s*\{\{(?:EN|US)\}\}', field('Nombre DOB'))
                 out[p['title']] = {'es': es.group(1).strip() if es else None, 'jp': [j.strip() for j in jp if j.strip()],
-                                   'en': [e.strip() for e in en if e.strip()]}
+                                   'en': [e.strip() for e in en if e.strip()], **dub_names(c)}
             log(f'  equipos ES {min(i + 50, len(titles_))}/{len(titles_)}')
             time.sleep(0.3)
         return out
     cached('es_teams.json', es_teams)
+
+    log('10b nombres en francés e italiano (wikis fr/it: fichas de supertécnicas, espíritus guerreros y equipos, por nombre japonés)')
+    def lang_wiki(base, templates, name_keys, jp_keys):
+        """{plantilla: {título: {'name': nombre local, 'jp': [japonés, rōmaji, nombre original…]}}}"""
+        def clean(v):
+            v = re.sub(r'\{\{Ruby\|([^|}]*)\|[^}]*\}\}', r'\1', v)
+            v = re.sub(r'\[\[(?:[^|\]]*\|)?([^\]]*)\]\]', r'\1', v)
+            return re.sub(r'<[^>]+>|\{\{[^}]*\}\}|\'{2,3}', '', v).strip(' *\t')
+        out = {}
+        for tpl in templates:
+            titles_, cont = [], {}
+            while True:
+                d = api(base, action='query', list='embeddedin', eititle=tpl, einamespace=0, eilimit=500, **cont)
+                titles_ += [m['title'] for m in d['query']['embeddedin']]
+                if 'continue' not in d:
+                    break
+                cont = {'eicontinue': d['continue']['eicontinue']}
+            pages = out.setdefault(tpl.split(':', 1)[1], {})
+            for i in range(0, len(titles_), 50):
+                d = api(base, action='query', prop='revisions', rvprop='content', rvslots='main', titles='|'.join(titles_[i:i + 50]))
+                for p in d['query']['pages']:
+                    if p.get('missing') or not p.get('revisions'):
+                        continue
+                    c = p['revisions'][0]['slots']['main']['content']
+                    f = {k.strip().lower(): v for k, v in re.findall(r'\n\|\s*([^=\n|]+?)\s*=(.*?)(?=\n\||\n\}\})', c, re.S)}
+                    name = next((clean(re.split(r'<br\s*/?>|\n', f[k])[0]) for k in name_keys if f.get(k, '').strip()), None)
+                    jp = [clean(x) for k in jp_keys for x in re.split(r'<br\s*/?>|\n|----', f.get(k, ''))]
+                    pages[p['title']] = {'name': name or re.sub(r'\s*\([^)]*\)$', '', p['title']), 'jp': [j for j in jp if j]}
+                log(f'  {base.split("/")[2]} {tpl} {min(i + 50, len(titles_))}/{len(titles_)}')
+                time.sleep(0.3)
+        return out
+    cached('fr_wiki.json', lambda: lang_wiki(WIKI_FR_API, ['Modèle:Supertechnique', 'Modèle:Esprit Guerrier', 'Modèle:Esprit Guerrier2',
+                                                           'Modèle:Equipe', 'Modèle:Equipe2'], ('nom fr', 'nom'), ('nom jp', 'nom en', 'nom anglais')))
+    cached('it_wiki.json', lambda: lang_wiki(WIKI_IT_API, ['Template:Tecniche', 'Template:Tecnica', 'Template:Avatar', 'Template:Spirito Guerriero',
+                                                           'Template:Squadra'], ('nome',), ('nome_jp', 'nome_rom', 'nome_originale')))
 
     log('11/11 Xtreme (balancing doc + wiki)')
     cached('xtreme_balancing.txt', lambda: get(BALANCING_DOC).decode('utf-8-sig'))
