@@ -29,14 +29,16 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 ## Arreglos y revisiones
 - [x] Imágenes de la wiki (Fandom) bloqueadas por el Referer → `<meta name="referrer" content="no-referrer">`
 - [ ] Llevar ese arreglo también a `main` (la web actual tiene ~85 imágenes de la wiki rotas por lo mismo)
-- [~] Revisar las cartas que salen con iniciales en vez de foto (comprobando las 6.000+ URL de imagen)
+- [x] Revisar las cartas con iniciales: las 6.074 URL de imagen responden bien (eran fotos aún cargando en el navegador de pruebas)
 
 ## Fase 3 · Economía local
-- [ ] Monedas y XP por jugar
-- [ ] Sobres con probabilidades por rareza (por saga, elemento, equipo) y apertura animada
-- [ ] Mis cartas: colección con filtros y duplicados
-- [ ] Colecciones (equipos completos, sagas) con % y distinción al 100 %
-- [ ] Objetivos diarios (racha), semanales y de carrera
+- [x] Monedas y XP por jugar (torneo: grupos 250 · semis 500 · final 800 + sobre · campeón 1.500 + sobre Oro)
+- [x] Sobres con probabilidades por rareza (Bronce, Plata, Oro, Leyenda y por saga) y apertura animada
+- [ ] Sobres por elemento y por equipo
+- [x] Mis cartas: colección con filtros, repetidas (×N) y venta rápida
+- [x] Colecciones: cada equipo de cada juego, % y premio al 100 % (2.000 + sobre Oro)
+- [x] Premio diario con racha de 7 días y 5 objetivos del día
+- [ ] Objetivos semanales y de carrera
 - [ ] Rediseño del resto de pantallas (torneo, jugadores, resultado) con el estilo nuevo
 
 ## Fase 4 · Modos

@@ -19,7 +19,13 @@ import Tournament from './components/Tournament'
 import PlayerCard from './components/PlayerCard'
 import ExportTeamButton from './components/ExportTeamButton'
 import PlayersExplorer from './components/PlayersExplorer'
-import { PLAYERS_HASH, useHashRoute } from './lib/route'
+import { CLUB_HASH, COLLECTIONS_HASH, OBJECTIVES_HASH, PLAYERS_HASH, STORE_HASH, useHashRoute } from './lib/route'
+import Store from './components/club/Store'
+import MyCards from './components/club/MyCards'
+import Collections from './components/club/Collections'
+import Objectives from './components/club/Objectives'
+import { addCoins, addPack, addXp, track, trackMax } from './lib/club'
+import { getPack } from './lib/packs'
 import { trackEvent } from './lib/analytics'
 import {
   recordGlobalDraftComplete,
@@ -44,7 +50,10 @@ export default function App() {
   const [won, setWon] = useState(false)
   /** Química del draft MADFUT; null en el draft FFI (sorteo) */
   const [chem, setChem] = useState<number | null>(null)
-  const inPlayers = useHashRoute() === PLAYERS_HASH
+  const route = useHashRoute()
+  const inPlayers = route === PLAYERS_HASH
+  /** Premio del último torneo (se enseña en la pantalla de resultado) */
+  const [reward, setReward] = useState<{ coins: number; xp: number; pack?: string } | null>(null)
 
   function startRun(kind: 'fut' | 'ffi') {
     const seed = runSeed ?? generateSeedString()
@@ -66,6 +75,7 @@ export default function App() {
     setRunSeed(null)
     setWon(false)
     setChem(null)
+    setReward(null)
     const url = new URL(window.location.href)
     url.searchParams.delete('seed')
     url.searchParams.delete('mode')
@@ -99,6 +109,8 @@ export default function App() {
           onComplete={(l, formation, _captain, chemistry, bench) => {
             const players = lineupToArray(l, formation)
             recordDraftComplete([...players, ...bench], [])
+            track('drafts')
+            trackMax('chem', chemistry)
             recordGlobalDraftComplete()
             trackEvent('draft_complete', { players: players.length, teams_rolled: 0, kind: 'fut' })
             setDrafted(players)
@@ -120,6 +132,7 @@ export default function App() {
             onCopySeed={() => void copySeed()}
             onComplete={(p, l, teamsRolled, formation) => {
               recordDraftComplete(p, teamsRolled)
+              track('drafts')
               recordGlobalDraftComplete()
               trackEvent('draft_complete', { players: p.length, teams_rolled: teamsRolled.length })
               setDrafted(p)
@@ -162,6 +175,16 @@ export default function App() {
                 trackEvent('tournament_out', { stage: outcome.stage })
               }
               setWon(outcome.stage === 'final' && outcome.won)
+              // premio del club: monedas, XP y, en la final, un sobre
+              const r = outcome.stage === 'groups' ? { coins: 250, xp: 50 }
+                : outcome.stage === 'semi' ? { coins: 500, xp: 100 }
+                : outcome.won ? { coins: 1500, xp: 250, pack: 'gold' } : { coins: 800, xp: 150, pack: 'reward' }
+              addCoins(r.coins)
+              addXp(r.xp)
+              if (r.pack) addPack(r.pack)
+              setReward(r)
+              if (outcome.stage !== 'groups') track('semis')
+              if (outcome.stage === 'final' && outcome.won) track('titles')
               setPhase('result')
             }}
           />
@@ -191,6 +214,11 @@ export default function App() {
               <PlayerCard key={p.id} player={p} mode={mode} compact />
             ))}
           </div>
+          {reward && (
+            <p className="reward-line mb-6">
+              +🪙 {reward.coins.toLocaleString()} · +{reward.xp} XP{reward.pack ? ` · +📦 ${t(getPack(reward.pack).nameKey)}` : ''}
+            </p>
+          )}
           <div className="flex flex-wrap gap-2 justify-center mb-8">
             <ExportTeamButton
               lineup={lineup}
@@ -210,14 +238,17 @@ export default function App() {
     )
   }
 
+  const clubScreen = { [STORE_HASH]: <Store />, [CLUB_HASH]: <MyCards />, [COLLECTIONS_HASH]: <Collections />, [OBJECTIVES_HASH]: <Objectives /> }[route]
+
   return (
     <>
+      {clubScreen}
       {inPlayers && (
         <AppLayout>
           <PlayersExplorer />
         </AppLayout>
       )}
-      <div style={inPlayers ? { display: 'none' } : undefined}>{renderGame()}</div>
+      <div style={inPlayers || clubScreen ? { display: 'none' } : undefined}>{renderGame()}</div>
     </>
   )
 }

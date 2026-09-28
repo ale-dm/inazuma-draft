@@ -3,7 +3,9 @@ import type { Player } from '../../types'
 import { useAppSettings } from '../../context/AppSettings'
 import { getAllPlayers, getCharacterVersions } from '../../data/catalog'
 import { loadProgress, uniqueCharacters } from '../../lib/progress'
-import { PLAYERS_HASH } from '../../lib/route'
+import { CLUB_HASH, COLLECTIONS_HASH, OBJECTIVES_HASH, PLAYERS_HASH, STORE_HASH } from '../../lib/route'
+import { useClub } from '../../lib/club'
+import { pendingRewards } from '../../lib/objectives'
 import FutCard from '../FutCard'
 import RulesModal from '../RulesModal'
 import StatsModal from '../StatsModal'
@@ -31,7 +33,9 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
   const [page, setPage] = useState(0)
   const [sheet, setSheet] = useState<'mode' | 'settings' | 'rules' | 'stats' | null>(null)
   const pager = useRef<HTMLDivElement>(null)
-  const progress = useMemo(loadProgress, [sheet])            // se recalcula al cerrar las estadísticas (reinicio)
+  const club = useClub()
+  const progress = useMemo(() => loadProgress(club), [club, sheet])   // también al cerrar las estadísticas (reinicio)
+  const pending = pendingRewards()
   const heroes = useMemo(() => ({
     draft: heroOf('endou-mamoru'),
     packs: heroOf('gouenji-shuuya'),
@@ -40,7 +44,8 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
   const latest = useMemo(() => uniqueCharacters(getAllPlayers().filter(p => p.game === 'VR' && p.image)
     .sort((a, b) => b.ovr - a.ovr)).slice(0, 3), [])
 
-  const goPlayers = () => { window.location.hash = PLAYERS_HASH }
+  const go = (hash: string) => () => { window.location.hash = hash }
+  const goPlayers = go(PLAYERS_HASH)
   const goPage = (i: number) => pager.current?.scrollTo({ left: i * pager.current.clientWidth, behavior: 'smooth' })
 
   return (
@@ -53,8 +58,8 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
         <div className="hub-bar">
           <span className="hub-bar__crest" aria-hidden>⚡</span>
           <span className="hub-bar__lvl"><small>{t('hub.level')}</small>{progress.level}</span>
-          <span className="hub-bar__item" title={t('hub.titles')}>🏆 {progress.titles}</span>
           <span className="hub-bar__item" title={t('hub.cards')}>🃏 {progress.owned}</span>
+          <span className="hub-bar__item">🪙 {club.coins.toLocaleString()}</span>
           <span className="hub-bar__pct">
             <span className="hub-bar__track"><span style={{ width: `${progress.levelPct}%` }} /></span>
             {progress.levelPct}%
@@ -93,22 +98,22 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
 
         {/* 2 · Sobres y tienda (próximamente) */}
         <section className="hub-page hub-page--violet">
-          <HeroTile title={t('hub.packs')} image={heroes.packs} soon={t('hub.soon')} />
+          <HeroTile title={t('hub.packs')} sub={club.packs.length ? t('store.saved', { n: club.packs.length }) : undefined} image={heroes.packs} onClick={go(STORE_HASH)} />
           <div className="hub-grid">
-            <Tile label={t('hub.store')} soon={t('hub.soon')}><span className="tile__icon" aria-hidden>🛒</span></Tile>
+            <Tile label={t('hub.store')} onClick={go(STORE_HASH)}><span className="tile__icon" aria-hidden>🛒</span></Tile>
             <Tile label={t('hub.latest')} onClick={goPlayers}><CardFan players={latest} /></Tile>
-            <Tile label={t('hub.objectives')} soon={t('hub.soon')}><span className="tile__icon" aria-hidden>🎯</span></Tile>
+            <Tile label={t('hub.objectives')} onClick={go(OBJECTIVES_HASH)} badge={pending}><span className="tile__icon" aria-hidden>🎯</span></Tile>
             <Tile label={t('hub.sbc')} soon={t('hub.soon')}><span className="tile__icon" aria-hidden>🧩</span></Tile>
           </div>
         </section>
 
         {/* 3 · Club */}
         <section className="hub-page hub-page--blue">
-          <Tile label={t('hub.myCards')} onClick={goPlayers} wide>
+          <Tile label={t('hub.myCards')} onClick={go(CLUB_HASH)} wide>
             <CardFan players={progress.showcase} size="md" />
           </Tile>
           <div className="hub-grid">
-            <Tile label={t('hub.collection')} onClick={goPlayers}>
+            <Tile label={t('hub.collection')} onClick={go(COLLECTIONS_HASH)}>
               <span className="hub-ring" style={{ ['--pct' as string]: `${progress.collectionPct}%` }}>{progress.collectionPct}%</span>
             </Tile>
             <Tile label={t('hub.badges')} soon={t('hub.soon')}><span className="tile__icon" aria-hidden>🛡️</span></Tile>
@@ -168,12 +173,13 @@ function HeroTile({ title, sub, image, soon, onClick }: { title: string; sub?: s
   )
 }
 
-function Tile({ label, children, onClick, soon, wide }: { label: string; children?: ReactNode; onClick?: () => void; soon?: string; wide?: boolean }) {
+function Tile({ label, children, onClick, soon, wide, badge }: { label: string; children?: ReactNode; onClick?: () => void; soon?: string; wide?: boolean; badge?: number }) {
   return (
     <button type="button" className={`tile ${wide ? 'tile--wide' : ''} ${soon ? 'tile--soon' : ''}`} onClick={onClick} disabled={!onClick}>
       <span className="tile__body">{children}</span>
       <span className="tile__label">{label}</span>
       {soon && <span className="tile__soon">{soon}</span>}
+      {!!badge && <span className="tile__badge">{badge}</span>}
     </button>
   )
 }

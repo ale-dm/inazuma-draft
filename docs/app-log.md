@@ -48,3 +48,25 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
     puesto coincide con el del titular. Los suplentes cuentan como cartas conseguidas (colección).
   - Probado: once + banquillo completos, cambio suplente → titular (química 27 → 21, se recalcula) y "Jugar el FFI" abre
     el torneo.
+
+### Fase 3 · Economía local (primera parte hecha)
+- **Club** (`src/lib/club.ts`, `localStorage` "ffi-club-v1"): monedas, XP, cartas con copias, sobres guardados, racha y
+  contadores del día. Se empieza con 5.000 monedas y un sobre de bienvenida (8 cartas, 1 Élite o más garantizada).
+- **Sobres** (`src/lib/packs.ts`): Bronce 500 · Plata 1.500 · Oro 3.500 (Élite garantizada) · Leyenda 12.000 (Leyenda
+  garantizada) · por saga 2.500 (Mark, Arion, Ares/Orion, Victory Road). Sin repetir personaje dentro de un sobre; la mejor
+  carta sale la última. Premios: sobre de bienvenida y sobre de premio (no se venden).
+- **Apertura** (`club/PackOpening.tsx`): sobre flotando → tocar → cartas una a una (brillo giratorio con Élite/Leyenda,
+  etiqueta NUEVA) → resumen.
+- **Tienda** (`club/Store.tsx`): mis sobres (con cantidad) y sobres a la venta con probabilidades por color de rareza.
+- **Mis cartas** (`club/MyCards.tsx`): filtros por puesto, rareza y repetidas; venta rápida (Leyenda 1.000 · Élite 400 ·
+  Oro 150 · Plata 60 · Bronce 25; nunca la última copia).
+- **Colecciones** (`club/Collections.tsx`): cada equipo de cada juego (la plantilla del draft); premio al completarla.
+- **Objetivos** (`lib/objectives.ts`, `club/Objectives.tsx`): premio diario 300→1.200 y sobre Oro el 7.º día; objetivos
+  del día (jugar un draft, abrir 2 sobres, 60 de química, semifinales, ganar el FFI). Aviso rojo en el panel de inicio.
+- **Premios del torneo**: grupos 250 🪙 / 50 XP · semis 500 / 100 · final perdida 800 / 150 + sobre de premio ·
+  campeón 1.500 / 250 + sobre Oro. Se enseñan en la pantalla de resultado. Nivel = XP / 200.
+- Rutas nuevas: `#/tienda`, `#/club`, `#/colecciones`, `#/objetivos` (la partida en curso no se pierde).
+- **Imágenes**: comprobadas las 6.074 URL (cartas y técnicas) sin Referer: todas responden. Las iniciales que salían en
+  las capturas eran fotos aún cargando.
+- Probado en navegador: tienda (5.000) → abrir sobre de bienvenida (8 cartas) → comprar Bronce (4.500) → premio diario
+  (4.800) → mis cartas (8) → colecciones (0 de 189) → inicio con monedas y cartas.

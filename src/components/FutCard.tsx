@@ -1,16 +1,8 @@
 import { useState } from 'react'
-import type { Category, Player } from '../types'
+import type { Player } from '../types'
 import { ALL_STAT_KEYS } from '../lib/power'
 import { useAppSettings } from '../context/AppSettings'
-
-/** Rareza de la carta según su categoría: leyenda, élite (oro brillante), oro, plata y bronce */
-const RARITY: Record<Category, string> = {
-  'Legendary Player': 'legend',
-  'Top Player': 'elite',
-  'Advanced Player': 'gold',
-  'Growing Player': 'silver',
-  'Common Player': 'bronze',
-}
+import { RARITY_CLASS } from '../lib/packs'
 
 const ELEMENT_ICON: Record<string, string> = { fire: '🔥', wood: '🌿', air: '💨', earth: '⛰️' }
 
@@ -33,7 +25,7 @@ export default function FutCard({ player, showStats = true, size = 'md', onClick
     <Tag
       type={onClick ? 'button' : undefined}
       onClick={onClick}
-      className={`fut-card fut-card--${RARITY[player.category]} fut-card--${size}`}
+      className={`fut-card fut-card--${RARITY_CLASS[player.category]} fut-card--${size}`}
       aria-label={`${player.name} ${player.ovr}`}
     >
       <div className="fut-card__head">
@@ -43,7 +35,7 @@ export default function FutCard({ player, showStats = true, size = 'md', onClick
       </div>
       <div className="fut-card__art">
         {player.image && !failed
-          ? <img src={player.image} alt="" loading="lazy" onError={() => setFailed(true)} />
+          ? <img src={player.image} alt="" loading={size === 'lg' ? 'eager' : 'lazy'} onError={() => setFailed(true)} />
           : <span className="fut-card__initials">{player.name.split(' ').map(w => w[0]).join('').slice(0, 2)}</span>}
       </div>
       <div className="fut-card__name">{lastName}</div>
