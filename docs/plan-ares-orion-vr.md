@@ -20,6 +20,9 @@
 - **Estrellas** (`team_tuning._game.VR`, se aplican después de la curva):
   - Harper Evans (Endou Haru, hijo de Mark), el mejor jugador del juego: **90**.
   - Los que tienen versión héroe/basara en el juego (Nagumohara, Nikas, Victorio…): mínimo **86**.
+- **Poderes especiales**, del módulo `PlayerData/VR` de la wiki:
+  - Espíritu guerrero de su ficha: Harper Evans (Niké), Victorio (Victoria), Cedric Freud (Animador), Govin Castlehoven (Warborg), Blaine Westbrook (Conejo de cristal).
+  - **Zanark Outsiders**: todos son Mixi Max con Zanark ("new powers granted by Zanark" en zukan), con el keshin de su ficha de forma Mixi Max si lo tiene. Zanark, con su yo del futuro.
 - **Nombres en castellano de los clubes**: traducidos a mano en `overrides.team_es`.
 
 ## Orion (hecho)
