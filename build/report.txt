@@ -1,6 +1,6 @@
-Cartas: 4228 (217 versiones extra) · personajes: 3933 · técnicas: 665
-Categorías: Legendary Player 72 · Top Player 442 · Advanced Player 727 · Growing Player 664 · Common Player 2323
-Niveles: S 409 · A 169 · B 1109 · C 2541
+Cartas: 4435 (220 versiones extra) · personajes: 4090 · técnicas: 720
+Categorías: Legendary Player 78 · Top Player 482 · Advanced Player 803 · Growing Player 738 · Common Player 2334
+Niveles: S 409 · A 233 · B 1152 · C 2641
 OVR: mediana 63 · p90 84 · p99 90 · máx 92
 
 Balancing doc del Xtreme sin ficha (7): añadir a overrides.xtreme_balancing_pages → Rhionne (Chaos), Dante Diavolo (Orpheus), Kino Aki (Girls Team), Oogu (Zanark Domain), Yasha (Zanark Domain), Goburis (Zanark Domain), Yamana Akane (Secret players (GO))
@@ -25,3 +25,5 @@ Versiones con sprite de Victory Road sin carta (37): Gouenji Shuuya: Kirkwood (S
 Fichas de zukan de la saga principal sin carta (5; sin stats en esos juegos o sin entrada): Seymour Hillman (Nº 2804), Sonny Raimon (Nº 261), Chester Horse Sr (Nº 263), Ptumri Emnator (Nº 4143), Globulus Ava (Nº 4162)
 Ares: jugadores sin supertécnicas de VR (1): Chester Horse Sr
 Ares: supertécnicas de la carta — rtu 173, anime 26 (anime = wiki española «Desde Ares»; rtu = Road to Ultimate, comunes + rama principal; vr = todas las de VR)
+Orion: jugadores sin supertécnicas de VR (3): Chester Horse Sr, André, Rio
+Orion: supertécnicas de la carta — rtu 179, anime 28 (anime = wiki española «Desde Orion»; rtu = Road to Ultimate, comunes + rama principal; vr = todas las de VR)

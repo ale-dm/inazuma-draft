@@ -490,7 +490,7 @@ def main():
                 log(f'  descripciones {i}/{len(es_titles)}')
         return out
     es_cache = cached('es_descriptions.json', es_descriptions)
-    ares_pages = {titles.get(z['name']) for z in zukan if 'ARES' in z['games'] and z['role'].startswith('Player')} - {None}
+    ares_pages = {titles.get(z['name']) for z in zukan if {'ARES', 'ORION'} & set(z['games']) and z['role'].startswith('Player')} - {None}
     new = sorted((set(alias.values()) | ares_pages) - set(es_cache))
     if new:                                           # incremental: fichas de los alias y de Ares (supertécnicas del anime)
         es_cache.update(es_descriptions(new))
