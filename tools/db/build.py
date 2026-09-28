@@ -1064,7 +1064,8 @@ def main(extra_z=None, write=True):
                 def tuned(c, delta):
                     new = max(25, min(max(c['ovr'], top_), c['ovr'] + delta))
                     if c in capt:                      # capitán: +2 y cerca de 4 por encima del once (subida máx. +6)
-                        new = min(max(top_, c['ovr']), max(new + 2, min(round(cfg['top11']) + 4, new + 6), c['ovr']))
+                        cap_c = cfg.get('captain_cap', top_)      # techo propio del capitán (Barcelona Orb en Ares: 89)
+                        new = min(max(cap_c, c['ovr']), max(new + 2, min(round(cfg['top11']) + 4, new + 6), c['ovr']))
                     return new
                 # desplazamiento entero más alto que no pasa del objetivo (con el capitán ya subido) y +1 a los más flojos del
                 # once hasta clavar la media: así el orden de la historia se cumple exacto
@@ -1074,7 +1075,7 @@ def main(extra_z=None, write=True):
                 once = sorted(grp, key=lambda c: tuned(c, delta))[-11:]
                 extra = {id(c) for c in once[:round((cfg['top11'] - mean11(delta)) * n11)] if c not in capt}
                 for c in grp:
-                    new = min(max(top_, c['ovr']), tuned(c, delta) + (id(c) in extra))
+                    new = min(max(cfg.get('captain_cap', top_) if c in capt else top_, c['ovr']), tuned(c, delta) + (id(c) in extra))
                     d_ = new - c['ovr']
                     c.setdefault('ovr_untuned', c['ovr'])
                     c['ovr'] = new

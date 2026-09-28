@@ -62,6 +62,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 89,Legendary Player,Mark Evans,GO2,Mixi Max (Arion) «Markion»,Mixi Max,MF,A,stats del juego,88,94,93,82,80,92,Easy Breezy (15) · Inazuma Break (55) · Gigaton Head (40) · Tornado Tunnel (70),endou-mamoru--go2--mixi-max-arion-markion
 89,Legendary Player,Nero,IE2,base,Genesis,GK,S,Xtreme (balancing),75,80,80,83,81,94,Procyon Net (52) · Temporal Wall (60) · Photon Crash (25) · Warp Space (22),nemuro-kimiyuki--ie2--base
 89,Legendary Player,Paolo Bianchi,IE3,base,Orpheus,FW,S,Strikers 2013,90,91,91,82,77,72,Odin Sword (55) · Double Touch (10) · Divine Arrows (46),fidio-aldena--ie3--base
+89,Legendary Player,Sergi Hernández,ARES,base,Barcelona Orb,MF,A,"Victory Road (tier 2, héroe) + técnicas",90,91,90,84,90,85,Diamond Cutter (None) · Perseus Strike (None) · Diamond Ray (None) · Formidable Fortress (None) · Slingshot (49) · Falling Planet (70) · Deceptive Step (None),clario-orvan--ares--base
 89,Legendary Player,Shawn Froste,GO2,Inazuma Legend Japan,Inazuma Legend Japan,FW,S,Strikers 2013,91,91,79,90,90,80,Eternal Blizzard (30) · Land Of Ice (20) · Legendary Wolf (40) · Northern Impact (55),fubuki-shirou--go2--inazuma-legend-japan
 89,Legendary Player,Victor Blade,GO2,Chrono Storm,Chrono Storm,FW,S,Xtreme (balancing),92,84,84,90,82,73,Doomsword Slash (15) · Chrysanthemum Katana (85),tsurugi-kyousuke--go2--chrono-storm
 89,Legendary Player,Vladimir Blade,GO2,base,The Sherwinds,FW,S,Strikers 2013,91,90,90,81,79,79,Entropic Arrows (55) · Flurry Dash (20) · Fireball Screw (55) · Great Blaster (70),tsurugi-yuuichi--go2--base
@@ -120,7 +121,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 88,Top Player,Ryoma Nishiki,GO2,Chrono Storm,Chrono Storm,MF,S,Xtreme (balancing),84,93,96,82,82,72,Acrobatic Keep (40) · Black Tide Ride (70),nishiki-ryouma--go2--chrono-storm
 88,Top Player,Salvador Castell,ARES,base,Barcelona Orb,GK,A,Victory Road (tier 2) + técnicas,81,90,84,90,84,91,Omega Hand (60) · Wetsuit (None) · Gigant Wall (30) · All-Star (30) · Mole Fake (10) · Dog Run (39) · Power Catch (None),alonso-fibiano--ares--base
 88,Top Player,Scott Banyan,IE2,base,Cloister Divinity,DF,S,Xtreme (balancing),75,83,83,91,91,83,Whirlwind Force (20) · Whirlwind Twister (20) · About Face (16) · Bewildered (15),kogure-yuuya--ie2--base
-88,Top Player,Sergi Hernández,ARES,base,Barcelona Orb,MF,A,"Victory Road (tier 2, héroe) + técnicas",89,90,89,83,89,84,Diamond Cutter (None) · Perseus Strike (None) · Diamond Ray (None) · Formidable Fortress (None) · Slingshot (49) · Falling Planet (70) · Deceptive Step (None),clario-orvan--ares--base
 88,Top Player,Seymour Hillman,ARES,base,Everytown,GK,A,Victory Road (tier 2) + técnicas + hibiki-seigou--ie2--young-inazuma,89,84,85,84,85,90,Majin The Hand (60) · Slingshot (49) · Triple Defence (47) · God Hand (10) · Blazing Knuckle (35) · Dual Strike (46) · Mighty Save (None),hibiki-seigou--ares--base
 88,Top Player,Shawn Froste,ARES,base,Alpine,FW,A,Victory Road (tier 3) + técnicas,90,88,89,89,89,86,Cold Front (None) · Aurora Dribble (39) · Land Of Ice (20) · Frosticle (55) · Freeze Shot (25) · Curve Shot (None),fubuki-shirou--ares--base
 88,Top Player,Sol Daystar,GO2,Chrono Storm,Chrono Storm,FW,S,Xtreme (wiki),91,87,87,82,86,74,Atomic Flare (70) · Thundertaker (85),amemiya-taiyou--go2--chrono-storm
@@ -201,7 +201,6 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 87,Top Player,Tyler Murdock,IE1,base,Kirkwood,FW,S,Strikers 2013,86,93,84,84,84,75,Spinning Cut (30) · Back Tornado (31) · Breakthrough (25) · Triangle Z (55),mukata-tsutomu--ie1--base
 87,Top Player,Tynan Crowe,GO1,base,Ancient Darkness,MF,S,Strikers 2013,95,83,85,86,91,76,Will-o'-the-Wisp Shot (40) · Blast Mine (40) · Entropic Arrows (55),yuuki-jou--go1--base
 87,Top Player,Victor Blade,GO2,Raimon,Raimon,FW,S,Xtreme (balancing),90,82,82,88,80,71,Doomsword Slash (15) · Doom Dive Drive (40) · Fire Tornado DD (70) · Great Blaster (70),tsurugi-kyousuke--go2--raimon
-87,Top Player,Xavi Casals,ARES,base,Barcelona Orb,MF,B,Victory Road (tier 1) + técnicas,83,89,88,88,88,83,Heaven's Ascent (56) · Ultra Moon (44) · Super Elastico (56) · Hellfire (46) · Whirlpool (40) · Shadow Stitch (39) · Heel Flick (None),trancy-cornet--ares--base
 87,Top Player,Xene,IE3,Inazuma Japan,Inazuma Japan,FW,S,Strikers 2013,91,83,81,83,82,82,Meteor Blade (55) · Photon Crash (25) · The Dawn (58) · Celestial Smash (55),kiyama-hiroto--ie3--inazuma-japan
 87,Top Player,Yang,GO1,base,Ancient Darkness,FW,S,Xtreme (balancing),89,89,85,78,84,71,Doom Dive Drive (40) · Criss-Cross (70) · Eternal Blizzard (30) · Warp Step (70),kai--go1--base
 87,Top Player,Yuh,GO2,base,Gahl,FW,B,stats del juego,89,86,81,88,79,80,Legendary Wolf (40) · Decoy Deploy (70) · Land Of Ice (20) · White Hurricane (70),yuuchi--go2--base
@@ -276,6 +275,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 86,Top Player,Turner Fogg,GO2,base,Nosfanatica,DF,B,stats del juego,75,81,78,86,91,88,Wall of Atlantis (40) · Blast Mine (40) · Asterocks (30),porto--go2--base
 86,Top Player,Victoria Vanguard,IE2,base,Secret Service,MF,S,Xtreme (balancing),83,91,83,79,90,82,The Tower (30) · Rainbow Arc (37) · Acrobat Bomber (34) · Perfect Tower (57),zaizen-touko--ie2--base
 86,Top Player,Victoria Vanguard,GO3,Adult,Sub Character,MF,S,Xtreme (balancing),81,91,79,82,90,80,The Tower (30) · Mermaid Smash (30) · Zigzag Spark (55) · Thundertaker (85),zaizen-touko--go3--adult
+86,Top Player,Xavi Casals,ARES,base,Barcelona Orb,MF,B,Victory Road (tier 1) + técnicas,82,88,87,87,87,82,Heaven's Ascent (56) · Ultra Moon (44) · Super Elastico (56) · Hellfire (46) · Whirlpool (40) · Shadow Stitch (39) · Heel Flick (None),trancy-cornet--ares--base
 86,Top Player,Zartan Walder,GO3,base,Big Bang,DF,B,stats del juego,83,88,85,78,89,82,Phalanx (70) · Pyrokinetic (30) · Bungee Ball Burst (40) · Gravel Gavel (55),zahtan-worlder--go3--base
 86,Top Player,Zell,IE2,Epsilon Plus,Epsilon Plus,GK,S,Strikers 2013,86,74,86,85,86,86,Ganymede Ray (55) · Gaia Break (61) · Wormhole (30),segata-ryuuichirou--ie2--epsilon-plus
 85,Top Player,Al Woo,GO2,base,Lunar Howl,MF,B,stats del juego,82,88,83,85,81,84,Southern Cross (55) · Hyper-Swiper (8) · Athena's Anthem (70),nagun--go2--base
