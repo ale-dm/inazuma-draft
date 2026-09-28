@@ -323,6 +323,8 @@ def main():
     log('2/8 módulos de la wiki (PlayerData, WazaData)')
     mods = {m: cached(f'PlayerData_{m}.lua', lambda m=m: wikitext(WIKI_API, f'Module:PlayerData/{m}')) for m in MODULES}
     waza = cached('WazaData.lua', lambda: wikitext(WIKI_API, 'Module:WazaData'))
+    for m in ('AT', 'OK', 'VR'):                      # Ares, Orion y Victory Road (tools/db/ares.py)
+        cached(f'PlayerData_{m}.lua', lambda m=m: wikitext(WIKI_API, f'Module:PlayerData/{m}'))
 
     log('3/8 nombres de zukan → fichas de la wiki')
     names = [z['name'] for z in zukan if z['role'].startswith('Player')]
@@ -490,7 +492,8 @@ def main():
                 log(f'  descripciones {i}/{len(es_titles)}')
         return out
     es_cache = cached('es_descriptions.json', es_descriptions)
-    ares_pages = {titles.get(z['name']) for z in zukan if {'ARES', 'ORION'} & set(z['games']) and z['role'].startswith('Player')} - {None}
+    ares_pages = {titles.get(z['name']) for z in zukan if ({'ARES', 'ORION'} & set(z['games']) or set(z['games']) == {'VR'})
+                  and z['role'].startswith('Player')} - {None}
     new = sorted((set(alias.values()) | ares_pages) - set(es_cache))
     if new:                                           # incremental: fichas de los alias y de Ares (supertécnicas del anime)
         es_cache.update(es_descriptions(new))

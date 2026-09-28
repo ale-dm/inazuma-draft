@@ -1071,7 +1071,7 @@ def main(extra_z=None, write=True):
                 # once hasta clavar la media: así el orden de la historia se cumple exacto
                 n11 = min(11, len(grp))
                 mean11 = lambda d: sum(sorted(tuned(c, d) for c in grp)[-11:]) / n11
-                delta = max((d for d in range(-15, 16) if mean11(d) <= cfg['top11'] + 1e-9), default=-15)
+                delta = max((d for d in range(-25, 26) if mean11(d) <= cfg['top11'] + 1e-9), default=-25)
                 once = sorted(grp, key=lambda c: tuned(c, delta))[-11:]
                 extra = {id(c) for c in once[:round((cfg['top11'] - mean11(delta)) * n11)] if c not in capt}
                 for c in grp:
@@ -1416,11 +1416,11 @@ def main(extra_z=None, write=True):
     staff = []
     for z in zukan:
         role = next((r for r in ('Manager', 'Coach', 'Coordinator') if r in z['role']), None)
-        if not role or not set(z['games']) & (MAINLINE | {'ARES', 'ORION'}):
+        if not role or not (set(z['games']) & (MAINLINE | {'ARES', 'ORION'}) or set(z['games']) == {'VR'}):
             continue
         zteams = [ZUKAN_TEAM.get(t, t) for t in z['teams']]
         staff.append({'zukan_no': z['no'], 'name': z['name'], 'role': role, 'team': zteams[0] if zteams else None,
-                      'teams': zteams, 'games': [g for g in MAIN + ['ARES', 'ORION'] if g in z['games']], 'age': z['age'],
+                      'teams': zteams, 'games': [g for g in MAIN + ['ARES', 'ORION'] if g in z['games']] + (['VR'] if set(z['games']) == {'VR'} else []), 'age': z['age'],
                       'element': ELEMENT.get(z['element']), 'image_url': f"https://dxi4wb638ujep.cloudfront.net/1/{z['id']}.png",
                       'description': (zdesc.get(str(z['no'])) or {}).get('desc'), 'wiki_page': page_of(z)})
     known = {t['name'] for t in teams}
@@ -1436,7 +1436,7 @@ def main(extra_z=None, write=True):
     # --- Ares (Ares no Tenbin, curva de IE2) y Orion (Orion no Kokuin, curva de IE3): Victory Road + wiki (tools/db/ares.py)
     classic = list(cards)
     a_cards = []
-    for g_ in ('ARES', 'ORION'):
+    for g_ in ('ARES', 'ORION', 'VR'):
         g_cards, g_chars = ares.build(ROOT, CACHE, zukan, zdesc, page_of, classic, techniques, es_by_jp, es_by_en, norm_jp,
                                       zskills, zskills_en, ELEMENT, ZUKAN_TEAM, category, es_desc, report, game=g_, ares_cards=a_cards)
         apply_tuning(g_cards, {g_})                  # curva de rivales (team_tuning.ARES / .ORION)
@@ -1447,6 +1447,11 @@ def main(extra_z=None, write=True):
     for c in sorted((c for c in a_cards if not c['no']), key=lambda c: c['id']):
         nxt += 1
         c['no'] = nxt
+    solo = collections.Counter((c['game'], c['team']) for c in a_cards)   # equipos con un solo jugador: fuera, como en los clásicos
+    for c in a_cards:
+        if c['team'] not in SCOUT_TEAMS and solo[(c['game'], c['team'])] == 1:
+            report.append(f"Equipo con un solo jugador, fuera: {c['team']} ({c['game']}) → {c['name']} sin equipo")
+            c['team'] = 'Unaffiliated'
     cards += a_cards
     known = {t['name'] for t in teams}
     for tm in sorted({c['team'] for c in a_cards} - known):

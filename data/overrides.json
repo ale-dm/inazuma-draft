@@ -149,7 +149,51 @@
     "Raimon (Past)": "Raimon (pasado)",
     "Inazuma Japan (Past)": "Inazuma Japón (pasado)",
     "Alpine (Past)": "Alpino (pasado)",
-    "Mixi Max": "Mixi Max"
+    "Mixi Max": "Mixi Max",
+    "Art Club": "Club de Arte",
+    "Badminton Club": "Club de Bádminton",
+    "Basketball Club": "Club de Baloncesto",
+    "Bodybuilding Club": "Club de Culturismo",
+    "Cheerleading Squad": "Animadoras",
+    "Choir Club": "Club de Coro",
+    "Cleanup Committee Member": "Comité de Limpieza",
+    "Computer Club": "Club de Informática",
+    "Dance Club": "Club de Baile",
+    "Drama Club": "Club de Teatro",
+    "Eastwind": "Eastwind",
+    "Esports Club": "Club de eSports",
+    "Folk Dance Club": "Club de Danza Folclórica",
+    "Go & Shogi Club": "Club de Go y Shogi",
+    "Handball Club": "Club de Balonmano",
+    "Idol-Lovers Club": "Club de Fans de Ídolos",
+    "Judo Club": "Club de Judo",
+    "Karuta Club": "Club de Karuta",
+    "Kendo Club": "Club de Kendo",
+    "Magic Society": "Sociedad de Magia",
+    "Manga Club": "Club de Manga",
+    "Marine Biology Club": "Club de Biología Marina",
+    "Martial Arts Club": "Club de Artes Marciales",
+    "Metal Club": "Club de Metal",
+    "Modern Music Club": "Club de Música Moderna",
+    "Newspaper Club": "Club de Periodismo",
+    "Occult Society": "Sociedad Ocultista",
+    "Queens": "Queens",
+    "Quiz Society": "Club de Preguntas",
+    "Rugby Club": "Club de Rugby",
+    "School Committee": "Comité Escolar",
+    "Space Laboratory": "Laboratorio Espacial",
+    "Street Howlers": "Street Howlers",
+    "Student Council": "Consejo Estudiantil",
+    "Sumo Club": "Club de Sumo",
+    "Surf Club": "Club de Surf",
+    "Swimming Club": "Club de Natación",
+    "Table Tennis Club": "Club de Tenis de Mesa",
+    "Tea Ceremony Club": "Club de Ceremonia del Té",
+    "Tennis Club": "Club de Tenis",
+    "Track and Field Club": "Club de Atletismo",
+    "Volleyball Club": "Club de Voleibol",
+    "Water Polo Club": "Club de Waterpolo",
+    "Wind Orchestra Club": "Club de Banda de Viento"
   },
   "sprite_force": {
     "_doc": "Sprite de Victory Road (wiki española) a la fuerza para una carta: id de carta → nombre del fichero de la galería.",
@@ -584,6 +628,9 @@
       },
       "ORION": {
         "cap": 91
+      },
+      "VR": {
+        "cap": 88
       }
     },
     "ARES": {
@@ -704,6 +751,108 @@
         "top11": 87.0,
         "captain": "Yurika Beor",
         "note": "12 · ep. 48–49, exhibición final"
+      }
+    },
+    "VR": {
+      "South Cirrus Shopkeepers": {
+        "top11": 73.5,
+        "captain": "Yumoto Tsukimi",
+        "note": "1 · nv 6 · cap. 2"
+      },
+      "Seagull FC": {
+        "top11": 74.0,
+        "captain": "Kudaira Eimu",
+        "note": "2 · nv 8 · cap. 3"
+      },
+      "Twinford": {
+        "top11": 74.5,
+        "captain": "Yomogi Kenta",
+        "note": "3 · nv 12–38 · entrenamiento"
+      },
+      "West Manor": {
+        "top11": 75.0,
+        "captain": "Itoi Kou",
+        "note": "4 · nv 18 · cap. 4"
+      },
+      "Orchid Academy": {
+        "top11": 75.5,
+        "captain": "Housen Ranka",
+        "note": "5 · nv 18–36 · entrenamiento"
+      },
+      "Northbright": {
+        "top11": 76.0,
+        "captain": "Soramiya Sei",
+        "note": "6 · nv 20 · cap. 5"
+      },
+      "Crosswind-Fauxshore": {
+        "top11": 76.5,
+        "captain": "Itoshima Hanahiko",
+        "note": "7 · nv 21–35 · entrenamiento"
+      },
+      "Back Alley Kickers": {
+        "top11": 77.0,
+        "captain": "Tsukigawara Gensaku",
+        "note": "8 · nv 25–47 · entrenamiento"
+      },
+      "Eastwind": {
+        "top11": 77.5,
+        "captain": "Yamanouchi Touyou",
+        "note": "9 · nv 28 · cap. 6"
+      },
+      "Noble Insight": {
+        "top11": 78.0,
+        "captain": "Futatsumiya Kinjirou",
+        "note": "10 · nv 32–52 · entrenamiento"
+      },
+      "Lawcrest": {
+        "top11": 78.0,
+        "captain": "Daitou Ryouya",
+        "note": "11 · nv 32–52 · entrenamiento"
+      },
+      "AI Academy": {
+        "top11": 78.0,
+        "captain": "Hakari Tomokazu",
+        "note": "12 · nv 32–52 · entrenamiento"
+      },
+      "Stormridge": {
+        "top11": 78.5,
+        "captain": "Ikue Magoichi",
+        "note": "13 · nv 33 · cap. 7"
+      },
+      "Alpine": {
+        "top11": 79.0,
+        "captain": "Shumari Horoka",
+        "note": "14 · nv 36–60 · entrenamiento"
+      },
+      "Raimon": {
+        "top11": 80.0,
+        "captain": "Tsukikage Ren",
+        "note": "15 · cap. 9 · final"
+      },
+      "Solaria-Zeus": {
+        "top11": 81.0,
+        "captain": "Teita Tanji",
+        "note": "16 · nv 60 · historia extendida"
+      },
+      "Zanark's Outsiders": {
+        "top11": 82.0,
+        "captain": "Zanark Avalonic",
+        "note": "17 · nv 87–99 · crónica"
+      },
+      "Gatekeepers": {
+        "top11": 82.5,
+        "captain": "Lindalin Bernie",
+        "note": "18 · nv 91–99 · crónica"
+      },
+      "Platos": {
+        "top11": 83.0,
+        "captain": "Victorio Arno",
+        "note": "19 · nv 96–99 · crónica"
+      },
+      "Destroyers": {
+        "top11": 83.5,
+        "captain": "Kinis Elvim",
+        "note": "20 · nv 99 · crónica"
       }
     }
   }

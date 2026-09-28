@@ -9,6 +9,7 @@ export const GAME_SHORT: Record<GameId, string> = {
   GO3: 'GO3',
   ARES: 'Ares',
   ORION: 'Orion',
+  VR: 'VR',
 }
 
 export const GAME_LABEL: Record<GameId, string> = {
@@ -20,4 +21,5 @@ export const GAME_LABEL: Record<GameId, string> = {
   GO3: 'GO Galaxy',
   ARES: 'Ares no Tenbin',
   ORION: 'Orion no Kokuin',
+  VR: 'Victory Road',
 }
