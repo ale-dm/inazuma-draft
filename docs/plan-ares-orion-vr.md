@@ -1,6 +1,21 @@
 # Plan: Ares, Orion y Victory Road
 
-> Estado: **Ares hecho** (juego `ARES`, 199 cartas; `tools/db/ares.py`). Orion y Victory Road: pendientes (datos de Orion ya guardados en `data/azalee` y `data/roadtoultimate`, sin revisar).
+> Estado:
+> - **Ares hecho**: juego `ARES`, 199 cartas.
+> - **Orion hecho**: juego `ORION`, 207 cartas.
+> - Los dos salen de `tools/db/ares.py`. Victory Road queda pendiente.
+
+## Orion (hecho)
+
+- Mismo método que Ares, con estas diferencias:
+  - **Curva de IE3**: Orion es IE3 en la segunda línea temporal.
+  - Anclas en las cartas de **IE3**.
+  - Técnicas de VR del módulo `PlayerData/OK`.
+  - Técnicas del anime de «Desde Orion».
+  - Descripción marcada «Orion:».
+- **Inazuma Japón**: los jugadores de Ares que están en el Inazuma Japón de Orion tienen **dos cartas**, la de Ares (en su equipo de Ares) y la de Orion (Inazuma Japón). Como la ficha de zukan es la misma, el nº oficial es de la carta de Ares y la de Orion lleva un nº propio.
+- El resto, en su equipo de Orion: los de las fichas que se estrenan en Orion (Gigantes Invencibles, Chispas Perfectas…).
+- Pendiente: curva de rivales de Orion (`team_tuning.ORION`).
 
 ## Ares (hecho)
 

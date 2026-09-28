@@ -10,7 +10,7 @@ const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL ?? 'https://xacgoiaejdgjr
 const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_KEY ?? 'sb_publishable_iaMxVv0YacdSYbqOArEMJw_7OMGCMhb'
 const PAGE = 1000
 
-export const GAMES: GameId[] = ['IE1', 'IE2', 'IE3', 'GO1', 'GO2', 'GO3', 'ARES']
+export const GAMES: GameId[] = ['IE1', 'IE2', 'IE3', 'GO1', 'GO2', 'GO3', 'ARES', 'ORION']
 export const POSITIONS: Position[] = ['GK', 'DF', 'MF', 'FW']
 export const CATEGORIES: Category[] = ['Legendary Player', 'Top Player', 'Advanced Player', 'Growing Player', 'Common Player']
 export const ELEMENTS: Element[] = ['fire', 'wood', 'air', 'earth']
