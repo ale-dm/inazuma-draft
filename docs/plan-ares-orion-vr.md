@@ -46,8 +46,12 @@
 - Stats de Victory Road de la carta (`raw_stats`): plantilla Lv50 × rareza de su categoría (Común = Normal ×1,0 … Legendario ×1,4).
 - Supertécnicas de la carta, por orden de preferencia:
   1. **Las del anime de Ares**: wiki española, «Supertécnicas → Anime → Desde Ares». En los clásicos es el bloque de la segunda línea temporal, así que nunca salen las de la serie original.
-  2. Si no las hay: **Road to Ultimate, la ficha de Ares del personaje**, con las técnicas comunes y la rama principal (sin la rama alternativa).
-  3. Si tampoco hay: todas las de Victory Road.
+  2. Si no las hay: **la ficha principal del personaje en el módulo de ese juego de la wiki inglesa** (`PlayerData/AT`, `/OK` o `/VR`).
+     - Se descartan las formas de niño, adulto, Mixi Max o armadura, y la rama alternativa (`a=true`).
+     - Se quedan solo las supertécnicas; fuera keshin e hipertécnicas.
+     - Road to Ultimate a veces trae otra forma del personaje: su Harper Evans «normal» es la versión de niño.
+  3. Si tampoco: **Road to Ultimate, la ficha de ese juego del personaje**, con las técnicas comunes y la rama principal (sin la rama alternativa).
+  4. Si tampoco hay: todas las de Victory Road.
   - Cada técnica es la de la base si existe (por nombre en castellano o japonés). Si no, una nueva `vr_<código>` con su potencia de VR, o `es_<nombre>` si solo se conoce el nombre en castellano.
   - Fuera las 19 técnicas básicas de Victory Road (potencia base 30, máx. 200: Power Shot, Dust Kick, Heel Flick, Deceptive Step…), las que todos aprenden a nivel 1.
   - La **nota** sigue saliendo de la potencia de sus supertécnicas de Victory Road.
