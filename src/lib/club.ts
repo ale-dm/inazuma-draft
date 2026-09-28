@@ -46,20 +46,10 @@ export interface ClubState {
   puzzles: string[]
   /** Mejor racha de Higher/Lower */
   hlBest: number
-  /** Evoluciones en curso */
-  evos: ActiveEvo[]
   /** Retos (SBC) hechos: id → veces */
   sbcDone: Record<string, number>
   /** Escudo del club (equipo de una colección completada) */
   crest: string | null
-}
-
-/** Evolución en curso: carta, destino (Mixi Max) y contadores de siempre al empezar (las tareas cuentan desde ahí) */
-export interface ActiveEvo {
-  evo: string
-  cardId: string
-  target?: string
-  start: Record<string, number>
 }
 
 const KEY = 'ffi-club-v1'
@@ -69,7 +59,7 @@ export const STARTER_PACKS = ['starter']
 const fresh = (): ClubState => ({
   coins: STARTER_COINS, xp: 0, cards: {}, packs: [...STARTER_PACKS], streak: 0, lastDaily: null,
   day: null, counters: {}, claimed: [], collections: [], squads: [],
-  week: null, weekCounters: {}, weekClaimed: [], career: {}, careerClaimed: [], dailyCup: null, puzzles: [], hlBest: 0, evos: [], sbcDone: {}, crest: null,
+  week: null, weekCounters: {}, weekClaimed: [], career: {}, careerClaimed: [], dailyCup: null, puzzles: [], hlBest: 0, sbcDone: {}, crest: null,
 })
 
 function read(): ClubState {
@@ -209,22 +199,6 @@ export function saveSquad(squad: Squad) {
 
 export function deleteSquad(id: string) {
   updateClub(s => ({ ...s, squads: s.squads.filter(q => q.id !== id) }))
-}
-
-/** Cambia una carta por otra en el club: quita una copia de `from` (y, si era la última, la cambia en las
- *  plantillas) y suma una de `to` */
-export function swapCard(from: string, to: string) {
-  updateClub(s => {
-    const cards = { ...s.cards }
-    const left = (cards[from] ?? 0) - 1
-    if (left > 0) cards[from] = left
-    else delete cards[from]
-    cards[to] = (cards[to] ?? 0) + 1
-    const squads = left > 0 ? s.squads : s.squads.map(q => ({
-      ...q, cards: Object.fromEntries(Object.entries(q.cards).map(([slot, id]) => [slot, id === from ? to : id])),
-    }))
-    return { ...s, cards, squads }
-  })
 }
 
 /** Quita una copia de cada carta (retos) */

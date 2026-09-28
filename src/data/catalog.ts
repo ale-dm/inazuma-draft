@@ -1,7 +1,6 @@
 import type { Category, DraftPool, DraftPoolKey, Element, GameId, Player, Position, Special, Staff, StaffRole, Technique } from '../types'
 import { GAME_LABEL } from './games'
 import { getEdits, type CardEdit } from '../lib/admin-edits'
-import { EVO_BOOST, applyBoost, parseEvoId } from '../lib/evo-boosts'
 
 /**
  * Catálogo de jugadores desde Supabase (generado por tools/db/build.py).
@@ -231,7 +230,6 @@ export function rebuildCatalog() {
     }
   })
   byId = new Map(players.map(p => [p.id, p]))
-  evolved.clear()
 
   const groups = new Map<string, Player[]>()
   for (const p of players) {
@@ -341,22 +339,8 @@ export function getAllPlayers(): Player[] {
   return players
 }
 
-/** Cartas evolucionadas del club ya montadas (se vacía al volver a montar el catálogo) */
-const evolved = new Map<string, Player>()
-
 export function getPlayer(id: string): Player | undefined {
-  const p = byId.get(id)
-  if (p) return p
-  const evo = parseEvoId(id)
-  if (!evo || !EVO_BOOST[evo[0]]) return undefined
-  let e = evolved.get(id)
-  if (!e) {
-    const base = getPlayer(evo[1])
-    if (!base) return undefined
-    e = applyBoost(base, evo[0], id)
-    evolved.set(id, e)
-  }
-  return e
+  return byId.get(id)
 }
 
 /** Todas las versiones de un personaje, de la más antigua a la más reciente */

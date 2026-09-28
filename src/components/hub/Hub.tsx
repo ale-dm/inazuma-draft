@@ -3,12 +3,12 @@ import type { Player } from '../../types'
 import { useAppSettings } from '../../context/AppSettings'
 import { getAllPlayers, getCharacterVersions, teamLogo } from '../../data/catalog'
 import { loadProgress, uniqueCharacters } from '../../lib/progress'
-import { ADMIN_HASH, BADGES_HASH, EVO_HASH, SBC_HASH, CLUB_HASH, COLLECTIONS_HASH, CUPS_HASH, DUEL_HASH, HL_HASH, OBJECTIVES_HASH, PLAYERS_HASH, PUZZLES_HASH, SQUADS_HASH, STORE_HASH } from '../../lib/route'
+import { ADMIN_HASH, BADGES_HASH, SBC_HASH, CLUB_HASH, COLLECTIONS_HASH, CUPS_HASH, DUEL_HASH, HL_HASH, OBJECTIVES_HASH, PLAYERS_HASH, PUZZLES_HASH, SQUADS_HASH, STORE_HASH } from '../../lib/route'
 import { useClub } from '../../lib/club'
 import { pendingRewards } from '../../lib/objectives'
 import InaCard from '../InaCard'
 import Coin from '../Coin'
-import { ArrowLeftRight, BookOpen, ClipboardList, Cloud, Layers, Puzzle, Settings, Shield, ShoppingBag, Target, TrendingUp, Zap } from 'lucide-react'
+import { ArrowLeftRight, BookOpen, ClipboardList, Cloud, Layers, Puzzle, Settings, Shield, ShoppingBag, Target, Zap } from 'lucide-react'
 import RulesModal from '../RulesModal'
 import StatsModal from '../StatsModal'
 import Sheet from './Sheet'
@@ -101,7 +101,7 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
           </div>
         </section>
 
-        {/* 2 · Draft + tienda, últimas cartas, objetivos, retos, evoluciones */}
+        {/* 2 · Draft + tienda, últimas cartas, objetivos y retos */}
         <section className="hub-page hub-page--violet">
           <HeroTile title={t('hub.draft')} sub={t('hub.draftSub')} image={heroes.draft} onClick={() => setSheet('mode')} />
           <div className="hub-grid">
@@ -109,7 +109,6 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
             <Tile label={t('hub.latest')} onClick={goPlayers}><CardFan players={latest} /></Tile>
             <Tile label={t('hub.objectives')} onClick={go(OBJECTIVES_HASH)} badge={pending}><Target className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
             <Tile label={t('hub.sbc')} onClick={go(SBC_HASH)}><Puzzle className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
-            <Tile label={t('hub.evolutions')} onClick={go(EVO_HASH)} wide badge={club.evos.length || undefined}><TrendingUp className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
           </div>
         </section>
 

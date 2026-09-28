@@ -20,7 +20,7 @@ import Tournament from './components/Tournament'
 import ExportTeamButton from './components/ExportTeamButton'
 import PlayersExplorer from './components/PlayersExplorer'
 import {
-  ADMIN_HASH, BADGES_HASH, EVO_HASH, SBC_HASH, CLUB_HASH, COLLECTIONS_HASH, CUPS_HASH, DUEL_HASH, HL_HASH, OBJECTIVES_HASH, PLAYERS_HASH, PUZZLES_HASH,
+  ADMIN_HASH, BADGES_HASH, SBC_HASH, CLUB_HASH, COLLECTIONS_HASH, CUPS_HASH, DUEL_HASH, HL_HASH, OBJECTIVES_HASH, PLAYERS_HASH, PUZZLES_HASH,
   SQUADS_HASH, STORE_HASH, useHashRoute,
 } from './lib/route'
 import Duel, { type DuelSource } from './components/modes/Duel'
@@ -29,7 +29,6 @@ import Cups from './components/modes/Cups'
 import Puzzles from './components/modes/Puzzles'
 import Admin from './components/admin/Admin'
 import SbcScreen from './components/phase5/Sbc'
-import Evolutions from './components/phase5/Evolutions'
 import Badges from './components/phase5/Badges'
 import Squads from './components/club/Squads'
 import Store from './components/club/Store'
@@ -274,7 +273,7 @@ export default function App() {
     : {
       [STORE_HASH]: <Store />, [CLUB_HASH]: <MyCards />, [COLLECTIONS_HASH]: <Collections />, [OBJECTIVES_HASH]: <Objectives />,
       [SQUADS_HASH]: <Squads />, [HL_HASH]: <HigherLower />, [CUPS_HASH]: <Cups />, [PUZZLES_HASH]: <Puzzles />, [ADMIN_HASH]: <Admin />,
-      [SBC_HASH]: <SbcScreen />, [EVO_HASH]: <Evolutions />, [BADGES_HASH]: <Badges />,
+      [SBC_HASH]: <SbcScreen />, [BADGES_HASH]: <Badges />,
     }[route]
 
   return (

@@ -14,7 +14,6 @@ export const CUPS_HASH = '#/copas'
 export const PUZZLES_HASH = '#/puzzles'
 /** Fase 5 */
 export const SBC_HASH = '#/retos'
-export const EVO_HASH = '#/evoluciones'
 export const BADGES_HASH = '#/insignias'
 /** CRUD oculto (sin enlace: 7 toques en el logo de la pantalla principal) */
 export const ADMIN_HASH = '#/admin'

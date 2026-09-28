@@ -210,3 +210,8 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
 - Textos con plural: `{n|copa|copas}` en las traducciones.
 - Probado: reto (sobre y copias gastadas), evolución Mixi Max (Bailong → Mixi Max Victor) y espíritu guerrero
   (+4 de media, EVO), insignias y escudo del club.
+
+### Evoluciones descartadas
+- Se hicieron (Mixi Max → carta real; espíritu guerrero, armadura, tótem y entrenamiento con cartas "evo~…") y se
+  quitaron enteras a petición: pantalla, lógica, casilla de la pantalla principal, logros de evoluciones y textos.
+  Están en el commit a6d67b0 por si algún día se recuperan. La fase 5 queda en retos e insignias.

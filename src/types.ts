@@ -72,8 +72,6 @@ export interface Player {
   extraTeams: string[]
   /** Estadísticas de duelo puestas a mano (CRUD); las que falten se calculan (lib/duel.ts) */
   duel?: { att: number | null; con: number | null; def: number | null }
-  /** Evoluciones que lleva (carta del club evolucionada: "evo~keshin~<id>") */
-  evo?: string[]
 }
 
 export interface Special {

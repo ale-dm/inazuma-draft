@@ -23,8 +23,6 @@ export const ACHIEVEMENTS: Achievement[] = [
   { id: 'puzzle10', key: 'ach.puzzle', goal: 10, value: c('puzzles') },
   { id: 'hl10', key: 'ach.hl', goal: 10, value: s => s.hlBest },
   { id: 'sbc5', key: 'ach.sbc', goal: 5, value: c('sbcs') },
-  { id: 'evo1', key: 'ach.evo', goal: 1, value: c('evos') },
-  { id: 'evo5', key: 'ach.evo', goal: 5, value: c('evos') },
   { id: 'coll1', key: 'ach.collection', goal: 1, value: s => s.collections.length },
   { id: 'coll10', key: 'ach.collection', goal: 10, value: s => s.collections.length },
   { id: 'cards100', key: 'ach.cards', goal: 100, value: s => Object.keys(s.cards).length },
