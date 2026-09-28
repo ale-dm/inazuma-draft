@@ -130,8 +130,8 @@ def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_j
     RTU = collections.defaultdict(list)
     for x in json.load(open(os.path.join(D, 'roadtoultimate', cfg['data']), encoding='utf-8')):
         RTU[x['zukan_id']].append(x)
-    moves = json.load(open(os.path.join(cache, 'moves.json'), encoding='utf-8'))
-    moves.update(json.load(open(os.path.join(D, 'azalee', 'wiki_moves_ares_orion.json'), encoding='utf-8')))
+    mv_info = json.load(open(os.path.join(cache, 'moves.json'), encoding='utf-8'))
+    mv_info.update(json.load(open(os.path.join(D, 'azalee', 'wiki_moves_ares_orion.json'), encoding='utf-8')))
     wz_page = dict(re.findall(r'\n\t(\w+)=\{\n\t\tpage="([^"]+)"', open(os.path.join(cache, 'WazaData.lua'), encoding='utf-8').read()))
     # técnicas de VR de la forma de ese juego en la wiki inglesa (Orion: módulo OK y, si no, el de Ares)
     AT = ''.join(open(os.path.join(cache, m_), encoding='utf-8').read() for m_ in (cfg['module'], 'PlayerData_AT.lua')
@@ -146,7 +146,7 @@ def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_j
 
     def az_skill(mid):
         pg = wz_page.get(mid) or mid
-        mv = moves.get(pg) or {}
+        mv = mv_info.get(pg) or {}
         return az_ja.get(norm(mv.get('name_jp'))) or az_en.get(norm(pg)) or az_en.get(norm(mv.get('name_dub')))
 
     # técnica de VR → técnica de la base (la misma si ya existe por nombre japonés; si no, una nueva "vr_<código>")
@@ -204,6 +204,29 @@ def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_j
         names = [n for k in ('commonTechniqueIds', 'baseBranchTechniqueIds') for s_ in (x['techniques'].get(k) or [])
                  for n in re.findall(r'\s*([^|]+?)\s*\(Lv\d+\)', s_)]
         return [technique_vr(az_fr[norm(n)]) for n in dict.fromkeys(names) if norm(n) in az_fr]
+
+    # ficha principal del personaje en el módulo de ese juego (sin forma de niño/adulto/alternativa): sus técnicas de VR
+    MOD = open(os.path.join(cache, cfg['module']), encoding='utf-8').read() if os.path.exists(os.path.join(cache, cfg['module'])) else ''
+    main_moves = {}
+    for m in re.finditer(r'\n\t(\w+)=\{\n\t\tpage="([^"]+)"(.*?)\n\t\}', MOD, re.S):
+        form = (re.search(r'\n\t\tform="([^"]*)"', m.group(3)) or [None, ''])[1].lower()
+        vm = re.search(r'\n\t\t\tVR=\{(.*?)\n\t\t\t\}', m.group(3), re.S)
+        if not vm or any(w in form for w in ('child', 'young', 'adult', 'mixi', 'armed')):
+            continue
+        rank = 0 if not form or game.lower() in form or cfg['label'].lower() in form else 1
+        prev = main_moves.get(m.group(2))
+        if not prev or rank < prev[0]:
+            # sin la rama alternativa (a=true), que en el juego se elige en lugar de la principal
+            main_moves[m.group(2)] = (rank, [x for x, alt in re.findall(r'\{"(\w+)",[^,}]*(,\s*a\s*=\s*true)?\}', vm.group(1)) if not alt])
+
+    def wiki_moves(pg):
+        """técnicas de su ficha principal de la wiki inglesa (solo supertécnicas; sin keshin ni básicas)"""
+        out = []
+        for mid in (main_moves.get(pg) or (0, []))[1]:
+            code = az_skill(mid)
+            if code and SK[code]['category'] in CAT_TYPE and (SK[code].get('max') or 0) > 200:
+                out.append(technique_vr(code))
+        return out
 
     at_by_page = {}
     for m in re.finditer(r'\n\t(\w+)=\{\n\t\tpage="([^"]+)"(.*?)\n\t\}', AT, re.S):
@@ -314,6 +337,8 @@ def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_j
         es = es_desc.get(r['page']) or {} if r['page'] else {}
         moves = [technique_es(n, t_) for n, t_ in anime_ares_moves(es.get('techniques'), game)]
         src_m = 'anime'
+        if not moves and r['page']:
+            moves, src_m = wiki_moves(r['page']), 'wiki'
         if not moves:
             moves, src_m = rtu_moves(z['id']), 'rtu'
         if not moves:
@@ -338,5 +363,6 @@ def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_j
         })
         new_chars.setdefault(char_id, {'id': char_id, 'name': z['name'], 'wiki_page': r['page'], 'zukan_no': z['no']})
     report.append(f"{cfg['label']}: supertécnicas de la carta — " + ', '.join(f'{k} {v}' for k, v in move_src.items())
-                  + f" (anime = wiki española «Desde {cfg['label']}»; rtu = Road to Ultimate, comunes + rama principal; vr = todas las de VR)")
+                  + f" (anime = wiki española «Desde {cfg['label']}»; wiki = ficha principal del módulo {cfg['module'][:-4]} de la wiki inglesa;"
+                    " rtu = Road to Ultimate, comunes + rama principal; vr = todas las de VR)")
     return cards, new_chars

@@ -313,10 +313,8 @@
     "Intelligence": 134
    },
    "techniques": [
-    "SoyokazeStep",
-    "vr_whs00140",
-    "SnowAngel",
-    "RCShoot"
+    "vr_whs03040",
+    "vr_whs03150"
    ]
   },
   {
@@ -881,8 +879,8 @@
     "Intelligence": 130
    },
    "techniques": [
-    "NeoGalaxy",
-    "AssaultShoot"
+    "vr_whs03060",
+    "vr_whs03220"
    ]
   },
   {
@@ -1151,6 +1149,7 @@
     "Intelligence": 113
    },
    "techniques": [
+    "vr_whk01600",
     "DestinyCloud",
     "GyroSaving",
     "ReverseWorld"
@@ -2108,10 +2107,11 @@
     "Intelligence": 121
    },
    "techniques": [
-    "FireTornado",
-    "MegatonHead",
-    "SpiralDraw",
-    "BakunetsuStorm_K"
+    "vr_whs10030",
+    "vr_whs10110",
+    "InazumaBreak",
+    "FlameDance",
+    "SpiralDraw"
    ]
   },
   {
@@ -2154,10 +2154,11 @@
     "Intelligence": 121
    },
    "techniques": [
-    "FireTornado",
-    "MegatonHead",
-    "SpiralDraw",
-    "BakunetsuStorm_K"
+    "vr_whs10030",
+    "vr_whs10110",
+    "InazumaBreak",
+    "FlameDance",
+    "SpiralDraw"
    ]
   },
   {
@@ -3808,8 +3809,7 @@
    },
    "techniques": [
     "vr_whs03000",
-    "vr_whd01560",
-    "vr_whs03240"
+    "vr_whs03140"
    ]
   },
   {
@@ -4957,6 +4957,7 @@
    "techniques": [
     "vr_whs03030",
     "OlympusHarmony",
+    "Phalanx",
     "OdinSword"
    ]
   },
@@ -5610,6 +5611,7 @@
    "techniques": [
     "vr_whs03030",
     "IgniteSteal",
+    "Phalanx",
     "vr_who00270"
    ]
   },
@@ -5799,10 +5801,10 @@
     "Intelligence": 121
    },
    "techniques": [
-    "RyuuseiBlade",
-    "SouthernCrosscut",
-    "PhotonFlash",
-    "Supernova"
+    "HuntersNet",
+    "MoguraShuffle",
+    "BlitzBridge",
+    "TwinMixer"
    ]
   },
   {
@@ -5890,9 +5892,9 @@
    },
    "techniques": [
     "TheWall",
-    "TheMountain",
-    "ElephantPress",
-    "SuperArmadillo"
+    "SuperArmadillo",
+    "MoguraFeint",
+    "MegaQuake"
    ]
   },
   {
@@ -6344,6 +6346,7 @@
     "Intelligence": 120
    },
    "techniques": [
+    "vr_whs03160",
     "RyuuseiBlade",
     "SuperScanOF",
     "DoubleTornado"
@@ -6437,6 +6440,52 @@
     "KouteiPenguin2gou",
     "MueiSouha",
     "ExtendZone"
+   ]
+  },
+  {
+   "id": "lumina--vr--base",
+   "character_id": "lumina",
+   "name": "Lumina",
+   "game": "VR",
+   "saga": "IE",
+   "version": "base",
+   "team": "Sub Character",
+   "position": "GK",
+   "element": "air",
+   "ovr": 88,
+   "category": "Top Player",
+   "tier": "A",
+   "source": "Victory Road (tier 3) + técnicas",
+   "shooting": 91,
+   "control": 82,
+   "defense": 82,
+   "physical": 82,
+   "speed": 82,
+   "goalkeeping": 92,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/h/r/hruekykzqye.png",
+   "zukan_id": "k/h/r/hruekykzqye",
+   "zukan_no": 5771,
+   "is_version": false,
+   "description": "A disciplined professional with much on her plate, yet her love for Vic shines as brightly as her name.",
+   "description_es": null,
+   "no": 5771,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "Victory Road Lv50 · emerite",
+    "Kick": 117,
+    "Control": 126,
+    "Technique": 118,
+    "Pressure": 127,
+    "Physical": 136,
+    "Agility": 144,
+    "Intelligence": 126
+   },
+   "techniques": [
+    "AuroraCurtain",
+    "CrystalBarrier",
+    "ShiningHole",
+    "vr_whk01510"
    ]
   },
   {
@@ -6806,6 +6855,52 @@
     "ShippuuDash",
     "AirBullet",
     "KazaanaDrive"
+   ]
+  },
+  {
+   "id": "raimon-natsumi--vr--base",
+   "character_id": "raimon-natsumi",
+   "name": "Nelly Evans",
+   "game": "VR",
+   "saga": "IE",
+   "version": "base",
+   "team": "Sub Character",
+   "position": "FW",
+   "element": "fire",
+   "ovr": 88,
+   "category": "Top Player",
+   "tier": "A",
+   "source": "Victory Road (tier 3) + técnicas + raimon-natsumi--go1--base",
+   "shooting": 90,
+   "control": 83,
+   "defense": 89,
+   "physical": 89,
+   "speed": 88,
+   "goalkeeping": 86,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/l/xlssj153see.png",
+   "zukan_id": "k/x/l/xlssj153see",
+   "zukan_no": 5218,
+   "is_version": false,
+   "description": "Excelling in most things, she's followed in her father's footsteps and now serves as Raimon Junior High's chairperson.",
+   "description_es": null,
+   "no": 5218,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "Victory Road Lv50 · emerite",
+    "Kick": 157,
+    "Control": 150,
+    "Technique": 136,
+    "Pressure": 114,
+    "Physical": 110,
+    "Agility": 110,
+    "Intelligence": 121
+   },
+   "techniques": [
+    "RoseSplash",
+    "MatadorFeint",
+    "vr_who10070",
+    "TheEarth"
    ]
   },
   {
@@ -7869,8 +7964,8 @@
    },
    "techniques": [
     "ExtremeRabbit",
-    "ShellbitBurst",
-    "KazaanaDrive"
+    "KazaanaDrive",
+    "ShellbitBurst"
    ]
   },
   {
@@ -7914,8 +8009,8 @@
    },
    "techniques": [
     "ExtremeRabbit",
-    "ShellbitBurst",
-    "KazaanaDrive"
+    "KazaanaDrive",
+    "ShellbitBurst"
    ]
   },
   {
@@ -9125,9 +9220,7 @@
    },
    "techniques": [
     "vr_whs10040",
-    "vr_whs10010",
-    "Cyclone",
-    "WhiteBlade"
+    "vr_whs10010"
    ]
   },
   {
@@ -9305,9 +9398,7 @@
     "Intelligence": 129
    },
    "techniques": [
-    "vr_whd10010",
-    "vr_whd10080",
-    "DashStorm"
+    "vr_whd10010"
    ]
   },
   {
@@ -9487,7 +9578,6 @@
    },
    "techniques": [
     "BunshinFeint",
-    "BlockCircus",
     "MoguraFeint"
    ]
   },
@@ -9781,7 +9871,8 @@
     "vr_whs10120",
     "PrestoTurn",
     "HeavensTime",
-    "KazaanaDrive"
+    "KazaanaDrive",
+    "AcrobatKeep"
    ]
   },
   {
@@ -10820,10 +10911,10 @@
     "Intelligence": 116
    },
    "techniques": [
-    "LaFlamme",
-    "TrickBall",
-    "TheMist",
-    "DeepMist"
+    "vr_whs03160",
+    "TenkuuOtoshi",
+    "HeatTackle",
+    "Hellfire"
    ]
   },
   {
@@ -11303,52 +11394,6 @@
    ]
   },
   {
-   "id": "lumina--vr--base",
-   "character_id": "lumina",
-   "name": "Lumina",
-   "game": "VR",
-   "saga": "IE",
-   "version": "base",
-   "team": "Sub Character",
-   "position": "GK",
-   "element": "air",
-   "ovr": 87,
-   "category": "Top Player",
-   "tier": "A",
-   "source": "Victory Road (tier 3) + técnicas",
-   "shooting": 90,
-   "control": 81,
-   "defense": 81,
-   "physical": 81,
-   "speed": 81,
-   "goalkeeping": 91,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/h/r/hruekykzqye.png",
-   "zukan_id": "k/h/r/hruekykzqye",
-   "zukan_no": 5771,
-   "is_version": false,
-   "description": "A disciplined professional with much on her plate, yet her love for Vic shines as brightly as her name.",
-   "description_es": null,
-   "no": 5771,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "Victory Road Lv50 · emerite",
-    "Kick": 117,
-    "Control": 126,
-    "Technique": 118,
-    "Pressure": 127,
-    "Physical": 136,
-    "Agility": 144,
-    "Intelligence": 126
-   },
-   "techniques": [
-    "AuroraCurtain",
-    "CrystalBarrier",
-    "ShiningHole",
-    "vr_whk01510"
-   ]
-  },
-  {
    "id": "endou-mamoru--vr--base",
    "character_id": "endou-mamoru",
    "name": "Mark Evans",
@@ -11388,9 +11433,10 @@
     "Intelligence": 126
    },
    "techniques": [
-    "MajinTheHand_K",
     "GodHand_Blue",
-    "NekketsuPunch"
+    "GodHandV",
+    "GodCatch",
+    "OmegaTheHand"
    ]
   },
   {
@@ -11440,52 +11486,6 @@
    ]
   },
   {
-   "id": "raimon-natsumi--vr--base",
-   "character_id": "raimon-natsumi",
-   "name": "Nelly Evans",
-   "game": "VR",
-   "saga": "IE",
-   "version": "base",
-   "team": "Sub Character",
-   "position": "FW",
-   "element": "fire",
-   "ovr": 87,
-   "category": "Top Player",
-   "tier": "A",
-   "source": "Victory Road (tier 3) + técnicas + raimon-natsumi--go1--base",
-   "shooting": 90,
-   "control": 80,
-   "defense": 88,
-   "physical": 89,
-   "speed": 85,
-   "goalkeeping": 85,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/l/xlssj153see.png",
-   "zukan_id": "k/x/l/xlssj153see",
-   "zukan_no": 5218,
-   "is_version": false,
-   "description": "Excelling in most things, she's followed in her father's footsteps and now serves as Raimon Junior High's chairperson.",
-   "description_es": null,
-   "no": 5218,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "Victory Road Lv50 · emerite",
-    "Kick": 157,
-    "Control": 150,
-    "Technique": 136,
-    "Pressure": 114,
-    "Physical": 110,
-    "Agility": 110,
-    "Intelligence": 121
-   },
-   "techniques": [
-    "RoseSplash",
-    "MatadorFeint",
-    "vr_who10070",
-    "TheEarth"
-   ]
-  },
-  {
    "id": "soramiya-sei--vr--base",
    "character_id": "soramiya-sei",
    "name": "Nikas Himmelstein",
@@ -11527,7 +11527,6 @@
    "techniques": [
     "vr_whs10020",
     "vr_who10050",
-    "TheMatrix",
     "FireTornado"
    ]
   },
@@ -11663,10 +11662,8 @@
     "Intelligence": 120
    },
    "techniques": [
-    "SouthernCrosscut",
-    "SpiralDraw",
-    "ZigzagSpark",
-    "AirBullet"
+    "SuperScanOF",
+    "DynamiteShoot"
    ]
   },
   {
@@ -11811,8 +11808,8 @@
    "techniques": [
     "vr_whs10050",
     "RollingSlide",
-    "Zanzou",
-    "RollingKick"
+    "RollingKick",
+    "vr_whk00360"
    ]
   },
   {
@@ -12343,7 +12340,6 @@
    "techniques": [
     "vr_whs10130",
     "SuperElastico",
-    "RoundSpark",
     "Claymore"
    ]
   },
@@ -12593,8 +12589,8 @@
    },
    "techniques": [
     "ExtremeRabbit",
-    "ShellbitBurst",
-    "KazaanaDrive"
+    "KazaanaDrive",
+    "ShellbitBurst"
    ]
   },
   {
@@ -12979,8 +12975,7 @@
    },
    "techniques": [
     "vr_whk00400",
-    "StarReflection",
-    "vr_whk01210"
+    "StarReflection"
    ]
   },
   {
@@ -15138,8 +15133,8 @@
     "Intelligence": 129
    },
    "techniques": [
+    "vr_whs03350",
     "AcrobatKeep",
-    "vr_who00060",
     "BraveShot"
    ]
   },
@@ -15374,10 +15369,10 @@
     "Intelligence": 120
    },
    "techniques": [
-    "DragonSlayer",
-    "DenraiHoutou",
-    "WhiteHurricane",
-    "vr_whs02990"
+    "DragonCrash",
+    "DragonTornado",
+    "WyvernCrash",
+    "WyvernBlizzard"
    ]
   },
   {
@@ -19257,9 +19252,9 @@
    },
    "techniques": [
     "IllusionBall",
-    "LastDeathZone",
-    "KouteiPenguin2gou",
-    "KillerFields"
+    "TwinBoost",
+    "SpinningCut",
+    "InazumaBreak"
    ]
   },
   {
@@ -19631,10 +19626,10 @@
     "Intelligence": 107
    },
    "techniques": [
-    "vr_whs03170",
-    "MaboroshiDribble",
     "SouthernCrosscut",
-    "SuperElastico"
+    "vr_whd01460",
+    "IllusionBall",
+    "PrestoTurn"
    ]
   },
   {
@@ -23663,6 +23658,7 @@
     "Intelligence": 107
    },
    "techniques": [
+    "vr_whs02990",
     "MonkeyTurn",
     "MoguraFeint",
     "SneakingRaid"
@@ -24394,8 +24390,10 @@
     "Intelligence": 135
    },
    "techniques": [
-    "TatsumakiSenpuu",
-    "vr_whd00220"
+    "JudgeThrough",
+    "vr_whd01490",
+    "SpinningShoot",
+    "ShootingStar"
    ]
   },
   {
@@ -25405,10 +25403,9 @@
     "Intelligence": 116
    },
    "techniques": [
-    "HitoriOneTwo",
-    "RCShoot",
-    "DokonjouBat",
-    "HonooNoKazamidori"
+    "PatriotShoot",
+    "SuperScanOF",
+    "FireTornado"
    ]
   },
   {
@@ -28276,6 +28273,7 @@
    "techniques": [
     "vr_whs03030",
     "Kamaitachi",
+    "Phalanx",
     "Moonsault"
    ]
   },
@@ -32191,10 +32189,10 @@
     "Intelligence": 129
    },
    "techniques": [
-    "SpinningCut",
+    "vr_who00090",
+    "vr_whs00140",
     "MonkeyTurn",
-    "RunBallRun",
-    "MaboroshiDribble"
+    "RunBallRun"
    ]
   },
   {
@@ -33362,6 +33360,7 @@
    },
    "techniques": [
     "vr_whs03200",
+    "vr_whs03310",
     "HornTrain",
     "RapidFire"
    ]
@@ -33545,7 +33544,7 @@
    },
    "techniques": [
     "KillerSlide",
-    "VolcanoCut",
+    "BladeAttack",
     "BackTornado",
     "HurricaneArrow"
    ]
@@ -35972,10 +35971,10 @@
     "Intelligence": 98
    },
    "techniques": [
-    "vr_whs03080",
-    "DinosaurBreak",
-    "FakeBall",
-    "Doukasen"
+    "vr_whs02990",
+    "ShippuuDash",
+    "DashAccel",
+    "vr_whd00220"
    ]
   },
   {
@@ -36249,8 +36248,8 @@
    "techniques": [
     "ReflectBuster",
     "DashStorm",
-    "HeatTackle",
-    "DivineArrow"
+    "DivineArrow",
+    "HornTrain"
    ]
   },
   {
@@ -36339,9 +36338,9 @@
    },
    "techniques": [
     "AstroBreak",
-    "LightningAccel",
+    "WarpDrive",
     "UniverseBlast",
-    "DeepMist"
+    "LightningAccel"
    ]
   },
   {
@@ -36616,8 +36615,7 @@
    "techniques": [
     "vr_whd00190",
     "vr_whd00150",
-    "JudgeThrough",
-    "vr_who00060"
+    "JudgeThrough"
    ]
   },
   {
@@ -37028,10 +37026,10 @@
     "Intelligence": 108
    },
    "techniques": [
-    "TriangleZ",
     "BackTornado",
+    "TriangleZ",
     "IllusionBall",
-    "GrenadeShot"
+    "BoostGlider"
    ]
   },
   {
@@ -37129,9 +37127,9 @@
    },
    "techniques": [
     "QuickDraw",
-    "CrossDrive",
+    "SpiralShot",
     "IllusionBall",
-    "DashStorm"
+    "BackTornado"
    ]
   },
   {
@@ -37805,6 +37803,7 @@
     "Intelligence": 106
    },
    "techniques": [
+    "vr_whs02990",
     "vr_who00270",
     "BunshinFeint",
     "DragonGround"
@@ -38264,56 +38263,10 @@
     "Intelligence": 119
    },
    "techniques": [
-    "GrenadeShot",
     "Gorimuchuu",
+    "GrenadeShot",
     "FakeBall",
-    "DoubleGrenade"
-   ]
-  },
-  {
-   "id": "numazu--vr--base",
-   "character_id": "numazu",
-   "name": "Sami Wampovich",
-   "game": "VR",
-   "saga": "IE",
-   "version": "base",
-   "team": "Unaffiliated",
-   "position": "GK",
-   "element": "earth",
-   "ovr": 82,
-   "category": "Advanced Player",
-   "tier": "C",
-   "source": "Victory Road (tier 0) + técnicas",
-   "shooting": 78,
-   "control": 85,
-   "defense": 76,
-   "physical": 76,
-   "speed": 85,
-   "goalkeeping": 86,
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/q/u/quxnzx3iko8.png",
-   "zukan_id": "k/q/u/quxnzx3iko8",
-   "zukan_no": 5749,
-   "is_version": false,
-   "description": "Turned down the marine biology club to study river life solo in total peace and quiet.",
-   "description_es": null,
-   "no": 5749,
-   "specials": [],
-   "extra_teams": [],
-   "raw_stats": {
-    "form": "Victory Road Lv50 · experimente",
-    "Kick": 101,
-    "Control": 110,
-    "Technique": 103,
-    "Pressure": 116,
-    "Physical": 121,
-    "Agility": 125,
-    "Intelligence": 110
-   },
-   "techniques": [
-    "ExcellentBreast",
-    "NininSankyaku",
-    "vr_whk00510",
-    "GodCatch"
+    "TwinBoost"
    ]
   },
   {
@@ -38492,10 +38445,10 @@
     "Intelligence": 119
    },
    "techniques": [
-    "Cyclone",
     "RollingKick",
-    "ShootingStar",
-    "RevolutionV"
+    "ZigzagSpark",
+    "Cyclone",
+    "FreezeShot"
    ]
   },
   {
@@ -39652,7 +39605,7 @@
    },
    "techniques": [
     "CoilTurn",
-    "BunshinDefense",
+    "BunshinFeint",
     "KageNui",
     "FutureEye"
    ]
@@ -40072,7 +40025,8 @@
     "vr_whd00360",
     "GodHandX",
     "BakuretsuPunch",
-    "BeastFang"
+    "BeastFang",
+    "FullPowerShield"
    ]
   },
   {
@@ -40801,10 +40755,10 @@
     "Intelligence": 113
    },
    "techniques": [
-    "GodHand_Blue",
-    "MajinTheHand_K",
-    "MugenTheHand",
-    "MaouTheHand"
+    "UBoat",
+    "SuperScanOF",
+    "LiarShot",
+    "SecurityShot"
    ]
   },
   {
@@ -42131,7 +42085,6 @@
    "techniques": [
     "vr_who10050",
     "PatriotShoot",
-    "TheMatrix",
     "ZigzagSpark"
    ]
   },
@@ -42176,9 +42129,9 @@
    },
    "techniques": [
     "CoilTurn",
-    "KageNui",
+    "vr_whd00220",
     "Zanzou",
-    "KagomeKagome"
+    "KageNui"
    ]
   },
   {
@@ -42221,10 +42174,9 @@
     "Intelligence": 108
    },
    "techniques": [
-    "FireTornado",
-    "BunshinFeint",
-    "ZigzagSpark",
-    "FutureEye"
+    "PsychoShot",
+    "SuperScanOF",
+    "FireTornado"
    ]
   },
   {
@@ -44414,6 +44366,52 @@
    ]
   },
   {
+   "id": "numazu--vr--base",
+   "character_id": "numazu",
+   "name": "Sami Wampovich",
+   "game": "VR",
+   "saga": "IE",
+   "version": "base",
+   "team": "Unaffiliated",
+   "position": "GK",
+   "element": "earth",
+   "ovr": 81,
+   "category": "Advanced Player",
+   "tier": "C",
+   "source": "Victory Road (tier 0) + técnicas",
+   "shooting": 77,
+   "control": 84,
+   "defense": 75,
+   "physical": 75,
+   "speed": 84,
+   "goalkeeping": 85,
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/q/u/quxnzx3iko8.png",
+   "zukan_id": "k/q/u/quxnzx3iko8",
+   "zukan_no": 5749,
+   "is_version": false,
+   "description": "Turned down the marine biology club to study river life solo in total peace and quiet.",
+   "description_es": null,
+   "no": 5749,
+   "specials": [],
+   "extra_teams": [],
+   "raw_stats": {
+    "form": "Victory Road Lv50 · experimente",
+    "Kick": 101,
+    "Control": 110,
+    "Technique": 103,
+    "Pressure": 116,
+    "Physical": 121,
+    "Agility": 125,
+    "Intelligence": 110
+   },
+   "techniques": [
+    "ExcellentBreast",
+    "NininSankyaku",
+    "vr_whk00510",
+    "GodCatch"
+   ]
+  },
+  {
    "id": "haie-kuon--vr--base",
    "character_id": "haie-kuon",
    "name": "Sampa Eonius",
@@ -44590,10 +44588,9 @@
     "Intelligence": 124
    },
    "techniques": [
-    "BurningSummer",
-    "DemonCut",
-    "TwinMixer",
-    "MadJuggler"
+    "vr_whs03130",
+    "RoundSpark",
+    "EndlessSummer"
    ]
   },
   {
@@ -44862,7 +44859,8 @@
     "vr_whs10120",
     "HonooNoKazamidori",
     "vr_whs00920",
-    "HinawaBullet"
+    "HinawaBullet",
+    "HitoriOneTwo"
    ]
   },
   {
@@ -45047,10 +45045,10 @@
     "Intelligence": 113
    },
    "techniques": [
-    "RocketKobushi",
-    "ShootPocket",
-    "DoubleRocket",
-    "DualSmash"
+    "BackTornado",
+    "TriangleZ",
+    "Moonsault",
+    "KillerSlide"
    ]
   },
   {
@@ -46909,7 +46907,8 @@
     "IllusionBall",
     "KouteiPenguin2gou",
     "TrickBall",
-    "OlympusHarmony"
+    "OlympusHarmony",
+    "AirBullet"
    ]
   },
   {
@@ -47381,7 +47380,8 @@
     "KazaanaDrive",
     "SkyWalk",
     "BunshinFeint",
-    "KillerFields"
+    "KillerFields",
+    "ShippuuDash"
    ]
   },
   {
@@ -47472,7 +47472,6 @@
    "techniques": [
     "ShineDrive",
     "vr_who10050",
-    "TheMatrix",
     "DivineArrow"
    ]
   },
@@ -48305,7 +48304,8 @@
     "TheTower",
     "ButterflyDream",
     "DoubleCyclone",
-    "PerfectTower"
+    "PerfectTower",
+    "WaterVeil"
    ]
   },
   {
@@ -48763,7 +48763,8 @@
     "DoubleGrenade",
     "AuroraDribble",
     "TrickBall",
-    "KillerFields"
+    "KillerFields",
+    "Shinkuuma"
    ]
   },
   {
@@ -48854,8 +48855,7 @@
    "techniques": [
     "TatsumakiSenpuu",
     "vr_whd00220",
-    "MaboroshiDribble",
-    "vr_who00060"
+    "MaboroshiDribble"
    ]
   },
   {
@@ -49314,7 +49314,8 @@
     "MaboroshiDribble",
     "vr_whs10120",
     "ProfileZone",
-    "PerfectTower"
+    "PerfectTower",
+    "CoilTurn"
    ]
   },
   {
@@ -49678,7 +49679,8 @@
     "SpinningShoot",
     "FlameDance",
     "RCShoot",
-    "TriangleZZ"
+    "TriangleZZ",
+    "HitoriOneTwo"
    ]
   },
   {
@@ -50463,7 +50465,8 @@
    "techniques": [
     "HornTrain",
     "HeatTackle",
-    "IllusionBall"
+    "IllusionBall",
+    "vr_whs03310"
    ]
   },
   {
@@ -51009,10 +51012,10 @@
     "Intelligence": 108
    },
    "techniques": [
-    "SpinningCut",
     "BackTornado",
     "TriangleZ",
-    "TripleBoost"
+    "JudgeThrough",
+    "SpinningCut"
    ]
   },
   {
@@ -51192,10 +51195,9 @@
     "Intelligence": 121
    },
    "techniques": [
-    "AuroraDribble",
-    "Kamaitachi",
-    "HurricaneArrow",
-    "SonicShot"
+    "SuperScanOF",
+    "PsychoShot",
+    "TwinBoost"
    ]
   },
   {
@@ -51241,7 +51243,8 @@
     "DimensionCut",
     "CoilUpper",
     "KageNui",
-    "DemonCut"
+    "DemonCut",
+    "MaboroshiDribble"
    ]
   },
   {
@@ -51522,10 +51525,10 @@
     "Intelligence": 115
    },
    "techniques": [
-    "vr_whs03300",
-    "SprintWarp",
-    "DiffuseChord",
-    "MelodyWave"
+    "AuroraCurtain",
+    "vr_whk00180",
+    "IceGround",
+    "DoubleCyclone"
    ]
   },
   {
@@ -52532,10 +52535,10 @@
     "Intelligence": 116
    },
    "techniques": [
-    "PrestoTurn",
-    "KageNui",
-    "DimensionCut",
-    "GoToHell"
+    "TheMatrix",
+    "BlockCircus",
+    "IllusionBall",
+    "DeepJungle"
    ]
   },
   {
@@ -55865,6 +55868,7 @@
     "Intelligence": 116
    },
    "techniques": [
+    "vr_whd01580",
     "AtlantisWall",
     "ZigzagFlame",
     "IgniteSteal"
@@ -60166,10 +60170,10 @@
     "Intelligence": 110
    },
    "techniques": [
-    "DashAccel",
-    "BlockCircus",
-    "NininSankyaku",
-    "SuperElastico"
+    "Gravestone",
+    "BunshinDefense",
+    "MoguraShuffle",
+    "KagomeKagome"
    ]
   },
   {
@@ -61962,6 +61966,7 @@
     "Intelligence": 107
    },
    "techniques": [
+    "vr_whd01580",
     "RoundSpark",
     "Zanzou",
     "vr_whs03190"
@@ -62377,7 +62382,8 @@
     "TheMist",
     "SoyokazeStep",
     "RoundSpark",
-    "TheIkaros"
+    "TheIkaros",
+    "CrossDrive"
    ]
   },
   {
@@ -63934,7 +63940,8 @@
    "techniques": [
     "vr_whs10120",
     "HeatTackle",
-    "TheIkaros"
+    "TheIkaros",
+    "LightningAccel"
    ]
   },
   {
@@ -64977,6 +64984,7 @@
     "Intelligence": 98
    },
    "techniques": [
+    "vr_whs02990",
     "CrossDrive",
     "HitoriOneTwo",
     "DualStrike"
@@ -65344,6 +65352,7 @@
    },
    "techniques": [
     "AtlantisWall",
+    "vr_whd01580",
     "HornTrain",
     "TheStamp"
    ]
@@ -70364,6 +70373,7 @@
     "Intelligence": 111
    },
    "techniques": [
+    "vr_whd01580",
     "WarpDrive",
     "Zanzou",
     "vr_whs03190"
@@ -75998,8 +76008,7 @@
    "techniques": [
     "vr_whk00360",
     "MoonsaultStamp",
-    "Galatyn",
-    "TheEnd"
+    "Galatyn"
    ]
   },
   {
@@ -76579,7 +76588,7 @@
    "tier": "B",
    "source": "Victory Road (tier 1) + técnicas",
    "shooting": 79,
-   "control": 78,
+   "control": 77,
    "defense": 78,
    "physical": 78,
    "speed": 78,
@@ -77616,7 +77625,6 @@
    },
    "techniques": [
     "WillyWilly",
-    "vr_who00060",
     "BodyShield",
     "BladeAttack"
    ]
@@ -77664,7 +77672,8 @@
     "FutureEye",
     "TheTower",
     "Senpuujin",
-    "GoToHeaven"
+    "GoToHeaven",
+    "SoyokazeStep"
    ]
   },
   {
@@ -77844,8 +77853,7 @@
    "techniques": [
     "vr_whs03030",
     "RollingSlide",
-    "AirBullet",
-    "ShadowGuard"
+    "AirBullet"
    ]
   },
   {
@@ -77891,7 +77899,8 @@
     "TsunamiBoost",
     "NaminoriPierrot",
     "AirBullet",
-    "GoToHeaven"
+    "GoToHeaven",
+    "vr_who00590"
    ]
   },
   {
@@ -82536,10 +82545,10 @@
     "Intelligence": 110
    },
    "techniques": [
-    "AuroraDribble",
-    "WhiteBlade",
-    "ShineDrive",
-    "NarakuOtoshi"
+    "SkyWalk",
+    "DashAccel",
+    "BlockCircus",
+    "UltraMoon"
    ]
   },
   {
@@ -83564,8 +83573,8 @@
    "techniques": [
     "FakeBall",
     "vr_who10040",
-    "ThiefEye",
-    "PatriotShoot"
+    "PrimaDonna",
+    "FrozenSteal"
    ]
   },
   {
@@ -85919,6 +85928,7 @@
     "Intelligence": 107
    },
    "techniques": [
+    "vr_whd01580",
     "WarpDrive",
     "RoundSpark",
     "HeavyBaby"
@@ -93624,10 +93634,10 @@
     "Intelligence": 107
    },
    "techniques": [
-    "WonderTrap",
-    "SoyoyagiStep",
-    "WhiteBlade",
-    "KazaanaDrive"
+    "TheWall",
+    "BlockCircus",
+    "DesertStorm",
+    "Shikofumi"
    ]
   },
   {
@@ -98553,6 +98563,7 @@
     "Intelligence": 110
    },
    "techniques": [
+    "vr_whd01580",
     "RoundSpark",
     "BoomerangFeint",
     "FlameVeil"
@@ -100732,6 +100743,7 @@
    },
    "techniques": [
     "RoundSpark",
+    "vr_whd01580",
     "WarpDrive",
     "IgniteSteal"
    ]
@@ -103163,10 +103175,10 @@
     "Intelligence": 116
    },
    "techniques": [
-    "BladeAttack",
-    "GrenadeShot",
-    "BunshinFeint",
-    "Aikidou"
+    "Earthquake",
+    "IllusionBall",
+    "ReflectBuster",
+    "MegaQuake"
    ]
   },
   {
@@ -105907,10 +105919,10 @@
     "Intelligence": 98
    },
    "techniques": [
-    "HyakuretsuShot",
-    "UltraMoon",
-    "TkachevBomber",
-    "WyvernCrash"
+    "SpinningCut",
+    "FlameDance",
+    "IgniteSteal",
+    "vr_who00270"
    ]
   },
   {
@@ -115174,7 +115186,6 @@
    },
    "techniques": [
     "vr_whs00570",
-    "vr_who00060",
     "vr_who00270",
     "KungFuAttack"
    ]
@@ -115958,10 +115969,10 @@
     "Intelligence": 107
    },
    "techniques": [
-    "CoilUpper",
-    "ExcellentBreast",
-    "Sidewinder",
-    "MagnetDraw"
+    "DeathZone",
+    "vr_whs02860",
+    "SuperScanOF",
+    "IllusionBall"
    ]
   },
   {
@@ -117464,6 +117475,7 @@
     "Intelligence": 96
    },
    "techniques": [
+    "vr_whd01580",
     "vr_whs03190",
     "CondorDive",
     "EagleBuster"
@@ -120653,7 +120665,7 @@
    "techniques": [
     "IllusionBall",
     "CoilUpper",
-    "DimensionCut",
+    "KageNui",
     "DemonCut"
    ]
   },
@@ -148783,9 +148795,7 @@
    },
    "techniques": [
     "TheWall",
-    "vr_whk00130",
-    "vr_whk00280",
-    "SerpentFang"
+    "vr_whk00130"
    ]
   },
   {
@@ -258684,25 +258694,6 @@
    ]
   },
   {
-   "id": "ShadowGuard",
-   "name": "Shadow Guard",
-   "name_es": "Guardia sombría",
-   "name_jp": "*シャドウガード",
-   "type": "Block",
-   "element": "air",
-   "cost": 32,
-   "cost_game": "GO3",
-   "costs": {
-    "GO3": 32,
-    "GO2": 32
-   },
-   "description": "Summon a swirling shield of shadow and slam your opponent aside to guide the ball back under your control.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/a/4/a4wfc-hbz9k.jpg",
-   "zukan_types": [
-    "Defence"
-   ]
-  },
-  {
    "id": "ShellbitBurst",
    "name": "Shell Burst",
    "name_es": "Cañonazo de fragmentos",
@@ -259880,6 +259871,24 @@
    ]
   },
   {
+   "id": "vr_who00270",
+   "name": "Gale Dash",
+   "name_jp": "烈風ダッシュ",
+   "name_es": "Avance flamígero",
+   "type": "Dribble",
+   "element": "fire",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 440
+   },
+   "description": "Unleash a souped-up Flurry Dash and blaze past opponents in a streak of fire.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/j/c/jcjii4ijzou.jpg",
+   "zukan_types": [
+    "Offence"
+   ]
+  },
+  {
    "id": "vr_who01420",
    "name": "Divine Dummy",
    "name_jp": "エンジェルレイ",
@@ -259911,24 +259920,6 @@
    },
    "description": "Erect a circular barrier around you to create myriad reflections and stop enemy attacks.",
    "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/b/l/bld35ygzjdc.jpg",
-   "zukan_types": [
-    "Defence"
-   ]
-  },
-  {
-   "id": "vr_whd00220",
-   "name": "About Face",
-   "name_jp": "後ろの正面",
-   "name_es": "Sorpresa",
-   "type": "Block",
-   "element": "earth",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 300
-   },
-   "description": "Strike from behind with a sneaky knee, then snatch the ball while they stagger.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/p/a/pam__aouxks.jpg",
    "zukan_types": [
     "Defence"
    ]
@@ -259981,6 +259972,24 @@
    "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/6/s/6sdvzaggdwk.jpg",
    "zukan_types": [
     "Shot"
+   ]
+  },
+  {
+   "id": "vr_whd00220",
+   "name": "About Face",
+   "name_jp": "後ろの正面",
+   "name_es": "Sorpresa",
+   "type": "Block",
+   "element": "earth",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 300
+   },
+   "description": "Strike from behind with a sneaky knee, then snatch the ball while they stagger.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/p/a/pam__aouxks.jpg",
+   "zukan_types": [
+    "Defence"
    ]
   },
   {
@@ -260072,42 +260081,6 @@
    },
    "description": "A long shot which pierces like a spear retaining the spirits of past rulers. A divine demonstration of majesty.",
    "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/l/e/ley00lgaudm.jpg",
-   "zukan_types": [
-    "Shot"
-   ]
-  },
-  {
-   "id": "vr_who00270",
-   "name": "Gale Dash",
-   "name_jp": "烈風ダッシュ",
-   "name_es": "Avance flamígero",
-   "type": "Dribble",
-   "element": "fire",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 440
-   },
-   "description": "Unleash a souped-up Flurry Dash and blaze past opponents in a streak of fire.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/j/c/jcjii4ijzou.jpg",
-   "zukan_types": [
-    "Offence"
-   ]
-  },
-  {
-   "id": "vr_whs03170",
-   "name": "Beyond the Sambadrome",
-   "name_jp": "デス・サンバ",
-   "name_es": "Samba letal",
-   "type": "Shoot",
-   "element": "wood",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 440
-   },
-   "description": "Dance to a savage samba rhythm and sweep past the keeper with a deadly flourish.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/h/g/hgajm3m1cgs.jpg",
    "zukan_types": [
     "Shot"
    ]
@@ -260294,24 +260267,6 @@
    ]
   },
   {
-   "id": "vr_who00060",
-   "name": "Rolling Hell",
-   "name_jp": "地獄車",
-   "name_es": null,
-   "type": "Dribble",
-   "element": "earth",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 440
-   },
-   "description": "Two players form a whirling wheel and slam into opponents, sending them flying.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/y/q/yqsf7pnpqe0.jpg",
-   "zukan_types": [
-    "Offence"
-   ]
-  },
-  {
    "id": "vr_whs02900",
    "name": "God Alone Knows",
    "name_jp": "ゴッドノウズ・インパクト",
@@ -260325,24 +260280,6 @@
    },
    "description": "Call upon the beauty and lightning of the heavens to rock the earth and mark the dawn of a new myth.",
    "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/l/s/lsp5ukptpvs.jpg",
-   "zukan_types": [
-    "Shot"
-   ]
-  },
-  {
-   "id": "vr_whs03300",
-   "name": "Hollow Blare",
-   "name_jp": "レクイエムダスト",
-   "name_es": "Polvo de réquiem",
-   "type": "Shoot",
-   "element": "earth",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 360
-   },
-   "description": "Envelop the ball in a holy melody of light and sound, then strike it to purify everything in its path.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/d/b/dbt5wmxlhfk.jpg",
    "zukan_types": [
     "Shot"
    ]
@@ -260489,24 +260426,6 @@
    ]
   },
   {
-   "id": "vr_whs02990",
-   "name": "Heavenly Tianlong",
-   "name_jp": "天竜",
-   "name_es": "Ímpetu de dragón",
-   "type": "Shoot",
-   "element": "earth",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 440
-   },
-   "description": "Channel the power of a mighty dragon into your foot and strike with a sharp, roaring shot.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/p/ipgccp4nals.jpg",
-   "zukan_types": [
-    "Shot"
-   ]
-  },
-  {
    "id": "vr_whs02980_or_02",
    "name": "Cosmic Blaster",
    "name_jp": "コズミックブラスター",
@@ -260580,19 +260499,19 @@
    ]
   },
   {
-   "id": "vr_whs03080",
-   "name": "Cannonball",
-   "name_jp": "カロネード砲",
-   "name_es": "Bala de cañón",
+   "id": "vr_whs02990",
+   "name": "Heavenly Tianlong",
+   "name_jp": "天竜",
+   "name_es": "Ímpetu de dragón",
    "type": "Shoot",
    "element": "earth",
    "cost": null,
    "cost_game": null,
    "costs": {
-    "VR_power": 360
+    "VR_power": 440
    },
-   "description": "Launch a cannon with a fiery kick and send the ball hurtling toward the net.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/8/b/8bttvqbqv5k.jpg",
+   "description": "Channel the power of a mighty dragon into your foot and strike with a sharp, roaring shot.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/p/ipgccp4nals.jpg",
    "zukan_types": [
     "Shot"
    ]
@@ -260635,6 +260554,24 @@
    ]
   },
   {
+   "id": "vr_whs03160",
+   "name": "Double-Trouble",
+   "name_jp": "ツインランサー",
+   "name_es": "Torbellino gemelo",
+   "type": "Shoot",
+   "element": "fire",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 440
+   },
+   "description": "Split the ball and drill through with a glowing, high-intensity combination strike.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/q/i/qixchiapxte.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
    "id": "vr_whs03000",
    "name": "Diamond Ray",
    "name_jp": "ダイヤモンドレイ",
@@ -260653,38 +260590,19 @@
    ]
   },
   {
-   "id": "vr_whd01560",
-   "name": "Formidable Fortress",
-   "name_jp": "ザ・シェルター",
-   "name_es": "Búnker",
-   "type": "Block",
-   "element": "earth",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 540
-   },
-   "description": "Construct a massive underground shelter and lock its layers to prevent any enemy breakthrough.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/2/r/2ros9j1stde.jpg",
-   "zukan_types": [
-    "Defence",
-    "Shot Block"
-   ]
-  },
-  {
-   "id": "vr_whs03240",
-   "name": "Perseus Strike",
-   "name_jp": "ペルセウスオーブ",
-   "name_es": "Orbe de Perseo",
+   "id": "vr_whs03140",
+   "name": "Diamond Cutter",
+   "name_jp": "ダイヤモンドエッジ",
+   "name_es": "Hoja diamantina",
    "type": "Shoot",
-   "element": "wood",
+   "element": "earth",
    "cost": null,
    "cost_game": null,
    "costs": {
     "VR_power": 640
    },
-   "description": "Call a great hero forth whose heart of justice drives the ball straight toward the goal.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/e/iel4dio8zf0.jpg",
+   "description": "Polish the ball with a diamond-hardened kick to send it arcing just before the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/b/p/bpjwfqt9pac.jpg",
    "zukan_types": [
     "Shot"
    ]
@@ -260946,6 +260864,24 @@
    ]
   },
   {
+   "id": "vr_whs03240",
+   "name": "Perseus Strike",
+   "name_jp": "ペルセウスオーブ",
+   "name_es": "Orbe de Perseo",
+   "type": "Shoot",
+   "element": "wood",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 640
+   },
+   "description": "Call a great hero forth whose heart of justice drives the ball straight toward the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/e/iel4dio8zf0.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
    "id": "vr_whk01510",
    "name": "Force Shield",
    "name_jp": "アルテミスリング",
@@ -261198,6 +261134,25 @@
    ]
   },
   {
+   "id": "vr_whd01560",
+   "name": "Formidable Fortress",
+   "name_jp": "ザ・シェルター",
+   "name_es": "Búnker",
+   "type": "Block",
+   "element": "earth",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 540
+   },
+   "description": "Construct a massive underground shelter and lock its layers to prevent any enemy breakthrough.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/2/r/2ros9j1stde.jpg",
+   "zukan_types": [
+    "Defence",
+    "Shot Block"
+   ]
+  },
+  {
    "id": "vr_who01450",
    "name": "Starstruck",
    "name_jp": "ブルー・スターダスト",
@@ -261271,6 +261226,24 @@
    ]
   },
   {
+   "id": "vr_whs03310",
+   "name": "Bullseye Blaze",
+   "name_jp": "レッドブレイク",
+   "name_es": "Chut al rojo vivo",
+   "type": "Shoot",
+   "element": "fire",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 360
+   },
+   "description": "Ignite your foot with flames and kick the ball with scorching force for a fierce, direct shot at the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/y/p/ypiy7zxfqsm.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
    "id": "vr_whk01650",
    "name": "Raiser Blade",
    "name_jp": "太陽のギロチン",
@@ -261308,6 +261281,24 @@
    ]
   },
   {
+   "id": "vr_whs03130",
+   "name": "Time Trance",
+   "name_jp": "タイムトランス",
+   "name_es": "Trance temporal",
+   "type": "Shoot",
+   "element": "earth",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 440
+   },
+   "description": "Halt the ball in time with mysterious power and strike at the perfect moment.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/d/u/dukkxzbrsgc.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
    "id": "vr_whk01670",
    "name": "Behind Bars",
    "name_jp": "忘却のソナタ",
@@ -261327,6 +261318,24 @@
    ]
   },
   {
+   "id": "vr_whs03300",
+   "name": "Hollow Blare",
+   "name_jp": "レクイエムダスト",
+   "name_es": "Polvo de réquiem",
+   "type": "Shoot",
+   "element": "earth",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 360
+   },
+   "description": "Envelop the ball in a holy melody of light and sound, then strike it to purify everything in its path.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/d/b/dbt5wmxlhfk.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
    "id": "vr_whk01540",
    "name": "Sun Block",
    "name_jp": "ダイナミック・コロナ",
@@ -261343,6 +261352,24 @@
    "zukan_types": [
     "Success",
     "Failure"
+   ]
+  },
+  {
+   "id": "vr_whd01580",
+   "name": "Red Hot Shower",
+   "name_jp": "レッドホットチリ・メテオ",
+   "name_es": "Meteorito ardiente",
+   "type": "Block",
+   "element": "fire",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 360
+   },
+   "description": "Rain down a massive meteor from the sky, blanketing the ground in shock and flame.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/d/g/dg--8neekiu.jpg",
+   "zukan_types": [
+    "Defence"
    ]
   },
   {
@@ -261402,20 +261429,6 @@
    ]
   },
   {
-   "id": "es_guila-implacable",
-   "name": "Águila implacable",
-   "name_es": "Águila implacable",
-   "name_jp": null,
-   "type": "Shoot",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
-  },
-  {
    "id": "vr_whs03350",
    "name": "Crack Shot",
    "name_jp": "天崩地裂",
@@ -261432,6 +261445,20 @@
    "zukan_types": [
     "Shot"
    ]
+  },
+  {
+   "id": "es_guila-implacable",
+   "name": "Águila implacable",
+   "name_es": "Águila implacable",
+   "name_jp": null,
+   "type": "Shoot",
+   "element": null,
+   "cost": null,
+   "cost_game": null,
+   "costs": {},
+   "description": null,
+   "image_url": null,
+   "zukan_types": null
   },
   {
    "id": "vr_whs03120",
@@ -261468,6 +261495,24 @@
    "zukan_types": [
     "Success",
     "Failure"
+   ]
+  },
+  {
+   "id": "vr_whs03080",
+   "name": "Cannonball",
+   "name_jp": "カロネード砲",
+   "name_es": "Bala de cañón",
+   "type": "Shoot",
+   "element": "earth",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 360
+   },
+   "description": "Launch a cannon with a fiery kick and send the ball hurtling toward the net.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/8/b/8bttvqbqv5k.jpg",
+   "zukan_types": [
+    "Shot"
    ]
   },
   {
@@ -261560,6 +261605,24 @@
    "zukan_types": [
     "Success",
     "Failure"
+   ]
+  },
+  {
+   "id": "vr_whs03170",
+   "name": "Beyond the Sambadrome",
+   "name_jp": "デス・サンバ",
+   "name_es": "Samba letal",
+   "type": "Shoot",
+   "element": "wood",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 440
+   },
+   "description": "Dance to a savage samba rhythm and sweep past the keeper with a deadly flourish.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/h/g/hgajm3m1cgs.jpg",
+   "zukan_types": [
+    "Shot"
    ]
   },
   {
@@ -261691,6 +261754,61 @@
    ]
   },
   {
+   "id": "vr_whk01600",
+   "name": "Shadow Shield",
+   "name_jp": "ブラックシールド",
+   "name_es": "Escudo sombrío",
+   "type": "Catch",
+   "element": null,
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 540
+   },
+   "description": "Summon countless undead arms from the depths to devour the ball in a terrifying display.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/3/x/3xienxvoh_k.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ]
+  },
+  {
+   "id": "vr_whs03060",
+   "name": "Orion's Shade",
+   "name_jp": "オリオン・クロスバイパー",
+   "name_es": "Sombra de Orión",
+   "type": "Shoot",
+   "element": null,
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 640
+   },
+   "description": "Strike alongside a shadowy double in a high-speed twin shot that hits with double power.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/5/d/5djqji-yf1k.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
+   "id": "vr_whs03220",
+   "name": "Shadow Swarm",
+   "name_jp": "ブラックフィールド",
+   "name_es": "Campo umbrío",
+   "type": "Shoot",
+   "element": null,
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 540
+   },
+   "description": "Unleash a hundred empowered shadows that crush everything in their path with devastating force.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/7/n/7ntfau6qxqc.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
    "id": "vr_whs10040",
    "name": "Force Flash",
    "name_jp": "剛の一閃",
@@ -261758,24 +261876,6 @@
    },
    "description": "Whirl into action with astonishing speed and dance through opponents to claim the ball.",
    "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/z/w/zwxaibi1jmk.jpg",
-   "zukan_types": [
-    "Defence"
-   ]
-  },
-  {
-   "id": "vr_whd10080",
-   "name": "Kraken Seaquake",
-   "name_jp": "海神・ザ・クェイク",
-   "name_es": null,
-   "type": "Block",
-   "element": "air",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 440
-   },
-   "description": "Encircle your rival in a spiraling vortex and awaken the ocean's guardian to rise with a crashing wave and steal the ball.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/0/t/0te_qqvbssk.jpg",
    "zukan_types": [
     "Defence"
    ]
@@ -262140,6 +262240,42 @@
    },
    "description": "Infuse the ball with Bahamut's force and speed, blasting it forward in a cataclysmic blow.",
    "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/-/h/-hltztmtksm.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
+   "id": "vr_whs10030",
+   "name": "Unify",
+   "name_jp": "ひとつ",
+   "name_es": "Unificar",
+   "type": "Shoot",
+   "element": "earth",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 300
+   },
+   "description": "Channel unstoppable force into a single strike to send the ball hurtling with devastating power.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/m/c/mcga2g-unhe.jpg",
+   "zukan_types": [
+    "Shot"
+   ]
+  },
+  {
+   "id": "vr_whs10110",
+   "name": "Meteoric Fire Tornado",
+   "name_jp": "メテオッド・ファイアトルネード",
+   "name_es": "Tornado de fuego meteoro",
+   "type": "Shoot",
+   "element": "fire",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 540
+   },
+   "description": "Call down the ultimate Fire Tornado, a blazing meteor strike that descends from the heavens to crush the keeper.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/e/o/eogmgotbry8.jpg",
    "zukan_types": [
     "Shot"
    ]
@@ -262566,25 +262702,6 @@
    "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/w/n/wnqjhwtqiw0.jpg",
    "zukan_types": [
     "Shot"
-   ]
-  },
-  {
-   "id": "vr_whk01210",
-   "name": "Burnout Burst",
-   "name_jp": "ドライ・ブロー",
-   "name_es": "Golpe abrasador",
-   "type": "Catch",
-   "element": "fire",
-   "cost": null,
-   "cost_game": null,
-   "costs": {
-    "VR_power": 440
-   },
-   "description": "Ignite your fist in a scorching blast and fry the ball to dust.",
-   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/y/r/yr0vc_vpwxm.jpg",
-   "zukan_types": [
-    "Success",
-    "Failure"
    ]
   }
  ],

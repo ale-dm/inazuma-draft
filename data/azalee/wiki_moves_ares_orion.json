@@ -358,5 +358,277 @@
  "Zone of Pentagram": {
   "name_jp": "ゾーン・オブ・ペンタグラム",
   "name_dub": "Containment Field"
+ },
+ "Aim Shot": {
+  "name_jp": "エイムショット",
+  "name_dub": "Sniper Shot"
+ },
+ "Answer Boost": {
+  "name_jp": "アンサーブースト",
+  "name_dub": "Solution Boost"
+ },
+ "Artemis Ring": {
+  "name_jp": "アルテミスリング",
+  "name_dub": "Force Shield"
+ },
+ "Asoko ni Onigiri": {
+  "name_jp": "あそこにおにぎり",
+  "name_dub": "Look! A Rice Ball"
+ },
+ "Ayakashi Dribble": {
+  "name_jp": "あやかしドリブル",
+  "name_dub": "Phantasm Dribble"
+ },
+ "Backdraft": {
+  "name_jp": "バックドラフト",
+  "name_dub": "Hot Head"
+ },
+ "Bahamut Crash": {
+  "name_jp": "バハムートクラッシュ",
+  "name_dub": "{{PAGENAME}}"
+ },
+ "Blackmail": {
+  "name_jp": "ブラックメイル",
+  "name_dub": "Ghoulish Glare"
+ },
+ "Cheat Blaster": {
+  "name_jp": "チートブラスター",
+  "name_dub": "{{PAGENAME}}"
+ },
+ "Cosmic Blaster": {
+  "name_jp": "コズミックブラスター",
+  "name_dub": "{{PAGENAME}}"
+ },
+ "Dancing Turtle": {
+  "name_jp": "ダンシングタートル",
+  "name_dub": "Twirling Turtle"
+ },
+ "Dark Mist": {
+  "name_jp": "ダークミスト",
+  "name_dub": "Dark Mist"
+ },
+ "Death Crusher Zone": {
+  "name_jp": "デスクラッシャーゾーン",
+  "name_dub": "Beyond the Death Zone"
+ },
+ "Diamond Arm": {
+  "name_jp": "ダイヤモンドアーム",
+  "name_dub": "Diamond Arm"
+ },
+ "Diamond Hand": {
+  "name_jp": "ダイヤモンドハンド",
+  "name_dub": "Diamond Hand"
+ },
+ "Diamond Punch": {
+  "name_jp": "ダイヤモンドパンチ",
+  "name_dub": "Diamond Knuckle"
+ },
+ "Dokkan Train": {
+  "name_jp": "ドッカントレイン",
+  "name_dub": "Runaway Bull"
+ },
+ "Elegant Blade": {
+  "name_jp": "エレガントブレード",
+  "name_dub": "Frost Finesse"
+ },
+ "Empire Shield": {
+  "name_jp": "エンパイアシールド",
+  "name_dub": "Royal Shield"
+ },
+ "Endeavor Run": {
+  "name_jp": "エンデバーラン",
+  "name_dub": "Endeavor Rush"
+ },
+ "Entertainer": {
+  "name_jp": "*エンターテイナー",
+  "name_dub": "*Entertainer"
+ },
+ "Flying Marlin": {
+  "name_jp": "フライングマーリン",
+  "name_dub": "{{PAGENAME}}"
+ },
+ "GGG Senjou no Aria": {
+  "name_jp": "ＧＧＧ線上のアリア",
+  "name_dub": "Triple G Strike"
+ },
+ "Gekkoumaru Tsubame Gaeshi": {
+  "name_jp": "月光丸・燕返し",
+  "name_dub": "Crescent Kick"
+ },
+ "General Flag": {
+  "name_jp": "ジェネラル・フラッグ",
+  "name_dub": "Marshal's Light"
+ },
+ "God Fingers": {
+  "name_jp": "ゴッドフィンガーズ",
+  "name_dub": "Divine Deflectors"
+ },
+ "God Hand Tiger": {
+  "name_jp": "ゴッドハンド・タイガー",
+  "name_dub": "Tiger God Hand"
+ },
+ "Goddess Victoria": {
+  "name_jp": "ゴッデス・ヴィクトリア",
+  "name_dub": "The Triumph Goddess Victoria"
+ },
+ "Gou no Issen": {
+  "name_jp": "剛の一閃",
+  "name_dub": "Force Flash"
+ },
+ "Gravity Desert": {
+  "name_jp": "グラビティデザート",
+  "name_dub": "Gravity Dune"
+ },
+ "Guruguru Shoot": {
+  "name_jp": "ぐるぐるシュート",
+  "name_dub": "Swirly Shot"
+ },
+ "Hayabusa Gaeshi": {
+  "name_jp": "ハヤブサ返し",
+  "name_dub": "Falcon Counter"
+ },
+ "Hitotsu": {
+  "name_jp": "ひとつ",
+  "name_dub": "Unify"
+ },
+ "Hyouketsu no Mai": {
+  "name_jp": "氷結の舞",
+  "name_dub": "Icy Grace"
+ },
+ "Inazuma Break CG": {
+  "name_jp": "イナズマブレイクＣＧ",
+  "name_dub": "{{PAGENAME}}"
+ },
+ "Jouheki Kyohei Warborg": {
+  "name_jp": "城壁巨兵ウォーボーグ",
+  "name_dub": "Wall Titan Warborg"
+ },
+ "Kaijin The Quake": {
+  "name_jp": "海神・ザ・クェイク",
+  "name_dub": "Kraken Seaquake"
+ },
+ "Koori no Yari": {
+  "name_jp": "氷の槍",
+  "name_dub": "Polar Pike"
+ },
+ "Kousoku Kishi Robin": {
+  "name_jp": "光速騎士ロビン",
+  "name_dub": "Light-Speed Paladin Sir Rabby"
+ },
+ "Koutei Penguin 2gou feat. Shark": {
+  "name_jp": "皇帝ペンギン２号ｆｅａｔ．シャーク",
+  "name_dub": "Emperor Penguin No. 2 feat. Shark"
+ },
+ "Majin Victory": {
+  "name_jp": "魔神ヴィクトリー",
+  "name_dub": "The Victory Genie Majin"
+ },
+ "Masou Kensei Clara Bunny": {
+  "name_jp": "魔槍剣聖クララバニー",
+  "name_dub": "Sacred Lance Clearbunny"
+ },
+ "Matrix Eye": {
+  "name_jp": "マトリクスアイ",
+  "name_dub": "Matrix Eye"
+ },
+ "Maximum Circus": {
+  "name_jp": "マキシマムサーカス",
+  "name_dub": "Flurry-Go-Round"
+ },
+ "Megami Tairiku": {
+  "name_jp": "女神大陸",
+  "name_dub": "Sacred Embrace"
+ },
+ "Meikyou Shisui": {
+  "name_jp": "明鏡止水",
+  "name_dub": "Silent Inkstroke"
+ },
+ "Metal Hammer": {
+  "name_jp": "メタルハンマー",
+  "name_dub": "Metal Hammer"
+ },
+ "Meteodd Fire Tornado": {
+  "name_jp": "メテオッド・ファイアトルネード",
+  "name_dub": "Meteoric Fire Tornado"
+ },
+ "Murakumo Trap": {
+  "name_jp": "ムラクモトラップ",
+  "name_dub": "Dramatic Swipe"
+ },
+ "Niagara Falls": {
+  "name_jp": "ナイアガラフォールズ",
+  "name_dub": "Niagara Falls"
+ },
+ "Oraora Shikofumi": {
+  "name_jp": "オラオラ四股踏み",
+  "name_dub": "Vigorous Stomp"
+ },
+ "Outer World": {
+  "name_jp": "アウターワールド",
+  "name_dub": "Cyber Realm"
+ },
+ "Penguin The God & Devil": {
+  "name_jp": "ペンギン・ザ・ゴッド＆デビル",
+  "name_dub": "Penguin Reckoning"
+ },
+ "Penguin The Parade": {
+  "name_jp": "ペンギン・ザ・パレード",
+  "name_dub": "Royal Penguin Parade"
+ },
+ "Rock 'n' Roll Beat": {
+  "name_jp": "ロックンロールビート",
+  "name_dub": "Amp Beat"
+ },
+ "Second Life Hoop": {
+  "name_jp": "セカンドライフフープ",
+  "name_dub": "Hoopsie-Loop"
+ },
+ "Shark The Deep": {
+  "name_jp": "シャーク・ザ・ディープ",
+  "name_dub": "Shark Shooter"
+ },
+ "Shinohara Raika": {
+  "name_jp": "忍原 来夏",
+  "name_dub": "Raika Shinohara"
+ },
+ "Shunrai": {
+  "name_jp": "春雷",
+  "name_dub": "Spring Thunderclap"
+ },
+ "Silver Wolf Legend": {
+  "name_jp": "シルバーウルフレジェンド",
+  "name_dub": "Legendary Silver Wolf"
+ },
+ "Sunshine Blade": {
+  "name_jp": "サンシャインブレード",
+  "name_dub": "Sunshine Splitter"
+ },
+ "Super God Hand": {
+  "name_jp": "スーパーゴッドハンド",
+  "name_dub": "{{PAGENAME}}"
+ },
+ "Super Megaton Head": {
+  "name_jp": "スーパーメガトンヘッド",
+  "name_dub": "{{PAGENAME}}"
+ },
+ "Tenkuu Thunder": {
+  "name_jp": "天空サンダー",
+  "name_dub": "Heavenly Thunder"
+ },
+ "The Asura": {
+  "name_jp": "ザ・アシュラ",
+  "name_dub": "Majin Merge"
+ },
+ "The Fort": {
+  "name_jp": "ザ・フォート",
+  "name_dub": "The Stronghold"
+ },
+ "Yamabiko Step": {
+  "name_jp": "やまびこステップ",
+  "name_dub": "Peaky Breezy"
+ },
+ "Yuujou no God Hand": {
+  "name_jp": "友情のゴッドハンド",
+  "name_dub": "God Hand of Friendship"
  }
 }
