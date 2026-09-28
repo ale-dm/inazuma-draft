@@ -190,7 +190,7 @@
     ]
   },
   "team_tuning": {
-    "_doc": "Ajuste fino por equipo y juego (orden de rivales de la historia). top11: media objetivo del once titular (las 11 mejores cartas); todo el equipo se mueve lo mismo (+1 a los más flojos del once hasta clavar la media). captain: ficha de la wiki del capitán: +2 y cerca de 4 por encima de esa media (subida máx. +6). Las subidas no pasan del techo del juego (CEIL) y nadie baja por él.",
+    "_doc": "Ajuste fino por equipo y juego (orden de rivales de la historia). top11: media objetivo del once titular (las 11 mejores cartas); todo el equipo se mueve lo mismo (+1 a los más flojos del once hasta clavar la media). captain: ficha de la wiki del capitán: +2 y cerca de 4 por encima de esa media (subida máx. +6). Las subidas no pasan del techo del juego (CEIL) y nadie baja por él. captain_cap: techo propio del capitán (por encima del techo del juego).",
     "IE1": {
       "Royal Academy": {
         "top11": 80.5,
@@ -637,7 +637,8 @@
       "Barcelona Orb": {
         "top11": 87.0,
         "captain": "Clario Orvan",
-        "note": "11 · amistoso internacional, por encima de Plenilunio"
+        "note": "11 · amistoso internacional, por encima de Plenilunio",
+        "captain_cap": 89
       }
     }
   }
