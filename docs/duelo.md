@@ -33,8 +33,15 @@ simulación), `src/lib/duel.ts` (números de cada carta), `src/components/modes/
   azar de cada equipo (medios, laterales y extremos) se disputan el balón (empate = fuera); quien gana ataca con 1 de 3
   atacantes (delanteros; si hay menos de 3, se completa con medios) contra 1 de 3 defensas del otro (centrales,
   laterales y portero). Gol si el ataque es mayor.
+- **Pantalla** (como la batalla de MADFUT): el campo con tu once y sus números; deslizando (o con los botones de
+  abajo) el del rival con las cartas **boca abajo**, cada una con una sola pista al azar (afinidad, juego o escudo, en
+  lugar de bandera, liga o club). Las cartas jugadas se quedan en gris (las del rival, ya descubiertas). Arriba, los
+  10 puntos de ronda en verde (tuya), rojo (del rival) o gris (nadie).
+- **Rival**: la mitad de las veces un equipo real del catálogo (su mejor once, media a ±4 de la tuya) y la otra mitad
+  uno generado, "Fatal IA": formación al azar y los 11 del mismo juego (química a tope), media cerca de la tuya y, si
+  puede, de la misma afinidad.
 - **La máquina**: cuando lleva, juega una carta de "clase media" con su mejor número (como aconseja la guía); cuando
-  responde, estima tu número por la pista y juega la carta más floja que lo supera, o "tira" la peor.
+  responde, estima tu número por la pista de tu carta (tus cartas que comparten esa afinidad, juego o equipo) y juega la carta más floja que lo supera, o "tira" la peor.
 - **Premio**: victoria 400 monedas + 60 XP · empate 150 + 30 · derrota 50 + 15.
 
 ## Supertécnicas en el partido: qué se podría hacer (sin hacer todavía)

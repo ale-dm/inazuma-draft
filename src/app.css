@@ -662,3 +662,34 @@ button.ic:active { transform: scale(.95); }
 .fatal-hint__stat { position: absolute; bottom: .4rem; left: 12%; right: 12%; text-align: center; font-size: .7rem; font-weight: 900; text-transform: uppercase; border-radius: 6px; padding: .1rem 0; clip-path: none; }
 .duel-tb { display: flex; flex-direction: column; gap: .4rem; }
 .sim-chance { display: flex; flex-direction: column; gap: .4rem; }
+/* batalla en el campo (como MADFUT: tu once y, deslizando, el del rival boca abajo) */
+.fatal-top { display: flex; flex-direction: column; gap: .4rem; }
+.fatal-dots { display: flex; justify-content: center; gap: .3rem; }
+.fatal-dots i { width: .6rem; height: .6rem; border-radius: 99px; background: rgba(255, 255, 255, .15); }
+.fatal-dots i.w { background: #3dff8a; }
+.fatal-dots i.l { background: #ff5a5a; }
+.fatal-dots i.d { background: #9fb3c8; }
+.fatal-dots i.now { box-shadow: 0 0 0 2px #ffb03d; background: transparent; }
+.fatal-pager { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 -.2rem; }
+.fatal-pager::-webkit-scrollbar { display: none; }
+.fatal-page { flex: 0 0 100%; scroll-snap-align: center; padding: 0 .2rem; }
+.fatal-pitch { aspect-ratio: 3 / 4.4; }
+.fatal-pitch .ic { --w: 4.2rem; }
+.fatal-spot { position: absolute; transform: translate(-50%, -50%); z-index: 1; }
+.fatal-spot.is-used { opacity: .35; filter: grayscale(.7); }
+.fatal-spot.is-pending { z-index: 2; filter: drop-shadow(0 0 10px #ffb03d); }
+.fatal-spot.fd-selected { z-index: 2; }
+.fatal-back {
+  width: 4.2rem; aspect-ratio: 3 / 4.2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .25rem;
+  clip-path: polygon(50% 0, 100% 16%, 100% 76%, 50% 100%, 0 76%, 0 16%);
+  background: repeating-linear-gradient(135deg, rgba(255, 255, 255, .05) 0 3px, transparent 3px 10px), linear-gradient(160deg, #3a3f4c, #121419);
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, .25);
+}
+.fatal-back__el { width: 1.9rem; }
+.fatal-back__crest { width: 2.3rem; height: 2.3rem; object-fit: contain; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .6)); }
+.fatal-back__game { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.05rem; padding: 0 .3rem; border-radius: 6px; background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .45); }
+.fatal-back small { font-size: .6rem; font-weight: 800; color: #9fb3c8; }
+.fatal-hint .fatal-back { width: 100%; clip-path: none; box-shadow: none; background: none; }
+.fatal-tabs { display: flex; justify-content: center; gap: .4rem; }
+.fatal-tabs button { padding: .35rem 1rem; border-radius: 12px; font-weight: 800; font-size: .8rem; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .15); color: #fff; }
+.fatal-tabs button.on { border-color: #ffb03d; box-shadow: 0 0 10px rgba(255, 176, 61, .35); }

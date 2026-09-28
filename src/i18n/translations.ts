@@ -455,6 +455,9 @@ export const translations = {
     'duel.chanceN': 'Occasion {n}',
     'duel.out': 'dehors',
     'duel.skip': 'Passer',
+    'duel.rivalLeads': 'L’adversaire mène',
+    'duel.pickOnPitch': 'Touche une de tes cartes sur le terrain',
+    'duel.rival': 'Adversaire',
   },
   en: {
     'nav.rules': 'Rules',
@@ -907,6 +910,9 @@ export const translations = {
     'duel.chanceN': 'Chance {n}',
     'duel.out': 'out of play',
     'duel.skip': 'Skip',
+    'duel.rivalLeads': 'Rival leads',
+    'duel.pickOnPitch': 'Tap one of your cards on the pitch',
+    'duel.rival': 'Rival',
   },
   es: {
     'nav.rules': 'Reglas',
@@ -1359,6 +1365,9 @@ export const translations = {
     'duel.chanceN': 'Ocasión {n}',
     'duel.out': 'fuera',
     'duel.skip': 'Saltar',
+    'duel.rivalLeads': 'Lleva el rival',
+    'duel.pickOnPitch': 'Toca una de tus cartas en el campo',
+    'duel.rival': 'Rival',
   },
   it: {
     'nav.rules': 'Regole',
@@ -1811,6 +1820,9 @@ export const translations = {
     'duel.chanceN': 'Occasione {n}',
     'duel.out': 'fuori',
     'duel.skip': 'Salta',
+    'duel.rivalLeads': 'Conduce l’avversario',
+    'duel.pickOnPitch': 'Tocca una delle tue carte in campo',
+    'duel.rival': 'Avversario',
   },
 } as const
 

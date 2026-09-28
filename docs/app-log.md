@@ -228,3 +228,5 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
   en japonés); lo que fallaba era la época: ahora cada equipo guarda también el de GO, Ares/Orión y VR cuando cambia
   (`teams.logos`, 94 equipos) y la carta usa el de su juego.
 - Evoluciones: siguen quitadas.
+- Batalla en el campo como MADFUT: tu once con sus números y, deslizando, el rival boca abajo con una pista por carta
+  (afinidad, juego o escudo). Rival real o generado con química a tope ("Fatal IA", los 11 del mismo juego).

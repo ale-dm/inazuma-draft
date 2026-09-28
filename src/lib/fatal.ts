@@ -1,9 +1,10 @@
 import type { Element, GameId, Player } from '../types'
-import { FORMATIONS, autoAssign, lineupToArray, type LineupMap, type SlotId } from './lineup'
-import { chemistry } from './chemistry'
+import { FORMATIONS, autoAssign, getFormation, lineupToArray, type FormationId, type LineupMap, type SlotId } from './lineup'
+import { chemistry, teamRating } from './chemistry'
 import { duelStats, type DuelKey, type DuelStats } from './duel'
 import { isoWeek } from './club'
-import { GAMES } from '../data/catalog'
+import { GAMES, getAllPlayers, getDraftPools, getTeamRoster, teamLogo } from '../data/catalog'
+import { pickBestXI } from '../data/ffi-rosters'
 
 /**
  * Duelo = el "Fatal" de MADFUT (guía de r/MADFUT), con los números de duelo de las cartas (lib/duel.ts).
@@ -31,11 +32,17 @@ export interface FatalCard {
   st: DuelStats
   /** Lo que se ha sumado por química + boost */
   mod: number
+  /** Pista que ve el rival (como la bandera, la liga o el club en MADFUT): afinidad, juego o escudo */
+  hint: HintKind
 }
+
+export type HintKind = 'element' | 'game' | 'crest'
 
 export interface FatalTeam {
   name: string
   cards: FatalCard[]
+  /** Formación para colocarlos en el campo (null: filas por puesto) */
+  formation: FormationId | null
 }
 
 export interface WeeklyBoost {
@@ -58,27 +65,83 @@ export function weeklyBoost(week = isoWeek()): WeeklyBoost {
 const boosted = (p: Player, b: WeeklyBoost) => (b.kind === 'game' ? p.game === b.value : p.element === b.value)
 
 /** Equipo del duelo a partir de un once colocado (química por jugador del once, con el capitán) */
-export function fatalTeam(name: string, lineup: LineupMap, captain: SlotId | null | undefined, boost = weeklyBoost()): FatalTeam {
+/** Pista de cada carta: al azar entre afinidad, juego y escudo (si el equipo tiene escudo) */
+function pickHint(p: Player, rnd: () => number): HintKind {
+  const kinds: HintKind[] = teamLogo(p.team, p.game) ? ['element', 'game', 'crest'] : ['element', 'game']
+  return kinds[Math.floor(rnd() * kinds.length)]
+}
+
+export function fatalTeam(
+  name: string, lineup: LineupMap, captain: SlotId | null | undefined, formation: FormationId | null, boost = weeklyBoost(), rnd = Math.random,
+): FatalTeam {
   const chem = chemistry(lineup, captain ?? undefined)
   const cards = (Object.entries(lineup) as [SlotId, Player | undefined][]).filter((e): e is [SlotId, Player] => !!e[1]).map(([slot, p]) => {
     const mod = CHEM_MOD[chem.players[slot] ?? 0] + (boosted(p, boost) ? boost.amount : 0)
     const d = duelStats(p)
     const c = (v: number) => Math.max(1, Math.min(99, v + mod))
-    return { p, slot, st: { att: c(d.att), con: c(d.con), def: c(d.def) }, mod }
+    return { p, slot, st: { att: c(d.att), con: c(d.con), def: c(d.def) }, mod, hint: pickHint(p, rnd) }
   })
-  return { name, cards }
+  return { name, cards, formation }
 }
 
-/** Once suelto (rival de la máquina) → colocado en la formación que le encaje; capitán, el de más media */
-export function lineupFor(xi: Player[]): LineupMap {
+/** Once suelto (rival de la máquina) → colocado en la formación que le encaje */
+export function lineupFor(xi: Player[]): { lineup: LineupMap; formation: FormationId | null } {
   for (const f of FORMATIONS) {
     const l = autoAssign(xi, f.id)
-    if (lineupToArray(l, f.id).length === xi.length) return l
+    if (lineupToArray(l, f.id).length === xi.length) return { lineup: l, formation: f.id }
   }
-  // sin formación exacta: puestos sintéticos por posición (solo cuentan para la simulación)
+  // sin formación exacta: puestos sintéticos por posición (en el campo, por filas)
   const l: Record<string, Player> = {}
   xi.forEach((p, i) => { l[`${p.position}${i}`] = p })
-  return l as LineupMap
+  return { lineup: l as LineupMap, formation: null }
+}
+
+/** Nombre del rival generado */
+export const GENERATED_RIVAL = 'Fatal IA'
+
+/**
+ * Rival de la máquina: la mitad de las veces un equipo real del catálogo (su mejor once, media parecida a la tuya) y
+ * la otra mitad uno generado con química a tope: formación al azar y los 11 del mismo juego (así todos tienen 3
+ * rombos), con media cerca de la tuya y, si puede, de la misma afinidad.
+ */
+export function rivalTeam(rating: number, rnd = Math.random): FatalTeam {
+  if (rnd() < 0.5) {
+    const real = getDraftPools()
+      .map(pool => ({ name: pool.label, xi: pickBestXI(getTeamRoster(pool)) }))
+      .filter(t => t.xi.length === 11 && t.xi.some(p => p.position === 'GK'))
+      .map(t => ({ ...t, rating: teamRating(t.xi) }))
+    const near = real.filter(t => Math.abs(t.rating - rating) <= 4)
+    const list = near.length ? near : [...real].sort((a, b) => Math.abs(a.rating - rating) - Math.abs(b.rating - rating)).slice(0, 5)
+    if (list.length) {
+      const t = list[Math.floor(rnd() * list.length)]
+      const { lineup, formation } = lineupFor(t.xi)
+      return fatalTeam(t.name, lineup, captainOf(lineup), formation, weeklyBoost(), rnd)
+    }
+  }
+  return generatedRival(rating, rnd)
+}
+
+export function generatedRival(rating: number, rnd = Math.random): FatalTeam {
+  const all = getAllPlayers().filter(p => p.image)
+  const byGame = GAMES.map(g => all.filter(p => p.game === g)).filter(l => l.length >= 120)
+  const pool = byGame[Math.floor(rnd() * byGame.length)] ?? all
+  const count = new Map<string, number>()
+  for (const p of pool) count.set(p.element, (count.get(p.element) ?? 0) + 1)
+  const element = [...count].sort((a, b) => b[1] - a[1])[Math.floor(rnd() * 2)]?.[0]
+  const f = FORMATIONS[Math.floor(rnd() * FORMATIONS.length)]
+  const used = new Set<string>()
+  const lineup: LineupMap = {}
+  for (const s of getFormation(f.id).slots) {
+    const free = pool.filter(p => p.position === s.role && !used.has(p.characterId))
+    const near = (l: Player[], d: number) => l.filter(p => Math.abs(p.ovr - rating) <= d)
+    const tiers = [near(free.filter(p => p.element === element), 3), near(free, 3), near(free, 7), free]
+    const list = tiers.find(l => l.length) ?? []
+    const p = list[Math.floor(rnd() * list.length)]
+    if (!p) continue
+    used.add(p.characterId)
+    lineup[s.id] = p
+  }
+  return fatalTeam(GENERATED_RIVAL, lineup, captainOf(lineup), f.id, weeklyBoost(), rnd)
 }
 
 export function captainOf(l: LineupMap): SlotId | null {
@@ -154,18 +217,21 @@ export function aiLead(hand: FatalCard[], rnd = Math.random): { card: FatalCard;
   return { card, stat: best(card) }
 }
 
-/** Pista de la carta que lleva: afinidad, equipo y juego (como la nación y el club en MADFUT) */
-export const hintOf = (c: FatalCard) => ({ element: c.p.element, team: c.p.team, game: c.p.game })
+/** ¿Encaja la carta con la pista de otra? (misma afinidad / juego / equipo, según su pista) */
+export function matchesHint(c: FatalCard, lead: FatalCard): boolean {
+  if (lead.hint === 'element') return c.p.element === lead.p.element
+  if (lead.hint === 'game') return c.p.game === lead.p.game
+  return c.p.team === lead.p.team
+}
 
 /**
- * La máquina responde viendo la pista: estima el número de tu carta (media de tus cartas que encajan con la pista) y
+ * La máquina responde viendo la pista de tu carta: estima su número (media de tus cartas que encajan con la pista) y
  * juega la carta más floja que lo supera; si ninguna lo supera, "tira" su peor carta para ese número.
  */
 export function aiRespond(hand: FatalCard[], stat: DuelKey, lead: FatalCard, rivalLeft: FatalCard[], rnd = Math.random): FatalCard {
-  const h = hintOf(lead)
-  const likely = rivalLeft.filter(c => c.p.element === h.element && c.p.game === h.game && c.p.team === h.team)
-  const pool = likely.length ? likely : rivalLeft.filter(c => c.p.element === h.element)
-  const est = (pool.length ? pool : rivalLeft).reduce((s, c) => s + c.st[stat], 0) / Math.max(1, (pool.length ? pool : rivalLeft).length)
+  const likely = rivalLeft.filter(c => matchesHint(c, lead))
+  const pool = likely.length ? likely : rivalLeft
+  const est = pool.reduce((s, c) => s + c.st[stat], 0) / Math.max(1, pool.length)
   const k = counter(stat)
   const beats = hand.filter(c => c.st[k] > est + (rnd() - 0.5) * 6).sort((a, b) => a.st[k] - b.st[k])
   if (beats.length) return beats[0]
