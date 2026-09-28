@@ -17,6 +17,7 @@
   2. Si no las hay: **Road to Ultimate, la ficha de Ares del personaje**, con las técnicas comunes y la rama principal (sin la rama alternativa).
   3. Si tampoco hay: todas las de Victory Road.
   - Cada técnica es la de la base si existe (por nombre en castellano o japonés). Si no, una nueva `vr_<código>` con su potencia de VR, o `es_<nombre>` si solo se conoce el nombre en castellano.
+  - Fuera las 19 técnicas básicas de Victory Road (potencia base 30, máx. 200: Power Shot, Dust Kick, Heel Flick, Deceptive Step…), las que todos aprenden a nivel 1.
   - La **nota** sigue saliendo de la potencia de sus supertécnicas de Victory Road.
 - Cuerpo técnico de Ares: a la pestaña de staff.
 - Datos y fórmulas: `docs/victory-road-stats.md`, `data/azalee/`, `data/roadtoultimate/`.

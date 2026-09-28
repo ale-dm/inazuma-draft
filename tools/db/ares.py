@@ -282,6 +282,7 @@ def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_j
     cards, new_chars = [], {}
     classic_ids = {c['character_id'] for c in classic_cards}
     move_src = collections.Counter()
+    basic_jp = {norm_jp(v['name_ja']) for v in SK.values() if v.get('max') == 200 and v.get('name_ja')}
     seen = collections.Counter()
     for r in rows:
         z = r['z']
@@ -298,7 +299,8 @@ def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_j
             moves, src_m = rtu_moves(z['id']), 'rtu'
         if not moves:
             moves, src_m = [technique_vr(s['code']) for s in r['skills']], 'vr'
-        moves = list({id(t): t for t in moves}.values())
+        # fuera las técnicas básicas de VR (potencia base 30, máx. 200: Power Shot, Dust Kick, Heel Flick…)
+        moves = [t for t in {id(t): t for t in moves}.values() if norm_jp(t.get('name_jp')) not in basic_jp]
         move_src[src_m] += 1
         # el Raimon de Ares es el de los nuevos: los del Raimon original que salen en Ares van a secundarios
         team = 'Sub Character' if r['team'] == 'Raimon' and char_id in classic_ids else r['team']

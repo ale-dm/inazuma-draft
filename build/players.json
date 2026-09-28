@@ -3121,7 +3121,6 @@
     "Intelligence": 129
    },
    "techniques": [
-    "KakuranStep",
     "vr_whs03000",
     "vr_whd01560",
     "vr_whs03240"
@@ -3806,7 +3805,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "YusaburiFeint",
     "MatadorFeint",
     "Slingshot",
     "ScissorsBomb",
@@ -4087,7 +4085,6 @@
     "Intelligence": 119
    },
    "techniques": [
-    "HippariCut",
     "VolcanoCut",
     "HurricaneArrow",
     "GodHand_Blue",
@@ -4456,7 +4453,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "FeintNuki",
     "vr_who01420",
     "CoilTurn",
     "TheMist",
@@ -4841,7 +4837,6 @@
     "Intelligence": 130
    },
    "techniques": [
-    "ShoulderCharge",
     "TheWall",
     "TheMountain",
     "ElephantPress",
@@ -5021,7 +5016,6 @@
     "Intelligence": 119
    },
    "techniques": [
-    "YusaburiFeint",
     "KangarooKick",
     "vr_whs02790",
     "TatsumakiSenpuu",
@@ -5206,7 +5200,6 @@
     "Intelligence": 120
    },
    "techniques": [
-    "LoopShoot",
     "RyuuseiBlade",
     "SuperScanOF",
     "DoubleTornado"
@@ -5815,7 +5808,6 @@
     "Intelligence": 122
    },
    "techniques": [
-    "FunbariCatch",
     "vr_whk01530",
     "GigantWall",
     "OmegaTheHand",
@@ -5908,7 +5900,6 @@
     "Intelligence": 122
    },
    "techniques": [
-    "PowerHandCatch",
     "GodHand_Blue",
     "BakuretsuPunch",
     "MajinTheHand_K",
@@ -6859,7 +6850,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "TrickCut",
     "StonePrison",
     "EchoBall",
     "vr_who00590",
@@ -7182,7 +7172,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "WanbanShoot",
     "NorthernImpact",
     "WaterVeil",
     "FireBlizzard_Wind",
@@ -7363,7 +7352,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "TrickCut",
     "LiarShot",
     "SuperElastico",
     "WelcomeBack",
@@ -7510,7 +7498,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "MagaruShoot",
     "AtomicFlare",
     "FlameVeil",
     "FireBlizzard_Wind",
@@ -7958,7 +7945,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "ShoulderCharge",
     "MaboroshiDribble",
     "vr_whd00150",
     "DimensionCut",
@@ -8514,7 +8500,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "RollingCut",
     "LaFlamme",
     "TrickBall",
     "TheMist",
@@ -8607,7 +8592,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "TrickCut",
     "StonePrison",
     "GoToHeaven",
     "WelcomeBack",
@@ -8993,7 +8977,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "FeintPlay",
     "vr_whd01460",
     "ShippuuDash",
     "SkyWalk",
@@ -9086,7 +9069,6 @@
     "Intelligence": 120
    },
    "techniques": [
-    "Matanuki",
     "SouthernCrosscut",
     "SpiralDraw",
     "ZigzagSpark",
@@ -9133,7 +9115,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "HippariCut",
     "SpinningCut",
     "BladeAttack",
     "ShootingStar",
@@ -11327,7 +11308,6 @@
     "Intelligence": 108
    },
    "techniques": [
-    "HoppingTrick",
     "MatadorFeint",
     "Slingshot",
     "RapidFire",
@@ -11944,7 +11924,6 @@
     "Intelligence": 120
    },
    "techniques": [
-    "PowerShoot",
     "DragonSlayer",
     "DenraiHoutou",
     "WhiteHurricane",
@@ -13398,7 +13377,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "HeelLift",
     "GoToHeaven",
     "UltraMoon",
     "SuperElastico",
@@ -14205,7 +14183,6 @@
     "Intelligence": 119
    },
    "techniques": [
-    "PowerShoot",
     "vr_whs02940",
     "AuroraDribble",
     "BouncerRabbit",
@@ -15147,7 +15124,6 @@
     "Intelligence": 130
    },
    "techniques": [
-    "HoppingTrick",
     "IllusionBall",
     "LastDeathZone",
     "KouteiPenguin2gou",
@@ -15477,7 +15453,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "FeintNuki",
     "vr_whs03170",
     "MaboroshiDribble",
     "SouthernCrosscut",
@@ -18414,7 +18389,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "Matanuki",
     "MonkeyTurn",
     "MoguraFeint",
     "SneakingRaid"
@@ -18779,7 +18753,6 @@
     "Intelligence": 134
    },
    "techniques": [
-    "FeintNuki",
     "AstroBreak",
     "MeteorShower",
     "SpacePenguin",
@@ -18963,7 +18936,6 @@
     "Intelligence": 135
    },
    "techniques": [
-    "FeintNuki",
     "TatsumakiSenpuu",
     "vr_whd00220"
    ]
@@ -19008,7 +18980,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "TrickCut",
     "IceGround",
     "GoodSmell",
     "RainbowLoop",
@@ -19100,7 +19071,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "WanbanShoot",
     "FireTornado",
     "HeatTackle",
     "CrossDrive",
@@ -19517,7 +19487,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "PowerShoot",
     "HitoriOneTwo",
     "RCShoot",
     "DokonjouBat",
@@ -19798,7 +19767,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "HeelLift",
     "vr_whs02910",
     "vr_who01420",
     "PrestoTurn",
@@ -19845,7 +19813,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "HeelLift",
     "SkyWalk",
     "Zanzou",
     "QuickDraw",
@@ -19947,7 +19914,6 @@
     "Intelligence": 111
    },
    "techniques": [
-    "KakuranStep",
     "KangarooKick",
     "SuperElastico",
     "RollingSlide",
@@ -20677,7 +20643,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "Matanuki",
     "vr_whs02910",
     "vr_who01420",
     "IllusionBall",
@@ -21240,7 +21205,6 @@
     "Intelligence": 111
    },
    "techniques": [
-    "FeintPlay",
     "SpinningCut",
     "SkyWalk",
     "Harvest",
@@ -21802,7 +21766,6 @@
     "Intelligence": 129
    },
    "techniques": [
-    "Matanuki",
     "SpinningShoot",
     "SpinningCut",
     "IllusionBall",
@@ -21849,7 +21812,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "KakuranStep",
     "KangarooKick",
     "KonohaRoll",
     "DashAccel",
@@ -24166,7 +24128,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "FeintNuki",
     "Oouchiwa",
     "Harvest",
     "YakimochiScrew",
@@ -24257,7 +24218,6 @@
     "Intelligence": 129
    },
    "techniques": [
-    "TrickCut",
     "SpinningCut",
     "MonkeyTurn",
     "RunBallRun",
@@ -24304,7 +24264,6 @@
     "Intelligence": 129
    },
    "techniques": [
-    "HippariCut",
     "vr_who01410",
     "SpinningCut",
     "Cyclone",
@@ -24692,7 +24651,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "RollingCut",
     "vr_whd00190",
     "ShineDrive",
     "Magic",
@@ -24739,7 +24697,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "YusaburiFeint",
     "HeavensTime",
     "vr_whd00190",
     "Cyclone",
@@ -24831,7 +24788,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "KakuranStep",
     "HeavensTime",
     "DivineArrow",
     "IllusionBall",
@@ -25022,7 +24978,6 @@
     "Intelligence": 119
    },
    "techniques": [
-    "RollingCut",
     "KillerSlide",
     "VolcanoCut",
     "BackTornado",
@@ -25251,7 +25206,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "HippariCut",
     "MegaQuake",
     "ZigzagSpark",
     "Earthquake",
@@ -25881,7 +25835,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "KakuranStep",
     "NininSankyaku",
     "Harvest",
     "RunBallRun",
@@ -25987,7 +25940,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "FeintNuki",
     "Oouchiwa",
     "DoubleCyclone",
     "StonePrison",
@@ -26444,7 +26396,6 @@
     "Intelligence": 98
    },
    "techniques": [
-    "LoopShoot",
     "vr_whs03080",
     "DinosaurBreak",
     "FakeBall",
@@ -26720,7 +26671,6 @@
     "Intelligence": 108
    },
    "techniques": [
-    "GrounderShoot",
     "ReflectBuster",
     "DashStorm",
     "HeatTackle",
@@ -26812,7 +26762,6 @@
     "Intelligence": 129
    },
    "techniques": [
-    "PowerShoot",
     "AstroBreak",
     "LightningAccel",
     "UniverseBlast",
@@ -26951,7 +26900,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "RollingCut",
     "vr_whd00190",
     "vr_whd00150",
     "JudgeThrough",
@@ -27185,7 +27133,6 @@
     "Intelligence": 108
    },
    "techniques": [
-    "GrounderShoot",
     "TriangleZ",
     "BackTornado",
     "IllusionBall",
@@ -27286,7 +27233,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "Matanuki",
     "QuickDraw",
     "CrossDrive",
     "IllusionBall",
@@ -27524,7 +27470,6 @@
     "Intelligence": 108
    },
    "techniques": [
-    "WanbanShoot",
     "GanymedeProton",
     "IgniteSteal",
     "MeteorShower",
@@ -27781,7 +27726,6 @@
     "Intelligence": 106
    },
    "techniques": [
-    "GrounderShoot",
     "vr_who00270",
     "BunshinFeint",
     "DragonGround"
@@ -28057,7 +28001,6 @@
     "Intelligence": 113
    },
    "techniques": [
-    "FunbariCatch",
     "vr_whk00200",
     "GigantWall",
     "HolyZone",
@@ -28104,7 +28047,6 @@
     "Intelligence": 119
    },
    "techniques": [
-    "KakuranStep",
     "GrenadeShot",
     "Gorimuchuu",
     "FakeBall",
@@ -28287,7 +28229,6 @@
     "Intelligence": 119
    },
    "techniques": [
-    "HeelLift",
     "Cyclone",
     "RollingKick",
     "ShootingStar",
@@ -28533,7 +28474,6 @@
     "Intelligence": 119
    },
    "techniques": [
-    "HoppingTrick",
     "TatsumakiSenpuu",
     "KungFuHead",
     "BunshinFeint",
@@ -28762,7 +28702,6 @@
     "Intelligence": 119
    },
    "techniques": [
-    "WanbanShoot",
     "MeganeCrash",
     "vr_who00090",
     "DivineArrow",
@@ -29269,7 +29208,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "RollingCut",
     "IgniteSteal",
     "SuperScanOF",
     "ZigzagFlame"
@@ -29543,7 +29481,6 @@
     "Intelligence": 119
    },
    "techniques": [
-    "HoppingTrick",
     "vr_whd01470",
     "vr_who01470",
     "SuperScanOF"
@@ -29589,7 +29526,6 @@
     "Intelligence": 113
    },
    "techniques": [
-    "FunbariCatch",
     "GodHand_Blue",
     "MajinTheHand_K",
     "MugenTheHand",
@@ -29773,7 +29709,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "HippariCut",
     "vr_whd01490",
     "KonohaRendezvous",
     "vr_whd01460"
@@ -30371,7 +30306,6 @@
     "Intelligence": 119
    },
    "techniques": [
-    "FeintPlay",
     "CoilTurn",
     "KageNui",
     "Zanzou",
@@ -30418,7 +30352,6 @@
     "Intelligence": 108
    },
    "techniques": [
-    "MagaruShoot",
     "FireTornado",
     "BunshinFeint",
     "ZigzagSpark",
@@ -30511,7 +30444,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "HeelLift",
     "KangarooKick",
     "SuperElastico",
     "RollingSlide",
@@ -31026,7 +30958,6 @@
     "Intelligence": 124
    },
    "techniques": [
-    "KakuranStep",
     "vr_whd01470",
     "vr_whs02790",
     "IllusionBall",
@@ -31415,7 +31346,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "KakuranStep",
     "GaiaBreak",
     "WarpDrive",
     "CrossDrive",
@@ -31552,7 +31482,6 @@
     "Intelligence": 120
    },
    "techniques": [
-    "KakuranStep",
     "vr_whd00220",
     "vr_whd00360",
     "MegaQuake",
@@ -31872,7 +31801,6 @@
     "Intelligence": 113
    },
    "techniques": [
-    "FunbariCatch",
     "RocketKobushi",
     "ShootPocket",
     "DoubleRocket",
@@ -32341,7 +32269,6 @@
     "Intelligence": 108
    },
    "techniques": [
-    "MagaruShoot",
     "GanymedeProton",
     "Wormhole",
     "GaiaBreak",
@@ -32905,7 +32832,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "FeintPlay",
     "WaterVeil",
     "Wormhole",
     "PhotonFlash",
@@ -33569,7 +33495,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "HippariCut",
     "LiarShot",
     "Gravestone",
     "WelcomeBack",
@@ -33934,7 +33859,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "KakuranStep",
     "TatsumakiSenpuu",
     "vr_whd00220",
     "MaboroshiDribble",
@@ -34536,7 +34460,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "LoopShoot",
     "FreezeShot",
     "IceGround",
     "EternalBlizzard",
@@ -34628,7 +34551,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "KakuranStep",
     "TheWall",
     "SuperArmadillo",
     "MoguraFeint",
@@ -34675,7 +34597,6 @@
     "Intelligence": 111
    },
    "techniques": [
-    "FeintPlay",
     "SpinningCut",
     "Moonsault",
     "SuperScanOF",
@@ -34722,7 +34643,6 @@
     "Intelligence": 103
    },
    "techniques": [
-    "PowerHandCatch",
     "ShootPocket",
     "vr_whk00800",
     "RocketKobushi",
@@ -35088,7 +35008,6 @@
     "Intelligence": 108
    },
    "techniques": [
-    "GrounderShoot",
     "SpinningCut",
     "BackTornado",
     "TriangleZ",
@@ -35180,7 +35099,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "Matanuki",
     "AuroraDribble",
     "Kamaitachi",
     "HurricaneArrow",
@@ -35273,7 +35191,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "HeelLift",
     "DashStorm",
     "ReflectBuster",
     "SuperScanOF"
@@ -35374,7 +35291,6 @@
     "Intelligence": 115
    },
    "techniques": [
-    "GrounderShoot",
     "vr_whs03300",
     "SprintWarp",
     "DiffuseChord",
@@ -35649,7 +35565,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "FeintPlay",
     "KillerSlide",
     "vr_whd01490",
     "SuperScanOF",
@@ -36494,7 +36409,6 @@
     "Intelligence": 129
    },
    "techniques": [
-    "RollingCut",
     "KillerSlide",
     "BunshinFeint",
     "SuperScanOF"
@@ -36768,7 +36682,6 @@
     "Intelligence": 131
    },
    "techniques": [
-    "Matanuki",
     "KillerSlide",
     "JudgeThrough",
     "DeathZone",
@@ -37417,7 +37330,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "TrickCut",
     "DashAccel",
     "SpinningCut",
     "HyakuretsuShot",
@@ -37845,7 +37757,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "FeintPlay",
     "SuperScanOF",
     "vr_whd01460",
     "DashAccel",
@@ -39340,7 +39251,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "TrickCut",
     "SuperArmadillo",
     "ArmadilloCircus",
     "RockWallDam",
@@ -39387,7 +39297,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "YusaburiFeint",
     "vr_whd01490",
     "Megalodon",
     "TsuchiDaruma",
@@ -39580,7 +39489,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "HippariCut",
     "TheWall",
     "DesertStorm",
     "ElephantPress",
@@ -39716,7 +39624,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "HippariCut",
     "vr_who01420",
     "FlameDance",
     "IllusionBall",
@@ -39763,7 +39670,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "RollingCut",
     "DashAccel",
     "BlockCircus",
     "NininSankyaku",
@@ -39902,7 +39808,6 @@
     "Intelligence": 106
    },
    "techniques": [
-    "MagaruShoot",
     "BunshinShoot",
     "KonohaRoll",
     "RunBallRun",
@@ -40413,7 +40318,6 @@
     "Intelligence": 120
    },
    "techniques": [
-    "ShoulderCharge",
     "Gravitation",
     "GanymedeProton",
     "DoubleGrenade",
@@ -40596,7 +40500,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "FeintPlay",
     "vr_whd00190",
     "DashStorm",
     "GoToHeaven",
@@ -40643,7 +40546,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "HippariCut",
     "vr_whd01490",
     "KillerSlide",
     "SuperScanOF",
@@ -40961,7 +40863,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "YusaburiFeint",
     "KillerSlide",
     "JudgeThrough",
     "HyakuretsuShot",
@@ -41876,7 +41777,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "TrickCut",
     "NininSankyaku",
     "QuickDraw",
     "BladeAttack",
@@ -42191,7 +42091,6 @@
     "Intelligence": 98
    },
    "techniques": [
-    "PowerShoot",
     "CrossDrive",
     "HitoriOneTwo",
     "DualStrike"
@@ -42603,7 +42502,6 @@
     "Intelligence": 108
    },
    "techniques": [
-    "LoopShoot",
     "vr_whs02910",
     "HeavensTime",
     "GoToHeaven",
@@ -42876,7 +42774,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "Matanuki",
     "vr_whs00140",
     "CrossDrive",
     "HawkShot",
@@ -43432,7 +43329,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "ShoulderCharge",
     "vr_who00090",
     "Doppelganger",
     "vr_whd00060",
@@ -44928,7 +44824,6 @@
     "Intelligence": 108
    },
    "techniques": [
-    "PowerShoot",
     "ReflectBuster",
     "KungFuAttack",
     "EagleBuster",
@@ -45471,7 +45366,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "HoppingTrick",
     "BunshinFeint",
     "KillerSlide",
     "FreezeShot",
@@ -45653,7 +45547,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "KakuranStep",
     "DeathZone",
     "vr_whs02860",
     "JudgeThrough",
@@ -46364,7 +46257,6 @@
     "Intelligence": 101
    },
    "techniques": [
-    "PowerHandCatch",
     "vr_whk00360",
     "FenceOfGaia",
     "MugenNoKabe",
@@ -47376,7 +47268,6 @@
     "Intelligence": 124
    },
    "techniques": [
-    "TrickCut",
     "vr_whd01460",
     "vr_whd01470",
     "vr_whs02800",
@@ -47836,7 +47727,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "TrickCut",
     "SuperScanOF",
     "PsychoShot",
     "Earthquake"
@@ -48301,7 +48191,6 @@
     "Intelligence": 113
    },
    "techniques": [
-    "PowerHandCatch",
     "GodHand_Blue",
     "BurningCatch",
     "BakuretsuPunch",
@@ -49465,7 +49354,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "KakuranStep",
     "BoostGlider",
     "HawkShot",
     "MonkeyTurn",
@@ -49741,7 +49629,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "HippariCut",
     "QuickDraw",
     "HurricaneArrow",
     "Moonsault",
@@ -49924,7 +49811,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "KakuranStep",
     "IgniteSteal",
     "FakeBomber",
     "SuperArmadillo",
@@ -51118,7 +51004,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "TrickCut",
     "SuperScanOF",
     "vr_whd00220",
     "PatriotShoot"
@@ -51630,7 +51515,6 @@
     "Intelligence": 113
    },
    "techniques": [
-    "KiaiNoPunch",
     "VolcanoCut",
     "BigScissors",
     "DashTrain",
@@ -52929,7 +52813,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "YusaburiFeint",
     "SuperScanOF",
     "Aikidou",
     "FuujinNoMai",
@@ -53611,7 +53494,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "TrickCut",
     "SuperScanOF",
     "PsychoShot",
     "KungFuHead"
@@ -53885,7 +53767,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "YusaburiFeint",
     "AuroraDribble",
     "WhiteBlade",
     "ShineDrive",
@@ -55157,7 +55038,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "HeelLift",
     "SuperScanOF",
     "PsychoShot",
     "KageNui"
@@ -56298,7 +56178,6 @@
     "Intelligence": 100
    },
    "techniques": [
-    "KakuranStep",
     "Kamaitachi",
     "FireTornado",
     "BladeAttack",
@@ -56664,7 +56543,6 @@
     "Intelligence": 112
    },
    "techniques": [
-    "FunbariCatch",
     "vr_whk01440",
     "vr_whk01450",
     "ToughnessBlock",
@@ -56983,7 +56861,6 @@
     "Intelligence": 120
    },
    "techniques": [
-    "PowerHandCatch",
     "SigmaZone",
     "DualSmash",
     "KageNui",
@@ -57120,7 +56997,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "HippariCut",
     "Wormhole",
     "DeepMist",
     "vr_whd00060",
@@ -57320,7 +57196,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "PowerShoot",
     "ElephantPress",
     "ShineDrive",
     "MeganeCrash",
@@ -57988,7 +57863,6 @@
     "Intelligence": 120
    },
    "techniques": [
-    "FeintNuki",
     "Gravitation",
     "NininSankyaku",
     "MueiRanbu",
@@ -58488,7 +58362,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "YusaburiFeint",
     "KillerSlide",
     "IllusionBall",
     "DynamiteShoot",
@@ -58675,7 +58548,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "ShoulderCharge",
     "TheWall",
     "RockWallDam",
     "MegaQuake",
@@ -58722,7 +58594,6 @@
     "Intelligence": 121
    },
    "techniques": [
-    "ShoulderCharge",
     "Cyclone",
     "KillerSlide",
     "IllusionBall",
@@ -58997,7 +58868,6 @@
     "Intelligence": 98
    },
    "techniques": [
-    "FeintPlay",
     "GrenadeShot",
     "LaFlamme",
     "DokonjouBat",
@@ -59044,7 +58914,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "ShoulderCharge",
     "SpinningCut",
     "Earthquake",
     "KungFuHead",
@@ -59320,7 +59189,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "KakuranStep",
     "TheWall",
     "DesertStorm",
     "BlockCircus",
@@ -59523,7 +59391,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "HippariCut",
     "HurricaneArrow",
     "ShootingStar",
     "BoostGlider",
@@ -60027,7 +59894,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "YusaburiFeint",
     "MaboroshiDribble",
     "HitoriOneTwo",
     "KurukuruHead",
@@ -60345,7 +60211,6 @@
     "Intelligence": 99
    },
    "techniques": [
-    "LoopShoot",
     "FreezeShot",
     "ShippuuDash",
     "Kamaitachi",
@@ -60483,7 +60348,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "HoppingTrick",
     "WonderTrap",
     "SoyoyagiStep",
     "WhiteBlade",
@@ -61121,7 +60985,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "FeintNuki",
     "CoilTurn",
     "DashStorm",
     "HeavensTime",
@@ -61223,7 +61086,6 @@
     "Intelligence": 106
    },
    "techniques": [
-    "PowerShoot",
     "ReflectBuster",
     "Hellfire",
     "TheWall",
@@ -61314,7 +61176,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "Matanuki",
     "HawkShot",
     "IllusionBall",
     "TwinBoost",
@@ -61599,7 +61460,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "GrounderShoot",
     "LightningAccel",
     "DoubleGrenade",
     "BungeeThrust",
@@ -61646,7 +61506,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "YusaburiFeint",
     "IceBlock",
     "DashStorm",
     "HeavensTime",
@@ -61784,7 +61643,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "FeintPlay",
     "TheWall",
     "RockWallDam",
     "ElephantPress",
@@ -62195,7 +62053,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "Matanuki",
     "FakeBall",
     "MatadorFeint",
     "TrickBall",
@@ -62242,7 +62099,6 @@
     "Intelligence": 98
    },
    "techniques": [
-    "KakuranStep",
     "vr_whs00630",
     "BlockCircus",
     "DinosaurBreak",
@@ -62558,7 +62414,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "TrickCut",
     "SouthernCrosscut",
     "Harvest",
     "MatadorFeint",
@@ -62693,7 +62548,6 @@
     "Intelligence": 98
    },
    "techniques": [
-    "FeintNuki",
     "CondorDive",
     "Aikidou",
     "EternalBlizzard",
@@ -62830,7 +62684,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "ShoulderCharge",
     "MokkoriOkaNoMoai",
     "TheWall",
     "MoguraFeint",
@@ -63170,7 +63023,6 @@
     "Intelligence": 101
    },
    "techniques": [
-    "FunbariCatch",
     "ToughnessBlock",
     "Burnout",
     "PowerShield",
@@ -63263,7 +63115,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "FeintPlay",
     "vr_whd01510",
     "TheWall",
     "BlockCircus",
@@ -63590,7 +63441,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "YusaburiFeint",
     "vr_who01420",
     "vr_whs02860",
     "OlympusHarmony",
@@ -63774,7 +63624,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "GrounderShoot",
     "NaminoriPierrot",
     "TatsumakiOtoshi",
     "DashStorm",
@@ -64515,7 +64364,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "YusaburiFeint",
     "TheWall",
     "Harvest",
     "FakeBomber",
@@ -65627,7 +65475,6 @@
     "Intelligence": 101
    },
    "techniques": [
-    "KiaiNoPunch",
     "ShootPocket",
     "RocketKobushi",
     "Shootrap",
@@ -66644,7 +66491,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "TrickCut",
     "vr_whd00150",
     "IceGround",
     "RunBallRun",
@@ -66828,7 +66674,6 @@
     "Intelligence": 116
    },
    "techniques": [
-    "HoppingTrick",
     "BladeAttack",
     "GrenadeShot",
     "BunshinFeint",
@@ -68567,7 +68412,6 @@
     "Intelligence": 98
    },
    "techniques": [
-    "Matanuki",
     "HyakuretsuShot",
     "UltraMoon",
     "TkachevBomber",
@@ -69439,7 +69283,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "HeelLift",
     "vr_whd00150",
     "MatadorFeint",
     "KageNui",
@@ -69624,7 +69467,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "HeelLift",
     "Moonsault",
     "BackTornado",
     "QuickDraw",
@@ -69717,7 +69559,6 @@
     "Intelligence": 101
    },
    "techniques": [
-    "PowerHandCatch",
     "TarzanKick",
     "vr_whk00510",
     "TaikokuOuka",
@@ -70877,7 +70718,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "HippariCut",
     "DragonCrash",
     "KageNui",
     "HuntersNet",
@@ -71107,7 +70947,6 @@
     "Intelligence": 96
    },
    "techniques": [
-    "MagaruShoot",
     "DragonCrash",
     "CondorDive",
     "MoguraFeint",
@@ -71427,7 +71266,6 @@
     "Intelligence": 106
    },
    "techniques": [
-    "WanbanShoot",
     "vr_whs02850",
     "DokonjouBat",
     "vr_whs00570"
@@ -71519,7 +71357,6 @@
     "Intelligence": 106
    },
    "techniques": [
-    "PowerShoot",
     "Ichiyajou",
     "DoubleGrenade",
     "FireTornado",
@@ -72517,7 +72354,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "PowerShoot",
     "AggressiveBeat",
     "RCShoot",
     "HeatTackle",
@@ -72564,7 +72400,6 @@
     "Intelligence": 111
    },
    "techniques": [
-    "HeelLift",
     "QuickDraw",
     "DashAccel",
     "vr_whd00220",
@@ -73068,7 +72903,6 @@
     "Intelligence": 100
    },
    "techniques": [
-    "YusaburiFeint",
     "PsychoShot",
     "SuperScanOF",
     "ReflectBuster",
@@ -73935,7 +73769,6 @@
     "Intelligence": 107
    },
    "techniques": [
-    "FeintPlay",
     "CoilUpper",
     "ExcellentBreast",
     "Sidewinder",
@@ -76605,7 +76438,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "TrickCut",
     "CoilTurn",
     "HurricaneArrow",
     "MeteorAttack",
@@ -86592,7 +86424,6 @@
     "Intelligence": 110
    },
    "techniques": [
-    "FeintNuki",
     "HurricaneArrow",
     "BackTornado",
     "BoostGlider",
@@ -88708,7 +88539,6 @@
     "Intelligence": 101
    },
    "techniques": [
-    "PowerHandCatch",
     "ToughnessBlock",
     "RocketKobushi",
     "GigantWall",
@@ -89665,7 +89495,6 @@
     "Intelligence": 96
    },
    "techniques": [
-    "PowerShoot",
     "Gorimuchuu",
     "vr_whs00630",
     "MeganeCrash",
@@ -89712,7 +89541,6 @@
     "Intelligence": 94
    },
    "techniques": [
-    "FunbariCatch",
     "ExcellentBreast",
     "DokonjouCatch",
     "GigantWall",
@@ -101150,7 +100978,6 @@
     "Intelligence": 101
    },
    "techniques": [
-    "KiaiNoPunch",
     "vr_whk00180",
     "DokonjouCatch",
     "ToughnessBlock",
@@ -204156,34 +203983,6 @@
    ]
   },
   {
-   "id": "FeintNuki",
-   "name": "Feint Dash",
-   "name_es": null,
-   "name_jp": "フェイント抜き",
-   "type": "Dribble",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
-  },
-  {
-   "id": "FeintPlay",
-   "name": "Feint Play",
-   "name_es": null,
-   "name_jp": "フェイントプレイ",
-   "type": "Block",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
-  },
-  {
    "id": "FenceOfGaia",
    "name": "Fingers of Gaia",
    "name_es": "Barrera de Gaia",
@@ -204318,20 +204117,6 @@
    "zukan_types": [
     "Defence"
    ]
-  },
-  {
-   "id": "FunbariCatch",
-   "name": "Power Catch",
-   "name_es": null,
-   "name_jp": "ふんばりキャッチ",
-   "type": "Catch",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
   },
   {
    "id": "GalacticaFall",
@@ -204582,20 +204367,6 @@
    ]
   },
   {
-   "id": "GrounderShoot",
-   "name": "Low Drive",
-   "name_es": null,
-   "name_jp": "グラウンダーシュート",
-   "type": "Shoot",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
-  },
-  {
    "id": "GyroSaving",
    "name": "Gyro-Blocker",
    "name_es": "Giroparada",
@@ -204636,20 +204407,6 @@
    ]
   },
   {
-   "id": "HeelLift",
-   "name": "Heel Flick",
-   "name_es": null,
-   "name_jp": "ヒールリフト",
-   "type": "Dribble",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
-  },
-  {
    "id": "HinawaBullet",
    "name": "Matchlock Bullet",
    "name_es": "Tiro de arcabuz",
@@ -204669,20 +204426,6 @@
    ]
   },
   {
-   "id": "HippariCut",
-   "name": "Cunning Pull",
-   "name_es": null,
-   "name_jp": "ひっぱりカット",
-   "type": "Block",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
-  },
-  {
    "id": "HologramLock",
    "name": "Holograb",
    "name_es": "Defensa holográfica",
@@ -204699,20 +204442,6 @@
    "zukan_types": [
     "Offence"
    ]
-  },
-  {
-   "id": "HoppingTrick",
-   "name": "Dust Kick",
-   "name_es": null,
-   "name_jp": "ホッピングトリック",
-   "type": "Dribble",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
   },
   {
    "id": "HuntersNet",
@@ -204908,20 +204637,6 @@
    ]
   },
   {
-   "id": "KakuranStep",
-   "name": "Deceptive Step",
-   "name_es": null,
-   "name_jp": "かく乱ステップ",
-   "type": "Dribble",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
-  },
-  {
    "id": "KattobiDefense",
    "name": "Flapjack Defence",
    "name_es": "Defensa propulsada",
@@ -204977,20 +204692,6 @@
    "zukan_types": [
     "Shot"
    ]
-  },
-  {
-   "id": "KiaiNoPunch",
-   "name": "Strong Punch",
-   "name_es": null,
-   "name_jp": "きあいのパンチ",
-   "type": "Catch",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
   },
   {
    "id": "KikuIchimonji",
@@ -205241,20 +204942,6 @@
    ]
   },
   {
-   "id": "LoopShoot",
-   "name": "Chip Shot",
-   "name_es": null,
-   "name_jp": "ループシュート",
-   "type": "Shoot",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
-  },
-  {
    "id": "LoveArrow",
    "name": "Cupid's Arrow",
    "name_es": "Flecha de Cupido",
@@ -205310,20 +204997,6 @@
    "zukan_types": [
     "Offence"
    ]
-  },
-  {
-   "id": "MagaruShoot",
-   "name": "Curve Shot",
-   "name_es": null,
-   "name_jp": "曲がるシュート",
-   "type": "Shoot",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
   },
   {
    "id": "MagicAmp",
@@ -205422,20 +205095,6 @@
     "Success",
     "Failure"
    ]
-  },
-  {
-   "id": "Matanuki",
-   "name": "Nutmeg",
-   "name_es": null,
-   "name_jp": "また抜き",
-   "type": "Dribble",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
   },
   {
    "id": "MochimochiKinakoMochi",
@@ -205838,34 +205497,6 @@
    ]
   },
   {
-   "id": "PowerHandCatch",
-   "name": "Mighty Save",
-   "name_es": null,
-   "name_jp": "パワーハンドキャッチ",
-   "type": "Catch",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
-  },
-  {
-   "id": "PowerShoot",
-   "name": "Power Shot",
-   "name_es": null,
-   "name_jp": "パワーシュート",
-   "type": "Shoot",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
-  },
-  {
    "id": "PowerSpike",
    "name": "Power Spike",
    "name_es": "Despeje de fuerza",
@@ -206098,20 +205729,6 @@
    ]
   },
   {
-   "id": "RollingCut",
-   "name": "Rolling Steal",
-   "name_es": null,
-   "name_jp": "ローリングカット",
-   "type": "Block",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
-  },
-  {
    "id": "RollingCutter",
    "name": "War Saw",
    "name_es": "Defensa radial",
@@ -206340,20 +205957,6 @@
     "Success",
     "Failure"
    ]
-  },
-  {
-   "id": "ShoulderCharge",
-   "name": "Shoulder Tackle",
-   "name_es": null,
-   "name_jp": "ショルダーチャージ",
-   "type": "Block",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
   },
   {
    "id": "Sidewinder",
@@ -206799,20 +206402,6 @@
    ]
   },
   {
-   "id": "TrickCut",
-   "name": "Curving Cut",
-   "name_es": null,
-   "name_jp": "トリックカット",
-   "type": "Block",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
-  },
-  {
    "id": "TwinMixer",
    "name": "Slice and Dice",
    "name_es": "Picadora",
@@ -206906,20 +206495,6 @@
     "Success",
     "Failure"
    ]
-  },
-  {
-   "id": "WanbanShoot",
-   "name": "Bounce Shot",
-   "name_es": null,
-   "name_jp": "ワンバンシュート",
-   "type": "Shoot",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
   },
   {
    "id": "Waterfall",
@@ -207034,20 +206609,6 @@
    "zukan_types": [
     "Defence"
    ]
-  },
-  {
-   "id": "YusaburiFeint",
-   "name": "Crosscut Feint",
-   "name_es": null,
-   "name_jp": "ゆさぶりフェイント",
-   "type": "Dribble",
-   "element": null,
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null
   },
   {
    "id": "ZSlash",
