@@ -39,12 +39,10 @@ interface CardRow {
   goalkeeping: number
   image_url: string | null
   is_version: boolean
-  zukan_no?: number | null
-  description?: string | null
-  description_es?: string | null
-  no?: number | null
-  specials?: Special[] | null
-  extra_teams?: string[] | null
+  zukan_no: number | null
+  no: number | null
+  specials: Special[] | null
+  extra_teams: string[] | null
   card_techniques: { slot: number; technique_id: string }[]
 }
 
@@ -52,14 +50,14 @@ interface TechniqueRow {
   id: string
   name: string
   name_es: string | null
-  name_fr?: string | null
-  name_it?: string | null
+  name_fr: string | null
+  name_it: string | null
   type: Technique['type']
   element: Element | null
   cost: number | null
   cost_game: string | null
-  description?: string | null
-  image_url?: string | null
+  description: string | null
+  image_url: string | null
 }
 
 interface StaffRow {
@@ -76,8 +74,8 @@ interface StaffRow {
 interface TeamRow {
   name: string
   name_es: string | null
-  name_fr?: string | null
-  name_it?: string | null
+  name_fr: string | null
+  name_it: string | null
 }
 
 type LocalNames = Partial<Record<'es' | 'fr' | 'it', string | null | undefined>>
@@ -95,39 +93,52 @@ let byId = new Map<string, Player>()
 let pools: DraftPool[] = []
 let poolRosters = new Map<string, Player[]>()
 
-async function rest<T>(path: string): Promise<T> {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, { headers: { apikey: SUPABASE_KEY } })
+async function rest<T>(path: string, headers?: Record<string, string>): Promise<{ data: T; total: number | null }> {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, { headers: { apikey: SUPABASE_KEY, ...headers } })
   if (!res.ok) throw new Error(`Supabase ${res.status}`)
-  return res.json() as Promise<T>
+  const total = Number(res.headers.get('content-range')?.split('/')[1])     // "0-999/5378" con Prefer: count=exact
+  return { data: await res.json() as T, total: Number.isFinite(total) ? total : null }
 }
 
-// '*' y no una lista: así la app funciona también antes de que la base tenga columnas nuevas (zukan_no…)
-const CARD_COLUMNS = '*,card_techniques(slot,technique_id)'
+const get = async <T>(path: string) => (await rest<T>(path)).data
+
+// solo lo que usa la app: las descripciones se piden al abrir la ficha (loadDescription)
+const CARD_COLUMNS = 'id,character_id,name,game,version,team,position,element,ovr,category,tier,'
+  + 'shooting,control,physical,speed,defense,goalkeeping,image_url,is_version,zukan_no,no,specials,extra_teams,'
+  + 'card_techniques(slot,technique_id)'
+const TECHNIQUE_COLUMNS = 'id,name,name_es,name_fr,name_it,type,element,cost,cost_game,description,image_url'
+const cardsPage = (offset: number, headers?: Record<string, string>) =>
+  rest<CardRow[]>(`cards?select=${CARD_COLUMNS}&order=id&limit=${PAGE}&offset=${offset}`, headers)
+
+/** Cartas en páginas de PAGE pedidas a la vez (la primera dice cuántas hay) */
+async function loadCards(): Promise<CardRow[]> {
+  const first = await cardsPage(0, { Prefer: 'count=exact' })
+  const total = first.total ?? first.data.length
+  const offsets = []
+  for (let o = PAGE; o < total; o += PAGE) offsets.push(o)
+  const rest_ = await Promise.all(offsets.map(o => cardsPage(o).then(r => r.data)))
+  return [first.data, ...rest_].flat()
+}
 
 export async function loadCatalog(): Promise<void> {
   if (players.length) return
-  const techniques = await rest<TechniqueRow[]>('techniques?select=*')
+  // todo a la vez; equipos y cuerpo técnico son opcionales (sin ellos: nombres en inglés, sin pestaña de staff)
+  const [techniques, teams, staffRows, rows] = await Promise.all([
+    get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS}`),
+    get<TeamRow[]>('teams?select=name,name_es,name_fr,name_it').catch(() => [] as TeamRow[]),
+    get<StaffRow[]>('staff?select=zukan_no,name,role,team,teams,games,image_url,description&order=zukan_no').catch(() => [] as StaffRow[]),
+    loadCards(),
+  ])
   const techById = new Map<string, Technique>(techniques.map(t => [t.id, {
-    id: t.id, name: t.name, nameEs: t.name_es ?? null, nameFr: t.name_fr ?? null, nameIt: t.name_it ?? null, type: t.type, element: t.element, cost: t.cost, costGame: t.cost_game,
-    description: t.description ?? null, image: t.image_url ?? null,
+    id: t.id, name: t.name, nameEs: t.name_es, nameFr: t.name_fr, nameIt: t.name_it, type: t.type, element: t.element,
+    cost: t.cost, costGame: t.cost_game, description: t.description, image: t.image_url,
   }]))
-
   techniquesById = techById
-  // la tabla de equipos es opcional: sin ella se muestran los nombres en inglés
-  const teams = await rest<TeamRow[]>('teams?select=*').catch(() => [] as TeamRow[])
   teamNames = new Map(teams.map(t => [t.name, { es: t.name_es, fr: t.name_fr, it: t.name_it }]))
-  // cuerpo técnico: también opcional
-  const staffRows = await rest<StaffRow[]>('staff?select=*&order=zukan_no').catch(() => [] as StaffRow[])
   staff = staffRows.map(s => ({
     zukanNo: s.zukan_no, name: s.name, role: s.role, team: s.team, teams: s.teams ?? [], games: s.games ?? [],
     image: s.image_url, description: s.description,
   }))
-  const rows: CardRow[] = []
-  for (let offset = 0; ; offset += PAGE) {
-    const page = await rest<CardRow[]>(`cards?select=${CARD_COLUMNS}&order=id&limit=${PAGE}&offset=${offset}`)
-    rows.push(...page)
-    if (page.length < PAGE) break
-  }
 
   players = rows.map(r => {
     const techs = [...r.card_techniques].sort((a, b) => a.slot - b.slot)
@@ -152,10 +163,8 @@ export async function loadCatalog(): Promise<void> {
       techniques: techs,
       hissatsu: techs.map(t => t.name),
       isVersion: r.is_version,
-      zukanNo: r.zukan_no ?? null,
-      description: r.description ?? null,
-      descriptionEs: r.description_es ?? null,
-      no: r.no ?? r.zukan_no ?? null,
+      zukanNo: r.zukan_no,
+      no: r.no ?? r.zukan_no,
       specials: r.specials ?? [],
       extraTeams: r.extra_teams ?? [],
     }
@@ -230,6 +239,26 @@ export function teamLabel(label: string, locale: string): string {
   const sp = head.indexOf(' ')                                   // prefijo de bandera: "🇯🇵 Equipo"
   if (sp > 0 && teamNames.has(head.slice(sp + 1))) return head.slice(0, sp + 1) + teamName(head.slice(sp + 1), locale) + suffix
   return label
+}
+
+export interface CardDescription {
+  en: string | null
+  es: string | null
+}
+
+const descriptions = new Map<string, Promise<CardDescription>>()
+
+/** Descripción de la carta (zukan en inglés + wiki en castellano), pedida la primera vez que se abre la ficha */
+export function loadDescription(id: string): Promise<CardDescription> {
+  let d = descriptions.get(id)
+  if (!d) {
+    d = get<{ description: string | null; description_es: string | null }[]>(
+      `cards?select=description,description_es&id=eq.${encodeURIComponent(id)}`)
+      .then(([r]) => ({ en: r?.description ?? null, es: r?.description_es ?? null }))
+    d.catch(() => descriptions.delete(id))                       // un fallo de red no se queda guardado
+    descriptions.set(id, d)
+  }
+  return d
 }
 
 export function getStaff(): Staff[] {

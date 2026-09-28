@@ -50,7 +50,7 @@ def get(url, params=None, tries=5):
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=120) as r:
                 return r.read()
-        except Exception as e:  # red inestable / 429
+        except Exception:  # red inestable / 429
             if i == tries - 1:
                 raise
             time.sleep(2 ** i)
@@ -170,7 +170,6 @@ def fetch_zukan_skills():
     """supertécnicas de zukan (inglés + nombre japonés), con categorías, descripción, imagen y vídeos"""
     def parse(h):
         rows = []
-        box = h.split('<ul class="skillListBox">', 1)[-1].split('</ul>\n', 1)[0] if 'skillListBox' in h else ''
         for b in re.split(r'<li>\s*<div class="nameBox">', h.split('<ul class="skillListBox">', 1)[-1])[1:]:
             name = re.search(r'class="name">(.*?)</span>', b, re.S)
             img = re.search(r'<img src="([^"]+)"', b)
@@ -393,7 +392,6 @@ def main():
                 if 'continue' not in d:
                     break
                 cont = {'cmcontinue': d['continue']['cmcontinue']}
-        out = {}
         def keep(c):
             prof = re.search(r'\{\{Profile/Entry[^\n]*', c)
             if not prof or 'Mixi Max' not in prof.group(0):
