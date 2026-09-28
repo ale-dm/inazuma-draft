@@ -1,6 +1,5 @@
-import { toPng } from 'html-to-image'
-
 export async function downloadNodePng(node: HTMLElement, filename: string) {
+  const { toPng } = await import('html-to-image')        // solo al exportar: fuera del bundle inicial
   const dataUrl = await toPng(node, {
     cacheBust: true,
     pixelRatio: 2,

@@ -1,26 +1,26 @@
-import posthog from 'posthog-js'
+import type { PostHog } from 'posthog-js'
 
-let ready = false
+// PostHog solo se descarga si hay clave (VITE_PUBLIC_POSTHOG_KEY); los eventos de antes de que cargue se encolan
+const key = import.meta.env.VITE_PUBLIC_POSTHOG_KEY
+let client: Promise<PostHog> | null = null
 
 export function initAnalytics() {
-  const key = import.meta.env.VITE_PUBLIC_POSTHOG_KEY
-  const host = import.meta.env.VITE_PUBLIC_POSTHOG_HOST ?? 'https://us.i.posthog.com'
-  if (!key || ready) return
-
-  posthog.init(key, {
-    api_host: host,
-    person_profiles: 'identified_only',
-    capture_pageview: true,
-    capture_pageleave: true,
+  if (!key || client) return
+  client = import('posthog-js').then(({ default: posthog }) => {
+    posthog.init(key, {
+      api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST ?? 'https://us.i.posthog.com',
+      person_profiles: 'identified_only',
+      capture_pageview: true,
+      capture_pageleave: true,
+    })
+    return posthog
   })
-  ready = true
 }
 
 export function trackEvent(name: string, props?: Record<string, string | number | boolean>) {
-  if (!ready) return
-  posthog.capture(name, props)
+  client?.then(p => p.capture(name, props)).catch(() => {})
 }
 
 export function isAnalyticsEnabled() {
-  return ready
+  return client !== null
 }

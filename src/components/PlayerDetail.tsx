@@ -1,6 +1,6 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import type { Player } from '../types'
-import { cardTeamLabel, getCharacterVersions, hyperName, specialName, teamName, techniqueName } from '../data/catalog'
+import { cardTeamLabel, getCharacterVersions, hyperName, loadDescription, type CardDescription, specialName, teamName, techniqueName } from '../data/catalog'
 import { GAME_LABEL } from '../data/games'
 import { ALL_STAT_KEYS } from '../lib/power'
 import { useAppSettings } from '../context/AppSettings'
@@ -20,6 +20,17 @@ const SPECIAL_ICON: Record<string, string> = { keshin: '👤', soul: '🐾', mix
 export default function PlayerDetail({ player, onClose, onOpen }: Props) {
   const { t, locale } = useAppSettings()
   const versions = getCharacterVersions(player.characterId).filter(v => v.id !== player.id)
+  const [desc, setDesc] = useState<CardDescription | null>(null)
+
+  useEffect(() => {
+    let live = true
+    setDesc(null)
+    loadDescription(player.id).then(d => { if (live) setDesc(d) }).catch(() => {})
+    return () => { live = false }
+  }, [player.id])
+  // castellano solo en español; en el resto, la oficial de zukan (inglés)
+  const descEs = locale === 'es' && desc?.es
+  const descText = descEs || desc?.en || desc?.es
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
@@ -64,12 +75,10 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
             </div>
           </section>
 
-          {(player.description || player.descriptionEs) && (
+          {descText && (
             <section>
               <h3 className="font-heading text-sm font-bold text-accent mb-2">{t('players.description')}</h3>
-              {locale === 'es' && player.descriptionEs
-                ? <p className="text-sm text-iz-text italic" lang="es">“{player.descriptionEs}”</p>
-                : <p className="text-sm text-iz-text italic" lang="en">“{player.description ?? player.descriptionEs}”</p>}
+              <p className="text-sm text-iz-text italic" lang={descEs || !desc?.en ? 'es' : 'en'}>“{descText}”</p>
             </section>
           )}
 

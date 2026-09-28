@@ -62,10 +62,6 @@ export interface Player {
   isVersion: boolean
   /** Nº oficial de la ficha en zukan.inazuma.jp (null en versiones que solo están en la wiki) */
   zukanNo: number | null
-  /** Descripción oficial de zukan (inglés) */
-  description: string | null
-  /** Descripción en castellano (inazuma.fandom.com/es) */
-  descriptionEs: string | null
   /** Nº de la carta: el de su ficha de zukan o, en las versiones nuestras, a partir del último de zukan */
   no: number | null
   /** Keshin (espíritu guerrero), Soul (tótem) y Mixi Max */

@@ -3,6 +3,14 @@
 Genera la base de jugadores a partir de la caché de tools/db/fetch.py.
 Reglas: docs/plan-base-jugadores.md · Excepciones: data/overrides.json
 
+Módulos:
+  common.py   rutas, constantes y utilidades (lua, nombres comparables)
+  es_text.py  descripciones en castellano de la wiki española
+  ares.py     cartas de Ares, Orion y Victory Road
+  tuning.py   curva de rivales de cada juego (overrides.team_tuning)
+  i18n.py     nombres en francés e italiano
+  output.py   escritura de las salidas
+
 Uso:  python3 tools/db/build.py
 Salida:
   build/players.json   cartas completas (revisión / frontend)
@@ -12,181 +20,20 @@ Salida:
 """
 import bisect
 import collections
-import csv
 import json
 import os
 import re
 
-import ares                                  # tools/db/ares.py (cartas de Ares)
-
-ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', '..'))
-CACHE = os.path.join(ROOT, 'tools', '.cache', 'db')
-OUT = os.path.join(ROOT, 'build')
-ZUKAN_DIR = os.path.join(ROOT, 'data', 'zukan')
-
-MAIN = ['IE1', 'IE2', 'IE3', 'GO1', 'GO2', 'GO3']
-MODULE = dict(zip(MAIN, ['IE', 'IE2', 'IE3', 'GO', 'CS', 'GX']))
-TAB = {'Inazuma Eleven': 'IE1', 'Inazuma Eleven 2': 'IE2', 'Inazuma Eleven 3': 'IE3', 'Inazuma Eleven GO': 'GO1',
-       'Inazuma Eleven GO 2: Chrono Stone': 'GO2', 'Inazuma Eleven GO Galaxy': 'GO3'}
-ERA = dict(zip(MAIN, [0, 1, 2, 2, 3, 4]))
-IEK = ['Kick', 'Body', 'Control', 'Guard', 'Speed', 'Stamina', 'Guts']
-GOK = ['Kick', 'Dribbling', 'Technique', 'Block', 'Speed', 'Stamina', 'Catch']
-ST = ['Kick', 'Control', 'Body', 'Speed', 'Guard', 'Catch']            # modelo común (nombres de Strikers)
-OUT_NAMES = dict(zip(ST, ['shooting', 'control', 'physical', 'speed', 'defense', 'goalkeeping']))
-POSW = {'FW': {'Kick': .5, 'Control': .2, 'Speed': .15, 'Body': .15},
-        'MF': {'Control': .4, 'Speed': .2, 'Kick': .2, 'Guard': .1, 'Body': .1},
-        'DF': {'Guard': .5, 'Body': .25, 'Speed': .15, 'Control': .1},
-        'GK': {'Catch': .6, 'Body': .2, 'Guard': .2}}
-RANK = {'S+': 92, 'S': 88, 'A+': 84, 'A': 80, 'B+': 76, 'B': 72, 'C+': 68, 'C': 64, 'D+': 60, 'D': 56, 'E': 48}
-CATEGORIES = [('Legendary Player', 89), ('Top Player', 83), ('Advanced Player', 75), ('Growing Player', 65), ('Common Player', 0)]
-BAND = {'A': (66, 84), 'B': (56, 77), 'C': (44, 72)}
-CAP, CAP_C = 94, 80
-CEIL = {'IE1': 85, 'IE2': 88, 'IE3': 91, 'GO1': 90, 'GO2': 93, 'GO3': 94}
-ELEMENT = {'Fire': 'fire', 'Forest': 'wood', 'Wood': 'wood', 'Wind': 'air', 'Air': 'air', 'Mountain': 'earth', 'Earth': 'earth'}
-SCOUT_TEAMS = {'Unaffiliated', 'Sub Character'}
-EXCLUDED_FORMS = ('real inazuma', 'mixi max', 'mixi-max', 'miximax', 'child', 'keshin armed')
-HISSATSU_TYPES = ('Shoot', 'Dribble', 'Block', 'Catch')
-RANK_COST = {'IE': ('tp_ie3', 'tp_ie2', 'tp_ie'), 'GO': ('tp_iego3', 'tp_iego2', 'tp_iego')}
-SHOW_COST = ('tp_iego3', 'tp_ie3', 'tp_iego2', 'tp_ie2', 'tp_iego', 'tp_ie')
-COST_GAME = {'tp_iego3': 'GO3', 'tp_ie3': 'IE3', 'tp_iego2': 'GO2', 'tp_ie2': 'IE2', 'tp_iego': 'GO1', 'tp_ie': 'IE1'}
-
-# Formas de Strikers 2013 → (juego, equipo de la versión). Orden = prioridad.
-STRIKERS_FORMS = [
-    ('dark emperors', 'IE2', 'Dark Emperors'), ('shin teikoku', 'IE2', 'Royal Academy Redux'),
-    ('second raimon', 'IE2', 'Raimon'), ('raimon ii', 'IE2', 'Raimon'), ('neo japan', 'IE3', 'Neo Japan'),
-    ('inazuma japan', 'IE3', 'Inazuma Japan'), ('fire dragon', 'IE3', 'Fire Dragon'),
-    ('teikoku', 'IE1', 'Royal Academy'), ('zeus', 'IE1', 'Zeus'), ('raimon form', 'IE1', 'Raimon'),
-    ('shinsei raimon', 'GO1', 'Raimon'), ('tenmas', 'GO2', 'The Sherwinds'),     # Los Arions: equipo de Chrono Stone
-]
-# Formas de PlayerData (wiki) → equipo de la versión. Real Inazuma, Mixi Max, modos y disfraces quedan fuera.
-# Caos no tiene cartas propias: su pool son las cartas de Prominence / Diamond Dust de sus jugadores (EXTRA_TEAM_FORMS)
-EXTRA_TEAM_FORMS = {'Chaos': 'Chaos'}
-WIKI_FORM_TEAM = {'Dark Emperors': 'Dark Emperors', 'Epsilon Kai': 'Epsilon Plus',
-                  'Shin Teikoku Gakuen': 'Royal Academy Redux', 'Diamond Dust': 'Diamond Dust', 'Prominence': 'Prominence',
-                  'Neo Japan': 'Neo Japan', 'Fire Dragon': 'Fire Dragon', 'Unicorn': 'Unicorn', 'Zeus': 'Zeus'}
-TEAM_FORM_WORD = {v: k.lower() for k, v in WIKI_FORM_TEAM.items()} | {'Young Inazuma': 'young'}
-ALT_VERSION = ('mixi', 'dark emperors', 'chaos', 'atsuya', 'shirou', 'merged', 'ishido', 'gran', 'chrono storm')
-ILJ = 'Inazuma Legend Japan'
-# nombres de equipo de zukan → los de la base
-ZUKAN_TEAM = {'Inazuma National': 'Inazuma Japan', 'Inazuma Legend National': ILJ, 'Neo National': 'Neo Japan'}
-
-
-def load(name):
-    with open(os.path.join(CACHE, name), encoding='utf-8') as f:
-        return json.load(f) if name.endswith('.json') else f.read()
-
-
-def slug(s):
-    return re.sub(r'-+', '-', re.sub(r'[^a-z0-9]+', '-', s.lower())).strip('-')
-
-
-def lua_entries(text):
-    starts = [(m.start(), m.group(1)) for m in re.finditer(r'\n\t(\w+)=\{', text)]
-    return {k: text[p:(starts[i + 1][0] if i + 1 < len(starts) else len(text))] for i, (p, k) in enumerate(starts)}
-
-
-def lua_field(body, name):
-    m = re.search(r'\n\t\t' + name + r'="([^"]*)"', body)
-    return m.group(1) if m else None
-
-
-def lua_moves(body, module):
-    m = re.search(r'\n\t\t\t' + module + r'=\{(.*?)\n\t\t\t\}', body, re.S)
-    return re.findall(r'\{"(\w+)"', m.group(1)) if m else []
-
-
-# códigos de equipo de los avatares de Victory Road en la wiki inglesa: (equipo, saga) → prefijos
-EN_TEAM_CODE = {('Raimon', 'GO'): ['SR', 'R (GO)'], ('Raimon', 'IE'): ['R', 'SR'], ('Fire Dragon', 'IE'): ['FD'],
-                ('Epsilon Plus', 'IE'): ['EK', 'EK-F', 'EK-GK'], ('Neo Japan', 'IE'): ['NJ'], ('Inazuma Japan', 'IE'): ['IJ'],
-                ('Earth Eleven', 'GO'): ['EE', 'EE-F', 'EE-A'], ('Zeus', 'IE'): ['Z'], ('Royal Academy', 'IE'): ['TG'],
-                ('Royal Academy Redux', 'IE'): ['STG'], ('Dark Emperors', 'IE'): ['DE'], ('Young Inazuma', 'IE'): ['YI'],
-                ('Protocol Omega', 'GO'): ['PO'], ('Protocol Omega 2.0', 'GO'): ['PO2'], ('Protocol Omega 3.0', 'GO'): ['PO3'],
-                ('Inazuma Legend Japan', 'GO'): ['ILJ'], ('Alpine', 'IE'): ['H'], ('Genesis', 'IE'): ['G'],
-                ('The Sherwinds', 'GO'): ['T']}
-
-
-def load_opt(name, default):
-    """caché opcional (pasos de fetch.py añadidos después)"""
-    return load(name) if os.path.exists(os.path.join(CACHE, name)) else default
-
-
-def lua_game_list(body, field, module):
-    """keshin={GO={"Lancelot",true}, CST={{"A",true,2,"…"},{"B",…}}} → [("Lancelot", True)] para ese juego"""
-    m = re.search(r'\n\t\t' + field + r'=\{(.*?)\n\t\t\}', body or '', re.S)
-    if not m:
-        return []
-    out, key = [], None
-    for line in m.group(1).split('\n'):
-        km = re.match(r'\s*(\w+)=\{(.*)', line)
-        if km:
-            key, line = km.group(1), km.group(2)
-        if key == module:
-            out += [(n, a == 'true') for n, a in re.findall(r'"(\w+)"(?:,(true|false))?', line)]
-    return out
-
-
-DESC_CODE = dict(zip(MAIN, ['', ' IE2', ' IE3', ' IEGO', ' IEGO2', ' IEGO3']))    # |Descripción IEGO2 = …
-
-
-def es_desc_tabs(section):
-    """sección 'Descripciones' de la wiki española → [(pestaña, texto)] (pestañas anidadas incluidas)"""
-    section = section.split('===Manga===')[0]
-    parts = re.split(r'(?:\|-\||\{\{!\}\}-\{\{!\}\}|\{\{#tag: ?tabber\|\s*)([^=\n|{}]+)=', section)
-    tabs = [('', parts[0])] + [(parts[i].strip(), parts[i + 1]) for i in range(1, len(parts) - 1, 2)]
-    return [(l, t) for l, t in tabs if 'Descripción' in t]
-
-
-def es_desc_clean(v):
-    v = re.split(r'\n\s*=+', v)[0]                     # sin subsecciones (===Sitio Oficial===…)
-    v = v.split('----')[-1]
-    v = re.sub(r'^\s*[A-Z]{2}\|:?\s*', '', v)
-    v = re.sub(r'\[\[(?:[^|\]]*\|)?([^\]]*)\]\]', r'\1', v)
-    v = re.sub(r"\{\{[^{}]*\}\}|<[^>]+>|'''?", '', v)
-    v = re.sub(r'\{\{|\}\}|\[\[|\]\]', '', v)
-    v = re.sub(r'^\s*[A-Z]{2}\|:?\s*\*?\s*', '', v)
-    return re.sub(r'\s+', ' ', v).strip(' *|')
-
-
-def es_description(section, game, version, adult, mixi, page_es, version_es='', partner=''):
-    """descripción en castellano de esa carta: pestaña de la versión (joven/adulto/Mixi Max) y plantilla del juego"""
-    if not section:
-        return None
-    tabs = es_desc_tabs(section)
-    if not tabs:
-        return None
-    def score(lt):
-        l = lt[0].lower()
-        sc = 3 * (mixi and 'mixi' in l) + 3 * (adult and ('adult' in l or l == page_es.lower()))
-        sc += 4 * any(v and len(v) > 3 and v.lower() in l for v in (version_es, version))
-        sc += 4 * bool(mixi and partner and any(w.lower() in l for w in partner.split() if len(w) > 3))
-        sc -= 3 * (not mixi and 'mixi' in l) + 2 * (not adult and 'adult' in l) + ('armadura' in l or 'hyper' in l)
-        return sc
-    order = sorted(range(len(tabs)), key=lambda i: (-score(tabs[i]), i))
-    for i in order[:1] + [j for j in order[1:] if score(tabs[j]) == score(tabs[order[0]])]:
-        text = tabs[i][1]
-        for g in [game] + [x for x in reversed(MAIN) if x != game and x[:2] == game[:2]]:
-            # vale para {{Descripción/IE GO 2|Descripción IEGO2 = …}} y para {{Descripción|Descripción IE3 = …|Descripción IEGO = …}}
-            m = re.search(r'\|\s*Descripción' + DESC_CODE[g] + r'\s*=(.*?)(?=\s*\|\s*Descripción|\n\{\{Descripción|\n\s*\}\}\s*$|\Z)',
-                          text, re.S | re.M)
-            if not m:
-                continue
-            v = re.sub(r'\}\}\s*(\}\})?\s*$', '', m.group(1).strip())
-            bullets = re.findall(r"\*\s*'''([^']+)''':\s*([^\n]+)", v)
-            if bullets:
-                want = version.lower()
-                pick = next((t for lab, t in bullets if any(w in lab.lower() for w in want.split() if len(w) > 3)), bullets[0][1])
-                v = pick
-            v = es_desc_clean(v)
-            if v:
-                return v
-    return None
-
-
-def category(ovr):
-    return next(c for c, t in CATEGORIES if ovr >= t)
-
-
-AGE_VERSION = {'Adult': 'Adult', 'Child': 'Child', 'Elementary': 'Child', 'High School': 'High School', 'College': 'Adult'}
+import ares                                  # tools/db/ares.py (cartas de Ares, Orion y Victory Road)
+from common import (AGE_VERSION, ALT_VERSION, BAND, CACHE, CAP, CAP_C, CEIL, COST_GAME, ELEMENT, EN_TEAM_CODE, ERA, EXCLUDED_FORMS,
+                    EXTRA_TEAM_FORMS, GOK, HISSATSU_TYPES, IEK, ILJ, MAIN, MODULE, OUT, OUT_NAMES, POSW, RANK,
+                    RANK_COST, ROOT, SCOUT_TEAMS, SHOW_COST, ST, STRIKERS_FORMS, TAB, TEAM_FORM_WORD, WIKI_FORM_TEAM,
+                    ZUKAN_DIR, ZUKAN_TEAM, category, load, load_opt, lua_entries, lua_field, lua_game_list, lua_moves,
+                    norm_jp, romaji, slug, tnorm)
+from es_text import es_description
+from tuning import apply_tuning
+from i18n import localize
+from output import write_outputs
 
 
 def main(extra_z=None, write=True):
@@ -199,10 +46,6 @@ def main(extra_z=None, write=True):
     es_desc = load_opt('es_descriptions.json', {})
     keshin_data = lua_entries(load_opt('KeshinData.lua', ''))
     soul_data = lua_entries(load_opt('SoulData.lua', ''))
-    def romaji(k):                                   # "Seijuu"/"Seiju", "Jinrou"/"Jinro", "Buffalo (Soul)"/"Buffalo"
-        k = re.sub(r'\s*\((?:soul|tótem|totem)\)', '', k.lower())
-        k = re.sub(r'[^a-z]', '', k).replace('ou', 'o')
-        return re.sub(r'([aeiou])\1+', r'\1', k)
     def es_names(d):
         idx = {}
         for title, v in d.items():
@@ -568,10 +411,6 @@ def main(extra_z=None, write=True):
 
     # --- técnicas (+ nombre en castellano: wiki inazuma.fandom.com/es, cruzado por nombre japonés o inglés)
     techniques = {}
-    def norm_jp(s):
-        s = re.sub(r'\{\{Ruby\|([^|}]*)\|[^}]*\}\}', r'\1', s or '')
-        s = re.sub(r'<[^>]+>|\{\{[^}]*\}\}', '', s)
-        return re.sub(r'[\s・･!！?？「」『』*＊]', '', s)
     es_by_jp, es_by_en = {}, {}
     for title, d in {**load_opt('es_hyper.json', {}), **load('es_techniques.json')}.items():
         es = re.sub(r'\s*\([^)]*\)$', '', title).strip()          # "Tormenta (supertécnica)" → "Tormenta"
@@ -1035,76 +874,7 @@ def main(extra_z=None, write=True):
         ver = c['version'] if c['version'] != 'base' else 'base'
         c['id'] = f"{c['character_id']}--{c['game'].lower()}--{slug(ver)}"
 
-    # a mano: overrides.team_tuning — curva de rivales de la historia: media del once titular y capitán que destaca
-    game_cfg = {k: v for k, v in ov.get('team_tuning', {}).get('_game', {}).items() if not k.startswith('_')}
-
-    def apply_tuning(cards, games):
-        """team_tuning de esos juegos (los clásicos aquí; Ares, después de crear sus cartas)"""
-        for g_, gc in game_cfg.items():                # escala de poder del juego: comprimir las notas muy altas (GO1 tipo IE1)
-            if gc.get('compress_above') and g_ in games:
-                a_, f_ = gc['compress_above'], gc.get('compress_factor', 0.5)
-                for c in cards:
-                    if c['game'] == g_ and c['ovr'] > a_:
-                        new = round(a_ + (c['ovr'] - a_) * f_)
-                        c.setdefault('ovr_untuned', c['ovr'])
-                        c['stats'] = {k: max(25, min(99, v + new - c['ovr'])) for k, v in c['stats'].items()}
-                        c['ovr'] = new
-                        c['category'] = category(new)
-        for g_, tms in ov.get('team_tuning', {}).items():
-            if g_.startswith('_') or g_ not in games:
-                continue
-            for tm, cfg in tms.items():
-                grp = [c for c in cards if c['game'] == g_ and c['team'] == tm]
-                if not grp:
-                    report.append(f'team_tuning: {g_} {tm} sin cartas')
-                    continue
-                capt = [c for c in grp if c['page'] == cfg.get('captain')]
-                top_ = game_cfg.get(g_, {}).get('cap') or max(CEIL.get(g_, 88), 88)   # techo de las subidas; nadie baja por él
-
-                def tuned(c, delta):
-                    new = max(25, min(max(c['ovr'], top_), c['ovr'] + delta))
-                    if c in capt:                      # capitán: +2 y cerca de 4 por encima del once (subida máx. +6)
-                        cap_c = cfg.get('captain_cap', top_)      # techo propio del capitán (Barcelona Orb en Ares: 89)
-                        cp_, cr_ = game_cfg.get(g_, {}).get('captain_plus', 4), game_cfg.get(g_, {}).get('captain_raise', 6)
-                        new = min(max(cap_c, c['ovr']), max(new + 2, min(round(cfg['top11']) + cp_, new + cr_), c['ovr']))
-                    return new
-                # desplazamiento entero más alto que no pasa del objetivo (con el capitán ya subido) y +1 a los más flojos del
-                # once hasta clavar la media: así el orden de la historia se cumple exacto
-                n11 = min(11, len(grp))
-                mean11 = lambda d: sum(sorted(tuned(c, d) for c in grp)[-11:]) / n11
-                delta = max((d for d in range(-25, 26) if mean11(d) <= cfg['top11'] + 1e-9), default=-25)
-                once = sorted(grp, key=lambda c: tuned(c, delta))[-11:]
-                extra = {id(c) for c in once[:round((cfg['top11'] - mean11(delta)) * n11)] if c not in capt}
-                for c in grp:
-                    new = min(max(cfg.get('captain_cap', top_) if c in capt else top_, c['ovr']), tuned(c, delta) + (id(c) in extra))
-                    d_ = new - c['ovr']
-                    c.setdefault('ovr_untuned', c['ovr'])
-                    c['ovr'] = new
-                    c['stats'] = {k: max(25, min(99, v + d_)) for k, v in c['stats'].items()}
-                    c['category'] = category(new)
-                for c in grp:                          # suelo del equipo: nadie por debajo (Zanark Outsiders en VR: 84)
-                    if c['ovr'] < cfg.get('floor', 0):
-                        c['stats'] = {k: max(25, min(99, v + cfg['floor'] - c['ovr'])) for k, v in c['stats'].items()}
-                        c['ovr'] = cfg['floor']
-                        c['category'] = category(c['ovr'])
-                if cfg.get('captain') and not capt:
-                    report.append(f"team_tuning: capitán {cfg['captain']} no está en {g_} {tm}")
-        # estrellas del juego: suelo de nota después de la curva (Harper Evans, los que tienen versión héroe/basara en VR)
-        for g_, gc in game_cfg.items():
-            if g_ not in games or not (gc.get('stars') or gc.get('hero_floor')):
-                continue
-            stars = {k: v for k, v in (gc.get('stars') or {}).items() if not k.startswith('_')}
-            for c in cards:
-                if c['game'] != g_:
-                    continue
-                fl = max(stars.get(c['page'], 0), gc.get('hero_floor', 0) if c.get('hero') else 0)
-                if c['ovr'] < fl:
-                    c.setdefault('ovr_untuned', c['ovr'])
-                    c['stats'] = {k: max(25, min(99, v + fl - c['ovr'])) for k, v in c['stats'].items()}
-                    c['ovr'] = fl
-                    c['category'] = category(fl)
-
-    apply_tuning(cards, set(MAIN))
+    apply_tuning(cards, set(MAIN), ov, report)
 
     # a mano: overrides.drop_cards (versiones descartadas)
     drop = set(ov.get('drop_cards', {}).get('ids', []))
@@ -1200,8 +970,6 @@ def main(extra_z=None, write=True):
         c['extra_teams'] = sorted({tm for g, tm in extra_team_pages.get(c['page'], ()) if g == c['game'] and c['version'] == 'base'})
 
     # --- nombres de equipo en castellano (wiki en español: plantilla Equipo; cruce por nombre inglés o japonés)
-    SUF = r'\b(jr\.? high|junior high|middle school|merchant marine academy|military academy|academy|school)\b|^order of |^the '
-    tnorm = lambda s: re.sub(r'[^a-z0-9]', '', re.sub(SUF, '', s.lower()))
     es_team = {}
     for title, d in sorted(load('es_teams.json').items(), key=lambda kv: '(' in kv[0]):     # fichas principales primero
         es = re.sub(r'^Instituto ', '', d['es'] or re.sub(r'\s*\(.*\)$', '', title))
@@ -1459,7 +1227,7 @@ def main(extra_z=None, write=True):
     for g_ in ('ARES', 'ORION', 'VR'):
         g_cards, g_chars = ares.build(ROOT, CACHE, zukan, zdesc, page_of, classic, techniques, es_by_jp, es_by_en, norm_jp,
                                       zskills, zskills_en, ELEMENT, ZUKAN_TEAM, category, es_desc, report, game=g_, ares_cards=a_cards)
-        apply_tuning(g_cards, {g_})                  # curva de rivales (team_tuning.ARES / .ORION)
+        apply_tuning(g_cards, {g_}, ov, report)                  # curva de rivales (team_tuning.ARES / .ORION)
         a_cards += g_cards
         for k, v in g_chars.items():
             chars_out.setdefault(k, v)
@@ -1515,160 +1283,11 @@ def main(extra_z=None, write=True):
                    'element': ELEMENT.get(z['element']), 'position': z['position'], 'teams': z['teams'], 'games': z['games'],
                    'description': (zdesc.get(str(z['no'])) or {}).get('desc'), 'vr_lv50': (zdesc.get(str(z['no'])) or {}).get('vr_lv50'),
                    'wiki_page': page_of(z)} for z in zukan if z.get('no')]
-    # --- nombres en francés e italiano: doblaje de la ficha española ("Nombre DOB") o, si no, las wikis fr/it (fichas por nombre
-    # japonés o rōmaji). Lo que no se encuentre se queda en inglés en la app.
-    fr_wiki, it_wiki = load_opt('fr_wiki.json', {}), load_opt('it_wiki.json', {})
-    def wiki_idx(w, tpls, key):
-        idx = {}
-        for tpl in tpls:
-            for title, v in sorted(w.get(tpl, {}).items(), key=lambda kv: '(' in kv[0]):   # fichas principales primero
-                for j in v['jp']:
-                    k = key(j)
-                    if k:
-                        idx.setdefault(k, re.sub(r'\s*\([^)]*\)$', '', v['name']))     # "Tir en Spirale (Jeu)" → "Tir en Spirale"
-        return idx
-    lat = lambda j: romaji(j) if re.search(r'[A-Za-z]', j) else None
-    tech_idx = {'fr': wiki_idx(fr_wiki, ['Supertechnique'], norm_jp), 'it': wiki_idx(it_wiki, ['Tecnica', 'Tecniche'], norm_jp)}
-    kesh_idx = {'fr': wiki_idx(fr_wiki, ['Esprit Guerrier'], lat), 'it': wiki_idx(it_wiki, ['Spirito Guerriero', 'Avatar'], lat)}
-    team_idx = {'fr': {**wiki_idx(fr_wiki, ['Equipe'], lambda j: tnorm(j) or None), **wiki_idx(fr_wiki, ['Equipe'], norm_jp)},
-                'it': {**wiki_idx(it_wiki, ['Squadra'], lambda j: tnorm(j) or None), **wiki_idx(it_wiki, ['Squadra'], norm_jp)}}
-    es_tech_dub = {}
-    for title, d in {**load_opt('es_hyper.json', {}), **load('es_techniques.json')}.items():
-        es_tech_dub.setdefault(re.sub(r'\s*\([^)]*\)$', '', title).strip(), d)
-    es_kesh_raw = {re.sub(r'\s*\(Tótem\)$', '', t): d for t, d in {**load_opt('es_souls.json', {}), **load_opt('es_keshin.json', {})}.items()}
-    es_team_raw = {}
-    for title, d in sorted(load('es_teams.json').items(), key=lambda kv: '(' in kv[0]):
-        for k in d['en'] + d['jp'] + [title]:
-            if k != '/' and tnorm(k):
-                es_team_raw.setdefault(tnorm(k), d)
-    first = lambda xs: (xs or [None])[0]
-    manual_i18n = {k: v for k, v in ov.get('names_i18n', {}).items() if not k.startswith('_')}   # a mano: {"inglés": {"fr":…, "it":…}}
-
-    def tech_local(en, es, jp):
-        d, k = es_tech_dub.get(es) or {}, norm_jp(jp)
-        return {lg: (manual_i18n.get(en) or {}).get(lg) or first(d.get(lg)) or (k and tech_idx[lg].get(k)) or None for lg in ('fr', 'it')}
-
-    def spirit_local(en, es):
-        d = es_kesh_raw.get(es) or {}
-        keys = [romaji(x) for x in [en] + d.get('jp', [])[:1] + d.get('en', []) if x]   # solo el 1.º: hay fichas con el de otro
-        return {lg: (manual_i18n.get(en) or {}).get(lg) or first(d.get(lg)) or next((kesh_idx[lg][k] for k in keys if k in kesh_idx[lg]), None)
-                for lg in ('fr', 'it')}
-
-    def team_local(tm):
-        d = es_team_raw.get(tnorm(tm)) or {}
-        keys = [tnorm(tm)] + [x for j in d.get('jp', []) + d.get('en', []) for x in (tnorm(j), norm_jp(j)) if x]
-        return {lg: (manual_i18n.get(tm) or {}).get(lg) or first(d.get(lg)) or next((team_idx[lg][k] for k in keys if k in team_idx[lg]), None)
-                for lg in ('fr', 'it')}
-
-    for t_ in techniques.values():
-        if t_:
-            loc = tech_local(t_['name'], t_.get('name_es'), t_.get('name_jp'))
-            t_['name_fr'], t_['name_it'] = loc['fr'], loc['it']
-    for c in cards:
-        for sp in c.get('specials') or []:
-            if sp['type'] in ('keshin', 'soul'):
-                loc = spirit_local(sp['name'], sp.get('name_es'))
-                sp['name_fr'], sp['name_it'] = loc['fr'], loc['it']
-            if sp.get('hyper'):
-                loc = tech_local(sp['hyper'], sp.get('hyper_es'), sp.get('hyper_jp'))
-                sp['hyper_fr'], sp['hyper_it'] = loc['fr'], loc['it']
-            sp.pop('hyper_jp', None)
-    for tm in teams:
-        loc = team_local(tm['name'])
-        tm['name_fr'], tm['name_it'] = loc['fr'], loc['it']
-    for lg in ('fr', 'it'):
-        n_t = sum(1 for t_ in techniques.values() if t_ and t_.get('name_' + lg))
-        n_e = sum(1 for tm in teams if tm.get('name_' + lg))
-        report.append(f'Nombres {lg}: técnicas {n_t}/{sum(1 for t_ in techniques.values() if t_)} · equipos {n_e}/{len(teams)}')
+    localize(cards, techniques, teams, ov, report)           # nombres en francés e italiano (i18n.py)
     if write:
         write_outputs(cards, chars_out, techniques, teams, staff, zukan_rows, report)
     return uncovered
 
-
-def sql(v):
-    if v is None:
-        return 'null'
-    if isinstance(v, bool):
-        return 'true' if v else 'false'
-    if isinstance(v, (int, float)):
-        return str(int(v)) if float(v).is_integer() else str(v)
-    if isinstance(v, (dict, list)):
-        return "'" + json.dumps(v, ensure_ascii=False).replace("'", "''") + "'::jsonb"
-    return "'" + str(v).replace("'", "''") + "'"
-
-
-def insert(table, cols, rows, chunk=500):
-    out = []
-    for i in range(0, len(rows), chunk):
-        vals = ',\n'.join('(' + ','.join(sql(r[c]) for c in cols) + ')' for r in rows[i:i + chunk])
-        out.append(f'insert into public.{table} ({",".join(cols)}) values\n{vals};')
-    return '\n'.join(out)
-
-
-def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
-    os.makedirs(OUT, exist_ok=True)
-    used = {t['id'] for c in cards for t in c['moves']}
-    techs = [{k: v for k, v in t.items() if k != '_inf'} for t in techniques.values() if t and t['id'] in used]
-    char_ids = {c['character_id'] for c in cards}
-    chars = [c for c in chars.values() if c['id'] in char_ids]
-
-    public = []
-    for c in sorted(cards, key=lambda c: (-c['ovr'], c['name'])):
-        public.append({
-            'id': c['id'], 'character_id': c['character_id'], 'name': c['name'], 'game': c['game'], 'saga': c['saga'],
-            'version': c['version'], 'team': c['team'], 'position': c['position'], 'element': c['element'],
-            'ovr': c['ovr'], 'category': c['category'], 'tier': c['tier'], 'source': c['source'], **c['stats'],
-            'image_url': c['image_url'], 'zukan_id': c['zukan_id'], 'zukan_no': c.get('zukan_no'), 'is_version': c['is_version'],
-            'description': c.get('description'), 'description_es': c.get('description_es'), 'no': c['no'],
-            'specials': c.get('specials') or [], 'extra_teams': c.get('extra_teams') or [],
-            'raw_stats': {'form': c['form_label'], **dict(zip(c['raw_keys'], c['raw']))},
-            'techniques': [t['id'] for t in c['moves']],
-        })
-    with open(os.path.join(OUT, 'players.json'), 'w', encoding='utf-8') as f:
-        json.dump({'cards': public, 'techniques': techs, 'characters': chars, 'teams': teams, 'staff': staff}, f, ensure_ascii=False, indent=1)
-
-    tname = {t['id']: f"{t['name']} ({t['cost']})" for t in techs}
-    with open(os.path.join(OUT, 'review.csv'), 'w', encoding='utf-8', newline='') as f:
-        w = csv.writer(f)
-        w.writerow(['ovr', 'categoría', 'nombre', 'juego', 'versión', 'equipo', 'pos', 'nivel', 'fuente',
-                    'tiro', 'control', 'físico', 'velocidad', 'defensa', 'parada', 'técnicas', 'id'])
-        for c in public:
-            w.writerow([c['ovr'], c['category'], c['name'], c['game'], c['version'], c['team'], c['position'], c['tier'], c['source'],
-                        c['shooting'], c['control'], c['physical'], c['speed'], c['defense'], c['goalkeeping'],
-                        ' · '.join(tname.get(t, t) for t in c['techniques']), c['id']])
-
-    card_cols = ['id', 'character_id', 'name', 'game', 'saga', 'version', 'team', 'position', 'element', 'ovr', 'category',
-                 'tier', 'source', 'shooting', 'control', 'physical', 'speed', 'defense', 'goalkeeping', 'image_url',
-                 'zukan_id', 'zukan_no', 'no', 'description', 'description_es', 'specials', 'extra_teams', 'raw_stats', 'is_version']
-    links = [{'card_id': c['id'], 'technique_id': t, 'slot': i + 1}
-             for c in public for i, t in enumerate(dict.fromkeys(c['techniques']))]
-    seed = ['-- Generado por tools/db/build.py — no editar a mano.', 'begin;',
-            'truncate public.card_techniques, public.cards, public.techniques, public.characters, public.teams, public.staff, public.zukan;',
-            insert('zukan', ['no', 'image_id', 'name', 'name_ja', 'role', 'age', 'element', 'position', 'teams', 'games', 'description', 'vr_lv50', 'wiki_page'], zukan_rows),
-            insert('staff', ['zukan_no', 'name', 'role', 'team', 'teams', 'games', 'age', 'element', 'image_url', 'description', 'wiki_page'], staff),
-            insert('teams', ['name', 'name_es', 'name_fr', 'name_it'], teams),
-            insert('characters', ['id', 'name', 'wiki_page', 'zukan_no'], [{**c} for c in chars]),
-            insert('techniques', ['id', 'name', 'name_es', 'name_fr', 'name_it', 'name_jp', 'type', 'element', 'cost', 'cost_game', 'costs',
-                                  'description', 'image_url', 'zukan_types'], techs),
-            insert('cards', card_cols, public),
-            insert('card_techniques', ['card_id', 'technique_id', 'slot'], links),
-            'commit;', '']
-    os.makedirs(os.path.join(ROOT, 'supabase'), exist_ok=True)
-    with open(os.path.join(ROOT, 'supabase', 'seed.sql'), 'w', encoding='utf-8') as f:
-        f.write('\n'.join(seed))
-
-    cats = collections.Counter(c['category'] for c in public)
-    tiers = collections.Counter(c['tier'] for c in public)
-    ovrs = sorted(c['ovr'] for c in public)
-    n = len(ovrs)
-    summary = [f'Cartas: {n} ({sum(c["is_version"] for c in public)} versiones extra) · personajes: {len(chars)} · técnicas: {len(techs)}',
-               'Categorías: ' + ' · '.join(f'{k} {cats[k]}' for k, _ in CATEGORIES),
-               'Niveles: ' + ' · '.join(f'{k} {tiers[k]}' for k in 'SABC'),
-               f'OVR: mediana {ovrs[n // 2]} · p90 {ovrs[n * 9 // 10]} · p99 {ovrs[n * 99 // 100]} · máx {ovrs[-1]}']
-    with open(os.path.join(OUT, 'report.txt'), 'w', encoding='utf-8') as f:
-        f.write('\n'.join(summary + [''] + report) + '\n')
-    print('\n'.join(summary))
-    print(f'Avisos: {len(report)} (ver build/report.txt)')
 
 
 if __name__ == '__main__':
