@@ -1,11 +1,11 @@
-# Plan de la app (rama `app`): un MADFUT / PacyBits de Inazuma Eleven
+# Plan de la app (rama `app`): un MADFUT de Inazuma Eleven
 
-Objetivo: un juego de cartas al estilo MADFUT 26 y PacyBits con **nuestras 5.378 cartas** (IE1–GO3, Ares, Orion, Victory Road).
+Objetivo: un juego de cartas al estilo **MADFUT 26** (el modelo) con **nuestras 5.378 cartas** (IE1–GO3, Ares, Orion, Victory Road).
 Se copia la **estructura** (menús, flujo, sistemas); no sus gráficos, nombres de producto ni marca. Proyecto fan, sin compras.
 
 ---
 
-## 1. Qué hacen MADFUT y PacyBits (investigación)
+## 1. Cómo funciona MADFUT (investigación)
 
 ### MADFUT (Trivela Games) — 24, 25 y 26
 - **Pantalla principal**: 3 páginas deslizables de paneles; barra arriba con nivel, monedas (MF), fichas LTM, tokens y escudo del club.
@@ -29,16 +29,9 @@ Se copia la **estructura** (menús, flujo, sistemas); no sus gráficos, nombres 
 - **Códigos** que dan premios, **copia de seguridad** en la nube, votar cartas dentro de la app.
 - Tipos de carta especiales por temporada (TOTY, Historic XI, etc.).
 
-### PacyBits (FUT 18–21) y sus sucesores (PACFUT, Pacwyn)
-- **Draft ilimitado** y **Draft Building Challenges (DBC)**: retos de draft con condiciones; **DBC semanal dinámico**: puntos durante la semana, ranking y premio según el puesto final.
-- **Draft Leagues** con divisiones (subir de división), torneos simulados.
-- **Versus**: contra la IA (ascenso hasta Div 1) y **torneos semanales** con condiciones de plantilla; ganar los 4 desbloquea un **Super torneo** sin restricciones. **ShowDown** 1 contra 1 (PACFUT).
-- **Sobres ilimitados**; **Player Picks** (elegir 1 de varias cartas); Lightning Rounds.
-- **SBC** con cartas exclusivas de la app; solo se pueden usar **duplicados** en SBC e intercambios.
-- **Objetivos diarios** (premios crecientes; racha diaria) y **semanales**; **logros** con insignias exclusivas; objetivos de carrera.
-- **Intercambios** con lista de deseos, canales y grupos; mercado de cartas y monedas.
-- **Colecciones** por club, país y tipo; **Puzzles** de lógica/fútbol; Evolutions; copia en la nube.
-- Online (draft, versus, intercambios, LTM) exige iniciar sesión.
+### Antecedente: PacyBits (FUT 18–21)
+Ya no existe; fue el juego anterior a MADFUT. De él se toman solo dos ideas que encajan: **retos de draft** con condiciones
+(ranking semanal) y la regla de que **solo los duplicados** sirven para retos e intercambios.
 
 ---
 
@@ -87,6 +80,4 @@ Se copia la **estructura** (menús, flujo, sistemas); no sus gráficos, nombres 
 - [Madfut 24 — guía de juego (Talk Android)](https://www.talkandroid.com/33186-madfut-24-gameplay-guide/)
 - [PACYBITS FUT 20 — RAWG](https://rawg.io/games/pacybits-fut-20)
 - [PACYBITS — FAQ](http://www.pacybits.com/faq)
-- [PACFUT 26 — App Store](https://apps.apple.com/bs/app/pacfut-26/id1592155003)
-- [Pacwyn 26 — App Store](https://apps.apple.com/us/app/pacwyn-26-draft-pack-opener/id6751347528)
 - [Draft explicado (formación, capitán, 1 de 5) — fifauteam](https://fifauteam.com/draft-football-club-24/)
