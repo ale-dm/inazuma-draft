@@ -39,7 +39,7 @@ Ya no existe; fue el juego anterior a MADFUT. De él se toman solo dos ideas que
 
 | Sistema | Inazuma | Con qué datos |
 |---|---|---|
-| **Rareza** | Leyenda · Élite · Oro · Plata · Bronce | `category` (Legendary/Top/Advanced/Growing/Common) |
+| **Rareza** | Colores de Victory Road: Common verde · Growing azul · Advanced morado · Top amarillo · Legendary naranja (sin Hero) | `category`, que sale de la media |
 | **Cartas especiales** | Mixi Max, espíritu guerrero, armadura, tótem, Chrono Storm, formas (adulto, niño, Dark Emperors…) como "tipos" con diseño propio | `specials`, `version`, `is_version` |
 | **Química** | Líneas entre vecinos: **verde** mismo equipo y juego · **amarillo** mismo equipo (otro juego), mismo juego, o mismo elemento · **rojo** nada. Bonus de capitán | `team`, `game`, `element` |
 | **Draft** | Formación 1 de 5 → capitán 1 de 5 → cada puesto 1 de 5 → banquillo. Nota + química. Guardar drafts | catálogo + formaciones actuales (`lib/lineup`) |

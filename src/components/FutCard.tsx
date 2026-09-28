@@ -35,7 +35,7 @@ export default function FutCard({ player, showStats = true, size = 'md', onClick
       </div>
       <div className="fut-card__art">
         {player.image && !failed
-          ? <img src={player.image} alt="" loading={size === 'lg' ? 'eager' : 'lazy'} onError={() => setFailed(true)} />
+          ? <img src={player.image} alt="" loading={size === 'lg' || size === 'md' ? 'eager' : 'lazy'} onError={() => setFailed(true)} />
           : <span className="fut-card__initials">{player.name.split(' ').map(w => w[0]).join('').slice(0, 2)}</span>}
       </div>
       <div className="fut-card__name">{lastName}</div>

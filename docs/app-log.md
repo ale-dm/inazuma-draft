@@ -70,3 +70,12 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
   las capturas eran fotos aún cargando.
 - Probado en navegador: tienda (5.000) → abrir sobre de bienvenida (8 cartas) → comprar Bronce (4.500) → premio diario
   (4.800) → mis cartas (8) → colecciones (0 de 189) → inicio con monedas y cartas.
+
+### Marco nuevo y colores de rareza
+- **Pantallas de juego** (Draft FFI, alineación, torneo, resultado) y el explorador de jugadores van dentro de
+  `hub/GameShell.tsx` (cabecera con ✕ o ←). Fuera `AppLayout`, `TopBar` y `SiteFooter`; los créditos del proyecto
+  original (autor y apoyo) pasan al panel de Ajustes. El resultado enseña el once con cartas FUT y el premio del club.
+- **Colores de rareza** pedidos: los de Victory Road, según la media de la carta (categoría), sin la rareza Hero:
+  Common verde · Growing azul · Advanced morado · Top amarillo · Legendary naranja. Clases `fut-card--common/growing/
+  advanced/top/legendary` y los puntos de probabilidad de los sobres con los mismos colores.
+- Las cartas grandes y medianas cargan la foto sin esperar (en el panel de elegir no salían a tiempo).

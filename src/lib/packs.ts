@@ -17,13 +17,14 @@ export interface PackDef {
   tone: 'bronze' | 'silver' | 'gold' | 'legend' | 'saga'
 }
 
-/** Clase de color de cada rareza (carta, sobres, probabilidades) */
+/** Clase de color de cada rareza, con los colores de Victory Road: Common verde · Growing azul · Advanced morado ·
+ *  Top amarillo · Legendary naranja. La rareza sale de la media (OVR) de la carta. */
 export const RARITY_CLASS: Record<Category, string> = {
-  'Legendary Player': 'legend',
-  'Top Player': 'elite',
-  'Advanced Player': 'gold',
-  'Growing Player': 'silver',
-  'Common Player': 'bronze',
+  'Legendary Player': 'legendary',
+  'Top Player': 'top',
+  'Advanced Player': 'advanced',
+  'Growing Player': 'growing',
+  'Common Player': 'common',
 }
 
 export const RARITY_ORDER: Category[] = ['Common Player', 'Growing Player', 'Advanced Player', 'Top Player', 'Legendary Player']

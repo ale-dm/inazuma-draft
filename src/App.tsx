@@ -10,13 +10,13 @@ import {
 } from './lib/rng'
 import { initRunRng, resetRunRng } from './lib/run-rng'
 import { useAppSettings } from './context/AppSettings'
-import AppLayout from './components/AppLayout'
+import GameShell from './components/hub/GameShell'
+import FutCard from './components/FutCard'
 import Hub from './components/hub/Hub'
 import FutDraft from './components/futdraft/FutDraft'
 import Draft from './components/Draft'
 import LineupReview from './components/LineupReview'
 import Tournament from './components/Tournament'
-import PlayerCard from './components/PlayerCard'
 import ExportTeamButton from './components/ExportTeamButton'
 import PlayersExplorer from './components/PlayersExplorer'
 import { CLUB_HASH, COLLECTIONS_HASH, OBJECTIVES_HASH, PLAYERS_HASH, STORE_HASH, useHashRoute } from './lib/route'
@@ -125,7 +125,7 @@ export default function App() {
 
     if (phase === 'draft') {
       return (
-        <AppLayout>
+        <GameShell title={t('hub.modeFfi')} onExit={reset}>
           <Draft
             mode={mode}
             seed={runSeed}
@@ -141,13 +141,13 @@ export default function App() {
               setPhase('lineup')
             }}
           />
-        </AppLayout>
+        </GameShell>
       )
     }
 
     if (phase === 'lineup') {
       return (
-        <AppLayout>
+        <GameShell title={t('rules.sections.lineup.title')} onExit={reset}>
           <LineupReview
             players={drafted}
             lineup={lineup}
@@ -156,13 +156,13 @@ export default function App() {
             onLineupChange={setLineup}
             onConfirm={() => setPhase('tournament')}
           />
-        </AppLayout>
+        </GameShell>
       )
     }
 
     if (phase === 'tournament') {
       return (
-        <AppLayout>
+        <GameShell title="FFI" onExit={reset}>
           <Tournament
             playerTeam={lineupToArray(lineup, formationId)}
             chemistry={chem ?? undefined}
@@ -188,12 +188,12 @@ export default function App() {
               setPhase('result')
             }}
           />
-        </AppLayout>
+        </GameShell>
       )
     }
 
     return (
-      <AppLayout>
+      <GameShell title="FFI" onExit={reset}>
         <div className="flex flex-col items-center justify-center p-6 animate-fade-in min-h-[60vh]">
           {won ? (
             <>
@@ -209,9 +209,9 @@ export default function App() {
               <p className="text-iz-muted mb-8">{t('result.outSub')}</p>
             </>
           )}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 max-w-lg mb-6 stagger">
+          <div className="card-grid w-full max-w-lg mb-6">
             {lineupToArray(lineup, formationId).map(p => (
-              <PlayerCard key={p.id} player={p} mode={mode} compact />
+              <FutCard key={p.id} player={p} size="sm" showStats={mode === 'classic' || chem != null} />
             ))}
           </div>
           {reward && (
@@ -232,9 +232,9 @@ export default function App() {
               </button>
             )}
           </div>
-          <button type="button" onClick={reset} className="btn-primary">{t('result.replay')}</button>
+          <button type="button" onClick={reset} className="sheet-cta max-w-sm">{t('result.replay')}</button>
         </div>
-      </AppLayout>
+      </GameShell>
     )
   }
 
@@ -244,9 +244,9 @@ export default function App() {
     <>
       {clubScreen}
       {inPlayers && (
-        <AppLayout>
+        <GameShell title={t('hub.players')} backHref="#/">
           <PlayersExplorer />
-        </AppLayout>
+        </GameShell>
       )}
       <div style={inPlayers || clubScreen ? { display: 'none' } : undefined}>{renderGame()}</div>
     </>

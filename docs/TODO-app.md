@@ -7,7 +7,7 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] PWA instalable (manifest, iconos, service worker; caché de catálogo, fotos y fuentes)
 - [x] Manifest con credenciales (instalable en las previews protegidas de Vercel)
 - [x] Pantalla principal de 3 páginas deslizables + barra de nivel, títulos y cartas
-- [x] Carta estilo FUT por rareza (Leyenda, Élite, Oro, Plata, Bronce)
+- [x] Carta estilo FUT; color por rareza con los de Victory Road (Common verde · Growing azul · Advanced morado · Top amarillo · Legendary naranja; sin Hero)
 - [x] Paneles inferiores: modo de juego y ajustes (idioma, sonido, tema)
 - [x] Tema oscuro por defecto; fuera la portada antigua
 - [x] Textos en inglés, español, francés e italiano
@@ -39,7 +39,8 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] Colecciones: cada equipo de cada juego, % y premio al 100 % (2.000 + sobre Oro)
 - [x] Premio diario con racha de 7 días y 5 objetivos del día
 - [ ] Objetivos semanales y de carrera
-- [ ] Rediseño del resto de pantallas (torneo, jugadores, resultado) con el estilo nuevo
+- [x] Draft FFI, alineación, torneo, resultado y jugadores dentro del marco nuevo (fuera la barra y el pie antiguos; créditos en Ajustes)
+- [ ] Rediseño por dentro del torneo, la alineación y el explorador de jugadores (siguen con los paneles antiguos)
 
 ## Fase 4 · Modos
 - [ ] Duelo (Fatal con supertécnicas y ventaja de elemento)

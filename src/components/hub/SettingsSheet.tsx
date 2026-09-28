@@ -1,6 +1,7 @@
 import { useAppSettings } from '../../context/AppSettings'
 import { LOCALES, type Locale } from '../../i18n/translations'
 import Sheet from './Sheet'
+import { SITE } from '../../config/site'
 
 const LANGUAGE_NAME: Record<Locale, string> = { en: 'English', es: 'Español', fr: 'Français', it: 'Italiano' }
 
@@ -28,6 +29,12 @@ export default function SettingsSheet({ open, onClose }: { open: boolean; onClos
           <b>{theme === 'dark' ? '🌙' : '☀️'}</b>
         </button>
       </div>
+      {/* créditos del proyecto original (antes en el pie de la web) */}
+      <footer className="settings-credits">
+        <p>{t('footer.tagline')}</p>
+        <p>{t('footer.byBefore')}<a href={SITE.github} target="_blank" rel="noopener noreferrer">{SITE.author}</a></p>
+        <a href={SITE.paypal} target="_blank" rel="noopener noreferrer">☕ {t('footer.support')} ↗</a>
+      </footer>
     </Sheet>
   )
 }

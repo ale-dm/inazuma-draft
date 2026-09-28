@@ -168,11 +168,12 @@
 }
 .fut-card--sm { --w: 4.8rem; }
 .fut-card--lg { --w: 10rem; }
-.fut-card--legend { --c1: #f6d67a; --c2: #5b1fa8; --ink: #fff; --shine: rgba(255, 240, 200, .45); }
-.fut-card--elite { --c1: #fff3b0; --c2: #c79a1e; --ink: #2b1a05; --shine: rgba(255, 255, 255, .6); }
-.fut-card--gold { --c1: #f0cf6e; --c2: #a8791f; }
-.fut-card--silver { --c1: #eef2f6; --c2: #8e9aa8; --ink: #1d2733; }
-.fut-card--bronze { --c1: #e0a878; --c2: #7a4a26; --ink: #2a1709; }
+/* rarezas con los colores de Victory Road (Common verde · Growing azul · Advanced morado · Top amarillo · Legendary naranja) */
+.fut-card--legendary { --c1: #ffc15a; --c2: #d8410c; --ink: #fff; --shine: rgba(255, 236, 190, .55); }
+.fut-card--top { --c1: #fff27a; --c2: #d4a012; --ink: #2b1a05; --shine: rgba(255, 255, 255, .6); }
+.fut-card--advanced { --c1: #e98bff; --c2: #6c1fb8; --ink: #fff; --shine: rgba(255, 220, 255, .4); }
+.fut-card--growing { --c1: #74c6ff; --c2: #0f4fb4; --ink: #fff; --shine: rgba(220, 240, 255, .4); }
+.fut-card--common { --c1: #7fe87a; --c2: #147a35; --ink: #fff; --shine: rgba(220, 255, 220, .35); }
 
 .fut-card__head { position: absolute; top: 10%; left: 9%; z-index: 2; display: flex; flex-direction: column; align-items: center; line-height: .9; }
 .fut-card__ovr { font-weight: 900; font-size: calc(var(--w) * .24); }
@@ -318,11 +319,11 @@ button.fut-card:active { transform: scale(.95); }
 .pack__odds i { font-style: normal; font-size: .75rem; font-weight: 800; padding: 0 .3rem; border-radius: 6px; background: rgba(0, 0, 0, .35); color: #fff; }
 
 .odds { display: inline-block; min-width: .9rem; min-height: .9rem; border-radius: 99px; }
-.odds--legend { box-shadow: inset 0 0 0 99px #7b2ff7; }
-.odds--elite { box-shadow: inset 0 0 0 99px #e8c547; color: #2b1a05 !important; }
-.odds--gold { box-shadow: inset 0 0 0 99px #b8862a; }
-.odds--silver { box-shadow: inset 0 0 0 99px #9aa6b4; color: #16202c !important; }
-.odds--bronze { box-shadow: inset 0 0 0 99px #9a5a2c; }
+.odds--legendary { box-shadow: inset 0 0 0 99px #e8621a; }
+.odds--top { box-shadow: inset 0 0 0 99px #e8c21a; color: #2b1a05 !important; }
+.odds--advanced { box-shadow: inset 0 0 0 99px #9b3fe0; }
+.odds--growing { box-shadow: inset 0 0 0 99px #1f7fe0; }
+.odds--common { box-shadow: inset 0 0 0 99px #2aa84a; }
 
 /* apertura de sobre */
 .pack-stage {
@@ -378,3 +379,8 @@ button.fut-card:active { transform: scale(.95); }
 @media (prefers-reduced-motion: reduce) {
   .pack--sealed, .pack-reveal, .pack-reveal--walkout::before { animation: none; }
 }
+
+/* ---------------------------------------------------------------- pantallas de juego dentro del marco nuevo */
+.shell-main { flex: 1; overflow-y: auto; padding: .5rem 0 1.5rem; }
+.settings-credits { margin-top: 1.4rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, .12); display: flex; flex-direction: column; align-items: center; gap: .35rem; font-size: .75rem; color: var(--hub-dim); text-align: center; }
+.settings-credits a { color: var(--hub-cyan); font-weight: 700; }
