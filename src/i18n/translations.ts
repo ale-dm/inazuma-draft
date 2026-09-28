@@ -403,6 +403,7 @@ export const translations = {
     'pz.target': 'Objectif',
     'pz.hint': 'Touche une carte pour la placer ; touche-la sur le terrain pour la retirer',
     'pz.done': 'Puzzle résolu !',
+    'cards.statsToggle': 'Afficher les stats de duel',
   },
   en: {
     'nav.rules': 'Rules',
@@ -803,6 +804,7 @@ export const translations = {
     'pz.target': 'Target',
     'pz.hint': 'Tap a card to place it; tap it on the pitch to remove it',
     'pz.done': 'Puzzle solved!',
+    'cards.statsToggle': 'Show duel stats',
   },
   es: {
     'nav.rules': 'Reglas',
@@ -1203,6 +1205,7 @@ export const translations = {
     'pz.target': 'Objetivo',
     'pz.hint': 'Toca una carta para colocarla; tócala en el campo para quitarla',
     'pz.done': '¡Puzzle resuelto!',
+    'cards.statsToggle': 'Ver las stats de duelo',
   },
   it: {
     'nav.rules': 'Regole',
@@ -1603,6 +1606,7 @@ export const translations = {
     'pz.target': 'Obiettivo',
     'pz.hint': 'Tocca una carta per piazzarla; toccala in campo per toglierla',
     'pz.done': 'Puzzle risolto!',
+    'cards.statsToggle': 'Mostra le statistiche del duello',
   },
 } as const
 

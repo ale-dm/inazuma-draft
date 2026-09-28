@@ -34,7 +34,7 @@ export default function MyCards() {
   }
 
   return (
-    <Screen title={t('hub.myCards')}>
+    <Screen title={t('hub.myCards')} statsToggle>
       <div className="chip-row">
         {POSITIONS.map(x => (
           <button key={x} type="button" className={`chip ${pos === x ? 'on' : ''}`} onClick={() => setPos(x)}>{x === 'all' ? t('players.all') : x}</button>

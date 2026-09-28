@@ -33,7 +33,7 @@ export default function Collections() {
   }
 
   return (
-    <Screen title={t('hub.collection')}>
+    <Screen title={t('hub.collection')} statsToggle>
       <p className="fd-hint">{t('coll.summary', { done, total: rows.length })}</p>
       <input className="search-input" placeholder={t('players.search')} value={q} onChange={e => setQ(e.target.value)} />
       <ul className="obj-list">

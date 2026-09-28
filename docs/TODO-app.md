@@ -8,6 +8,7 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] Manifest con credenciales (instalable en las previews protegidas de Vercel)
 - [x] Pantalla principal de 3 páginas deslizables + barra de nivel, cartas y monedas; en el orden de MADFUT (1 Sobres · 2 Draft · 3 Club)
 - [x] Carta con estilo propio (nada de FIFA): media, icono de puesto, foto, afinidad y equipo; color por rareza de Victory Road (Common verde · Growing azul · Advanced morado · Top amarillo · Legendary naranja; sin Hero)
+- [x] Rediseño con la distribución de MADFUT: columna izquierda (media, puesto, afinidad, escudo), foto, nombre abajo y, a la derecha, los 3 números de duelo (botón en Mis cartas, Plantillas, Colecciones y Draft) o el juego de la carta
 - [x] Iconos de Victory Road: puestos, afinidades, tipos de supertécnica, espíritu guerrero, Mixi Max, tótem
 - [x] Fuera los emojis de la interfaz: iconos de línea (lucide) y moneda propia
 - [x] Escudos de los equipos en la carta (Category:Team emblem images de la wiki: 171/187 equipos)

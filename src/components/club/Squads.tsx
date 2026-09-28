@@ -34,7 +34,7 @@ export default function Squads() {
   if (squad) return <SquadEditor squad={squad} onBack={() => setEditing(null)} />
 
   return (
-    <Screen title={t('hub.squads')}>
+    <Screen title={t('hub.squads')} statsToggle>
       <button type="button" className="sheet-cta" onClick={create}><Plus size={22} className="inline -mt-1" /> {t('sq.new')}</button>
       {club.squads.length === 0 && <p className="fd-hint">{t('sq.empty')}</p>}
       <ul className="obj-list">
@@ -87,7 +87,7 @@ function SquadEditor({ squad, onBack }: { squad: Squad; onBack: () => void }) {
   const focused = focus ? lineup[focus] : undefined
 
   return (
-    <Screen title={squad.name}>
+    <Screen title={squad.name} statsToggle>
       <button type="button" className="chip self-start" onClick={onBack}><ArrowLeft size={14} /> {t('hub.squads')}</button>
       <div className="fd-bar hub-bar">
         <span className="fd-stat"><small>{t('fd.rating')}</small>{teamRating(placed) || '—'}</span>

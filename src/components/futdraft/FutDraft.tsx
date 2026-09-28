@@ -5,6 +5,7 @@ import { getFormation, nextEmptySlot, type FormationId, type LineupMap, type Slo
 import { MAX_TEAM_CHEM, chemistry, teamRating } from '../../lib/chemistry'
 import { BENCH, benchOptions, captainOptions, formationOptions, slotOptions } from '../../lib/fut-draft'
 import InaCard from '../InaCard'
+import { StatsToggle } from '../club/Screen'
 import Sheet from '../hub/Sheet'
 import { CircleHelp, X } from 'lucide-react'
 import Pitch, { fieldY } from '../pitch/Pitch'
@@ -128,7 +129,7 @@ export default function FutDraft({ onComplete, onExit, resume, persist = false, 
         <div className="hub-top__row">
           <button type="button" className="hub-icon-btn" onClick={onExit} aria-label={t('fd.exit')}><X size={20} /></button>
           <span className="hub-logo">{t('hub.draft')}</span>
-          <span className="w-10" />
+          <StatsToggle />
         </div>
         {def && (
           <div className="hub-bar fd-bar">

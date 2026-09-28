@@ -137,7 +137,7 @@ export default function Duel({ source }: { source: DuelSource }) {
         <>
           <h3 className="sheet-label">{t('duel.pickCard')}</h3>
           <div className="duel-hand">
-            {match.myHand.map(p => <DuelCard key={p.id} player={p} size="sm" onClick={() => play(p)} />)}
+            {match.myHand.map(p => <DuelCard key={p.id} player={p} size="md" onClick={() => play(p)} />)}
           </div>
         </>
       )}

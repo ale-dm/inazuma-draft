@@ -182,3 +182,15 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
   `cards.duel_att/duel_con/duel_def`, `techniques.traits`.
 - Probado con Playwright: duelo completo, simulación, higher/lower, copa, puzzle, objetivos, tienda, CRUD (editar y
   ver la carta cambiada), draft guardado y retomado, torneo hasta la final con el cuadro.
+
+### Rediseño de la carta (distribución de MADFUT)
+- Pedido con capturas de MADFUT: que se vean todos los iconos y, con una opción, las 3 stats.
+- `InaCard`: columna izquierda como la de MADFUT (media · puesto · afinidad en lugar de la bandera · escudo del equipo
+  en lugar del club), foto grande, nombre abajo. A la derecha, los 3 números de duelo en etiquetas verde/azul/roja
+  dentro de la carta; con los números ocultos, una etiqueta con el juego (como las posiciones alternativas de
+  MADFUT). Sin escudo, el equipo sale en texto bajo el nombre.
+- Botón de números (`StatsToggle`, preferencia `lib/card-prefs.ts`, en este dispositivo) en Mis cartas, Mis
+  plantillas, Colecciones y el Draft. `DuelCard` es ya la misma carta con los números siempre visibles; fuera la
+  columna externa.
+- Probado con fotos y escudos reales (servidos con curl en la prueba): Mis cartas con y sin números, plantilla en el
+  campo y duelo.
