@@ -82,7 +82,12 @@ interface TeamRow {
   name_fr: string | null
   name_it: string | null
   logo_url: string | null
+  /** Escudo de otras épocas si cambia: GO, ARES (Ares/Orión), VR */
+  logos: Partial<Record<Era, string>> | null
 }
+
+type Era = 'IE' | 'GO' | 'ARES' | 'VR'
+const ERA: Record<GameId, Era> = { IE1: 'IE', IE2: 'IE', IE3: 'IE', GO1: 'GO', GO2: 'GO', GO3: 'GO', ARES: 'ARES', ORION: 'ARES', VR: 'VR' }
 
 type LocalNames = Partial<Record<'es' | 'fr' | 'it', string | null | undefined>>
 
@@ -94,6 +99,7 @@ function localName(en: string, names: LocalNames | undefined, locale: string): s
 let players: Player[] = []
 let teamNames = new Map<string, LocalNames>()
 let teamLogos = new Map<string, string>()
+let teamEraLogos = new Map<string, Partial<Record<Era, string>>>()
 let staff: Staff[] = []
 let techniquesById = new Map<string, Technique>()
 let byId = new Map<string, Player>()
@@ -135,12 +141,13 @@ export async function loadCatalog(): Promise<void> {
   // todo a la vez; equipos y cuerpo técnico son opcionales (sin ellos: nombres en inglés, sin pestaña de staff)
   const [techniques, teams, staffRows, rows] = await Promise.all([
     get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS}`),
-    get<TeamRow[]>('teams?select=name,name_es,name_fr,name_it,logo_url').catch(() => [] as TeamRow[]),
+    get<TeamRow[]>('teams?select=name,name_es,name_fr,name_it,logo_url,logos').catch(() => [] as TeamRow[]),
     get<StaffRow[]>('staff?select=zukan_no,name,role,team,teams,games,image_url,description&order=zukan_no').catch(() => [] as StaffRow[]),
     loadCards(),
   ])
   teamNames = new Map(teams.map(t => [t.name, { es: t.name_es, fr: t.name_fr, it: t.name_it }]))
   teamLogos = new Map(teams.filter(t => t.logo_url).map(t => [t.name, t.logo_url as string]))
+  teamEraLogos = new Map(teams.filter(t => t.logos).map(t => [t.name, t.logos!]))
   staff = staffRows.map(s => ({
     zukanNo: s.zukan_no, name: s.name, role: s.role, team: s.team, teams: s.teams ?? [], games: s.games ?? [],
     image: s.image_url, description: s.description,
@@ -276,9 +283,10 @@ export function teamName(team: string, locale: string): string {
   return localName(team, teamNames.get(team), locale)
 }
 
-/** Escudo del equipo (inazuma-eleven.fandom.com), si se ha encontrado */
-export function teamLogo(team: string): string | undefined {
-  return teamLogos.get(team)
+/** Escudo del equipo (inazuma-eleven.fandom.com), si se ha encontrado; con el juego, el de esa época (Raimon de GO,
+ *  Inazuma Japan de Orión, los de Victory Road…) */
+export function teamLogo(team: string, game?: GameId): string | undefined {
+  return (game && teamEraLogos.get(team)?.[ERA[game]]) || teamLogos.get(team)
 }
 
 /** Espíritu guerrero / tótem en el idioma de la interfaz */

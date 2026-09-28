@@ -3,7 +3,7 @@ import type { Player, Position } from '../../types'
 import { useAppSettings } from '../../context/AppSettings'
 import { getFormation, nextEmptySlot, type FormationId, type LineupMap, type SlotId } from '../../lib/lineup'
 import { MAX_TEAM_CHEM, chemistry, teamRating } from '../../lib/chemistry'
-import { BENCH, benchOptions, captainOptions, formationOptions, slotOptions } from '../../lib/fut-draft'
+import { BENCH, RESERVES, benchOptions, captainOptions, formationOptions, slotOptions } from '../../lib/fut-draft'
 import InaCard from '../InaCard'
 import { StatsToggle } from '../club/Screen'
 import Sheet from '../hub/Sheet'
@@ -24,12 +24,12 @@ interface Props {
   ctaLabel?: string
 }
 
-/** Un sitio del draft: un puesto del campo o un hueco del banquillo ("bench-0"…) */
+/** Un sitio del draft: un puesto del campo o un hueco fuera ("bench-0"…): los BENCH primeros, suplentes; después, reservas */
 type Spot = SlotId | `bench-${number}`
 const benchSpot = (i: number): Spot => `bench-${i}`
 const benchIndex = (s: Spot) => (s.startsWith('bench-') ? Number(s.slice(6)) : -1)
 
-/** Draft al estilo MADFUT: formación 1 de 5 → capitán 1 de 5 → cada hueco 1 de 5 → banquillo, con química y media */
+/** Draft al estilo MADFUT: formación, capitán y cada hueco 1 de 6 → 7 suplentes y 5 reservas, con química y media */
 export default function FutDraft({ onComplete, onExit, resume, persist = false, ctaLabel }: Props) {
   const { t } = useAppSettings()
   const [formations] = useState(() => resume?.formations ?? formationOptions())
@@ -38,8 +38,8 @@ export default function FutDraft({ onComplete, onExit, resume, persist = false, 
   const [captain, setCaptain] = useState<SlotId | null>(resume?.captain ?? null)
   const [lineup, setLineup] = useState<LineupMap>(() => (resume ? toLineupMap(resume.lineup) : {}))
   const [bench, setBench] = useState<(Player | null)[]>(() => (resume
-    ? resume.bench.map(id => (id ? getPlayer(id) ?? null : null))
-    : Array(BENCH).fill(null)))
+    ? Array.from({ length: BENCH + RESERVES }, (_, i) => (resume.bench[i] ? getPlayer(resume.bench[i]!) ?? null : null))
+    : Array(BENCH + RESERVES).fill(null)))
   const [picking, setPicking] = useState<Spot | null>(null)
   /** Carta tocada: al tocar otra que pueda ir en su sitio se cambian (el banquillo entra en el campo si el puesto coincide) */
   const [selected, setSelected] = useState<Spot | null>(null)
@@ -65,7 +65,8 @@ export default function FutDraft({ onComplete, onExit, resume, persist = false, 
   const chem = useMemo(() => chemistry(lineup, captain ?? undefined), [lineup, captain])
   const [help, setHelp] = useState(false)
   const placed = Object.values(lineup).filter((p): p is Player => !!p)
-  const rating = teamRating(placed)
+  // la media cuenta titulares y suplentes; las reservas, no
+  const rating = teamRating([...placed, ...bench.slice(0, BENCH).filter((p): p is Player => !!p)])
   const full = !!def && placed.length === def.slots.length
   const taken = () => new Set([...placed, ...bench].filter((p): p is Player => !!p).map(p => p.characterId))
 
@@ -188,22 +189,29 @@ export default function FutDraft({ onComplete, onExit, resume, persist = false, 
 
             {full && (
               <>
-                <h3 className="sheet-label">{t('fd.bench')}</h3>
-                <div className="fd-bench">
-                  {bench.map((p, i) => (
-                    <div key={i} className="fd-bench__spot">
-                      {p ? card(benchSpot(i), p) : (
-                        <button type="button" className="fd-empty" onClick={() => openSpot(benchSpot(i))}>+<small>{t('fd.sub')}</small></button>
-                      )}
+                {([['fd.bench', 0, BENCH], ['fd.reserves', BENCH, BENCH + RESERVES]] as const).map(([label, from, to]) => (
+                  <div key={label}>
+                    <h3 className="sheet-label">{t(label)}{label === 'fd.reserves' && <small className="fd-note"> · {t('fd.reservesNote')}</small>}</h3>
+                    <div className="fd-bench">
+                      {bench.slice(from, to).map((p, k) => {
+                        const i = from + k
+                        return (
+                          <div key={i} className="fd-bench__spot">
+                            {p ? card(benchSpot(i), p) : (
+                              <button type="button" className="fd-empty" onClick={() => openSpot(benchSpot(i))}>+<small>{t(label === 'fd.bench' ? 'fd.sub' : 'fd.res')}</small></button>
+                            )}
+                          </div>
+                        )
+                      })}
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
                 <button
                   type="button"
                   className="sheet-cta fd-cta"
                   onClick={() => {
                     if (persist) clearDraft()
-                    onComplete(lineup, formation!, captain, chem.team, bench.filter((p): p is Player => !!p))
+                    onComplete(lineup, formation!, captain, chem.team, bench.slice(0, BENCH).filter((p): p is Player => !!p))
                   }}
                 >
                   {ctaLabel ?? t('fd.play')}

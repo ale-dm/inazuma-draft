@@ -1,7 +1,7 @@
 import type { Player } from '../../types'
 import { useAppSettings } from '../../context/AppSettings'
 import { getPlayer } from '../../data/catalog'
-import { getFormation, lineupToArray, type LineupMap } from '../../lib/lineup'
+import { getFormation, lineupToArray, type LineupMap, type SlotId } from '../../lib/lineup'
 import { MAX_TEAM_CHEM, chemistry, teamRating } from '../../lib/chemistry'
 import { SQUADS_HASH } from '../../lib/route'
 import { useClub, type Squad } from '../../lib/club'
@@ -11,6 +11,9 @@ export interface PickedSquad {
   xi: Player[]
   /** Química del once (0–33) */
   chem: number
+  /** Once colocado y capitán (química por jugador en el Duelo) */
+  lineup: LineupMap
+  captain: SlotId | null
 }
 
 export function squadLineup(q: Squad): LineupMap {
@@ -42,8 +45,8 @@ export default function SquadPicker({ onPick }: { onPick: (s: PickedSquad) => vo
         </p>
       )}
       <ul className="obj-list">
-        {ready.map(({ q, xi, chem }) => (
-          <li key={q.id} className="obj" role="button" onClick={() => onPick({ name: q.name, xi, chem })}>
+        {ready.map(({ q, l, xi, chem }) => (
+          <li key={q.id} className="obj" role="button" onClick={() => onPick({ name: q.name, xi, chem, lineup: l, captain: q.captain })}>
             <span className="obj__text">
               <b>{q.name}</b>
               <small>{getFormation(q.formation).layout} · {t('fd.rating')} {teamRating(xi)} · {t('fd.chemistry')} {chem}/{MAX_TEAM_CHEM}</small>

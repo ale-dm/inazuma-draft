@@ -72,7 +72,7 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
             'truncate public.card_techniques, public.cards, public.techniques, public.characters, public.teams, public.staff, public.zukan;',
             insert('zukan', ['no', 'image_id', 'name', 'name_ja', 'role', 'age', 'element', 'position', 'teams', 'games', 'description', 'vr_lv50', 'wiki_page'], zukan_rows),
             insert('staff', ['zukan_no', 'name', 'role', 'team', 'teams', 'games', 'age', 'element', 'image_url', 'description', 'wiki_page'], staff),
-            insert('teams', ['name', 'name_es', 'name_fr', 'name_it', 'logo_url'], teams),
+            insert('teams', ['name', 'name_es', 'name_fr', 'name_it', 'logo_url', 'logos'], teams),
             insert('characters', ['id', 'name', 'wiki_page', 'zukan_no'], [{**c} for c in chars]),
             insert('techniques', ['id', 'name', 'name_es', 'name_fr', 'name_it', 'name_jp', 'type', 'element', 'cost', 'cost_game', 'costs',
                                   'description', 'image_url', 'zukan_types', 'traits'], techs),

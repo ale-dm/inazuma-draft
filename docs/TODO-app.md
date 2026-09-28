@@ -12,6 +12,7 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] Iconos de Victory Road: puestos, afinidades, tipos de supertécnica, espíritu guerrero, Mixi Max, tótem
 - [x] Fuera los emojis de la interfaz: iconos de línea (lucide) y moneda propia
 - [x] Escudos de los equipos en la carta (Category:Team emblem images de la wiki: 171/187 equipos)
+- [x] Escudo de la época de cada carta (Raimon de GO, Inazuma Japan de Orión, los de Victory Road…): 94 equipos cambian
 - [x] Iconos de Tiro largo y Bloqueo de tiros (rasgos `traits` de la técnica, del campo `chr` de WazaData: 40 tiros largos, 48 bloqueos)
 - [x] Paneles inferiores: modo de juego y ajustes (idioma, sonido, tema)
 - [x] Tema oscuro por defecto; fuera la portada antigua
@@ -22,11 +23,11 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] ~~Química por enlaces entre vecinos~~ (sustituida)
 - [x] Química por jugador (0–3), del equipo (0–100) y bonus de capitán
 - [x] Media del equipo (fórmula FUT)
-- [x] Elegir formación (1 de 5) y capitán (1 de 5)
-- [x] Tocar un hueco → elegir 1 de 5 jugadores de ese puesto (sin repetir personaje)
+- [x] Elegir formación (1 de 6) y capitán (1 de 6)
+- [x] Tocar un hueco → elegir 1 de 6 jugadores de ese puesto (sin repetir personaje)
 - [x] Campo con líneas de química de colores
 - [x] Resumen (media y química) → jugar el torneo FFI con ese once
-- [x] Banquillo (5 suplentes, 1 de 5 de cualquier puesto; entran al campo si el puesto coincide)
+- [x] Banquillo: 7 suplentes (cuentan para la media) y 5 reservas (no cuentan), 1 de 6 de cualquier puesto; entran al campo si el puesto coincide
 - [x] Cambiar jugadores de sitio en el campo (mismo puesto; el capitán va con su carta)
 - [x] La química influye en la simulación del partido (−5 % a +5 % de fuerza; 50 = neutro)
 - [x] Guardar un draft y jugarlo más tarde (se guarda a cada paso; "Seguir el draft guardado" en Modos de draft)
@@ -53,7 +54,8 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] Estadísticas de duelo (ataque/control/defensa) calculadas y listas en `DuelCard` (falta el modo en sí, fase 4)
 
 ## Fase 4 · Modos
-- [x] Duelo: Mi club, Simulación y Draft; solo números (ataque/control/defensa) y portero. Supertécnicas y afinidad: ideas en [duelo.md](duelo.md)
+- [x] Duelo = Fatal de MADFUT: Mi club y Draft (10 rondas por turnos, pista, desempate), Simulación (6 ocasiones por puestos), química y boost semanal. Ver [duelo.md](duelo.md)
+- [x] Números de duelo por puesto y con las supertécnicas (tipo, TP, tiro largo / bloqueo)
 - [ ] Duelo con supertécnicas y ventaja de afinidad (ver duelo.md)
 - [x] Higher/Lower (media o un número de duelo; 50 monedas por acierto; récord)
 - [x] Copas por saga (8 equipos: IE, GO, Ares/Orión, VR) y copa diaria de 4 equipos (mismos rivales para todos, 1 al día)

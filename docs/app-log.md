@@ -215,3 +215,16 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
 - Se hicieron (Mixi Max → carta real; espíritu guerrero, armadura, tótem y entrenamiento con cartas "evo~…") y se
   quitaron enteras a petición: pantalla, lógica, casilla de la pantalla principal, logros de evoluciones y textos.
   Están en el commit a6d67b0 por si algún día se recuperan. La fase 5 queda en retos e insignias.
+
+### Duelo = Fatal de MADFUT, números nuevos, draft 6 opciones y escudos por época
+- **Números de duelo** recalculados (tenían poco sentido: porteros y defensas con mucho ataque): stats afines × lo
+  que aprovecha el puesto + supertécnicas (tipo, TP, tiro largo / bloqueo), tope media + 8. Detalle en duelo.md.
+- **Duelo** rehecho siguiendo la guía de Fatal de r/MADFUT (`lib/fatal.ts`): Mi club y Draft con 10 rondas por
+  turnos, pista de la carta rival (afinidad, escudo, juego), empate por suma y desempate con la última carta (> 5);
+  Simulación con 6 ocasiones por puestos (control → ataque contra defensa). Química +2/+1/0/−3 y boost semanal.
+- **Draft**: 1 de 6 en formación, capitán y cada puesto; 7 suplentes (cuentan para la media) y 5 reservas (no
+  cuentan). `teamRating` divide entre las cartas que haya (antes, siempre entre 11).
+- **Escudos**: revisados uno a uno (hoja de contactos). Los nombres casaban bien ("Team D" es el Team K de Kageyama
+  en japonés); lo que fallaba era la época: ahora cada equipo guarda también el de GO, Ares/Orión y VR cuando cambia
+  (`teams.logos`, 94 equipos) y la carta usa el de su juego.
+- Evoluciones: siguen quitadas.

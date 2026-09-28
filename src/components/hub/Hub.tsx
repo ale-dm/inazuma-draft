@@ -19,7 +19,7 @@ interface Props {
   mode: 'classic' | 'memory'
   seed: string | null
   onModeChange: (mode: 'classic' | 'memory') => void
-  /** 'fut' = draft MADFUT (1 de 5 con química) · 'ffi' = draft por sorteo de equipo + juego */
+  /** 'fut' = draft MADFUT (1 de 6 con química) · 'ffi' = draft por sorteo de equipo + juego */
   onStart: (kind: 'fut' | 'fut-resume' | 'ffi') => void
 }
 

@@ -3,10 +3,12 @@ import { getAllPlayers } from '../data/catalog'
 import { FORMATIONS, type FormationId } from './lineup'
 import { random } from './run-rng'
 
-/** Opciones del draft MADFUT: formación 1 de 5, capitán 1 de 5 y cada puesto 1 de 5 (azar de la partida: se repite con la misma semilla) */
-export const OPTIONS = 5
-/** Suplentes del banquillo */
-export const BENCH = 5
+/** Opciones del draft MADFUT: formación, capitán y cada puesto, 1 de 6 (azar de la partida: se repite con la misma semilla) */
+export const OPTIONS = 6
+/** Suplentes del banquillo (cuentan para la media) */
+export const BENCH = 7
+/** Reservas (no cuentan para la media) */
+export const RESERVES = 5
 
 /** Probabilidad de cada rareza en las opciones de un puesto */
 const RARITY_WEIGHT: Record<Category, number> = {
@@ -35,7 +37,7 @@ function pool(taken: Set<string>, filter: (p: Player) => boolean): Player[] {
   return getAllPlayers().filter(p => p.image && !taken.has(p.characterId) && filter(p))
 }
 
-/** 5 cartas distintas (también de personaje) de la lista, cada una con la rareza sorteada por peso */
+/** OPTIONS cartas distintas (también de personaje) de la lista, cada una con la rareza sorteada por peso */
 function draw(candidates: Player[], weights: Partial<Record<Category, number>>): Player[] {
   const byCat = new Map<Category, Player[]>()
   for (const p of candidates) {
@@ -62,17 +64,17 @@ function draw(candidates: Player[], weights: Partial<Record<Category, number>>):
   return out.sort((a, b) => b.ovr - a.ovr)
 }
 
-/** Capitán: 5 cartas Leyenda o Élite de cualquier puesto */
+/** Capitán: OPTIONS cartas Leyenda o Élite de cualquier puesto */
 export function captainOptions(): Player[] {
   return draw(pool(new Set(), () => true), { 'Legendary Player': 1, 'Top Player': 2 })
 }
 
-/** Suplente: 5 cartas de cualquier puesto, sin personajes ya elegidos */
+/** Suplente o reserva: OPTIONS cartas de cualquier puesto, sin personajes ya elegidos */
 export function benchOptions(takenCharacters: Set<string>): Player[] {
   return draw(pool(takenCharacters, () => true), RARITY_WEIGHT)
 }
 
-/** Jugadores para un puesto: 5 cartas de esa posición, sin personajes ya elegidos */
+/** Jugadores para un puesto: OPTIONS cartas de esa posición, sin personajes ya elegidos */
 export function slotOptions(position: Position, takenCharacters: Set<string>): Player[] {
   return draw(pool(takenCharacters, p => p.position === position), RARITY_WEIGHT)
 }

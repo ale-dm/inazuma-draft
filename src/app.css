@@ -634,3 +634,31 @@ button.ic:active { transform: scale(.95); }
 .badge em { font-style: normal; font-size: .58rem; color: var(--hub-dim); }
 .badge.on { border-color: var(--hub-neon); box-shadow: 0 0 12px rgba(198, 255, 61, .35); }
 .ach--done { opacity: 1 !important; border-color: rgba(255, 210, 61, .5) !important; background: rgba(255, 210, 61, .08) !important; }
+.fd-note { font-weight: 600; letter-spacing: 0; text-transform: none; opacity: .8; }
+
+/* ---------------------------------------------------------------- Duelo = Fatal de MADFUT */
+.duel-slot { position: relative; display: inline-flex; }
+.duel-mod { position: absolute; left: 50%; bottom: -.45rem; transform: translateX(-50%); z-index: 3; padding: 0 .35rem; border-radius: 99px; font-size: .62rem; font-weight: 900; }
+.duel-mod.is-up { background: #3dff8a; color: #04210f; }
+.duel-mod.is-down { background: #ff5a5a; color: #fff; }
+.duel-boost { text-align: center; font-size: .75rem; font-weight: 800; color: #ffe566; }
+.duel-stats-pick { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; }
+.duel-stat-btn { display: flex; flex-direction: column; align-items: center; padding: .45rem .3rem; border-radius: 14px; color: #fff; font-family: 'Barlow Condensed', sans-serif; clip-path: none; box-shadow: 0 4px 10px rgba(0, 0, 0, .4); }
+.duel-stat-btn small { font-size: .7rem; font-weight: 800; text-transform: uppercase; }
+.duel-stat-btn b { font-size: 1.8rem; font-weight: 900; line-height: 1; }
+.duel-stat-btn em { font-style: normal; font-size: .65rem; opacity: .85; }
+.duel-stat-btn:active { transform: scale(.96); }
+.fatal-hint-row { display: flex; align-items: center; gap: .8rem; }
+.fatal-hint-row .fd-hint { flex: 1; text-align: left; }
+.fatal-hint {
+  position: relative; flex-shrink: 0; width: 5.5rem; aspect-ratio: 3 / 4.2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .3rem;
+  clip-path: polygon(0 0, 80% 0, 100% 11%, 100% 100%, 20% 100%, 0 89%);
+  background: repeating-linear-gradient(118deg, rgba(255, 255, 255, .06) 0 2px, transparent 2px 9px), linear-gradient(165deg, #2a3350, #0c1020);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .25);
+}
+.fatal-hint__el { width: 1.4rem; }
+.fatal-hint__crest { width: 1.8rem; height: 1.8rem; object-fit: contain; }
+.fatal-hint__game { font-size: .7rem; font-weight: 800; padding: 0 .3rem; border-radius: 6px; border: 1px solid rgba(255, 255, 255, .5); }
+.fatal-hint__stat { position: absolute; bottom: .4rem; left: 12%; right: 12%; text-align: center; font-size: .7rem; font-weight: 900; text-transform: uppercase; border-radius: 6px; padding: .1rem 0; clip-path: none; }
+.duel-tb { display: flex; flex-direction: column; gap: .4rem; }
+.sim-chance { display: flex; flex-direction: column; gap: .4rem; }

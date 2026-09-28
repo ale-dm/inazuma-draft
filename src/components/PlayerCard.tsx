@@ -75,8 +75,8 @@ export default function PlayerCard({ player, mode, onClick, onCompare, inCompare
         </div>
         <p className={`text-[0.65rem] element-${player.element} mb-1.5 truncate flex items-center gap-1`}>
           <ElementIcon element={player.element} className="w-4 h-4 align-text-bottom shrink-0" />
-          {!teamLabel && teamLogo(player.team) && <img className="ic__badge" src={teamLogo(player.team)} alt="" />}
-          <span className="truncate">{teamLabel ?? (teamLogo(player.team) ? player.game : teamName(player.team, locale))}</span>
+          {!teamLabel && teamLogo(player.team, player.game) && <img className="ic__badge" src={teamLogo(player.team, player.game)} alt="" />}
+          <span className="truncate">{teamLabel ?? (teamLogo(player.team, player.game) ? player.game : teamName(player.team, locale))}</span>
         </p>
         {mode === 'classic' && (
           <div className="flex flex-wrap gap-1">

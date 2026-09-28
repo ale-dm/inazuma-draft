@@ -4,9 +4,8 @@ import { pickBestXI } from '../data/ffi-rosters'
 import { teamRating } from './chemistry'
 
 /**
- * Duelo (estilo MADFUT/FC, fase 4). Cada carta tiene 3 números de combate que salen de sus estadísticas:
- * verde ataque, azul control de balón y rojo defensa. De momento solo cuentan los números y el portero; las
- * supertécnicas y la afinidad están sin usar a propósito: ideas en docs/duelo.md.
+ * Números de duelo de cada carta (verde ataque, azul control, rojo defensa) y rival de la máquina. Las reglas del
+ * Duelo (Fatal de MADFUT) están en lib/fatal.ts; ver docs/duelo.md.
  */
 export interface DuelStats {
   /** Verde: capacidad de ataque/remate */
@@ -19,18 +18,47 @@ export interface DuelStats {
 
 export type DuelKey = keyof DuelStats
 
+/** Cuánto aprovecha cada puesto cada número [ataque, control, defensa] */
+const POS_FACTOR: Record<Player['position'], [number, number, number]> = {
+  FW: [1, 0.92, 0.68],
+  MF: [0.92, 1, 0.86],
+  DF: [0.8, 0.9, 1],
+  GK: [0.5, 0.72, 1],
+}
+/** Tipo de supertécnica → número al que suma (0 ataque, 1 control, 2 defensa) */
+const TECH_SLOT: Record<string, 0 | 1 | 2> = { Shoot: 0, Dribble: 1, Block: 2, Catch: 2 }
+/** Tope del bonus de técnicas por número */
+const TECH_CAP = 6
+
 /**
- * Se reutilizan las 3 estadísticas más afines de la carta (tiro, control, defensa), sin inventar una fórmula nueva.
- * Los porteros no tienen buena "defensa" de campo, así que su rojo mezcla defensa y parada. Si la carta tiene
- * valores de duelo puestos a mano (CRUD oculto), mandan esos.
+ * Números de duelo de la carta (ver docs/duelo.md):
+ * 1. mezcla de sus stats afines: ataque = tiro 70 % + velocidad y control; control = control 60 % + velocidad y
+ *    físico; defensa = defensa 60 % + físico y velocidad (porteros: parada 70 % + defensa y físico)
+ * 2. × lo que aprovecha su puesto (un defensa con mucho tiro no ataca como un delantero; un portero, aún menos)
+ * 3. + sus supertécnicas: cada una suma a su número (tiro → ataque, regate → control, bloqueo y parada → defensa;
+ *    parada solo en porteros) 1 + TP/40, +1 si es tiro largo o bloqueo de tiros; como mucho +6 por número
+ * 4. tope: media + 8 (y 25–99)
+ * Si la carta tiene valores puestos a mano (CRUD oculto), mandan esos.
  */
 export function duelStats(p: Player): DuelStats {
-  const { shooting, control, defense, goalkeeping } = p.stats
-  return {
-    att: p.duel?.att ?? shooting,
-    con: p.duel?.con ?? control,
-    def: p.duel?.def ?? (p.position === 'GK' ? Math.round((defense + goalkeeping) / 2) : defense),
+  const s = p.stats
+  const raw = [
+    s.shooting * 0.7 + s.speed * 0.15 + s.control * 0.15,
+    s.control * 0.6 + s.speed * 0.25 + s.physical * 0.15,
+    p.position === 'GK'
+      ? s.goalkeeping * 0.7 + s.defense * 0.15 + s.physical * 0.15
+      : s.defense * 0.6 + s.physical * 0.3 + s.speed * 0.1,
+  ]
+  const bonus = [0, 0, 0]
+  for (const t of new Set(p.techniques)) {
+    if (t.type === 'Catch' && p.position !== 'GK') continue
+    bonus[TECH_SLOT[t.type]] += 1 + (t.cost ?? 30) / 40
+    if (t.traits?.includes('long')) bonus[0] += 1
+    if (t.traits?.includes('block')) bonus[2] += 1
   }
+  const f = POS_FACTOR[p.position]
+  const [att, con, def] = raw.map((r, i) => Math.max(25, Math.min(99, p.ovr + 8, Math.round(r * f[i] + Math.min(TECH_CAP, bonus[i])))))
+  return { att: p.duel?.att ?? att, con: p.duel?.con ?? con, def: p.duel?.def ?? def }
 }
 
 /** Quién gana un duelo en una acción: compara esa estadística de las dos cartas (empate → gana la nota general) */
@@ -39,64 +67,6 @@ export function resolveDuel(a: Player, b: Player, action: DuelKey): 0 | 1 | -1 {
   const sb = duelStats(b)[action]
   if (sa === sb) return a.ovr === b.ovr ? 0 : a.ovr > b.ovr ? 1 : -1
   return sa > sb ? 1 : -1
-}
-
-// ---------------------------------------------------------------- partido de duelo
-
-/** Jugadas por partido: cada una gasta una carta de campo de cada equipo (hay 10) */
-export const DUEL_ROUNDS = 7
-
-export interface DuelTeam {
-  name: string
-  /** Portero: no se juega como carta, para los tiros */
-  gk: Player
-  /** Cartas de campo que se pueden jugar */
-  field: Player[]
-}
-
-export interface DuelRound {
-  /** Carta jugada por cada equipo [tú, rival] */
-  cards: [Player, Player]
-  /** Control contra control: quién se lleva el balón (−1: nadie, empate total) */
-  ball: 0 | 1 | -1
-  /** Tiro de quien tiene el balón: su ataque contra la defensa de la carta rival y el portero */
-  shot?: { by: 0 | 1; att: number; block: number; gk: number; goal: boolean }
-}
-
-/** Parada del portero para el duelo: su estadística de parada */
-export const keeperSave = (gk: Player) => gk.stats.goalkeeping
-
-/**
- * Una jugada: 1) medio campo, control contra control (empate: la nota general); 2) quien gana el balón tira: su
- * ataque contra la media de la defensa de la carta rival y la parada de su portero. Gol si el ataque es mayor.
- */
-export function playRound(mine: Player, theirs: Player, myGk: Player, theirGk: Player): DuelRound {
-  const r = resolveDuel(mine, theirs, 'con')
-  if (r === 0) return { cards: [mine, theirs], ball: -1 }
-  const by: 0 | 1 = r === 1 ? 0 : 1
-  const [shooter, blocker, keeper] = by === 0 ? [mine, theirs, theirGk] : [theirs, mine, myGk]
-  const att = duelStats(shooter).att
-  const block = duelStats(blocker).def
-  const gk = keeperSave(keeper)
-  return { cards: [mine, theirs], ball: by, shot: { by, att, block, gk, goal: att > Math.round((block + gk) / 2) } }
-}
-
-/** Once → equipo de duelo: el portero aparte y las 10 cartas de campo */
-export function toDuelTeam(name: string, xi: Player[]): DuelTeam {
-  const gk = xi.find(p => p.position === 'GK') ?? [...xi].sort((a, b) => b.stats.goalkeeping - a.stats.goalkeeping)[0]
-  return { name, gk, field: xi.filter(p => p !== gk) }
-}
-
-/**
- * La máquina elige carta: prefiere buen control (gana el balón) sin olvidar ataque y defensa, con algo de azar para
- * que no sea siempre la misma.
- */
-export function aiPick(hand: Player[], rnd = Math.random): Player {
-  const score = (p: Player) => {
-    const d = duelStats(p)
-    return d.con * 0.5 + d.att * 0.25 + d.def * 0.25 + (rnd() - 0.5) * 18
-  }
-  return hand.reduce((best, p) => (score(p) > score(best) ? p : best), hand[0])
 }
 
 /** Rival de la máquina con una media parecida a la tuya (±4; si no hay, el más cercano) */

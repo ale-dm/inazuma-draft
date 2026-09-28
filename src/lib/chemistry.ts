@@ -72,11 +72,12 @@ export function chemistry(lineup: LineupMap, captain?: SlotId): Chemistry {
   return { players, detail, counts, team }
 }
 
-/** Media del equipo con la fórmula de FUT: media de los 11 + lo que los mejores superan esa media, repartido */
+/** Media del equipo con la fórmula de FUT: media de las cartas + lo que las mejores superan esa media, repartido
+ *  (entre las que haya: el once, o el once y los suplentes en el draft) */
 export function teamRating(players: Player[]): number {
   if (!players.length) return 0
   const sum = players.reduce((s, p) => s + p.ovr, 0)
   const avg = sum / players.length
   const extra = players.reduce((s, p) => s + Math.max(0, p.ovr - avg), 0)
-  return Math.floor((sum + extra) / 11)
+  return Math.min(99, Math.floor((sum + extra) / players.length))
 }

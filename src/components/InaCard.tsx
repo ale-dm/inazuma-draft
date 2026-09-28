@@ -3,7 +3,7 @@ import type { Player } from '../types'
 import { useAppSettings } from '../context/AppSettings'
 import { teamLogo, teamName } from '../data/catalog'
 import { RARITY_CLASS } from '../lib/packs'
-import { duelStats, type DuelKey } from '../lib/duel'
+import { duelStats, type DuelKey, type DuelStats } from '../lib/duel'
 import { useCardStats } from '../lib/card-prefs'
 import { ElementIcon, PositionIcon } from './GameIcon'
 
@@ -20,6 +20,8 @@ interface Props {
   stats?: boolean
   /** Resalta uno de los 3 números (la acción del Duelo) */
   highlight?: DuelKey
+  /** Números a enseñar (en el Duelo, ya con química y boost) */
+  values?: DuelStats
 }
 
 /**
@@ -27,16 +29,16 @@ interface Props {
  * del equipo; la foto grande; el nombre abajo; a la derecha, los 3 números de duelo (verde ataque, azul control, rojo
  * defensa) o, si están ocultos, el juego de la carta. Color por rareza (Victory Road) y esquinas cortadas.
  */
-export default function InaCard({ player, showRating = true, size = 'md', onClick, stats, highlight }: Props) {
+export default function InaCard({ player, showRating = true, size = 'md', onClick, stats, highlight, values }: Props) {
   const { locale } = useAppSettings()
   const pref = useCardStats()
   const [failed, setFailed] = useState(false)
   const [badgeFailed, setBadgeFailed] = useState(false)
   const Tag = onClick ? 'button' : 'div'
   const surname = player.name.split(' ').slice(-1)[0]
-  const logo = !NO_TEAM.has(player.team) && !badgeFailed ? teamLogo(player.team) : undefined
+  const logo = !NO_TEAM.has(player.team) && !badgeFailed ? teamLogo(player.team, player.game) : undefined
   const withStats = (stats ?? pref) && showRating
-  const d = withStats ? duelStats(player) : null
+  const d = withStats ? values ?? duelStats(player) : null
   const small = size === 'xs'
 
   return (
