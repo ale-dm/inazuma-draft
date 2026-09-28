@@ -1462,6 +1462,34 @@ def main(extra_z=None, write=True):
     for c in sorted((c for c in a_cards if not c['no']), key=lambda c: c['id']):
         nxt += 1
         c['no'] = nxt
+    # poderes especiales de VR (módulo PlayerData/VR de la wiki): espíritu guerrero de su ficha; los Zanark Outsiders son
+    # Mixi Max con Zanark (su ficha de forma Mixi Max, con su keshin si lo tiene)
+    vr_path = os.path.join(CACHE, 'PlayerData_VR.lua')
+    vr_by_page = collections.defaultdict(list)
+    for b_ in (lua_entries(open(vr_path, encoding='utf-8').read()).values() if os.path.exists(vr_path) else []):
+        pg_ = re.search(r'\n\t\tpage="([^"]+)"', b_)
+        if pg_:
+            vr_by_page[pg_.group(1)].append(b_)
+    for c in a_cards:
+        if c['game'] != 'VR' or not c['page']:
+            continue
+        outsider = c['team'] == "Zanark's Outsiders"
+        bodies = vr_by_page.get(c['page'], [])
+        form_of = lambda b_: (re.search(r'\n\t\tform="([^"]*)"', b_) or [None, ''])[1]
+        body = next((b_ for b_ in bodies if outsider and 'mixi' in form_of(b_).lower()), None) \
+            or next((b_ for b_ in bodies if not form_of(b_)), None)
+        sp = []
+        for key, armed in (lua_game_list(body, 'keshin', 'VR') if body else []):
+            kd = keshin_data.get(key, '')
+            kpage = (re.search(r'page="([^"]+)"', kd) or [None, key])[1]
+            es, en = es_keshin.get(romaji(kpage), (None, None))
+            hk = re.search(r'\n\t\thissatsu="(\w+)"', kd)
+            ht = technique_any(hk.group(1)) if hk else None
+            sp.append({'type': 'keshin', 'name': en or kpage, 'name_es': es, 'armed': False,
+                       'hyper': ht and ht['name'], 'hyper_es': ht and ht.get('name_es')})
+        if outsider:
+            sp.append({'type': 'mixi', 'name': 'Zanark' if c['character_id'] != 'zanark-avalonic' else 'Zanark (futuro)'})
+        c['specials'] = sp
     solo = collections.Counter((c['game'], c['team']) for c in a_cards)   # equipos con un solo jugador: fuera, como en los clásicos
     for c in a_cards:
         if c['team'] not in SCOUT_TEAMS and solo[(c['game'], c['team'])] == 1:

@@ -2094,7 +2094,16 @@
    "description": "Son of legend Mark Evans, he's got his dad's talent and game sense with skills far beyond the ordinary.",
    "description_es": "Hijo del legendario futbolista . Sus habilidades impresionan.",
    "no": 4893,
-   "specials": [],
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Majin Victory",
+     "name_es": "Niké, Mágico gigante",
+     "armed": false,
+     "hyper": "Meteoric Fire Tornado V",
+     "hyper_es": null
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -2141,7 +2150,16 @@
    "description": "As a junior league player, he enjoyed football at its purest, playing side by side with his teammates.",
    "description_es": "Hijo del legendario futbolista . Sus habilidades impresionan.",
    "no": 5232,
-   "specials": [],
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Majin Victory",
+     "name_es": "Niké, Mágico gigante",
+     "armed": false,
+     "hyper": "Meteoric Fire Tornado V",
+     "hyper_es": null
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -7950,7 +7968,16 @@
    "description": "Courageous and justice-driven grandson of Dr. Cryptix, who sets off with Wonderbot to find the strongest eleven.",
    "description_es": "El valiente nieto del profesor Cryptix, con un gran sentido de justicia. Parte en un viaje con Wonderbot para encontrar al mejor equipo.",
    "no": 5762,
-   "specials": [],
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Goddess Victoria",
+     "name_es": null,
+     "armed": false,
+     "hyper": "Luminous Orb",
+     "hyper_es": "Impacto luminoso"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -7995,7 +8022,16 @@
    "description": "Cold, emotionless and utterly stripped of courage and justice. He's now under the Mind Eaters' control.",
    "description_es": "El valiente nieto del profesor Cryptix, con un gran sentido de justicia. Parte en un viaje con Wonderbot para encontrar al mejor equipo.",
    "no": 5822,
-   "specials": [],
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Goddess Victoria",
+     "name_es": null,
+     "armed": false,
+     "hyper": "Luminous Orb",
+     "hyper_es": "Impacto luminoso"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -8240,7 +8276,20 @@
    "description": "A wild card who escaped the CONTRA Facility and gained new powers from his future self.",
    "description_es": null,
    "no": 5772,
-   "specials": [],
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Prince of the Astral Plane Zodiac",
+     "name_es": "Príncipe del plano astral, Zodíaco",
+     "armed": false,
+     "hyper": "Crimson Prison",
+     "hyper_es": "Prisión escarlata"
+    },
+    {
+     "type": "mixi",
+     "name": "Zanark (futuro)"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -9564,7 +9613,16 @@
    "description": "The upbeat spark who lights up any room, and his relentless pestering? Straight-up stalker level.",
    "description_es": "Un chico que anima el ambiente con mucha facilidad. Su persistencia puede hacerlo parecer un acosador.",
    "no": 4859,
-   "specials": [],
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Entertainer",
+     "name_es": "Animador",
+     "armed": false,
+     "hyper": "Dazzling Carnival",
+     "hyper_es": "Carnaval centelleante"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -12575,7 +12633,16 @@
    "description": "Vic in his football days, brimming with energy and eager to show his mother exactly what he's capable of.",
    "description_es": "El valiente nieto del profesor Cryptix, con un gran sentido de justicia. Parte en un viaje con Wonderbot para encontrar al mejor equipo.",
    "no": 5770,
-   "specials": [],
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Goddess Victoria",
+     "name_es": null,
+     "armed": false,
+     "hyper": "Luminous Orb",
+     "hyper_es": "Impacto luminoso"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -14605,7 +14672,16 @@
    "description": "Dark and fierce, he haunts opponents by bringing out his Keshin to shake their nerves.",
    "description_es": "Melancólico pero valiente, persigue a los rivales y se regocija al asustarlos con su keshin.",
    "no": 4959,
-   "specials": [],
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Jouheki Kyohei Warborg",
+     "name_es": "Warborg, muralla titánica",
+     "armed": false,
+     "hyper": "Fortress of Despair",
+     "hyper_es": "Fortaleza desesperada"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -22069,7 +22145,16 @@
    "description": "Sharp-tongued and deadly focused, his footwork cuts through defences like a scalpel.",
    "description_es": "Con una lengua mordaz y una concentración brutal, su técnica de pies corta las defensas como si fuera un bisturí.",
    "no": 4965,
-   "specials": [],
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Masou Kensei Clara Bunny",
+     "name_es": "Conejo de cristal, lanza sagrada",
+     "armed": false,
+     "hyper": "Shadow Empress",
+     "hyper_es": "Emperatriz oscura"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -27602,7 +27687,20 @@
    "description": "The lone soldier who rules as the strongest at Ogre Academy, and wielder of new powers granted by Zanark.",
    "description_es": null,
    "no": 5777,
-   "specials": [],
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Dark Demigod Black Butcher",
+     "name_es": "Señor oscuro, Azote negro",
+     "armed": false,
+     "hyper": "Executioner's Axe",
+     "hyper_es": "Hacha del Azote negro"
+    },
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -28020,7 +28118,12 @@
    "description": "A shadow player who once pulled strings at Royal Academy Redux, and wielder of new powers granted by Zanark.",
    "description_es": null,
    "no": 5775,
-   "specials": [],
+   "specials": [
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -28112,7 +28215,20 @@
    "description": "A Three Kingdoms warlord who built Wei's foundations, and wielder of new powers granted by Zanark.",
    "description_es": null,
    "no": 5782,
-   "specials": [],
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Warrior of the North Xuan-Wu",
+     "name_es": "Guerrero del norte Xuan-Wu",
+     "armed": false,
+     "hyper": "Tortoise Shield",
+     "hyper_es": "Escudo caparazón"
+    },
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -28493,7 +28609,20 @@
    "description": "Leader of Devil Army Z who devours human souls, and wielder of new powers granted by Zanark.",
    "description_es": null,
    "no": 5776,
-   "specials": [],
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Fire Jotun Surtr",
+     "name_es": "Gigante de fuego, Surtur",
+     "armed": false,
+     "hyper": "Fireball Storm",
+     "hyper_es": "Tormenta de fuego"
+    },
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -28674,7 +28803,20 @@
    "description": "A control freak who won't rest until everything's perfect, and wielder of new powers granted by Zanark.",
    "description_es": null,
    "no": 5774,
-   "specials": [],
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Jinkou Keshin Plasma Shadow GK",
+     "name_es": null,
+     "armed": false,
+     "hyper": "Shadow Hand",
+     "hyper_es": "Mano sombría"
+    },
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -31124,7 +31266,20 @@
    "description": "A bold and fiery player driven by a strong sense of honor, and wielder of new powers granted by Zanark.",
    "description_es": null,
    "no": 5778,
-   "specials": [],
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Brave Samurai Musashi",
+     "name_es": "Bravo samurái Musashi",
+     "armed": false,
+     "hyper": "Bushin Blades",
+     "hyper_es": "Estocada samurai"
+    },
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -32974,7 +33129,12 @@
    "description": "A spider-like being from the netherworld with eerie agility, and wielder of new powers granted by Zanark.",
    "description_es": null,
    "no": 5784,
-   "specials": [],
+   "specials": [
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -35730,7 +35890,20 @@
    "description": "The largest typhoon ever to bring destruction and chaos, and wielder of new powers granted by Zanark.",
    "description_es": null,
    "no": 5773,
-   "specials": [],
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Jinkou Keshin Plasma Shadow SH",
+     "name_es": null,
+     "armed": false,
+     "hyper": "Shadow Kick",
+     "hyper_es": "Tiro sombrío"
+    },
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -36645,7 +36818,20 @@
    "description": "A marksman who never misses his shot and always scores, and wielder of new powers granted by Zanark.",
    "description_es": null,
    "no": 5785,
-   "specials": [],
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Giant Usurper Gigante",
+     "name_es": "Titán gigante",
+     "armed": false,
+     "hyper": "Giga Knuckle Sandwich",
+     "hyper_es": "Presa titánica"
+    },
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -43592,7 +43778,12 @@
    "description": "A snide provocateur who loves taunting his foes, and wielder of new powers granted by Zanark.",
    "description_es": null,
    "no": 5781,
-   "specials": [],
+   "specials": [
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -48015,7 +48206,12 @@
    "description": "A dangerous wrecking machine with unmatched strength, and wielder of new powers granted by Zanark.",
    "description_es": null,
    "no": 5779,
-   "specials": [],
+   "specials": [
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -50314,7 +50510,12 @@
    "description": "A relentless player who clings to opponents like a giant serpent, and wielder of new powers granted by Zanark.",
    "description_es": null,
    "no": 5780,
-   "specials": [],
+   "specials": [
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -54007,7 +54208,12 @@
    "description": "A piercing gaze that reads every move of his opponent, and wielder of new powers granted by Zanark.",
    "description_es": null,
    "no": 5783,
-   "specials": [],
+   "specials": [
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -57906,7 +58112,20 @@
    "description": "A mysterious boy who carries an otherworldly aura, and wielder of new powers granted by Zanark.",
    "description_es": null,
    "no": 5787,
-   "specials": [],
+   "specials": [
+    {
+     "type": "keshin",
+     "name": "Warrior of the North Xuan-Wu",
+     "name_es": "Guerrero del norte Xuan-Wu",
+     "armed": false,
+     "hyper": "Tortoise Shield",
+     "hyper_es": "Escudo caparazón"
+    },
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · emerite",
@@ -95193,7 +95412,12 @@
    "description": "Blindly devoted to the ways and rules of the strong, and wielder of new powers granted by Zanark.",
    "description_es": null,
    "no": 5786,
-   "specials": [],
+   "specials": [
+    {
+     "type": "mixi",
+     "name": "Zanark"
+    }
+   ],
    "extra_teams": [],
    "raw_stats": {
     "form": "Victory Road Lv50 · experimente",
