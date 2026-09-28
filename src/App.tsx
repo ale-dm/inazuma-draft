@@ -12,6 +12,7 @@ import { initRunRng, resetRunRng } from './lib/run-rng'
 import { useAppSettings } from './context/AppSettings'
 import AppLayout from './components/AppLayout'
 import Hub from './components/hub/Hub'
+import FutDraft from './components/futdraft/FutDraft'
 import Draft from './components/Draft'
 import LineupReview from './components/LineupReview'
 import Tournament from './components/Tournament'
@@ -43,15 +44,15 @@ export default function App() {
   const [won, setWon] = useState(false)
   const inPlayers = useHashRoute() === PLAYERS_HASH
 
-  function startRun() {
+  function startRun(kind: 'fut' | 'ffi') {
     const seed = runSeed ?? generateSeedString()
     initRunRng(seed)
     setRunSeed(seed)
     syncRunUrl(seed, mode)
     recordRunStarted()
     recordGlobalRunStarted()
-    trackEvent('run_started', { mode, seed })
-    setPhase('draft')
+    trackEvent('run_started', { mode: kind === 'fut' ? 'fut' : mode, seed })
+    setPhase(kind === 'fut' ? 'futdraft' : 'draft')
   }
 
   function reset() {
@@ -86,6 +87,24 @@ export default function App() {
     if (phase === 'landing') {
       return <Hub mode={mode} seed={runSeed} onModeChange={handleModeChange} onStart={startRun} />
 
+    }
+
+    if (phase === 'futdraft') {
+      return (
+        <FutDraft
+          onExit={reset}
+          onComplete={(l, formation) => {
+            const players = lineupToArray(l, formation)
+            recordDraftComplete(players, [])
+            recordGlobalDraftComplete()
+            trackEvent('draft_complete', { players: players.length, teams_rolled: 0, kind: 'fut' })
+            setDrafted(players)
+            setLineup(l)
+            setFormationId(formation)
+            setPhase('tournament')
+          }}
+        />
+      )
     }
 
     if (phase === 'draft') {

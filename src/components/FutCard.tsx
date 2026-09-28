@@ -18,7 +18,7 @@ interface Props {
   player: Player
   /** false en el modo Memoria: sin nota ni estadísticas */
   showStats?: boolean
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'xs' | 'sm' | 'md' | 'lg'
   onClick?: () => void
 }
 
@@ -47,7 +47,7 @@ export default function FutCard({ player, showStats = true, size = 'md', onClick
           : <span className="fut-card__initials">{player.name.split(' ').map(w => w[0]).join('').slice(0, 2)}</span>}
       </div>
       <div className="fut-card__name">{lastName}</div>
-      {showStats && size !== 'sm' && (
+      {showStats && (size === 'md' || size === 'lg') && (
         <div className="fut-card__stats">
           {ALL_STAT_KEYS.map(k => (
             <span key={k}>

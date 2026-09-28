@@ -138,4 +138,4 @@ export interface FFITeam {
   players: Player[]
 }
 
-export type GamePhase = 'landing' | 'draft' | 'lineup' | 'tournament' | 'result'
+export type GamePhase = 'landing' | 'draft' | 'futdraft' | 'lineup' | 'tournament' | 'result'

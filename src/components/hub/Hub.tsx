@@ -2,7 +2,7 @@ import { useMemo, useRef, useState, type ReactNode } from 'react'
 import type { Player } from '../../types'
 import { useAppSettings } from '../../context/AppSettings'
 import { getAllPlayers, getCharacterVersions } from '../../data/catalog'
-import { loadProgress } from '../../lib/progress'
+import { loadProgress, uniqueCharacters } from '../../lib/progress'
 import { PLAYERS_HASH } from '../../lib/route'
 import FutCard from '../FutCard'
 import RulesModal from '../RulesModal'
@@ -14,13 +14,15 @@ interface Props {
   mode: 'classic' | 'memory'
   seed: string | null
   onModeChange: (mode: 'classic' | 'memory') => void
-  onStart: () => void
+  /** 'fut' = draft MADFUT (1 de 5 con química) · 'ffi' = draft por sorteo de equipo + juego */
+  onStart: (kind: 'fut' | 'ffi') => void
 }
 
-/** Mejor carta con imagen de un personaje: la foto grande de los paneles */
+/** Foto grande de los paneles: la mejor carta del personaje, mejor con retrato de zukan que con sprite de la wiki */
 function heroOf(characterId: string): string | null {
+  const isSprite = (url: string) => url.includes('wikia')
   const withImage = getCharacterVersions(characterId).filter(p => p.image)
-  return withImage.sort((a, b) => b.ovr - a.ovr)[0]?.image ?? null
+  return withImage.sort((a, b) => Number(isSprite(a.image!)) - Number(isSprite(b.image!)) || b.ovr - a.ovr)[0]?.image ?? null
 }
 
 /** Pantalla principal estilo MADFUT: barra de progreso arriba y tres páginas de paneles que se deslizan */
@@ -35,8 +37,8 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
     packs: heroOf('gouenji-shuuya'),
     club: heroOf('matsukaze-tenma'),
   }), [])
-  const latest = useMemo(() => getAllPlayers().filter(p => p.game === 'VR' && p.image)
-    .sort((a, b) => b.ovr - a.ovr).slice(0, 3), [])
+  const latest = useMemo(() => uniqueCharacters(getAllPlayers().filter(p => p.game === 'VR' && p.image)
+    .sort((a, b) => b.ovr - a.ovr)).slice(0, 3), [])
 
   const goPlayers = () => { window.location.hash = PLAYERS_HASH }
   const goPage = (i: number) => pager.current?.scrollTo({ left: i * pager.current.clientWidth, behavior: 'smooth' })
@@ -128,17 +130,25 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
         ))}
       </nav>
 
-      <Sheet open={sheet === 'mode'} title={t('landing.mode.label')} onClose={() => setSheet(null)}>
-        <div className="grid grid-cols-2 gap-3 mb-4">
-          {(['classic', 'memory'] as const).map(m => (
-            <button key={m} type="button" onClick={() => onModeChange(m)} className={`sheet-choice ${mode === m ? 'on' : ''}`}>
-              <b>{m === 'classic' ? t('landing.mode.classic') : t('landing.mode.memory')}</b>
-              <small>{m === 'classic' ? t('landing.mode.classicHint') : t('landing.mode.memoryHint')}</small>
-            </button>
-          ))}
-        </div>
+      <Sheet open={sheet === 'mode'} title={t('hub.chooseMode')} onClose={() => setSheet(null)}>
         {seed && <p className="sheet-note">{t('seed.sharedRun', { seed })}</p>}
-        <button type="button" className="sheet-cta" onClick={onStart}>{t('landing.play')}</button>
+        <button type="button" className="sheet-choice sheet-choice--mode mb-4" onClick={() => onStart('fut')}>
+          <b>{t('hub.modeFut')}</b>
+          <small>{t('hub.modeFutSub')}</small>
+        </button>
+        <div className="sheet-choice mb-3">
+          <b>{t('hub.modeFfi')}</b>
+          <small>{t('hub.modeFfiSub')}</small>
+          <div className="grid grid-cols-2 gap-2 mt-2">
+            {(['classic', 'memory'] as const).map(m => (
+              <button key={m} type="button" onClick={() => onModeChange(m)} className={`sheet-choice sheet-choice--row ${mode === m ? 'on' : ''}`}>
+                <b>{m === 'classic' ? t('landing.mode.classic') : t('landing.mode.memory')}</b>
+              </button>
+            ))}
+          </div>
+          <small className="mt-1">{mode === 'classic' ? t('landing.mode.classicHint') : t('landing.mode.memoryHint')}</small>
+        </div>
+        <button type="button" className="sheet-cta" onClick={() => onStart('ffi')}>{t('landing.play')}</button>
       </Sheet>
       <SettingsSheet open={sheet === 'settings'} onClose={() => setSheet(null)} />
       <RulesModal open={sheet === 'rules'} onClose={() => setSheet(null)} />

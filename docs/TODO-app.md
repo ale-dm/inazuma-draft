@@ -1,0 +1,60 @@
+# TODO de la app (rama `app`)
+
+Control de lo que falta por hacer. Plan y referencia de MADFUT: [plan-app.md](plan-app.md) · Diario de trabajo: [app-log.md](app-log.md).
+Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
+
+## Fase 1 · Base
+- [x] PWA instalable (manifest, iconos, service worker; caché de catálogo, fotos y fuentes)
+- [x] Manifest con credenciales (instalable en las previews protegidas de Vercel)
+- [x] Pantalla principal de 3 páginas deslizables + barra de nivel, títulos y cartas
+- [x] Carta estilo FUT por rareza (Leyenda, Élite, Oro, Plata, Bronce)
+- [x] Paneles inferiores: modo de juego y ajustes (idioma, sonido, tema)
+- [x] Tema oscuro por defecto; fuera la portada antigua
+- [x] Textos en inglés, español, francés e italiano
+
+## Fase 2 · Draft MADFUT
+- [x] Química: enlaces entre puestos vecinos; verde (2 coincidencias de equipo / juego / elemento), amarillo (1), rojo (0)
+- [x] Química por jugador (0–3), del equipo (0–100) y bonus de capitán
+- [x] Media del equipo (fórmula FUT)
+- [x] Elegir formación (1 de 5) y capitán (1 de 5)
+- [x] Tocar un hueco → elegir 1 de 5 jugadores de ese puesto (sin repetir personaje)
+- [x] Campo con líneas de química de colores
+- [x] Resumen (media y química) → jugar el torneo FFI con ese once
+- [ ] Banquillo (5 suplentes)
+- [ ] Cambiar jugadores de sitio en el campo
+- [ ] La química influye en la simulación del partido
+- [ ] Guardar un draft y jugarlo más tarde
+- [ ] El panel grande dice "Sortea equipos…": texto nuevo que valga para los dos modos
+
+## Arreglos y revisiones
+- [x] Imágenes de la wiki (Fandom) bloqueadas por el Referer → `<meta name="referrer" content="no-referrer">`
+- [ ] Llevar ese arreglo también a `main` (la web actual tiene ~85 imágenes de la wiki rotas por lo mismo)
+- [ ] Revisar las cartas que salen con iniciales en vez de foto (URL de imagen que falla)
+
+## Fase 3 · Economía local
+- [ ] Monedas y XP por jugar
+- [ ] Sobres con probabilidades por rareza (por saga, elemento, equipo) y apertura animada
+- [ ] Mis cartas: colección con filtros y duplicados
+- [ ] Colecciones (equipos completos, sagas) con % y distinción al 100 %
+- [ ] Objetivos diarios (racha), semanales y de carrera
+- [ ] Rediseño del resto de pantallas (torneo, jugadores, resultado) con el estilo nuevo
+
+## Fase 4 · Modos
+- [ ] Duelo (Fatal con supertécnicas y ventaja de elemento)
+- [ ] Higher/Lower
+- [ ] Copas por saga y copa diaria de 4 equipos
+- [ ] Puzzles de draft (cartas fijas → 100 de química)
+
+## Fase 5 · Retos y evoluciones
+- [ ] Retos (SBC) con duplicados
+- [ ] Evoluciones con las formas reales (Mixi Max, espíritu guerrero, armadura)
+- [ ] Insignias (escudos de equipos) y logros
+
+## Fase 6 · Cuentas y nube (Supabase)
+- [ ] Inicio de sesión
+- [ ] Colección y monedas en la nube; sobres tirados en el servidor
+- [ ] Códigos canjeables; copia de seguridad
+
+## Fase 7 · Social
+- [ ] Intercambios con lista de deseos y mensajes predefinidos
+- [ ] Ranking semanal de draft; copas online

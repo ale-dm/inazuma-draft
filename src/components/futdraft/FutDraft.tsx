@@ -1,0 +1,150 @@
+import { useMemo, useState } from 'react'
+import type { Player } from '../../types'
+import { useAppSettings } from '../../context/AppSettings'
+import { getFormation, nextEmptySlot, type FormationId, type LineupMap, type SlotId } from '../../lib/lineup'
+import { chemistry, formationLinks, teamRating } from '../../lib/chemistry'
+import { captainOptions, formationOptions, slotOptions } from '../../lib/fut-draft'
+import FutCard from '../FutCard'
+import Sheet from '../hub/Sheet'
+
+interface Props {
+  onComplete: (lineup: LineupMap, formation: FormationId, captain: SlotId) => void
+  onExit: () => void
+}
+
+/** Coordenada y (0–100 de la formación) dentro del campo: margen arriba y el portero en su propia fila abajo,
+ *  para que no se pise con los centrales en las defensas de 5 */
+const fieldY = (y: number) => (y >= 85 ? 91 : 8 + y * 0.84)
+
+/** Draft al estilo MADFUT: formación 1 de 5 → capitán 1 de 5 → cada hueco 1 de 5, con química y media */
+export default function FutDraft({ onComplete, onExit }: Props) {
+  const { t } = useAppSettings()
+  const [formations] = useState(formationOptions)
+  const [captains] = useState(captainOptions)
+  const [formation, setFormation] = useState<FormationId | null>(null)
+  const [captain, setCaptain] = useState<SlotId | null>(null)
+  const [lineup, setLineup] = useState<LineupMap>({})
+  const [picking, setPicking] = useState<SlotId | null>(null)
+  // las opciones de cada hueco se sortean una vez: cerrar y volver a abrir no cambia la tirada
+  const [options, setOptions] = useState<Partial<Record<SlotId, Player[]>>>({})
+
+  const def = formation ? getFormation(formation) : null
+  const links = useMemo(() => (def ? formationLinks(def.slots) : []), [def])
+  const chem = useMemo(() => chemistry(lineup, links, captain ?? undefined), [lineup, links, captain])
+  const placed = Object.values(lineup).filter((p): p is Player => !!p)
+  const rating = teamRating(placed)
+  const full = !!def && placed.length === def.slots.length
+
+  function chooseCaptain(p: Player) {
+    const slot = nextEmptySlot({}, p, formation!)
+    if (!slot) return
+    setLineup({ [slot]: p })
+    setCaptain(slot)
+  }
+
+  function openSlot(id: SlotId) {
+    if (!options[id]) {
+      const role = def!.slots.find(s => s.id === id)!.role
+      setOptions(o => ({ ...o, [id]: slotOptions(role, new Set(placed.map(p => p.characterId))) }))
+    }
+    setPicking(id)
+  }
+
+  function pick(p: Player) {
+    setLineup(l => ({ ...l, [picking!]: p }))
+    setPicking(null)
+  }
+
+  return (
+    <div className="hub fd">
+      <header className="hub-top safe-top">
+        <div className="hub-top__row">
+          <button type="button" className="hub-icon-btn" onClick={onExit} aria-label={t('fd.exit')}>✕</button>
+          <span className="hub-logo">{t('hub.draft')}</span>
+          <span className="w-10" />
+        </div>
+        {def && (
+          <div className="hub-bar fd-bar">
+            <span className="fd-stat"><small>{t('fd.rating')}</small>{rating || '—'}</span>
+            <span className="fd-stat"><small>{t('fd.chemistry')}</small>{chem.team}</span>
+            <span className="fd-chem-track"><span style={{ width: `${chem.team}%` }} /></span>
+            <span className="fd-stat"><small>{def.layout}</small>{placed.length}/{def.slots.length}</span>
+          </div>
+        )}
+      </header>
+
+      <main className="fd-main">
+        {!formation && (
+          <section className="fd-step">
+            <h2 className="fd-title">{t('fd.formation')}</h2>
+            <div className="fd-formations">
+              {formations.map(id => {
+                const f = getFormation(id)
+                return (
+                  <button key={id} type="button" className="tile fd-formation" onClick={() => setFormation(id)}>
+                    <span className="fd-mini">
+                      {f.slots.map(s => <i key={s.id} style={{ left: `${s.x}%`, top: `${fieldY(s.y)}%` }} />)}
+                    </span>
+                    <span className="tile__label">{t(f.nameKey)}</span>
+                    <small>{f.layout}</small>
+                  </button>
+                )
+              })}
+            </div>
+          </section>
+        )}
+
+        {formation && !captain && (
+          <section className="fd-step">
+            <h2 className="fd-title">{t('fd.captain')}</h2>
+            <div className="fd-options">
+              {captains.map(p => <FutCard key={p.id} player={p} onClick={() => chooseCaptain(p)} />)}
+            </div>
+          </section>
+        )}
+
+        {def && captain && (
+          <section className="fd-step">
+            <p className="fd-hint">{full ? '' : t('fd.tapSlot')}</p>
+            <div className="fd-pitch">
+              <svg className="fd-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden>
+                {links.map(([a, b]) => {
+                  const sa = def.slots.find(s => s.id === a)!
+                  const sb = def.slots.find(s => s.id === b)!
+                  const color = chem.links.find(l => l.link[0] === a && l.link[1] === b)?.color ?? 'none'
+                  return <line key={`${a}-${b}`} x1={sa.x} y1={fieldY(sa.y)} x2={sb.x} y2={fieldY(sb.y)} className={`fd-line fd-line--${color}`} />
+                })}
+              </svg>
+              {def.slots.map(s => {
+                const p = lineup[s.id]
+                return (
+                  <div key={s.id} className="fd-slot" style={{ left: `${s.x}%`, top: `${fieldY(s.y)}%` }}>
+                    {p ? (
+                      <>
+                        <FutCard player={p} size="xs" />
+                        <span className={`fd-chem fd-chem--${chem.players[s.id] ?? 0}`}>
+                          {s.id === captain && <b>C</b>}{'◆'.repeat(chem.players[s.id] ?? 0) || '·'}
+                        </span>
+                      </>
+                    ) : (
+                      <button type="button" className="fd-empty" onClick={() => openSlot(s.id)}>+<small>{s.role}</small></button>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+            {full && (
+              <button type="button" className="sheet-cta fd-cta" onClick={() => onComplete(lineup, formation!, captain)}>{t('fd.play')}</button>
+            )}
+          </section>
+        )}
+      </main>
+
+      <Sheet open={!!picking} title={picking ? t('fd.pick', { pos: def!.slots.find(s => s.id === picking)!.role }) : ''} onClose={() => setPicking(null)}>
+        <div className="fd-options">
+          {(picking && options[picking] || []).map(p => <FutCard key={p.id} player={p} onClick={() => pick(p)} />)}
+        </div>
+      </Sheet>
+    </div>
+  )
+}

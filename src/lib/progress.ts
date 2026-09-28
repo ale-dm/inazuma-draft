@@ -19,14 +19,20 @@ export interface Progress {
 
 const XP_PER_LEVEL = 100
 
+/** Una carta por personaje (la primera de la lista): que no salga tres veces el mismo */
+export function uniqueCharacters(players: Player[]): Player[] {
+  const seen = new Set<string>()
+  return players.filter(p => !seen.has(p.characterId) && seen.add(p.characterId))
+}
+
 export function loadProgress(): Progress {
   const s = loadLocalStats()
   const xp = s.runsStarted * 10 + s.draftsCompleted * 25 + s.finalsReached * 50 + s.championships * 100
   const total = getAllPlayers().length
   const owned = s.uniquePlayerIds.map(getPlayer).filter((p): p is Player => !!p)
   const byOvr = (a: Player, b: Player) => b.ovr - a.ovr
-  const showcase = (owned.length ? owned : getAllPlayers().filter(p => p.category === 'Legendary Player' && p.image))
-    .sort(byOvr)
+  const showcase = uniqueCharacters((owned.length ? owned : getAllPlayers().filter(p => p.category === 'Legendary Player' && p.image))
+    .sort(byOvr))
     .slice(0, 3)
   return {
     level: Math.floor(xp / XP_PER_LEVEL) + 1,
