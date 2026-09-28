@@ -223,9 +223,11 @@ def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_j
         mult = next(x['multiplierPct'] for x in TAB['rarities'] if x['name'] == rar) / 100
         tpl = TAB['templates'].get(r['key'] or '', {}).get('50') or [r['st'][k] for k in KEYS]
         es = es_desc.get(r['page']) or {} if r['page'] else {}
+        # el Raimon de Ares es el de los nuevos: los del Raimon original que salen en Ares van a secundarios
+        team = 'Sub Character' if r['team'] == 'Raimon' and char_id in classic_ids else r['team']
         cards.append({
             'id': f"{char_id}--ares--{slug(ver)}", 'character_id': char_id, 'page': r['page'], 'name': z['name'],
-            'game': GAME, 'saga': 'IE', 'version': ver, 'team': r['team'], 'position': r['pos'],
+            'game': GAME, 'saga': 'IE', 'version': ver, 'team': team, 'position': r['pos'],
             'element': element_map.get(z['element']), 'ovr': r['final'], 'category': category(r['final']),
             'tier': {3: 'A', 2: 'A', 1: 'B', 0: 'C'}[r['vtier']],
             'source': f"Victory Road (tier {r['vtier']}{', héroe' if r['hero'] else ''}) + técnicas" + (f" + {r['anchor']}" if r['anchor'] else ''),
