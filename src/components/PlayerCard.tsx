@@ -90,7 +90,7 @@ export default function PlayerCard({ player, mode, onClick, onCompare, inCompare
         )}
         {mode === 'classic' && player.techniques[0] && (
           <div className="text-[0.65rem] text-hissatsu truncate font-heading mt-1.5 flex items-center gap-1">
-            <TechniqueIcon type={player.techniques[0].type} className="w-4 h-4 shrink-0" /> {techniqueName(player.techniques[0], locale)}
+            <TechniqueIcon type={player.techniques[0].type} traits={player.techniques[0].traits} className="w-4 h-4 shrink-0" /> {techniqueName(player.techniques[0], locale)}
           </div>
         )}
       </div>

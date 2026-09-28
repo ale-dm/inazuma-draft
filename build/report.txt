@@ -33,3 +33,4 @@ Equipo con un solo jugador, fuera: Queens (VR) → Romica Glimmerly sin equipo
 Nombres fr: técnicas 783/1015 · equipos 132/187
 Nombres it: técnicas 535/1015 · equipos 107/187
 Escudos de equipo: 171/187
+Técnicas: tiro largo 40 · bloqueo de tiros 48

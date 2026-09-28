@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { Player, Position } from '../../types'
 import { useAppSettings } from '../../context/AppSettings'
 import { getFormation, nextEmptySlot, type FormationId, type LineupMap, type SlotId } from '../../lib/lineup'
@@ -9,10 +9,18 @@ import Sheet from '../hub/Sheet'
 import { CircleHelp, X } from 'lucide-react'
 import Pitch, { fieldY } from '../pitch/Pitch'
 import ChemHelp from '../pitch/ChemHelp'
+import { clearDraft, saveDraft, toLineupMap, toPlayers, type SavedDraft } from '../../lib/saved-draft'
+import { getPlayer } from '../../data/catalog'
 
 interface Props {
   onComplete: (lineup: LineupMap, formation: FormationId, captain: SlotId, chemistry: number, bench: Player[]) => void
   onExit: () => void
+  /** Draft guardado que se sigue */
+  resume?: SavedDraft | null
+  /** Guardar el draft a cada paso para seguirlo más tarde (el del torneo FFI; el del Duelo no) */
+  persist?: boolean
+  /** Texto del botón final (por defecto, jugar el FFI) */
+  ctaLabel?: string
 }
 
 /** Un sitio del draft: un puesto del campo o un hueco del banquillo ("bench-0"…) */
@@ -21,19 +29,36 @@ const benchSpot = (i: number): Spot => `bench-${i}`
 const benchIndex = (s: Spot) => (s.startsWith('bench-') ? Number(s.slice(6)) : -1)
 
 /** Draft al estilo MADFUT: formación 1 de 5 → capitán 1 de 5 → cada hueco 1 de 5 → banquillo, con química y media */
-export default function FutDraft({ onComplete, onExit }: Props) {
+export default function FutDraft({ onComplete, onExit, resume, persist = false, ctaLabel }: Props) {
   const { t } = useAppSettings()
-  const [formations] = useState(formationOptions)
-  const [captains] = useState(captainOptions)
-  const [formation, setFormation] = useState<FormationId | null>(null)
-  const [captain, setCaptain] = useState<SlotId | null>(null)
-  const [lineup, setLineup] = useState<LineupMap>({})
-  const [bench, setBench] = useState<(Player | null)[]>(() => Array(BENCH).fill(null))
+  const [formations] = useState(() => resume?.formations ?? formationOptions())
+  const [captains] = useState(() => (resume ? toPlayers(resume.captains) : captainOptions()))
+  const [formation, setFormation] = useState<FormationId | null>(resume?.formation ?? null)
+  const [captain, setCaptain] = useState<SlotId | null>(resume?.captain ?? null)
+  const [lineup, setLineup] = useState<LineupMap>(() => (resume ? toLineupMap(resume.lineup) : {}))
+  const [bench, setBench] = useState<(Player | null)[]>(() => (resume
+    ? resume.bench.map(id => (id ? getPlayer(id) ?? null : null))
+    : Array(BENCH).fill(null)))
   const [picking, setPicking] = useState<Spot | null>(null)
   /** Carta tocada: al tocar otra que pueda ir en su sitio se cambian (el banquillo entra en el campo si el puesto coincide) */
   const [selected, setSelected] = useState<Spot | null>(null)
   // las opciones de cada sitio se sortean una vez: cerrar y volver a abrir no cambia la tirada
-  const [options, setOptions] = useState<Partial<Record<Spot, Player[]>>>({})
+  const [options, setOptions] = useState<Partial<Record<Spot, Player[]>>>(() => (resume
+    ? Object.fromEntries(Object.entries(resume.options).map(([k, ids]) => [k, toPlayers(ids)]))
+    : {}))
+
+  // guardado a cada paso: salir con la X deja el draft para seguirlo desde "Modos de draft"
+  useEffect(() => {
+    if (!persist) return
+    const ids = (m: Partial<Record<string, Player | undefined>>) =>
+      Object.fromEntries(Object.entries(m).filter(([, p]) => p).map(([k, p]) => [k, p!.id]))
+    saveDraft({
+      formations, captains: captains.map(p => p.id), formation, captain,
+      lineup: ids(lineup), bench: bench.map(p => p?.id ?? null),
+      options: Object.fromEntries(Object.entries(options).map(([k, l]) => [k, (l ?? []).map(p => p.id)])),
+      savedAt: Date.now(),
+    })
+  }, [persist, formations, captains, formation, captain, lineup, bench, options])
 
   const def = formation ? getFormation(formation) : null
   const chem = useMemo(() => chemistry(lineup, captain ?? undefined), [lineup, captain])
@@ -175,9 +200,12 @@ export default function FutDraft({ onComplete, onExit }: Props) {
                 <button
                   type="button"
                   className="sheet-cta fd-cta"
-                  onClick={() => onComplete(lineup, formation!, captain, chem.team, bench.filter((p): p is Player => !!p))}
+                  onClick={() => {
+                    if (persist) clearDraft()
+                    onComplete(lineup, formation!, captain, chem.team, bench.filter((p): p is Player => !!p))
+                  }}
                 >
-                  {t('fd.play')}
+                  {ctaLabel ?? t('fd.play')}
                 </button>
               </>
             )}

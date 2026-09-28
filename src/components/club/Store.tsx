@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useAppSettings } from '../../context/AppSettings'
 import { addPack, spend, useClub } from '../../lib/club'
-import { PACKS, RARITY_CLASS, getPack } from '../../lib/packs'
+import { PACKS, RARITY_CLASS, getPack, weeklyTeam } from '../../lib/packs'
+import { teamLogo, teamName } from '../../data/catalog'
 import type { Category } from '../../types'
 import { playSfx } from '../../lib/sfx'
 import Screen from './Screen'
@@ -10,8 +11,9 @@ import Coin from '../Coin'
 
 /** Tienda: sobres a la venta y los sobres guardados (comprados o ganados) listos para abrir */
 export default function Store() {
-  const { t } = useAppSettings()
+  const { t, locale } = useAppSettings()
   const club = useClub()
+  const week = weeklyTeam()
   const [opening, setOpening] = useState<string | null>(null)
   const saved = club.packs.reduce<Record<string, number>>((m, id) => ({ ...m, [id]: (m[id] ?? 0) + 1 }), {})
 
@@ -48,6 +50,11 @@ export default function Store() {
         {PACKS.filter(p => p.price != null).map(p => (
           <button key={p.id} type="button" className={`pack pack--${p.tone}`} disabled={club.coins < p.price!} onClick={() => buy(p.id, p.price!)}>
             <span className="pack__name">{t(p.nameKey)}</span>
+            {p.weeklyTeam && (
+              <span className="pack__team">
+                {teamLogo(week) && <img className="ic__badge" src={teamLogo(week)} alt="" />}{teamName(week, locale)}
+              </span>
+            )}
             <span className="pack__count">×{p.cards}</span>
             <span className="pack__odds">
               {(Object.entries(p.odds) as [Category, number][]).map(([c, w]) => <i key={c} className={`odds odds--${RARITY_CLASS[c]}`}>{w}%</i>)}

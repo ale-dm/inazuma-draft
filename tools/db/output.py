@@ -5,6 +5,7 @@ import json
 import os
 
 from common import CATEGORIES, OUT, ROOT
+from edits import apply_edits
 
 
 def sql(v):
@@ -45,7 +46,9 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
             'specials': c.get('specials') or [], 'extra_teams': c.get('extra_teams') or [],
             'raw_stats': {'form': c['form_label'], **dict(zip(c['raw_keys'], c['raw']))},
             'techniques': [t['id'] for t in c['moves']],
+            'duel_att': c.get('duel_att'), 'duel_con': c.get('duel_con'), 'duel_def': c.get('duel_def'),
         })
+    apply_edits(public, techs, chars, report)                # cambios del CRUD oculto (data/card_edits.json)
     with open(os.path.join(OUT, 'players.json'), 'w', encoding='utf-8') as f:
         json.dump({'cards': public, 'techniques': techs, 'characters': chars, 'teams': teams, 'staff': staff}, f, ensure_ascii=False, indent=1)
 
@@ -61,7 +64,8 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
 
     card_cols = ['id', 'character_id', 'name', 'game', 'saga', 'version', 'team', 'position', 'element', 'ovr', 'category',
                  'tier', 'source', 'shooting', 'control', 'physical', 'speed', 'defense', 'goalkeeping', 'image_url',
-                 'zukan_id', 'zukan_no', 'no', 'description', 'description_es', 'specials', 'extra_teams', 'raw_stats', 'is_version']
+                 'zukan_id', 'zukan_no', 'no', 'description', 'description_es', 'specials', 'extra_teams', 'raw_stats', 'is_version',
+                 'duel_att', 'duel_con', 'duel_def']
     links = [{'card_id': c['id'], 'technique_id': t, 'slot': i + 1}
              for c in public for i, t in enumerate(dict.fromkeys(c['techniques']))]
     seed = ['-- Generado por tools/db/build.py — no editar a mano.', 'begin;',
@@ -71,7 +75,7 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
             insert('teams', ['name', 'name_es', 'name_fr', 'name_it', 'logo_url'], teams),
             insert('characters', ['id', 'name', 'wiki_page', 'zukan_no'], [{**c} for c in chars]),
             insert('techniques', ['id', 'name', 'name_es', 'name_fr', 'name_it', 'name_jp', 'type', 'element', 'cost', 'cost_game', 'costs',
-                                  'description', 'image_url', 'zukan_types'], techs),
+                                  'description', 'image_url', 'zukan_types', 'traits'], techs),
             insert('cards', card_cols, public),
             insert('card_techniques', ['card_id', 'technique_id', 'slot'], links),
             'commit;', '']

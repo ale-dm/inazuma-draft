@@ -11,7 +11,7 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] Iconos de Victory Road: puestos, afinidades, tipos de supertécnica, espíritu guerrero, Mixi Max, tótem
 - [x] Fuera los emojis de la interfaz: iconos de línea (lucide) y moneda propia
 - [x] Escudos de los equipos en la carta (Category:Team emblem images de la wiki: 171/187 equipos)
-- [ ] Iconos de Tiro largo y Bloqueo de tiros (hay imagen, falta saber qué técnicas lo son: dato `zukan_types`)
+- [x] Iconos de Tiro largo y Bloqueo de tiros (rasgos `traits` de la técnica, del campo `chr` de WazaData: 40 tiros largos, 48 bloqueos)
 - [x] Paneles inferiores: modo de juego y ajustes (idioma, sonido, tema)
 - [x] Tema oscuro por defecto; fuera la portada antigua
 - [x] Textos en inglés, español, francés e italiano
@@ -28,7 +28,7 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] Banquillo (5 suplentes, 1 de 5 de cualquier puesto; entran al campo si el puesto coincide)
 - [x] Cambiar jugadores de sitio en el campo (mismo puesto; el capitán va con su carta)
 - [x] La química influye en la simulación del partido (−5 % a +5 % de fuerza; 50 = neutro)
-- [ ] Guardar un draft y jugarlo más tarde (con la economía local, fase 3)
+- [x] Guardar un draft y jugarlo más tarde (se guarda a cada paso; "Seguir el draft guardado" en Modos de draft)
 - [x] Texto del panel grande válido para los dos modos
 
 ## Arreglos y revisiones
@@ -39,23 +39,27 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 ## Fase 3 · Economía local
 - [x] Monedas y XP por jugar (torneo: grupos 250 · semis 500 · final 800 + sobre · campeón 1.500 + sobre Oro)
 - [x] Sobres con probabilidades por rareza (Bronce, Plata, Oro, Leyenda y por saga) y apertura animada
-- [ ] Sobres por elemento y por equipo
+- [x] Sobres por afinidad (4) y del equipo de la semana (rota entre los 30 equipos con más cartas)
 - [x] Mis cartas: colección con filtros, repetidas (×N) y venta rápida
 - [x] Colecciones: cada equipo de cada juego, % y premio al 100 % (2.000 + sobre Oro)
 - [x] Premio diario con racha de 7 días y 5 objetivos del día
-- [ ] Objetivos semanales y de carrera
+- [x] Objetivos semanales (6, se reinician el lunes) y de carrera (10, por escalones)
 - [x] Draft FFI, alineación, torneo, resultado y jugadores dentro del marco nuevo (fuera la barra y el pie antiguos; créditos en Ajustes)
 - [x] Torneo, alineación y explorador con el estilo nuevo (paneles, cabeceras, botones y colores dentro del marco)
-- [ ] Tabla de clasificación y cuadro del torneo con diseño propio (ahora son los antiguos con colores nuevos)
+- [x] Tabla de clasificación (PJ G E P +/- Pts, clasificados en verde) y cuadro de semis y final con diseño propio
 
 - [x] Mis plantillas: onces con tus cartas, con química y media
 - [x] Estadísticas de duelo (ataque/control/defensa) calculadas y listas en `DuelCard` (falta el modo en sí, fase 4)
 
 ## Fase 4 · Modos
-- [ ] Duelo (Fatal con supertécnicas y ventaja de elemento)
-- [ ] Higher/Lower
-- [ ] Copas por saga y copa diaria de 4 equipos
-- [ ] Puzzles de draft (cartas fijas → 100 de química)
+- [x] Duelo: Mi club, Simulación y Draft; solo números (ataque/control/defensa) y portero. Supertécnicas y afinidad: ideas en [duelo.md](duelo.md)
+- [ ] Duelo con supertécnicas y ventaja de afinidad (ver duelo.md)
+- [x] Higher/Lower (media o un número de duelo; 50 monedas por acierto; récord)
+- [x] Copas por saga (8 equipos: IE, GO, Ares/Orión, VR) y copa diaria de 4 equipos (mismos rivales para todos, 1 al día)
+- [x] Puzzles de draft: diario + 30 numerados; 17 cartas fijas → química objetivo (siempre con solución)
+
+## Herramientas
+- [x] CRUD oculto (`#/admin` o 7 toques en el logo): cartas, stats, números de duelo, técnicas; crear/borrar; exportar a `data/card_edits.json` (build.py lo aplica)
 
 ## Fase 5 · Retos y evoluciones
 - [ ] Retos (SBC) con duplicados

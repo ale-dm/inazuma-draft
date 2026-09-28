@@ -19,7 +19,15 @@ import LineupReview from './components/LineupReview'
 import Tournament from './components/Tournament'
 import ExportTeamButton from './components/ExportTeamButton'
 import PlayersExplorer from './components/PlayersExplorer'
-import { CLUB_HASH, COLLECTIONS_HASH, OBJECTIVES_HASH, PLAYERS_HASH, SQUADS_HASH, STORE_HASH, useHashRoute } from './lib/route'
+import {
+  ADMIN_HASH, CLUB_HASH, COLLECTIONS_HASH, CUPS_HASH, DUEL_HASH, HL_HASH, OBJECTIVES_HASH, PLAYERS_HASH, PUZZLES_HASH,
+  SQUADS_HASH, STORE_HASH, useHashRoute,
+} from './lib/route'
+import Duel, { type DuelSource } from './components/modes/Duel'
+import HigherLower from './components/modes/HigherLower'
+import Cups from './components/modes/Cups'
+import Puzzles from './components/modes/Puzzles'
+import Admin from './components/admin/Admin'
 import Squads from './components/club/Squads'
 import Store from './components/club/Store'
 import MyCards from './components/club/MyCards'
@@ -28,6 +36,7 @@ import Objectives from './components/club/Objectives'
 import { addCoins, addPack, addXp, track, trackMax } from './lib/club'
 import { getPack } from './lib/packs'
 import { trackEvent } from './lib/analytics'
+import { clearDraft, loadDraft, type SavedDraft } from './lib/saved-draft'
 import {
   recordGlobalDraftComplete,
   recordGlobalFinalReached,
@@ -58,7 +67,19 @@ export default function App() {
   /** Premio del último torneo (se enseña en la pantalla de resultado) */
   const [reward, setReward] = useState<{ coins: number; xp: number; pack?: string } | null>(null)
 
-  function startRun(kind: 'fut' | 'ffi') {
+  /** Draft guardado que se sigue (null: draft nuevo) */
+  const [resume, setResume] = useState<SavedDraft | null>(null)
+
+  function startRun(kind: 'fut' | 'fut-resume' | 'ffi') {
+    if (kind === 'fut-resume') {
+      setResume(loadDraft())
+      setPhase('futdraft')
+      return
+    }
+    if (kind === 'fut') {
+      clearDraft()
+      setResume(null)
+    }
     const seed = runSeed ?? generateSeedString()
     initRunRng(seed)
     setRunSeed(seed)
@@ -108,6 +129,8 @@ export default function App() {
     if (phase === 'futdraft') {
       return (
         <FutDraft
+          resume={resume}
+          persist
           onExit={reset}
           onComplete={(l, formation, _captain, chemistry, bench) => {
             const players = lineupToArray(l, formation)
@@ -242,7 +265,13 @@ export default function App() {
     )
   }
 
-  const clubScreen = { [STORE_HASH]: <Store />, [CLUB_HASH]: <MyCards />, [COLLECTIONS_HASH]: <Collections />, [OBJECTIVES_HASH]: <Objectives />, [SQUADS_HASH]: <Squads /> }[route]
+  const duelSource = route.startsWith(`${DUEL_HASH}/`) ? route.slice(DUEL_HASH.length + 1) as DuelSource : null
+  const clubScreen = duelSource && ['club', 'sim', 'draft'].includes(duelSource)
+    ? <Duel key={route} source={duelSource} />
+    : {
+      [STORE_HASH]: <Store />, [CLUB_HASH]: <MyCards />, [COLLECTIONS_HASH]: <Collections />, [OBJECTIVES_HASH]: <Objectives />,
+      [SQUADS_HASH]: <Squads />, [HL_HASH]: <HigherLower />, [CUPS_HASH]: <Cups />, [PUZZLES_HASH]: <Puzzles />, [ADMIN_HASH]: <Admin />,
+    }[route]
 
   return (
     <>

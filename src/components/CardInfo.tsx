@@ -29,7 +29,7 @@ export default function CardInfo({ player }: { player: Player }) {
             <ul className="card-info__techs">
               {player.techniques.map(tech => (
                 <li key={tech.id} title={tech.description ?? undefined}>
-                  <TechniqueIcon type={tech.type} title={t(`tech.${tech.type}`)} className="card-info__tech-icon" />
+                  <TechniqueIcon type={tech.type} traits={tech.traits} title={t(`tech.${tech.type}`)} className="card-info__tech-icon" />
                   <b title={tech.name}>{techniqueName(tech, locale)}</b>
                   {tech.cost != null && <small title={tech.costGame ?? undefined}>TP {tech.cost}</small>}
                 </li>

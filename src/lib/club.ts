@@ -33,6 +33,19 @@ export interface ClubState {
   /** Colecciones con el premio ya cobrado */
   collections: string[]
   squads: Squad[]
+  /** Objetivos semanales: semana ISO ("2026-W39") + contadores y cobrados de esa semana */
+  week: string | null
+  weekCounters: Record<string, number>
+  weekClaimed: string[]
+  /** Contadores de siempre (objetivos de carrera) y objetivos de carrera cobrados */
+  career: Record<string, number>
+  careerClaimed: string[]
+  /** Copa diaria: último día jugada */
+  dailyCup: string | null
+  /** Puzzles de draft resueltos (id) */
+  puzzles: string[]
+  /** Mejor racha de Higher/Lower */
+  hlBest: number
 }
 
 const KEY = 'ffi-club-v1'
@@ -42,6 +55,7 @@ export const STARTER_PACKS = ['starter']
 const fresh = (): ClubState => ({
   coins: STARTER_COINS, xp: 0, cards: {}, packs: [...STARTER_PACKS], streak: 0, lastDaily: null,
   day: null, counters: {}, claimed: [], collections: [], squads: [],
+  week: null, weekCounters: {}, weekClaimed: [], career: {}, careerClaimed: [], dailyCup: null, puzzles: [], hlBest: 0,
 })
 
 function read(): ClubState {
@@ -81,6 +95,16 @@ export function updateClub(fn: (s: ClubState) => ClubState) {
 
 export function today(): string {
   return new Date().toISOString().slice(0, 10)
+}
+
+/** Semana ISO del día: "2026-W39" (los objetivos semanales empiezan el lunes) */
+export function isoWeek(d = new Date()): string {
+  const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()))
+  const day = t.getUTCDay() || 7
+  t.setUTCDate(t.getUTCDate() + 4 - day)
+  const start = new Date(Date.UTC(t.getUTCFullYear(), 0, 1))
+  const week = Math.ceil(((t.getTime() - start.getTime()) / 86400000 + 1) / 7)
+  return `${t.getUTCFullYear()}-W${String(week).padStart(2, '0')}`
 }
 
 // ---------------------------------------------------------------- operaciones
@@ -137,13 +161,21 @@ export function quickSell(id: string, copies: number, price: number): number {
   return n * price
 }
 
-/** Suma a un contador del día (objetivos diarios); cambia de día → contadores a cero */
+/** Suma a un contador del día, de la semana y de siempre (objetivos diarios, semanales y de carrera); al cambiar de
+ *  día o de semana, esos contadores vuelven a cero */
 export function track(event: string, n = 1) {
   updateClub(s => {
     const fresh_ = s.day !== today()
     const counters = fresh_ ? {} : { ...s.counters }
     counters[event] = (counters[event] ?? 0) + n
-    return { ...s, day: today(), counters, claimed: fresh_ ? [] : s.claimed }
+    const newWeek = s.week !== isoWeek()
+    const weekCounters = newWeek ? {} : { ...s.weekCounters }
+    weekCounters[event] = (weekCounters[event] ?? 0) + n
+    const career = { ...s.career, [event]: (s.career[event] ?? 0) + n }
+    return {
+      ...s, day: today(), counters, claimed: fresh_ ? [] : s.claimed,
+      week: isoWeek(), weekCounters, weekClaimed: newWeek ? [] : s.weekClaimed, career,
+    }
   })
 }
 

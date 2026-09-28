@@ -28,8 +28,11 @@ export function ElementIcon({ element, ...p }: { element: Element } & Props) {
   return <Icon file={ELEMENT[element]} alt={element} {...p} />
 }
 
-export function TechniqueIcon({ type, ...p }: { type: Technique['type'] } & Props) {
-  return <Icon file={TECH[type]} alt={type} {...p} />
+/** Tipo de supertécnica; los tiros largos y los bloqueos de tiros llevan su propio icono (rasgos de la técnica) */
+export function TechniqueIcon({ type, traits, ...p }: { type: Technique['type']; traits?: string[] } & Props) {
+  const file = type === 'Shoot' && traits?.includes('long') ? 'tech-longshot'
+    : type === 'Block' && traits?.includes('block') ? 'tech-shotblock' : TECH[type]
+  return <Icon file={file} alt={type} {...p} />
 }
 
 export function SpecialIcon({ type, ...p }: { type: keyof typeof SPECIAL } & Props) {

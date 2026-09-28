@@ -23,6 +23,7 @@ create table if not exists public.techniques (
 alter table public.techniques add column if not exists description text;   -- descripción oficial de zukan (inglés)
 alter table public.techniques add column if not exists image_url text;     -- imagen de zukan
 alter table public.techniques add column if not exists zukan_types jsonb;  -- categorías de zukan (Shot, Defence, Shot Block…)
+alter table public.techniques add column if not exists traits jsonb;       -- tiro largo, bloqueo de tiros… (WazaData chr)
 
 create table if not exists public.cards (
   id           text primary key,             -- <personaje>--<juego>--<versión>
@@ -55,6 +56,9 @@ alter table public.cards add column if not exists description_es text;   -- desc
 alter table public.cards add column if not exists no int;                -- nº de la carta: el de zukan o, las nuestras, desde el último de zukan
 alter table public.cards add column if not exists specials jsonb;        -- Keshin / Keshin Armed / Soul (tótem) / Mixi Max
 alter table public.cards add column if not exists extra_teams jsonb;     -- equipos sin cartas propias en los que juega (Caos)
+alter table public.cards add column if not exists duel_att int;           -- duelo a mano (CRUD); null = se calcula
+alter table public.cards add column if not exists duel_con int;
+alter table public.cards add column if not exists duel_def int;
 
 create index if not exists cards_character_idx on public.cards(character_id);
 create index if not exists cards_ovr_idx on public.cards(ovr desc);

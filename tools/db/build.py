@@ -37,6 +37,32 @@ from logos import assign_logos
 from output import write_outputs
 
 
+def tech_traits(techniques, report):
+    """rasgos de la técnica: 'long' (tiro largo, en tiros), 'block' (bloqueo de tiros, en bloqueos), 'chain'
+    (encadenable), 'punch' (despeje de puños). Salen del campo chr del módulo WazaData de la wiki (L, B, C/CN, P; a veces por juego) y de las categorías
+    de zukan ("Shot Block")."""
+    waza = lua_entries(load('WazaData.lua'))
+    n = {'long': 0, 'block': 0}
+    for t_ in techniques.values():
+        if not t_:
+            continue
+        m = re.search(r'\n\t\tchr=(\{.*?\}|"[^"]*")', waza.get(t_['id'], ''), re.S)
+        vals = set(re.findall(r'"([A-Z]+)"', m.group(1))) if m else set()
+        traits = []
+        if 'L' in vals and t_['type'] == 'Shoot':
+            traits.append('long')
+        if t_['type'] == 'Block' and ('B' in vals or 'Shot Block' in (t_.get('zukan_types') or [])):
+            traits.append('block')
+        if vals & {'C', 'CN'}:
+            traits.append('chain')
+        if 'P' in vals:
+            traits.append('punch')
+        t_['traits'] = traits
+        for k in n:
+            n[k] += k in traits
+    report.append(f"Técnicas: tiro largo {n['long']} · bloqueo de tiros {n['block']}")
+
+
 def main(extra_z=None, write=True):
     """extra_z: {página: [fichas de zukan]} que aún no tienen carta propia → se crea una versión para cada una"""
     extra_z = extra_z or {}
@@ -1286,6 +1312,7 @@ def main(extra_z=None, write=True):
                    'wiki_page': page_of(z)} for z in zukan if z.get('no')]
     localize(cards, techniques, teams, ov, report)           # nombres en francés e italiano (i18n.py)
     assign_logos(teams, report)                              # escudo de cada equipo (logos.py)
+    tech_traits(techniques, report)                          # tiro largo / bloqueo de tiros (WazaData: chr)
     if write:
         write_outputs(cards, chars_out, techniques, teams, staff, zukan_rows, report)
     return uncovered

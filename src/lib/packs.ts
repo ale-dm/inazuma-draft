@@ -1,6 +1,7 @@
-import type { Category, GameId, Player } from '../types'
+import type { Category, Element, GameId, Player } from '../types'
 import type { TranslationKey } from '../i18n/translations'
 import { getAllPlayers } from '../data/catalog'
+import { isoWeek } from './club'
 
 /** Sobres de la tienda: precio, nº de cartas, probabilidades por rareza (%) y, si acaso, filtro por saga */
 export interface PackDef {
@@ -13,8 +14,12 @@ export interface PackDef {
   /** Rareza mínima garantizada para la mejor carta */
   guarantee?: Category
   games?: GameId[]
+  /** Solo cartas de esas afinidades */
+  elements?: Element[]
+  /** Solo cartas del equipo de la semana (weeklyTeam) */
+  weeklyTeam?: boolean
   /** Clase de color del sobre */
-  tone: 'bronze' | 'silver' | 'gold' | 'legend' | 'saga'
+  tone: 'bronze' | 'silver' | 'gold' | 'legend' | 'saga' | 'fire' | 'wood' | 'air' | 'earth' | 'team'
 }
 
 /** Clase de color de cada rareza, con los colores de Victory Road: Common verde · Growing azul · Advanced morado ·
@@ -40,6 +45,12 @@ export const PACKS: PackDef[] = [
   { id: 'saga-go', nameKey: 'pack.sagaGo', price: 2500, cards: 4, tone: 'saga', odds: GOLD_ODDS, games: ['GO1', 'GO2', 'GO3'] },
   { id: 'saga-ares', nameKey: 'pack.sagaAres', price: 2500, cards: 4, tone: 'saga', odds: GOLD_ODDS, games: ['ARES', 'ORION'] },
   { id: 'saga-vr', nameKey: 'pack.sagaVr', price: 2500, cards: 4, tone: 'saga', odds: GOLD_ODDS, games: ['VR'] },
+  // por afinidad y por equipo (el equipo cambia cada semana)
+  { id: 'el-fire', nameKey: 'pack.fire', price: 2000, cards: 4, tone: 'fire', odds: GOLD_ODDS, elements: ['fire'] },
+  { id: 'el-air', nameKey: 'pack.air', price: 2000, cards: 4, tone: 'air', odds: GOLD_ODDS, elements: ['air'] },
+  { id: 'el-wood', nameKey: 'pack.wood', price: 2000, cards: 4, tone: 'wood', odds: GOLD_ODDS, elements: ['wood'] },
+  { id: 'el-earth', nameKey: 'pack.earth', price: 2000, cards: 4, tone: 'earth', odds: GOLD_ODDS, elements: ['earth'] },
+  { id: 'team-week', nameKey: 'pack.team', price: 3000, cards: 4, tone: 'team', odds: { 'Growing Player': 20, 'Advanced Player': 45, 'Top Player': 28, 'Legendary Player': 7 }, weeklyTeam: true },
   // premios (no se venden)
   { id: 'starter', nameKey: 'pack.starter', price: null, cards: 8, tone: 'gold', odds: { 'Growing Player': 30, 'Advanced Player': 50, 'Top Player': 18, 'Legendary Player': 2 }, guarantee: 'Top Player' },
   { id: 'reward', nameKey: 'pack.reward', price: null, cards: 3, tone: 'silver', odds: { 'Growing Player': 40, 'Advanced Player': 45, 'Top Player': 13, 'Legendary Player': 2 } },
@@ -55,9 +66,25 @@ function rollRarity(odds: Partial<Record<Category, number>>): Category {
   return (entries.find(([, w]) => (r -= w) < 0) ?? entries[entries.length - 1])[0]
 }
 
+const NON_TEAMS = new Set(['Unaffiliated', 'Sub Character', 'Adult', 'Mixi Max'])
+let teamRotation: string[] | null = null
+
+/** Equipo del sobre de la semana: rota por los 30 equipos con más cartas con foto (mismo equipo toda la semana) */
+export function weeklyTeam(week = isoWeek()): string {
+  if (!teamRotation) {
+    const n = new Map<string, number>()
+    for (const p of getAllPlayers()) if (p.image && !NON_TEAMS.has(p.team)) n.set(p.team, (n.get(p.team) ?? 0) + 1)
+    teamRotation = [...n].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 30).map(([t]) => t).sort()
+  }
+  const k = Number(week.slice(0, 4)) * 53 + Number(week.slice(6))
+  return teamRotation[k % teamRotation.length] ?? 'Raimon'
+}
+
 /** Abre un sobre: cartas con foto, sin repetir personaje dentro del mismo sobre; la mejor, la última (se revela al final) */
 export function openPack(pack: PackDef): Player[] {
-  const pool = getAllPlayers().filter(p => p.image && (!pack.games || pack.games.includes(p.game)))
+  const team = pack.weeklyTeam ? weeklyTeam() : null
+  const pool = getAllPlayers().filter(p => p.image && (!pack.games || pack.games.includes(p.game))
+    && (!pack.elements || pack.elements.includes(p.element)) && (!team || p.team === team || p.extraTeams.includes(team)))
   const byCat = new Map<Category, Player[]>()
   for (const p of pool) {
     const l = byCat.get(p.category)

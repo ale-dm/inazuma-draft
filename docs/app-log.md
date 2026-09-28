@@ -164,3 +164,21 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
   escudo son pseudo-equipos como "Mixi Max"/"Sub Character" o equipos muy secundarios sin arte propio en la wiki).
   `logo_url` se añade a la tabla `teams` (`schema.sql`, `output.py`) y a `catalog.ts`/`InaCard.tsx`/`PlayerCard.tsx`:
   si hay escudo se muestra en vez del nombre del equipo (con `onError` por si la imagen falla, vuelve al texto).
+
+### Pendientes de las fases 1–3, fase 4 y CRUD oculto
+- **Tiro largo / bloqueo de tiros**: `build.py` saca los rasgos de cada técnica (`traits`) del campo `chr` de
+  `Module:WazaData` (L = tiro largo, B = bloqueo, C/CN = encadenable, P = puños) y de las categorías de zukan; solo
+  `long` en tiros y `block` en bloqueos. `TechniqueIcon` usa `tech-longshot` / `tech-shotblock`.
+- **Draft guardado** (`lib/saved-draft.ts`): el draft MADFUT se guarda a cada paso; "Seguir el draft guardado" en el
+  panel de modos. El del Duelo no se guarda.
+- **Sobres** por afinidad y del equipo de la semana (`weeklyTeam`, semana ISO); **objetivos** semanales y de carrera
+  (`track()` suma a día, semana y siempre).
+- **Torneo**: clasificación y cuadro (`Bracket`) nuevos.
+- **Fase 4** (`components/modes/`): Duelo (reglas en [duelo.md](duelo.md)), Higher/Lower, Copas (`lib/cups.ts`) y
+  Puzzles (`lib/puzzles.ts`). Mi club / Simulación / Copas juegan con una de Mis plantillas completa.
+- **CRUD oculto** (`#/admin`): `lib/admin-edits.ts` guarda cambios en el dispositivo; `catalog.ts` guarda las filas
+  de Supabase y `rebuildCatalog()` los aplica encima al momento. Exportar → `data/card_edits.json` →
+  `tools/db/edits.py` los aplica en cada build (cartas, nuevas, borradas, técnicas). Columnas nuevas:
+  `cards.duel_att/duel_con/duel_def`, `techniques.traits`.
+- Probado con Playwright: duelo completo, simulación, higher/lower, copa, puzzle, objetivos, tienda, CRUD (editar y
+  ver la carta cambiada), draft guardado y retomado, torneo hasta la final con el cuadro.

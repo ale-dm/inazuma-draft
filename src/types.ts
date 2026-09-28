@@ -39,6 +39,8 @@ export interface Technique {
   /** Descripción oficial de zukan (inglés) e imagen */
   description?: string | null
   image?: string | null
+  /** Rasgos: 'long' (tiro largo), 'block' (bloqueo de tiros), 'chain' (encadenable), 'punch' (despeje de puños) */
+  traits?: string[]
 }
 
 export interface Player {
@@ -68,6 +70,8 @@ export interface Player {
   specials: Special[]
   /** Equipos sin cartas propias en los que también juega (Caos: jugadores de Prominence / Diamond Dust) */
   extraTeams: string[]
+  /** Estadísticas de duelo puestas a mano (CRUD); las que falten se calculan (lib/duel.ts) */
+  duel?: { att: number | null; con: number | null; def: number | null }
 }
 
 export interface Special {

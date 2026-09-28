@@ -4,7 +4,7 @@ import { localizeCountry, rollTournamentField } from '../data/ffi-teams'
 import { ffiKnockoutPairings } from '../data/ffi-tournament'
 import { simulateMatch, simulateGroupStage, simulateRemainingGroupMatches, matchWinner } from '../engine/sim'
 import { useAppSettings } from '../context/AppSettings'
-import { teamLabel } from '../data/catalog'
+import { teamLabel, teamLogo } from '../data/catalog'
 import { playSfx } from '../lib/sfx'
 import type { TournamentOutcome } from '../lib/local-stats'
 import MatchView from './MatchView'
@@ -30,6 +30,7 @@ export default function Tournament({ playerTeam, chemistry, onEnd }: Props) {
   const [groupAStandings, setGroupAStandings] = useState<GroupStanding[] | null>(null)
   const [groupBStandings, setGroupBStandings] = useState<GroupStanding[] | null>(null)
   const [semiResult, setSemiResult] = useState<MatchResult | null>(null)
+  const [otherSemiResult, setOtherSemiResult] = useState<MatchResult | null>(null)
   const [finalOpponentName, setFinalOpponentName] = useState<string | null>(null)
   const [finalResult, setFinalResult] = useState<MatchResult | null>(null)
   const [playerRank, setPlayerRank] = useState(0)
@@ -126,6 +127,7 @@ export default function Tournament({ playerTeam, chemistry, onEnd }: Props) {
       otherSemi.away,
       { decisive: true },
     )
+    setOtherSemiResult(otherResult)
     const otherWin = matchWinner(otherResult)
     setFinalOpponentName(otherWin === 0 ? otherSemi.home : otherSemi.away)
 
@@ -245,6 +247,10 @@ export default function Tournament({ playerTeam, chemistry, onEnd }: Props) {
             </p>
             <StandingsTable title={t('tournament.standingsA')} standings={groupAStandings} highlight={PLAYER_NAME} />
             <StandingsTable title={t('tournament.standingsB')} standings={groupBStandings} className="mt-4" />
+            <Bracket
+              semis={semiPairs(groupAStandings, groupBStandings)}
+              highlight={PLAYER_NAME}
+            />
             <button type="button" onClick={playSemi} className="btn-primary mt-6">{t('tournament.semiBtn')}</button>
           </div>
         )}
@@ -262,6 +268,7 @@ export default function Tournament({ playerTeam, chemistry, onEnd }: Props) {
           <div className="animate-fade-in">
             <p className="text-sm text-iz-cyan mb-4 font-heading">{t('tournament.semi')}</p>
             <MatchView result={semiResult} highlightTeam={PLAYER_NAME} />
+            <Bracket semis={[semiResult, otherSemiResult]} highlight={PLAYER_NAME} />
             {wonSemi && (
               <button type="button" onClick={playFinal} className="btn-primary mt-6 w-full">{t('tournament.finalBtn')}</button>
             )}
@@ -278,6 +285,7 @@ export default function Tournament({ playerTeam, chemistry, onEnd }: Props) {
           <div className="animate-fade-in">
             <h3 className="font-heading text-3xl font-black text-inazuma text-center mb-6"><Trophy className="inline w-8 h-8 -mt-1 mr-1" aria-hidden />{t('tournament.final')}</h3>
             <MatchView result={finalResult} highlightTeam={PLAYER_NAME} />
+            <Bracket semis={[semiResult, otherSemiResult]} final={finalResult} highlight={PLAYER_NAME} />
             <button type="button" onClick={finishTournament} className="btn-primary mt-6 w-full">{t('tournament.finish')}</button>
           </div>
         )}
@@ -320,37 +328,93 @@ function StandingsTable({
   standings,
   highlight,
   className = '',
+  qualify = 2,
 }: {
   title: string
   standings: GroupStanding[]
   highlight?: string
   className?: string
+  /** Los primeros N pasan (se marcan en verde) */
+  qualify?: number
 }) {
   const { t, locale } = useAppSettings()
 
   return (
-    <div className={`card p-3 text-left ${className}`}>
-      <h4 className="font-heading text-xs text-iz-cyan uppercase mb-2 font-bold">{title}</h4>
-      <table className="w-full text-xs">
+    <div className={`standings ${className}`}>
+      <h4 className="standings__title">{title}</h4>
+      <table>
         <thead>
-          <tr className="text-iz-muted">
-            <th className="text-left py-1">#</th>
-            <th className="text-left">{t('tournament.team')}</th>
-            <th>{t('tournament.pts')}</th>
+          <tr>
+            <th>#</th>
+            <th className="standings__team">{t('tournament.team')}</th>
+            <th>{t('tournament.played')}</th>
+            <th>{t('tournament.w')}</th>
+            <th>{t('tournament.d')}</th>
+            <th>{t('tournament.l')}</th>
             <th>{t('tournament.diff')}</th>
+            <th>{t('tournament.pts')}</th>
           </tr>
         </thead>
         <tbody>
           {standings.map((s, i) => (
-            <tr key={s.teamName} className={s.teamName === highlight ? 'text-accent font-bold' : 'text-iz-text'}>
-              <td className="py-1">{i + 1}</td>
-              <td>{teamLabel(s.teamName, locale)}</td>
-              <td className="text-center">{s.points}</td>
-              <td className="text-center">{s.gf - s.ga}</td>
+            <tr key={s.teamName} className={`${i < qualify ? 'is-q' : ''} ${s.teamName === highlight ? 'is-me' : ''}`}>
+              <td>{i + 1}</td>
+              <td className="standings__team">
+                {teamLogo(s.teamName.replace(/ \(.*\)$/, '')) && <img className="ic__badge" src={teamLogo(s.teamName.replace(/ \(.*\)$/, ''))} alt="" />}
+                {teamLabel(s.teamName, locale)}
+              </td>
+              <td>{s.played}</td>
+              <td>{s.won}</td>
+              <td>{s.drawn}</td>
+              <td>{s.lost}</td>
+              <td>{s.gf - s.ga > 0 ? `+${s.gf - s.ga}` : s.gf - s.ga}</td>
+              <td className="standings__pts">{s.points}</td>
             </tr>
           ))}
         </tbody>
       </table>
+    </div>
+  )
+}
+
+type Pair = { team1Name: string; team2Name: string; score?: [number, number]; penalties?: [number, number] }
+
+/** Semifinales del FFI: 1.º A – 2.º B y 1.º B – 2.º A (el del jugador, primero) */
+function semiPairs(a: GroupStanding[], b: GroupStanding[]): Pair[] {
+  const { playerSemiOpponent, otherSemi } = ffiKnockoutPairings(a.map(s => s.teamName), b.map(s => s.teamName), PLAYER_NAME)
+  return [{ team1Name: PLAYER_NAME, team2Name: playerSemiOpponent }, { team1Name: otherSemi.home, team2Name: otherSemi.away }]
+}
+
+const pairWinner = (m: Pair) => (m.score ? matchWinner(m as MatchResult) : -1)
+
+/** Cuadro final (semis → final) con marcadores; el ganador de cada cruce, resaltado */
+export function Bracket({ semis, final, highlight }: { semis: (Pair | null)[]; final?: Pair | null; highlight?: string }) {
+  const { t, locale } = useAppSettings()
+  const winners = semis.map(m => (m && m.score ? (pairWinner(m) === 0 ? m.team1Name : m.team2Name) : null))
+  const fin: Pair | null = final ?? (winners[0] || winners[1] ? { team1Name: winners[0] ?? '?', team2Name: winners[1] ?? '?' } : null)
+  const Row = ({ m, side }: { m: Pair; side: 0 | 1 }) => {
+    const name = side === 0 ? m.team1Name : m.team2Name
+    const w = pairWinner(m)
+    return (
+      <span className={`bracket__team ${w === side ? 'is-win' : w >= 0 ? 'is-out' : ''} ${name === highlight ? 'is-me' : ''}`}>
+        <span className="bracket__name">{name === '?' ? '—' : teamLabel(name, locale)}</span>
+        {m.score && <b>{m.score[side]}{m.penalties ? <small> ({m.penalties[side]})</small> : null}</b>}
+      </span>
+    )
+  }
+  const Match = ({ m }: { m: Pair | null }) => (
+    <div className="bracket__match">{m ? <><Row m={m} side={0} /><Row m={m} side={1} /></> : <span className="bracket__team">—</span>}</div>
+  )
+  return (
+    <div className="bracket">
+      <div className="bracket__col">
+        <small className="bracket__label">{t('tournament.semi')}</small>
+        {semis.map((m, i) => <Match key={i} m={m} />)}
+      </div>
+      <div className="bracket__col bracket__col--final">
+        <small className="bracket__label">{t('tournament.final')}</small>
+        <Match m={fin} />
+      </div>
     </div>
   )
 }

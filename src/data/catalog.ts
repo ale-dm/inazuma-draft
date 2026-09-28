@@ -1,5 +1,6 @@
 import type { Category, DraftPool, DraftPoolKey, Element, GameId, Player, Position, Special, Staff, StaffRole, Technique } from '../types'
 import { GAME_LABEL } from './games'
+import { getEdits, type CardEdit } from '../lib/admin-edits'
 
 /**
  * Catálogo de jugadores desde Supabase (generado por tools/db/build.py).
@@ -43,6 +44,9 @@ interface CardRow {
   no: number | null
   specials: Special[] | null
   extra_teams: string[] | null
+  duel_att?: number | null
+  duel_con?: number | null
+  duel_def?: number | null
   card_techniques: { slot: number; technique_id: string }[]
 }
 
@@ -58,6 +62,7 @@ interface TechniqueRow {
   cost_game: string | null
   description: string | null
   image_url: string | null
+  traits: string[] | null
 }
 
 interface StaffRow {
@@ -94,6 +99,9 @@ let techniquesById = new Map<string, Technique>()
 let byId = new Map<string, Player>()
 let pools: DraftPool[] = []
 let poolRosters = new Map<string, Player[]>()
+/** Filas tal cual vienen de Supabase: los cambios del CRUD oculto se aplican encima (rebuildCatalog) */
+let baseCards: CardRow[] = []
+let baseTechniques: TechniqueRow[] = []
 
 async function rest<T>(path: string, headers?: Record<string, string>): Promise<{ data: T; total: number | null }> {
   const res = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, { headers: { apikey: SUPABASE_KEY, ...headers } })
@@ -107,8 +115,8 @@ const get = async <T>(path: string) => (await rest<T>(path)).data
 // solo lo que usa la app: las descripciones se piden al abrir la ficha (loadDescription)
 const CARD_COLUMNS = 'id,character_id,name,game,version,team,position,element,ovr,category,tier,'
   + 'shooting,control,physical,speed,defense,goalkeeping,image_url,is_version,zukan_no,no,specials,extra_teams,'
-  + 'card_techniques(slot,technique_id)'
-const TECHNIQUE_COLUMNS = 'id,name,name_es,name_fr,name_it,type,element,cost,cost_game,description,image_url'
+  + 'duel_att,duel_con,duel_def,card_techniques(slot,technique_id)'
+const TECHNIQUE_COLUMNS = 'id,name,name_es,name_fr,name_it,type,element,cost,cost_game,description,image_url,traits'
 const cardsPage = (offset: number, headers?: Record<string, string>) =>
   rest<CardRow[]>(`cards?select=${CARD_COLUMNS}&order=id&limit=${PAGE}&offset=${offset}`, headers)
 
@@ -131,21 +139,69 @@ export async function loadCatalog(): Promise<void> {
     get<StaffRow[]>('staff?select=zukan_no,name,role,team,teams,games,image_url,description&order=zukan_no').catch(() => [] as StaffRow[]),
     loadCards(),
   ])
-  const techById = new Map<string, Technique>(techniques.map(t => [t.id, {
-    id: t.id, name: t.name, nameEs: t.name_es, nameFr: t.name_fr, nameIt: t.name_it, type: t.type, element: t.element,
-    cost: t.cost, costGame: t.cost_game, description: t.description, image: t.image_url,
-  }]))
-  techniquesById = techById
   teamNames = new Map(teams.map(t => [t.name, { es: t.name_es, fr: t.name_fr, it: t.name_it }]))
   teamLogos = new Map(teams.filter(t => t.logo_url).map(t => [t.name, t.logo_url as string]))
   staff = staffRows.map(s => ({
     zukanNo: s.zukan_no, name: s.name, role: s.role, team: s.team, teams: s.teams ?? [], games: s.games ?? [],
     image: s.image_url, description: s.description,
   }))
+  baseCards = rows
+  baseTechniques = techniques
+  rebuildCatalog()
+}
+
+const linksOf = (ids: string[]) => ids.map((technique_id, i) => ({ slot: i + 1, technique_id }))
+
+/** Fila de carta con un cambio del CRUD encima */
+function withEdit(r: CardRow, e: CardEdit | undefined): CardRow {
+  if (!e) return r
+  const { techniques, ...rest } = e
+  return { ...r, ...(rest as Partial<CardRow>), card_techniques: techniques ? linksOf(techniques) : r.card_techniques }
+}
+
+/** Carta nueva del CRUD → fila como las de Supabase */
+function createdRow(id: string, e: CardEdit): CardRow {
+  return withEdit({
+    id, character_id: e.character_id ?? id, name: e.name ?? id, game: 'VR', version: 'base', team: null, position: 'MF',
+    element: 'fire', ovr: 60, category: 'Common Player', tier: 'C', shooting: 50, control: 50, physical: 50, speed: 50,
+    defense: 50, goalkeeping: 30, image_url: null, is_version: true, zukan_no: null, no: null, specials: [], extra_teams: [],
+    card_techniques: [],
+  }, e)
+}
+
+/** Fila original de una carta (sin los cambios del CRUD), para el formulario de edición */
+export function getBaseCardRow(id: string): CardRow | undefined {
+  return baseCards.find(r => r.id === id)
+}
+
+export function getBaseTechniqueRow(id: string): TechniqueRow | undefined {
+  return baseTechniques.find(t => t.id === id)
+}
+
+export type { CardRow, TechniqueRow }
+
+/** Monta el catálogo con las filas de Supabase y los cambios del CRUD oculto (se vuelve a llamar al guardar) */
+export function rebuildCatalog() {
+  const edits = getEdits()
+  const techById = new Map<string, Technique>(baseTechniques.map(row => {
+    const t = { ...row, ...(edits.techniques[row.id] as Partial<TechniqueRow> | undefined) }
+    return [t.id, {
+      id: t.id, name: t.name, nameEs: t.name_es, nameFr: t.name_fr, nameIt: t.name_it, type: t.type, element: t.element,
+      cost: t.cost, costGame: t.cost_game, description: t.description, image: t.image_url, traits: t.traits ?? [],
+    }]
+  }))
+  techniquesById = techById
+  const deleted = new Set(edits.deleted)
+  const rows = [
+    ...baseCards.filter(r => !deleted.has(r.id)).map(r => withEdit(r, edits.cards[r.id])),
+    ...Object.entries(edits.created).filter(([id]) => !deleted.has(id)).map(([id, e]) => createdRow(id, e)),
+  ]
 
   players = rows.map(r => {
     const techs = [...r.card_techniques].sort((a, b) => a.slot - b.slot)
       .map(ct => techById.get(ct.technique_id)).filter((t): t is Technique => !!t)
+    const duel = r.duel_att != null || r.duel_con != null || r.duel_def != null
+      ? { att: r.duel_att ?? null, con: r.duel_con ?? null, def: r.duel_def ?? null } : undefined
     return {
       id: r.id,
       characterId: r.character_id,
@@ -170,6 +226,7 @@ export async function loadCatalog(): Promise<void> {
       no: r.no ?? r.zukan_no,
       specials: r.specials ?? [],
       extraTeams: r.extra_teams ?? [],
+      duel,
     }
   })
   byId = new Map(players.map(p => [p.id, p]))
@@ -198,6 +255,11 @@ export async function loadCatalog(): Promise<void> {
   poolRosters = new Map([...groups].filter(([, list]) => list.length >= MIN_POOL_SIZE))
   // Orden estable: las partidas con semilla deben sortear igual en todos los navegadores
   pools = [...poolRosters.keys()].sort().map(parseDraftPoolKey)
+}
+
+/** Todas las técnicas (para el CRUD) */
+export function getAllTechniques(): Technique[] {
+  return [...techniquesById.values()]
 }
 
 export function getTechnique(id: string): Technique | undefined {
