@@ -618,3 +618,30 @@ button.ic:active { transform: scale(.95); }
 .admin-danger { border-color: rgba(255, 90, 90, .6) !important; color: #ff8a8a; }
 .admin-json { max-height: 18rem; overflow: auto; font-size: .68rem; padding: .6rem; border-radius: 10px; background: rgba(0, 0, 0, .4); white-space: pre-wrap; word-break: break-all; }
 .stats-toggle.on { border-color: var(--hub-neon); color: var(--hub-neon); box-shadow: 0 0 12px rgba(198, 255, 61, .35); }
+
+/* ---------------------------------------------------------------- fase 5: retos, evoluciones, insignias */
+.hub-bar__crest img { width: 70%; height: 70%; object-fit: contain; }
+.ic--evo { filter: drop-shadow(0 0 calc(var(--w) * .05) #3df2ff) drop-shadow(0 6px 10px rgba(0, 0, 0, .55)); }
+.ic__evo {
+  position: absolute; right: 5%; bottom: 25%; z-index: 2; padding: 0 calc(var(--w) * .03); border-radius: calc(var(--w) * .03);
+  font-weight: 900; font-style: italic; font-size: calc(var(--w) * .08); background: linear-gradient(90deg, #3df2ff, #c6ff3d); color: #04131f;
+}
+.sbc-reqs { display: flex; flex-direction: column; gap: .3rem; padding: 0; list-style: none; }
+.sbc-reqs li { display: flex; justify-content: space-between; gap: .5rem; padding: .45rem .7rem; border-radius: 10px; background: rgba(255, 90, 90, .1); border: 1px solid rgba(255, 90, 90, .35); font-size: .85rem; }
+.sbc-reqs li.ok { background: rgba(61, 255, 138, .1); border-color: rgba(61, 255, 138, .45); }
+.sbc-reqs li.sbc-reqs__reward { background: rgba(255, 229, 102, .08); border-color: rgba(255, 229, 102, .4); justify-content: center; }
+.sbc-slots { display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem; }
+.sbc-slot { width: 3.7rem; aspect-ratio: 3 / 4.2; }
+.evo-card { display: flex; flex-direction: column; gap: .6rem; padding: .8rem; border-radius: 18px; background: rgba(61, 242, 255, .06); border: 1px solid rgba(61, 242, 255, .35); }
+.evo-card__name { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-style: italic; font-size: 1.3rem; text-transform: uppercase; }
+.evo-card__cards { display: flex; align-items: center; justify-content: center; gap: .6rem; }
+.evo-card__arrow { width: 2rem; height: 2rem; color: #3df2ff; }
+.evo-pick { display: flex; flex-direction: column; align-items: center; gap: .2rem; }
+.evo-pick small { font-size: .65rem; color: var(--hub-dim); max-width: 5rem; text-align: center; }
+.badge-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .5rem; }
+.badge { display: flex; flex-direction: column; align-items: center; gap: .2rem; padding: .5rem .2rem; border-radius: 14px; background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .12); color: #fff; }
+.badge img { width: 2.6rem; height: 2.6rem; object-fit: contain; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .6)); }
+.badge small { font-size: .62rem; font-weight: 800; text-align: center; line-height: 1.1; }
+.badge em { font-style: normal; font-size: .58rem; color: var(--hub-dim); }
+.badge.on { border-color: var(--hub-neon); box-shadow: 0 0 12px rgba(198, 255, 61, .35); }
+.ach--done { opacity: 1 !important; border-color: rgba(255, 210, 61, .5) !important; background: rgba(255, 210, 61, .08) !important; }

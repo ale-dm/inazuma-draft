@@ -1,9 +1,9 @@
 import { useMemo, useRef, useState, type ReactNode } from 'react'
 import type { Player } from '../../types'
 import { useAppSettings } from '../../context/AppSettings'
-import { getAllPlayers, getCharacterVersions } from '../../data/catalog'
+import { getAllPlayers, getCharacterVersions, teamLogo } from '../../data/catalog'
 import { loadProgress, uniqueCharacters } from '../../lib/progress'
-import { ADMIN_HASH, CLUB_HASH, COLLECTIONS_HASH, CUPS_HASH, DUEL_HASH, HL_HASH, OBJECTIVES_HASH, PLAYERS_HASH, PUZZLES_HASH, SQUADS_HASH, STORE_HASH } from '../../lib/route'
+import { ADMIN_HASH, BADGES_HASH, EVO_HASH, SBC_HASH, CLUB_HASH, COLLECTIONS_HASH, CUPS_HASH, DUEL_HASH, HL_HASH, OBJECTIVES_HASH, PLAYERS_HASH, PUZZLES_HASH, SQUADS_HASH, STORE_HASH } from '../../lib/route'
 import { useClub } from '../../lib/club'
 import { pendingRewards } from '../../lib/objectives'
 import InaCard from '../InaCard'
@@ -61,7 +61,9 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
           <button type="button" className="hub-icon-btn" onClick={() => setSheet('settings')} aria-label={t('hub.settings')}><Settings size={20} /></button>
         </div>
         <div className="hub-bar">
-          <span className="hub-bar__crest" aria-hidden><Zap size={18} fill="currentColor" /></span>
+          <span className="hub-bar__crest" aria-hidden>
+            {club.crest && teamLogo(club.crest) ? <img src={teamLogo(club.crest)} alt="" /> : <Zap size={18} fill="currentColor" />}
+          </span>
           <span className="hub-bar__lvl"><small>{t('hub.level')}</small>{progress.level}</span>
           <span className="hub-bar__item" title={t('hub.cards')}><Layers size={16} /> {progress.owned}</span>
           <span className="hub-bar__item"><Coin /> {club.coins.toLocaleString()}</span>
@@ -106,8 +108,8 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
             <Tile label={t('hub.store')} onClick={go(STORE_HASH)}><ShoppingBag className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
             <Tile label={t('hub.latest')} onClick={goPlayers}><CardFan players={latest} /></Tile>
             <Tile label={t('hub.objectives')} onClick={go(OBJECTIVES_HASH)} badge={pending}><Target className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
-            <Tile label={t('hub.sbc')} soon={t('hub.soon')}><Puzzle className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
-            <Tile label={t('hub.evolutions')} soon={t('hub.soon')} wide><TrendingUp className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
+            <Tile label={t('hub.sbc')} onClick={go(SBC_HASH)}><Puzzle className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
+            <Tile label={t('hub.evolutions')} onClick={go(EVO_HASH)} wide badge={club.evos.length || undefined}><TrendingUp className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
           </div>
         </section>
 
@@ -120,7 +122,7 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
             <Tile label={t('hub.collection')} onClick={go(COLLECTIONS_HASH)}>
               <span className="hub-ring" style={{ ['--pct' as string]: `${progress.collectionPct}%` }}>{progress.collectionPct}%</span>
             </Tile>
-            <Tile label={t('hub.badges')} soon={t('hub.soon')}><Shield className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
+            <Tile label={t('hub.badges')} onClick={go(BADGES_HASH)}><Shield className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
             <Tile label={t('hub.myStats')} onClick={() => setSheet('stats')}>
               <span className="hub-stats">
                 {([['hub.titles', progress.titles], ['hub.finals', progress.finals], ['hub.drafts', progress.drafts]] as const).map(([k, v]) => (

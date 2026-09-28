@@ -43,7 +43,7 @@ export default function InaCard({ player, showRating = true, size = 'md', onClic
     <Tag
       type={onClick ? 'button' : undefined}
       onClick={onClick}
-      className={`ic ic--${RARITY_CLASS[player.category]} ic--${size} ${withStats ? 'ic--stats' : ''}`}
+      className={`ic ic--${RARITY_CLASS[player.category]} ic--${size} ${withStats ? 'ic--stats' : ''} ${player.evo?.length ? 'ic--evo' : ''}`}
       aria-label={`${player.name} · ${player.position}${showRating ? ` · ${player.ovr}` : ''}`}
     >
       <span className="ic__glow" aria-hidden />
@@ -65,6 +65,7 @@ export default function InaCard({ player, showRating = true, size = 'md', onClic
       ) : (
         !small && <span className="ic__chip">{player.game}</span>
       )}
+      {!!player.evo?.length && !small && <span className="ic__evo">EVO</span>}
       <span className="ic__foot">
         <span className="ic__name">{small ? surname : player.name}</span>
         {!small && (withStats || !logo) && (

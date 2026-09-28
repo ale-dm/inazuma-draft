@@ -63,9 +63,9 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] CRUD oculto (`#/admin` o 7 toques en el logo): cartas, stats, números de duelo, técnicas; crear/borrar; exportar a `data/card_edits.json` (build.py lo aplica)
 
 ## Fase 5 · Retos y evoluciones
-- [ ] Retos (SBC) con duplicados
-- [ ] Evoluciones con las formas reales (Mixi Max, espíritu guerrero, armadura)
-- [ ] Insignias (escudos de equipos) y logros
+- [x] Retos (SBC) con repetidas: 8 retos (4 repetibles); media, mismo juego/equipo/afinidad, rarezas, juegos
+- [x] Evoluciones: Mixi Max (pasa a su carta Mixi Max real), espíritu guerrero, armadura, tótem y entrenamiento; tareas desde que empiezas
+- [x] Insignias: escudo de cada colección completada (uno como escudo del club en la barra) y 17 logros
 
 ## Fase 6 · Cuentas y nube (Supabase)
 - [ ] Inicio de sesión

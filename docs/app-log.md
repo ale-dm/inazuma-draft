@@ -194,3 +194,19 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
   columna externa.
 - Probado con fotos y escudos reales (servidos con curl en la prueba): Mis cartas con y sin números, plantilla en el
   campo y duelo.
+
+### Fase 5: retos, evoluciones e insignias
+- **Retos (SBC)** (`lib/sbc.ts`, `phase5/Sbc.tsx`, `#/retos`): se entregan solo cartas repetidas (se gasta una copia,
+  nunca la última). Requisitos: media mínima (media simple de las entregadas), N del mismo juego/equipo/afinidad, N
+  Top o mejor, N de un equipo, todas de unos juegos. 8 retos, 4 repetibles; `club.sbcDone`.
+- **Evoluciones** (`lib/evolutions.ts`, `phase5/Evolutions.tsx`, `#/evoluciones`): las tareas cuentan desde que
+  empiezas (se guarda una foto de los contadores de siempre). Mixi Max cambia la carta por su versión Mixi Max real
+  del catálogo; espíritu guerrero, armadura (después del espíritu y si puede armarse), tótem y entrenamiento dan una
+  carta "evo~<evolución>~<id>" con más media y stats (`lib/evo-boosts.ts`; `getPlayer` las monta al vuelo, la rareza
+  se recalcula con la media). Al terminar se cambia una copia; si era la última, también en las plantillas. Las
+  cartas evolucionadas llevan brillo y la etiqueta EVO.
+- **Insignias** (`phase5/Badges.tsx`, `#/insignias`): escudos de las colecciones completadas (uno se puede poner como
+  escudo del club, en la barra de la pantalla principal) y 17 logros (`lib/achievements.ts`).
+- Textos con plural: `{n|copa|copas}` en las traducciones.
+- Probado: reto (sobre y copias gastadas), evolución Mixi Max (Bailong → Mixi Max Victor) y espíritu guerrero
+  (+4 de media, EVO), insignias y escudo del club.

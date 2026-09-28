@@ -21,7 +21,10 @@ const AppSettingsContext = createContext<AppSettingsContextValue | null>(null)
 
 function interpolate(template: string, vars?: Vars) {
   if (!vars) return template
-  return template.replace(/\{(\w+)\}/g, (_, k: string) => String(vars[k] ?? `{${k}}`))
+  // plural: "{n|copa|copas}" → singular si n es 1
+  return template
+    .replace(/\{(\w+)\|([^|}]*)\|([^}]*)\}/g, (_, k: string, one: string, many: string) => (Number(vars[k]) === 1 ? one : many))
+    .replace(/\{(\w+)\}/g, (_, k: string) => String(vars[k] ?? `{${k}}`))
 }
 
 function readStored<T extends string>(key: string, fallback: T, allowed: T[]): T {
