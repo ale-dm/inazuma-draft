@@ -4,15 +4,19 @@
     <script>
       try {
         var t = localStorage.getItem('iz-theme');
-        document.documentElement.dataset.theme = (t === 'light' || t === 'dark') ? t : 'light';
+        document.documentElement.dataset.theme = (t === 'light' || t === 'dark') ? t : 'dark';
       } catch (e) {}
     </script>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="FFI 6-0" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="description" content="FFI 6-0 — Draft ton Inazuma Japan et remporte le FFI. Fan game Inazuma Eleven : 399 joueurs, 11 rounds, tournoi Liocott Island." />
     <meta name="author" content="Thomas Lekieffre" />
     <meta name="keywords" content="Inazuma Eleven, Inazuma, FFI, draft, fan game, football, Liocott Island" />
-    <meta name="theme-color" content="#1a6fc9" />
+    <meta name="theme-color" content="#06121c" />
     <meta name="robots" content="index, follow" />
 
     <meta property="og:type" content="website" />

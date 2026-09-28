@@ -11,7 +11,7 @@ import {
 import { initRunRng, resetRunRng } from './lib/run-rng'
 import { useAppSettings } from './context/AppSettings'
 import AppLayout from './components/AppLayout'
-import Landing from './components/Landing'
+import Hub from './components/hub/Hub'
 import Draft from './components/Draft'
 import LineupReview from './components/LineupReview'
 import Tournament from './components/Tournament'
@@ -84,16 +84,8 @@ export default function App() {
 
   function renderGame(): ReactNode {
     if (phase === 'landing') {
-      return (
-        <AppLayout variant="landing">
-          <Landing
-            mode={mode}
-            seed={runSeed}
-            onModeChange={handleModeChange}
-            onStart={startRun}
-          />
-        </AppLayout>
-      )
+      return <Hub mode={mode} seed={runSeed} onModeChange={handleModeChange} onStart={startRun} />
+
     }
 
     if (phase === 'draft') {

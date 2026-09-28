@@ -48,7 +48,7 @@ function browserLocale(): Locale {
 }
 
 export function AppSettingsProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>(() => readStored('iz-theme', 'light', ['dark', 'light']))
+  const [theme, setThemeState] = useState<Theme>(() => readStored('iz-theme', 'dark', ['dark', 'light']))
   const [locale, setLocaleState] = useState<Locale>(() => readStored('iz-lang', browserLocale(), [...LOCALES]))
   const [sound, setSoundState] = useState(() => readStored('iz-sound', 'on', ['on', 'off']) === 'on')
 
