@@ -29,7 +29,7 @@ CFG = {
     'ORION': dict(label='Orion', ref='IE3', data='orion.json', module='PlayerData_OK.lua',
                   mark=r"Desde Orion\s*=|Desde Orión\s*=|Inazuma Eleven Orion'|\{\{Medio\|A\|OR\}\}", words=('Orion', 'Orión'), other=('Ares',)),
     # Victory Road: los personajes que se estrenan en el juego (fichas de zukan solo de VR); no hay anime; curva de IE1
-    'VR': dict(label='Victory Road', ref='IE1', data='vr.json', module='PlayerData_VR.lua',
+    'VR': dict(label='Victory Road', ref='IE1', ref_games=('IE1', 'GO1'), ref_tuned=True, data='vr.json', module='PlayerData_VR.lua',
                mark=r"(?!x)x", words=('Saga de Destin',), other=('Ares', 'Orion', 'Orión')),
 }
 KEYS = ['kick', 'control', 'technique', 'pressure', 'physical', 'agility', 'intelligence']
@@ -267,7 +267,9 @@ def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_j
             r['anchor'] = fc and fc['id']
             r['ovr_mix'] = round((r['ovr'] + fc.get('ovr_untuned', fc['ovr'])) / 2) if fc else r['ovr']   # sin el ajuste de team_tuning
     # 5: curva de los equipos de IE2 / IE3 (mismo orden)
-    ref = sorted(c.get('ovr_untuned', c['ovr']) for c in classic_cards if c['game'] == cfg['ref'] and c['team'] not in ('Unaffiliated', 'Sub Character'))
+    # (VR: escala de IE1 + GO1 con su curva ya aplicada)
+    ref = sorted((c['ovr'] if cfg.get('ref_tuned') else c.get('ovr_untuned', c['ovr'])) for c in classic_cards
+                 if c['game'] in cfg.get('ref_games', (cfg['ref'],)) and c['team'] not in ('Unaffiliated', 'Sub Character'))
     src = sorted(r['ovr_mix'] for r in rows)
     for r in rows:
         v = r['ovr_mix']
@@ -332,7 +334,7 @@ def build(root, cache, zukan, zdesc, page_of, classic_cards, techniques, es_by_j
             'description': (zdesc.get(str(z['no'])) or {}).get('desc'),
             'description_es': es_ares_desc(es.get('section'), not r['anchor'] and char_id not in classic_ids, cfg['words'], cfg['other']),
             'specials': [], 'extra_teams': [], 'form_label': f'Victory Road Lv50 · {rar}', 'raw_keys': VR_KEYS,
-            'raw': [round(v * mult) for v in tpl], 'moves': moves,
+            'raw': [round(v * mult) for v in tpl], 'moves': moves, 'hero': r['hero'],
         })
         new_chars.setdefault(char_id, {'id': char_id, 'name': z['name'], 'wiki_page': r['page'], 'zukan_no': z['no']})
     report.append(f"{cfg['label']}: supertécnicas de la carta — " + ', '.join(f'{k} {v}' for k, v in move_src.items())

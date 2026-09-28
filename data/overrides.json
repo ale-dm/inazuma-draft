@@ -611,7 +611,7 @@
       }
     },
     "_game": {
-      "_doc": "Por juego: cap = techo de las subidas; compress_above/compress_factor = por encima de ese valor la nota se comprime (GO1: 92 → 88,5) para una escala de poder tipo IE1.",
+      "_doc": "Por juego: cap = techo de las subidas; compress_above/compress_factor = por encima de ese valor la nota se comprime (GO1: 92 → 88,5) para una escala de poder tipo IE1. captain_plus / captain_raise: cuánto destaca el capitán sobre el once (por defecto 4) y cuánto puede subir (6). stars: nota mínima por ficha de la wiki; hero_floor: nota mínima de los que tienen versión héroe/basara en VR. Se aplican después de la curva.",
       "GO1": {
         "cap": 87,
         "compress_above": 84,
@@ -630,7 +630,14 @@
         "cap": 91
       },
       "VR": {
-        "cap": 88
+        "cap": 88,
+        "captain_plus": 6,
+        "captain_raise": 15,
+        "hero_floor": 86,
+        "stars": {
+          "_doc": "ficha de la wiki → nota mínima",
+          "Endou Haru": 90
+        }
       }
     },
     "ARES": {
@@ -755,102 +762,102 @@
     },
     "VR": {
       "South Cirrus Shopkeepers": {
-        "top11": 73.5,
+        "top11": 74.5,
         "captain": "Yumoto Tsukimi",
         "note": "1 · nv 6 · cap. 2"
       },
       "Seagull FC": {
-        "top11": 74.0,
+        "top11": 75.0,
         "captain": "Kudaira Eimu",
         "note": "2 · nv 8 · cap. 3"
       },
       "Twinford": {
-        "top11": 74.5,
+        "top11": 75.5,
         "captain": "Yomogi Kenta",
         "note": "3 · nv 12–38 · entrenamiento"
       },
       "West Manor": {
-        "top11": 75.0,
+        "top11": 76.0,
         "captain": "Itoi Kou",
         "note": "4 · nv 18 · cap. 4"
       },
       "Orchid Academy": {
-        "top11": 75.5,
+        "top11": 76.5,
         "captain": "Housen Ranka",
         "note": "5 · nv 18–36 · entrenamiento"
       },
       "Northbright": {
-        "top11": 76.0,
+        "top11": 77.0,
         "captain": "Soramiya Sei",
         "note": "6 · nv 20 · cap. 5"
       },
       "Crosswind-Fauxshore": {
-        "top11": 76.5,
+        "top11": 77.5,
         "captain": "Itoshima Hanahiko",
         "note": "7 · nv 21–35 · entrenamiento"
       },
       "Back Alley Kickers": {
-        "top11": 77.0,
+        "top11": 78.0,
         "captain": "Tsukigawara Gensaku",
         "note": "8 · nv 25–47 · entrenamiento"
       },
       "Eastwind": {
-        "top11": 77.5,
+        "top11": 78.5,
         "captain": "Yamanouchi Touyou",
         "note": "9 · nv 28 · cap. 6"
       },
       "Noble Insight": {
-        "top11": 78.0,
+        "top11": 79.0,
         "captain": "Futatsumiya Kinjirou",
         "note": "10 · nv 32–52 · entrenamiento"
       },
       "Lawcrest": {
-        "top11": 78.0,
+        "top11": 79.0,
         "captain": "Daitou Ryouya",
         "note": "11 · nv 32–52 · entrenamiento"
       },
       "AI Academy": {
-        "top11": 78.0,
+        "top11": 79.0,
         "captain": "Hakari Tomokazu",
         "note": "12 · nv 32–52 · entrenamiento"
       },
       "Stormridge": {
-        "top11": 78.5,
+        "top11": 79.5,
         "captain": "Ikue Magoichi",
         "note": "13 · nv 33 · cap. 7"
       },
       "Alpine": {
-        "top11": 79.0,
+        "top11": 80.0,
         "captain": "Shumari Horoka",
         "note": "14 · nv 36–60 · entrenamiento"
       },
       "Raimon": {
-        "top11": 80.0,
+        "top11": 81.0,
         "captain": "Tsukikage Ren",
         "note": "15 · cap. 9 · final"
       },
       "Solaria-Zeus": {
-        "top11": 81.0,
+        "top11": 82.0,
         "captain": "Teita Tanji",
         "note": "16 · nv 60 · historia extendida"
       },
       "Zanark's Outsiders": {
-        "top11": 82.0,
+        "top11": 83.0,
         "captain": "Zanark Avalonic",
         "note": "17 · nv 87–99 · crónica"
       },
       "Gatekeepers": {
-        "top11": 82.5,
+        "top11": 83.5,
         "captain": "Lindalin Bernie",
         "note": "18 · nv 91–99 · crónica"
       },
       "Platos": {
-        "top11": 83.0,
+        "top11": 84.0,
         "captain": "Victorio Arno",
         "note": "19 · nv 96–99 · crónica"
       },
       "Destroyers": {
-        "top11": 83.5,
+        "top11": 84.5,
         "captain": "Kinis Elvim",
         "note": "20 · nv 99 · crónica"
       }
