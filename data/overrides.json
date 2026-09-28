@@ -581,6 +581,9 @@
       },
       "ARES": {
         "cap": 88
+      },
+      "ORION": {
+        "cap": 91
       }
     },
     "ARES": {
@@ -639,6 +642,68 @@
         "captain": "Clario Orvan",
         "note": "11 · amistoso internacional, por encima de Plenilunio",
         "captain_cap": 89
+      }
+    },
+    "ORION": {
+      "Raging Bulls": {
+        "top11": 76.0,
+        "captain": "Seok Min-woo",
+        "note": "1 · ep. 1–3, Asia (Corea)"
+      },
+      "Fallen Angels": {
+        "top11": 76.5,
+        "captain": "Satan Gaul",
+        "note": "2 · ep. 4–7, Asia (Australia)"
+      },
+      "Eternal Dancers": {
+        "top11": 77.5,
+        "captain": "Onaxon Ims",
+        "note": "3 · ep. 8–10, Asia (Uzbekistán)"
+      },
+      "Arabian Firebirds": {
+        "top11": 78.0,
+        "captain": "Falcon Ali",
+        "note": "4 · ep. 11–13, Asia (Arabia Saudí)"
+      },
+      "Avenging Acrobats": {
+        "top11": 79.0,
+        "captain": "Zhou Xing",
+        "note": "5 · ep. 15–19, final de Asia (China)"
+      },
+      "Los Invencibles": {
+        "top11": 80.5,
+        "captain": "Clario Orvan",
+        "note": "6 · ep. 25–27, grupo A (España)"
+      },
+      "Star-Spangled Unicorns": {
+        "top11": 81.0,
+        "captain": "Mark Krueger",
+        "note": "7 · ep. 28, grupo A (EE. UU.)"
+      },
+      "Ace Invaders": {
+        "top11": 81.5,
+        "captain": "Yoga",
+        "note": "8 · ep. 30–32, grupo A (EE. UU.)"
+      },
+      "The Sambassadors": {
+        "top11": 83.0,
+        "captain": "Arthur",
+        "note": "9 · ep. 40–41, eliminatoria (Brasil)"
+      },
+      "Guardians of the Queen": {
+        "top11": 84.5,
+        "captain": "Petronio Patti",
+        "note": "10 · ep. 44–46, semifinal (Italia)"
+      },
+      "Pitch Perfectionists": {
+        "top11": 86.0,
+        "captain": "Froy Girikanan",
+        "note": "11 · ep. 35–37 y final 47–48 (Rusia)"
+      },
+      "Orion Eclipse": {
+        "top11": 87.0,
+        "captain": "Yurika Beor",
+        "note": "12 · ep. 48–49, exhibición final"
       }
     }
   }
