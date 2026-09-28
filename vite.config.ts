@@ -11,7 +11,10 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
+      // el manifest se pide con las cookies: si no, en las previews protegidas de Vercel falla y no deja instalar
+      useCredentials: true,
       manifest: {
+        id: '/',
         name: 'FFI 6-0 · Inazuma Draft',
         short_name: 'FFI 6-0',
         description: 'Inazuma Eleven draft: roll teams, draft your eleven and win the FFI.',
