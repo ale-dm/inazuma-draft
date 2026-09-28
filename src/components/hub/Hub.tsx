@@ -6,7 +6,7 @@ import { loadProgress, uniqueCharacters } from '../../lib/progress'
 import { CLUB_HASH, COLLECTIONS_HASH, OBJECTIVES_HASH, PLAYERS_HASH, STORE_HASH } from '../../lib/route'
 import { useClub } from '../../lib/club'
 import { pendingRewards } from '../../lib/objectives'
-import FutCard from '../FutCard'
+import InaCard from '../InaCard'
 import RulesModal from '../RulesModal'
 import StatsModal from '../StatsModal'
 import Sheet from './Sheet'
@@ -187,7 +187,7 @@ function Tile({ label, children, onClick, soon, wide, badge }: { label: string; 
 function CardFan({ players, size = 'sm' }: { players: Player[]; size?: 'sm' | 'md' }) {
   return (
     <span className={`card-fan card-fan--${size}`}>
-      {players.map(p => <FutCard key={p.id} player={p} size={size} />)}
+      {players.map(p => <InaCard key={p.id} player={p} size={size} />)}
     </span>
   )
 }

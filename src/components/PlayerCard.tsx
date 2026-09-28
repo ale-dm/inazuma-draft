@@ -3,17 +3,8 @@ import { POSITION_STAT_KEYS, displayStatValue, playerRating } from '../lib/power
 import { useAppSettings } from '../context/AppSettings'
 import { teamName, techniqueName } from '../data/catalog'
 import PlayerAvatar from './PlayerAvatar'
+import { ElementIcon, PositionIcon } from './GameIcon'
 
-const POS_CLASS: Record<string, string> = {
-  GK: 'pos-gk',
-  DF: 'pos-df',
-  MF: 'pos-mf',
-  FW: 'pos-fw',
-}
-
-const ELEMENT_LABELS: Record<string, string> = {
-  fire: '🔥', wood: '🌿', air: '💨', earth: '🪨',
-}
 
 interface Props {
   player: Player
@@ -37,11 +28,9 @@ export default function PlayerCard({ player, mode, onClick, onCompare, inCompare
           ${selected ? 'player-chip--selected' : ''} ${disabled ? 'opacity-40' : ''}`}
       >
         <PlayerAvatar player={player} size="sm" variant="zukan" />
-        <span className={`px-1.5 py-0.5 rounded text-xs font-bold shrink-0 ${POS_CLASS[player.position]}`}>
-          {player.position}
-        </span>
+        <PositionIcon position={player.position} className="h-4 shrink-0" />
         <span className="font-medium truncate text-iz-heading">{player.name}</span>
-        <span className={`element-${player.element} text-xs ml-auto shrink-0`}>{ELEMENT_LABELS[player.element]}</span>
+        <ElementIcon element={player.element} className="w-5 h-5 ml-auto shrink-0" />
       </div>
     )
   }
@@ -81,12 +70,10 @@ export default function PlayerCard({ player, mode, onClick, onCompare, inCompare
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-1 mb-0.5">
           <h4 className="font-heading font-bold text-sm text-iz-heading truncate leading-tight">{player.name}</h4>
-          <span className={`px-1.5 py-0.5 rounded text-[0.65rem] font-bold shrink-0 ${POS_CLASS[player.position]}`}>
-            {player.position}
-          </span>
+          <PositionIcon position={player.position} className="h-4 shrink-0" />
         </div>
         <p className={`text-[0.65rem] element-${player.element} mb-1.5 truncate`}>
-          {ELEMENT_LABELS[player.element]} {teamLabel ?? teamName(player.team, locale)}
+          <ElementIcon element={player.element} className="w-4 h-4 align-text-bottom" /> {teamLabel ?? teamName(player.team, locale)}
         </p>
         {mode === 'classic' && (
           <div className="flex flex-wrap gap-1">

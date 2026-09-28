@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
 import type { Player } from '../types'
-import { cardTeamLabel, getCharacterVersions, hyperName, loadDescription, type CardDescription, specialName, teamName, techniqueName } from '../data/catalog'
+import { cardTeamLabel, getCharacterVersions, hyperName, loadDescription, type CardDescription, specialName, teamName } from '../data/catalog'
 import { GAME_LABEL } from '../data/games'
-import { ALL_STAT_KEYS } from '../lib/power'
 import { useAppSettings } from '../context/AppSettings'
 import PlayerAvatar from './PlayerAvatar'
+import InaCard from './InaCard'
+import CardInfo from './CardInfo'
+import { ElementIcon, PositionIcon, SpecialIcon } from './GameIcon'
 import { CATEGORY_CLASS } from '../lib/categories'
 
-const TECH_ICON: Record<string, string> = { Shoot: '⚽', Dribble: '💨', Block: '🛡️', Catch: '🧤' }
 
 interface Props {
   player: Player
@@ -15,7 +16,6 @@ interface Props {
   onOpen: (p: Player) => void
 }
 
-const SPECIAL_ICON: Record<string, string> = { keshin: '👤', soul: '🐾', mixi: '🌀' }
 
 export default function PlayerDetail({ player, onClose, onOpen }: Props) {
   const { t, locale } = useAppSettings()
@@ -47,11 +47,12 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
         </div>
         <div className="iz-panel-body overflow-y-auto max-h-[80vh] space-y-5">
           <div className="flex gap-4 items-center">
-            <PlayerAvatar player={player} size="lg" variant="zukan" showRating={player.ovr} />
+            <InaCard player={player} size="sm" />
             <div className="min-w-0 space-y-1">
               <span className={`cat-pill ${CATEGORY_CLASS[player.category]}`}>{player.category}</span>
               <p className="font-heading font-bold text-iz-heading">
-                {player.position} · <span className={`element-${player.element}`}>{t(`element.${player.element}`)}</span>
+                <PositionIcon position={player.position} className="h-5 align-middle" />{' '}
+                <ElementIcon element={player.element} className="h-5 w-5 align-middle" /> <span className={`element-${player.element}`}>{t(`element.${player.element}`)}</span>
               </p>
               <p className="text-sm text-iz-text">
                 {cardTeamLabel(player, locale)}
@@ -61,19 +62,6 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
               </p>
             </div>
           </div>
-
-          <section>
-            <h3 className="font-heading text-sm font-bold text-accent mb-2">{t('players.stats')}</h3>
-            <div className="space-y-1.5">
-              {ALL_STAT_KEYS.map(k => (
-                <div key={k} className="grid grid-cols-[6.5rem_2rem_1fr] items-center gap-2 text-sm">
-                  <span className="text-iz-muted">{t(`stats.${k}`)}</span>
-                  <strong className="tabular-nums text-right text-iz-heading">{player.stats[k]}</strong>
-                  <div className="stat-bar"><span style={{ width: `${player.stats[k]}%` }} /></div>
-                </div>
-              ))}
-            </div>
-          </section>
 
           {descText && (
             <section>
@@ -88,7 +76,7 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
               <ul className="space-y-1.5">
                 {player.specials.map((sp, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm">
-                    <span aria-hidden>{SPECIAL_ICON[sp.type]}</span>
+                    <SpecialIcon type={sp.type} className="w-7 h-7 shrink-0" />
                     <span className="text-[0.65rem] text-iz-muted">{t(`special.${sp.type}`)}</span>
                     <span className="font-heading font-bold text-iz-heading truncate">
                       {specialName(sp, locale)}
@@ -98,7 +86,7 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
                 ))}
                 {player.specials.filter(sp => sp.hyper).map((sp, i) => (
                   <li key={`h${i}`} className="flex items-center gap-2 text-sm">
-                    <span aria-hidden>💥</span>
+                    <SpecialIcon type="keshin" className="w-7 h-7 shrink-0 opacity-70" />
                     <span className="text-[0.65rem] text-iz-muted">{t('special.hyper')}</span>
                     <span className="font-heading font-bold text-hissatsu truncate">{hyperName(sp, locale)}</span>
                   </li>
@@ -107,29 +95,7 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
             </section>
           )}
 
-          <section>
-            <h3 className="font-heading text-sm font-bold text-accent mb-2">{t('players.techniques')}</h3>
-            {player.techniques.length === 0 ? (
-              <p className="text-sm text-iz-muted">{t('players.noTechniques')}</p>
-            ) : (
-              <ul className="space-y-1.5">
-                {player.techniques.map(tech => (
-                  <li key={tech.id} className="flex items-center gap-2 text-sm" title={tech.description ?? undefined}>
-                    {tech.image
-                      ? <img src={tech.image} alt="" loading="lazy" className="w-10 h-6 object-cover rounded shrink-0" />
-                      : <span aria-hidden>{TECH_ICON[tech.type]}</span>}
-                    <span className="font-heading font-bold text-hissatsu truncate" title={tech.name}>{techniqueName(tech, locale)}</span>
-                    <span className="text-[0.65rem] text-iz-muted">{t(`tech.${tech.type}`)}</span>
-                    {tech.cost != null && (
-                      <span className="ml-auto text-xs tabular-nums text-iz-text" title={tech.costGame ?? undefined}>
-                        TP {tech.cost}
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </section>
+          <CardInfo player={player} />
 
           {versions.length > 0 && (
             <section>

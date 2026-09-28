@@ -4,7 +4,7 @@ import { useAppSettings } from '../../context/AppSettings'
 import { addCards, getClub, takePack, track } from '../../lib/club'
 import { getPack, openPack } from '../../lib/packs'
 import { playSfx } from '../../lib/sfx'
-import FutCard from '../FutCard'
+import InaCard from '../InaCard'
 
 /**
  * Apertura de un sobre guardado: sobre cerrado → tocar → las cartas salen una a una (la mejor, al final, con brillo
@@ -52,7 +52,7 @@ export default function PackOpening({ packId, onClose }: { packId: string; onClo
 
       {cards && !done && current && (
         <div key={shown} className={`pack-reveal ${walkout ? 'pack-reveal--walkout' : ''}`}>
-          <FutCard player={current} size="lg" />
+          <InaCard player={current} size="lg" />
           {!owned.has(current.id) && <span className="new-badge">{t('pack.new')}</span>}
           <p className="pack-reveal__hint">{shown}/{cards.length} · {t('pack.next')}</p>
         </div>
@@ -64,7 +64,7 @@ export default function PackOpening({ packId, onClose }: { packId: string; onClo
           <div className="fd-options">
             {cards.map(p => (
               <span key={p.id} className="pack-summary__card">
-                <FutCard player={p} size="sm" />
+                <InaCard player={p} size="sm" />
                 {!owned.has(p.id) && <span className="new-badge new-badge--sm">{t('pack.new')}</span>}
               </span>
             ))}

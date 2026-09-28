@@ -79,3 +79,22 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
   Common verde · Growing azul · Advanced morado · Top amarillo · Legendary naranja. Clases `fut-card--common/growing/
   advanced/top/legendary` y los puntos de probabilidad de los sobres con los mismos colores.
 - Las cartas grandes y medianas cargan la foto sin esperar (en el panel de elegir no salían a tiempo).
+
+### Carta nueva con estilo propio e iconos de Victory Road
+- Pedido: nada que ver con FIFA; que se vea media, puesto, foto, afinidad y equipo; iconos de Victory Road.
+- **Iconos** en `public/icons/` (98 KB, van en la app y funcionan sin conexión), de Fandom:
+  - Wiki española (versión HVR de sus plantillas): afinidades `Fuego/Aire/Bosque/Montaña (HVR).png`, tipos de
+    supertécnica `Tiro/Regate/Defensa/Portero (HVR).png`, `Tiro largo (HVR)`, `Bloqueo de tiros (HVR)`, y
+    `EG (HVR)` (espíritu guerrero), `Miximax (HVR)`, `Tótem (HVR)`.
+  - Wiki inglesa: puestos `GK/DF/MF/FW icon (VR).png` (la española solo tiene DF).
+  - `src/components/GameIcon.tsx`: `PositionIcon`, `ElementIcon`, `TechniqueIcon`, `SpecialIcon`.
+- **Carta** `src/components/InaCard.tsx` (sustituye a `FutCard`): esquinas cortadas en diagonal, líneas de velocidad sobre
+  el color de la rareza, brillo detrás de la foto, media grande con el icono de puesto debajo, afinidad arriba a la
+  derecha, franja de abajo con nombre y "equipo · juego". Las Legendary llevan un brillo que se mueve. Sin estadísticas
+  en la carta: están en la ficha (`CardInfo.tsx`: estadísticas y supertécnicas con su icono de tipo), que usan la ficha
+  del jugador y Mis cartas.
+- La ficha del jugador y la carta antigua (Draft FFI y explorador) usan los iconos en vez de emojis.
+- Arreglo de paso: al quitar el CSS de la carta FUT se habían ido también los estilos del draft (estaban en medio);
+  recuperados del commit anterior.
+- Probado: sobre de bienvenida (8 cartas), campo del draft, ficha en Mis cartas. Las cartas sin foto en las capturas son
+  fallos de red del navegador de pruebas (`ERR_TOO_MANY_RETRIES` del proxy), no de la app.

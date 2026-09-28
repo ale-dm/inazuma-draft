@@ -4,7 +4,8 @@ import { useAppSettings } from '../../context/AppSettings'
 import { getPlayer } from '../../data/catalog'
 import { QUICK_SELL, quickSell, useClub } from '../../lib/club'
 import { RARITY_CLASS, RARITY_ORDER } from '../../lib/packs'
-import FutCard from '../FutCard'
+import InaCard from '../InaCard'
+import CardInfo from '../CardInfo'
 import Sheet from '../hub/Sheet'
 import Screen from './Screen'
 
@@ -57,7 +58,7 @@ export default function MyCards() {
       <div className="card-grid">
         {shown.slice(0, 300).map(({ p, n }) => (
           <span key={p.id} className="card-grid__item">
-            <FutCard player={p} size="sm" onClick={() => setOpen(p)} />
+            <InaCard player={p} size="sm" onClick={() => setOpen(p)} />
             {n > 1 && <span className="dupe-badge">×{n}</span>}
           </span>
         ))}
@@ -66,13 +67,13 @@ export default function MyCards() {
       <Sheet open={!!open} title={open?.name ?? ''} onClose={() => setOpen(null)}>
         {open && (
           <div className="flex flex-col items-center gap-3">
-            <FutCard player={open} size="lg" />
-            <p className="fd-hint">{open.game} · {open.team}</p>
+            <InaCard player={open} size="lg" />
             {(club.cards[open.id] ?? 0) > 1 && (
               <button type="button" className="sheet-cta" onClick={() => quickSell(open.id, club.cards[open.id] - 1, QUICK_SELL[open.category])}>
                 {t('club.sell', { n: club.cards[open.id] - 1 })} · 🪙 {((club.cards[open.id] - 1) * QUICK_SELL[open.category]).toLocaleString()}
               </button>
             )}
+            <div className="w-full"><CardInfo player={open} /></div>
           </div>
         )}
       </Sheet>

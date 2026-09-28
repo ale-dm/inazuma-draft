@@ -154,48 +154,6 @@
 .card-fan > :nth-child(2) { z-index: 1; transform: translateY(-6px) scale(1.06); }
 .card-fan--md > * + * { margin-left: -.6rem; }
 
-/* ---------------------------------------------------------------- carta estilo FUT */
-.fut-card {
-  --c1: #d9a441; --c2: #8a5a1c; --ink: #2b1a05; --shine: rgba(255, 255, 255, .35);
-  position: relative; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;
-  width: var(--w); aspect-ratio: 5 / 7; padding: 8% 7% 6%; color: var(--ink); font-family: 'Barlow Condensed', sans-serif;
-  clip-path: polygon(0 7%, 14% 2.5%, 50% 0, 86% 2.5%, 100% 7%, 100% 88%, 50% 100%, 0 88%);
-  background:
-    linear-gradient(115deg, transparent 30%, var(--shine) 45%, transparent 60%),
-    radial-gradient(120% 70% at 50% 0%, var(--c1) 0%, var(--c2) 100%);
-  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .5));
-  --w: 7.5rem;
-}
-.fut-card--sm { --w: 4.8rem; }
-.fut-card--lg { --w: 10rem; }
-/* rarezas con los colores de Victory Road (Common verde · Growing azul · Advanced morado · Top amarillo · Legendary naranja) */
-.fut-card--legendary { --c1: #ffc15a; --c2: #d8410c; --ink: #fff; --shine: rgba(255, 236, 190, .55); }
-.fut-card--top { --c1: #fff27a; --c2: #d4a012; --ink: #2b1a05; --shine: rgba(255, 255, 255, .6); }
-.fut-card--advanced { --c1: #e98bff; --c2: #6c1fb8; --ink: #fff; --shine: rgba(255, 220, 255, .4); }
-.fut-card--growing { --c1: #74c6ff; --c2: #0f4fb4; --ink: #fff; --shine: rgba(220, 240, 255, .4); }
-.fut-card--common { --c1: #7fe87a; --c2: #147a35; --ink: #fff; --shine: rgba(220, 255, 220, .35); }
-
-.fut-card__head { position: absolute; top: 10%; left: 9%; z-index: 2; display: flex; flex-direction: column; align-items: center; line-height: .9; }
-.fut-card__ovr { font-weight: 900; font-size: calc(var(--w) * .24); }
-.fut-card__pos { font-weight: 800; font-size: calc(var(--w) * .11); }
-.fut-card__el { font-size: calc(var(--w) * .1); margin-top: .15em; }
-.fut-card__art { width: 78%; aspect-ratio: 1; margin-left: 18%; border-radius: 12%; overflow: hidden; display: grid; place-items: center; }
-.fut-card__art img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-.fut-card__initials { font-weight: 900; font-size: calc(var(--w) * .25); opacity: .6; }
-.fut-card__name {
-  width: 100%; margin-top: 3%; padding-bottom: 2%; text-align: center; font-weight: 800; font-size: calc(var(--w) * .13); line-height: 1.1;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-bottom: 1px solid color-mix(in srgb, var(--ink) 30%, transparent);
-}
-.fut-card__stats { display: grid; grid-template-columns: repeat(6, 1fr); width: 100%; margin-top: 3%; text-align: center; line-height: 1; }
-.fut-card__stats small { display: block; font-size: calc(var(--w) * .062); font-weight: 700; opacity: .8; }
-.fut-card__stats b { font-size: calc(var(--w) * .09); font-weight: 800; }
-.fut-card__game { margin-top: auto; font-size: calc(var(--w) * .075); font-weight: 800; opacity: .75; letter-spacing: .05em; }
-.fut-card--sm .fut-card__game, .fut-card--xs .fut-card__game, .fut-card--xs .fut-card__el { display: none; }
-.fut-card--xs { --w: 3.7rem; filter: drop-shadow(0 3px 5px rgba(0, 0, 0, .55)); }
-.fut-card--xs .fut-card__name { border-bottom: 0; }
-button.fut-card { cursor: pointer; transition: transform .12s ease; }
-button.fut-card:active { transform: scale(.95); }
-
 /* ---------------------------------------------------------------- draft MADFUT */
 .fd-main { flex: 1; overflow-y: auto; padding: 1rem; }
 .fd-step { max-width: 34rem; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
@@ -384,3 +342,75 @@ button.fut-card:active { transform: scale(.95); }
 .shell-main { flex: 1; overflow-y: auto; padding: .5rem 0 1.5rem; }
 .settings-credits { margin-top: 1.4rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, .12); display: flex; flex-direction: column; align-items: center; gap: .35rem; font-size: .75rem; color: var(--hub-dim); text-align: center; }
 .settings-credits a { color: var(--hub-cyan); font-weight: 700; }
+
+/* ---------------------------------------------------------------- carta de Inazuma (estilo propio) */
+/* Color por rareza (Victory Road, según la media): Common verde · Growing azul · Advanced morado · Top amarillo ·
+   Legendary naranja. Esquinas cortadas en diagonal, líneas de velocidad y la foto grande saliendo del marco. */
+.ic {
+  --w: 7.5rem; --r1: #4fd66a; --r2: #0c5a24; --rg: rgba(120, 255, 140, .55);
+  position: relative; display: block; flex-shrink: 0; width: var(--w); aspect-ratio: 3 / 4.2; padding: 0; overflow: hidden;
+  color: #fff; font-family: 'Barlow Condensed', sans-serif; text-align: left;
+  clip-path: polygon(0 0, 80% 0, 100% 11%, 100% 100%, 20% 100%, 0 89%);
+  background:
+    repeating-linear-gradient(118deg, rgba(255, 255, 255, .07) 0 2px, transparent 2px 9px),
+    linear-gradient(165deg, var(--r1) 0%, var(--r2) 78%);
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .55));
+}
+.ic::after {                                        /* filo claro por dentro, siguiendo el corte */
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  clip-path: inherit; box-shadow: inset 0 0 0 calc(var(--w) * .018) rgba(255, 255, 255, .45);
+  background: linear-gradient(118deg, transparent 38%, rgba(255, 255, 255, .22) 50%, transparent 62%);
+}
+.ic--common    { --r1: #4fd66a; --r2: #0c5a24; --rg: rgba(120, 255, 140, .55); }
+.ic--growing   { --r1: #4aa9ff; --r2: #0b357e; --rg: rgba(120, 190, 255, .6); }
+.ic--advanced  { --r1: #c65bff; --r2: #3f0f86; --rg: rgba(220, 140, 255, .6); }
+.ic--top       { --r1: #ffd84a; --r2: #a86a00; --rg: rgba(255, 230, 120, .7); }
+.ic--legendary { --r1: #ff9a3a; --r2: #a3200a; --rg: rgba(255, 170, 90, .75); }
+.ic--legendary::after { animation: ic-shine 3.2s ease-in-out infinite; background-size: 250% 100%; }
+
+.ic--xs { --w: 3.7rem; }
+.ic--sm { --w: 5rem; }
+.ic--lg { --w: 11rem; }
+
+.ic__glow { position: absolute; left: 20%; top: 12%; width: 90%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, var(--rg) 0%, transparent 65%); }
+.ic__photo {
+  position: absolute; right: -6%; top: 9%; width: 90%; height: 70%; object-fit: cover; object-position: top;
+  -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 100%); mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
+}
+.ic__initials { position: absolute; right: 12%; top: 26%; font-weight: 900; font-size: calc(var(--w) * .34); opacity: .5; }
+.ic__head { position: absolute; left: 7%; top: 5%; display: flex; flex-direction: column; align-items: center; z-index: 1; }
+.ic__ovr {
+  font-weight: 900; font-style: italic; line-height: .85; font-size: calc(var(--w) * .3);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, .45), 0 0 calc(var(--w) * .06) rgba(0, 0, 0, .5);
+}
+.ic__pos { width: calc(var(--w) * .3); margin-top: calc(var(--w) * .02); filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .5)); }
+.ic__el { position: absolute; right: 7%; top: 14%; width: calc(var(--w) * .18); z-index: 1; border-radius: 22%; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .5)); }
+.ic__foot {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; display: flex; flex-direction: column; gap: .05em;
+  padding: calc(var(--w) * .05) 9% calc(var(--w) * .1) 16%;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .78) 45%);
+  border-top: calc(var(--w) * .014) solid var(--r1);
+}
+.ic__name { font-weight: 800; font-style: italic; text-transform: uppercase; line-height: 1; font-size: calc(var(--w) * .12); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ic__team { font-family: 'Nunito Sans', sans-serif; font-weight: 700; font-size: calc(var(--w) * .068); opacity: .85; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ic--xs .ic__foot { padding: calc(var(--w) * .04) 8% calc(var(--w) * .09) 14%; }
+.ic--xs .ic__name { font-size: calc(var(--w) * .15); }
+button.ic { cursor: pointer; transition: transform .12s ease; }
+button.ic:active { transform: scale(.95); }
+.game-icon { display: inline-block; object-fit: contain; }
+@keyframes ic-shine { 0%, 100% { background-position: 100% 0; } 50% { background-position: 0 0; } }
+@media (prefers-reduced-motion: reduce) { .ic--legendary::after { animation: none; } }
+
+/* ficha: estadísticas y supertécnicas */
+.card-info { width: 100%; margin-top: .6rem; }
+.card-info__stats { display: grid; grid-template-columns: 1fr 1fr; gap: .35rem .9rem; }
+.card-info__stat { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: .1rem .4rem; font-size: .8rem; }
+.card-info__stat span { color: var(--hub-dim, #8fb3c9); }
+.card-info__stat b { font-variant-numeric: tabular-nums; }
+.card-info__stat i { grid-column: 1 / -1; height: .3rem; border-radius: 99px; background: rgba(255, 255, 255, .1); overflow: hidden; }
+.card-info__stat i span { display: block; height: 100%; background: linear-gradient(90deg, var(--hub-cyan, #3df2ff), var(--hub-neon, #c6ff3d)); }
+.card-info__techs { display: flex; flex-direction: column; gap: .35rem; }
+.card-info__techs li { display: flex; align-items: center; gap: .5rem; font-size: .9rem; }
+.card-info__techs b { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card-info__techs small { font-size: .7rem; opacity: .75; font-variant-numeric: tabular-nums; }
+.card-info__tech-icon { width: 1.8rem; height: 1.8rem; flex-shrink: 0; }

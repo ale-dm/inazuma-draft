@@ -4,7 +4,7 @@ import { useAppSettings } from '../../context/AppSettings'
 import { getFormation, nextEmptySlot, type FormationId, type LineupMap, type SlotId } from '../../lib/lineup'
 import { chemistry, formationLinks, teamRating } from '../../lib/chemistry'
 import { BENCH, benchOptions, captainOptions, formationOptions, slotOptions } from '../../lib/fut-draft'
-import FutCard from '../FutCard'
+import InaCard from '../InaCard'
 import Sheet from '../hub/Sheet'
 
 interface Props {
@@ -94,7 +94,7 @@ export default function FutDraft({ onComplete, onExit }: Props) {
 
   const card = (s: Spot, p: Player) => (
     <span className={selected === s ? 'fd-selected' : undefined}>
-      <FutCard player={p} size="xs" onClick={() => tap(s)} />
+      <InaCard player={p} size="xs" onClick={() => tap(s)} />
     </span>
   )
 
@@ -141,7 +141,7 @@ export default function FutDraft({ onComplete, onExit }: Props) {
           <section className="fd-step">
             <h2 className="fd-title">{t('fd.captain')}</h2>
             <div className="fd-options">
-              {captains.map(p => <FutCard key={p.id} player={p} onClick={() => chooseCaptain(p)} />)}
+              {captains.map(p => <InaCard key={p.id} player={p} onClick={() => chooseCaptain(p)} />)}
             </div>
           </section>
         )}
@@ -208,7 +208,7 @@ export default function FutDraft({ onComplete, onExit }: Props) {
         onClose={() => setPicking(null)}
       >
         <div className="fd-options">
-          {(picking && options[picking] || []).map(p => <FutCard key={p.id} player={p} onClick={() => pick(p)} />)}
+          {(picking && options[picking] || []).map(p => <InaCard key={p.id} player={p} onClick={() => pick(p)} />)}
         </div>
       </Sheet>
     </div>

@@ -11,7 +11,7 @@ import {
 import { initRunRng, resetRunRng } from './lib/run-rng'
 import { useAppSettings } from './context/AppSettings'
 import GameShell from './components/hub/GameShell'
-import FutCard from './components/FutCard'
+import InaCard from './components/InaCard'
 import Hub from './components/hub/Hub'
 import FutDraft from './components/futdraft/FutDraft'
 import Draft from './components/Draft'
@@ -211,7 +211,7 @@ export default function App() {
           )}
           <div className="card-grid w-full max-w-lg mb-6">
             {lineupToArray(lineup, formationId).map(p => (
-              <FutCard key={p.id} player={p} size="sm" showStats={mode === 'classic' || chem != null} />
+              <InaCard key={p.id} player={p} size="sm" showRating={mode === 'classic' || chem != null} />
             ))}
           </div>
           {reward && (
