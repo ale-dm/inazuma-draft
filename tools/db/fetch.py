@@ -743,7 +743,42 @@ def main():
     cached('fr_wiki.json', lambda: lang_wiki(WIKI_FR_API, ['Modèle:Supertechnique', 'Modèle:Esprit Guerrier', 'Modèle:Esprit Guerrier2',
                                                            'Modèle:Equipe', 'Modèle:Equipe2'], ('nom fr', 'nom'), ('nom jp', 'nom en', 'nom anglais')))
     cached('it_wiki.json', lambda: lang_wiki(WIKI_IT_API, ['Template:Tecniche', 'Template:Tecnica', 'Template:Avatar', 'Template:Spirito Guerriero',
-                                                           'Template:Squadra'], ('nome',), ('nome_jp', 'nome_rom', 'nome_originale')))
+                                                           'Template:Squadra'], ('nome',), ('nome_jp', 'nome_rom', 'nome_originale', 'altro_nome')))
+
+    log('10b2 enlaces entre idiomas de la wiki inglesa (fr/it) para los nombres del último build (técnicas, espíritus, equipos)')
+    def en_langlinks():
+        """{nombre inglés: {'fr': título, 'it': título}} siguiendo redirecciones ("Fire Drill" → ficha → [[fr:…]])"""
+        path = os.path.join(ROOT, 'build', 'players.json')
+        if not os.path.exists(path):
+            return {}
+        with open(path, encoding='utf-8') as f:
+            b = json.load(f)
+        names = {t['name'] for t in b['techniques']} | {tm['name'] for tm in b['teams']}
+        names |= {x for c in b['cards'] for sp in c.get('specials') or [] for x in (sp.get('name'), sp.get('hyper')) if x}
+        names = sorted(n for n in names if n and '|' not in n)
+        out = {}
+        for i in range(0, len(names), 50):
+            batch = names[i:i + 50]
+            d = api(WIKI_API, action='query', titles='|'.join(batch), redirects=1, prop='langlinks|categories', lllimit='max', cllimit='max')
+            q = d['query']
+            back = {}
+            for m in q.get('normalized', []) + q.get('redirects', []):
+                back.setdefault(m['to'], set()).update(back.get(m['from'], {m['from']}))
+            for pg in q.get('pages', []):
+                links = {ll['lang']: re.sub(r'\s*\([^)]*\)$', '', ll['title']) for ll in pg.get('langlinks', []) if ll['lang'] in ('fr', 'it')}
+                cats = pg.get('categories', [])
+                kind = ('hissatsu' if any('hissatsu' in c['title'].lower() for c in cats)
+                        else 'team' if any(c['title'].lower().endswith(' teams') or c['title'] == 'Category:Teams' for c in cats)
+                        else 'spirit' if any(w in c['title'].lower() and 'user' not in c['title'].lower() and 'character' not in c['title'].lower()
+                                             for c in cats for w in ('keshin', 'soul', 'totem'))
+                        else 'other')
+                if links:
+                    for n in back.get(pg['title'], set()) | {pg['title']}:
+                        out[n] = {**links, 'kind': kind}
+            log(f'  langlinks {min(i + 50, len(names))}/{len(names)}')
+            time.sleep(0.2)
+        return out
+    cached('en_langlinks.json', en_langlinks)
 
     log('10c escudos de equipo (inazuma-eleven.fandom.com, Category:Team emblem images + redirecciones)')
     def team_emblems():
