@@ -1,6 +1,5 @@
 import type { Category, DraftPool, DraftPoolKey, Element, GameId, Player, Position, Special, Staff, StaffRole, Technique } from '../types'
 import { GAME_LABEL } from './games'
-import { getEdits, type CardEdit } from '../lib/admin-edits'
 
 /**
  * Catálogo de jugadores desde Supabase (generado por tools/db/build.py).
@@ -105,9 +104,11 @@ let techniquesById = new Map<string, Technique>()
 let byId = new Map<string, Player>()
 let pools: DraftPool[] = []
 let poolRosters = new Map<string, Player[]>()
-/** Filas tal cual vienen de Supabase: los cambios del CRUD oculto se aplican encima (rebuildCatalog) */
+/** Filas tal cual vienen de Supabase; el CRUD (#/admin) las cambia al guardar en la base (applyDbChange) */
 let baseCards: CardRow[] = []
 let baseTechniques: TechniqueRow[] = []
+let baseTeams: TeamRow[] = []
+let baseStaff: StaffRow[] = []
 
 async function rest<T>(path: string, headers?: Record<string, string>): Promise<{ data: T; total: number | null }> {
   const res = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, { headers: { apikey: SUPABASE_KEY, ...headers } })
@@ -145,64 +146,71 @@ export async function loadCatalog(): Promise<void> {
     get<StaffRow[]>('staff?select=zukan_no,name,role,team,teams,games,image_url,description&order=zukan_no').catch(() => [] as StaffRow[]),
     loadCards(),
   ])
-  teamNames = new Map(teams.map(t => [t.name, { es: t.name_es, fr: t.name_fr, it: t.name_it }]))
-  teamLogos = new Map(teams.filter(t => t.logo_url).map(t => [t.name, t.logo_url as string]))
-  teamEraLogos = new Map(teams.filter(t => t.logos).map(t => [t.name, t.logos!]))
-  staff = staffRows.map(s => ({
-    zukanNo: s.zukan_no, name: s.name, role: s.role, team: s.team, teams: s.teams ?? [], games: s.games ?? [],
-    image: s.image_url, description: s.description,
-  }))
+  baseTeams = teams
+  baseStaff = staffRows
   baseCards = rows
   baseTechniques = techniques
   rebuildCatalog()
 }
 
-const linksOf = (ids: string[]) => ids.map((technique_id, i) => ({ slot: i + 1, technique_id }))
-
-/** Fila de carta con un cambio del CRUD encima */
-function withEdit(r: CardRow, e: CardEdit | undefined): CardRow {
-  if (!e) return r
-  const { techniques, ...rest } = e
-  return { ...r, ...(rest as Partial<CardRow>), card_techniques: techniques ? linksOf(techniques) : r.card_techniques }
-}
-
-/** Carta nueva del CRUD → fila como las de Supabase */
-function createdRow(id: string, e: CardEdit): CardRow {
-  return withEdit({
-    id, character_id: e.character_id ?? id, name: e.name ?? id, game: 'VR', version: 'base', team: null, position: 'MF',
-    element: 'fire', ovr: 60, category: 'Common Player', tier: 'C', shooting: 50, control: 50, physical: 50, speed: 50,
-    defense: 50, goalkeeping: 30, image_url: null, is_version: true, zukan_no: null, no: null, specials: [], extra_teams: [],
-    card_techniques: [],
-  }, e)
-}
-
-/** Fila original de una carta (sin los cambios del CRUD), para el formulario de edición */
 export function getBaseCardRow(id: string): CardRow | undefined {
   return baseCards.find(r => r.id === id)
 }
 
-export function getBaseTechniqueRow(id: string): TechniqueRow | undefined {
-  return baseTechniques.find(t => t.id === id)
+/** Tablas que cambia el CRUD */
+export type AdminTable = 'cards' | 'card_techniques' | 'characters' | 'techniques' | 'teams' | 'staff'
+
+/**
+ * Un cambio ya guardado en la base (lo devuelve admin_write): se aplica a las filas de este dispositivo y se vuelve a
+ * montar el catálogo, así se ve al momento sin recargar.
+ */
+export function applyDbChange(tbl: AdminTable, row: Record<string, unknown>, deleted = false) {
+  const put = <T,>(list: T[], key: (r: T) => unknown, k: unknown, next: T | null): T[] => {
+    const i = list.findIndex(r => key(r) === k)
+    if (next === null) return i < 0 ? list : list.filter((_, j) => j !== i)
+    if (i < 0) return [...list, next]
+    const copy = [...list]
+    copy[i] = { ...copy[i], ...next }
+    return copy
+  }
+  if (tbl === 'cards') {
+    const old = baseCards.find(r => r.id === row.id)
+    baseCards = put(baseCards, r => r.id, row.id, deleted ? null : { card_techniques: old?.card_techniques ?? [], ...row } as CardRow)
+  } else if (tbl === 'card_techniques') {
+    const ids = (row.techniques as string[] | undefined) ?? []
+    baseCards = baseCards.map(r => r.id === row.card_id ? { ...r, card_techniques: ids.map((technique_id, i) => ({ slot: i + 1, technique_id })) } : r)
+  } else if (tbl === 'techniques') {
+    baseTechniques = put(baseTechniques, r => r.id, row.id, deleted ? null : row as unknown as TechniqueRow)
+  } else if (tbl === 'teams') {
+    baseTeams = put(baseTeams, r => r.name, row.name, deleted ? null : row as unknown as TeamRow)
+  } else if (tbl === 'staff') {
+    baseStaff = put(baseStaff, r => r.zukan_no, row.zukan_no, deleted ? null : row as unknown as StaffRow)
+  }
+  rebuildCatalog()
 }
 
-export type { CardRow, TechniqueRow }
+/** Equipos tal cual están en la base (para el CRUD) */
+export function getTeamRows(): TeamRow[] {
+  return baseTeams
+}
 
-/** Monta el catálogo con las filas de Supabase y los cambios del CRUD oculto (se vuelve a llamar al guardar) */
+export type { CardRow, TechniqueRow, TeamRow, StaffRow }
+
+/** Monta el catálogo con las filas de Supabase (se vuelve a llamar cuando el CRUD guarda un cambio) */
 export function rebuildCatalog() {
-  const edits = getEdits()
-  const techById = new Map<string, Technique>(baseTechniques.map(row => {
-    const t = { ...row, ...(edits.techniques[row.id] as Partial<TechniqueRow> | undefined) }
-    return [t.id, {
-      id: t.id, name: t.name, nameEs: t.name_es, nameFr: t.name_fr, nameIt: t.name_it, type: t.type, element: t.element,
-      cost: t.cost, costGame: t.cost_game, description: t.description, image: t.image_url, traits: t.traits ?? [],
-    }]
+  teamNames = new Map(baseTeams.map(t => [t.name, { es: t.name_es, fr: t.name_fr, it: t.name_it }]))
+  teamLogos = new Map(baseTeams.filter(t => t.logo_url).map(t => [t.name, t.logo_url as string]))
+  teamEraLogos = new Map(baseTeams.filter(t => t.logos).map(t => [t.name, t.logos!]))
+  staff = baseStaff.map(s => ({
+    zukanNo: s.zukan_no, name: s.name, role: s.role, team: s.team, teams: s.teams ?? [], games: s.games ?? [],
+    image: s.image_url, description: s.description,
   }))
+  const techById = new Map<string, Technique>(baseTechniques.map(t => [t.id, {
+    id: t.id, name: t.name, nameEs: t.name_es, nameFr: t.name_fr, nameIt: t.name_it, type: t.type, element: t.element,
+    cost: t.cost, costGame: t.cost_game, description: t.description, image: t.image_url, traits: t.traits ?? [],
+  }]))
   techniquesById = techById
-  const deleted = new Set(edits.deleted)
-  const rows = [
-    ...baseCards.filter(r => !deleted.has(r.id)).map(r => withEdit(r, edits.cards[r.id])),
-    ...Object.entries(edits.created).filter(([id]) => !deleted.has(id)).map(([id, e]) => createdRow(id, e)),
-  ]
+  const rows = baseCards
 
   players = rows.map(r => {
     const techs = [...r.card_techniques].sort((a, b) => a.slot - b.slot)

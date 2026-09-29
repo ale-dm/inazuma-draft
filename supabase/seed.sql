@@ -36555,4 +36555,6 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('mutsu--ie1--base','Noroi',2),
 ('mutsu--ie1--base','UshiroNoShoumen',3),
 ('mutsu--ie1--base','TsuchiDaruma',4);
+-- cambios hechos desde el CRUD de la app (supabase/admin.sql): se vuelven a aplicar encima
+select public.admin_replay();
 commit;

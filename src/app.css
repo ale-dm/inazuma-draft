@@ -966,3 +966,64 @@ button.ic:active { transform: scale(.95); }
 button.free-pack { margin: 1rem auto 0; }
 .free-best { display: flex; align-items: baseline; gap: .35rem; font-family: 'Barlow Condensed', sans-serif; font-style: italic; }
 .free-best .free-pts { font-size: 2.4rem; font-weight: 900; line-height: 1; color: #9fb3c8; }
+
+/* ---------------------------------------------------------------- CRUD en tiempo real */
+.admin-login { display: flex; flex-direction: column; gap: .7rem; max-width: 22rem; width: 100%; margin: 2rem auto 0; }
+.admin-status { display: flex; align-items: center; gap: .5rem; padding: .45rem .5rem .45rem .8rem; border-radius: 14px; font-size: .82rem; background: rgba(61, 255, 138, .08); border: 1px solid rgba(61, 255, 138, .3); }
+.admin-status > span:nth-child(2) { flex: 1; }
+.admin-status .hub-icon-btn { width: 2rem; height: 2rem; }
+.admin-status__dot { width: .55rem; height: .55rem; border-radius: 99px; background: #3dff8a; box-shadow: 0 0 8px #3dff8a; }
+.admin-row { display: flex; gap: .5rem; align-items: center; }
+.admin-search { flex: 1; display: flex; align-items: center; gap: .5rem; min-height: 2.6rem; padding: 0 .8rem; border-radius: 12px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .18); color: var(--hub-dim); }
+.admin-search:focus-within { border-color: var(--hub-cyan); }
+.admin-search input { flex: 1; min-width: 0; background: none; border: 0; outline: none; color: #fff; font-size: .95rem; }
+.admin-input { font-size: .95rem; min-height: 2.5rem; border-radius: 12px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .18); }
+.admin-input:focus { outline: none; border-color: var(--hub-cyan); }
+.admin-input[readonly], .admin-input:disabled { opacity: .6; }
+textarea.admin-input { resize: vertical; line-height: 1.35; }
+.admin-input--mono { font-family: ui-monospace, monospace; font-size: .78rem; }
+.admin-list li { min-height: 3rem; }
+.admin-list--compact li { min-height: 0; padding: .45rem .7rem; }
+.admin-logo, .admin-avatar { width: 2.4rem; height: 2.4rem; flex-shrink: 0; display: grid; place-items: center; border-radius: 10px; background: rgba(0, 0, 0, .3); color: var(--hub-dim); object-fit: cover; }
+.admin-logo img { width: 85%; height: 85%; object-fit: contain; }
+.admin-tag--muted { background: rgba(255, 255, 255, .12); color: var(--hub-ink); }
+.admin-tag--danger { background: #ff5a5a; color: #fff; }
+.admin-editor { gap: .6rem; padding-bottom: 5rem; }
+.admin-editor__head { display: flex; align-items: center; gap: .7rem; }
+.admin-editor__title { display: flex; flex-direction: column; min-width: 0; }
+.admin-editor__title small { font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--hub-dim); }
+.admin-editor__title b { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-style: italic; line-height: 1.05; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.admin-preview { display: flex; justify-content: center; padding: .3rem 0; }
+.admin-preview__logo { width: 6rem; height: 6rem; object-fit: contain; }
+.admin-section { border-radius: 16px; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .1); }
+.admin-section > summary { display: flex; align-items: center; gap: .4rem; padding: .7rem .9rem; cursor: pointer; list-style: none; font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; font-weight: 900; font-style: italic; text-transform: uppercase; }
+.admin-section > summary::-webkit-details-marker { display: none; }
+.admin-section > summary::after { content: '▾'; margin-left: auto; opacity: .6; transition: transform .15s; }
+.admin-section:not([open]) > summary::after { transform: rotate(-90deg); }
+.admin-section > :not(summary) { padding: 0 .9rem .9rem; }
+.admin-form { grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr)); gap: .6rem; }
+.admin-field { display: flex; flex-direction: column; gap: .25rem; font-size: .72rem; font-weight: 800; text-transform: uppercase; color: var(--hub-dim); }
+.admin-field.is-changed > span { color: #ffe566; }
+.admin-field.is-changed .admin-input { border-color: rgba(255, 229, 102, .7); }
+.admin-field--bool { flex-direction: row; align-items: center; gap: .5rem; min-height: 2.5rem; }
+.admin-field--bool input { width: 1.2rem; height: 1.2rem; accent-color: var(--hub-neon); }
+.admin-dot { width: .5rem; height: .5rem; border-radius: 99px; background: #ffe566; }
+.admin-techs ol { display: flex; flex-direction: column; gap: .35rem; padding: 0; margin: 0 0 .5rem; list-style: none; counter-reset: t; }
+.admin-techs ol li { display: flex; align-items: center; gap: .35rem; padding: .35rem .5rem; border-radius: 12px; background: rgba(0, 0, 0, .25); counter-increment: t; }
+.admin-techs ol li::before { content: counter(t); width: 1.4rem; text-align: center; font-weight: 900; color: var(--hub-dim); }
+.admin-techs .chip { min-height: 1.9rem; padding: 0 .55rem; }
+.admin-savebar {
+  position: sticky; bottom: 0; z-index: 5; display: flex; align-items: center; gap: .5rem; margin: .4rem -1rem 0; padding: .6rem 1rem calc(.6rem + env(safe-area-inset-bottom, 0));
+  background: linear-gradient(180deg, rgba(6, 14, 26, .9), rgba(4, 10, 20, .98)); border-top: 1px solid rgba(61, 242, 255, .3); backdrop-filter: blur(6px);
+}
+.admin-savebar .sheet-cta { width: auto; flex: 0 0 auto; padding-inline: 1.4rem; }
+.admin-savebar .admin-msg { flex: 1; }
+.admin-msg { display: inline-flex; align-items: center; gap: .3rem; font-size: .82rem; font-weight: 700; color: var(--hub-dim); }
+.admin-msg--saved { color: #3dff8a; }
+.admin-msg--error { color: #ff8a8a; }
+.admin-msg--saving { color: var(--hub-cyan); }
+.admin-legacy { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; padding: .6rem .8rem; border-radius: 14px; font-size: .85rem; background: rgba(255, 229, 102, .08); border: 1px solid rgba(255, 229, 102, .35); }
+.admin-legacy > span { flex: 1 1 100%; }
+.hub-icon-btn.admin-danger { border-color: rgba(255, 90, 90, .6); }
+.admin-savebar .sheet-cta { min-height: 2.8rem; font-size: 1.25rem; padding-inline: 1.1rem; }
+.admin-savebar .admin-msg { min-width: 0; line-height: 1.2; }

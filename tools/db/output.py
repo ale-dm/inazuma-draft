@@ -78,6 +78,8 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
                                   'description', 'image_url', 'zukan_types', 'traits'], techs),
             insert('cards', card_cols, public),
             insert('card_techniques', ['card_id', 'technique_id', 'slot'], links),
+            '-- cambios hechos desde el CRUD de la app (supabase/admin.sql): se vuelven a aplicar encima',
+            'select public.admin_replay();',
             'commit;', '']
     os.makedirs(os.path.join(ROOT, 'supabase'), exist_ok=True)
     with open(os.path.join(ROOT, 'supabase', 'seed.sql'), 'w', encoding='utf-8') as f:
