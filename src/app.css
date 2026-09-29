@@ -1027,3 +1027,13 @@ textarea.admin-input { resize: vertical; line-height: 1.35; }
 .hub-icon-btn.admin-danger { border-color: rgba(255, 90, 90, .6); }
 .admin-savebar .sheet-cta { min-height: 2.8rem; font-size: 1.25rem; padding-inline: 1.1rem; }
 .admin-savebar .admin-msg { min-width: 0; line-height: 1.2; }
+/* mientras llega una pantalla (cada una se descarga al entrar) */
+.app-loading { margin: auto; width: 2.6rem; height: 2.6rem; border-radius: 99px; border: 3px solid rgba(255, 255, 255, .15); border-top-color: var(--hub-neon); animation: spin .8s linear infinite; }
+/* campo de la alineación del FFI con el mismo césped que el resto (antes verde claro con borde naranja) */
+.hub .pitch-frame { border: 1px solid rgba(255, 255, 255, .15); border-radius: 18px; box-shadow: 0 10px 26px rgba(0, 0, 0, .45); }
+.hub .bg-iz-pitch {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 17%, rgba(255, 255, 255, .08) 17.3%, transparent 17.8%),
+    repeating-linear-gradient(180deg, rgba(40, 160, 90, .30) 0 10%, rgba(30, 130, 75, .30) 10% 20%), #0b2233;
+}
+.hub .pitch-slot__name { font-size: 8px; }

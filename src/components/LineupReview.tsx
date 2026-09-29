@@ -15,7 +15,7 @@ import {
 import { useAppSettings } from '../context/AppSettings'
 import PitchFormation from './PitchFormation'
 import BoxScore from './BoxScore'
-import PlayerCard from './PlayerCard'
+import InaCard from './InaCard'
 import ExportTeamButton from './ExportTeamButton'
 import { lineupPower } from '../lib/power'
 
@@ -114,9 +114,9 @@ export default function LineupReview({ players, lineup: initialLineup, formation
           />
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-8">
+        <div className="card-grid mb-8">
           {all.map(p => (
-            <PlayerCard key={p.id} player={p} mode={mode} compact />
+            <span key={p.id} className="card-grid__item"><InaCard player={p} size="sm" showRating={mode !== 'memory'} /></span>
           ))}
         </div>
 

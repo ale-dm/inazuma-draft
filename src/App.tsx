@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { Suspense, lazy, useState, type ReactNode } from 'react'
 import type { GamePhase, Player } from './types'
 import { DEFAULT_FORMATION, lineupToArray, type FormationId, type LineupMap } from './lib/lineup'
 import {
@@ -13,31 +13,12 @@ import { useAppSettings } from './context/AppSettings'
 import GameShell from './components/hub/GameShell'
 import InaCard from './components/InaCard'
 import Hub from './components/hub/Hub'
-import FutDraft from './components/futdraft/FutDraft'
-import Draft from './components/Draft'
-import LineupReview from './components/LineupReview'
-import Tournament from './components/Tournament'
 import ExportTeamButton from './components/ExportTeamButton'
-import PlayersExplorer from './components/PlayersExplorer'
 import {
   ADMIN_HASH, BADGES_HASH, CODES_HASH, FATAL_HASH, FREE_HASH, SBC_HASH, CLUB_HASH, COLLECTIONS_HASH, CUPS_HASH, DUEL_HASH, HL_HASH, OBJECTIVES_HASH, PLAYERS_HASH, PUZZLES_HASH,
   SQUADS_HASH, STORE_HASH, useHashRoute,
 } from './lib/route'
-import Duel, { type DuelSource } from './components/modes/Duel'
-import HigherLower from './components/modes/HigherLower'
-import Cups from './components/modes/Cups'
-import Puzzles from './components/modes/Puzzles'
-import Admin from './components/admin/Admin'
-import Fatal from './components/modes/Fatal'
-import FreePack from './components/club/FreePack'
-import Codes from './components/club/Codes'
-import SbcScreen from './components/phase5/Sbc'
-import Badges from './components/phase5/Badges'
-import Squads from './components/club/Squads'
-import Store from './components/club/Store'
-import MyCards from './components/club/MyCards'
-import Collections from './components/club/Collections'
-import Objectives from './components/club/Objectives'
+import type { DuelSource } from './components/modes/Duel'
 import { addCoins, addPack, addXp, track, trackMax } from './lib/club'
 import { getPack } from './lib/packs'
 import { trackEvent } from './lib/analytics'
@@ -55,6 +36,28 @@ import {
 } from './lib/local-stats'
 import Coin from './components/Coin'
 import { Package, Trophy } from 'lucide-react'
+
+// pantallas que no hacen falta al abrir la app: cada una en su propio archivo, se descargan al entrar en ellas
+const Duel = lazy(() => import('./components/modes/Duel'))
+const FutDraft = lazy(() => import('./components/futdraft/FutDraft'))
+const Draft = lazy(() => import('./components/Draft'))
+const LineupReview = lazy(() => import('./components/LineupReview'))
+const Tournament = lazy(() => import('./components/Tournament'))
+const PlayersExplorer = lazy(() => import('./components/PlayersExplorer'))
+const HigherLower = lazy(() => import('./components/modes/HigherLower'))
+const Cups = lazy(() => import('./components/modes/Cups'))
+const Puzzles = lazy(() => import('./components/modes/Puzzles'))
+const Admin = lazy(() => import('./components/admin/Admin'))
+const Fatal = lazy(() => import('./components/modes/Fatal'))
+const FreePack = lazy(() => import('./components/club/FreePack'))
+const Codes = lazy(() => import('./components/club/Codes'))
+const SbcScreen = lazy(() => import('./components/phase5/Sbc'))
+const Badges = lazy(() => import('./components/phase5/Badges'))
+const Squads = lazy(() => import('./components/club/Squads'))
+const Store = lazy(() => import('./components/club/Store'))
+const MyCards = lazy(() => import('./components/club/MyCards'))
+const Collections = lazy(() => import('./components/club/Collections'))
+const Objectives = lazy(() => import('./components/club/Objectives'))
 
 export default function App() {
   const { t } = useAppSettings()
@@ -280,7 +283,7 @@ export default function App() {
     }[route]
 
   return (
-    <>
+    <Suspense fallback={<div className="hub"><span className="app-loading" aria-label="…" /></div>}>
       {clubScreen}
       {inPlayers && (
         <GameShell title={t('hub.players')} backHref="#/">
@@ -288,6 +291,6 @@ export default function App() {
         </GameShell>
       )}
       <div style={inPlayers || clubScreen ? { display: 'none' } : undefined}>{renderGame()}</div>
-    </>
+    </Suspense>
   )
 }

@@ -262,3 +262,29 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
 - **Draft**: capitán y opciones de cada puesto en 3 columnas (las 6 caben sin deslizar).
 - **Tienda / Fatal**: pestañas y cuentas atrás sin saltos de línea. Menos espacio entre bloques y textos pequeños
   algo más grandes en general.
+
+## Sobre gratis, walkout, CRUD en tiempo real, FR/IT, optimización
+- **Sobres**: el panel grande abre el **sobre básico gratis** (antes llevaba a la tienda): 9 cartas flojas, sin
+  límite, con puntos, barra de bonus y récord (como el Free Pack de MADFUT). **Walkout** en todos los sobres: la mejor
+  carta sale poco a poco en el orden de FIFA (afinidad = bandera → puesto → escudo = club → carta) con rayos del color
+  de su rareza; al tocar, todas las cartas de golpe (ordenadas por media).
+- **CRUD en tiempo real** (`#/admin`): ya no se exporta nada. Guarda directamente en Supabase con funciones
+  `security definer` de `supabase/admin.sql`:
+  - La clave pública solo lee; para escribir hace falta la contraseña de admin. La primera vez se crea; para
+    cambiarla, el workflow `db-load.yml` con `reset_admin`.
+  - Todo cambio va a `admin_log` y `admin_replay()` lo vuelve a aplicar al final de `seed.sql`, así una recarga del
+    catálogo no lo borra.
+  - Pestañas: Cartas, Equipos, Técnicas, Cuerpo técnico e Historial.
+  - Formularios por secciones, con vista previa de la carta en vivo, campos cambiados en amarillo y barra fija de
+    guardar/deshacer/borrar.
+  - Si quedan cambios antiguos guardados solo en el móvil, se ofrece subirlos.
+  - Probado contra un Postgres 16 local con el mismo esquema.
+- **Tensión e hiperenergía** de Victory Road recopiladas en `docs/tension-vr.md`, con una propuesta para el Duelo.
+- **FR/IT**:
+  - El cruce con las wikis fr/it ahora usa también el nombre inglés y normaliza los caracteres de ancho completo
+    (ゴッドハンドＶ).
+  - Nuevo paso `10b2` en `fetch.py`: enlaces entre idiomas de la wiki inglesa, filtrados por tipo de ficha.
+  - Espíritus en FR: de 79 a 212.
+- **Optimización**: pantallas con `React.lazy` (bundle inicial de 514 a 355 kB). **Diseño**: explorador de
+  jugadores con la carta nueva y filtros plegables; pestañas, selectores y rarezas con los colores de la app; campo de
+  la alineación del FFI igual que los demás; cartas del campo algo más grandes.
