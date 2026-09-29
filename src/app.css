@@ -789,3 +789,113 @@ button.ic:active { transform: scale(.95); }
 .free-pack { align-self: center; }
 .free-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem .4rem; justify-items: center; }
 .codes-input { text-transform: uppercase; letter-spacing: .1em; text-align: center; font-weight: 800; }
+
+/* ---------------------------------------------------------------- UI compacta: todo cabe en la pantalla del móvil */
+/* Duelo: marcador fino, campo que llena el alto disponible y barra fija abajo con la jugada */
+.fd-step:has(.fatal-field) { gap: .5rem; }
+.fd-main:has(.fatal-field) { padding: .5rem .75rem 0; }
+.duel-score--compact { grid-template-columns: minmax(0, 1fr) auto auto auto minmax(0, 1fr); gap: .1rem .5rem; padding: .35rem .8rem .3rem; border-radius: 14px; }
+.duel-score--compact b { font-size: 2rem; }
+.duel-score--compact .duel-score__team { font-size: .9rem; white-space: nowrap; }
+.duel-score--compact .duel-score__round { font-size: .72rem; color: #ffe566; letter-spacing: .04em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fatal-top { gap: .35rem; }
+.fatal-field { position: relative; }
+.fatal-field .fatal-pitch {
+  --fw: clamp(3.3rem, min(calc((100dvh - 17rem) / 7.3), 18.5vw), 4.8rem);
+  aspect-ratio: auto; height: max(21rem, calc(100dvh - 17rem)); max-height: 44rem;
+}
+.fatal-field .fatal-pitch .ic, .fatal-field .fatal-back { --w: var(--fw); width: var(--fw); }
+.fatal-field .fatal-spot {
+  left: calc(var(--fw) / 2 + .1rem + (100% - var(--fw) - .2rem) * var(--x));
+  top: calc(var(--fw) * .7 + .15rem + (100% - var(--fw) * 1.4 - .8rem) * var(--y));
+}
+.fatal-field .fatal-back__el { width: calc(var(--fw) * .45); }
+.fatal-field .fatal-back__crest { width: calc(var(--fw) * .55); height: calc(var(--fw) * .55); }
+.fatal-field .fatal-tabs { position: absolute; left: .5rem; bottom: .5rem; z-index: 4; flex-direction: column; gap: .3rem; }
+.fatal-field .fatal-tabs button { padding: .3rem .7rem; font-size: .75rem; background: rgba(6, 18, 28, .85); }
+.fatal-bar {
+  position: sticky; bottom: 0; z-index: 5; margin: 0 -.75rem; padding: .5rem .75rem calc(.6rem + env(safe-area-inset-bottom, 0));
+  display: flex; flex-direction: column; gap: .35rem; min-height: 5.6rem; justify-content: center;
+  background: linear-gradient(180deg, rgba(6, 14, 26, .88), rgba(4, 10, 20, .98)); border-top: 1px solid rgba(61, 242, 255, .3);
+  backdrop-filter: blur(6px);
+}
+.fatal-bar__hint { text-align: center; font-size: .8rem; font-weight: 800; color: var(--hub-neon); text-transform: uppercase; letter-spacing: .04em; }
+.fatal-bar .fatal-hint-row { gap: .7rem; }
+.fatal-bar .fatal-hint-row p { flex: 1; font-size: .92rem; font-weight: 700; line-height: 1.25; }
+.fatal-bar .fatal-hint { width: 3.6rem; }
+.fatal-bar .fatal-hint .fatal-back__el { width: 1.2rem; }
+.fatal-bar .fatal-hint__stat { font-size: .55rem; bottom: .25rem; }
+.fatal-bar .duel-stat-btn { padding: .35rem .3rem; }
+.fatal-bar .duel-stat-btn b { font-size: 1.6rem; }
+.fatal-bar .duel-round { gap: .5rem; }
+.fatal-bar .duel-line { font-size: .85rem; }
+.fatal-bar .duel-line b { font-size: 1.05rem; }
+.duel-end { gap: .5rem; padding: .7rem .8rem; border-radius: 16px; background: rgba(0, 0, 0, .35); border: 1px solid rgba(255, 229, 102, .35); }
+.duel-end .fd-title { font-size: 1.8rem; line-height: 1; }
+.duel-end__actions { display: flex; gap: .5rem; align-items: center; }
+.duel-end__actions .sheet-cta { flex: 1; }
+
+/* Inicio: cada página cabe entera en el alto de la pantalla (los paneles se reparten el sitio) */
+.hub-page { gap: .7rem; padding: .8rem .9rem .6rem; }
+.hub-page > .tile--hero { flex: 0 1 11rem; min-height: 7.5rem; padding: 1rem 1.2rem; }
+.hub-page > .tile--hero .tile--hero__title { font-size: clamp(2.6rem, 7dvh, 3.6rem); }
+.hub-page > .hub-duel { flex: 0 0 auto; min-height: 0; padding: .55rem .6rem .7rem; gap: .35rem; }
+.hub-page > .hub-duel .hub-duel__title { font-size: clamp(2.4rem, 6dvh, 3.2rem); }
+.hub-duel__cols span, .hub-duel__cols button { margin: 0 .25rem; min-width: 0; }
+.hub-duel__cols b { font-size: clamp(.9rem, 3.9vw, 1.2rem); white-space: nowrap; }
+.hub-page > .hub-duel .hub-duel__cols { margin: 0 -.3rem; }
+.hub-duel__cols small { font-size: .72rem; white-space: nowrap; }
+.hub-page > .tile--wide { flex: 0 1 auto; min-height: 0; }
+.hub-page > .hub-grid { flex: 1 1 0; min-height: 11rem; gap: .7rem; grid-auto-rows: minmax(0, 1fr); }
+.hub-page > .hub-grid--3 { flex: 0 0 auto; min-height: 0; grid-auto-rows: auto; }
+.hub-page > .hub-grid .tile { min-height: 0; padding: .6rem; }
+.hub-page > .hub-grid--3 .tile { min-height: 5.6rem; }
+.hub-page > .hub-grid .tile__icon { width: clamp(2rem, 5.5dvh, 2.8rem); height: clamp(2rem, 5.5dvh, 2.8rem); }
+.hub-page > .hub-grid .tile__label { font-size: 1rem; line-height: 1.15; }
+.hub-page > .hub-grid--3 .tile__label { font-size: .88rem; }
+.hub-page > .hub-grid .hub-ring { width: clamp(3.6rem, 10dvh, 5.2rem); height: clamp(3.6rem, 10dvh, 5.2rem); font-size: 1.2rem; }
+.hub-page .card-fan .ic { --w: clamp(3.8rem, 10.5dvh, 5.4rem); }
+.hub-page .tile--wide .card-fan--md { margin-top: 0; }
+.hub-page .tile--wide .card-fan--md .ic { --w: clamp(4rem, 11dvh, 5.6rem); }
+.hub-stats b { font-size: clamp(1.4rem, 4.5dvh, 1.8rem); }
+.hub-stats small { font-size: .62rem; }
+.hub-dots { padding: .45rem 0 .6rem; }
+
+/* Filtros en una sola fila que se desliza (en vez de 3–4 filas de chips) */
+.chip-row--scroll {
+  flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; margin: 0 -1rem; padding: .1rem 1rem .2rem;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 .9rem, #000 calc(100% - .9rem), transparent);
+          mask-image: linear-gradient(90deg, transparent 0, #000 .9rem, #000 calc(100% - .9rem), transparent);
+}
+.chip-row--scroll::-webkit-scrollbar { display: none; }
+.chip-row--scroll > * { flex-shrink: 0; white-space: nowrap; }
+.chip-row__sep { width: 1px; align-self: stretch; margin: .2rem .15rem; background: rgba(255, 255, 255, .2); }
+.chip--back { border-color: rgba(61, 242, 255, .45); }
+.chip { min-height: 2.25rem; font-size: .88rem; }
+
+/* Mis cartas: 3 columnas de cartas grandes y la venta de repetidas en una línea */
+.club-meta { display: flex; align-items: center; justify-content: space-between; gap: .5rem; flex-wrap: wrap; }
+.club-meta .fd-hint { text-align: left; }
+.club-meta__sell { font-size: .8rem; }
+.card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem .4rem; }
+.card-grid .ic { --w: min(calc((min(100vw, 36rem) - 3rem) / 3), 7.2rem); }
+@media (min-width: 560px) { .card-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } .card-grid .ic { --w: 7.2rem; } }
+
+/* Opciones del draft y del editor: 3 por fila, así las 6 caben sin deslizar */
+.fd-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .6rem .4rem; justify-items: center; }
+.fd-options .ic { --w: min(calc((min(100vw, 36rem) - 3.4rem) / 3), 7.4rem); }
+
+/* Tienda y Fatal: pestañas y contadores sin saltos de línea */
+.store-tabs { display: flex; }
+.store-tabs button { flex: 1 1 auto; white-space: nowrap; font-size: .85rem; padding: .7rem .3rem; }
+.fatal-panel__season span { white-space: nowrap; }
+.fatal-panel__title { font-size: clamp(1.5rem, 7vw, 1.9rem); white-space: nowrap; }
+
+/* Espaciado general más ajustado y textos pequeños algo más grandes */
+.fd-main { padding: .75rem 1rem 1rem; }
+.fd-step { gap: .75rem; }
+.fd-hint { font-size: .9rem; }
+.fd-title { font-size: 1.8rem; line-height: 1.05; }
+.obj { padding: .6rem .75rem; }
+.obj__text small { font-size: .8rem; }
+.sheet-label { font-size: .78rem; }

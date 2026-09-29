@@ -162,6 +162,28 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult }: { title: str
     else setSel(c === sel ? null : c)
   }
 
+  const endBlock = over && (
+    <div className="duel-end">
+      <h2 className="fd-title">{result === 0 ? t('duel.win') : result === -1 ? t('duel.draw') : t('duel.loss')}</h2>
+      {tb !== null && (
+        <div className="duel-tb">
+          <small className="sheet-label">{t('duel.tiebreak')}</small>
+          <div className="duel-round">
+            <DuelCard player={m.myHand[0].p} size="xs" values={m.myHand[0].st} mod={m.myHand[0].mod} />
+            <span className="duel-line"><b>{total(m.myHand[0])} – {total(m.oppHand[0])}</b><span>{t('duel.tbRule')}</span></span>
+            <DuelCard player={m.oppHand[0].p} size="xs" values={m.oppHand[0].st} mod={m.oppHand[0].mod} />
+          </div>
+        </div>
+      )}
+      {paid && <p className="reward-line">+<Coin className="w-5 h-5" /> {paid.coins} · +{paid.xp} XP</p>}
+      {paid?.note && <p className="fatal-note">{paid.note}</p>}
+      <div className="duel-end__actions">
+        <button type="button" className="sheet-cta" onClick={onAgain}>{t('duel.again')}</button>
+        <a href="#/fatal" className="chip">{t('fatal.back')}</a>
+      </div>
+    </div>
+  )
+
   return (
     <Screen title={title}>
       <div className="fatal-top">
@@ -171,64 +193,52 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult }: { title: str
             return <i key={k} className={r ? (r.winner === 0 ? 'w' : r.winner === 1 ? 'l' : 'd') : k === i ? 'now' : ''} />
           })}
         </span>
-        <div className="duel-score">
+        <div className="duel-score duel-score--compact">
           <span className="duel-score__team">{t('duel.you')}</span>
           <b>{s[0]}</b><i>–</i><b>{s[1]}</b>
           <span className="duel-score__team">{teamLabel(m.opp.name, locale)}</span>
-          <small className="duel-score__round">{over ? t('duel.fullTime') : lead === 0 ? t('duel.youLead') : t('duel.rivalLeads')}</small>
+          <small className="duel-score__round">{over ? t('duel.fullTime') : lead === 0 ? t('duel.youLead') : t('duel.rivalLeads')} · {boostText}</small>
         </div>
       </div>
-      <p className="duel-boost">{boostText}</p>
 
-      {!over && lead === 1 && m.pending && (
-        <div className="fatal-hint-row">
-          <Hint card={m.pending.card} stat={m.pending.stat} />
-          <p className="fd-hint">{t('duel.respond', { k: t(STAT_KEY[m.pending.stat]), mine: t(STAT_KEY[counter(m.pending.stat)]) })}</p>
-        </div>
-      )}
-      {!over && lead === 0 && sel && (
-        <div className="duel-stats-pick">
-          {(['att', 'con', 'def'] as const).map(k => (
-            <button key={k} type="button" className={`duel-stat-btn ic__stat--${k}`} onClick={() => leadWith(k)}>
-              <small>{t(STAT_KEY[k])}</small><b>{sel.st[k]}</b><em>{t('duel.vs', { k: t(STAT_KEY[counter(k)]) })}</em>
-            </button>
-          ))}
-        </div>
-      )}
-      {!over && lead === 0 && !sel && <p className="fd-hint">{t('duel.pickOnPitch')}</p>}
+      {endBlock}
 
-      <div className="fatal-pager" ref={pager} onScroll={e => setPage(Math.round(e.currentTarget.scrollLeft / e.currentTarget.clientWidth))}>
-        <section className="fatal-page">
-          <FatalPitch team={m.me} used={played} selected={sel} highlight={lead === 1 && m.pending ? counter(m.pending.stat) : undefined} onTap={tapMine} />
-        </section>
-        <section className="fatal-page">
-          <FatalPitch team={m.opp} used={played} hidden pending={m.pending?.card ?? null} />
-        </section>
-      </div>
-      <div className="fatal-tabs">
-        <button type="button" className={page === 0 ? 'on' : ''} onClick={() => goPage(0)}>{t('duel.you')}</button>
-        <button type="button" className={page === 1 ? 'on' : ''} onClick={() => goPage(1)}>{t('duel.rival')}</button>
+      <div className="fatal-field">
+        <div className="fatal-pager" ref={pager} onScroll={e => setPage(Math.round(e.currentTarget.scrollLeft / e.currentTarget.clientWidth))}>
+          <section className="fatal-page">
+            <FatalPitch team={m.me} used={played} selected={sel} highlight={lead === 1 && m.pending ? counter(m.pending.stat) : undefined} onTap={tapMine} />
+          </section>
+          <section className="fatal-page">
+            <FatalPitch team={m.opp} used={played} hidden pending={m.pending?.card ?? null} />
+          </section>
+        </div>
+        <div className="fatal-tabs">
+          <button type="button" className={page === 0 ? 'on' : ''} onClick={() => goPage(0)} aria-label={t('duel.you')}>{t('duel.you')}</button>
+          <button type="button" className={page === 1 ? 'on' : ''} onClick={() => goPage(1)} aria-label={t('duel.rival')}>{t('duel.rival')}</button>
+        </div>
       </div>
 
-      {last && <RoundView round={last} />}
-
-      {over && (
-        <div className="duel-end">
-          {tb !== null && (
-            <div className="duel-tb">
-              <small className="sheet-label">{t('duel.tiebreak')}</small>
-              <div className="duel-round">
-                <DuelCard player={m.myHand[0].p} size="sm" values={m.myHand[0].st} mod={m.myHand[0].mod} />
-                <span className="duel-line"><b>{total(m.myHand[0])} – {total(m.oppHand[0])}</b><span>{t('duel.tbRule')}</span></span>
-                <DuelCard player={m.oppHand[0].p} size="sm" values={m.oppHand[0].st} mod={m.oppHand[0].mod} />
-              </div>
+      {!over && (
+        <div className="fatal-bar">
+          {lead === 1 && m.pending ? (
+            <div className="fatal-hint-row">
+              <Hint card={m.pending.card} stat={m.pending.stat} />
+              <p>{t('duel.respond', { k: t(STAT_KEY[m.pending.stat]), mine: t(STAT_KEY[counter(m.pending.stat)]) })}</p>
             </div>
+          ) : lead === 0 && sel ? (
+            <div className="duel-stats-pick">
+              {(['att', 'con', 'def'] as const).map(k => (
+                <button key={k} type="button" className={`duel-stat-btn ic__stat--${k}`} onClick={() => leadWith(k)}>
+                  <small>{t(STAT_KEY[k])}</small><b>{sel.st[k]}</b><em>{t('duel.vs', { k: t(STAT_KEY[counter(k)]) })}</em>
+                </button>
+              ))}
+            </div>
+          ) : (
+            <>
+              {last ? <RoundView round={last} /> : null}
+              <p className="fatal-bar__hint">{t('duel.pickOnPitch')}</p>
+            </>
           )}
-          <h2 className="fd-title">{result === 0 ? t('duel.win') : result === -1 ? t('duel.draw') : t('duel.loss')}</h2>
-          {paid && <p className="reward-line">+<Coin className="w-5 h-5" /> {paid.coins} · +{paid.xp} XP</p>}
-          {paid?.note && <p className="fatal-note">{paid.note}</p>}
-          <button type="button" className="sheet-cta" onClick={onAgain}>{t('duel.again')}</button>
-          <a href="#/fatal" className="chip self-center">{t('fatal.back')}</a>
         </div>
       )}
     </Screen>
@@ -263,6 +273,10 @@ function FatalPitch({ team, used, hidden, selected, highlight, pending, onTap }:
   onTap?: (c: FatalCard) => void
 }) {
   const pos = positions(team)
+  // se estira la formación a todo el campo (0–1 en cada eje) para que las cartas no se pisen
+  const all = [...pos.values()]
+  const span = (k: 'x' | 'y') => { const v = all.map(p => p[k]); const lo = Math.min(...v), hi = Math.max(...v); return (n: number) => hi > lo ? (n - lo) / (hi - lo) : .5 }
+  const nx = span('x'), ny = span('y')
   return (
     <div className="fd-pitch fatal-pitch">
       {team.cards.map(c => {
@@ -270,7 +284,7 @@ function FatalPitch({ team, used, hidden, selected, highlight, pending, onTap }:
         const isUsed = used.has(c)
         return (
           <span key={c.p.id + c.slot} className={`fatal-spot ${isUsed ? 'is-used' : ''} ${selected === c ? 'fd-selected' : ''} ${pending === c ? 'is-pending' : ''}`}
-            style={{ left: `${at.x}%`, top: `${9 + at.y * 0.82}%` }}>
+            style={{ ['--x' as string]: nx(at.x), ['--y' as string]: ny(at.y) }}>
             {hidden && !isUsed
               ? <HintBack card={c} />
               : <DuelCard player={c.p} size="xs" values={c.st} mod={c.mod} highlight={isUsed ? undefined : highlight}
@@ -313,7 +327,7 @@ function RoundView({ round }: { round: Round }) {
   const theirKey = round.lead === 1 ? round.stat : counter(round.stat)
   return (
     <div className="duel-round">
-      <DuelCard player={mine.p} size="sm" values={mine.st} mod={mine.mod} highlight={myKey} />
+      <DuelCard player={mine.p} size="xs" values={mine.st} mod={mine.mod} highlight={myKey} />
       <span className="duel-line">
         <span>{t(STAT_KEY[myKey])} <b>{mine.st[myKey]}</b> – <b>{theirs.st[theirKey]}</b> {t(STAT_KEY[theirKey])}</span>
         {round.byTotal && <small>{t('duel.byTotal', { a: total(mine), b: total(theirs) })}</small>}
@@ -321,7 +335,7 @@ function RoundView({ round }: { round: Round }) {
           {round.winner === 0 ? t('duel.point') : round.winner === 1 ? t('duel.pointOpp') : t('duel.noPoint')}
         </span>
       </span>
-      <DuelCard player={theirs.p} size="sm" values={theirs.st} mod={theirs.mod} highlight={theirKey} />
+      <DuelCard player={theirs.p} size="xs" values={theirs.st} mod={theirs.mod} highlight={theirKey} />
     </div>
   )
 }

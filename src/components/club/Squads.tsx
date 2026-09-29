@@ -88,7 +88,6 @@ function SquadEditor({ squad, onBack }: { squad: Squad; onBack: () => void }) {
 
   return (
     <Screen title={squad.name} statsToggle>
-      <button type="button" className="chip self-start" onClick={onBack}><ArrowLeft size={14} /> {t('hub.squads')}</button>
       <div className="fd-bar hub-bar">
         <span className="fd-stat"><small>{t('fd.rating')}</small>{teamRating(placed) || '—'}</span>
         <button type="button" className="fd-stat fd-stat--btn" onClick={() => setHelp(true)} aria-label={t('chem.title')}>
@@ -97,7 +96,8 @@ function SquadEditor({ squad, onBack }: { squad: Squad; onBack: () => void }) {
         <span className="fd-chem-track"><span style={{ width: `${(chem.team / MAX_TEAM_CHEM) * 100}%` }} /></span>
         <span className="fd-stat"><small>{def.layout}</small>{placed.length}/11</span>
       </div>
-      <div className="chip-row">
+      <div className="chip-row chip-row--scroll">
+        <button type="button" className="chip chip--back" onClick={onBack} aria-label={t('hub.squads')}><ArrowLeft size={14} /> {t('hub.squads')}</button>
         {FORMATIONS.map(f => (
           <button key={f.id} type="button" className={`chip ${squad.formation === f.id ? 'on' : ''}`} onClick={() => changeFormation(f.id)} title={f.layout}>{t(f.nameKey)}</button>
         ))}

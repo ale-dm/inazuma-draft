@@ -250,3 +250,15 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
   ajustes a un archivo e impórtalo en otro dispositivo.
 - Probado con Playwright: 3 partidos de una serie (puntos sumados), oferta de hoy cogida, ficha gratis, sobre gratis,
   código canjeado y repetido, copia descargada.
+
+## UI compacta (todo cabe en la pantalla del móvil)
+- **Inicio**: las 3 páginas caben enteras (probado a 360×780 y 400×860): los paneles se reparten el alto, textos y
+  cartas del abanico se ajustan al alto de la pantalla; FATAL enseña Mi club / Simulación / Draft sin cortar.
+- **Duelo**: marcador en una línea (con el boost de la semana), el campo ocupa el alto que queda y la formación se
+  estira a todo el campo para que las cartas no se pisen; botones Tú/Rival dentro del campo; abajo, una barra fija con
+  lo que toca (pista del rival, los 3 números de tu carta o la última jugada). El resultado sale arriba al acabar.
+- **Plantillas**: volver y formaciones en una sola fila que se desliza (antes 4 filas); el campo entra sin deslizar.
+- **Mis cartas**: posición y rareza en una fila; cartas en 3 columnas más grandes; vender repetidas en una línea.
+- **Draft**: capitán y opciones de cada puesto en 3 columnas (las 6 caben sin deslizar).
+- **Tienda / Fatal**: pestañas y cuentas atrás sin saltos de línea. Menos espacio entre bloques y textos pequeños
+  algo más grandes en general.

@@ -35,13 +35,12 @@ export default function MyCards() {
 
   return (
     <Screen title={t('hub.myCards')} statsToggle>
-      <div className="chip-row">
+      <div className="chip-row chip-row--scroll">
         {POSITIONS.map(x => (
           <button key={x} type="button" className={`chip ${pos === x ? 'on' : ''}`} onClick={() => setPos(x)}>{x === 'all' ? t('players.all') : x}</button>
         ))}
-      </div>
-      <div className="chip-row">
-        <button type="button" className={`chip ${rarity === 'all' ? 'on' : ''}`} onClick={() => setRarity('all')}>{t('players.all')}</button>
+        <i className="chip-row__sep" aria-hidden />
+        <button type="button" className={`chip ${rarity === 'all' ? 'on' : ''}`} onClick={() => setRarity('all')} aria-label={t('players.all')}>★</button>
         {[...RARITY_ORDER].reverse().map(c => (
           <button key={c} type="button" className={`chip ${rarity === c ? 'on' : ''}`} onClick={() => setRarity(c)}>
             <i className={`odds odds--${RARITY_CLASS[c]}`} />
@@ -49,12 +48,14 @@ export default function MyCards() {
         ))}
         <button type="button" className={`chip ${dupesOnly ? 'on' : ''}`} onClick={() => setDupesOnly(d => !d)}>×2+</button>
       </div>
-      <p className="fd-hint">{t('club.count', { n: owned.length, shown: shown.length })}</p>
-      {dupeValue > 0 && (
-        <button type="button" className="sheet-choice sheet-choice--row" onClick={sellAllDupes}>
-          <small>{t('club.sellDupes')}</small><b className="inline-flex items-center gap-1"><Coin /> {dupeValue.toLocaleString()}</b>
-        </button>
-      )}
+      <div className="club-meta">
+        <p className="fd-hint">{t('club.count', { n: owned.length, shown: shown.length })}</p>
+        {dupeValue > 0 && (
+          <button type="button" className="chip club-meta__sell" onClick={sellAllDupes}>
+            {t('club.sellDupes')} <b className="inline-flex items-center gap-1"><Coin /> {dupeValue.toLocaleString()}</b>
+          </button>
+        )}
+      </div>
       {owned.length === 0 && <p className="fd-hint">{t('club.empty')}</p>}
       <div className="card-grid">
         {shown.slice(0, 300).map(({ p, n }) => (
