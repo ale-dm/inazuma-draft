@@ -18,46 +18,56 @@ export interface DuelStats {
 
 export type DuelKey = keyof DuelStats
 
-/** Cuánto aprovecha cada puesto cada número [ataque, control, defensa] */
-const POS_FACTOR: Record<Player['position'], [number, number, number]> = {
-  FW: [1, 0.92, 0.68],
-  MF: [0.92, 1, 0.86],
-  DF: [0.8, 0.9, 1],
-  GK: [0.5, 0.72, 1],
+/**
+ * Plantillas por perfil, sacadas de las cartas de MADFUT (diferencia con la media) [ataque, control, defensa]:
+ * delantero (Mbappé 91: 89/83/42), delantero de toque, medio de ataque (De Bruyne 90: 86/89/64), medio defensivo
+ * (Guijarro 88: 84/83/86), central (van Dijk 89: 67/70/87), carrilero y portero (Donnarumma 89: 39/34/88).
+ */
+const TEMPLATE = {
+  'FW-st': [-2, -8, -44],
+  'FW-cr': [-4, -3, -40],
+  'MF-at': [-5, -3, -30],
+  'MF-df': [-8, -6, -3],
+  'DF-cb': [-23, -20, -2],
+  'DF-wb': [-15, -9, -4],
+  GK: [-50, -54, -1],
+} as const
+type Profile = keyof typeof TEMPLATE
+
+/** Perfil de la carta según su puesto y sus stats */
+export function duelProfile(p: Player): Profile {
+  const s = p.stats
+  if (p.position === 'FW') return s.control > s.shooting ? 'FW-cr' : 'FW-st'
+  if (p.position === 'MF') return s.defense > Math.max(s.shooting, s.control) ? 'MF-df' : 'MF-at'
+  if (p.position === 'DF') return s.control + s.speed > 2 * s.defense + 6 ? 'DF-wb' : 'DF-cb'
+  return 'GK'
 }
+
 /** Tipo de supertécnica → número al que suma (0 ataque, 1 control, 2 defensa) */
 const TECH_SLOT: Record<string, 0 | 1 | 2> = { Shoot: 0, Dribble: 1, Block: 2, Catch: 2 }
-/** Tope del bonus de técnicas por número */
-const TECH_CAP = 6
 
 /**
- * Números de duelo de la carta (ver docs/duelo.md):
- * 1. mezcla de sus stats afines: ataque = tiro 70 % + velocidad y control; control = control 60 % + velocidad y
- *    físico; defensa = defensa 60 % + físico y velocidad (porteros: parada 70 % + defensa y físico)
- * 2. × lo que aprovecha su puesto (un defensa con mucho tiro no ataca como un delantero; un portero, aún menos)
- * 3. + sus supertécnicas: cada una suma a su número (tiro → ataque, regate → control, bloqueo y parada → defensa;
- *    parada solo en porteros) 1 + TP/40, +1 si es tiro largo o bloqueo de tiros; como mucho +6 por número
- * 4. tope: media + 8 (y 25–99)
+ * Números de duelo de la carta, con la escala de MADFUT (ver docs/duelo.md):
+ * 1. la plantilla de su perfil sobre la media (el número fuerte queda 1–3 por debajo; el flojo, muy por debajo)
+ * 2. ajuste propio: (su stat afín − media) × 0,3, entre −6 y +2 (tiro → ataque, control → control, defensa → defensa;
+ *    porteros: parada)
+ * 3. supertécnicas: +1 por cada 2 del tipo del número (tiro, regate, bloqueo; parada solo en porteros), +2 como mucho
+ * 4. nunca por encima de la media − 1 (como en MADFUT), mínimo 20
  * Si la carta tiene valores puestos a mano (CRUD oculto), mandan esos.
  */
 export function duelStats(p: Player): DuelStats {
   const s = p.stats
-  const raw = [
-    s.shooting * 0.7 + s.speed * 0.15 + s.control * 0.15,
-    s.control * 0.6 + s.speed * 0.25 + s.physical * 0.15,
-    p.position === 'GK'
-      ? s.goalkeeping * 0.7 + s.defense * 0.15 + s.physical * 0.15
-      : s.defense * 0.6 + s.physical * 0.3 + s.speed * 0.1,
-  ]
-  const bonus = [0, 0, 0]
+  const raw = [s.shooting, s.control, p.position === 'GK' ? s.goalkeeping : s.defense]
+  const techs = [0, 0, 0]
   for (const t of new Set(p.techniques)) {
     if (t.type === 'Catch' && p.position !== 'GK') continue
-    bonus[TECH_SLOT[t.type]] += 1 + (t.cost ?? 30) / 40
-    if (t.traits?.includes('long')) bonus[0] += 1
-    if (t.traits?.includes('block')) bonus[2] += 1
+    techs[TECH_SLOT[t.type]]++
   }
-  const f = POS_FACTOR[p.position]
-  const [att, con, def] = raw.map((r, i) => Math.max(25, Math.min(99, p.ovr + 8, Math.round(r * f[i] + Math.min(TECH_CAP, bonus[i])))))
+  const tpl = TEMPLATE[duelProfile(p)]
+  const [att, con, def] = tpl.map((off, i) => {
+    const adj = Math.max(-6, Math.min(2, Math.round((raw[i] - p.ovr) * 0.3))) + Math.min(2, Math.floor(techs[i] / 2))
+    return Math.max(20, Math.min(p.ovr - 1, p.ovr + off + adj))
+  })
   return { att: p.duel?.att ?? att, con: p.duel?.con ?? con, def: p.duel?.def ?? def }
 }
 

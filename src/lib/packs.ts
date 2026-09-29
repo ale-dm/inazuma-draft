@@ -18,8 +18,11 @@ export interface PackDef {
   elements?: Element[]
   /** Solo cartas del equipo de la semana (weeklyTeam) */
   weeklyTeam?: boolean
+  /** Media mínima y máxima de las cartas (fichas y sobres especiales) */
+  ovrMin?: number
+  ovrMax?: number
   /** Clase de color del sobre */
-  tone: 'bronze' | 'silver' | 'gold' | 'legend' | 'saga' | 'fire' | 'wood' | 'air' | 'earth' | 'team'
+  tone: 'bronze' | 'silver' | 'gold' | 'legend' | 'saga' | 'fire' | 'wood' | 'air' | 'earth' | 'team' | 'special' | 'free'
 }
 
 /** Clase de color de cada rareza, con los colores de Victory Road: Common verde · Growing azul · Advanced morado ·
@@ -54,6 +57,17 @@ export const PACKS: PackDef[] = [
   // premios (no se venden)
   { id: 'starter', nameKey: 'pack.starter', price: null, cards: 8, tone: 'gold', odds: { 'Growing Player': 30, 'Advanced Player': 50, 'Top Player': 18, 'Legendary Player': 2 }, guarantee: 'Top Player' },
   { id: 'reward', nameKey: 'pack.reward', price: null, cards: 3, tone: 'silver', odds: { 'Growing Player': 40, 'Advanced Player': 45, 'Top Player': 13, 'Legendary Player': 2 } },
+  // sobre gratis: 9 cartas, casi todas flojas (para tirar)
+  { id: 'free', nameKey: 'pack.free', price: null, cards: 9, tone: 'free', odds: { 'Common Player': 62, 'Growing Player': 30, 'Advanced Player': 7, 'Top Player': 0.9, 'Legendary Player': 0.1 } },
+  // sobres de hoy y fichas: 1 carta con media mínima
+  { id: 'one-80', nameKey: 'pack.one80', price: null, cards: 1, tone: 'special', odds: { 'Advanced Player': 60, 'Top Player': 34, 'Legendary Player': 6 }, ovrMin: 80 },
+  { id: 'one-85', nameKey: 'pack.one85', price: null, cards: 1, tone: 'special', odds: { 'Top Player': 80, 'Legendary Player': 20 }, ovrMin: 85, ovrMax: 89 },
+  { id: 'one-88', nameKey: 'pack.one88', price: null, cards: 1, tone: 'legend', odds: { 'Top Player': 60, 'Legendary Player': 40 }, ovrMin: 88 },
+  { id: 'one-90', nameKey: 'pack.one90', price: null, cards: 1, tone: 'legend', odds: { 'Legendary Player': 100 }, ovrMin: 90 },
+  { id: 'one-top', nameKey: 'pack.oneTop', price: null, cards: 1, tone: 'gold', odds: { 'Top Player': 100 } },
+  { id: 'one-bronze', nameKey: 'pack.oneBronze', price: null, cards: 1, tone: 'bronze', odds: { 'Common Player': 70, 'Growing Player': 30 } },
+  { id: 'one-silver', nameKey: 'pack.oneSilver', price: null, cards: 1, tone: 'silver', odds: { 'Growing Player': 60, 'Advanced Player': 40 } },
+  { id: 'x2-random', nameKey: 'pack.x2Random', price: null, cards: 2, tone: 'special', odds: { 'Advanced Player': 45, 'Top Player': 40, 'Legendary Player': 15 } },
 ]
 
 export function getPack(id: string): PackDef {
@@ -84,7 +98,8 @@ export function weeklyTeam(week = isoWeek()): string {
 export function openPack(pack: PackDef): Player[] {
   const team = pack.weeklyTeam ? weeklyTeam() : null
   const pool = getAllPlayers().filter(p => p.image && (!pack.games || pack.games.includes(p.game))
-    && (!pack.elements || pack.elements.includes(p.element)) && (!team || p.team === team || p.extraTeams.includes(team)))
+    && (!pack.elements || pack.elements.includes(p.element)) && (!team || p.team === team || p.extraTeams.includes(team))
+    && (pack.ovrMin == null || p.ovr >= pack.ovrMin) && (pack.ovrMax == null || p.ovr <= pack.ovrMax))
   const byCat = new Map<Category, Player[]>()
   for (const p of pool) {
     const l = byCat.get(p.category)

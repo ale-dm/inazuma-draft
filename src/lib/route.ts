@@ -17,6 +17,10 @@ export const SBC_HASH = '#/retos'
 export const BADGES_HASH = '#/insignias'
 /** CRUD oculto (sin enlace: 7 toques en el logo de la pantalla principal) */
 export const ADMIN_HASH = '#/admin'
+/** Fatal, sobre gratis y códigos (como MADFUT) */
+export const FATAL_HASH = '#/fatal'
+export const FREE_HASH = '#/sobre-gratis'
+export const CODES_HASH = '#/codigos'
 
 /** Ruta mínima por hash: '#/jugadores' abre el explorador sin perder la partida en curso */
 export function useHashRoute(): string {

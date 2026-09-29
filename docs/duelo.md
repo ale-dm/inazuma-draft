@@ -9,15 +9,18 @@ Reglas sacadas de la guía de Fatal de r/MADFUT (MADFUT 26). Código: `src/lib/f
 simulación), `src/lib/duel.ts` (números de cada carta), `src/components/modes/Duel.tsx` (pantallas).
 
 ### Números de cada carta (verde ataque, azul control, rojo defensa)
-1. Mezcla de sus stats afines: ataque = tiro 70 % + velocidad 15 % + control 15 %; control = control 60 % +
-   velocidad 25 % + físico 15 %; defensa = defensa 60 % + físico 30 % + velocidad 10 % (porteros: parada 70 % +
-   defensa 15 % + físico 15 %).
-2. × lo que aprovecha su puesto [ataque, control, defensa]: FW 1 / 0,92 / 0,68 · MF 0,92 / 1 / 0,86 ·
-   DF 0,8 / 0,9 / 1 · GK 0,5 / 0,72 / 1. Así un defensa o un portero con mucho tiro ya no "ataca" como un delantero.
-3. + sus supertécnicas: cada una suma a su número (tiro → ataque, regate → control, bloqueo y parada → defensa;
-   parada solo en porteros) 1 + TP/40 (el coste como medida de potencia), +1 si es tiro largo o bloqueo de tiros;
-   como mucho +6 por número.
-4. Tope: media + 8 (y 25–99). Medias del catálogo: GK 31/44/70 · DF 53/61/72 · MF 65/73/60 · FW 73/62/45.
+Con la escala de MADFUT: el número fuerte queda 1–3 por debajo de la media y **nunca la supera**; el flojo, muy por
+debajo (Mbappé 91: 89/83/42 · De Bruyne 90: 86/89/64 · Guijarro 88: 84/83/86 · van Dijk 89: 67/70/87 ·
+Donnarumma 89: 39/34/88).
+1. **Perfil** según puesto y stats, con su plantilla (diferencia con la media [ataque, control, defensa]):
+   delantero −2/−8/−44 · delantero de toque (más control que tiro) −4/−3/−40 · medio de ataque −5/−3/−30 · medio
+   defensivo (más defensa que tiro y control) −8/−6/−3 · central −23/−20/−2 · carrilero (control + velocidad muy por
+   encima de la defensa) −15/−9/−4 · portero −50/−54/−1.
+2. **Ajuste propio**: (su stat afín − media) × 0,3, entre −6 y +2 (tiro → ataque, control → control, defensa →
+   defensa; porteros: parada).
+3. **Supertécnicas**: +1 por cada 2 del tipo del número (tiro, regate, bloqueo; parada solo en porteros), +2 como mucho.
+4. **Tope**: media − 1; mínimo 20. Diferencia media con la media en el catálogo: delanteros 0/−9/−42 ·
+   medios −5/−2/−31 · centrales −24/−21/0 · porteros −42/−43/0.
 5. Si la carta tiene valores puestos a mano en el CRUD oculto (`duel_att/con/def`), mandan esos.
 
 ### En el partido

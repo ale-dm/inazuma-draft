@@ -20,7 +20,7 @@ import Tournament from './components/Tournament'
 import ExportTeamButton from './components/ExportTeamButton'
 import PlayersExplorer from './components/PlayersExplorer'
 import {
-  ADMIN_HASH, BADGES_HASH, SBC_HASH, CLUB_HASH, COLLECTIONS_HASH, CUPS_HASH, DUEL_HASH, HL_HASH, OBJECTIVES_HASH, PLAYERS_HASH, PUZZLES_HASH,
+  ADMIN_HASH, BADGES_HASH, CODES_HASH, FATAL_HASH, FREE_HASH, SBC_HASH, CLUB_HASH, COLLECTIONS_HASH, CUPS_HASH, DUEL_HASH, HL_HASH, OBJECTIVES_HASH, PLAYERS_HASH, PUZZLES_HASH,
   SQUADS_HASH, STORE_HASH, useHashRoute,
 } from './lib/route'
 import Duel, { type DuelSource } from './components/modes/Duel'
@@ -28,6 +28,9 @@ import HigherLower from './components/modes/HigherLower'
 import Cups from './components/modes/Cups'
 import Puzzles from './components/modes/Puzzles'
 import Admin from './components/admin/Admin'
+import Fatal from './components/modes/Fatal'
+import FreePack from './components/club/FreePack'
+import Codes from './components/club/Codes'
 import SbcScreen from './components/phase5/Sbc'
 import Badges from './components/phase5/Badges'
 import Squads from './components/club/Squads'
@@ -267,13 +270,13 @@ export default function App() {
     )
   }
 
-  const duelSource = route.startsWith(`${DUEL_HASH}/`) ? route.slice(DUEL_HASH.length + 1) as DuelSource : null
+  const [duelSource, seriesId] = route.startsWith(`${DUEL_HASH}/`) ? route.slice(DUEL_HASH.length + 1).split('/') as [DuelSource, string?] : [null]
   const clubScreen = duelSource && ['club', 'sim', 'draft'].includes(duelSource)
-    ? <Duel key={route} source={duelSource} />
+    ? <Duel key={route} source={duelSource} seriesId={seriesId} />
     : {
       [STORE_HASH]: <Store />, [CLUB_HASH]: <MyCards />, [COLLECTIONS_HASH]: <Collections />, [OBJECTIVES_HASH]: <Objectives />,
       [SQUADS_HASH]: <Squads />, [HL_HASH]: <HigherLower />, [CUPS_HASH]: <Cups />, [PUZZLES_HASH]: <Puzzles />, [ADMIN_HASH]: <Admin />,
-      [SBC_HASH]: <SbcScreen />, [BADGES_HASH]: <Badges />,
+      [SBC_HASH]: <SbcScreen />, [FATAL_HASH]: <Fatal />, [FREE_HASH]: <FreePack />, [CODES_HASH]: <Codes />, [BADGES_HASH]: <Badges />,
     }[route]
 
   return (

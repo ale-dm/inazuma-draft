@@ -3,17 +3,20 @@ import type { Player } from '../../types'
 import { useAppSettings } from '../../context/AppSettings'
 import { getAllPlayers, getCharacterVersions, teamLogo } from '../../data/catalog'
 import { loadProgress, uniqueCharacters } from '../../lib/progress'
-import { ADMIN_HASH, BADGES_HASH, SBC_HASH, CLUB_HASH, COLLECTIONS_HASH, CUPS_HASH, DUEL_HASH, HL_HASH, OBJECTIVES_HASH, PLAYERS_HASH, PUZZLES_HASH, SQUADS_HASH, STORE_HASH } from '../../lib/route'
+import { ADMIN_HASH, BADGES_HASH, CODES_HASH, FATAL_HASH, FREE_HASH, SBC_HASH, CLUB_HASH, COLLECTIONS_HASH, CUPS_HASH, DUEL_HASH, HL_HASH, OBJECTIVES_HASH, PLAYERS_HASH, PUZZLES_HASH, SQUADS_HASH, STORE_HASH } from '../../lib/route'
 import { useClub } from '../../lib/club'
 import { pendingRewards } from '../../lib/objectives'
 import InaCard from '../InaCard'
 import Coin from '../Coin'
-import { ArrowLeftRight, BookOpen, ClipboardList, Cloud, Layers, Puzzle, Settings, Shield, ShoppingBag, Target, Zap } from 'lucide-react'
+import { ArrowLeftRight, BookOpen, ClipboardList, Cloud, Gift, Layers, Puzzle, Settings, Shield, ShoppingBag, Target, Zap } from 'lucide-react'
 import RulesModal from '../RulesModal'
 import StatsModal from '../StatsModal'
 import Sheet from './Sheet'
 import SettingsSheet from './SettingsSheet'
 import { loadDraft } from '../../lib/saved-draft'
+import BackupSheet from './BackupSheet'
+import { doneCount, fatalProgress } from '../../lib/fatal-series'
+import { freePackReadyIn } from '../../lib/store-extra'
 
 interface Props {
   mode: 'classic' | 'memory'
@@ -34,7 +37,7 @@ function heroOf(characterId: string): string | null {
 export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
   const { t } = useAppSettings()
   const [page, setPage] = useState(0)
-  const [sheet, setSheet] = useState<'mode' | 'settings' | 'rules' | 'stats' | null>(null)
+  const [sheet, setSheet] = useState<'mode' | 'settings' | 'rules' | 'stats' | 'backup' | null>(null)
   const pager = useRef<HTMLDivElement>(null)
   /** 7 toques en el logo → CRUD oculto */
   const taps = useRef(0)
@@ -57,8 +60,11 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
     <div className="hub">
       <header className="hub-top safe-top">
         <div className="hub-top__row">
+          <button type="button" className={`hub-free ${freePackReadyIn() === 0 ? 'is-ready' : ''}`} onClick={go(FREE_HASH)} aria-label={t('free.title')}>
+            <span className="hub-free__pack">9</span>
+          </button>
           <span className="hub-logo" onClick={() => { taps.current += 1; if (taps.current >= 7) { taps.current = 0; window.location.hash = ADMIN_HASH } }}>FFI <b>6-0</b></span>
-          <button type="button" className="hub-icon-btn" onClick={() => setSheet('settings')} aria-label={t('hub.settings')}><Settings size={20} /></button>
+          <button type="button" className="hub-codes" onClick={go(CODES_HASH)}>{t('codes.button')} <Gift size={16} /></button>
         </div>
         <div className="hub-bar">
           <span className="hub-bar__crest" aria-hidden>
@@ -82,14 +88,14 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
         {/* 1 · Sobres (como el "Pack" de MADFUT) + Duelo + modos */}
         <section className="hub-page hub-page--teal">
           <HeroTile title={t('hub.packs')} sub={club.packs.length ? t('store.saved', { n: club.packs.length }) : undefined} image={heroes.packs} onClick={go(STORE_HASH)} />
-          <div className="tile tile--wide hub-duel">
-            <span className="hub-duel__title">{t('hub.duel')}</span>
+          <button type="button" className="tile tile--wide hub-duel" onClick={go(FATAL_HASH)}>
+            <span className="hub-duel__title">FATAL</span>
             <span className="hub-duel__cols">
-              {([['hub.duelClub', 'club', 'hub.duelClubSub'], ['hub.duelSim', 'sim', 'hub.duelSimSub'], ['hub.draft', 'draft', 'hub.duelDraftSub']] as const).map(([k, src, sub]) => (
-                <button key={k} type="button" onClick={go(`${DUEL_HASH}/${src}`)}><b>{t(k)}</b><small>{t(sub)}</small></button>
-              ))}
+              <span><b>{t('hub.duelClub')}</b><small>{t('fatal.seriesN', { n: doneCount('club') })}</small></span>
+              <span><b>{t('hub.duelSim')}</b><small>{t('fatal.seriesN', { n: doneCount('sim') })}</small></span>
+              <span><b>{t('hub.draft')}</b><small>{fatalProgress().division ? t('fatal.division', { n: fatalProgress().division }) : t('fatal.elite')}</small></span>
             </span>
-          </div>
+          </button>
           <div className="hub-grid hub-grid--tall">
             <Tile label={t('hub.modeFfi')} onClick={() => setSheet('mode')}>
               <span className="tile__big">FFI</span>
@@ -133,7 +139,7 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
           </div>
           <div className="hub-grid hub-grid--3">
             <Tile label={t('hub.settings')} onClick={() => setSheet('settings')}><Settings className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
-            <Tile label={t('hub.backup')} soon={t('hub.soon')}><Cloud className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
+            <Tile label={t('hub.backup')} onClick={() => setSheet('backup')}><Cloud className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
             <Tile label={t('hub.rules')} onClick={() => setSheet('rules')}><BookOpen className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
           </div>
           {heroes.club && <img className="hub-page__ghost" src={heroes.club} alt="" aria-hidden />}
@@ -183,6 +189,7 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
       <SettingsSheet open={sheet === 'settings'} onClose={() => setSheet(null)} />
       <RulesModal open={sheet === 'rules'} onClose={() => setSheet(null)} />
       <StatsModal open={sheet === 'stats'} onClose={() => setSheet(null)} />
+      <BackupSheet open={sheet === 'backup'} onClose={() => setSheet(null)} />
     </div>
   )
 }

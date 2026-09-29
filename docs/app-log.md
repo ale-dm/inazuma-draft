@@ -230,3 +230,23 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
 - Evoluciones: siguen quitadas.
 - Batalla en el campo como MADFUT: tu once con sus números y, deslizando, el rival boca abajo con una pista por carta
   (afinidad, juego o escudo). Rival real o generado con química a tope ("Fatal IA", los 11 del mismo juego).
+
+### Interfaz de MADFUT: Fatal, tienda, sobre gratis, códigos y copia de seguridad
+- Pedido con capturas de MADFUT (pantalla principal, Fatal, tienda, sobres, cartas con sus 3 números).
+- **Números de duelo** recalibrados con cartas reales de MADFUT: plantilla por perfil (delantero, delantero de toque,
+  medio de ataque/defensivo, central, carrilero, portero) sobre la media + ajuste propio + supertécnicas; el número
+  fuerte nunca pasa de media − 1 (antes llegaban a 99). Detalle en duelo.md.
+- **Fatal** (`#/fatal`, `lib/fatal-series.ts`): Mi club y Simulación con 7 series (70…90 y X / 68…91 y X): la
+  plantilla no puede pasar de esa media; 9 puntos (victoria 3, empate o derrota 1) → premio (sobres y fichas). Draft
+  por divisiones (victoria 3, empate 1; 9 para subir). Temporada = semana (se reinicia el lunes). El panel de la
+  pantalla principal enseña Series x/7 y la división.
+- **Tienda** (`lib/store-extra.ts`): pestañas Sobres de hoy (4 ofertas del día, las mismas para todos, con unidades y
+  cuenta atrás; debajo, los sobres a la venta), Mis sobres y Fichas (fichas de 1 carta con media mínima; ficha gratis
+  de 80+ al día). Sobres nuevos de 1 carta (80+, 85–89, 88+, 90+, 100 % Top, bronce, plata) y 2 al azar.
+- **Sobre gratis** (`#/sobre-gratis`, botón arriba a la izquierda): 9 cartas casi todas flojas cada 10 minutos;
+  puntos = lo que cada carta pasa de 50; barra de bonus a 500 (sobre oro) y récord.
+- **Códigos** (`#/codigos`, botón arriba a la derecha): INAZUMA, RAIMON, FFI, CHRONOSTORM, FUEGO, VICTORYROAD (una
+  vez cada uno). **Copia de seguridad** (casilla de la página 3): exporta el club, el draft guardado, estadísticas y
+  ajustes a un archivo e impórtalo en otro dispositivo.
+- Probado con Playwright: 3 partidos de una serie (puntos sumados), oferta de hoy cogida, ficha gratis, sobre gratis,
+  código canjeado y repetido, copia descargada.

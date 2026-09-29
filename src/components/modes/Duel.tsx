@@ -11,6 +11,7 @@ import {
   type FatalCard, type FatalTeam, type Round, type SimChance,
 } from '../../lib/fatal'
 import { addCoins, addXp, track } from '../../lib/club'
+import { addDraftResult, addSeriesResult, findSeries } from '../../lib/fatal-series'
 import { playSfx } from '../../lib/sfx'
 import type { TranslationKey } from '../../i18n/translations'
 import type { Player } from '../../types'
@@ -37,25 +38,40 @@ interface Match {
   pending: { card: FatalCard; stat: DuelKey } | null
 }
 
-function payout(res: 0 | 1 | -1) {
+type Paid = { coins: number; xp: number; note: string | null }
+/** Tras cada partido: puntos de la serie / división de Fatal (texto para enseñar), o null fuera de Fatal */
+type OnResult = (res: 0 | 1 | -1) => string | null
+
+function payout(res: 0 | 1 | -1, onResult: OnResult): Paid {
   const r = duelReward(res === 0 ? [1, 0] : res === 1 ? [0, 1] : [0, 0])
   addCoins(r.coins)
   addXp(r.xp)
   track('duels')
   if (res === 0) track('duelWins')
   playSfx(res === 0 ? 'qualify' : 'pick')
-  return r
+  return { ...r, note: onResult(res) }
 }
 
 /**
  * Duelo = el Fatal de MADFUT (ver lib/fatal.ts y docs/duelo.md). Mi club y Draft: 10 rondas por turnos con desempate.
  * Simulación: 6 ocasiones automáticas con una plantilla del club.
  */
-export default function Duel({ source }: { source: DuelSource }) {
+export default function Duel({ source, seriesId }: { source: DuelSource; seriesId?: string }) {
   const { t } = useAppSettings()
   const [picked, setPicked] = useState<PickedSquad | null>(null)
   const [game, setGame] = useState(0)
   const boost = useMemo(() => weeklyBoost(), [])
+  const series = seriesId ? findSeries(seriesId) ?? null : null
+
+  const onResult: OnResult = res => {
+    if (source === 'draft') {
+      const r = addDraftResult(res)
+      return r.promoted ? t('fatal.promoted') : t('fatal.divPoints', { n: r.points })
+    }
+    if (!series) return null
+    const r = addSeriesResult(series, res)
+    return r.completed ? t('fatal.seriesDone') : r.points ? t('fatal.seriesPoints', { n: r.points }) : null
+  }
 
   if (source === 'draft' && !picked) {
     return (
@@ -69,7 +85,7 @@ export default function Duel({ source }: { source: DuelSource }) {
     )
   }
 
-  const title = `${t('hub.duel')} · ${t(source === 'club' ? 'hub.duelClub' : source === 'sim' ? 'hub.duelSim' : 'hub.draft')}`
+  const title = `${t('hub.duel')} · ${t(source === 'club' ? 'hub.duelClub' : source === 'sim' ? 'hub.duelSim' : 'hub.draft')}${series ? ` ${series.cap ?? 'X'}` : ''}`
   const boostText = t('duel.boost', { n: boost.amount, what: boost.kind === 'game' ? boost.value : t(`element.${boost.value}` as TranslationKey) })
 
   if (!picked) {
@@ -77,20 +93,21 @@ export default function Duel({ source }: { source: DuelSource }) {
       <Screen title={title}>
         <p className="fd-hint">{t(source === 'sim' ? 'duel.simRules' : 'duel.rules', { n: SIM_CHANCES })}</p>
         <p className="duel-boost">{boostText}</p>
-        <SquadPicker onPick={s => { setPicked(s); setGame(g => g + 1) }} />
+        {series && <p className="fd-hint">{t('fatal.cap', { n: series.cap ?? 'X' })}</p>}
+        <SquadPicker cap={series?.cap ?? null} onPick={s => { setPicked(s); setGame(g => g + 1) }} />
       </Screen>
     )
   }
 
   const again = () => (source === 'draft' ? setPicked(null) : setGame(g => g + 1))
   return source === 'sim'
-    ? <SimMatch key={game} title={title} squad={picked} boostText={boostText} onAgain={again} />
-    : <FatalMatch key={game} title={title} squad={picked} boostText={boostText} onAgain={again} />
+    ? <SimMatch key={game} title={title} squad={picked} boostText={boostText} onAgain={again} onResult={onResult} />
+    : <FatalMatch key={game} title={title} squad={picked} boostText={boostText} onAgain={again} onResult={onResult} />
 }
 
 // ---------------------------------------------------------------- Mi club / Draft
 
-function FatalMatch({ title, squad, boostText, onAgain }: { title: string; squad: PickedSquad; boostText: string; onAgain: () => void }) {
+function FatalMatch({ title, squad, boostText, onAgain, onResult }: { title: string; squad: PickedSquad; boostText: string; onAgain: () => void; onResult: OnResult }) {
   const { t, locale } = useAppSettings()
   const [m, setM] = useState<Match>(() => {
     const me = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation)
@@ -98,7 +115,7 @@ function FatalMatch({ title, squad, boostText, onAgain }: { title: string; squad
     return { me, opp, myHand: me.cards, oppHand: opp.cards, rounds: [], first: Math.random() < 0.5 ? 0 : 1, pending: null }
   })
   const [sel, setSel] = useState<FatalCard | null>(null)
-  const [paid, setPaid] = useState<{ coins: number; xp: number } | null>(null)
+  const [paid, setPaid] = useState<Paid | null>(null)
 
   const i = m.rounds.length
   const over = i >= FATAL_ROUNDS
@@ -114,7 +131,7 @@ function FatalMatch({ title, squad, boostText, onAgain }: { title: string; squad
   }, [over, lead, m.pending])
 
   useEffect(() => {
-    if (result !== null && !paid) setPaid(payout(result))
+    if (result !== null && !paid) setPaid(payout(result, onResult))
   }, [result, paid])
 
   function finish(round: Round, mine: FatalCard, theirs: FatalCard) {
@@ -209,8 +226,9 @@ function FatalMatch({ title, squad, boostText, onAgain }: { title: string; squad
           )}
           <h2 className="fd-title">{result === 0 ? t('duel.win') : result === -1 ? t('duel.draw') : t('duel.loss')}</h2>
           {paid && <p className="reward-line">+<Coin className="w-5 h-5" /> {paid.coins} · +{paid.xp} XP</p>}
+          {paid?.note && <p className="fatal-note">{paid.note}</p>}
           <button type="button" className="sheet-cta" onClick={onAgain}>{t('duel.again')}</button>
-          <a href="#/" className="chip self-center">{t('players.back')}</a>
+          <a href="#/fatal" className="chip self-center">{t('fatal.back')}</a>
         </div>
       )}
     </Screen>
@@ -310,7 +328,7 @@ function RoundView({ round }: { round: Round }) {
 
 // ---------------------------------------------------------------- Simulación
 
-function SimMatch({ title, squad, boostText, onAgain }: { title: string; squad: PickedSquad; boostText: string; onAgain: () => void }) {
+function SimMatch({ title, squad, boostText, onAgain, onResult }: { title: string; squad: PickedSquad; boostText: string; onAgain: () => void; onResult: OnResult }) {
   const { t, locale } = useAppSettings()
   const [{ opp, chances }] = useState(() => {
     const me = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation)
@@ -318,7 +336,7 @@ function SimMatch({ title, squad, boostText, onAgain }: { title: string; squad: 
     return { opp: opp_, chances: simulate(me, opp_) }
   })
   const [shown, setShown] = useState(0)
-  const [paid, setPaid] = useState<{ coins: number; xp: number } | null>(null)
+  const [paid, setPaid] = useState<Paid | null>(null)
   const done = shown >= chances.length
   const s = simScore(chances.slice(0, shown))
 
@@ -335,7 +353,7 @@ function SimMatch({ title, squad, boostText, onAgain }: { title: string; squad: 
   useEffect(() => {
     if (done && !paid) {
       const f = simScore(chances)
-      setPaid(payout(f[0] === f[1] ? -1 : f[0] > f[1] ? 0 : 1))
+      setPaid(payout(f[0] === f[1] ? -1 : f[0] > f[1] ? 0 : 1, onResult))
     }
   }, [done, paid, chances])
 
@@ -353,8 +371,9 @@ function SimMatch({ title, squad, boostText, onAgain }: { title: string; squad: 
         <div className="duel-end">
           <h2 className="fd-title">{s[0] > s[1] ? t('duel.win') : s[0] === s[1] ? t('duel.draw') : t('duel.loss')}</h2>
           {paid && <p className="reward-line">+<Coin className="w-5 h-5" /> {paid.coins} · +{paid.xp} XP</p>}
+          {paid?.note && <p className="fatal-note">{paid.note}</p>}
           <button type="button" className="sheet-cta" onClick={onAgain}>{t('duel.again')}</button>
-          <a href="#/" className="chip self-center">{t('players.back')}</a>
+          <a href="#/fatal" className="chip self-center">{t('fatal.back')}</a>
         </div>
       )}
       <ol className="duel-log">

@@ -50,6 +50,25 @@ export interface ClubState {
   sbcDone: Record<string, number>
   /** Escudo del club (equipo de una colección completada) */
   crest: string | null
+  /** Fatal (Duelo): temporada (semana ISO), puntos por serie ("club-84", "sim-80"…), series hechas y división de draft */
+  fatal: FatalProgress
+  /** Fichas (tokens) sin canjear: id del sobre de la ficha → cuántas */
+  tokens: Record<string, number>
+  /** Sobre gratis: última apertura (ms), barra de bonus y mejor puntuación */
+  freePack: { last: number; bonus: number; best: number }
+  /** Sobres de hoy: día y cuántos se han cogido de cada uno */
+  today: { day: string | null; taken: Record<string, number> }
+  /** Códigos canjeados */
+  codes: string[]
+}
+
+export interface FatalProgress {
+  season: string | null
+  points: Record<string, number>
+  done: string[]
+  /** División del draft: 3, 2, 1 (y 0 = élite) */
+  division: number
+  divPoints: number
 }
 
 const KEY = 'ffi-club-v1'
@@ -60,6 +79,8 @@ const fresh = (): ClubState => ({
   coins: STARTER_COINS, xp: 0, cards: {}, packs: [...STARTER_PACKS], streak: 0, lastDaily: null,
   day: null, counters: {}, claimed: [], collections: [], squads: [],
   week: null, weekCounters: {}, weekClaimed: [], career: {}, careerClaimed: [], dailyCup: null, puzzles: [], hlBest: 0, sbcDone: {}, crest: null,
+  fatal: { season: null, points: {}, done: [], division: 3, divPoints: 0 },
+  tokens: {}, freePack: { last: 0, bonus: 0, best: 0 }, today: { day: null, taken: {} }, codes: [],
 })
 
 function read(): ClubState {

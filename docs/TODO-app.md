@@ -61,6 +61,14 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] Copas por saga (8 equipos: IE, GO, Ares/Orión, VR) y copa diaria de 4 equipos (mismos rivales para todos, 1 al día)
 - [x] Puzzles de draft: diario + 30 numerados; 17 cartas fijas → química objetivo (siempre con solución)
 
+## Como MADFUT (capturas del 29/09)
+- [x] Fatal: pantalla propia con Mi club y Simulación por 7 series (media máxima del once, 9 puntos, premio) y Draft por divisiones (3 → 2 → 1 → élite); temporada semanal
+- [x] Tienda con pestañas: Sobres de hoy (4 ofertas diarias con unidades y temporizador) + a la venta, Mis sobres, Fichas (ficha gratis al día)
+- [x] Sobre gratis de 9 cartas flojas cada 10 min, barra de bonus (500 pts → sobre oro) y récord
+- [x] Códigos canjeables y copia de seguridad (exportar / importar el club)
+- [x] Números de duelo con la escala de MADFUT (el fuerte, media − 1 a − 3; nunca por encima)
+- [ ] Intercambios (necesita cuentas, fase 6/7)
+
 ## Herramientas
 - [x] CRUD oculto (`#/admin` o 7 toques en el logo): cartas, stats, números de duelo, técnicas; crear/borrar; exportar a `data/card_edits.json` (build.py lo aplica)
 

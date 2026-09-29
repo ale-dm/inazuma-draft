@@ -4,11 +4,14 @@ import { addCoins, addPack, getClub, isoWeek, today, updateClub } from './club'
 export interface Reward {
   coins?: number
   pack?: string
+  /** Ficha (token): se canjea en la tienda por su sobre */
+  token?: string
 }
 
 export function giveReward(r: Reward) {
   if (r.coins) addCoins(r.coins)
   if (r.pack) addPack(r.pack)
+  if (r.token) updateClub(s => ({ ...s, tokens: { ...s.tokens, [r.token!]: (s.tokens[r.token!] ?? 0) + 1 } }))
 }
 
 /** Premio diario por entrar, según los días seguidos (vuelve a empezar tras el 7.º) */
