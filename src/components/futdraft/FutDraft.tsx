@@ -5,6 +5,7 @@ import { getFormation, nextEmptySlot, type FormationId, type LineupMap, type Slo
 import { MAX_TEAM_CHEM, chemistry, teamRating } from '../../lib/chemistry'
 import { BENCH, RESERVES, benchOptions, captainOptions, formationOptions, slotOptions } from '../../lib/fut-draft'
 import InaCard from '../InaCard'
+import CardInfo from '../CardInfo'
 import { StatsToggle } from '../club/Screen'
 import Sheet from '../hub/Sheet'
 import { CircleHelp, X } from 'lucide-react'
@@ -64,6 +65,8 @@ export default function FutDraft({ onComplete, onExit, resume, persist = false, 
   const def = formation ? getFormation(formation) : null
   const chem = useMemo(() => chemistry(lineup, captain ?? undefined), [lineup, captain])
   const [help, setHelp] = useState(false)
+  /** Carta con la ficha abierta (mantener pulsada en el capitán o al elegir) */
+  const [inspecting, setInspecting] = useState<Player | null>(null)
   const placed = Object.values(lineup).filter((p): p is Player => !!p)
   // la media cuenta titulares y suplentes; las reservas, no
   const rating = teamRating([...placed, ...bench.slice(0, BENCH).filter((p): p is Player => !!p)])
@@ -169,7 +172,9 @@ export default function FutDraft({ onComplete, onExit, resume, persist = false, 
           <section className="fd-step">
             <h2 className="fd-title">{t('fd.captain')}</h2>
             <div className="fd-options">
-              {captains.map(p => <InaCard key={p.id} player={p} onClick={() => chooseCaptain(p)} />)}
+              {captains.map(p => (
+                <InaCard key={p.id} player={p} onClick={() => chooseCaptain(p)} onLongPress={() => setInspecting(p)} />
+              ))}
             </div>
           </section>
         )}
@@ -228,8 +233,20 @@ export default function FutDraft({ onComplete, onExit, resume, persist = false, 
         onClose={() => setPicking(null)}
       >
         <div className="fd-options">
-          {(picking && options[picking] || []).map(p => <InaCard key={p.id} player={p} onClick={() => pick(p)} />)}
+          {(picking && options[picking] || []).map(p => (
+            <InaCard key={p.id} player={p} onClick={() => pick(p)} onLongPress={() => setInspecting(p)} />
+          ))}
         </div>
+      </Sheet>
+      <Sheet open={!!inspecting} title={inspecting?.name ?? ''} onClose={() => setInspecting(null)}>
+        {inspecting && (
+          <>
+            <div className="fd-options" style={{ marginBottom: '1rem' }}>
+              <InaCard player={inspecting} size="sm" />
+            </div>
+            <CardInfo player={inspecting} />
+          </>
+        )}
       </Sheet>
       <ChemHelp open={help} onClose={() => setHelp(false)} />
     </div>

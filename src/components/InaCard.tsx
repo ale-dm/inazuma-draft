@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import type { Player } from '../types'
 import { useAppSettings } from '../context/AppSettings'
 import { teamLogo, teamName } from '../data/catalog'
@@ -9,6 +9,7 @@ import { ElementIcon, PositionIcon } from './GameIcon'
 
 /** Cartas sin equipo propio: sin escudo */
 const NO_TEAM = new Set(['Unaffiliated', 'Sub Character'])
+const LONG_PRESS_MS = 420
 
 interface Props {
   player: Player
@@ -16,6 +17,8 @@ interface Props {
   showRating?: boolean
   size?: 'xs' | 'sm' | 'md' | 'lg'
   onClick?: () => void
+  /** Mantener pulsada: abre la ficha (stats y técnicas) sin ejecutar onClick */
+  onLongPress?: () => void
   /** Números de duelo dentro de la carta: true/false fuerza; sin poner, la preferencia (botón de las pantallas) */
   stats?: boolean
   /** Resalta uno de los 3 números (la acción del Duelo) */
@@ -27,9 +30,10 @@ interface Props {
 /**
  * Carta de Inazuma, con la distribución de las cartas de MADFUT/FC: a la izquierda media, puesto, afinidad y escudo
  * del equipo; la foto grande; el nombre abajo; a la derecha, los 3 números de duelo (verde ataque, azul control, rojo
- * defensa) o, si están ocultos, el juego de la carta. Color por rareza (Victory Road) y esquinas cortadas.
+ * defensa) o, si están ocultos, el juego de la carta. Color por rareza (Victory Road) y esquinas cortadas. Mantener
+ * pulsada abre la ficha (onLongPress) en vez de la acción normal de onClick.
  */
-export default function InaCard({ player, showRating = true, size = 'md', onClick, stats, highlight, values }: Props) {
+export default function InaCard({ player, showRating = true, size = 'md', onClick, onLongPress, stats, highlight, values }: Props) {
   const { locale } = useAppSettings()
   const pref = useCardStats()
   const [failed, setFailed] = useState(false)
@@ -41,10 +45,27 @@ export default function InaCard({ player, showRating = true, size = 'md', onClic
   const d = withStats ? values ?? duelStats(player) : null
   const small = size === 'xs'
 
+  const pressTimer = useRef<number | undefined>(undefined)
+  const longPressed = useRef(false)
+  const startPress = () => {
+    if (!onLongPress) return
+    longPressed.current = false
+    pressTimer.current = window.setTimeout(() => { longPressed.current = true; onLongPress() }, LONG_PRESS_MS)
+  }
+  const clearPress = () => window.clearTimeout(pressTimer.current)
+  const handleClick = () => {
+    if (longPressed.current) { longPressed.current = false; return }
+    onClick?.()
+  }
+
   return (
     <Tag
       type={onClick ? 'button' : undefined}
-      onClick={onClick}
+      onClick={onClick ? handleClick : undefined}
+      onPointerDown={onLongPress ? startPress : undefined}
+      onPointerUp={onLongPress ? clearPress : undefined}
+      onPointerLeave={onLongPress ? clearPress : undefined}
+      onContextMenu={onLongPress ? (e) => e.preventDefault() : undefined}
       className={`ic ic--${RARITY_CLASS[player.category]} ic--${size} ${withStats ? 'ic--stats' : ''}`}
       aria-label={`${player.name} · ${player.position}${showRating ? ` · ${player.ovr}` : ''}`}
     >
