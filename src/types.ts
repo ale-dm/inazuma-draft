@@ -47,6 +47,8 @@ export interface Player {
   id: string
   characterId: string
   name: string
+  /** Apodo real del juego (zukan), p.ej. "Axel" para Axel Blaze — el que se ve en la carta */
+  nickname: string | null
   game: GameId
   team: string
   /** 'base' o versión (Dark Emperors, Chrono Storm, Adult…) */

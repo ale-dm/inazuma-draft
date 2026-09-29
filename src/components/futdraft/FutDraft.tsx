@@ -123,7 +123,7 @@ export default function FutDraft({ onComplete, onExit, resume, persist = false, 
 
   const card = (s: Spot, p: Player) => (
     <span className={selected === s ? 'fd-selected' : undefined}>
-      <InaCard player={p} size="xs" onClick={() => tap(s)} />
+      <InaCard player={p} size="xs" onClick={() => tap(s)} onLongPress={() => setInspecting(p)} />
     </span>
   )
 
@@ -190,6 +190,7 @@ export default function FutDraft({ onComplete, onExit, resume, persist = false, 
               selected={selected && benchIndex(selected) < 0 ? (selected as SlotId) : null}
               onTapPlaced={id => tap(id)}
               onTapEmpty={id => openSpot(id)}
+              onLongPress={p => setInspecting(p)}
             />
 
             {full && (

@@ -1,5 +1,6 @@
 import type { FormationSlot, LineupMap, SlotId } from '../../lib/lineup'
 import type { Chemistry } from '../../lib/chemistry'
+import type { Player } from '../../types'
 import InaCard from '../InaCard'
 
 interface Props {
@@ -10,6 +11,7 @@ interface Props {
   selected?: SlotId | null
   onTapPlaced?: (id: SlotId) => void
   onTapEmpty?: (id: SlotId) => void
+  onLongPress?: (player: Player) => void
 }
 
 /** Coordenada y (0–100 de la formación) dentro del campo: margen arriba y el portero en su propia fila abajo */
@@ -25,7 +27,7 @@ export function ChemDots({ value }: { value: number }) {
 }
 
 /** Campo con la formación: cada puesto con su carta (o un hueco) y debajo la etiqueta de puesto + química */
-export default function Pitch({ slots, lineup, chem, captain, selected, onTapPlaced, onTapEmpty }: Props) {
+export default function Pitch({ slots, lineup, chem, captain, selected, onTapPlaced, onTapEmpty, onLongPress }: Props) {
   return (
     <div className="fd-pitch">
       {slots.map(s => {
@@ -34,7 +36,12 @@ export default function Pitch({ slots, lineup, chem, captain, selected, onTapPla
           <div key={s.id} className="fd-slot" style={{ left: `${s.x}%`, top: `${fieldY(s.y)}%` }}>
             {p ? (
               <span className={selected === s.id ? 'fd-selected' : undefined}>
-                <InaCard player={p} size="xs" onClick={onTapPlaced ? () => onTapPlaced(s.id) : undefined} />
+                <InaCard
+                  player={p}
+                  size="xs"
+                  onClick={onTapPlaced ? () => onTapPlaced(s.id) : undefined}
+                  onLongPress={onLongPress ? () => onLongPress(p) : undefined}
+                />
               </span>
             ) : (
               <button type="button" className="fd-empty" onClick={onTapEmpty ? () => onTapEmpty(s.id) : undefined}>+</button>

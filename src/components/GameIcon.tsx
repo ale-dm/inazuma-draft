@@ -1,4 +1,4 @@
-import type { Element, Position, Technique } from '../types'
+import type { Element, GameId, Position, Technique } from '../types'
 
 /**
  * Iconos de Inazuma Eleven: Victory Road (public/icons/, sacados de las wikis española e inglesa de Fandom).
@@ -10,6 +10,12 @@ const POSITION: Record<Position, string> = { GK: 'pos-gk', DF: 'pos-df', MF: 'po
 const ELEMENT: Record<Element, string> = { fire: 'el-fire', air: 'el-air', wood: 'el-wood', earth: 'el-earth' }
 const TECH: Record<Technique['type'], string> = { Shoot: 'tech-shoot', Dribble: 'tech-dribble', Block: 'tech-block', Catch: 'tech-catch' }
 const SPECIAL = { keshin: 'sp-keshin', mixi: 'sp-mixi', soul: 'sp-soul' } as const
+/** Pestañas "onglet_seriesNN" de los assets del juego (mismo orden que GAMES) */
+const SERIES: Record<GameId, string> = {
+  IE1: 'game-ie1', IE2: 'game-ie2', IE3: 'game-ie3',
+  GO1: 'game-go1', GO2: 'game-go2', GO3: 'game-go3',
+  ARES: 'game-ares', ORION: 'game-orion', VR: 'game-vr',
+}
 
 interface Props {
   className?: string
@@ -37,4 +43,8 @@ export function TechniqueIcon({ type, traits, ...p }: { type: Technique['type'];
 
 export function SpecialIcon({ type, ...p }: { type: keyof typeof SPECIAL } & Props) {
   return <Icon file={SPECIAL[type]} alt={type} {...p} />
+}
+
+export function SeriesIcon({ game, ...p }: { game: GameId } & Props) {
+  return <Icon file={SERIES[game]} alt={game} {...p} />
 }

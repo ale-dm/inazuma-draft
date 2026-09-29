@@ -5,7 +5,7 @@ import { teamLogo, teamName } from '../data/catalog'
 import { RARITY_CLASS } from '../lib/packs'
 import { duelStats, type DuelKey, type DuelStats } from '../lib/duel'
 import { useCardStats } from '../lib/card-prefs'
-import { ElementIcon, PositionIcon } from './GameIcon'
+import { ElementIcon, PositionIcon, SeriesIcon } from './GameIcon'
 
 /** Cartas sin equipo propio: sin escudo */
 const NO_TEAM = new Set(['Unaffiliated', 'Sub Character'])
@@ -39,7 +39,8 @@ export default function InaCard({ player, showRating = true, size = 'md', onClic
   const [failed, setFailed] = useState(false)
   const [badgeFailed, setBadgeFailed] = useState(false)
   const Tag = onClick ? 'button' : 'div'
-  const surname = player.name.split(' ').slice(-1)[0]
+  const displayName = player.nickname ?? player.name
+  const surname = displayName.split(' ').slice(-1)[0]
   const logo = !NO_TEAM.has(player.team) && !badgeFailed ? teamLogo(player.team, player.game) : undefined
   const withStats = (stats ?? pref) && showRating
   const d = withStats ? values ?? duelStats(player) : null
@@ -86,10 +87,10 @@ export default function InaCard({ player, showRating = true, size = 'md', onClic
           ))}
         </span>
       ) : (
-        !small && <span className="ic__chip">{player.game}</span>
+        !small && <span className="ic__chip"><SeriesIcon game={player.game} className="ic__chip-icon" /></span>
       )}
       <span className="ic__foot">
-        <span className="ic__name">{small ? surname : player.name}</span>
+        <span className="ic__name">{small ? surname : displayName}</span>
         {!small && (withStats || !logo) && (
           <span className="ic__team">{!logo && !NO_TEAM.has(player.team) ? `${teamName(player.team, locale)} · ` : ''}{player.game}</span>
         )}

@@ -387,9 +387,13 @@
 .ic__stat--def { background: linear-gradient(180deg, #f2665c, #b8201a); }
 .ic__stat.is-on { box-shadow: inset 0 0 0 calc(var(--w) * .025) #fff; filter: brightness(1.15); }
 .ic__chip {
-  position: absolute; right: 5%; top: 14%; z-index: 1; padding: calc(var(--w) * .012) calc(var(--w) * .035);
+  position: absolute; right: 5%; top: 14%; z-index: 1; padding: calc(var(--w) * .022);
+  display: flex; align-items: center; justify-content: center;
   border-radius: calc(var(--w) * .03); font-weight: 800; font-size: calc(var(--w) * .085); line-height: 1.1;
   background: rgba(0, 0, 0, .35); border: calc(var(--w) * .01) solid rgba(255, 255, 255, .55); text-shadow: 0 1px 1px rgba(0, 0, 0, .5);
+}
+.ic__chip-icon {
+  width: calc(var(--w) * .16); height: calc(var(--w) * .16); object-fit: contain; filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .5));
 }
 .ic__foot {
   position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: .05em;
