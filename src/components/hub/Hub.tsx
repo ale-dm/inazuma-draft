@@ -16,7 +16,6 @@ import SettingsSheet from './SettingsSheet'
 import { loadDraft } from '../../lib/saved-draft'
 import BackupSheet from './BackupSheet'
 import { doneCount, fatalProgress } from '../../lib/fatal-series'
-import { freePackReadyIn } from '../../lib/store-extra'
 
 interface Props {
   mode: 'classic' | 'memory'
@@ -60,7 +59,7 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
     <div className="hub">
       <header className="hub-top safe-top">
         <div className="hub-top__row">
-          <button type="button" className={`hub-free ${freePackReadyIn() === 0 ? 'is-ready' : ''}`} onClick={go(FREE_HASH)} aria-label={t('free.title')}>
+          <button type="button" className="hub-free is-ready" onClick={go(FREE_HASH)} aria-label={t('free.title')}>
             <span className="hub-free__pack">9</span>
           </button>
           <span className="hub-logo" onClick={() => { taps.current += 1; if (taps.current >= 7) { taps.current = 0; window.location.hash = ADMIN_HASH } }}>FFI <b>6-0</b></span>
@@ -87,7 +86,7 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
       >
         {/* 1 · Sobres (como el "Pack" de MADFUT) + Duelo + modos */}
         <section className="hub-page hub-page--teal">
-          <HeroTile title={t('hub.packs')} sub={club.packs.length ? t('store.saved', { n: club.packs.length }) : undefined} image={heroes.packs} onClick={go(STORE_HASH)} />
+          <HeroTile title={t('hub.packs')} sub={t('free.sub')} image={heroes.packs} onClick={go(FREE_HASH)} />
           <button type="button" className="tile tile--wide hub-duel" onClick={go(FATAL_HASH)}>
             <span className="hub-duel__title">FATAL</span>
             <span className="hub-duel__cols">

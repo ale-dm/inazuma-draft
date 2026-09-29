@@ -10,8 +10,8 @@ import type { Player } from '../types'
  * - Sobres de hoy: 4 ofertas que cambian cada día (a medianoche UTC), con unidades limitadas; unas gratis y otras
  *   con monedas.
  * - Fichas (tokens): premios de Fatal y objetivos que se canjean por su sobre; una ficha gratis al día.
- * - Sobre gratis: 9 cartas flojas cada FREE_EVERY minutos; sus puntos llenan la barra de bonus (a BONUS_GOAL, un sobre
- *   de oro) y se guarda la mejor puntuación.
+ * - Sobre gratis: 9 cartas flojas, sin límite (como el Free Pack de MADFUT); sus puntos llenan la barra de bonus (a
+ *   BONUS_GOAL, un sobre de oro) y se guarda la mejor puntuación.
  */
 export interface DailyOffer {
   id: string
@@ -91,20 +91,14 @@ export function claimFreeToken(): boolean {
 
 // ---------------------------------------------------------------- sobre gratis
 
-export const FREE_EVERY = 10
 export const BONUS_GOAL = 500
 export const BONUS_REWARD: Reward = { pack: 'gold' }
 
 /** Puntos de un sobre gratis: lo que cada carta pasa de 50 de media */
 export const packPoints = (cards: Player[]) => cards.reduce((s, p) => s + Math.max(0, p.ovr - 50), 0)
 
-export function freePackReadyIn(now = Date.now()): number {
-  return Math.max(0, getClub().freePack.last + FREE_EVERY * 60000 - now)
-}
-
 /** Abre el sobre gratis: cartas al club, puntos a la barra (a BONUS_GOAL, sobre de oro) y récord */
-export function openFreePack(): { cards: Player[]; points: number; bonus: boolean } | null {
-  if (freePackReadyIn() > 0) return null
+export function openFreePack(): { cards: Player[]; points: number; bonus: boolean } {
   const cards = openPack(getPack('free'))
   const points = packPoints(cards)
   addCards(cards.map(p => p.id))

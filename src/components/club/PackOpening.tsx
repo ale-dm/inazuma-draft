@@ -3,45 +3,31 @@ import type { Player } from '../../types'
 import { useAppSettings } from '../../context/AppSettings'
 import { addCards, getClub, takePack, track } from '../../lib/club'
 import { getPack, openPack } from '../../lib/packs'
-import { playSfx } from '../../lib/sfx'
 import InaCard from '../InaCard'
+import Walkout, { bestOf } from './Walkout'
 
 /**
- * Apertura de un sobre guardado: sobre cerrado → tocar → las cartas salen una a una (la mejor, al final, con brillo
- * si es Leyenda o Élite) → resumen con las nuevas marcadas.
+ * Apertura de un sobre guardado: sobre cerrado → tocar → sale la mejor carta poco a poco (afinidad, puesto, escudo y
+ * carta, como el walkout de FIFA) → tocar → todas las cartas de golpe, de mayor a menor media, con las nuevas marcadas.
  */
 export default function PackOpening({ packId, onClose }: { packId: string; onClose: () => void }) {
   const { t } = useAppSettings()
   const pack = getPack(packId)
   const [cards, setCards] = useState<Player[] | null>(null)
   const [owned] = useState(() => new Set(Object.keys(getClub().cards)))
-  const [shown, setShown] = useState(0)
+  const [done, setDone] = useState(false)
 
   function open() {
     if (!takePack(packId)) return onClose()
-    const got = openPack(pack)
-    for (const p of got) if (p.image) new Image().src = p.image      // las fotos llegan antes de enseñar cada carta
+    const got = openPack(pack).sort((a, b) => b.ovr - a.ovr)
+    for (const p of got) if (p.image) new Image().src = p.image      // las fotos llegan antes del resumen
     addCards(got.map(p => p.id))
     track('packs')
     setCards(got)
-    setShown(1)
-  }
-
-  const done = !!cards && shown >= cards.length
-  const current = cards?.[shown - 1]
-  const walkout = current && (current.category === 'Legendary Player' || current.category === 'Top Player')
-
-  function next() {
-    if (!cards) return
-    if (shown < cards.length) {
-      setShown(shown + 1)
-      const nxt = cards[shown]
-      if (nxt && (nxt.category === 'Legendary Player')) playSfx('qualify')
-    }
   }
 
   return (
-    <div className="pack-stage" onClick={cards && !done ? next : undefined}>
+    <div className="pack-stage">
       {!cards && (
         <button type="button" className={`pack pack--${pack.tone} pack--sealed`} onClick={open}>
           <span className="pack__name">{t(pack.nameKey)}</span>
@@ -50,13 +36,7 @@ export default function PackOpening({ packId, onClose }: { packId: string; onClo
         </button>
       )}
 
-      {cards && !done && current && (
-        <div key={shown} className={`pack-reveal ${walkout ? 'pack-reveal--walkout' : ''}`}>
-          <InaCard player={current} size="lg" />
-          {!owned.has(current.id) && <span className="new-badge">{t('pack.new')}</span>}
-          <p className="pack-reveal__hint">{shown}/{cards.length} · {t('pack.next')}</p>
-        </div>
-      )}
+      {cards && !done && <Walkout player={bestOf(cards)} onDone={() => setDone(true)} />}
 
       {done && cards && (
         <div className="pack-summary">

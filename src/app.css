@@ -899,3 +899,70 @@ button.ic:active { transform: scale(.95); }
 .obj { padding: .6rem .75rem; }
 .obj__text small { font-size: .8rem; }
 .sheet-label { font-size: .78rem; }
+
+/* ---------------------------------------------------------------- diseño unificado: las pantallas antiguas con las piezas nuevas */
+.hub { --iz-orange: var(--hub-neon); }
+.hub .seg-group { border-radius: 99px; border: 1px solid rgba(255, 255, 255, .18); background: rgba(255, 255, 255, .04); padding: 2px; gap: 2px; }
+.hub .seg-group .seg-btn { border-radius: 99px; }
+.hub .seg-group .seg-btn + .seg-btn { border-left: 0; }
+.hub .seg-btn { font-family: 'Nunito Sans', sans-serif; font-weight: 800; }
+.hub .seg-btn--sm { font-size: .75rem; padding: .3rem .7rem; }
+.hub .seg-btn--on { background: rgba(198, 255, 61, .16); color: var(--hub-neon) !important; border-color: transparent; box-shadow: inset 0 0 0 1px var(--hub-neon); }
+.hub .seg-btn--off { background: transparent; color: var(--hub-ink); border-color: transparent; }
+.hub .iz-field { min-height: 2.5rem; border-radius: 12px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .18); font-size: .9rem; }
+.hub .iz-field:focus { outline: none; border-color: var(--hub-cyan); box-shadow: 0 0 0 2px rgba(61, 242, 255, .25); }
+.hub select.iz-field option { background: #0b1a2c; }
+.hub .iz-label { font-size: .68rem; font-weight: 800; color: var(--hub-dim); }
+.hub .team-tile { border-radius: 16px; border: 1px solid rgba(255, 255, 255, .12); background: rgba(255, 255, 255, .05); padding: .7rem .8rem; }
+.hub .team-tile:hover { border-color: var(--hub-neon); }
+.hub .text-accent { color: var(--hub-neon); }
+/* rarezas con los colores de Victory Road (los mismos que la carta) */
+.hub .cat-legendary { background: linear-gradient(90deg, #ff7a1a, #ffb03d); color: #2a1200; }
+.hub .cat-top { background: linear-gradient(90deg, #e8c21a, #ffe566); color: #2a2000; }
+.hub .cat-advanced { background: linear-gradient(90deg, #8a3dff, #b25cff); color: #fff; }
+.hub .cat-growing { background: linear-gradient(90deg, #1d6fd6, #3aa0ff); color: #fff; }
+.hub .cat-common { background: linear-gradient(90deg, #1f8a3a, #4fd66a); color: #06210d; }
+/* explorador de jugadores */
+.explorer-count { background: rgba(255, 255, 255, .15) !important; }
+.explorer-search { display: flex; gap: .5rem; align-items: center; }
+.explorer-search .chip { min-height: 2.5rem; }
+.explorer-search .chip b { font-size: .75rem; }
+.explorer-filters { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem .6rem; padding: .7rem; border-radius: 16px; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .1); }
+.explorer-bar { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; font-size: .85rem; font-weight: 800; color: var(--hub-dim); }
+.explorer-bar > span { margin-right: auto; }
+/* campo de plantillas y draft: cartas algo más grandes cuando hay sitio */
+.fd-pitch .fd-slot .ic { --w: clamp(3.7rem, 16.5vw, 4.6rem); }
+.fd-pitch .fd-empty { width: clamp(3.4rem, 15vw, 4.2rem); }
+
+/* ---------------------------------------------------------------- walkout: la mejor carta del sobre sale poco a poco */
+.walkout {
+  --wc: #4fd66a; position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem;
+  overflow: hidden; cursor: pointer; outline: none;
+  background: radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--wc) 30%, transparent), transparent 60%), #03080f;
+}
+.walkout--legendary { --wc: #ff8a1a; }
+.walkout--top { --wc: #ffd23d; }
+.walkout--advanced { --wc: #b25cff; }
+.walkout--growing { --wc: #3aa0ff; }
+.walkout__beams {
+  position: absolute; inset: -50%; pointer-events: none; opacity: .55;
+  background: repeating-conic-gradient(from 0deg, transparent 0 8deg, color-mix(in srgb, var(--wc) 35%, transparent) 9deg 11deg, transparent 12deg 24deg);
+  animation: spin 14s linear infinite;
+  -webkit-mask-image: radial-gradient(circle, #000 10%, transparent 55%); mask-image: radial-gradient(circle, #000 10%, transparent 55%);
+}
+.walkout__step {
+  position: relative; display: flex; flex-direction: column; align-items: center; gap: .8rem; color: #fff; text-align: center;
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-style: italic; text-transform: uppercase;
+  animation: walk-in .55s cubic-bezier(.2, .9, .3, 1.25);
+}
+.walkout__step b { font-size: 1.7rem; letter-spacing: .04em; text-shadow: 0 0 18px var(--wc); }
+.walkout__el { width: 7rem; height: 7rem; filter: drop-shadow(0 0 24px var(--wc)); }
+.walkout__pos { font-size: 6rem !important; line-height: 1; color: #fff; text-shadow: 0 0 30px var(--wc), 0 4px 0 rgba(0, 0, 0, .4) !important; }
+.walkout__crest { width: 8rem; height: 8rem; object-fit: contain; filter: drop-shadow(0 0 22px var(--wc)); }
+.walkout__step--card { filter: drop-shadow(0 0 34px var(--wc)); animation: card-in .6s cubic-bezier(.2, .9, .3, 1.3); }
+.walkout__hint { position: absolute; bottom: calc(1.5rem + env(safe-area-inset-bottom, 0)); font-size: .85rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--hub-dim); }
+@keyframes walk-in { from { transform: scale(2.2); opacity: 0; filter: blur(6px); } to { transform: none; opacity: 1; filter: none; } }
+@media (prefers-reduced-motion: reduce) { .walkout__beams, .walkout__step { animation: none; } }
+button.free-pack { margin: 1rem auto 0; }
+.free-best { display: flex; align-items: baseline; gap: .35rem; font-family: 'Barlow Condensed', sans-serif; font-style: italic; }
+.free-best .free-pts { font-size: 2.4rem; font-weight: 900; line-height: 1; color: #9fb3c8; }

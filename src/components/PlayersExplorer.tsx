@@ -3,7 +3,8 @@ import type { Category, Element, GameId, Player, Position, Staff, StaffRole } fr
 import { CATEGORIES, ELEMENTS, GAMES, POSITIONS, cardTeamLabel, getAllPlayers, getStaff, teamName } from '../data/catalog'
 import { GAME_LABEL } from '../data/games'
 import { useAppSettings } from '../context/AppSettings'
-import PlayerCard from './PlayerCard'
+import InaCard from './InaCard'
+import { SlidersHorizontal } from 'lucide-react'
 import PlayerAvatar from './PlayerAvatar'
 import PlayerDetail from './PlayerDetail'
 import { CATEGORY_CLASS } from '../lib/categories'
@@ -25,24 +26,14 @@ export default function PlayersExplorer() {
   const [detail, setDetail] = useState<Player | null>(null)
 
   return (
-    <div className="p-3 sm:p-4 md:p-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="iz-panel mb-4">
-          <div className="iz-panel-head flex flex-wrap items-center justify-between gap-2">
-            <span>{t('players.title')} <span className="opacity-70 font-normal normal-case tracking-normal">· {all.length}</span></span>
-            <div className="seg-group">
-              {(['search', 'games', 'staff'] as const).map(k => (
-                <button
-                  key={k}
-                  type="button"
-                  onClick={() => setTab(k)}
-                  className={`seg-btn seg-btn--sm min-h-[2rem] px-3 ${tab === k ? 'seg-btn--on' : 'seg-btn--off'}`}
-                >
-                  {t(`players.tab.${k}`)}
-                </button>
-              ))}
-            </div>
-          </div>
+    <div className="px-3 pb-6 sm:px-4">
+      <div className="max-w-3xl mx-auto flex flex-col gap-3">
+        <div className="store-tabs">
+          {(['search', 'games', 'staff'] as const).map(k => (
+            <button key={k} type="button" onClick={() => setTab(k)} className={tab === k ? 'on' : ''}>
+              {t(`players.tab.${k}`)}{k === 'search' && <em className="explorer-count">{all.length}</em>}
+            </button>
+          ))}
         </div>
 
         {tab === 'search' && <SearchView players={all} onOpen={setDetail} />}
@@ -87,15 +78,19 @@ function SearchView({ players, onOpen }: { players: Player[]; onOpen: (p: Player
     setQuery(''); setPos(''); setCat(''); setGame(''); setElement(''); setTeam(''); setMinOvr(40); setSort('ovr'); setLimit(PAGE)
   }
   const onFilter = <T,>(set: (v: T) => void) => (v: T) => { set(v); setLimit(PAGE) }
+  const [showFilters, setShowFilters] = useState(false)
+  const active = [pos, cat, game, element, team].filter(Boolean).length + (minOvr > 40 ? 1 : 0)
 
   return (
     <>
-      <div className="iz-panel mb-4">
-        <div className="iz-panel-body grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2 sm:gap-3 items-end">
-          <label className="col-span-2 sm:col-span-4 lg:col-span-2">
-            <span className="iz-label">{t('players.tab.search')}</span>
-            <input className="iz-field" value={query} placeholder={t('players.search')} onChange={e => onFilter(setQuery)(e.target.value)} />
-          </label>
+      <div className="explorer-search">
+        <input className="iz-field" value={query} placeholder={t('players.search')} onChange={e => onFilter(setQuery)(e.target.value)} />
+        <button type="button" className={`chip ${showFilters || active ? 'on' : ''}`} onClick={() => setShowFilters(v => !v)} aria-expanded={showFilters}>
+          <SlidersHorizontal size={15} />{active > 0 && <b>{active}</b>}
+        </button>
+      </div>
+      {showFilters && (
+        <div className="explorer-filters">
           <Select label={t('players.filter.position')} value={pos} onChange={onFilter(setPos)}
             options={POSITIONS.map(p => [p, p])} />
           <Select label={t('players.filter.category')} value={cat} onChange={onFilter(setCat)}
@@ -108,23 +103,22 @@ function SearchView({ players, onOpen }: { players: Player[]; onOpen: (p: Player
             options={teams.map(tm => [tm, teamName(tm, locale)])} />
           <label>
             <span className="iz-label">{t('players.filter.minOvr')} · <strong className="tabular-nums">{minOvr}</strong></span>
-            <input type="range" min={40} max={94} value={minOvr} className="w-full accent-[var(--iz-orange)]"
+            <input type="range" min={40} max={94} value={minOvr} className="w-full accent-[var(--hub-neon)]"
               onChange={e => onFilter(setMinOvr)(Number(e.target.value))} />
           </label>
         </div>
-        <div className="px-4 pb-3 flex flex-wrap items-center gap-2 text-xs text-iz-muted">
-          <span className="font-bold text-iz-text">{t('players.results', { n: results.length })}</span>
-          <span className="ml-auto">{t('players.sort')}:</span>
-          <div className="seg-group">
-            {(['ovr', 'name', 'no'] as const).map(s => (
-              <button key={s} type="button" onClick={() => setSort(s)}
-                className={`seg-btn seg-btn--sm min-h-[1.75rem] px-2 ${sort === s ? 'seg-btn--on' : 'seg-btn--off'}`}>
-                {t(`players.sort.${s}`)}
-              </button>
-            ))}
-          </div>
-          <button type="button" onClick={reset} className="btn-secondary text-[0.65rem] py-1 px-2">{t('players.reset')}</button>
+      )}
+      <div className="explorer-bar">
+        <span>{t('players.results', { n: results.length })}</span>
+        <div className="seg-group">
+          {(['ovr', 'name', 'no'] as const).map(s => (
+            <button key={s} type="button" onClick={() => setSort(s)}
+              className={`seg-btn seg-btn--sm ${sort === s ? 'seg-btn--on' : 'seg-btn--off'}`}>
+              {t(`players.sort.${s}`)}
+            </button>
+          ))}
         </div>
+        {active > 0 && <button type="button" onClick={reset} className="chip">{t('players.reset')}</button>}
       </div>
 
       {results.length === 0 ? (
@@ -253,19 +247,12 @@ function GamesView({ players, onOpen }: { players: Player[]; onOpen: (p: Player)
 }
 
 function PlayerGrid({ players, onOpen }: { players: Player[]; onOpen: (p: Player) => void }) {
-  const { locale } = useAppSettings()
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2.5">
+    <div className="card-grid">
       {players.map(p => (
-        <div key={p.id} className="relative">
-          <PlayerCard player={p} mode="classic" onClick={() => onOpen(p)}
-            teamLabel={`${cardTeamLabel(p, locale)} · ${p.game}`} />
-          <span className={`cat-pill ${CATEGORY_CLASS[p.category]} absolute bottom-2 right-2`}>{p.category.replace(' Player', '')}</span>
-          {p.no != null && (
-            <span className="absolute top-2 right-2 text-[0.6rem] tabular-nums text-iz-muted font-heading"
-              title={p.zukanNo === p.no ? 'zukan.inazuma.jp' : undefined}>Nº {p.no}</span>
-          )}
-        </div>
+        <span key={p.id} className="card-grid__item">
+          <InaCard player={p} size="sm" onClick={() => onOpen(p)} />
+        </span>
       ))}
     </div>
   )
