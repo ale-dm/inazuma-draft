@@ -321,3 +321,5 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
   permite editar TP y potencias.
 
 - Fatal Sim (MADFUT): SimMatch con marcador, línea de ocasiones y paneles de control/ataque; ruta `#/duelo/draftsim`; ver docs/fatal-sim.md.
+
+- Guía de balance (docs/balance-guide.md): cartas, química, modos, series, draft, economía, sobres, TP y receta para medir.

@@ -104,3 +104,5 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 ## Fase 7 · Social
 - [ ] Intercambios con lista de deseos y mensajes predefinidos
 - [ ] Ranking semanal de draft; copas online
+
+- [x] Guía de balance con todos los números del juego y dónde tocarlos: [balance-guide.md](balance-guide.md)

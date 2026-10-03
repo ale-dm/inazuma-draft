@@ -1,5 +1,7 @@
 # Duelo
 
+Todos los números y dónde cambiarlos: [balance-guide.md](balance-guide.md).
+
 Modo de la fase 4 (rama `app`). La carta del duelo es `src/components/DuelCard.tsx` (la carta normal con los 3
 números siempre a la vista y la diferencia por química/boost).
 
@@ -32,10 +34,7 @@ Donnarumma 89: 39/34/88).
   control contra control. Empate → suma de los 3 números; si sigue igual, nadie puntúa.
 - **Desempate**: si tras las 10 rondas hay empate o 1 punto de diferencia, se enfrentan las cartas que quedan (suma de
   los 3): gana quien saque más de 5; si no, empate.
-- **Simulación** (con una de Mis plantillas, sin tocar nada): 6 ocasiones. En cada una, 1 de 3 cartas de control al
-  azar de cada equipo (medios, laterales y extremos) se disputan el balón (empate = fuera); quien gana ataca con 1 de 3
-  atacantes (delanteros; si hay menos de 3, se completa con medios) contra 1 de 3 defensas del otro (centrales,
-  laterales y portero). Gol si el ataque es mayor.
+- **Simulación** (Fatal Sim y series de Simulación): partido pasivo de 90 minutos con 12 ocasiones; ver [fatal-sim.md](fatal-sim.md).
 - **Pantalla** (como la batalla de MADFUT): el campo con tu once y sus números; deslizando (o con los botones de
   abajo) el del rival con las cartas **boca abajo**, cada una con una sola pista al azar (afinidad, juego o escudo, en
   lugar de bandera, liga o club). Las cartas jugadas se quedan en gris (las del rival, ya descubiertas). Arriba, los
