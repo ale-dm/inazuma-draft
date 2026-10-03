@@ -20,7 +20,9 @@ import { pickBestXI } from '../data/ffi-rosters'
  * una afinidad.
  */
 export const FATAL_ROUNDS = 10
-export const SIM_CHANCES = 6
+export const SIM_CHANCES = 12
+/** Ocasiones por parte: el partido son 2 partes de 45 minutos */
+export const SIM_PER_HALF = SIM_CHANCES / 2
 /** Diferencia mínima en el desempate para ganar (si no, empate) */
 export const TIEBREAK_MARGIN = 5
 
@@ -270,26 +272,50 @@ export interface SimChance {
   shot?: [FatalCard, FatalCard]
   /** Las 3 candidatas de quien ataca y las 3 de quien defiende: [atacantes, defensores] */
   shotPools?: [FatalCard[], FatalCard[]]
+  /** Probabilidad de gol del ataque (la que enseña el panel) */
+  chance?: number
   goal?: boolean
-  /** Minuto del reloj de la simulación */
+  /** Minuto del partido (1–44 primera parte, 46–89 segunda) */
   minute: number
 }
 
-/** Minuto de cada ocasión (el reloj de la simulación es corto: 6 ocasiones en unos 20 minutos) */
-export const SIM_MINUTES = [3, 7, 10, 14, 17, 20]
+/** Minutos de las ocasiones de una parte (ordenados, sin repetir): de `from` a `to` */
+function halfMinutes(from: number, to: number, rnd: () => number): number[] {
+  const set = new Set<number>()
+  while (set.size < SIM_PER_HALF) set.add(from + Math.floor(rnd() * (to - from + 1)))
+  return [...set].sort((x, y) => x - y)
+}
+
+/**
+ * Probabilidad de gol de un ataque (0.08–0.8): curva sobre ataque − defensa con ventaja para la defensa. A igualdad ~35 %,
+ * +10 → ~65 %, −10 → ~12 %. Con 12 ocasiones salen unos 2 goles por equipo y el equipo mejor gana más, pero no siempre.
+ */
+export const goalChance = (att: number, def: number) => Math.min(0.8, Math.max(0.08, 1 / (1 + Math.exp(-(att - def - 5) / 9))))
+
+/**
+ * La IA se adapta a ti (como en MADFUT): sus tres números (ataque, control, defensa) se igualan a los tuyos (`pull` = parte
+ * de la distancia que cierra), así el partido es parejo y lo deciden las cartas que salen, el control y la suerte.
+ */
+export function adaptRival(me: FatalTeam, opp: FatalTeam, pull = 1): FatalTeam {
+  const a = simTeamStats(me), b = simTeamStats(opp)
+  const d = { att: Math.round((a.att - b.att) * pull), con: Math.round((a.con - b.con) * pull), def: Math.round((a.def - b.def) * pull) }
+  return { ...opp, cards: opp.cards.map(c => ({ ...c, st: { att: c.st.att + d.att, con: c.st.con + d.con, def: c.st.def + d.def } })) }
+}
 
 export function simulate(me: FatalTeam, opp: FatalTeam, rnd = Math.random): SimChance[] {
   const out: SimChance[] = []
+  const minutes = [...halfMinutes(1, 44, rnd), ...halfMinutes(46, 89, rnd)]
   for (let i = 0; i < SIM_CHANCES; i++) {
     const a = draw3(controllers(me).length ? controllers(me) : me.cards, rnd)
     const b = draw3(controllers(opp).length ? controllers(opp) : opp.cards, rnd)
     const ball = a.card.st.con === b.card.st.con ? -1 : a.card.st.con > b.card.st.con ? 0 : 1
-    const base = { control: [a.card, b.card] as [FatalCard, FatalCard], controlPools: [a.pool, b.pool] as [FatalCard[], FatalCard[]], ball: ball as 0 | 1 | -1, minute: SIM_MINUTES[i] }
+    const base = { control: [a.card, b.card] as [FatalCard, FatalCard], controlPools: [a.pool, b.pool] as [FatalCard[], FatalCard[]], ball: ball as 0 | 1 | -1, minute: minutes[i] }
     if (ball === -1) { out.push(base); continue }
     const [att, def] = ball === 0 ? [attackers(me), defenders(opp)] : [attackers(opp), defenders(me)]
     const x = draw3(att.length ? att : (ball === 0 ? me : opp).cards, rnd)
     const y = draw3(def.length ? def : (ball === 0 ? opp : me).cards, rnd)
-    out.push({ ...base, shot: [x.card, y.card], shotPools: [x.pool, y.pool], goal: x.card.st.att > y.card.st.def })
+    const chance = goalChance(x.card.st.att, y.card.st.def)
+    out.push({ ...base, shot: [x.card, y.card], shotPools: [x.pool, y.pool], chance, goal: rnd() < chance })
   }
   return out
 }

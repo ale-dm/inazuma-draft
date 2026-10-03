@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useAppSettings } from '../../context/AppSettings'
 import { teamLabel } from '../../data/catalog'
 import { teamRating } from '../../lib/chemistry'
-import { SIM_MINUTES, fatalTeam, rivalTeam, simScore, simTeamStats, simulate, type FatalCard, type SimChance } from '../../lib/fatal'
+import { SIM_PER_HALF, adaptRival, fatalTeam, rivalTeam, simScore, simTeamStats, simulate, type FatalCard, type SimChance } from '../../lib/fatal'
 import { playSfx } from '../../lib/sfx'
 import DuelCard from '../DuelCard'
 import Coin from '../Coin'
@@ -11,12 +11,18 @@ import type { PickedSquad } from './SquadPicker'
 
 export type Paid = { coins: number; xp: number; note: string | null }
 
-const STEP_MS = 1700
+const TICK_MS = 55      // un minuto de reloj entre ocasiones
+const CONTROL_MS = 1500
+const SHOT_MS = 1700
+const HALF_MS = 3500
+
+type Phase = 'run' | 'control' | 'shot' | 'runout' | 'half' | 'end'
 
 /**
- * Fatal Sim (como en MADFUT): partido pasivo de 6 ocasiones. En cada una, 3 cartas de control al azar por equipo (una
- * juega); gana el balón la de más control (empate: fuera) y ataca con 1 de 3 atacantes contra 1 de 3 defensas; si el
- * ataque supera a la defensa, gol. Solo se mira; ver docs/fatal-sim.md.
+ * Fatal Sim (como en MADFUT): partido pasivo de 90 minutos (2 partes de 45) con 12 ocasiones, 6 por parte. En cada una,
+ * 3 cartas de control al azar por equipo (una juega); gana el balón la de más control (empate: fuera) y ataca con 1 de
+ * 3 atacantes contra 1 de 3 defensas; si el ataque supera a la defensa, gol. El reloj corre entre ocasiones, hay
+ * descanso con estadísticas y un resumen final. Solo se mira; ver docs/fatal-sim.md.
  */
 export default function SimMatch({ title, squad, boostText, settle, onAgain, backHref }: {
   title: string; squad: PickedSquad; boostText: string; settle: (res: 0 | 1 | -1) => Paid; onAgain: () => void; backHref: string
@@ -24,27 +30,52 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
   const { t, locale } = useAppSettings()
   const [{ me, opp, chances }] = useState(() => {
     const me_ = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation)
-    const opp_ = rivalTeam(teamRating(squad.xi))
+    const opp_ = adaptRival(me_, rivalTeam(teamRating(squad.xi)))
     return { me: me_, opp: opp_, chances: simulate(me_, opp_) }
   })
-  // paso 0 = batalla de control de la ocasión, 1 = ataque / defensa (o balón fuera), y vuelta a empezar con la siguiente
-  const [step, setStep] = useState(0)
+  const [idx, setIdx] = useState(0)
+  const [phase, setPhase] = useState<Phase>('run')
+  const [clock, setClock] = useState(0)
   const [paid, setPaid] = useState<Paid | null>(null)
-  const idx = Math.min(Math.floor(step / 2), chances.length - 1)
-  const done = step >= chances.length * 2
-  const c = chances[idx]
-  const resolved = done ? chances : chances.slice(0, idx + (step % 2 === 1 ? 1 : 0))
+  const done = phase === 'end'
+  const c = chances[Math.min(idx, chances.length - 1)]
+  const resolved = done ? chances : chances.filter((_, k) => k < idx || (k === idx && phase === 'shot'))
   const s = simScore(resolved)
   const stats = [simTeamStats(me), simTeamStats(opp)]
+  const secondHalf = idx > SIM_PER_HALF || (idx === SIM_PER_HALF && phase === 'run')
+
+  // el reloj corre hasta la siguiente ocasión (o hasta el pitido de la parte)
+  useEffect(() => {
+    if (phase !== 'run' && phase !== 'runout') return
+    const target = phase === 'run' ? chances[idx].minute : idx === SIM_PER_HALF ? 45 : 90
+    if (clock >= target) {
+      setPhase(phase === 'run' ? 'control' : idx === SIM_PER_HALF ? 'half' : 'end')
+      return
+    }
+    const id = setTimeout(() => setClock(m => m + 1), TICK_MS)
+    return () => clearTimeout(id)
+  }, [phase, clock, idx, chances])
 
   useEffect(() => {
-    if (done) return
-    const id = setTimeout(() => {
-      if (step % 2 === 1 && c.goal) playSfx(c.ball === 0 ? 'goal' : 'pick')
-      setStep(n => n + 1)
-    }, STEP_MS)
-    return () => clearTimeout(id)
-  }, [step, done, c])
+    if (phase === 'control') {
+      const id = setTimeout(() => setPhase('shot'), CONTROL_MS)
+      return () => clearTimeout(id)
+    }
+    if (phase === 'shot') {
+      if (c.goal) playSfx(c.ball === 0 ? 'goal' : 'pick')
+      const id = setTimeout(() => {
+        const next = idx + 1
+        setIdx(next)
+        // última de la parte: el reloj llega al pitido antes del descanso o del final
+        setPhase(next === SIM_PER_HALF || next === chances.length ? 'runout' : 'run')
+      }, SHOT_MS)
+      return () => clearTimeout(id)
+    }
+    if (phase === 'half') {
+      const id = setTimeout(() => setPhase('run'), HALF_MS)
+      return () => clearTimeout(id)
+    }
+  }, [phase]) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (done && !paid) {
@@ -53,7 +84,9 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
     }
   }, [done, paid, chances]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const minute = done ? SIM_MINUTES[SIM_MINUTES.length - 1] : c.minute
+  const skip = () => { setIdx(chances.length); setClock(90); setPhase('end') }
+  const first = chances.slice(0, SIM_PER_HALF)
+  const shown = phase === 'half' ? first : chances
 
   return (
     <Screen title={title}>
@@ -64,32 +97,34 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
         </div>
         <div className="sim-mid">
           <b className="sim-score">{s[0]} – {s[1]}</b>
-          <small>{done ? t('duel.fullTime') : `${minute}'`}</small>
+          <small>{done ? t('duel.fullTime') : phase === 'half' ? t('sim.halfTime') : `${clock}'`}</small>
         </div>
         <div className="sim-team sim-team--opp">
           <span className="sim-team__name">{teamLabel(opp.name, locale)}</span>
           <Shields st={stats[1]} />
         </div>
       </div>
-      <ol className="sim-timeline" aria-label={t('sim.timeline')}>
+      <div className="sim-clock" aria-label={t('sim.timeline')}>
+        <i className="sim-clock__fill" style={{ width: `${Math.min(100, (clock / 90) * 100)}%` }} />
+        <i className="sim-clock__half" />
         {chances.map((ch, k) => {
-          const past = done || k < idx || (k === idx && step % 2 === 1)
-          return (
-            <li key={k} className={`sim-tl ${past ? 'is-past' : ''} ${past && ch.goal ? (ch.ball === 0 ? 'is-goal' : 'is-conceded') : ''}`}>
-              <small>{ch.minute}'</small>
-              <span>{!past ? '·' : ch.goal ? '⚽' : ch.ball === -1 ? '↗' : '✕'}</span>
-            </li>
-          )
+          const past = done || k < idx || (k === idx && phase === 'shot')
+          return past && ch.shot ? (
+            <span key={k} className={`sim-mark ${ch.goal ? (ch.ball === 0 ? 'is-goal' : 'is-conceded') : ''}`} style={{ left: `${(ch.minute / 90) * 100}%` }}>{ch.goal ? '⚽' : '·'}</span>
+          ) : null
         })}
-      </ol>
+      </div>
       <p className="duel-boost">{boostText}</p>
 
-      {!done && <ChancePanel c={c} second={step % 2 === 1} oppName={teamLabel(opp.name, locale)} />}
-      {!done && <button type="button" className="chip self-center" onClick={() => setStep(chances.length * 2)}>{t('duel.skip')}</button>}
+      {(phase === 'control' || phase === 'shot') && <ChancePanel c={c} second={phase === 'shot'} oppName={teamLabel(opp.name, locale)} />}
+      {(phase === 'run' || phase === 'runout') && <p className="sim-run">{secondHalf ? t('sim.secondHalf') : t('sim.firstHalf')}…</p>}
+      {phase === 'half' && <Summary title={t('sim.halfTime')} chances={shown} />}
+      {!done && <button type="button" className="chip self-center" onClick={skip}>{t('duel.skip')}</button>}
 
       {done && (
         <div className="duel-end">
           <h2 className="fd-title">{s[0] > s[1] ? t('duel.win') : s[0] === s[1] ? t('duel.draw') : t('duel.loss')}</h2>
+          <Summary title={t('duel.fullTime')} chances={chances} />
           {paid && <p className="reward-line">+<Coin className="w-5 h-5" /> {paid.coins} · +{paid.xp} XP</p>}
           {paid?.note && <p className="fatal-note">{paid.note}</p>}
           <button type="button" className="sheet-cta" onClick={onAgain}>{t('duel.again')}</button>
@@ -97,6 +132,24 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
         </div>
       )}
     </Screen>
+  )
+}
+
+/** Estadísticas del descanso y del final: posesión (balones ganados), ocasiones y goles */
+function Summary({ title, chances }: { title: string; chances: SimChance[] }) {
+  const { t } = useAppSettings()
+  const mine = chances.filter(c => c.ball === 0).length
+  const theirs = chances.filter(c => c.ball === 1).length
+  const pos = mine + theirs ? Math.round((mine / (mine + theirs)) * 100) : 50
+  const g = simScore(chances)
+  const rows: [string, string | number, string | number][] = [
+    [t('sim.possession'), `${pos}%`, `${100 - pos}%`], [t('sim.shots'), mine, theirs], [t('sim.goals'), g[0], g[1]],
+  ]
+  return (
+    <section className="sim-panel sim-summary">
+      <h3 className="sheet-label">{title}</h3>
+      {rows.map(([k, a, b]) => <div key={k} className="sim-stat"><b>{a}</b><span>{k}</span><b>{b}</b></div>)}
+    </section>
   )
 }
 
@@ -154,6 +207,7 @@ function ChancePanel({ c, second, oppName }: { c: SimChance; second: boolean; op
         </span>
         <Pool pool={mine ? yp : xp} played={mine ? y : x} highlight={mine ? 'def' : 'att'} />
       </div>
+      <p className="sim-goalchance">{t('sim.chance', { n: Math.round((c.chance ?? 0) * 100) })}</p>
       <p className={`sim-verdict ${c.goal ? (mine ? 'is-goal' : 'is-conceded') : ''}`}>
         {c.goal ? t('sim.goal', { name: x.p.name }) : t('duel.saved')}
       </p>

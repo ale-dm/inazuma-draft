@@ -1,6 +1,6 @@
 # Fatal Sim (MADFUT)
 
-Modo pasivo del Fatal Draft: miras un partido de 6 ocasiones; no eliges nada. Se juega con el último draft
+Modo pasivo del Fatal Draft: miras un partido de 90 minutos (2 partes de 45) con 12 ocasiones, 6 por parte; no eliges nada. Se juega con el último draft
 (`#/duelo/draftsim`, botón «Fatal Sim» de `#/fatal-draft`) y da los mismos puntos de división que el Fatal clásico
 (victoria 3, empate 1, derrota 0 en nuestra versión).
 
@@ -13,11 +13,17 @@ Modo pasivo del Fatal Draft: miras un partido de 6 ocasiones; no eliges nada. Se
   Las formaciones con 5 cartas de control (3412, 3142, 5212, 532) rinden mejor.
 - La IA adapta su nivel al tuyo; el marcador enseña la media de ataque/control/defensa de cada equipo.
 
-## Implementado (`src/lib/fatal.ts` → `simulate`, `src/components/modes/SimMatch.tsx`)
-Marcador con escudos, reloj, línea de ocasiones, panel de control (las 3 cartas de cada lado, la elegida resaltada),
-panel de ataque/defensa con el veredicto y botón «Saltar».
+## Implementado (`src/lib/fatal.ts` → `simulate`, `adaptRival`, `goalChance`; `src/components/modes/SimMatch.tsx`)
+- **90 minutos**: 12 ocasiones (6 por parte) en minutos al azar (1–44 y 46–89). El reloj corre entre ocasiones, hay
+  descanso con estadísticas (posesión, ocasiones, goles) y un resumen final.
+- Marcador con los escudos de ataque/control/defensa, barra de reloj con los goles marcados, paneles de control
+  (las 3 cartas de cada lado, la elegida resaltada) y de ataque/defensa con la **probabilidad de gol** y el veredicto.
+  «Saltar» salta al final.
+- **Equilibrio**: la IA iguala sus tres números a los tuyos (`adaptRival`) y el gol sale de una probabilidad
+  (`goalChance`: ~35 % a igualdad, +10 de ataque → ~65 %, −10 → ~12 %) en vez de ataque > defensa a secas, que daba
+  0–0 o 1–7 según la media de cada equipo. En 25 partidos de prueba: ~3,4 goles por partido y reparto parejo.
 
 ## Suposiciones (sin confirmar)
-- Minutos fijos de las ocasiones (`SIM_MINUTES`): 3, 7, 10, 14, 17, 20.
+- Número y minutos de las ocasiones, y la curva de probabilidad de gol (en MADFUT solo se ve «probabilidad de ataque»).
 - No hay asistente; el gol lo marca la carta atacante elegida.
 - Recompensas y puntos: las del Fatal Draft clásico; en MADFUT se ha visto 3/1/1 contra la IA.
