@@ -301,3 +301,16 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
   de divisiones con premio y los modos Fatal Classic (duelos con el último draft) y Fatal Sim (pronto).
 - **Copas de draft** (`#/copas`): se juegan con el último draft; cada copa tiene un boost (cartas de su saga o juegos
   distintos: +4 de química si el once lo cumple).
+
+## TP balanceado de las técnicas (hoja de cálculo → Supabase)
+- Cruzada la «Sheet2» con la tabla `techniques`: 765 técnicas con TP nuevo (248 con un TP distinto del anterior). Detalle,
+  casos dudosos y lo que no ha cruzado en [balance-tp.md](balance-tp.md); se regenera con `tools/db/balance_xlsx.py`.
+- La potencia mín./máx. no se copia de la hoja (en 145 filas se cambió el TP y no la potencia): sale de la escala
+  TP → potencia que cumple la inmensa mayoría de la hoja (150 → 180–900, 100 → 100–640…).
+- `data/technique_balance.json` → `supabase/technique_balance.sql` (columnas `balance_tp`, `balance_power_min`,
+  `balance_power_max`); el workflow lo carga después del seed.
+- **La carga ya no borra las columnas ni las filas propias de `techniques`**: antes, `seed.sql` hacía `truncate` de la
+  tabla y se perdían las columnas `vr_*` / `balance_*` y las 144 filas añadidas a mano (`source`); ahora es un upsert, y
+  `schema.sql` declara esas columnas. Probado contra una copia de la tabla tal como está en producción.
+- La app enseña `balance_tp` como el TP de cada técnica (ficha de la carta; al mantener pulsado, la potencia) y el CRUD
+  permite editar TP y potencias.

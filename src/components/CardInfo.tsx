@@ -31,7 +31,9 @@ export default function CardInfo({ player }: { player: Player }) {
                 <li key={tech.id} title={tech.description ?? undefined}>
                   <TechniqueIcon type={tech.type} traits={tech.traits} title={t(`tech.${tech.type}`)} className="card-info__tech-icon" />
                   <b title={tech.name}>{techniqueName(tech, locale)}</b>
-                  {tech.cost != null && <small title={tech.costGame ?? undefined}>TP {tech.cost}</small>}
+                  {tech.tp != null && (
+                    <small title={tech.powerMin != null && tech.powerMax != null ? t('tech.power', { min: tech.powerMin, max: tech.powerMax }) : undefined}>TP {tech.tp}</small>
+                  )}
                 </li>
               ))}
             </ul>

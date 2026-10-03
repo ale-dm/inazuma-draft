@@ -202,7 +202,7 @@ function TechList({ onOpen }: { onOpen: (o: Open) => void }) {
           <li key={t.id} role="button" onClick={() => onOpen({ tbl: 'techniques', key: { id: t.id } })}>
             <span className="admin-list__text">
               <b>{t.name}</b>
-              <small>{t.nameEs ?? '—'} · {t.type} · {t.element ?? '—'} · TP {t.cost ?? '—'}{t.traits?.length ? ` · ${t.traits.join(', ')}` : ''}</small>
+              <small>{t.nameEs ?? '—'} · {t.type} · {t.element ?? '—'} · TP {t.tp ?? '—'}{t.traits?.length ? ` · ${t.traits.join(', ')}` : ''}</small>
               <small className="admin-list__id">{t.id}</small>
             </span>
           </li>
@@ -334,7 +334,10 @@ const TECH_SECTIONS: Section[] = [
   { title: 'Juego', fields: [
     { key: 'type', label: 'Tipo', kind: 'select', options: ['Shoot', 'Dribble', 'Block', 'Catch'] },
     { key: 'element', label: 'Afinidad', kind: 'select', options: ELEMENTS },
-    { key: 'cost', label: 'TP', kind: 'number' }, { key: 'cost_game', label: 'Juego del TP', kind: 'text' },
+    { key: 'balance_tp', label: 'TP (el que enseña la app)', kind: 'number' },
+    { key: 'balance_power_min', label: 'Potencia mín.', kind: 'number' }, { key: 'balance_power_max', label: 'Potencia máx.', kind: 'number' },
+    { key: 'cost', label: 'TP de los juegos', kind: 'number' }, { key: 'cost_game', label: 'Juego de ese TP', kind: 'text' },
+    { key: 'vr_tp', label: 'TP de Victory Road', kind: 'number' },
     { key: 'traits', label: 'Rasgos (JSON: ["long", "block", "chain", "punch"])', kind: 'json', wide: true },
   ] },
   { title: 'Textos', fields: [
@@ -360,7 +363,7 @@ const NEW_ROW: Record<Open['tbl'], Row> = {
   cards: { name: '', game: 'VR', version: 'base', team: null, position: 'MF', element: 'fire', ovr: 60, category: 'Common Player', tier: 'C',
     shooting: 50, control: 50, physical: 50, speed: 50, defense: 50, goalkeeping: 30, is_version: true, specials: [], extra_teams: [], techniques: [] },
   teams: { name: '', name_es: null, name_fr: null, name_it: null, logo_url: null, logos: null },
-  techniques: { id: '', name: '', type: 'Shoot', element: 'fire', cost: null, traits: [] },
+  techniques: { id: '', name: '', type: 'Shoot', element: 'fire', cost: null, balance_tp: null, traits: [] },
   staff: {},
 }
 
@@ -563,7 +566,7 @@ function TechEditor({ ids, onChange }: { ids: string[]; onChange: (ids: string[]
           const t = getTechnique(tid)
           return (
             <li key={tid}>
-              <span className="admin-list__text"><b>{t?.nameEs ?? t?.name ?? tid}</b><small>{t ? `${t.type} · ${t.element ?? '—'} · TP ${t.cost ?? '—'}` : 'no existe'}</small></span>
+              <span className="admin-list__text"><b>{t?.nameEs ?? t?.name ?? tid}</b><small>{t ? `${t.type} · ${t.element ?? '—'} · TP ${t.tp ?? '—'}` : 'no existe'}</small></span>
               <button type="button" className="chip" disabled={i === 0} onClick={() => move(i, -1)} aria-label="Subir">↑</button>
               <button type="button" className="chip" disabled={i === ids.length - 1} onClick={() => move(i, 1)} aria-label="Bajar">↓</button>
               <button type="button" className="chip admin-danger" onClick={() => onChange(ids.filter(x => x !== tid))} aria-label="Quitar">✕</button>
@@ -576,7 +579,7 @@ function TechEditor({ ids, onChange }: { ids: string[]; onChange: (ids: string[]
         <ul className="admin-list admin-list--compact">
           {matches.map(t => (
             <li key={t.id} role="button" onClick={() => { onChange([...ids, t.id]); setQ('') }}>
-              <span className="admin-list__text"><b>{t.nameEs ?? t.name}</b><small>{t.name} · {t.type} · TP {t.cost ?? '—'}</small></span>
+              <span className="admin-list__text"><b>{t.nameEs ?? t.name}</b><small>{t.name} · {t.type} · TP {t.tp ?? '—'}</small></span>
               <Plus size={16} />
             </li>
           ))}

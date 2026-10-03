@@ -24,6 +24,19 @@ alter table public.techniques add column if not exists description text;   -- de
 alter table public.techniques add column if not exists image_url text;     -- imagen de zukan
 alter table public.techniques add column if not exists zukan_types jsonb;  -- categorías de zukan (Shot, Defence, Shot Block…)
 alter table public.techniques add column if not exists traits jsonb;       -- tiro largo, bloqueo de tiros… (WazaData chr)
+-- Columnas propias de la tabla (se rellenan en Supabase y con supabase/technique_balance.sql; seed.sql no las toca):
+alter table public.techniques add column if not exists victorymods_id bigint;        -- id en victorymods (datos de Victory Road)
+alter table public.techniques add column if not exists vr_power_min int;             -- potencia mínima / máxima del juego (Victory Road)
+alter table public.techniques add column if not exists vr_power_max int;
+alter table public.techniques add column if not exists vr_tp int;                    -- TP del juego
+alter table public.techniques add column if not exists vr_recast_time int;
+alter table public.techniques add column if not exists vr_category text;             -- Tiro | Regate | Bloqueo | Parada
+alter table public.techniques add column if not exists vr_participants int;
+alter table public.techniques add column if not exists vr_aura_type text;
+alter table public.techniques add column if not exists balance_tp int;               -- TP nuevo, balanceado: el que enseña la app
+alter table public.techniques add column if not exists balance_power_min int;        -- potencia mínima / máxima que le corresponde a ese TP
+alter table public.techniques add column if not exists balance_power_max int;
+alter table public.techniques add column if not exists source text;                  -- null = de la carga; otro valor = fila añadida a mano (no se toca)
 
 create table if not exists public.cards (
   id           text primary key,             -- <personaje>--<juego>--<versión>

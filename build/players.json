@@ -265175,7 +265175,10 @@
    ],
    "name_fr": "Main céleste",
    "name_it": "Mano di Luce",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "GrenadeShot",
@@ -265198,7 +265201,10 @@
    ],
    "name_fr": "Tir grenade",
    "name_it": "Tiro Fulminante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "MajinTheHand",
@@ -265225,7 +265231,10 @@
    ],
    "name_fr": "Main magique",
    "name_it": "Mano del Colosso",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "TripleDefense",
@@ -265249,7 +265258,10 @@
    ],
    "name_fr": "Triple Défense",
    "name_it": "Difesa Tripla",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "SeigiNoTekken",
@@ -265274,7 +265286,10 @@
    "name_it": "Pugno di Giustizia",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "TheEarth",
@@ -265296,7 +265311,10 @@
    ],
    "name_fr": "La Terre",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 180,
+   "balance_power_min": 230,
+   "balance_power_max": 1000
   },
   {
    "id": "IkariNoTettsui",
@@ -265318,7 +265336,10 @@
    ],
    "name_fr": "Poing de la Colère",
    "name_it": "Martello del Colosso",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "IjigenTheHand",
@@ -265340,7 +265361,10 @@
    ],
    "name_fr": "Main Dimensionnelle",
    "name_it": "Scudo di Energia",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "GodCatch",
@@ -265362,7 +265386,10 @@
    ],
    "name_fr": "Arrêt Céleste",
    "name_it": "Parata Suprema",
-   "traits": []
+   "traits": [],
+   "balance_tp": 180,
+   "balance_power_min": 230,
+   "balance_power_max": 1000
   },
   {
    "id": "GigatonHead",
@@ -265386,7 +265413,10 @@
    "name_it": "Testata Inazuma",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "GodHandV",
@@ -265410,7 +265440,10 @@
    ],
    "name_fr": "Main Céleste V",
    "name_it": "Mano di Luce V",
-   "traits": []
+   "traits": [],
+   "balance_tp": 170,
+   "balance_power_min": 215,
+   "balance_power_max": 980
   },
   {
    "id": "SoyokazeStep",
@@ -265433,7 +265466,10 @@
    ],
    "name_fr": "Dribble Zéphir",
    "name_it": "Giro di Vento",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "InazumaBreak",
@@ -265458,7 +265494,10 @@
    ],
    "name_fr": "Éclair Pulvérisant",
    "name_it": "Ariete Inazuma",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "KazaanaDrive",
@@ -265480,7 +265519,10 @@
    ],
    "name_fr": "Percée d'Éole",
    "name_it": "Galleria del Vento",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "FireTornado",
@@ -265508,7 +265550,10 @@
    "name_it": "Tornado di Fuoco",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "HeatTackle",
@@ -265531,7 +265576,10 @@
    ],
    "name_fr": "Charge Enflammée",
    "name_it": "Entrata Esplosiva",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "QuickDraw",
@@ -265554,7 +265602,10 @@
    ],
    "name_fr": "Subtilisation",
    "name_it": "Contrasto Fulmineo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "InazumaOtoshi",
@@ -265579,7 +265630,10 @@
    "name_it": "Trampolino Inazuma",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "BakunetsuStorm",
@@ -265604,7 +265658,10 @@
    ],
    "name_fr": "Tempête De feu",
    "name_it": "Tormenta di Fuoco",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "BakunetsuScrew",
@@ -265629,7 +265686,10 @@
    "name_it": "Avvitamento Esplosivo",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "GrandFire",
@@ -265652,7 +265712,10 @@
    "name_it": "Fiammata Tripla",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 180,
+   "balance_power_min": 230,
+   "balance_power_max": 1000
   },
   {
    "id": "Screwdriver",
@@ -265674,7 +265737,10 @@
    ],
    "name_fr": "Torpille de Feu",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "SparkEdgeDribble",
@@ -265696,7 +265762,10 @@
    ],
    "name_fr": "Tacle fulgurant",
    "name_it": "Scivolata Scintillante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "FireTornadoDD",
@@ -265719,7 +265788,10 @@
    ],
    "name_fr": "Fulgurante Double Tornade de Feu",
    "name_it": "Tornado di Fuoco Doppia Direzione",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "BakunetsuStorm_K",
@@ -265744,7 +265816,10 @@
    ],
    "name_fr": "Tempête De feu",
    "name_it": "Tormenta di Fuoco",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "TsubameGaeshi",
@@ -265792,7 +265867,10 @@
    "name_it": "Palla di Fuoco",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "EternalBlizzard",
@@ -265817,7 +265895,10 @@
    ],
    "name_fr": "Blizzard Éternel",
    "name_it": "Tormenta Glaciale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "NorthernImpact",
@@ -265843,7 +265924,10 @@
    "name_it": "Sfera di Ghiaccio",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "TheWall",
@@ -265872,7 +265956,10 @@
    "name_it": "Muro di Roccia",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "SuperArmadillo",
@@ -265895,7 +265982,10 @@
    ],
    "name_fr": "Tatou Géant",
    "name_it": "Super Armadillo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "MoguraFeint",
@@ -265920,7 +266010,10 @@
    ],
    "name_fr": "Feinte de la Taupe",
    "name_it": "Effetto Talpa",
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "MegaQuake",
@@ -265943,7 +266036,10 @@
    ],
    "name_fr": "Méga Séisme",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "RockWallDam",
@@ -265968,7 +266064,10 @@
    "name_it": "Diga di Roccia",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "TheMountain",
@@ -265992,7 +266091,10 @@
    "name_it": "Montagna di Roccia",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "ElephantPress",
@@ -266015,7 +266117,10 @@
    ],
    "name_fr": "Assaut d'éléphants",
    "name_it": "Carica degli Elefanti",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "DeepJungle",
@@ -266040,7 +266145,10 @@
    "name_it": null,
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "ShippuuDash",
@@ -266066,7 +266174,10 @@
    ],
    "name_fr": "Dribble Rafale",
    "name_it": "Scatto Repentino",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "BunshinFeint",
@@ -266089,7 +266200,10 @@
    ],
    "name_fr": "Détriplement",
    "name_it": "Illusione Ottica",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "HonooNoKazamidori",
@@ -266114,7 +266228,10 @@
    "name_it": "Ali di Fuoco",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "DarkPhoenix",
@@ -266137,7 +266254,10 @@
    ],
    "name_fr": "Phénix Noir",
    "name_it": "Fenice Oscura",
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "FuujinNoMai",
@@ -266182,7 +266302,10 @@
    ],
    "name_fr": "Ouragan",
    "name_it": "Grande Vortice",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "TatsumakiOtoshi",
@@ -266205,7 +266328,10 @@
    "name_it": "Turbina Volante",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "AirBullet",
@@ -266231,7 +266357,10 @@
    "name_it": "Proiettile d'Aria",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "ZigzagSpark",
@@ -266256,7 +266385,10 @@
    ],
    "name_fr": "Zigzag Électrique",
    "name_it": "Fiamma Selvaggia",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "JigokuGuruma",
@@ -266279,7 +266411,10 @@
    ],
    "name_fr": "Roue Combinée",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "DragonCrash",
@@ -266305,7 +266440,10 @@
    "name_it": "Dragon Crash",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "DragonTornado",
@@ -266328,7 +266466,10 @@
    ],
    "name_fr": "Tornade du Dragon",
    "name_it": "Dragon Tornado",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "WyvernCrash",
@@ -266350,7 +266491,10 @@
    ],
    "name_fr": "Choc de la Vouivre",
    "name_it": "Drago Alato",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "WyvernBlizzard",
@@ -266372,7 +266516,10 @@
    ],
    "name_fr": "Blizzard de la Vouivre",
    "name_it": "Drago Glaciale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "DragonSlayer",
@@ -266395,7 +266542,10 @@
    "name_it": "Soffio del Drago",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "DenraiHoutou",
@@ -266418,7 +266568,10 @@
    ],
    "name_fr": "Tir Katana Ancestral",
    "name_it": "Tiro Ancestrale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "NoboriRyuu",
@@ -266441,7 +266594,10 @@
    ],
    "name_fr": "Envol du Dragon",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "DragonBlaster",
@@ -266465,7 +266621,10 @@
    "name_it": "Drago Draconiano",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "TamanoriPierrot",
@@ -266488,7 +266647,10 @@
    ],
    "name_fr": "Clown Acrobate",
    "name_it": "Clown Equilibrista",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "SuiseiShoot",
@@ -266513,7 +266675,10 @@
    "name_it": "Tiro della Cometa",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "MonkeyTurn",
@@ -266536,7 +266701,10 @@
    ],
    "name_fr": "Pirouette du Singe",
    "name_it": "Scimmia Volante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "RunBallRun",
@@ -266559,7 +266727,10 @@
    ],
    "name_fr": "Super Rotation",
    "name_it": "Pallone Rotante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "DokonjouBat",
@@ -266611,7 +266782,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "Cyclone",
@@ -266634,7 +266808,10 @@
    ],
    "name_fr": "Cyclone",
    "name_it": "Ciclone",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "FreezeShot",
@@ -266657,7 +266834,10 @@
    ],
    "name_fr": "Tir de glace",
    "name_it": "Tiro del Ghiaccio",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "RevolutionV",
@@ -266679,7 +266859,10 @@
    ],
    "name_fr": null,
    "name_it": "Formazione V",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "MoguraShuffle",
@@ -266701,7 +266884,10 @@
    ],
    "name_fr": "Taupe Factice",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "PlasmaBall",
@@ -266725,7 +266911,10 @@
    "name_it": "Pallone al Plasma",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "OdinSword",
@@ -266750,7 +266939,10 @@
    "name_it": "Spada Micidiale",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "SpiralShot",
@@ -266773,7 +266965,10 @@
    ],
    "name_fr": "Tir en Spirale",
    "name_it": "Colpo a Spirale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "IllusionBall",
@@ -266799,7 +266994,10 @@
    ],
    "name_fr": "Ballon Illusoire",
    "name_it": "Grande Illusione",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "BackTornado",
@@ -266824,7 +267022,10 @@
    "name_it": "Tornado Inverso",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "DashStorm",
@@ -266847,7 +267048,10 @@
    ],
    "name_fr": "Attaque tempête",
    "name_it": "Grande Turbine",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "TatsumakiSenpuu",
@@ -266870,7 +267074,10 @@
    ],
    "name_fr": "Tourbillon",
    "name_it": "Vortice Implacabile",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "KungFuHead",
@@ -266893,7 +267100,10 @@
    ],
    "name_fr": "Tête Kung-Fu",
    "name_it": "Colpo del Kung-Fu",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "BunshinShoot",
@@ -266918,7 +267128,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "KungFuAttack",
@@ -266942,7 +267155,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "ShootingStar",
@@ -266967,7 +267183,10 @@
    "name_it": null,
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "Gorimuchuu",
@@ -266992,7 +267211,10 @@
    ],
    "name_fr": "Confusion",
    "name_it": "Tempesta di Polvere",
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "FakeBall",
@@ -267015,7 +267237,10 @@
    ],
    "name_fr": "Balle Factice",
    "name_it": "Trasformazione",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "TwinBoost",
@@ -267038,7 +267263,10 @@
    ],
    "name_fr": "Tir puissance 2",
    "name_it": "Calcio Gemello",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "DoubleGrenade",
@@ -267062,7 +267290,10 @@
    "name_it": "Scarica Doppia",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "JudgeThrough2",
@@ -267084,7 +267315,10 @@
    ],
    "name_fr": "Passage en force 2",
    "name_it": "Calcio Stordente 2",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "CoilTurn",
@@ -267107,7 +267341,10 @@
    ],
    "name_fr": "Spirale de Défense",
    "name_it": "Difesa a Spirale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "UshiroNoShoumen",
@@ -267130,7 +267367,10 @@
    ],
    "name_fr": "Contournement",
    "name_it": "Spezzaginocchia",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "Zanzou",
@@ -267153,7 +267393,10 @@
    ],
    "name_fr": "Holo-Dribble",
    "name_it": "Ninja Dribbling",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "KageNui",
@@ -267176,7 +267419,10 @@
    ],
    "name_fr": "Ombre Furtive",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "KagomeKagome",
@@ -267199,7 +267445,10 @@
    ],
    "name_fr": "Danse du bambou",
    "name_it": "Triangolo Ipnotico",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "DualStrike",
@@ -267221,7 +267470,10 @@
    ],
    "name_fr": "Attaque en Duo",
    "name_it": "Colpo Multiplo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "SuperScanDF",
@@ -267244,7 +267496,10 @@
    ],
    "name_fr": "Scanner Attaque",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "SuperScanOF",
@@ -267267,7 +267522,10 @@
    ],
    "name_fr": "Scanner Attaque",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "DivineArrow",
@@ -267290,7 +267548,10 @@
    ],
    "name_fr": "Flèche Céleste",
    "name_it": "Freccia Saettante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "Noroi",
@@ -267313,7 +267574,10 @@
    ],
    "name_fr": "Malédiction",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "GodBreak",
@@ -267335,7 +267599,10 @@
    ],
    "name_fr": "Tir Solaire",
    "name_it": "Ariete Supremo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "MaboroshiShot",
@@ -267358,7 +267625,10 @@
    ],
    "name_fr": "Tir Feu Follet",
    "name_it": "Tiro Fatuo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "TheEarthInfinity",
@@ -267379,7 +267649,10 @@
    ],
    "name_fr": "La Terre : L'Infini",
    "name_it": "Energia Infinita della Terra",
-   "traits": []
+   "traits": [],
+   "balance_tp": 200,
+   "balance_power_min": 270,
+   "balance_power_max": 1080
   },
   {
    "id": "SpinningShoot",
@@ -267404,7 +267677,10 @@
    "name_it": "Tiro Roteante",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "SpinningCut",
@@ -267431,7 +267707,10 @@
    "name_it": "Taglio Roteante",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "ThePhoenix",
@@ -267454,7 +267733,10 @@
    ],
    "name_fr": "Phénix",
    "name_it": "Volo della Fenice",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "FlameDance",
@@ -267476,7 +267758,10 @@
    ],
    "name_fr": "Danse ardente",
    "name_it": "Danza del Fuoco",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "PegasusShot",
@@ -267499,7 +267784,10 @@
    "name_it": "Colpo di Pegaso",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "KillerSlide",
@@ -267524,7 +267812,10 @@
    ],
    "name_fr": "Tacle de la mort",
    "name_it": "Scivolata Micidiale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "BladeAttack",
@@ -267547,7 +267838,10 @@
    ],
    "name_fr": "Lame Sismique",
    "name_it": "Lama d'Energia",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "HurricaneArrow",
@@ -267570,7 +267864,10 @@
    ],
    "name_fr": "Flèche Ouragan",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "VolcanoCut",
@@ -267595,7 +267892,10 @@
    "name_it": "Tuono del Vulcano",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "TripleBoost",
@@ -267619,7 +267919,10 @@
    "name_it": "Calcio Triplo",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "TheIkaros",
@@ -267640,7 +267943,10 @@
    ],
    "name_fr": "Icare",
    "name_it": "Volo della Fenice",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "PowerShield",
@@ -267668,7 +267974,10 @@
    "name_it": "Barriera di Forza",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "FullPowerShield",
@@ -267694,7 +268003,10 @@
    "name_it": "Super Barriera di Forza",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "HawkShot",
@@ -267719,7 +268031,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "MugenNoKabe",
@@ -267743,7 +268058,10 @@
    ],
    "name_fr": "Muraille Infinie",
    "name_it": "Muraglia Infinita",
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "DrillSmasher",
@@ -267768,7 +268086,10 @@
    "name_it": "Trivella Spaziale",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "BeastFang",
@@ -267791,7 +268112,10 @@
    ],
    "name_fr": "Morsure Sauvage",
    "name_it": "Morso della Belva",
-   "traits": []
+   "traits": [],
+   "balance_tp": 170,
+   "balance_power_min": 215,
+   "balance_power_max": 980
   },
   {
    "id": "Earthquake",
@@ -267814,7 +268138,10 @@
    ],
    "name_fr": "Séisme",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "ReflectBuster",
@@ -267837,7 +268164,10 @@
    ],
    "name_fr": "Tir Ricochets",
    "name_it": "Meteora Rimbalzante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "JudgeThrough",
@@ -267860,7 +268190,10 @@
    ],
    "name_fr": "Passage en force",
    "name_it": "Calcio Stordente",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "CrossDrive",
@@ -267885,7 +268218,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "DynamiteShoot",
@@ -267910,7 +268246,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "EchoBall",
@@ -267931,7 +268270,10 @@
    ],
    "name_fr": "Dribble strident",
    "name_it": "Bolla Sonora",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "DimensionCut",
@@ -267954,7 +268296,10 @@
    ],
    "name_fr": "Portail dimensionnel",
    "name_it": "Taglio Dimensionale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "FutureEye",
@@ -267977,7 +268322,10 @@
    ],
    "name_fr": "Digi-Scan",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "VanishingCut",
@@ -268000,7 +268348,10 @@
    ],
    "name_fr": "Danse de l'Ombre",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "DeathZone",
@@ -268023,7 +268374,10 @@
    ],
    "name_fr": "Triangle de la mort",
    "name_it": "Zona Micidiale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "HyakuretsuShot",
@@ -268048,7 +268402,10 @@
    "name_it": "Tiro dai Cento Calci",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "Kamaitachi",
@@ -268071,7 +268428,10 @@
    ],
    "name_fr": "Esprit du Vent",
    "name_it": "Furia dei Venti",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "DoubleCyclone",
@@ -268093,7 +268453,10 @@
    ],
    "name_fr": "Double Cyclone",
    "name_it": "Doppio Ciclone",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "NihyakuretsuShot",
@@ -268117,7 +268480,10 @@
    "name_it": "Tiro dai Duecento Calci",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "DeathZone2",
@@ -268139,7 +268505,10 @@
    ],
    "name_fr": "Triangle de la mort 2",
    "name_it": "Zona Micidiale 2",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "Aikidou",
@@ -268161,7 +268530,10 @@
    ],
    "name_fr": "Danse charmante",
    "name_it": "Aikido",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "KouteiPenguin3gou",
@@ -268184,7 +268556,10 @@
    ],
    "name_fr": "Manchot Empereur N°3",
    "name_it": "Pinguino Imperatore N°3",
-   "traits": []
+   "traits": [],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "LastDeathZone",
@@ -268208,7 +268583,10 @@
    "name_it": "Zona Micidiale Finale",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 200,
+   "balance_power_min": 270,
+   "balance_power_max": 1080
   },
   {
    "id": "KouteiPenguin2gou",
@@ -268236,7 +268614,10 @@
    "name_it": "Pinguino Imperatore N°2",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "KouteiPenguin1gou",
@@ -268258,7 +268639,10 @@
    ],
    "name_fr": "Manchot empereur n° 1",
    "name_it": "Pinguino Imperatore N° 1",
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "ReppuuDash",
@@ -268280,7 +268664,10 @@
    ],
    "name_fr": "Course Tempête",
    "name_it": "Scatto Infuocato",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "SpacePenguin",
@@ -268302,7 +268689,10 @@
    ],
    "name_fr": "Manchot Spatial",
    "name_it": "Pinguino Spaziale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "KouteiPenguin7",
@@ -268327,7 +268717,10 @@
    "name_it": "Pinguino Imperatore N°7",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "DashAccel",
@@ -268350,7 +268743,10 @@
    ],
    "name_fr": "Accéleration",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "PatriotShoot",
@@ -268375,7 +268771,10 @@
    "name_it": null,
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "Kamikakushi",
@@ -268400,7 +268799,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "Onryou",
@@ -268423,7 +268825,10 @@
    ],
    "name_fr": "Spectre vengeur",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "KillerBlade",
@@ -268447,7 +268852,10 @@
    ],
    "name_fr": "Lame gardienne",
    "name_it": "Mannaia Micidiale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "YugamuKuukan",
@@ -268471,7 +268879,10 @@
    ],
    "name_fr": "Distorsion",
    "name_it": "Vortice Magnetico",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "Tsumuji",
@@ -268495,7 +268906,10 @@
    ],
    "name_fr": "Tornades",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "PhantomShoot",
@@ -268520,7 +268934,10 @@
    "name_it": "Tiro Fantasma",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "Doppelganger",
@@ -268543,7 +268960,10 @@
    ],
    "name_fr": "Sosie",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "Magic",
@@ -268566,7 +268986,10 @@
    ],
    "name_fr": "Disparition",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "NekketsuPunch",
@@ -268592,7 +269015,10 @@
    "name_it": "Pugno di Fuoco",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "RocketKobushi",
@@ -268618,7 +269044,10 @@
    "name_it": "Pugno Propulsore",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "BakuretsuPunch",
@@ -268644,7 +269073,10 @@
    "name_it": "Pugno di Fuoco",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "Counterstrike",
@@ -268670,7 +269102,10 @@
    "name_it": null,
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "DokugiriNoJutsu",
@@ -268693,7 +269128,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "KumoNoIto",
@@ -268717,7 +269155,10 @@
    ],
    "name_fr": "Toile d'Araignée",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "Moonsault",
@@ -268740,7 +269181,10 @@
    ],
    "name_fr": "Salto lunaire",
    "name_it": "Salto Avvitato",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "WildClaw",
@@ -268764,7 +269208,10 @@
    ],
    "name_fr": "Griffes Bestiales",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "Shikofumi",
@@ -268787,7 +269234,10 @@
    ],
    "name_fr": "Sumo-Secousse",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "HornTrain",
@@ -268813,7 +269263,10 @@
    "name_it": "Toro Travolgente",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "PsychoShot",
@@ -268836,7 +269289,10 @@
    ],
    "name_fr": "Tir Psychique",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "BoostGlider",
@@ -268859,7 +269315,10 @@
    ],
    "name_fr": "Tête Chercheuse",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "CondorDive",
@@ -268884,7 +269343,10 @@
    "name_it": "Colpo del Condor",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "TarzanKick",
@@ -268909,7 +269371,10 @@
    "name_it": "Calcio di Tarzan",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "SnakeShot",
@@ -268934,7 +269399,10 @@
    "name_it": "Tiro del Serpente",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "ToughnessBlock",
@@ -268958,7 +269426,10 @@
    ],
    "name_fr": "Blocage de Force",
    "name_it": "Mega Parata di Forza",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "ShootPocket",
@@ -268984,7 +269455,10 @@
    ],
    "name_fr": "Protecto-bulle",
    "name_it": "Barriera Magnetica",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "DoubleRocket",
@@ -269009,7 +269483,10 @@
    "name_it": "Doppio Pugno",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "Gungnir",
@@ -269035,7 +269512,10 @@
    "name_it": "Calcio Interdimensionale",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "MeteorAttack",
@@ -269058,7 +269538,10 @@
    ],
    "name_fr": "Tir météore",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "GoalZurashi",
@@ -269082,7 +269565,10 @@
    ],
    "name_fr": "Cible Mouvante",
    "name_it": "Panciata Otaku",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "PressurePunch",
@@ -269106,7 +269592,10 @@
    ],
    "name_fr": "Sentinelle",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "ShineDrive",
@@ -269129,7 +269618,10 @@
    ],
    "name_fr": "Tir Aveuglant",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "TsuchiDaruma",
@@ -269154,7 +269646,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "Harvest",
@@ -269177,7 +269672,10 @@
    ],
    "name_fr": "Fauchage",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "MakiwariChop",
@@ -269203,7 +269701,10 @@
    "name_it": null,
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "Kogarashi",
@@ -269227,7 +269728,10 @@
    ],
    "name_fr": "Bourrasque",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "GigantWall",
@@ -269252,7 +269756,10 @@
    ],
    "name_fr": "Muraille Géante",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "TriangleZ",
@@ -269275,7 +269782,10 @@
    ],
    "name_fr": "Triangle Z",
    "name_it": "Triangolo Z",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "TsunamiWall",
@@ -269327,7 +269837,10 @@
    "name_it": "Piede del Giudizio",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "HeavensTime",
@@ -269352,7 +269865,10 @@
    ],
    "name_fr": "Instant Céleste",
    "name_it": "Salto Temporale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "WarpDrive",
@@ -269374,7 +269890,10 @@
    ],
    "name_fr": "Tunnel Alternatif",
    "name_it": "Teletrasporto",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "GodKnows",
@@ -269399,7 +269918,10 @@
    ],
    "name_fr": "Savoir suprême",
    "name_it": "Colpo Supremo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "ChaosBreak",
@@ -269420,7 +269942,10 @@
    ],
    "name_fr": "Tir Chaotique",
    "name_it": "Grande Chaos",
-   "traits": []
+   "traits": [],
+   "balance_tp": 180,
+   "balance_power_min": 230,
+   "balance_power_max": 1000
   },
   {
    "id": "SetsunaBoost",
@@ -269444,7 +269969,10 @@
    "name_it": "Impulso Effimero",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "GodWind",
@@ -269466,7 +269994,10 @@
    ],
    "name_fr": "Vent Céleste",
    "name_it": "Vento Supremo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "PlanetShield",
@@ -269488,7 +270019,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "MermaidSmash",
@@ -269511,7 +270045,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "MushroomHop",
@@ -269532,7 +270069,10 @@
    ],
    "name_fr": "Saut Fongus",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "YakimochiScrew",
@@ -269556,7 +270096,10 @@
    "name_it": "Tiro Impastato",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "Stargazer",
@@ -269579,7 +270122,10 @@
    "name_it": "Schianto Radioattivo",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "GodHandTriple",
@@ -269602,7 +270148,10 @@
    ],
    "name_fr": "Triple Main Céleste",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "DualStorm",
@@ -269624,7 +270173,10 @@
    ],
    "name_fr": "Flammes en Duo",
    "name_it": "Vortice Infuocato",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "BlockCircus",
@@ -269646,7 +270198,10 @@
    ],
    "name_fr": "Tacle périlleux",
    "name_it": "Blocco Acrobatico",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "ProfileZone",
@@ -269668,7 +270223,10 @@
    ],
    "name_fr": "Zone Analytique",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "Oouchiwa",
@@ -269690,7 +270248,10 @@
    ],
    "name_fr": "Coup d'Éventail",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "DragonCannon",
@@ -269714,7 +270275,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "HitoriOneTwo",
@@ -269738,7 +270302,10 @@
    ],
    "name_fr": "Une-Deux Solitaire",
    "name_it": "Doppio Tocco",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "FakeBomber",
@@ -269761,7 +270328,10 @@
    ],
    "name_fr": "Feinte de la Bombe",
    "name_it": "Fiammata Immaginaria",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "TkachevBomber",
@@ -269785,7 +270355,10 @@
    "name_it": "Calcio Arcobaleno",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "DragonGround",
@@ -269807,7 +270380,10 @@
    ],
    "name_fr": "Éveil du Dragon",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "Inazuma1gou",
@@ -269832,7 +270408,10 @@
    "name_it": "Doppio Fulmine Inazuma",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "TornadoCatch",
@@ -269856,7 +270435,10 @@
    ],
    "name_fr": "Arrêt Tourbillon",
    "name_it": "Parata Vortice",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "AggressiveBeat",
@@ -269878,7 +270460,10 @@
    ],
    "name_fr": "Attaque Ventriculaire",
    "name_it": "Ritmo Travolgente",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "BritanniaCross",
@@ -269901,7 +270486,10 @@
    ],
    "name_fr": "Union explosive",
    "name_it": "Incrocio Esplosivo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "DarkTornado",
@@ -269927,7 +270515,10 @@
    "name_it": "Dark Tornado",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "BallistaShot",
@@ -269952,7 +270543,10 @@
    "name_it": "Scoccata di Balista",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "FuurinkazanDestroyer",
@@ -269977,7 +270571,10 @@
    "name_it": "Furia Elementale",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "ExcellentBreast",
@@ -270000,7 +270597,10 @@
    ],
    "name_fr": "Torse d'acier",
    "name_it": "Parata Eccellente",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "SerpentFang",
@@ -270024,7 +270624,10 @@
    ],
    "name_fr": "Morsure du Serpent",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "Zeroyon",
@@ -270047,7 +270650,10 @@
    ],
    "name_fr": "Dragster",
    "name_it": "Super-Scatto",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "RocketHead",
@@ -270070,7 +270676,10 @@
    ],
    "name_fr": "Coup de tête fusée",
    "name_it": "Testata Nucleare",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "MelodyWave",
@@ -270093,7 +270702,10 @@
    ],
    "name_fr": "Vortex Mélodique",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "BlackHole",
@@ -270116,7 +270728,10 @@
    ],
    "name_fr": "Trou Noir",
    "name_it": "Buco Nero",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "AsteroidBelt",
@@ -270141,7 +270756,10 @@
    "name_it": "Furia Stellare",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "PhotonFlash",
@@ -270163,7 +270781,10 @@
    ],
    "name_fr": "Flash Photonique",
    "name_it": "Flash Fotonico",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "ProcyonNet",
@@ -270186,7 +270807,10 @@
    ],
    "name_fr": "Filet stellaire",
    "name_it": "Rete Impenetrabile",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "Gravitation",
@@ -270211,7 +270835,10 @@
    "name_it": "Gravità Massima",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "SuperShikofumi",
@@ -270236,7 +270863,10 @@
    "name_it": "Super Blocco Difensivo",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "HeavyBaby",
@@ -270261,7 +270891,10 @@
    "name_it": null,
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "GanymedeProton",
@@ -270286,7 +270919,10 @@
    "name_it": "Laser Fotonico",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "AstroBreak",
@@ -270310,7 +270946,10 @@
    ],
    "name_fr": "Tir Astral",
    "name_it": "Cometa Astrale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "Wormhole",
@@ -270335,7 +270974,10 @@
    ],
    "name_fr": "Trou de ver",
    "name_it": "Tunnel Spaziale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "JikuuNoKabe",
@@ -270360,7 +271002,10 @@
    "name_it": "Barriera Temporale",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "RyuuseiBlade",
@@ -270387,7 +271032,10 @@
    "name_it": "Meteora Dirompente",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "UniverseBlast",
@@ -270411,7 +271059,10 @@
    "name_it": "Doppio Calcio Iperspaziale",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "GaiaBreak",
@@ -270433,7 +271084,10 @@
    ],
    "name_fr": "Frappe de Gaïa",
    "name_it": "Meteora Infuocata",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "LightningAccel",
@@ -270456,7 +271110,10 @@
    ],
    "name_fr": "Sprint Éclair",
    "name_it": "Spirito del Fulmine",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "Transmove",
@@ -270478,7 +271135,10 @@
    ],
    "name_fr": "Transfert Spatial",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "SouthernCrosscut",
@@ -270502,7 +271162,10 @@
    ],
    "name_fr": "Croix du Sud",
    "name_it": "Croce di Fuoco",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "DeadFuture",
@@ -270524,7 +271187,10 @@
    ],
    "name_fr": "Avenir funeste",
    "name_it": "Futuro Negativo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "BungeeThrust",
@@ -270546,7 +271212,10 @@
    ],
    "name_fr": "Attaque Explosive",
    "name_it": "Salto Esplosivo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "MeteorShower",
@@ -270568,7 +271237,10 @@
    ],
    "name_fr": "Pluie de Météores",
    "name_it": "Pioggia di Meteore",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "AssaultShoot",
@@ -270592,7 +271264,10 @@
    "name_it": "Pioggia Esplosiva",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "GoodSmell",
@@ -270615,7 +271290,10 @@
    ],
    "name_fr": "Parfum Enivrant",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "KurukuruHead",
@@ -270639,7 +271317,10 @@
    "name_it": "Testata Letale",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "RoseSplash",
@@ -270663,7 +271344,10 @@
    "name_it": "Petali di Rosa",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "Burnout",
@@ -270686,7 +271370,10 @@
    ],
    "name_fr": "Carbonisation",
    "name_it": "Muro di Fiamme",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "IgniteSteal",
@@ -270708,7 +271395,10 @@
    ],
    "name_fr": "Tacle incendiaire",
    "name_it": "Scivolata di Fuoco",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "TwinBoostF",
@@ -270730,7 +271420,10 @@
    ],
    "name_fr": "Tornade puissance 2",
    "name_it": "Calcio Gemello F",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "PrimaDonna",
@@ -270752,7 +271445,10 @@
    ],
    "name_fr": "Prima Donna",
    "name_it": "Giro di Valzer",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "FlameVeil",
@@ -270774,7 +271470,10 @@
    ],
    "name_fr": "Voile de Feu",
    "name_it": "Velo di Fuoco",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "FireBlizzard_Fire",
@@ -270796,7 +271495,10 @@
    ],
    "name_fr": "Blizzard Enflammé",
    "name_it": "Ghiaccio di Fuoco",
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "IceBlock",
@@ -270819,7 +271521,10 @@
    ],
    "name_fr": "Bloc de glace",
    "name_it": "Blocco Glaciale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "FrozenSteal",
@@ -270841,7 +271546,10 @@
    ],
    "name_fr": "Tacle Glacial",
    "name_it": "Scivolata di Ghiaccio",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "WaterVeil",
@@ -270863,7 +271571,10 @@
    ],
    "name_fr": "Voile d'Eau",
    "name_it": "Ondata Perforante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "RoadrollerTackle",
@@ -270888,7 +271599,10 @@
    "name_it": null,
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "AuroraDribble",
@@ -270910,7 +271624,10 @@
    ],
    "name_fr": "Dribble Boréal",
    "name_it": "Aurora Dribbling",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "JumpingThunder",
@@ -270932,7 +271649,10 @@
    ],
    "name_fr": "Éclair Bondissant",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "FireBlizzard_Wind",
@@ -270954,7 +271674,10 @@
    ],
    "name_fr": "Blizzard Enflammé",
    "name_it": "Ghiaccio di Fuoco",
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "Supernova",
@@ -270977,7 +271700,10 @@
    ],
    "name_fr": "Supernova",
    "name_it": "Supernova",
-   "traits": []
+   "traits": [],
+   "balance_tp": 170,
+   "balance_power_min": 215,
+   "balance_power_max": 980
   },
   {
    "id": "SigmaZone",
@@ -270999,7 +271725,10 @@
    ],
    "name_fr": "Zone Sigma",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "FuusenGum",
@@ -271022,7 +271751,10 @@
    ],
    "name_fr": "Chewing-Gum",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "TheBirth",
@@ -271043,7 +271775,10 @@
    ],
    "name_fr": null,
    "name_it": "Aurora",
-   "traits": []
+   "traits": [],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "TenkuuOtoshi",
@@ -271066,7 +271801,10 @@
    "name_it": "Scarica Stellare",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "ExtendZone",
@@ -271091,7 +271829,10 @@
    "name_it": "Stella Nera",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "RoundSpark",
@@ -271114,7 +271855,10 @@
    ],
    "name_fr": "Sphère lumineuse",
    "name_it": "Globi di Luce",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "SafetyProtect",
@@ -271139,7 +271883,10 @@
    "name_it": null,
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "ToumeiFeint",
@@ -271161,7 +271908,10 @@
    ],
    "name_fr": "Camouflage",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "NekketsuHead",
@@ -271186,7 +271936,10 @@
    "name_it": "Testata Ardente",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "BodyShield",
@@ -271208,7 +271961,10 @@
    ],
    "name_fr": "File Indienne",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "SecurityShot",
@@ -271230,7 +271986,10 @@
    ],
    "name_fr": "Tir de Sécurité",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "TheTower",
@@ -271257,7 +272016,10 @@
    "name_it": "Torre Inespugnabile",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "RainbowLoop",
@@ -271281,7 +272043,10 @@
    "name_it": "Calcio Arcobaleno",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "PerfectTower",
@@ -271303,7 +272068,10 @@
    ],
    "name_fr": "Tour Parfaite",
    "name_it": "Torre Gigante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "TenchiRaimei",
@@ -271325,7 +272093,10 @@
    ],
    "name_fr": "Enfant du Tonnerre",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "GiantSpin",
@@ -271350,7 +272121,10 @@
    "name_it": null,
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "AuroraCurtain",
@@ -271373,7 +272147,10 @@
    ],
    "name_fr": "Rideau boréal",
    "name_it": "Tenda dell'Aurora",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "IceGround",
@@ -271398,7 +272175,10 @@
    ],
    "name_fr": "Patinoire",
    "name_it": "Difesa di Ghiaccio",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "MaboroshiDribble",
@@ -271420,7 +272200,10 @@
    ],
    "name_fr": "Dribble Spectral",
    "name_it": "Illusion Dribbling",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "WolfLegend",
@@ -271446,7 +272229,10 @@
    "name_it": "Richiamo del Lupo",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "SnowAngel",
@@ -271467,7 +272253,10 @@
    ],
    "name_fr": "Ange des Neiges",
    "name_it": "Lastra di Ghiaccio",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "Kaenhousha",
@@ -271490,7 +272279,10 @@
    ],
    "name_fr": "Cracheur de Feu",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "BunshinBlock",
@@ -271514,7 +272306,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "BunshinDefense",
@@ -271536,7 +272331,10 @@
    ],
    "name_fr": "Tacle Puissance 3",
    "name_it": "Clone Difensivo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "TatsumakiDokugiri",
@@ -271558,7 +272356,10 @@
    ],
    "name_fr": "Tourbillon de Poison",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "EagleBuster",
@@ -271583,7 +272384,10 @@
    "name_it": null,
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "Senpuujin",
@@ -271611,7 +272415,10 @@
    "name_it": "Turbina Rotante",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "TrickBall",
@@ -271634,7 +272441,10 @@
    ],
    "name_fr": "Illusion du Ballon Géant",
    "name_it": "Palla a Trabocchetto",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "KillerFields",
@@ -271655,7 +272465,10 @@
    ],
    "name_fr": "Champ d'Énergie",
    "name_it": "Campo di Forza",
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "DeathSpear",
@@ -271680,7 +272493,10 @@
    "name_it": "Lancia Micidiale",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "EndlessSummer",
@@ -271703,7 +272519,10 @@
    ],
    "name_fr": "Faux de Flammes",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "GreatBlaster",
@@ -271725,7 +272544,10 @@
    ],
    "name_fr": "Double Choc",
    "name_it": "Great Blaster",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "ArmadilloCircus",
@@ -271747,7 +272569,10 @@
    ],
    "name_fr": "Tatou de Cirque",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "DokonjouClub",
@@ -271771,7 +272596,10 @@
    "name_it": null,
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "Hanafubuki",
@@ -271796,7 +272624,10 @@
    ],
    "name_fr": "Trombe de Pétales",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "SlashNail",
@@ -271819,7 +272650,10 @@
    ],
    "name_fr": "Ongles Acérés",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "ChabudaiGaeshi",
@@ -271844,7 +272678,10 @@
    "name_it": null,
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "RibbonShower",
@@ -271867,7 +272704,10 @@
    ],
    "name_fr": "Danse du ruban",
    "name_it": "Danza del Nastro",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "ButterflyDream",
@@ -271892,7 +272732,10 @@
    "name_it": "Volo della Farfalla",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "TsuutenkakuShoot",
@@ -271916,7 +272759,10 @@
    "name_it": "Tiro della Torre",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "GodHand_Blue",
@@ -271943,7 +272789,10 @@
    ],
    "name_fr": "Main céleste",
    "name_it": "Mano di Luce",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "MajinTheHand_Blue",
@@ -271970,7 +272819,10 @@
    ],
    "name_fr": "Main magique",
    "name_it": "Mano del Colosso",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "MugenTheHand",
@@ -271995,7 +272847,10 @@
    ],
    "name_fr": "Mains de l'Infini",
    "name_it": "Mano Insuperabile",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "MaouTheHand",
@@ -272017,7 +272872,10 @@
    ],
    "name_fr": "Mains du Colosse",
    "name_it": "Mano di Forza",
-   "traits": []
+   "traits": [],
+   "balance_tp": 170,
+   "balance_power_min": 215,
+   "balance_power_max": 980
   },
   {
    "id": "StarReflection",
@@ -272043,7 +272901,10 @@
    "name_it": null,
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "NininSankyaku",
@@ -272065,7 +272926,10 @@
    ],
    "name_fr": "Trépied turbo",
    "name_it": "Doppio Attaco",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "DokonjouCatch",
@@ -272089,7 +272953,10 @@
    ],
    "name_fr": "Arrêt Tout-Puissant",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "NoEscape",
@@ -272111,7 +272978,10 @@
    ],
    "name_fr": "Sans Issue",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "TsunamiBoost",
@@ -272135,7 +273005,10 @@
    "name_it": "Onda Inarrestabile",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "WhaleGuard",
@@ -272157,7 +273030,10 @@
    ],
    "name_fr": "Baleine Furieuse",
    "name_it": "Balena Difensiva",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "TheTyphoon",
@@ -272180,7 +273056,10 @@
    ],
    "name_fr": "Le Typhon",
    "name_it": "Il Tifone",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "Sargasso",
@@ -272203,7 +273082,10 @@
    ],
    "name_fr": "Tourbillon Géant",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "SparkleWave",
@@ -272227,7 +273109,10 @@
    "name_it": "Tsunami Siderale",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "KuroshioRide",
@@ -272249,7 +273134,10 @@
    ],
    "name_fr": "Grand courant des ténèbres",
    "name_it": "Corrente Nera",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "Abisegeri",
@@ -272274,7 +273162,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "TripleDash",
@@ -272296,7 +273187,10 @@
    ],
    "name_fr": "Course Triple",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "SwanDive",
@@ -272319,7 +273213,10 @@
    ],
    "name_fr": "Saut de l'Ange",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "ThunderBeast",
@@ -272340,7 +273237,10 @@
    ],
    "name_fr": "Bête du Tonnerre",
    "name_it": "Tuono del Lupo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "DualSmash",
@@ -272364,7 +273264,10 @@
    ],
    "name_fr": "Double pression",
    "name_it": "Scudo Doppio",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "CorodraShoot",
@@ -272387,7 +273290,10 @@
    ],
    "name_fr": "Tir du dragon noir",
    "name_it": "Tiro CoroDragon",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "TigerDrive",
@@ -272412,7 +273318,10 @@
    "name_it": "Ruggito della Tigre",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "TigerStorm",
@@ -272433,7 +273342,10 @@
    ],
    "name_fr": "Tempête du Tigre",
    "name_it": "Ruggito di Fuoco",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "GladiusArch",
@@ -272456,7 +273368,10 @@
    "name_it": "Colpo delle Sette Spade",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "LinearDrive",
@@ -272478,7 +273393,10 @@
    ],
    "name_fr": "Impact guidé",
    "name_it": "Collisione Guidata",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "Shinkuuma",
@@ -272504,7 +273422,10 @@
    "name_it": "Attacco Volante",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "MeganeCrash",
@@ -272528,7 +273449,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "GreatBarrierReef",
@@ -272550,7 +273474,10 @@
    ],
    "name_fr": "Grande Barrière de Corail",
    "name_it": "Barriera Oceanica",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "KangarooKick",
@@ -272572,7 +273499,10 @@
    ],
    "name_fr": "Frappe Kangourou",
    "name_it": "Colpo del Canguro",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "Gravestone",
@@ -272593,7 +273523,10 @@
    ],
    "name_fr": null,
    "name_it": "Foresta di Pietra",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "PowerCharge",
@@ -272614,7 +273547,10 @@
    ],
    "name_fr": "Charge de Puissance",
    "name_it": "Carica Possente",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "BarbarianNoTate",
@@ -272638,7 +273574,10 @@
    "name_it": null,
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "StonePrison",
@@ -272659,7 +273598,10 @@
    ],
    "name_fr": "Prison de Pierre",
    "name_it": "Gabbia di Pietra",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "Megalodon",
@@ -272681,7 +273623,10 @@
    ],
    "name_fr": "Mégalodon",
    "name_it": "Megalodonte",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "MirageShoot",
@@ -272704,7 +273649,10 @@
    "name_it": "Sole del Deserto",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "MadExpress",
@@ -272726,7 +273674,10 @@
    ],
    "name_fr": "Train fou",
    "name_it": "Treno Espresso",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "StormRider",
@@ -272748,7 +273699,10 @@
    ],
    "name_fr": "Tempête de sable",
    "name_it": "Vortice di Sabbia",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "ScissorsBomb",
@@ -272769,7 +273723,10 @@
    ],
    "name_fr": "Dribble Explosif",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "DesertStorm",
@@ -272791,7 +273748,10 @@
    ],
    "name_fr": "Tempête du Désert",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "DogRun",
@@ -272812,7 +273772,10 @@
    ],
    "name_fr": "Ballon Furtif",
    "name_it": "Occhi di Fuoco",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "DaiBakuhatsuHarite",
@@ -272837,7 +273800,10 @@
    "name_it": "Scarica Esplosiva",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "JibashiriKaen",
@@ -272859,7 +273825,10 @@
    ],
    "name_fr": "Balayette Enflammée",
    "name_it": "Fiamma Sfrecciante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "NarakuOtoshi",
@@ -272880,7 +273849,10 @@
    ],
    "name_fr": "Talon Infernal",
    "name_it": "Salto Abissale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "Doukasen",
@@ -272901,7 +273873,10 @@
    ],
    "name_fr": "Fusible explosif",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "VivaBanriNoChoujou",
@@ -272927,7 +273902,10 @@
    "name_it": "Grande Muraglia",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "Galatyn",
@@ -272949,7 +273927,10 @@
    ],
    "name_fr": "Défense de Lumière",
    "name_it": "Fascio di Luce",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "Excalibur",
@@ -272972,7 +273953,10 @@
    "name_it": "Excalibur",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "UltraMoon",
@@ -272993,7 +273977,10 @@
    ],
    "name_fr": "Mégalune",
    "name_it": "Salto della Luna Piena",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "PaladinStrike",
@@ -273016,7 +274003,10 @@
    "name_it": "Colpo del Paladino",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "UnicornBoost",
@@ -273039,7 +274029,10 @@
    "name_it": "Tiro dell'Unicorno",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "FlashUpper",
@@ -273061,7 +274054,10 @@
    ],
    "name_fr": "Uppercut Foudroyant",
    "name_it": "Colpo di Luce",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "BigSpider",
@@ -273083,7 +274079,10 @@
    ],
    "name_fr": "Lame Gardienne",
    "name_it": "Ragno Gigante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "DemonCut",
@@ -273107,7 +274106,10 @@
    "name_it": "Calcio delle Tenebre",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "KouteiPenguinX",
@@ -273128,7 +274130,10 @@
    ],
    "name_fr": "Manchot Empereur Puissance X",
    "name_it": "Pinguino Imperatore X",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "MegatonHead",
@@ -273152,7 +274157,10 @@
    "name_it": "Respinta Inazuma",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "MillionHands",
@@ -273176,7 +274184,10 @@
    "name_it": "Mani Multiple",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "ZigzagFlame",
@@ -273197,7 +274208,10 @@
    ],
    "name_fr": "Zigzag de Feu",
    "name_it": "Fiamma Strisciante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "IronWall",
@@ -273222,7 +274236,10 @@
    "name_it": "Muro d'Acciaio",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "Hellfire",
@@ -273243,7 +274260,10 @@
    ],
    "name_fr": "Flammes Infernales",
    "name_it": "Sfera di Fuoco",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "Gunshot",
@@ -273264,7 +274284,10 @@
    ],
    "name_fr": "Boulet de Canon",
    "name_it": "Calcio Fiammeggiante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "GranFenrir",
@@ -273285,7 +274308,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "TriPegasus",
@@ -273307,7 +274333,10 @@
    ],
    "name_fr": "Tri-Pégase",
    "name_it": "Tri-Pegaso",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "ColosseoGuard",
@@ -273354,7 +274383,10 @@
    ],
    "name_fr": "Arrêt Capoeira",
    "name_it": "Parata Capoeira",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "RollingSlide",
@@ -273375,7 +274407,10 @@
    ],
    "name_fr": "Tacle acrobate",
    "name_it": "Scivolata Rotante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "SuperElastico",
@@ -273396,7 +274431,10 @@
    ],
    "name_fr": "Super Elastico",
    "name_it": "Superelastico",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "DoubleTornado",
@@ -273420,7 +274458,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "StrikeSamba",
@@ -273444,7 +274485,10 @@
    "name_it": "Colpo di Samba",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "JudgeThrough3",
@@ -273465,7 +274509,10 @@
    ],
    "name_fr": "Passage en Force 3",
    "name_it": "Calcio Stordente 3",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "TamashiiTheHand",
@@ -273487,7 +274534,10 @@
    ],
    "name_fr": "Main de l'Âme",
    "name_it": "Mano Suprema",
-   "traits": []
+   "traits": [],
+   "balance_tp": 180,
+   "balance_power_min": 230,
+   "balance_power_max": 1000
   },
   {
    "id": "XBlast",
@@ -273508,7 +274558,10 @@
    ],
    "name_fr": "Rayon X",
    "name_it": "Calcio Rovesciato X",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "GodHandX",
@@ -273532,7 +274585,10 @@
    ],
    "name_fr": "Main céleste X",
    "name_it": "Mano di Luce X",
-   "traits": []
+   "traits": [],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "GroundQuake",
@@ -273556,7 +274612,10 @@
    "name_it": "Scossa Tremante",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "DoubleJaw",
@@ -273577,7 +274636,10 @@
    ],
    "name_fr": "Doubles Mâchoires",
    "name_it": "Morsa Doppia",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "Stinger",
@@ -273599,7 +274661,10 @@
    ],
    "name_fr": "Coup d'Estoc",
    "name_it": "Tocco Pugente",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "EiffelDrive",
@@ -273620,7 +274685,10 @@
    ],
    "name_fr": "Tir Eiffel",
    "name_it": "Tiro Tour Eiffel",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "Slingshot",
@@ -273641,7 +274709,10 @@
    ],
    "name_fr": "Lance-Pierre",
    "name_it": "Colpo della Fionda",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "WelcomeBack",
@@ -273662,7 +274733,10 @@
    ],
    "name_fr": "Dribble Yoyo",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "MatadorFeint",
@@ -273683,7 +274757,10 @@
    ],
    "name_fr": "Esquive du Torero",
    "name_it": "Finta del Torero",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "UBoat",
@@ -273704,7 +274781,10 @@
    ],
    "name_fr": "Sous-Marin",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "DualPass",
@@ -273726,7 +274806,10 @@
    ],
    "name_fr": "Passe en duo",
    "name_it": "Passaggio Lampo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "SneakingRaid",
@@ -273748,7 +274831,10 @@
    ],
    "name_fr": "Embuscade",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "LiarShot",
@@ -273769,7 +274855,10 @@
    ],
    "name_fr": "Tir Menteur",
    "name_it": "Tiro Illusorio",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "Shootrap",
@@ -273792,7 +274881,10 @@
    ],
    "name_fr": "Piège Laser",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "TheGalaxy",
@@ -273815,7 +274907,10 @@
    ],
    "name_fr": "Tir galactique",
    "name_it": "La Galassia",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "HolyZone",
@@ -273837,7 +274932,10 @@
    ],
    "name_fr": "Zone Sacrée",
    "name_it": "Zona Suprema",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "GoToHeaven",
@@ -273858,7 +274956,10 @@
    ],
    "name_fr": "Montée céleste",
    "name_it": "Luce Ascendente",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "HeavenDrive",
@@ -273882,7 +274983,10 @@
    "name_it": null,
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "ShadowRay_Forest",
@@ -273903,7 +275007,10 @@
    ],
    "name_fr": "Rayon noir",
    "name_it": "Raggio Ombra",
-   "traits": []
+   "traits": [],
+   "balance_tp": 170,
+   "balance_power_min": 215,
+   "balance_power_max": 980
   },
   {
    "id": "TheEnd",
@@ -273925,7 +275032,10 @@
    ],
    "name_fr": "La Fin",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "GoToHell",
@@ -273946,7 +275056,10 @@
    ],
    "name_fr": "Chute Infernale",
    "name_it": "Luce Discendente",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "DevilBall",
@@ -273967,7 +275080,10 @@
    ],
    "name_fr": "Ballon Diabolique",
    "name_it": "Pallone Malefico",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "DarkMatter",
@@ -273991,7 +275107,10 @@
    "name_it": "Potenza Oscura",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "ShadowRay_Mountain",
@@ -274012,7 +275131,10 @@
    ],
    "name_fr": "Rayon noir",
    "name_it": "Raggio Ombra",
-   "traits": []
+   "traits": [],
+   "balance_tp": 170,
+   "balance_power_min": 215,
+   "balance_power_max": 980
   },
   {
    "id": "HighVoltage",
@@ -274036,7 +275158,10 @@
    "name_it": "Alta Tensione",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "NeedleHammer",
@@ -274058,7 +275183,10 @@
    ],
    "name_fr": "Barrage Électrique",
    "name_it": "Presa Voltaica",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "Electrap",
@@ -274080,7 +275208,10 @@
    ],
    "name_fr": "Piège Électrique",
    "name_it": "Gabbia Elettrica",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "DeathRain",
@@ -274103,7 +275234,10 @@
    "name_it": "Raffica Micidiale",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "ChaosMeteor",
@@ -274127,7 +275261,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "MegaWall",
@@ -274152,7 +275289,10 @@
    "name_it": null,
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "NeoGalaxy",
@@ -274174,7 +275314,10 @@
    ],
    "name_fr": "Nouvelle Galaxie",
    "name_it": "Neo Galaxy",
-   "traits": []
+   "traits": [],
+   "balance_tp": 170,
+   "balance_power_min": 215,
+   "balance_power_max": 980
   },
   {
    "id": "Inazuma1gouOtoshi",
@@ -274197,7 +275340,10 @@
    ],
    "name_fr": "Super Trampoline du Tonnerre",
    "name_it": "Doppio Trampolino Inazuma",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "CardProtect",
@@ -274221,7 +275367,10 @@
    "name_it": "Muraglia di Carte",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "CardBuster",
@@ -274242,7 +275391,10 @@
    ],
    "name_fr": "Carte-attaque",
    "name_it": "Calcio di Prestigio",
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "BigCard",
@@ -274263,7 +275415,10 @@
    ],
    "name_fr": "Carte Surprise",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "Evolution",
@@ -274288,7 +275443,10 @@
    "name_it": "Tripla Minaccia",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 170,
+   "balance_power_min": 215,
+   "balance_power_max": 980
   },
   {
    "id": "MachWind",
@@ -274313,7 +275471,10 @@
    "name_it": "Furia del Vento",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "SpiralDraw",
@@ -274336,7 +275497,10 @@
    ],
    "name_fr": "Sprint Tourbillon",
    "name_it": "Vortice Turbinoso",
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "WonderTrap",
@@ -274358,7 +275522,10 @@
    ],
    "name_fr": "Tacle Fantôme",
    "name_it": "Wonder Trap",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "AcrobatKeep",
@@ -274403,7 +275570,10 @@
    ],
    "name_fr": "Suppression",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "ArashiTatsumakiHurricane",
@@ -274426,7 +275596,10 @@
    "name_it": "Uragano Tempestoso",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "AsokoNiUFO",
@@ -274447,7 +275620,10 @@
    ],
    "name_fr": "Attention ! Un OVNI",
    "name_it": "Guarda Lassù c'è un UFO",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "AsteriskRock",
@@ -274472,7 +275648,10 @@
    "name_it": null,
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "AtlantisWall",
@@ -274498,7 +275677,10 @@
    "name_it": "Muraglia di Atlantide",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "AtlasSword",
@@ -274519,7 +275701,10 @@
    ],
    "name_fr": "Épée Tectonique",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "BatAttack",
@@ -274543,7 +275728,10 @@
    ],
    "name_fr": "Arrêt Sonar",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 30,
+   "balance_power_min": 20,
+   "balance_power_max": 140
   },
   {
    "id": "BeamKobushi",
@@ -274568,7 +275756,10 @@
    "name_it": "Pugno Irradiante",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "BeastLord",
@@ -274590,7 +275781,10 @@
    ],
    "name_fr": "Hurlement bestial",
    "name_it": "Ululo Del Licantropo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "BeautifulHoop",
@@ -274611,7 +275805,10 @@
    ],
    "name_fr": "Cerceau piégeant",
    "name_it": "Giro e Hoplà",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "BicycleSword",
@@ -274656,7 +275853,10 @@
    ],
    "name_fr": "Big Bang",
    "name_it": "Grande Fuoco",
-   "traits": []
+   "traits": [],
+   "balance_tp": 200,
+   "balance_power_min": 270,
+   "balance_power_max": 1080
   },
   {
    "id": "BigBangSlash",
@@ -274678,7 +275878,10 @@
    ],
    "name_fr": "Big Bang Slash",
    "name_it": "Sferazata Primordiale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "BigMouth",
@@ -274700,7 +275903,10 @@
    ],
    "name_fr": "Contrôle Végétal",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "BigScissors",
@@ -274723,7 +275929,10 @@
    ],
    "name_fr": "Pinces Coupantes",
    "name_it": "Chele Taglienti",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "BlackAsh",
@@ -274746,7 +275955,10 @@
    ],
    "name_fr": "Cendres Noires",
    "name_it": "Cenere Nera",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "BlackDawn",
@@ -274767,7 +275979,10 @@
    ],
    "name_fr": "Aube Obscure",
    "name_it": "Alba Nera",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "BlitzBridge",
@@ -274792,7 +276007,10 @@
    "name_it": null,
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "BoomerangFeint",
@@ -274815,7 +276033,10 @@
    ],
    "name_fr": "Feinte du Boomerang",
    "name_it": "Finta Boomerang",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "BouncerRabbit",
@@ -274837,7 +276058,10 @@
    ],
    "name_fr": "Lièvre Bondissant",
    "name_it": "Tiro Rimbalzante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "BoundFlame",
@@ -274860,7 +276084,10 @@
    ],
    "name_fr": "Flamme Rebondissante",
    "name_it": "Bomba Ballerina",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "BraveShot",
@@ -274883,7 +276110,10 @@
    "name_it": "Calcio Impavido",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "BubbleBoil",
@@ -274906,7 +276136,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "BuraiHand",
@@ -274930,7 +276163,10 @@
    ],
    "name_fr": "Mains Libérées",
    "name_it": "Mani Esperte",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "BurningCatch",
@@ -274954,7 +276190,10 @@
    ],
    "name_fr": "Arrêt Flamboyant",
    "name_it": "Parata Ardente",
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "BurningSummer",
@@ -274977,7 +276216,10 @@
    ],
    "name_fr": "Faucille de Flammes",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "ButtobiJump",
@@ -275002,7 +276244,10 @@
    "name_it": "Capriola Acrobatica",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "ButtobiPunch",
@@ -275027,7 +276272,10 @@
    "name_it": "Parata Volante",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "CardSplash",
@@ -275053,7 +276301,10 @@
    "name_it": "Pioggia di Carte",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 30,
+   "balance_power_min": 20,
+   "balance_power_max": 140
   },
   {
    "id": "CastleGate",
@@ -275077,7 +276328,10 @@
    "name_it": null,
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "Claymore",
@@ -275100,7 +276354,10 @@
    ],
    "name_fr": "Torpille Terrestre",
    "name_it": "Mina Terrestre",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "CoilUpper",
@@ -275122,7 +276379,10 @@
    ],
    "name_fr": "Bobine électrique",
    "name_it": "Comando di Difesa 03",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "CounterdriveGK",
@@ -275146,7 +276406,10 @@
    ],
    "name_fr": "Contre en Tandem",
    "name_it": "Tiro Solcante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "CrazySunlight",
@@ -275169,7 +276432,10 @@
    ],
    "name_fr": "Soleil Aveuglant",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "CrocodileFang",
@@ -275191,7 +276457,10 @@
    ],
    "name_fr": "Arrêt du Croc",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "CrystalBarrier",
@@ -275215,7 +276484,10 @@
    ],
    "name_fr": "Piège de Cristal",
    "name_it": "Barriera Cristallina",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "DashTrain",
@@ -275238,7 +276510,10 @@
    ],
    "name_fr": "Train en roue libre",
    "name_it": "A Tutto Vapore",
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "DeadStraight",
@@ -275282,7 +276557,10 @@
    ],
    "name_fr": "Tir apocalyptique",
    "name_it": "Triangolo Micidiale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 180,
+   "balance_power_min": 230,
+   "balance_power_max": 1000
   },
   {
    "id": "DeathDrop",
@@ -275307,7 +276585,10 @@
    "name_it": "Rovesciata Micidiale",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "DeathScytheLow",
@@ -275328,7 +276609,10 @@
    ],
    "name_fr": "Balayage Fauché",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "DeathScytheMiddle",
@@ -275352,7 +276636,10 @@
    "name_it": "Blocco a Falce",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "DeathSword",
@@ -275375,7 +276662,10 @@
    ],
    "name_fr": "Lame des ténèbres",
    "name_it": "Stoccata Micidiale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "DecoyRelease",
@@ -275397,7 +276687,10 @@
    ],
    "name_fr": "Déploiement de Leurres",
    "name_it": "Esche Ingannevoli",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "DeepMist",
@@ -275444,7 +276737,10 @@
    ],
    "name_fr": "Équation défensive",
    "name_it": "Equazione Difensiva",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "DesertDrift",
@@ -275465,7 +276761,10 @@
    ],
    "name_fr": "Dérive désertique",
    "name_it": "Scivolata del Deserto",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "DestinyCloud",
@@ -275488,7 +276787,10 @@
    ],
    "name_fr": "Arrêt Tornade",
    "name_it": "Nuvole Rosse",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "DevilBurst",
@@ -275511,7 +276813,10 @@
    ],
    "name_fr": "Tir surnaturel",
    "name_it": "Tiro Portentoso",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "DiffuseChord",
@@ -275532,7 +276837,10 @@
    ],
    "name_fr": "Partition Exaltée",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "DigThrough",
@@ -275553,7 +276861,10 @@
    ],
    "name_fr": "Tunnel Express",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "DigUp",
@@ -275574,7 +276885,10 @@
    ],
    "name_fr": "Forage Express",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "DimensionStorm",
@@ -275598,7 +276912,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "DinosaurBreak",
@@ -275623,7 +276940,10 @@
    "name_it": "Tiro del Dinosauro",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "DisasterBreak",
@@ -275645,7 +276965,10 @@
    ],
    "name_fr": "Tir Cataclysme",
    "name_it": "Tiro Catastrofico",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "DoonShout",
@@ -275668,7 +276991,10 @@
    ],
    "name_fr": "Onde répulsive",
    "name_it": "Distruzione",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "DoubleShot",
@@ -275692,7 +277018,10 @@
    "name_it": null,
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "DragonsTail",
@@ -275715,7 +277044,10 @@
    ],
    "name_fr": "Fouet Saurien",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "DryBlow",
@@ -275734,7 +277066,10 @@
    "zukan_types": null,
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "DustJavelin",
@@ -275755,7 +277090,10 @@
    ],
    "name_fr": "Missile des Sables",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "Einsatz",
@@ -275779,7 +277117,10 @@
    "name_it": "Chiave di Violino",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "ExtremeRabbit",
@@ -275801,7 +277142,10 @@
    ],
    "name_fr": "Lièvre Bondissant Surpuissant",
    "name_it": "Super Tiro Rimbalzante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "FatalLift",
@@ -275822,7 +277166,10 @@
    ],
    "name_fr": "Lévitation Forcée",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "FenceOfGaia",
@@ -275848,7 +277195,10 @@
    "name_it": "Barriera Monolitica",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "FireTornadoTC",
@@ -275870,7 +277220,10 @@
    ],
    "name_fr": "Fulgurante Triple Tornade de Feu",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 200,
+   "balance_power_min": 270,
+   "balance_power_max": 1080
   },
   {
    "id": "FloralDespair",
@@ -275892,7 +277245,10 @@
    ],
    "name_fr": "Sentence de la Rose",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "FlyingFish",
@@ -275917,7 +277273,10 @@
    "name_it": "Pesci Volanti",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "FootworkDraw",
@@ -275938,7 +277297,10 @@
    ],
    "name_fr": "Esquives du Boxeur",
    "name_it": "Scarto Controtempo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "Fortissimo",
@@ -275963,7 +277325,10 @@
    "name_it": "Tiro Sonoro",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "FractalHouse",
@@ -275985,7 +277350,10 @@
    ],
    "name_fr": "Rempart Fractal",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "GalacticaFall",
@@ -276006,7 +277374,10 @@
    ],
    "name_fr": "Chute de Comète",
    "name_it": "Proiezione Galattica",
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "GammaStrike",
@@ -276030,7 +277401,10 @@
    "name_it": null,
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "GaussShot",
@@ -276054,7 +277428,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "GearDrive",
@@ -276076,7 +277453,10 @@
    ],
    "name_fr": "Engrenage Accélérateur",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "GekirinDunk",
@@ -276098,7 +277478,10 @@
    ],
    "name_fr": "Parade Fatale du Dragon",
    "name_it": "Schiacciata del Drago",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "GigantVine",
@@ -276121,7 +277504,10 @@
    "name_it": null,
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "GingaRocket",
@@ -276145,7 +277531,10 @@
    "name_it": "Decollo Galattico",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "GloriousRay",
@@ -276167,7 +277556,10 @@
    ],
    "name_fr": "Rayonnement Majestueux",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "GodHandW",
@@ -276190,7 +277582,10 @@
    ],
    "name_fr": "Double Main Céleste",
    "name_it": "Mano di Luce Doppia",
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "GoldFever",
@@ -276211,7 +277606,10 @@
    ],
    "name_fr": "Ruée vers l'Or",
    "name_it": "Febbre dell'Oro",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "GrandSweeper",
@@ -276236,7 +277634,10 @@
    "name_it": "Campo Minato",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "GravityPoint",
@@ -276260,7 +277661,10 @@
    ],
    "name_fr": "Gravité Force",
    "name_it": "Punto di Gravità",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "GreatMaxNaOre",
@@ -276282,7 +277686,10 @@
    ],
    "name_fr": "Je suis le Tout Puissant",
    "name_it": "Io Sono Invincibile",
-   "traits": []
+   "traits": [],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "GyroSaving",
@@ -276305,7 +277712,10 @@
    ],
    "name_fr": "Gyro-Parade",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "HeadBazooka",
@@ -276328,7 +277738,10 @@
    ],
    "name_fr": "Rayon ravageur",
    "name_it": "Testata Esplosiva",
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "HinawaBullet",
@@ -276352,7 +277765,10 @@
    "name_it": null,
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "HologramLock",
@@ -276373,7 +277789,10 @@
    ],
    "name_fr": "Défense Holographique",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "HuntersNet",
@@ -276399,7 +277818,10 @@
    "name_it": "Rete da Caccia",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "HydroAnchor",
@@ -276425,7 +277847,10 @@
    "name_it": "Ancora Navale",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "Ichiyajou",
@@ -276450,7 +277875,10 @@
    "name_it": "Fortezza Notturna",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "Injection",
@@ -276471,7 +277899,10 @@
    ],
    "name_fr": "Spirale Centrifuge",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "IvoryCrash",
@@ -276492,7 +277923,10 @@
    ],
    "name_fr": "Frappe d'Éléphant",
    "name_it": "Zanne d'Avorio",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "Jackknife",
@@ -276513,7 +277947,10 @@
    ],
    "name_fr": "Claque Fouettée",
    "name_it": "Schiaffo Atterrante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "JokerRains",
@@ -276536,7 +277973,10 @@
    ],
    "name_fr": "Tir d'unité",
    "name_it": "Pioggia di Zolfo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "JudgmentRay",
@@ -276557,7 +277997,10 @@
    ],
    "name_fr": "Rayon de la Justice",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "KabukiBreak",
@@ -276578,7 +278021,10 @@
    ],
    "name_fr": "Rupture Kabuki",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "KageTsukami",
@@ -276602,7 +278048,10 @@
    ],
    "name_fr": "Gants des Ténèbres",
    "name_it": "Presa Oscura",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "KattobiDefense",
@@ -276628,7 +278077,10 @@
    "name_it": "Balzo Boom",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "Kazangan",
@@ -276651,7 +278103,10 @@
    "name_it": null,
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "Kazanrai",
@@ -276674,7 +278129,10 @@
    "name_it": "Fulmine Vulcanico",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "KikuIchimonji",
@@ -276698,7 +278156,10 @@
    "name_it": "Katana Crisantemo",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "KillBridge",
@@ -276722,7 +278183,10 @@
    ],
    "name_fr": "Arc Sombre",
    "name_it": "Ponte sul Nulla",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "KillerElbow",
@@ -276744,7 +278208,10 @@
    ],
    "name_fr": "Arrêt du Coude",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "KillerWhale",
@@ -276767,7 +278234,10 @@
    ],
    "name_fr": "Orque Furieuse",
    "name_it": "Temible Orca",
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "KirakiraIllusion",
@@ -276789,7 +278259,10 @@
    ],
    "name_fr": "Illusion Éblouissante",
    "name_it": "Illusione Abbagliante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "KodaiNoKiba",
@@ -276811,7 +278284,10 @@
    ],
    "name_fr": "Mâchoire jurassique",
    "name_it": "Fauci Giurassiche",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "KodaiNoTsubasa",
@@ -276833,7 +278309,10 @@
    ],
    "name_fr": "Tornade du Ptérosaure",
    "name_it": "Tornade du Ptérosaure",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "KogetsuJuujishou",
@@ -276858,7 +278337,10 @@
    "name_it": null,
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "KonohaRendezvous",
@@ -276879,7 +278361,10 @@
    ],
    "name_fr": "Farandole des feuilles",
    "name_it": "Rendezvous Rigoglioso",
-   "traits": []
+   "traits": [],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "KonohaRoll",
@@ -276900,7 +278385,10 @@
    ],
    "name_fr": "Boule de feuilles",
    "name_it": "Rotolo di Foglie",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "KyoubouHead",
@@ -276923,7 +278411,10 @@
    "name_it": "Catapulta Furiosa",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "LaFlamme",
@@ -276948,7 +278439,10 @@
    "name_it": "La Flamme",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "LiquidFlow",
@@ -276969,7 +278463,10 @@
    ],
    "name_fr": "Esquive Liquide",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "LoveArrow",
@@ -276993,7 +278490,10 @@
    "name_it": null,
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "LoyalHeartShot",
@@ -277014,7 +278514,10 @@
    ],
    "name_fr": "Tir de Cœur Loyal",
    "name_it": "Schiacciata Infuocata",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "MadJuggler",
@@ -277037,7 +278540,10 @@
    ],
    "name_fr": "Passage Comète",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "MagicAmp",
@@ -277058,7 +278564,10 @@
    ],
    "name_fr": "Amplification Magique",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "MagicalFlower",
@@ -277080,7 +278589,10 @@
    ],
    "name_fr": "Festival Floral",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "MagmaCarpet",
@@ -277101,7 +278613,10 @@
    ],
    "name_fr": "Flot de Lave",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "MagnetDraw",
@@ -277123,7 +278638,10 @@
    ],
    "name_fr": "Magnétisme",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "MajinTheHand_K",
@@ -277150,7 +278668,10 @@
    ],
    "name_fr": "Main magique",
    "name_it": "Mano del Colosso",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "MaximumFire",
@@ -277173,7 +278694,10 @@
    "name_it": "Fiammata Suprema",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "MochimochiKinakoMochi",
@@ -277198,7 +278722,10 @@
    "name_it": null,
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "MokkoriOkaNoMoai",
@@ -277217,7 +278744,10 @@
    ],
    "name_fr": "Coup du Moaï",
    "name_it": "Blocco Moai",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "MoonsaultStamp",
@@ -277241,7 +278771,10 @@
    ],
    "name_fr": "Arrêt Salto",
    "name_it": "Parata Acrobatica",
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "MueiRanbu",
@@ -277263,7 +278796,10 @@
    ],
    "name_fr": "Acrobotte",
    "name_it": "Acrobazia Robotica",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "MueiSouha",
@@ -277285,7 +278821,10 @@
    ],
    "name_fr": "Ruée Ordonnée",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "NaminoriPierrot",
@@ -277308,7 +278847,10 @@
    ],
    "name_fr": "Tourbillon aquatique",
    "name_it": "Turbine D'Acqua",
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "OgreBlade",
@@ -277332,7 +278874,10 @@
    "name_it": "Cascata Planetaria",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "OilRush",
@@ -277353,7 +278898,10 @@
    ],
    "name_fr": "Marée Noire",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "OkehazamaWall",
@@ -277378,7 +278926,10 @@
    "name_it": null,
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "OlympusHarmony",
@@ -277401,7 +278952,10 @@
    ],
    "name_fr": "Hymne d'Athéna",
    "name_it": "Inno di Atena",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "OmegaAttack",
@@ -277423,7 +278977,10 @@
    ],
    "name_fr": "Attaque Oméga",
    "name_it": "Attacco Omega",
-   "traits": []
+   "traits": [],
+   "balance_tp": 180,
+   "balance_power_min": 230,
+   "balance_power_max": 1000
   },
   {
    "id": "OmegaTheHand",
@@ -277445,7 +279002,10 @@
    ],
    "name_fr": "Main Oméga",
    "name_it": "Mano Omega",
-   "traits": []
+   "traits": [],
+   "balance_tp": 170,
+   "balance_power_min": 215,
+   "balance_power_max": 980
   },
   {
    "id": "OraoraMenchi",
@@ -277466,7 +279026,10 @@
    ],
    "name_fr": "Regard Menaçant",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "OrbitalDrive",
@@ -277487,7 +279050,10 @@
    ],
    "name_fr": "Frappe orbitale",
    "name_it": "Comando Mentale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "OuNoTsurugi",
@@ -277509,7 +279075,10 @@
    ],
    "name_fr": "Epée du Roi",
    "name_it": "Spada Reale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "OujaNoKiba",
@@ -277531,7 +279100,10 @@
    ],
    "name_fr": "Tir de défense torsadé",
    "name_it": "Zanne Aguzze",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "PantherBlizzard",
@@ -277556,7 +279128,10 @@
    "name_it": "Leopardo delle Nevi",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "ParkourAttack",
@@ -277577,7 +279152,10 @@
    ],
    "name_fr": "Frappe Parkour",
    "name_it": "Attacco Parkour",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "PenguinTheHand",
@@ -277600,7 +279178,10 @@
    ],
    "name_fr": "Main de Pingouin",
    "name_it": "Mano dei Pinguini",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "PerfectCourse",
@@ -277623,7 +279204,10 @@
    ],
    "name_fr": "Trajectoire optimale",
    "name_it": "Traiettoria Perfetta",
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "Phalanx",
@@ -277644,7 +279228,10 @@
    ],
    "name_fr": "Phalanx",
    "name_it": "Blocco Falange",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "PowerSpike",
@@ -277668,7 +279255,10 @@
    ],
    "name_fr": "Déchaînement de Puissance",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "PrestoTurn",
@@ -277691,7 +279281,10 @@
    ],
    "name_fr": "Passage presto",
    "name_it": "Toccata e Fuga",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "PrimeLegend",
@@ -277714,7 +279307,10 @@
    "name_it": "Prime Legend",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 170,
+   "balance_power_min": 215,
+   "balance_power_max": 980
   },
   {
    "id": "PsychicBow",
@@ -277735,7 +279331,10 @@
    ],
    "name_fr": "Flèche psychique",
    "name_it": "Arco Psichico",
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "RCShoot",
@@ -277758,7 +279357,10 @@
    "name_it": "Calcio Radiocomandato",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "RainbowBubbleShot",
@@ -277783,7 +279385,10 @@
    "name_it": "Bolle dell'Arcobaleno",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "RapidFire",
@@ -277806,7 +279411,10 @@
    "name_it": null,
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "RapidWhip",
@@ -277832,7 +279440,10 @@
    "name_it": null,
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "ReboundLayer",
@@ -277856,7 +279467,10 @@
    "name_it": null,
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "Rejection",
@@ -277879,7 +279493,10 @@
    ],
    "name_fr": "Répulsion",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "ReverseWorld",
@@ -277904,7 +279521,10 @@
    "name_it": null,
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "RisingSlash",
@@ -277928,7 +279548,10 @@
    "name_it": "Artigli di Guardia",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "RockHammer",
@@ -277949,7 +279572,10 @@
    ],
    "name_fr": "Massue de Roche",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "RollingCutter",
@@ -277970,7 +279596,10 @@
    ],
    "name_fr": "Scie de Guerre",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "Sacrifice",
@@ -277994,7 +279623,10 @@
    "name_it": "Sacrificio",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "SaikyouElevenHadou",
@@ -278016,7 +279648,10 @@
    ],
    "name_fr": "Attaque équipe ultime",
    "name_it": "Assalto della Squadra Invincibile",
-   "traits": []
+   "traits": [],
+   "balance_tp": 180,
+   "balance_power_min": 230,
+   "balance_power_max": 1000
   },
   {
    "id": "SaikyousanShoukan",
@@ -278039,7 +279674,10 @@
    ],
    "name_fr": "Maître Méga",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "SandCutter",
@@ -278062,7 +279700,10 @@
    ],
    "name_fr": "Lame de sable",
    "name_it": "Turbine di Sabbia",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "SandKnock",
@@ -278086,7 +279727,10 @@
    "name_it": null,
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "ScreamOfEden",
@@ -278107,7 +279751,10 @@
    ],
    "name_fr": "Cris d'Eden",
    "name_it": "Urlo dell'Eden",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "ShellbitBurst",
@@ -278131,7 +279778,10 @@
    "name_it": "Cannonata di Frammenti",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "ShiningHole",
@@ -278154,7 +279804,10 @@
    ],
    "name_fr": "Brèche de Lumière",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "ShinyFeather",
@@ -278175,7 +279828,10 @@
    ],
    "name_fr": "Ailes Iridescentes",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "ShootBreak",
@@ -278201,7 +279857,10 @@
    "name_it": "Blocca-Tiro",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "ShootEater",
@@ -278225,7 +279884,10 @@
    "name_it": null,
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "Sidewinder",
@@ -278250,7 +279912,10 @@
    "name_it": "Serpente a Sonagli",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "SilkRoad",
@@ -278271,7 +279936,10 @@
    ],
    "name_fr": "Route de la Soie",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "SkyWalk",
@@ -278294,7 +279962,10 @@
    ],
    "name_fr": "Danse de l'Air",
    "name_it": "Guizzi Aerei",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "SkytreeFall",
@@ -278316,7 +279987,10 @@
    ],
    "name_fr": "Saut Extrême",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "SonicShot",
@@ -278339,7 +280013,10 @@
    ],
    "name_fr": "Tir Sonique",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "SouhiYuuseidan",
@@ -278363,7 +280040,10 @@
    "name_it": null,
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "SoyoyagiStep",
@@ -278385,7 +280065,10 @@
    ],
    "name_fr": "Sauve-Cabri",
    "name_it": "Pastore Alato",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "SpinningTransam",
@@ -278407,7 +280090,10 @@
    ],
    "name_fr": "Tir gyroscopique",
    "name_it": "Effetto Spirale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "SpinningUpper",
@@ -278429,7 +280115,10 @@
    ],
    "name_fr": "Essorage rapide",
    "name_it": "Trivella Volante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "SpringArrow",
@@ -278451,7 +280140,10 @@
    ],
    "name_fr": "Tir double hélice",
    "name_it": "Doppia Elica",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "SprintWarp",
@@ -278474,7 +280166,10 @@
    ],
    "name_fr": "Passage dimensionnel",
    "name_it": "Scatto Anomalo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "StealthWalk",
@@ -278495,7 +280190,10 @@
    ],
    "name_fr": "Pas Furtifs",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "StormZone",
@@ -278517,7 +280215,10 @@
    ],
    "name_fr": "L'Œil du Cyclone",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "SunshineStorm",
@@ -278541,7 +280242,10 @@
    "name_it": "Tempesta Solare",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "TaikokuOuka",
@@ -278564,7 +280268,10 @@
    ],
    "name_fr": "Chant des Trois Royaumes",
    "name_it": "Inno dei Tre Regni",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "TentacleHold",
@@ -278585,7 +280292,10 @@
    ],
    "name_fr": "Tentacule de Blocage",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "TheMatrix",
@@ -278604,7 +280314,10 @@
    ],
    "name_fr": "Formule du filet argenté",
    "name_it": "Intreccio Galileiano",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "TheMist",
@@ -278627,7 +280340,10 @@
    ],
    "name_fr": "Brume illusoire",
    "name_it": "Cinta di Nebbia",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "TheMonsters",
@@ -278649,7 +280365,10 @@
    ],
    "name_fr": "Nocturne",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 170,
+   "balance_power_min": 215,
+   "balance_power_max": 980
   },
   {
    "id": "TheStamp",
@@ -278672,7 +280391,10 @@
    ],
    "name_fr": "Sceau Géant",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "ThiefEye",
@@ -278695,7 +280417,10 @@
    ],
    "name_fr": "L'œil du voleur",
    "name_it": "Occhiata Furtiva",
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "ThousandArrow",
@@ -278718,7 +280443,10 @@
    ],
    "name_fr": "Pluie de Flèches",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "TracePress",
@@ -278739,7 +280467,10 @@
    ],
    "name_fr": "Copier-coller",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "TriangleZZ",
@@ -278762,7 +280493,10 @@
    ],
    "name_fr": "Triangle ZZ",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "TwinMixer",
@@ -278785,7 +280519,10 @@
    ],
    "name_fr": "Découpage en Tranches",
    "name_it": "Vortice di Colpi",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "TwistReach",
@@ -278809,7 +280546,10 @@
    "name_it": "Presa Contorcente",
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "VampireLord",
@@ -278831,7 +280571,10 @@
    ],
    "name_fr": "Morsure du Vampire",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "VolcanicFly",
@@ -278852,7 +280595,10 @@
    ],
    "name_fr": "Envolée Volcanique",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "VolcanoHead",
@@ -278876,7 +280622,10 @@
    "name_it": null,
    "traits": [
     "punch"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "Waterfall",
@@ -278900,7 +280649,10 @@
    "name_it": null,
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "WhiteBlade",
@@ -278923,7 +280675,10 @@
    ],
    "name_fr": "Cercle arctique",
    "name_it": "Orbita Polare",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "WhiteHurricane",
@@ -278948,7 +280703,10 @@
    "name_it": "Uragano Bianco",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "WildDunk",
@@ -278970,7 +280728,10 @@
    ],
    "name_fr": "Parade Fatale",
    "name_it": "Parata del Cestista",
-   "traits": []
+   "traits": [],
+   "balance_tp": 40,
+   "balance_power_min": 30,
+   "balance_power_max": 200
   },
   {
    "id": "WillyWilly",
@@ -278991,7 +280752,10 @@
    ],
    "name_fr": "Tourne-tourne",
    "name_it": "Willy Willy",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "WinningLogic",
@@ -279012,7 +280776,10 @@
    ],
    "name_fr": "Déduction Imparable",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "ZSlash",
@@ -279033,7 +280800,10 @@
    ],
    "name_fr": "Dribble en Z",
    "name_it": "Z zag",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "ZeroMagnum",
@@ -279058,7 +280828,10 @@
    "name_it": "Zero Magnum",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp": 170,
+   "balance_power_min": 215,
+   "balance_power_max": 980
   },
   {
    "id": "vr_whk01080",
@@ -279080,7 +280853,10 @@
    ],
    "name_fr": "Force Cinétique",
    "name_it": "Respinta Rotolante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "vr_who01400",
@@ -279101,7 +280877,10 @@
    ],
    "name_fr": "Accélération Éclair",
    "name_it": "Contrasto Lampo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whs02770",
@@ -279122,7 +280901,10 @@
    ],
    "name_fr": "Ours polaire n° 2",
    "name_it": "Orso Polare Nº 2",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_whs02780",
@@ -279143,7 +280925,10 @@
    ],
    "name_fr": "Frappe météore",
    "name_it": "Tripla Meteora",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whs02760",
@@ -279164,7 +280949,10 @@
    ],
    "name_fr": "Frappe Albatros",
    "name_it": "Ali del Gol",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "vr_whs02830",
@@ -279185,7 +280973,10 @@
    ],
    "name_fr": "Tir tricolore",
    "name_it": "Triplo Tornado",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "vr_whs02840",
@@ -279206,7 +280997,10 @@
    ],
    "name_fr": "Daruma de feu",
    "name_it": "Fiamma Daruma",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs02820",
@@ -279227,7 +281021,10 @@
    ],
    "name_fr": "Tête inversée",
    "name_it": "Testa Calda",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "vr_whs02850",
@@ -279248,7 +281045,10 @@
    ],
    "name_fr": "Limonade de Feu",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "es_parada-remolino",
@@ -279265,7 +281065,10 @@
    "zukan_types": null,
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "es_velo-de-sirena",
@@ -279282,7 +281085,10 @@
    "zukan_types": null,
    "name_fr": "Voile des sirènes",
    "name_it": "Velo della Sirena",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whd01460",
@@ -279303,7 +281109,10 @@
    ],
    "name_fr": "Vortex de reprise",
    "name_it": "Trappola Turbinante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whd01470",
@@ -279327,7 +281136,10 @@
    "name_it": "Gabbia Gravitazionale",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs02800",
@@ -279348,7 +281160,10 @@
    ],
    "name_fr": "Pas de deux",
    "name_it": "Danza del Goal",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "vr_who01470",
@@ -279369,7 +281184,10 @@
    ],
    "name_fr": "Court-Circuit",
    "name_it": "Labirinto",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_who01410",
@@ -279390,7 +281208,10 @@
    ],
    "name_fr": "Vrille voltaïque",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whs03390",
@@ -279411,7 +281232,10 @@
    ],
    "name_fr": "Trait de glace",
    "name_it": "Freccia Gelida",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "vr_whs02810",
@@ -279432,7 +281256,10 @@
    ],
    "name_fr": "Lance de glace",
    "name_it": "Lanza di Ghiaccio",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "vr_whs02790",
@@ -279453,7 +281280,10 @@
    ],
    "name_fr": "Crapaud ninja",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "vr_whk01440",
@@ -279475,7 +281305,10 @@
    ],
    "name_fr": "Piège hirsute",
    "name_it": "Parata Pelosa",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whk01450",
@@ -279497,7 +281330,10 @@
    ],
    "name_fr": "Cratère démoniaque",
    "name_it": "Cratere Tempestivo",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_who00270",
@@ -279518,7 +281354,10 @@
    ],
    "name_fr": "Course Tempête",
    "name_it": "Scatto Infuocato",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_who01420",
@@ -279539,7 +281378,10 @@
    ],
    "name_fr": "Feinte angélique",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whd01490",
@@ -279560,7 +281402,10 @@
    ],
    "name_fr": "Sphère de confinement",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whs02860",
@@ -279581,7 +281426,10 @@
    ],
    "name_fr": "Frappe centrifuge",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "es_chilena-de-ping-ino",
@@ -279598,7 +281446,10 @@
    "zukan_types": null,
    "name_fr": "Volée de manchots",
    "name_it": "Pinguino Volante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whs02880",
@@ -279619,7 +281470,10 @@
    ],
    "name_fr": "Manchot Suprême",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whd00220",
@@ -279640,7 +281494,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whk01460",
@@ -279662,7 +281519,10 @@
    ],
    "name_fr": "Éclipse lunaire",
    "name_it": "Parata Emblematica",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whk01470",
@@ -279684,7 +281544,10 @@
    ],
    "name_fr": "Prise en Main",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whd00190",
@@ -279708,7 +281571,10 @@
    "name_it": "Piede del Giudizio",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whs02910",
@@ -279729,7 +281595,10 @@
    ],
    "name_fr": "Scie céleste",
    "name_it": "Lama Celestiale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_whs02890",
@@ -279750,7 +281619,10 @@
    ],
    "name_fr": "Lancier Royal",
    "name_it": "Tiro del Tridente",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whk00800",
@@ -279793,7 +281665,10 @@
    ],
    "name_fr": "Spectre vengeur",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whd01510",
@@ -279814,7 +281689,10 @@
    ],
    "name_fr": "Frankenstop",
    "name_it": "Difesa Mostruosa",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_whs00630",
@@ -279857,7 +281735,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_whs00140",
@@ -279878,7 +281759,10 @@
    ],
    "name_fr": "Tir Comète",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "vr_whk01480",
@@ -279900,7 +281784,10 @@
    ],
    "name_fr": "Morsure Bestiale",
    "name_it": "Morso della Belva Selvaggia",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "es_arrollador",
@@ -279917,7 +281804,10 @@
    "zukan_types": null,
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whk00180",
@@ -279939,7 +281829,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_whk00200",
@@ -279961,7 +281854,10 @@
    ],
    "name_fr": "Muraille Tsunami",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs02900",
@@ -279982,7 +281878,10 @@
    ],
    "name_fr": "Savoir ultime",
    "name_it": "Colpo Supremo: Impatto",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_who00090",
@@ -280003,7 +281902,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whd00060",
@@ -280024,7 +281926,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_whd00360",
@@ -280069,7 +281974,10 @@
    ],
    "name_fr": "Front froid",
    "name_it": "Collaborazione Gélida",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whs02950",
@@ -280090,7 +281998,10 @@
    ],
    "name_fr": "Triple blizzard",
    "name_it": "Tripla Tormenta",
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "vr_whs02920",
@@ -280111,7 +282022,10 @@
    ],
    "name_fr": "Ours entravé",
    "name_it": "Marcatura Furente",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "es_remate-cazaosos",
@@ -280128,7 +282042,10 @@
    "zukan_types": null,
    "name_fr": "Ours Enragé",
    "name_it": "Atacco Furente",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs02940",
@@ -280149,7 +282066,10 @@
    ],
    "name_fr": "Course du lièvre",
    "name_it": "Scatto della Lepre",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "vr_whs02980_or_02",
@@ -280170,7 +282090,10 @@
    ],
    "name_fr": "Attaque Cosmique",
    "name_it": "Scambio Nero",
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "vr_whs02960",
@@ -280191,7 +282114,10 @@
    ],
    "name_fr": "La déflagration",
    "name_it": "Detonatiro",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whs02970",
@@ -280212,7 +282138,10 @@
    ],
    "name_fr": "Zigzag supersonique",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_whk01490",
@@ -280234,7 +282163,10 @@
    ],
    "name_fr": "Double main magique",
    "name_it": "Doppio Guardiano",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whs02990",
@@ -280255,7 +282187,10 @@
    ],
    "name_fr": "Tourbillon du dragon",
    "name_it": "Alto Colpo del Drago",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whk01530",
@@ -280277,7 +282212,10 @@
    ],
    "name_fr": "Le Blob",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_who00590",
@@ -280298,7 +282236,10 @@
    ],
    "name_fr": "Planche Volante",
    "name_it": "Volo Planante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs03160",
@@ -280319,7 +282260,10 @@
    ],
    "name_fr": "Double tir",
    "name_it": "Lance Gemelle",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "vr_whs03000",
@@ -280340,7 +282284,10 @@
    ],
    "name_fr": "Frappe D’orfèvre",
    "name_it": "Tiro Diamante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "vr_whs03140",
@@ -280361,7 +282308,10 @@
    ],
    "name_fr": "Taille du diamant",
    "name_it": "Diamante Affilato",
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "vr_whk00510",
@@ -280383,7 +282333,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_who00640",
@@ -280404,7 +282357,10 @@
    ],
    "name_fr": "Ballon Angélique",
    "name_it": "Pallone Alato",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs00570",
@@ -280425,7 +282381,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "vr_whs03275",
@@ -280446,7 +282405,10 @@
    ],
    "name_fr": "Dernier Recours",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 170,
+   "balance_power_min": 215,
+   "balance_power_max": 980
   },
   {
    "id": "vr_whs03090",
@@ -280467,7 +282429,10 @@
    ],
    "name_fr": "Soleil Fulgurant",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs03280",
@@ -280488,7 +282453,10 @@
    ],
    "name_fr": "Dernier Recours Σ",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 200,
+   "balance_power_min": 270,
+   "balance_power_max": 1080
   },
   {
    "id": "vr_whs03050",
@@ -280509,7 +282477,10 @@
    ],
    "name_fr": "Nature Survoltée",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whs03210",
@@ -280530,7 +282501,10 @@
    ],
    "name_fr": "Limonade de feu ardent",
    "name_it": "Limonata di Fuoco Frizzante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "vr_whk01620",
@@ -280552,7 +282526,10 @@
    ],
    "name_fr": "Sirène Magique",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "es_tiro-a-reo-triple",
@@ -280569,7 +282546,10 @@
    "zukan_types": null,
    "name_fr": "Aria Triple G",
    "name_it": "Tripla Aria sulla Quarta Corda",
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "vr_whs03180",
@@ -280590,7 +282570,10 @@
    ],
    "name_fr": "Triangle de la Mort Amélioré",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "es_dimensi-n-kamakura",
@@ -280607,7 +282590,10 @@
    "zukan_types": null,
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 180,
+   "balance_power_min": 230,
+   "balance_power_max": 1000
   },
   {
    "id": "es_ping-ino-emperador-n-2-tibur-n",
@@ -280624,7 +282610,10 @@
    "zukan_types": null,
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "es_ping-inos-de-luz-y-sombra",
@@ -280641,7 +282630,10 @@
    "zukan_types": null,
    "name_fr": "Pingouins manichéens",
    "name_it": "Pinguini Luce e Ombra",
-   "traits": []
+   "traits": [],
+   "balance_tp": 170,
+   "balance_power_min": 215,
+   "balance_power_max": 980
   },
   {
    "id": "vr_whs03100",
@@ -280662,7 +282654,10 @@
    ],
    "name_fr": "Requin ténébreux",
    "name_it": "Squalo degli Abissi",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whs03240",
@@ -280683,7 +282678,10 @@
    ],
    "name_fr": "Frappe de Persée",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "vr_whk01510",
@@ -280705,7 +282703,10 @@
    ],
    "name_fr": "Anneau d'Artemis",
    "name_it": "Anelli di Artemide",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whk01520",
@@ -280727,7 +282728,10 @@
    ],
    "name_fr": "L'Asura",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 200,
+   "balance_power_min": 270,
+   "balance_power_max": 1080
   },
   {
    "id": "vr_whs03320",
@@ -280748,7 +282752,10 @@
    ],
    "name_fr": "Talonnade de la Pleine Lune",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "es_ruptura-rel-mpago-cg",
@@ -280765,7 +282772,10 @@
    "zukan_types": null,
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "vr_whd01570",
@@ -280789,7 +282799,10 @@
    "name_it": null,
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whs03260",
@@ -280810,7 +282823,10 @@
    ],
    "name_fr": "Jonglage Multicolore",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whs03360",
@@ -280831,7 +282847,10 @@
    ],
    "name_fr": "Gungnir de l'Avalanche",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "vr_whk01660",
@@ -280853,7 +282872,10 @@
    ],
    "name_fr": "Triple main magique",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "es_supermano-celestial",
@@ -280870,7 +282892,10 @@
    "zukan_types": null,
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whk01560",
@@ -280892,7 +282917,10 @@
    ],
    "name_fr": "Main de Diamant",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "vr_whk01700",
@@ -280914,7 +282942,10 @@
    ],
    "name_fr": "Prise de Diamant",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whk01550",
@@ -280936,7 +282967,10 @@
    ],
    "name_fr": "Poing cristallisé",
    "name_it": "Pugno di Diamante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whk01680",
@@ -280958,7 +282992,10 @@
    ],
    "name_fr": "Main céleste de l'amitié",
    "name_it": "Mano di Luce dell'Amicizia",
-   "traits": []
+   "traits": [],
+   "balance_tp": 190,
+   "balance_power_min": 250,
+   "balance_power_max": 1030
   },
   {
    "id": "vr_whs03110",
@@ -280979,7 +283016,10 @@
    ],
    "name_fr": "Super Tête Explosive",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whd01560",
@@ -281003,7 +283043,10 @@
    "name_it": null,
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "vr_who01450",
@@ -281024,7 +283067,10 @@
    ],
    "name_fr": "Nébuleuse Bleue",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whs03230",
@@ -281045,7 +283091,10 @@
    ],
    "name_fr": "Bouleversement des Astres",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whk01590",
@@ -281067,7 +283116,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs03200",
@@ -281088,7 +283140,10 @@
    ],
    "name_fr": "Charge du Bison",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whs03310",
@@ -281109,7 +283164,10 @@
    ],
    "name_fr": "Passage enflammé",
    "name_it": "Cataclisma Vermiglio",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whk01650",
@@ -281131,7 +283189,10 @@
    ],
    "name_fr": "Lame du Soleil",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_who00400",
@@ -281152,7 +283213,10 @@
    ],
    "name_fr": "Tourbillon de Poison",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_whs03130",
@@ -281173,7 +283237,10 @@
    ],
    "name_fr": "Cadran figé",
    "name_it": "Trance Temporale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "vr_whk01670",
@@ -281195,7 +283262,10 @@
    ],
    "name_fr": "Sonate de l'Oubli",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs03300",
@@ -281216,7 +283286,10 @@
    ],
    "name_fr": "Tir du ténor",
    "name_it": "Requiem Pulviscolare",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whk01540",
@@ -281238,7 +283311,10 @@
    ],
    "name_fr": "Bloc de Magma",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whd01580",
@@ -281259,7 +283335,10 @@
    ],
    "name_fr": "Red Hot Météorite",
    "name_it": "Red Hot Chili Meteor",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs03190",
@@ -281280,7 +283359,10 @@
    ],
    "name_fr": "Coup du Phénix",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whk01690",
@@ -281302,7 +283384,10 @@
    ],
    "name_fr": "Éventail du Dragon",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whd01590",
@@ -281326,7 +283411,10 @@
    "name_it": null,
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs03350",
@@ -281347,7 +283435,10 @@
    ],
    "name_fr": "Fissure du sol",
    "name_it": "Fissura Ultraterrena",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "es_guila-implacable",
@@ -281364,7 +283455,10 @@
    "zukan_types": null,
    "name_fr": "Tir du ciel",
    "name_it": "Proiettile del Falco",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whs03120",
@@ -281385,7 +283479,10 @@
    ],
    "name_fr": "Un pour tous",
    "name_it": "Spada di D'Artagnan",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whk01630",
@@ -281407,7 +283504,10 @@
    ],
    "name_fr": "Satellite militaire Phobos",
    "name_it": "Raggio Satellitare",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs03080",
@@ -281428,7 +283528,10 @@
    ],
    "name_fr": "Caronade",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "vr_whk01570",
@@ -281450,7 +283553,10 @@
    ],
    "name_fr": "Arrêt Pincé",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whs03040",
@@ -281471,7 +283577,10 @@
    ],
    "name_fr": "Tir Vitrail",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whs03150",
@@ -281492,7 +283601,10 @@
    ],
    "name_fr": "Aigle Bicéphale",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whs01150",
@@ -281513,7 +283625,10 @@
    ],
    "name_fr": "Tir Banane",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "vr_whk01610",
@@ -281535,7 +283650,10 @@
    ],
    "name_fr": "Spa-gant-ti",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_whs03170",
@@ -281556,7 +283674,10 @@
    ],
    "name_fr": "Samba Fatale",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "vr_whs03070",
@@ -281577,7 +283698,10 @@
    ],
    "name_fr": "Frappe Capoeira",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whk01640",
@@ -281599,7 +283723,10 @@
    ],
    "name_fr": "Bouche de la Vérité",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whs03030",
@@ -281620,7 +283747,10 @@
    ],
    "name_fr": "Pise renversée",
    "name_it": "Torre Pendente",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whs03370",
@@ -281641,7 +283771,10 @@
    ],
    "name_fr": "Char spectral",
    "name_it": "Biga Travolgente",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whs03290",
@@ -281662,7 +283795,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_who00260",
@@ -281683,7 +283819,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whk01580",
@@ -281705,7 +283844,10 @@
    ],
    "name_fr": "Tricéra-Bouclier",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whk01600",
@@ -281727,7 +283869,10 @@
    ],
    "name_fr": "Âmes Enchaînées",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whs03060",
@@ -281748,7 +283893,10 @@
    ],
    "name_fr": "L'ombre d'Orion",
    "name_it": "Vipera Gemella Orion",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whs03220",
@@ -281769,7 +283917,10 @@
    ],
    "name_fr": "Âmes Déchaînées",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "vr_whs10040",
@@ -281790,7 +283941,10 @@
    ],
    "name_fr": "Éclair de force",
    "name_it": "Lampo di Forza",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs10010",
@@ -281811,7 +283965,10 @@
    ],
    "name_fr": "Tonnerre du printemps",
    "name_it": "Tuono di Primavera",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whs10050",
@@ -281832,7 +283989,10 @@
    ],
    "name_fr": "Tir tournoyant",
    "name_it": "Tiro Vorticante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "vr_whd10010",
@@ -281853,7 +284013,10 @@
    ],
    "name_fr": "Tortue Tourbillonnante",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whk10010",
@@ -281875,7 +284038,10 @@
    ],
    "name_fr": "Danse Glaciale",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whs10130",
@@ -281896,7 +284062,10 @@
    ],
    "name_fr": "Éclair divin",
    "name_it": "Ultra Tuono Celeste",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "vr_whd10090",
@@ -281920,7 +284089,10 @@
    "name_it": "Mega Pestone Sumo",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_whd10130",
@@ -281941,7 +284113,10 @@
    ],
    "name_fr": "Tacle dramatique",
    "name_it": "Tackle Teatrale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs10140",
@@ -281962,7 +284137,10 @@
    ],
    "name_fr": "Propulsion académique",
    "name_it": "Impulso della Risposta",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "vr_who10100",
@@ -281983,7 +284161,10 @@
    ],
    "name_fr": "Montée zéphyr",
    "name_it": "Eco della Vetta",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_who10140",
@@ -282004,7 +284185,10 @@
    ],
    "name_fr": "Cerceau de la vie",
    "name_it": "Cerchio e Hoplà",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_who10130",
@@ -282025,7 +284209,10 @@
    ],
    "name_fr": "Cercle givré",
    "name_it": "Orbita Elegante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_who10120",
@@ -282046,7 +284233,10 @@
    ],
    "name_fr": "Contre du héron",
    "name_it": "Picchiata del Falco",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_who10110",
@@ -282067,7 +284257,10 @@
    ],
    "name_fr": "Matrice-Scan",
    "name_it": "Matrice Digitale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whd10100",
@@ -282088,7 +284281,10 @@
    ],
    "name_fr": "Train explosif",
    "name_it": "A Tutto Furore",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_who10150",
@@ -282109,7 +284305,10 @@
    ],
    "name_fr": "Dribble fantasmagorique",
    "name_it": "Dribbling Fantasma",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_whs10170",
@@ -282130,7 +284329,10 @@
    ],
    "name_fr": "Loup argenté légendaire",
    "name_it": "Richiamo del Lupo Grigio",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_whs10150",
@@ -282151,7 +284353,10 @@
    ],
    "name_fr": "Marlins volants",
    "name_it": "Pesce Volante",
-   "traits": []
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "vr_who10160",
@@ -282172,7 +284377,10 @@
    ],
    "name_fr": "Là ! Un onigiri",
    "name_it": "Avvistamento Polpette di Riso",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whd10110",
@@ -282193,7 +284401,10 @@
    ],
    "name_fr": "Marteau de fer",
    "name_it": "Martello Metallico",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_whd10120",
@@ -282217,7 +284428,10 @@
    "name_it": "Nebbia Oscura",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_who10170",
@@ -282238,7 +284452,10 @@
    ],
    "name_fr": "Riff ventriculaire",
    "name_it": "Ritmo Rock and Roll",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whk10070",
@@ -282260,7 +284477,10 @@
    ],
    "name_fr": "Main céleste tigrée",
    "name_it": "Mano di Luce della Tigre",
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whs10120",
@@ -282281,7 +284501,10 @@
    ],
    "name_fr": "Choc de Bahamut",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whs10030",
@@ -282302,7 +284525,10 @@
    ],
    "name_fr": "Un de Plus",
    "name_it": "Unificazione",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "vr_whs10110",
@@ -282323,7 +284549,10 @@
    ],
    "name_fr": "Tornade de feu météore",
    "name_it": "Tornado di Fuoco Meteora",
-   "traits": []
+   "traits": [],
+   "balance_tp": 180,
+   "balance_power_min": 230,
+   "balance_power_max": 1000
   },
   {
    "id": "vr_whs00920",
@@ -282366,7 +284595,10 @@
    ],
    "name_fr": "Étreinte sacrée",
    "name_it": "Abbraccio della Dea",
-   "traits": []
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "vr_whk10040",
@@ -282388,7 +284620,10 @@
    ],
    "name_fr": "Gravité de sable",
    "name_it": "Deserto Gravitazionale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_who10050",
@@ -282409,7 +284644,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs10020",
@@ -282430,7 +284668,10 @@
    ],
    "name_fr": "Brisure du soleil",
    "name_it": "Fendiluce",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_who10040",
@@ -282451,7 +284692,10 @@
    ],
    "name_fr": "Ruée Exigeante",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_whs10080",
@@ -282472,7 +284716,10 @@
    ],
    "name_fr": "Tir de sniper",
    "name_it": "Tiro del Cecchino",
-   "traits": []
+   "traits": [],
+   "balance_tp": 60,
+   "balance_power_min": 60,
+   "balance_power_max": 360
   },
   {
    "id": "vr_whk00130",
@@ -282494,7 +284741,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whk10020",
@@ -282516,7 +284766,10 @@
    ],
    "name_fr": "Royaume cybernétique",
    "name_it": "Morsa Cibernetica",
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_who10060",
@@ -282537,7 +284790,10 @@
    ],
    "name_fr": "Chutes du Niagara",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whd10040",
@@ -282558,7 +284814,10 @@
    ],
    "name_fr": "Plongée en profondeur",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs10060",
@@ -282579,7 +284838,10 @@
    ],
    "name_fr": "Blaster du Tricheur",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_whk10050",
@@ -282601,7 +284863,10 @@
    ],
    "name_fr": "Encre silencieuse",
    "name_it": "Pennellata Silenziosa",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_who10070",
@@ -282622,7 +284887,10 @@
    ],
    "name_fr": "Menace visuelle",
    "name_it": "Sguardo Spettrale",
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whk10060",
@@ -282644,7 +284912,10 @@
    ],
    "name_fr": "Bouclier Royal",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whd10060",
@@ -282665,7 +284936,10 @@
    ],
    "name_fr": "Le Bastion",
    "name_it": "Bastione Inespugnabile",
-   "traits": []
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_who10080",
@@ -282686,7 +284960,10 @@
    ],
    "name_fr": "Lumière du Maréchal",
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whs10100",
@@ -282707,7 +284984,10 @@
    ],
    "name_fr": "Parade du manchot royal",
    "name_it": "Marcia dei Pinguini Imperatori",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whk00280",
@@ -282729,7 +285009,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whk00400",
@@ -282751,7 +285034,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "vr_whk01400",
@@ -282773,7 +285059,10 @@
    ],
    "name_fr": "Trombe d'arrêt",
    "name_it": "Mano d'Acqua",
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whk01410",
@@ -282795,7 +285084,10 @@
    ],
    "name_fr": null,
    "name_it": null,
-   "traits": []
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whs01160",
@@ -282816,7 +285108,10 @@
    ],
    "name_fr": "Le Rouleau",
    "name_it": "Flusso d'Acqua",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   }
  ],
  "characters": [

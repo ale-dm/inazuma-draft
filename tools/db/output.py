@@ -20,12 +20,46 @@ def sql(v):
     return "'" + str(v).replace("'", "''") + "'"
 
 
-def insert(table, cols, rows, chunk=500):
+def insert(table, cols, rows, chunk=500, key=None):
+    """insert en trozos; con key (columna única) es un upsert: lo que ya hay se actualiza solo en estas columnas, así las
+    columnas y filas añadidas a mano en la tabla no se pierden"""
+    tail = ''
+    if key:
+        sets = ','.join(f'{c}=excluded.{c}' for c in cols if c != key)
+        tail = f' on conflict ({key}) do update set {sets}'
     out = []
     for i in range(0, len(rows), chunk):
         vals = ',\n'.join('(' + ','.join(sql(r[c]) for c in cols) + ')' for r in rows[i:i + chunk])
-        out.append(f'insert into public.{table} ({",".join(cols)}) values\n{vals};')
+        out.append(f'insert into public.{table} ({",".join(cols)}) values\n{vals}{tail};')
     return '\n'.join(out)
+
+
+def _balance(techs):
+    """añade balance_tp / balance_power_* a las técnicas de players.json (la base los lleva en columnas propias)"""
+    path = os.path.join(ROOT, 'data', 'technique_balance.json')
+    if not os.path.exists(path):
+        return
+    with open(path, encoding='utf-8') as f:
+        bal = json.load(f)['techniques']
+    for t in techs:
+        if t['id'] in bal:
+            t['balance_tp'], t['balance_power_min'], t['balance_power_max'] = bal[t['id']]
+
+
+def write_balance():
+    """supabase/technique_balance.sql: TP balanceado y su potencia por técnica (data/technique_balance.json, ver balance_xlsx.py).
+    Solo actualiza esas tres columnas; las demás columnas y filas de la tabla no se tocan."""
+    path = os.path.join(ROOT, 'data', 'technique_balance.json')
+    if not os.path.exists(path):
+        return
+    with open(path, encoding='utf-8') as f:
+        t = json.load(f)['techniques']
+    vals = ',\n'.join(f"({sql(i)},{tp},{mn},{mx})" for i, (tp, mn, mx) in sorted(t.items()))
+    with open(os.path.join(ROOT, 'supabase', 'technique_balance.sql'), 'w', encoding='utf-8') as f:
+        f.write('-- Generado por tools/db/build.py desde data/technique_balance.json — no editar a mano.\n'
+                '-- TP balanceado de las técnicas y la potencia que le corresponde (hoja de balance). Idempotente.\n'
+                'update public.techniques t set balance_tp = v.tp, balance_power_min = v.mn, balance_power_max = v.mx\n'
+                f'from (values\n{vals}\n) as v(id, tp, mn, mx) where t.id = v.id;\n')
 
 
 def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
@@ -48,6 +82,7 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
             'techniques': [t['id'] for t in c['moves']],
             'duel_att': c.get('duel_att'), 'duel_con': c.get('duel_con'), 'duel_def': c.get('duel_def'),
         })
+    _balance(techs)
     apply_edits(public, techs, chars, report)                # cambios del CRUD oculto (data/card_edits.json)
     with open(os.path.join(OUT, 'players.json'), 'w', encoding='utf-8') as f:
         json.dump({'cards': public, 'techniques': techs, 'characters': chars, 'teams': teams, 'staff': staff}, f, ensure_ascii=False, indent=1)
@@ -69,13 +104,14 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
     links = [{'card_id': c['id'], 'technique_id': t, 'slot': i + 1}
              for c in public for i, t in enumerate(dict.fromkeys(c['techniques']))]
     seed = ['-- Generado por tools/db/build.py — no editar a mano.', 'begin;',
-            'truncate public.card_techniques, public.cards, public.techniques, public.characters, public.teams, public.staff, public.zukan;',
+            '-- las técnicas no se vacían: tienen columnas y filas propias (ver schema.sql); se actualizan con upsert',
+            'truncate public.card_techniques, public.cards, public.characters, public.teams, public.staff, public.zukan;',
             insert('zukan', ['no', 'image_id', 'name', 'name_ja', 'role', 'age', 'element', 'position', 'teams', 'games', 'description', 'vr_lv50', 'wiki_page'], zukan_rows),
             insert('staff', ['zukan_no', 'name', 'role', 'team', 'teams', 'games', 'age', 'element', 'image_url', 'description', 'wiki_page'], staff),
             insert('teams', ['name', 'name_es', 'name_fr', 'name_it', 'logo_url', 'logos'], teams),
             insert('characters', ['id', 'name', 'wiki_page', 'zukan_no'], [{**c} for c in chars]),
             insert('techniques', ['id', 'name', 'name_es', 'name_fr', 'name_it', 'name_jp', 'type', 'element', 'cost', 'cost_game', 'costs',
-                                  'description', 'image_url', 'zukan_types', 'traits'], techs),
+                                  'description', 'image_url', 'zukan_types', 'traits'], techs, key='id'),
             insert('cards', card_cols, public),
             insert('card_techniques', ['card_id', 'technique_id', 'slot'], links),
             '-- cambios hechos desde el CRUD de la app (supabase/admin.sql): se vuelven a aplicar encima',
@@ -84,6 +120,7 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
     os.makedirs(os.path.join(ROOT, 'supabase'), exist_ok=True)
     with open(os.path.join(ROOT, 'supabase', 'seed.sql'), 'w', encoding='utf-8') as f:
         f.write('\n'.join(seed))
+    write_balance()
 
     cats = collections.Counter(c['category'] for c in public)
     tiers = collections.Counter(c['tier'] for c in public)

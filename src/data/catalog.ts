@@ -63,6 +63,9 @@ interface TechniqueRow {
   description: string | null
   image_url: string | null
   traits: string[] | null
+  balance_tp?: number | null
+  balance_power_min?: number | null
+  balance_power_max?: number | null
 }
 
 interface StaffRow {
@@ -125,6 +128,8 @@ const CARD_COLUMNS = 'id,character_id,name,game,version,team,position,element,ov
   + 'shooting,control,physical,speed,defense,goalkeeping,image_url,is_version,zukan_no,no,specials,extra_teams,'
   + 'duel_att,duel_con,duel_def,card_techniques(slot,technique_id)'
 const TECHNIQUE_COLUMNS = 'id,name,name_es,name_fr,name_it,type,element,cost,cost_game,description,image_url,traits'
+/** TP balanceado y su potencia (si la base aún no tiene esas columnas, se piden sin ellas) */
+const BALANCE_COLUMNS = 'balance_tp,balance_power_min,balance_power_max'
 const cardsPage = (offset: number, headers?: Record<string, string>) =>
   rest<CardRow[]>(`cards?select=${CARD_COLUMNS}&order=id&limit=${PAGE}&offset=${offset}`, headers)
 
@@ -142,7 +147,7 @@ export async function loadCatalog(): Promise<void> {
   if (players.length) return
   // todo a la vez; equipos y cuerpo técnico son opcionales (sin ellos: nombres en inglés, sin pestaña de staff)
   const [techniques, teams, staffRows, rows] = await Promise.all([
-    get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS}`),
+    get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS},${BALANCE_COLUMNS}`).catch(() => get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS}`)),
     get<TeamRow[]>('teams?select=name,name_es,name_fr,name_it,logo_url,logos').catch(() => [] as TeamRow[]),
     get<StaffRow[]>('staff?select=zukan_no,name,role,team,teams,games,image_url,description&order=zukan_no').catch(() => [] as StaffRow[]),
     loadCards(),
@@ -208,7 +213,8 @@ export function rebuildCatalog() {
   }))
   const techById = new Map<string, Technique>(baseTechniques.map(t => [t.id, {
     id: t.id, name: t.name, nameEs: t.name_es, nameFr: t.name_fr, nameIt: t.name_it, type: t.type, element: t.element,
-    cost: t.cost, costGame: t.cost_game, description: t.description, image: t.image_url, traits: t.traits ?? [],
+    cost: t.cost, costGame: t.cost_game, tp: t.balance_tp ?? t.cost, powerMin: t.balance_power_min ?? null, powerMax: t.balance_power_max ?? null,
+    description: t.description, image: t.image_url, traits: t.traits ?? [],
   }]))
   techniquesById = techById
   const rows = baseCards

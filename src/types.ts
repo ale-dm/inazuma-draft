@@ -35,6 +35,11 @@ export interface Technique {
   element: Element | null
   /** Coste mostrado (Galaxy si existe) */
   cost: number | null
+  /** TP balanceado de la app (columna balance_tp): el que se enseña; si falta, el coste de los juegos */
+  tp: number | null
+  /** Potencia mínima y máxima que le corresponde a ese TP */
+  powerMin?: number | null
+  powerMax?: number | null
   costGame: string | null
   /** Descripción oficial de zukan (inglés) e imagen */
   description?: string | null
