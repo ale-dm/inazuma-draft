@@ -79,6 +79,12 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] Copas de draft con el último draft: tarjetas con rondas, premio y boost (si el once lo cumple, +4 de química)
 - [ ] Fatal Sim (la simulación del partido: control, ocasión de ataque y defensa; ver las capturas de MADFUT 25)
 
+## Técnicas: TP balanceado
+- [x] Hoja «Sheet2» cruzada con la tabla `techniques`: `balance_tp` + potencias por la escala TP→potencia ([balance-tp.md](balance-tp.md))
+- [x] La app enseña el TP balanceado (ficha de la carta) y el CRUD lo edita
+- [ ] Revisar a mano en [balance-tp.md](balance-tp.md): los casos dudosos y 2 técnicas de la hoja que no existen en la tabla (Tiro a reacción, Tornado de pingüinos)
+- [ ] Usar TP y potencia en el Duelo cuando se hagan las supertécnicas (ver [duelo.md](duelo.md) y [tension-vr.md](tension-vr.md))
+
 ## Herramientas
 - [x] Nombres FR/IT: técnicas 740/513, equipos 133/107, espíritus 212/55 de 289 (wikis fr/it + enlaces entre idiomas de la inglesa). Sin fuente para las descripciones en FR/IT (zukan solo en inglés/japonés)
 - [x] Carga más rápida: cada pantalla en su propio archivo (el inicial pasa de 514 a 355 kB)
