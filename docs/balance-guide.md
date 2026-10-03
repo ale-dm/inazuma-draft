@@ -107,7 +107,10 @@ Detalle en [fatal-sim.md](fatal-sim.md). Resumen de números:
 ### 2.5 Tensión (Fatal Sim) — `src/lib/tension.ts`
 - Barra 0–400 (`TENSION_MAX`), inicio 80, ganancias `TENSION_GAIN` (balón ganado 50 · perdido 25 · gol 50 · parada 25).
 - Elegir carta: `PICK_COST` 100. Supertécnica: coste `TP × 2`, bonus `max(2, round(TP/17))` (+2 si coincide la afinidad).
-- Táctica del descanso `TACTIC_MOD` 3 (`SimMatch.tsx`); IA: `AI_TECH_PROB` 0,35.
+- Presión alta `PRESS` (80 → +4 control) · hiperenergía `HYPER` (200 → +6, una vez por partido) · grito del portero
+  `SHOUT_COST` 120 (una vez por parte, para seguro) · contraataque `COUNTER_BONUS` +3 (todo en `tension.ts`).
+- Táctica del descanso `TACTIC_MOD` 3 (`SimMatch.tsx`); IA: `AI_TECH_PROB` 0,35. El partido espera tus decisiones; tiempos de
+  pantalla en `SimMatch.tsx` (`QUICK_MS`, `RESULT_MS`).
 - Con TP 30–200: coste 60–400, bonus +2…+12. Para que las técnicas pesen más o menos: `techBonus` (divisor 17); para
   que se usen más o menos: `techCost` (factor 2) y `TENSION_GAIN`.
 

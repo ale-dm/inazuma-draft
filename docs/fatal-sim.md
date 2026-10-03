@@ -26,13 +26,29 @@ Modo pasivo del Fatal Draft: miras un partido de 90 minutos (2 partes de 45) con
 ## Interacción (tensión)
 Código: `src/lib/tension.ts` (reglas) y `SimMatch.tsx`. La **tensión** es una barra por equipo de 0 a **400** (`TENSION_MAX`;
 en Victory Road es 300 con la técnica más cara en 100: aquí las técnicas llegan a 200 TP). Empiezas con 80
-(`TENSION_START`).
-- **Se gana**: balón ganado +50, balón perdido o fuera +25, gol marcado +50, ataque rival parado +25 (`TENSION_GAIN`).
-- **Se gasta** en dos cosas, en las fases de control, de tu ataque y de tu defensa (tienes 5 s o pulsas «Seguir»):
-  1. **Elegir carta**: tocas otra de las 3 que salen y juega esa (`PICK_COST` = 100).
-  2. **Supertécnica** de la carta que juega, del tipo del número de la fase (Regate→control, Tiro→ataque,
-     Bloqueo→defensa, Parada→defensa solo en porteros). Coste = **TP × 2** (`techCost`); bonus = **TP/17** redondeado,
-     mínimo 2 (30 TP → +2, 100 → +6, 200 → +12), **+2 si es de la afinidad de la carta** (`techBonus`).
+(`TENSION_START`). Se gana: balón ganado +50, perdido o fuera +25, gol marcado +50, ataque rival parado +25
+(`TENSION_GAIN`).
+
+### Cómo se ve (claridad)
+- Cada ocasión tiene **3 pasos** con pastillas arriba: *Medio campo → Ataque → Resultado*, y una **frase** grande que
+  dice qué pasa («Medio campo: ¿quién se queda el balón?», «¡Tu ataque! X va a rematar»…).
+- **Cara a cara**: tu carta (azul, a la izquierda) contra la del rival (rojo, a la derecha) y los dos números grandes en
+  el centro; lo que vas eligiendo se suma al instante en tu número (amarillo).
+- **El partido espera** cuando tienes algo que decidir («Tu decisión»). Si no te llega la tensión, se ve el cara a cara
+  1,6 s y sigue. Los resultados se quedan 3,6 s o hasta que pulsas «Siguiente».
+- La barra de tensión enseña lo que vas a gastar (blanco) y la del rival (marca azul). Debajo, una **crónica** con las
+  últimas jugadas (borde azul = tuyas, rojo = del rival).
+
+### Qué puedes hacer en tu turno (se pueden combinar)
+- **Cambiar de carta** entre las 3 que salen (`PICK_COST` 100); salen el nombre y el número, con ▲/▼ si es mejor/peor.
+- **Supertécnica** de la carta que juega, del tipo del número (Regate→control, Tiro→ataque, Bloqueo→defensa,
+  Parada→defensa solo en porteros). Coste **TP × 2** (`techCost`); bonus **TP/17**, mínimo 2, **+2 si es de la afinidad
+  de la carta** (`techBonus`).
+- **Presión alta** (solo en el medio campo): coste 80, +4 al control de esa ocasión (`PRESS`).
+- **Hiperenergía** (una vez por partido, si la carta tiene espíritu guerrero / Mixi Max / tótem): coste 200, +6 al
+  número de la fase (`HYPER`).
+- **Grito del portero** (solo defendiendo, una vez por parte): coste 120, el ataque rival no entra (`SHOUT_COST`).
+- **Contraataque** (automático): tras parar un ataque rival, +3 al control de tu siguiente ocasión (`COUNTER_BONUS`).
 - **Táctica del descanso** (gratis): Ofensiva (+3 ataque, −3 defensa), Equilibrada o Defensiva (al revés) hasta el
   final (`TACTIC_MOD`).
 - **IA**: usa su mejor técnica asequible con probabilidad `AI_TECH_PROB` (0,35) en cada fase; mismas reglas de tensión.
@@ -40,15 +56,10 @@ en Victory Road es 300 con la técnica más cara en 100: aquí las técnicas lle
   de gol usa `goalChance(ataque + bonus, defensa + bonus)`. Los goles muestran goleador y asistente.
 - «Saltar» resuelve lo que quede sin usar tensión (`autoResults`).
 
-### Más ideas de interacción (sin hacer)
-- **Grito del portero**: con ≥ 30 % de tensión (120), una vez por parte, parar seguro un ataque rival (como el «Shout»).
-- **Presión alta**: gastar tensión antes del control para restar control al rival esa ocasión.
-- **Hiperenergía**: una vez por partido, subir los 3 números de una carta en una ocasión (+5, armadura +7), con el
-  espíritu guerrero / Mixi Max / tótem de la carta (`specials`).
-- **Contraataque**: tras parar un ataque, si ganas el siguiente control, bonus +3 al ataque.
-- **Cambios**: sustituir un titular por un suplente en el descanso (el draft tiene 7 suplentes).
-- **Penalti**: en una ocasión con probabilidad > 70 %, elegir el lado del tiro (minijuego de 1 toque).
-- **Comentarios** de texto y animación de gol más vistosa.
+### Ideas que faltan
+- **Cambios** de jugador en el descanso (el draft tiene 7 suplentes).
+- **Penalti**: en una ocasión con probabilidad > 70 %, elegir el lado del tiro.
+- Animación de gol más vistosa y sonidos propios.
 
 ## Suposiciones (sin confirmar)
 - Número y minutos de las ocasiones, y la curva de probabilidad de gol (en MADFUT solo se ve «probabilidad de ataque»).

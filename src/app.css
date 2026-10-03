@@ -1185,13 +1185,6 @@ a.fdr-mode:active { transform: scale(.97); }
 .sim-stat { display: grid; grid-template-columns: 3rem 1fr 3rem; align-items: center; text-align: center; font-family: 'Barlow Condensed', sans-serif; }
 .sim-stat b { font-size: 1.3rem; } .sim-stat span { font-size: .8rem; text-transform: uppercase; opacity: .75; }
 .sim-panel { display: flex; flex-direction: column; gap: .5rem; padding: .7rem; border-radius: 16px; background: rgba(0, 0, 0, .28); border: 1px solid rgba(255, 255, 255, .1); }
-.sim-versus { display: grid; grid-template-columns: 1fr auto 1fr; gap: .4rem; align-items: center; }
-.sim-pool { display: flex; flex-direction: column; gap: .25rem; align-items: center; }
-.sim-pool__card { opacity: .4; transform: scale(.85); transition: opacity .3s, transform .3s; }
-.sim-pool__card.is-played { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 8px #ffd23d); }
-.sim-vs { display: flex; flex-direction: column; align-items: center; font-family: 'Barlow Condensed', sans-serif; font-size: .8rem; text-transform: uppercase; }
-.sim-vs b { font-size: 1.6rem; font-style: italic; line-height: 1; }
-.sim-vs i { font-style: normal; opacity: .6; }
 .sim-verdict { text-align: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-style: italic; font-size: 1.4rem; text-transform: uppercase; margin: 0; }
 .sim-verdict.is-goal { color: #2ecc71; } .sim-verdict.is-conceded { color: #e74c3c; }
 .sim-goalchance { text-align: center; margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; color: #7dff9b; font-size: 1.05rem; }
@@ -1200,16 +1193,6 @@ a.fdr-mode:active { transform: scale(.97); }
 .sim-tension__bar i { position: absolute; inset: 0 auto 0 0; border-radius: 99px; background: linear-gradient(90deg, #f1c40f, #ff7a1a, #ff3d6e); transition: width .3s; }
 .sim-tension__bar em { position: absolute; top: 0; bottom: 0; width: 3px; background: #6ab7ff; }
 .sim-tension b { min-width: 2rem; text-align: right; }
-button.sim-pool__card { background: none; border: 0; padding: 0; cursor: pointer; }
-button.sim-pool__card.is-pickable:not(:disabled) { opacity: .75; }
-button.sim-pool__card:disabled:not(.is-played) { cursor: not-allowed; }
-.sim-techs { display: flex; flex-wrap: wrap; gap: .4rem; justify-content: center; }
-.sim-tech { display: flex; flex-direction: column; align-items: center; padding: .35rem .7rem; border-radius: 12px; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .2); color: #fff; }
-.sim-tech small { opacity: .75; }
-.sim-tech.is-on { background: linear-gradient(135deg, #ff7a1a, #ff3d6e); border-color: #ffd23d; }
-.sim-tech:disabled { opacity: .35; }
-.sim-countdown { display: block; height: 3px; border-radius: 3px; background: #ffd23d; transform-origin: left; animation: sim-countdown linear forwards; }
-@keyframes sim-countdown { from { transform: scaleX(1); } to { transform: scaleX(0); } }
 .sim-used { display: flex; flex-direction: column; align-items: center; gap: .15rem; margin: 0; font-size: .85rem; }
 .sim-used .is-mine { color: #ffd23d; } .sim-used .is-opp { color: #6ab7ff; }
 .sim-assist { text-align: center; margin: 0; opacity: .8; font-size: .9rem; }
@@ -1217,3 +1200,48 @@ button.sim-pool__card:disabled:not(.is-played) { cursor: not-allowed; }
 .sim-tactics .chip.is-on { background: #ffd23d; color: #111; }
 .sim-panel--goal { animation: sim-goal .9s ease-out; }
 @keyframes sim-goal { 0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, .9); } 100% { box-shadow: 0 0 0 28px rgba(46, 204, 113, 0); } }
+
+/* Sim: escenario claro (un paso cada vez) */
+.sim-stage { display: flex; flex-direction: column; gap: .7rem; min-height: 24rem; padding: .8rem; border-radius: 18px; background: linear-gradient(180deg, rgba(10, 24, 48, .85), rgba(6, 14, 30, .85)); border: 1px solid rgba(255, 255, 255, .14); }
+.sim-stage__head { display: flex; flex-direction: column; align-items: stretch; gap: .35rem; }
+.sim-stage__head small { opacity: .8; font-weight: 700; }
+.sim-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: .3rem; margin: 0; padding: 0; list-style: none; text-align: center; }
+.sim-steps li { padding: .15rem .3rem; border-radius: 99px; white-space: nowrap; font-size: .72rem; font-weight: 800; text-transform: uppercase; background: rgba(255, 255, 255, .08); opacity: .5; }
+.sim-steps li.is-done { opacity: .85; background: rgba(46, 204, 113, .25); }
+.sim-steps li.is-on { opacity: 1; background: #ffd23d; color: #111; }
+.sim-say { margin: 0; text-align: center; font-family: 'Barlow Condensed', sans-serif; font-size: 1.35rem; font-weight: 800; line-height: 1.1; min-height: 2.9rem; }
+.sim-face { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: .4rem; }
+.sim-side { display: flex; flex-direction: column; align-items: center; gap: .25rem; padding: .4rem .2rem; border-radius: 14px; min-width: 0; }
+.sim-side small { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 800; text-transform: uppercase; font-size: .72rem; }
+.sim-side--mine { background: rgba(60, 130, 255, .14); border: 1px solid rgba(60, 130, 255, .5); }
+.sim-side--opp { background: rgba(255, 70, 90, .12); border: 1px solid rgba(255, 70, 90, .45); }
+.sim-nums { display: flex; flex-direction: column; align-items: center; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; font-size: .75rem; }
+.sim-nums b { font-size: 2.2rem; font-style: italic; line-height: 1; }
+.sim-nums b.is-boost { color: #ffd23d; }
+.sim-nums i { font-style: normal; opacity: .6; }
+.sim-turn { display: flex; flex-direction: column; gap: .5rem; padding: .6rem; border-radius: 14px; background: rgba(255, 210, 61, .08); border: 1px solid rgba(255, 210, 61, .5); }
+.sim-turn__head { display: flex; justify-content: space-between; align-items: baseline; margin: 0; }
+.sim-turn__head small { opacity: .7; }
+.sim-hint { margin: 0; text-align: center; font-size: .85rem; opacity: .75; }
+.sim-switch small { display: block; margin-bottom: .25rem; opacity: .75; font-size: .78rem; }
+.sim-switch div { display: flex; gap: .4rem; }
+.sim-switch button { flex: 1; display: flex; justify-content: space-between; gap: .3rem; padding: .35rem .5rem; border-radius: 10px; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .2); color: #fff; font-size: .8rem; min-width: 0; }
+.sim-switch button b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sim-switch button:disabled { opacity: .35; }
+.sim-acts { display: flex; flex-direction: column; gap: .35rem; }
+.sim-act { display: grid; grid-template-columns: 1fr auto; grid-template-areas: 'name cost' 'desc cost'; align-items: center; gap: 0 .6rem; padding: .4rem .6rem; border-radius: 12px; text-align: left; color: #fff; background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .2); }
+.sim-act b { grid-area: name; font-size: .95rem; } .sim-act small { grid-area: desc; opacity: .75; }
+.sim-act em { grid-area: cost; font-style: normal; font-weight: 900; font-size: 1.1rem; color: #ffd23d; }
+.sim-act--press b { color: #6ab7ff; } .sim-act--hyper b { color: #ff7ad9; } .sim-act--shout b { color: #7dff9b; }
+.sim-act.is-on { background: linear-gradient(135deg, rgba(255, 122, 26, .45), rgba(255, 61, 110, .45)); border-color: #ffd23d; }
+.sim-act:disabled:not(.is-on) { opacity: .35; }
+.sim-next { align-self: center; padding: .5rem 1.4rem; border-radius: 99px; background: #ffd23d; color: #111; font-weight: 900; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; }
+.sim-goalbox { animation: sim-goal .9s ease-out; border-radius: 14px; }
+.sim-tension__bar u { position: absolute; top: 0; bottom: 0; background: rgba(255, 255, 255, .55); }
+.sim-tension b small { opacity: .6; font-size: .7rem; }
+.sim-log ul { list-style: none; margin: .3rem 0 0; padding: 0; display: flex; flex-direction: column; gap: .25rem; }
+.sim-log li { display: flex; gap: .5rem; align-items: baseline; padding: .3rem .5rem; border-radius: 8px; background: rgba(255, 255, 255, .05); font-size: .85rem; }
+.sim-log li b { min-width: 2.2rem; opacity: .8; }
+.sim-log li.is-mine { border-left: 3px solid #4d9bff; }
+.sim-log li.is-opp { border-left: 3px solid #ff4d5e; }
+.sim-log li:first-child { background: rgba(255, 255, 255, .11); }
