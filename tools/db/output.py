@@ -20,13 +20,13 @@ def sql(v):
     return "'" + str(v).replace("'", "''") + "'"
 
 
-def insert(table, cols, rows, chunk=500, key=None):
-    """insert en trozos; con key (columna única) es un upsert: lo que ya hay se actualiza solo en estas columnas, así las
-    columnas y filas añadidas a mano en la tabla no se pierden"""
-    tail = ''
-    if key:
-        sets = ','.join(f'{c}=excluded.{c}' for c in cols if c != key)
-        tail = f' on conflict ({key}) do update set {sets}'
+def insert(table, cols, rows, key, chunk=500):
+    """upsert en trozos: una fila nueva se inserta y una que ya existe (misma clave) se actualiza solo en estas columnas.
+    Así no se pierden las columnas, las filas ni las tablas que se han añadido a mano en la base (p. ej. las columnas
+    vr_* / balance_* de techniques o card_victorymods_map, que apunta a cards)"""
+    keys = [key] if isinstance(key, str) else list(key)
+    sets = ','.join(f'{c}=excluded.{c}' for c in cols if c not in keys)
+    tail = f' on conflict ({",".join(keys)}) do update set {sets}' if sets else f' on conflict ({",".join(keys)}) do nothing'
     out = []
     for i in range(0, len(rows), chunk):
         vals = ',\n'.join('(' + ','.join(sql(r[c]) for c in cols) + ')' for r in rows[i:i + chunk])
@@ -103,17 +103,18 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
                  'duel_att', 'duel_con', 'duel_def']
     links = [{'card_id': c['id'], 'technique_id': t, 'slot': i + 1}
              for c in public for i, t in enumerate(dict.fromkeys(c['techniques']))]
-    seed = ['-- Generado por tools/db/build.py — no editar a mano.', 'begin;',
-            '-- las técnicas no se vacían: tienen columnas y filas propias (ver schema.sql); se actualizan con upsert',
-            'truncate public.card_techniques, public.cards, public.characters, public.teams, public.staff, public.zukan;',
-            insert('zukan', ['no', 'image_id', 'name', 'name_ja', 'role', 'age', 'element', 'position', 'teams', 'games', 'description', 'vr_lv50', 'wiki_page'], zukan_rows),
-            insert('staff', ['zukan_no', 'name', 'role', 'team', 'teams', 'games', 'age', 'element', 'image_url', 'description', 'wiki_page'], staff),
-            insert('teams', ['name', 'name_es', 'name_fr', 'name_it', 'logo_url', 'logos'], teams),
-            insert('characters', ['id', 'name', 'wiki_page', 'zukan_no'], [{**c} for c in chars]),
+    seed = ['-- Generado por tools/db/build.py — no editar a mano.',
+            '-- Solo upserts: no se vacía ni se borra nada. Las filas nuevas se insertan y las que ya existen se actualizan en las',
+            '-- columnas de la carga; las columnas, filas y tablas añadidas a mano en la base se quedan como están.',
+            'begin;',
+            insert('zukan', ['no', 'image_id', 'name', 'name_ja', 'role', 'age', 'element', 'position', 'teams', 'games', 'description', 'vr_lv50', 'wiki_page'], zukan_rows, key='no'),
+            insert('staff', ['zukan_no', 'name', 'role', 'team', 'teams', 'games', 'age', 'element', 'image_url', 'description', 'wiki_page'], staff, key='zukan_no'),
+            insert('teams', ['name', 'name_es', 'name_fr', 'name_it', 'logo_url', 'logos'], teams, key='name'),
+            insert('characters', ['id', 'name', 'wiki_page', 'zukan_no'], [{**c} for c in chars], key='id'),
             insert('techniques', ['id', 'name', 'name_es', 'name_fr', 'name_it', 'name_jp', 'type', 'element', 'cost', 'cost_game', 'costs',
                                   'description', 'image_url', 'zukan_types', 'traits'], techs, key='id'),
-            insert('cards', card_cols, public),
-            insert('card_techniques', ['card_id', 'technique_id', 'slot'], links),
+            insert('cards', card_cols, public, key='id'),
+            insert('card_techniques', ['card_id', 'technique_id', 'slot'], links, key=('card_id', 'technique_id')),
             '-- cambios hechos desde el CRUD de la app (supabase/admin.sql): se vuelven a aplicar encima',
             'select public.admin_replay();',
             'commit;', '']

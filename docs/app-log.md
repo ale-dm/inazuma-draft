@@ -309,8 +309,13 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
   TP → potencia que cumple la inmensa mayoría de la hoja (150 → 180–900, 100 → 100–640…).
 - `data/technique_balance.json` → `supabase/technique_balance.sql` (columnas `balance_tp`, `balance_power_min`,
   `balance_power_max`); el workflow lo carga después del seed.
-- **La carga ya no borra las columnas ni las filas propias de `techniques`**: antes, `seed.sql` hacía `truncate` de la
-  tabla y se perdían las columnas `vr_*` / `balance_*` y las 144 filas añadidas a mano (`source`); ahora es un upsert, y
-  `schema.sql` declara esas columnas. Probado contra una copia de la tabla tal como está en producción.
+- **La carga completa (`seed.sql`) ya no vacía ni borra nada**: antes hacía `truncate` de todas las tablas, y así se
+  perdían las columnas `vr_*` / `balance_*` y las 144 técnicas añadidas a mano de `techniques`, y chocaba con tu tabla
+  `card_victorymods_map` (que apunta a `cards`: el `truncate` fallaba). Ahora son solo upserts: las filas nuevas se
+  insertan y las que existen se actualizan en las columnas de la carga; lo añadido a mano en la base se queda. Lo que se
+  quite del repo ya no se borra de la base. `schema.sql` declara las columnas nuevas. Probado con una copia de la base con
+  tu tabla, una carta extra, un vínculo extra y una columna extra: nada se pierde y se puede repetir.
+- El workflow `db-load.yml` tiene la opción `balance_only`: aplica solo `technique_balance.sql` (es lo que se ha lanzado
+  para este cambio; no se ha ejecutado la carga completa).
 - La app enseña `balance_tp` como el TP de cada técnica (ficha de la carta; al mantener pulsado, la potencia) y el CRUD
   permite editar TP y potencias.

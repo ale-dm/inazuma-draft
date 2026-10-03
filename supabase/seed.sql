@@ -1,7 +1,7 @@
 -- Generado por tools/db/build.py — no editar a mano.
+-- Solo upserts: no se vacía ni se borra nada. Las filas nuevas se insertan y las que ya existen se actualizan en las
+-- columnas de la carga; las columnas, filas y tablas añadidas a mano en la base se quedan como están.
 begin;
--- las técnicas no se vacían: tienen columnas y filas propias (ver schema.sql); se actualizan con upsert
-truncate public.card_techniques, public.cards, public.characters, public.teams, public.staff, public.zukan;
 insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,teams,games,description,vr_lv50,wiki_page) values
 (1,'k/d/w/dwho-wi8ruk','Mark Evans','円堂 守','Player','Middle School','earth','GK','["Raimon", "Inazuma National"]'::jsonb,'["IE1", "IE2", "IE3", "GO1", "GO2", "GO3", "VR"]'::jsonb,'Has more passion for football than anyone else. His mighty heart will never give up, no matter what.','{"Kick": 90, "Control": 97, "Technique": 91, "Pressure": 98, "Physical": 105, "Agility": 111, "Intelligence": 97}'::jsonb,'Endou Mamoru'),
 (2,'k/f/1/f1kh7d67sbs','Axel Blaze','豪炎寺 修也','Player','Middle School','fire','FW','["Raimon", "Inazuma National"]'::jsonb,'["IE1", "IE2", "IE3", "GO1", "GO2", "GO3", "VR"]'::jsonb,'Beneath his cool exterior burns an intense and fiery passion for football.','{"Kick": 121, "Control": 115, "Technique": 105, "Pressure": 88, "Physical": 85, "Agility": 85, "Intelligence": 93}'::jsonb,'Gouenji Shuuya'),
@@ -502,7 +502,7 @@ insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,tea
 (515,'k/f/7/f7fsscjj5w8','Burt Mocking','児田 山彦','Player','Middle School','wood','DF','["Unaffiliated"]'::jsonb,'["IE1", "IE2", "IE3", "VR"]'::jsonb,'A talented impersonator who can do all of the teacher''s voices.','{"Kick": 82, "Control": 85, "Technique": 83, "Pressure": 102, "Physical": 106, "Agility": 87, "Intelligence": 118}'::jsonb,'Yamahiko'),
 (516,'k/0/t/0t0n_9fzulu','Oscar Petty','畳田 和夫','Player','Middle School','fire','GK','["Unaffiliated"]'::jsonb,'["IE1", "IE2", "IE3", "VR"]'::jsonb,'A huge feng shui buff who always sleeps on the floor.','{"Kick": 84, "Control": 92, "Technique": 86, "Pressure": 97, "Physical": 101, "Agility": 104, "Intelligence": 92}'::jsonb,'Tatamida'),
 (517,'k/2/y/2yzrrkxfrju','Waite Forrit','徳川 康夫','Player','Middle School','earth','MF','["Unaffiliated"]'::jsonb,'["IE1", "IE2", "IE3", "VR"]'::jsonb,'Carefully bides his time until the right moment—then goes all out!','{"Kick": 97, "Control": 112, "Technique": 113, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 100}'::jsonb,'Tokugawa'),
-(518,'k/h/a/hacw8bxl8q8','Bennett Byers','大久 史也','Player','Middle School','air','GK','["Unaffiliated"]'::jsonb,'["IE1", "IE2", "IE3", "VR"]'::jsonb,'An internet auction nut. Always checking prices on his phone.','{"Kick": 84, "Control": 92, "Technique": 86, "Pressure": 97, "Physical": 101, "Agility": 104, "Intelligence": 92}'::jsonb,'Oohisa');
+(518,'k/h/a/hacw8bxl8q8','Bennett Byers','大久 史也','Player','Middle School','air','GK','["Unaffiliated"]'::jsonb,'["IE1", "IE2", "IE3", "VR"]'::jsonb,'An internet auction nut. Always checking prices on his phone.','{"Kick": 84, "Control": 92, "Technique": 86, "Pressure": 97, "Physical": 101, "Agility": 104, "Intelligence": 92}'::jsonb,'Oohisa') on conflict (no) do update set image_id=excluded.image_id,name=excluded.name,name_ja=excluded.name_ja,role=excluded.role,age=excluded.age,element=excluded.element,position=excluded.position,teams=excluded.teams,games=excluded.games,description=excluded.description,vr_lv50=excluded.vr_lv50,wiki_page=excluded.wiki_page;
 insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,teams,games,description,vr_lv50,wiki_page) values
 (519,'k/n/1/n1hfvgetjwm','Mo Eisner','埴輪 宇一','Player','Middle School','fire','GK','["Unaffiliated"]'::jsonb,'["IE1", "IE2", "IE3", "VR"]'::jsonb,'People jokingly refer to him as "The Mask" because of his expressionless face.','{"Kick": 84, "Control": 92, "Technique": 86, "Pressure": 97, "Physical": 101, "Agility": 104, "Intelligence": 92}'::jsonb,'Haniwa'),
 (520,'k/w/d/wdqkc5ixkdk','Miles Seaford','弓 すぐる','Player','Middle School','air','DF','["Unaffiliated"]'::jsonb,'["IE1", "IE2", "IE3", "VR"]'::jsonb,'His better-than-20/20 vision lets him see clearly for miles.','{"Kick": 86, "Control": 88, "Technique": 91, "Pressure": 97, "Physical": 102, "Agility": 88, "Intelligence": 111}'::jsonb,'Yumi'),
@@ -1003,7 +1003,7 @@ insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,tea
 (1015,'k/4/1/41n2pnt9bhs','Sam Fitspire','松本 はやと','Player','Middle School','wood','GK','["Unaffiliated"]'::jsonb,'["IE1", "IE2", "IE3", "VR"]'::jsonb,'Likes fighter planes and enjoys taking photos at air shows.','{"Kick": 84, "Control": 92, "Technique": 86, "Pressure": 97, "Physical": 101, "Agility": 104, "Intelligence": 92}'::jsonb,'Hayato'),
 (1016,'k/j/d/jd8xiylh20e','Carter Nightly','夕霧 爽也','Player','Middle School','earth','DF','["Unaffiliated"]'::jsonb,'["IE1", "IE2", "IE3", "VR"]'::jsonb,'Goes around mapping the best spots for watching sunsets.','{"Kick": 82, "Control": 85, "Technique": 83, "Pressure": 102, "Physical": 106, "Agility": 87, "Intelligence": 118}'::jsonb,'Yuugiri'),
 (1017,'k/9/3/93dptvilrls','Daley Switcher','渡辺 映宏','Player','Middle School','earth','MF','["Unaffiliated"]'::jsonb,'["IE1", "IE2", "IE3", "VR"]'::jsonb,'Keeping an eye on the football club for a documentary he''s making.','{"Kick": 97, "Control": 112, "Technique": 113, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 100}'::jsonb,'Watanabe'),
-(1018,'k/m/f/mfyu-quf84e','Dexter Ambie','赤羽 隼士','Player','Middle School','earth','DF','["Unaffiliated"]'::jsonb,'["IE1", "IE2", "IE3", "VR"]'::jsonb,'A very talented sportsman. Can''t stick to any single sport for long.','{"Kick": 86, "Control": 88, "Technique": 91, "Pressure": 97, "Physical": 102, "Agility": 88, "Intelligence": 111}'::jsonb,'Akabane');
+(1018,'k/m/f/mfyu-quf84e','Dexter Ambie','赤羽 隼士','Player','Middle School','earth','DF','["Unaffiliated"]'::jsonb,'["IE1", "IE2", "IE3", "VR"]'::jsonb,'A very talented sportsman. Can''t stick to any single sport for long.','{"Kick": 86, "Control": 88, "Technique": 91, "Pressure": 97, "Physical": 102, "Agility": 88, "Intelligence": 111}'::jsonb,'Akabane') on conflict (no) do update set image_id=excluded.image_id,name=excluded.name,name_ja=excluded.name_ja,role=excluded.role,age=excluded.age,element=excluded.element,position=excluded.position,teams=excluded.teams,games=excluded.games,description=excluded.description,vr_lv50=excluded.vr_lv50,wiki_page=excluded.wiki_page;
 insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,teams,games,description,vr_lv50,wiki_page) values
 (1019,'k/c/3/c39lqjeqdts','Gill Able','乗松 響平','Player','Middle School','fire','GK','["Unaffiliated"]'::jsonb,'["IE1", "IE2", "IE3", "VR"]'::jsonb,'Has a weak personality and is easily influenced by what people say.','{"Kick": 84, "Control": 92, "Technique": 86, "Pressure": 97, "Physical": 101, "Agility": 104, "Intelligence": 92}'::jsonb,'Norimatsu'),
 (1020,'k/z/f/zfme9ciquee','Drew Reiner','馬場 信輔','Player','Middle School','earth','DF','["Unaffiliated"]'::jsonb,'["IE1", "IE2", "IE3", "VR"]'::jsonb,'Rides horses on weekends and hopes to become a professional jockey.','{"Kick": 82, "Control": 85, "Technique": 83, "Pressure": 102, "Physical": 106, "Agility": 87, "Intelligence": 118}'::jsonb,'Baba'),
@@ -1504,7 +1504,7 @@ insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,tea
 (1578,'k/b/d/bdvj9r7vb7u','Harpo Thermier','釘谷 久','Player','Middle School','air','MF','["Unaffiliated"]'::jsonb,'["IE2", "IE3", "VR"]'::jsonb,'He was born up north, but hates the cold. He shudders just looking at snow.','{"Kick": 97, "Control": 112, "Technique": 113, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 100}'::jsonb,'Kugiya'),
 (1579,'k/q/1/q1eoqudv2i8','August Dyers','後関 尚生','Player','Middle School','fire','MF','["Unaffiliated"]'::jsonb,'["IE2", "IE3", "VR"]'::jsonb,'An expert ukulele player who can pluck people''s heartstrings.','{"Kick": 97, "Control": 112, "Technique": 113, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 100}'::jsonb,'Goshou'),
 (1580,'k/e/f/efhwhzenr3u','Nev Puffer','猿渡 智哉','Player','Middle School','wood','DF','["Unaffiliated"]'::jsonb,'["IE2", "IE3", "GO2", "GO3", "VR"]'::jsonb,'A whiz with a blowpipe, he can hit the bullseye from ten meters away.','{"Kick": 86, "Control": 88, "Technique": 91, "Pressure": 97, "Physical": 102, "Agility": 88, "Intelligence": 111}'::jsonb,'Saruwatari'),
-(1581,'k/v/3/v3qrmm438e8','Elata Mighty','白坂 映','Player','Middle School','fire','DF','["Unaffiliated"]'::jsonb,'["IE2", "IE3", "VR"]'::jsonb,'She tends to speak condescendingly, though she doesn''t mean anything by it.','{"Kick": 82, "Control": 85, "Technique": 83, "Pressure": 102, "Physical": 106, "Agility": 87, "Intelligence": 118}'::jsonb,'Holly');
+(1581,'k/v/3/v3qrmm438e8','Elata Mighty','白坂 映','Player','Middle School','fire','DF','["Unaffiliated"]'::jsonb,'["IE2", "IE3", "VR"]'::jsonb,'She tends to speak condescendingly, though she doesn''t mean anything by it.','{"Kick": 82, "Control": 85, "Technique": 83, "Pressure": 102, "Physical": 106, "Agility": 87, "Intelligence": 118}'::jsonb,'Holly') on conflict (no) do update set image_id=excluded.image_id,name=excluded.name,name_ja=excluded.name_ja,role=excluded.role,age=excluded.age,element=excluded.element,position=excluded.position,teams=excluded.teams,games=excluded.games,description=excluded.description,vr_lv50=excluded.vr_lv50,wiki_page=excluded.wiki_page;
 insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,teams,games,description,vr_lv50,wiki_page) values
 (1582,'k/b/f/bflcwnx-doc','Ben Danna','曽田 一徳','Player','Middle School','fire','FW','["Unaffiliated"]'::jsonb,'["IE2", "IE3", "VR"]'::jsonb,'A headband collector who wears a different one every day.','{"Kick": 118, "Control": 112, "Technique": 102, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 89}'::jsonb,'Soda'),
 (1583,'k/w/3/w3697yxewb0','Elsa Roamer','染宮 月香','Player','Middle School','earth','FW','["Unaffiliated"]'::jsonb,'["IE2", "IE3", "GO2", "GO3", "VR"]'::jsonb,'She loves the nomadic lifestyle and wouldn''t dream of having a permanent address.','{"Kick": 118, "Control": 112, "Technique": 102, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 89}'::jsonb,'Somemiya'),
@@ -2005,7 +2005,7 @@ insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,tea
 (2099,'k/v/4/v4xvypqm368','Campen Allerjee','安国寺 浩馬','Player','Middle School','earth','FW','["Unaffiliated"]'::jsonb,'["IE3", "VR"]'::jsonb,'His hobby is bell-ringing, but there''s not much call for it nowadays.','{"Kick": 111, "Control": 108, "Technique": 98, "Pressure": 87, "Physical": 85, "Agility": 80, "Intelligence": 96}'::jsonb,'Ankokuji'),
 (2100,'k/1/x/1xsgl0fecam','Climie Hills','岩木山 野生','Player','Middle School','fire','GK','["Unaffiliated"]'::jsonb,'["IE3", "VR"]'::jsonb,'This determined lad runs up a steep hill every morning for training purposes.','{"Kick": 84, "Control": 92, "Technique": 86, "Pressure": 97, "Physical": 101, "Agility": 104, "Intelligence": 92}'::jsonb,'Iwakiyama'),
 (2101,'k/e/_/e_jbml5-vpk','Earl Bird','前鳥 信太郎','Player','Middle School','wood','GK','["Unaffiliated"]'::jsonb,'["IE3", "VR"]'::jsonb,'Not one to procrastinate, he does his homework months in advance.','{"Kick": 84, "Control": 92, "Technique": 86, "Pressure": 97, "Physical": 101, "Agility": 104, "Intelligence": 92}'::jsonb,'Sakitori'),
-(2102,'k/g/e/gekdisrsqvk','Walt Whittler','戸手夢 柱','Player','Middle School','air','GK','["Unaffiliated"]'::jsonb,'["IE3", "VR"]'::jsonb,'His hobby is crafting totem poles. His garden is full of them, and it''s sending his mum crazy.','{"Kick": 84, "Control": 92, "Technique": 86, "Pressure": 97, "Physical": 101, "Agility": 104, "Intelligence": 92}'::jsonb,'Totem');
+(2102,'k/g/e/gekdisrsqvk','Walt Whittler','戸手夢 柱','Player','Middle School','air','GK','["Unaffiliated"]'::jsonb,'["IE3", "VR"]'::jsonb,'His hobby is crafting totem poles. His garden is full of them, and it''s sending his mum crazy.','{"Kick": 84, "Control": 92, "Technique": 86, "Pressure": 97, "Physical": 101, "Agility": 104, "Intelligence": 92}'::jsonb,'Totem') on conflict (no) do update set image_id=excluded.image_id,name=excluded.name,name_ja=excluded.name_ja,role=excluded.role,age=excluded.age,element=excluded.element,position=excluded.position,teams=excluded.teams,games=excluded.games,description=excluded.description,vr_lv50=excluded.vr_lv50,wiki_page=excluded.wiki_page;
 insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,teams,games,description,vr_lv50,wiki_page) values
 (2103,'k/3/2/32v8ltnohcm','Merry Piper','此所 縁','Player','Middle School','earth','FW','["Unaffiliated"]'::jsonb,'["IE3", "VR"]'::jsonb,'He brings a smile to those around him when playing his penny whistle.','{"Kick": 118, "Control": 112, "Technique": 102, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 89}'::jsonb,'Kokopelli'),
 (2104,'k/x/z/xz2j2w4gy88','Traylor Beadle','把宇 和雨','Player','Middle School','fire','MF','["Unaffiliated"]'::jsonb,'["IE3", "VR"]'::jsonb,'With her gaudy accessories flailing around, she makes the dance floor her own.','{"Kick": 97, "Control": 112, "Technique": 113, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 100}'::jsonb,'Powwow'),
@@ -2506,7 +2506,7 @@ insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,tea
 (2611,'k/-/f/-fl_gupbybs','Bourne Birch','石川 神兵','Player','Middle School','wood','DF','["Kirkwood"]'::jsonb,'["GO1", "GO2", "GO3", "VR"]'::jsonb,'The descendant of a local hero. Doesn''t talk about it, though.','{"Kick": 86, "Control": 88, "Technique": 91, "Pressure": 97, "Physical": 102, "Agility": 88, "Intelligence": 111}'::jsonb,'Ishikawa Kanpei'),
 (2612,'k/8/k/8kijon733ds','Flynt Pine','山裂 虎太郎','Player','Middle School','fire','DF','["Kirkwood"]'::jsonb,'["GO1", "GO2", "GO3", "VR"]'::jsonb,'Likes to dart around here and there, leaving his opponent in disarray.','{"Kick": 82, "Control": 85, "Technique": 83, "Pressure": 102, "Physical": 106, "Agility": 87, "Intelligence": 118}'::jsonb,'Yamazaki Kotarou'),
 (2613,'k/n/m/nmtcjydnaue','Trent Poplar','湖沼 枠','Player','Middle School','wood','DF','["Kirkwood"]'::jsonb,'["GO1", "GO2", "GO3", "VR"]'::jsonb,'Enjoys going jogging around the local lakes and ponds.','{"Kick": 86, "Control": 88, "Technique": 91, "Pressure": 97, "Physical": 102, "Agility": 88, "Intelligence": 111}'::jsonb,'Konuma Waku'),
-(2614,'k/t/j/tjw3wvofvo0','River Willows','清水 柳人','Player','Middle School','air','MF','["Kirkwood", "Revolutionaries"]'::jsonb,'["GO1", "GO2", "GO3", "VR"]'::jsonb,'At night he plays guitar and sings as a street musician.','{"Kick": 100, "Control": 109, "Technique": 105, "Pressure": 87, "Physical": 88, "Agility": 81, "Intelligence": 97}'::jsonb,'Shimizu Ryuuto');
+(2614,'k/t/j/tjw3wvofvo0','River Willows','清水 柳人','Player','Middle School','air','MF','["Kirkwood", "Revolutionaries"]'::jsonb,'["GO1", "GO2", "GO3", "VR"]'::jsonb,'At night he plays guitar and sings as a street musician.','{"Kick": 100, "Control": 109, "Technique": 105, "Pressure": 87, "Physical": 88, "Agility": 81, "Intelligence": 97}'::jsonb,'Shimizu Ryuuto') on conflict (no) do update set image_id=excluded.image_id,name=excluded.name,name_ja=excluded.name_ja,role=excluded.role,age=excluded.age,element=excluded.element,position=excluded.position,teams=excluded.teams,games=excluded.games,description=excluded.description,vr_lv50=excluded.vr_lv50,wiki_page=excluded.wiki_page;
 insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,teams,games,description,vr_lv50,wiki_page) values
 (2615,'k/c/l/clbwdqo_c9c','Beck Heath','和泉 奏秋','Player','Middle School','air','MF','["Kirkwood"]'::jsonb,'["GO1", "GO2", "GO3", "VR"]'::jsonb,'His family has an esteemed history in traditional theatre.','{"Kick": 97, "Control": 112, "Technique": 113, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 100}'::jsonb,'Izumi Kanaaki'),
 (2616,'k/o/h/oh-osdndlc0','Brook Linden','跳沢 真波','Player','Middle School','fire','MF','["Kirkwood"]'::jsonb,'["GO1", "GO2", "GO3", "VR"]'::jsonb,'Has a short fuse—he''s liable to get heated up about the smallest things.','{"Kick": 97, "Control": 112, "Technique": 113, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 100}'::jsonb,'Tobisawa Mana'),
@@ -3007,7 +3007,7 @@ insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,tea
 (3113,'k/s/d/sdxfucf3p6k','Sepia Bartletti','清蓮 泪','Player','Middle School','air','MF','["Unaffiliated"]'::jsonb,'["GO1", "GO2", "GO3", "VR"]'::jsonb,'Got her passion for scuba-diving from her mother, who was a shell diver.','{"Kick": 100, "Control": 109, "Technique": 105, "Pressure": 87, "Physical": 88, "Agility": 81, "Intelligence": 97}'::jsonb,'Siren'),
 (3114,'k/d/r/drmk59jnijm','Neva Kevinne','月雪 花世','Player','Middle School','wood','DF','["Unaffiliated"]'::jsonb,'["GO1", "GO2", "GO3", "VR"]'::jsonb,'Really shines during winter festivals, when her snow sculptures win prizes.','{"Kick": 86, "Control": 88, "Technique": 91, "Pressure": 97, "Physical": 102, "Agility": 88, "Intelligence": 111}'::jsonb,'Setsugetsuka'),
 (3115,'k/f/k/fkh4xkxhnpm','Seneca Herrmann','揺蕩 しらべ','Player','Middle School','earth','FW','["Unaffiliated"]'::jsonb,'["GO1", "GO2", "GO3", "VR"]'::jsonb,'Has a fascination for magic shows and travels far and wide to watch them.','{"Kick": 118, "Control": 112, "Technique": 102, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 89}'::jsonb,'Shirabe (GO)'),
-(3116,'k/u/i/uiqz6bxbk8k','Amy Sargent','小谷 みお','Player','Middle School','wood','MF','["Unaffiliated"]'::jsonb,'["GO1", "GO2", "GO3", "VR"]'::jsonb,'A classmate of Arion''s. A quiet, gentle girl, but she knows what she wants.','{"Kick": 100, "Control": 109, "Technique": 105, "Pressure": 87, "Physical": 88, "Agility": 81, "Intelligence": 97}'::jsonb,'Mio');
+(3116,'k/u/i/uiqz6bxbk8k','Amy Sargent','小谷 みお','Player','Middle School','wood','MF','["Unaffiliated"]'::jsonb,'["GO1", "GO2", "GO3", "VR"]'::jsonb,'A classmate of Arion''s. A quiet, gentle girl, but she knows what she wants.','{"Kick": 100, "Control": 109, "Technique": 105, "Pressure": 87, "Physical": 88, "Agility": 81, "Intelligence": 97}'::jsonb,'Mio') on conflict (no) do update set image_id=excluded.image_id,name=excluded.name,name_ja=excluded.name_ja,role=excluded.role,age=excluded.age,element=excluded.element,position=excluded.position,teams=excluded.teams,games=excluded.games,description=excluded.description,vr_lv50=excluded.vr_lv50,wiki_page=excluded.wiki_page;
 insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,teams,games,description,vr_lv50,wiki_page) values
 (3117,'k/o/n/onzspgit_cu','Aaron Newgate','新東 京','Player','Middle School','earth','DF','["Unaffiliated"]'::jsonb,'["GO1", "GO2", "GO3", "VR"]'::jsonb,'An optimistic and easily pleased boy in the same class as Arion and co.','{"Kick": 82, "Control": 85, "Technique": 83, "Pressure": 102, "Physical": 106, "Agility": 87, "Intelligence": 118}'::jsonb,'Shintou'),
 (3118,'k/_/l/_lcne5epsv8','Ocho Lightning','雷轟 ラウド','Player','Exobeing','air','MF','["Unaffiliated"]'::jsonb,'["GO1", "GO2", "GO3", "VR"]'::jsonb,'The eighth of eleven kids. Well-rounded player, decent at attack and defence.','{"Kick": 97, "Control": 112, "Technique": 113, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 100}'::jsonb,'Loud'),
@@ -3508,7 +3508,7 @@ insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,tea
 (3788,'k/f/h/fhu6d4xejau','Chaa Mehn','ヌク・ハカ','Player','Middle School','earth','FW','["Unaffiliated"]'::jsonb,'["GO2", "GO3", "VR"]'::jsonb,'Wishes his hair spikes were longer, but keeps burning them while cooking.','{"Kick": 118, "Control": 112, "Technique": 102, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 89}'::jsonb,'Nuku'),
 (3789,'k/0/v/0vfbuhxkkp8','Wowah Zumu','ココ・バナバ','Player','Middle School','fire','MF','["Unaffiliated"]'::jsonb,'["GO2", "GO3", "VR"]'::jsonb,'The speediest girl in school, she''ll never let herself lose.','{"Kick": 100, "Control": 109, "Technique": 105, "Pressure": 87, "Physical": 88, "Agility": 81, "Intelligence": 97}'::jsonb,'Coco'),
 (3790,'k/u/a/ua8u9aisrjm','Tey Liadika','ヒナノ・マウピ','Player','Middle School','earth','DF','["Unaffiliated"]'::jsonb,'["GO2", "GO3", "VR"]'::jsonb,'Captivates foes with a dreamy, sultry gaze, unintentional thanks to chronic sleep deprivation.','{"Kick": 86, "Control": 88, "Technique": 91, "Pressure": 97, "Physical": 102, "Agility": 88, "Intelligence": 111}'::jsonb,'Hinano (scout character)'),
-(3791,'k/l/o/lonpqlew86k','Pyon Pyon','ポエ・タマナ','Player','Middle School','earth','GK','["Unaffiliated"]'::jsonb,'["GO2", "GO3", "VR"]'::jsonb,'She''s small, but she bounces after the ball like she was a ball herself.','{"Kick": 84, "Control": 92, "Technique": 86, "Pressure": 97, "Physical": 101, "Agility": 104, "Intelligence": 92}'::jsonb,'Poetama');
+(3791,'k/l/o/lonpqlew86k','Pyon Pyon','ポエ・タマナ','Player','Middle School','earth','GK','["Unaffiliated"]'::jsonb,'["GO2", "GO3", "VR"]'::jsonb,'She''s small, but she bounces after the ball like she was a ball herself.','{"Kick": 84, "Control": 92, "Technique": 86, "Pressure": 97, "Physical": 101, "Agility": 104, "Intelligence": 92}'::jsonb,'Poetama') on conflict (no) do update set image_id=excluded.image_id,name=excluded.name,name_ja=excluded.name_ja,role=excluded.role,age=excluded.age,element=excluded.element,position=excluded.position,teams=excluded.teams,games=excluded.games,description=excluded.description,vr_lv50=excluded.vr_lv50,wiki_page=excluded.wiki_page;
 insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,teams,games,description,vr_lv50,wiki_page) values
 (3792,'k/n/j/njkt-8w658k','Jeku Hydia','ウルル・アパ','Player','Middle School','wood','DF','["Unaffiliated"]'::jsonb,'["GO2", "GO3", "VR"]'::jsonb,'She''s mild and quiet at school, but she rules her home with an iron fist.','{"Kick": 86, "Control": 88, "Technique": 91, "Pressure": 97, "Physical": 102, "Agility": 88, "Intelligence": 111}'::jsonb,'Uluru'),
 (3793,'k/w/h/wh7ytdwaupm','Asbe Stostumi','タラモ・タラワ','Player','Middle School','air','DF','["Unaffiliated"]'::jsonb,'["GO2", "GO3", "VR"]'::jsonb,'Her pouty look is down to having swollen lips from eating spicy food.','{"Kick": 82, "Control": 85, "Technique": 83, "Pressure": 102, "Physical": 106, "Agility": 87, "Intelligence": 118}'::jsonb,'Taramo'),
@@ -4009,7 +4009,7 @@ insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,tea
 (4310,'k/8/e/8efpp5bcrcs','Kaven Mirae','カベニミィ・ミアリー','Player','Exobeing','wood','GK','["Unaffiliated"]'::jsonb,'["GO3", "VR"]'::jsonb,'Eyes closed and fully tuned in, she can hear the faintest whisper from miles away.','{"Kick": 84, "Control": 92, "Technique": 86, "Pressure": 97, "Physical": 101, "Agility": 104, "Intelligence": 92}'::jsonb,'Miary'),
 (4311,'k/c/x/cxm6ckukk8c','Hugh Semburn','フーウ・センバルン','Player','Exobeing','fire','GK','["Unaffiliated"]'::jsonb,'["GO3", "VR"]'::jsonb,'His skin, a living barometer of his feelings, stretches and deflates with his moods.','{"Kick": 84, "Control": 92, "Technique": 86, "Pressure": 97, "Physical": 101, "Agility": 104, "Intelligence": 92}'::jsonb,'Fuuu'),
 (4312,'k/t/z/tzxbxbiwjp0','Tage Hamley','タゲー・ハムゲイ','Player','Exobeing','fire','MF','["Unaffiliated"]'::jsonb,'["GO3", "VR"]'::jsonb,'This child of two worlds seems capable of almost anything, yet never truly follows through.','{"Kick": 100, "Control": 109, "Technique": 105, "Pressure": 87, "Physical": 88, "Agility": 81, "Intelligence": 97}'::jsonb,'Tageh'),
-(4313,'k/v/4/v4qhfcacmj0','Jomon Dorg','ジョモン・ドーグ','Player','Exobeing','earth','FW','["Unaffiliated"]'::jsonb,'["GO3", "VR"]'::jsonb,'A mysterious lifeform that has existed since time immemorial, his origins forever shrouded in secrecy.','{"Kick": 118, "Control": 112, "Technique": 102, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 89}'::jsonb,'Jomon');
+(4313,'k/v/4/v4qhfcacmj0','Jomon Dorg','ジョモン・ドーグ','Player','Exobeing','earth','FW','["Unaffiliated"]'::jsonb,'["GO3", "VR"]'::jsonb,'A mysterious lifeform that has existed since time immemorial, his origins forever shrouded in secrecy.','{"Kick": 118, "Control": 112, "Technique": 102, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 89}'::jsonb,'Jomon') on conflict (no) do update set image_id=excluded.image_id,name=excluded.name,name_ja=excluded.name_ja,role=excluded.role,age=excluded.age,element=excluded.element,position=excluded.position,teams=excluded.teams,games=excluded.games,description=excluded.description,vr_lv50=excluded.vr_lv50,wiki_page=excluded.wiki_page;
 insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,teams,games,description,vr_lv50,wiki_page) values
 (4314,'k/e/q/eqhmy98mh6c','Tanky Hanson','タンキー・ハーソンキ','Player','Exobeing','fire','FW','["Unaffiliated"]'::jsonb,'["GO3", "VR"]'::jsonb,'Calm and even-tempered despite his fierce appearance, he''s rarely angered by provocation.','{"Kick": 118, "Control": 112, "Technique": 102, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 89}'::jsonb,'Harsonki'),
 (4315,'k/-/_/-_cthgjuuas','Manny Armal','メニー・アーマル','Player','Exobeing','fire','FW','["Unaffiliated"]'::jsonb,'["GO3", "VR"]'::jsonb,'Eyes sharp enough to cover every angle in front, yet often vulnerable from behind.','{"Kick": 118, "Control": 112, "Technique": 102, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 89}'::jsonb,'Armal'),
@@ -4510,7 +4510,7 @@ insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,tea
 (4887,'k/3/s/3soxl00kbz0','Boone Wretman','遠野 善弥','Player','Middle School','air','DF','["Raimon"]'::jsonb,'["VR"]'::jsonb,'All about logic and plans. But throw in something wild, and he''s off balance.','{"Kick": 87, "Control": 91, "Technique": 92, "Pressure": 99, "Physical": 104, "Agility": 89, "Intelligence": 112}'::jsonb,'Toono Zenya'),
 (4888,'k/1/z/1zjlltmmef0','Jazmine Carmine','赤袖 茉莉','Player','Middle School','fire','MF','["Raimon"]'::jsonb,'["VR"]'::jsonb,'Gloomy and quiet, yet somehow always where the crowd is.','{"Kick": 103, "Control": 111, "Technique": 108, "Pressure": 90, "Physical": 90, "Agility": 83, "Intelligence": 99}'::jsonb,'Akasode Matsuri'),
 (4889,'k/v/x/vxteghsncm8','Colton Sharps','鬼門 悟','Player','Middle School','wood','MF','["Raimon"]'::jsonb,'["VR"]'::jsonb,'Respects Jude Sharp but is clumsy, unlike him. Their similar names cause mix-ups.','{"Kick": 103, "Control": 111, "Technique": 108, "Pressure": 90, "Physical": 90, "Agility": 83, "Intelligence": 99}'::jsonb,'Kido Satoru'),
-(4890,'k/-/2/-2_ked__afk','Maddock Jackson','嵐 大佑','Player','Middle School','fire','MF','["Raimon"]'::jsonb,'["VR"]'::jsonb,'Quick-tempered, but deep down, a genuinely good guy you can''t help but like.','{"Kick": 103, "Control": 111, "Technique": 108, "Pressure": 90, "Physical": 90, "Agility": 83, "Intelligence": 99}'::jsonb,'Arashi Daisuke');
+(4890,'k/-/2/-2_ked__afk','Maddock Jackson','嵐 大佑','Player','Middle School','fire','MF','["Raimon"]'::jsonb,'["VR"]'::jsonb,'Quick-tempered, but deep down, a genuinely good guy you can''t help but like.','{"Kick": 103, "Control": 111, "Technique": 108, "Pressure": 90, "Physical": 90, "Agility": 83, "Intelligence": 99}'::jsonb,'Arashi Daisuke') on conflict (no) do update set image_id=excluded.image_id,name=excluded.name,name_ja=excluded.name_ja,role=excluded.role,age=excluded.age,element=excluded.element,position=excluded.position,teams=excluded.teams,games=excluded.games,description=excluded.description,vr_lv50=excluded.vr_lv50,wiki_page=excluded.wiki_page;
 insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,teams,games,description,vr_lv50,wiki_page) values
 (4891,'k/h/2/h2vmp9qmwas','Eleanor Estrella','星村 ナオ','Player','Middle School','wood','MF','["Raimon"]'::jsonb,'["VR"]'::jsonb,'A total football geek who''s proud to call Raimon home. Big-time fan of Harper Evans.','{"Kick": 103, "Control": 111, "Technique": 108, "Pressure": 90, "Physical": 90, "Agility": 83, "Intelligence": 99}'::jsonb,'Hoshimura Nao'),
 (4892,'k/g/6/g6_2ilswsqc','Darian Moonward','月影 蓮','Player','Middle School','air','MF','["Raimon"]'::jsonb,'["VR"]'::jsonb,'Raimon''s charismatic captain, a commanding leader and top talent who drives the team forward.','{"Kick": 103, "Control": 111, "Technique": 108, "Pressure": 90, "Physical": 90, "Agility": 83, "Intelligence": 99}'::jsonb,'Tsukikage Ren'),
@@ -5011,7 +5011,7 @@ insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,tea
 (5413,'k/i/i/iikskekijrs','Diana Whispervelt','小太刀 鞘','Player','Middle School','earth','MF','["Kendo Club"]'::jsonb,'["VR"]'::jsonb,'Quietly perfects her swing alone in silence, her calm hiding a long list of kendo tournament wins.','{"Kick": 100, "Control": 109, "Technique": 105, "Pressure": 87, "Physical": 88, "Agility": 81, "Intelligence": 97}'::jsonb,'Kodachi'),
 (5414,'k/o/n/onpzzd_awxc','Bam Buschutt','若竹 サブロク','Player','Middle School','fire','FW','["Kendo Club"]'::jsonb,'["VR"]'::jsonb,'Joined the kendo club to follow the captain he admires and faces higher-ranked foes without fear.','{"Kick": 111, "Control": 108, "Technique": 98, "Pressure": 87, "Physical": 85, "Agility": 80, "Intelligence": 96}'::jsonb,'Wakatake'),
 (5415,'k/z/l/zly408z67c0','Ruy Roosalot','中結 残心','Player','Middle School','air','DF','["Kendo Club"]'::jsonb,'["VR"]'::jsonb,'Curious about other sports but clings to kendo, afraid to lose part of himself.','{"Kick": 86, "Control": 88, "Technique": 91, "Pressure": 97, "Physical": 102, "Agility": 88, "Intelligence": 111}'::jsonb,'Nakayui'),
-(5416,'k/b/e/befkallw-e0','Draven Savager','鹿児島 利光','Player','Middle School','fire','FW','["Kendo Club"]'::jsonb,'["VR"]'::jsonb,'Has scared foes into throwing in the towel with savage swordplay and wild warcries alone.','{"Kick": 111, "Control": 108, "Technique": 98, "Pressure": 87, "Physical": 85, "Agility": 80, "Intelligence": 96}'::jsonb,'Kagoshima');
+(5416,'k/b/e/befkallw-e0','Draven Savager','鹿児島 利光','Player','Middle School','fire','FW','["Kendo Club"]'::jsonb,'["VR"]'::jsonb,'Has scared foes into throwing in the towel with savage swordplay and wild warcries alone.','{"Kick": 111, "Control": 108, "Technique": 98, "Pressure": 87, "Physical": 85, "Agility": 80, "Intelligence": 96}'::jsonb,'Kagoshima') on conflict (no) do update set image_id=excluded.image_id,name=excluded.name,name_ja=excluded.name_ja,role=excluded.role,age=excluded.age,element=excluded.element,position=excluded.position,teams=excluded.teams,games=excluded.games,description=excluded.description,vr_lv50=excluded.vr_lv50,wiki_page=excluded.wiki_page;
 insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,teams,games,description,vr_lv50,wiki_page) values
 (5417,'k/k/d/kdnwkhykmxs','Readon Booke','海老沼 啓志','Player','Middle School','wood','DF','["Kendo Club"]'::jsonb,'["VR"]'::jsonb,'Cares mostly about school but joined sports for credits but dreams of mastering both mind and body.','{"Kick": 86, "Control": 88, "Technique": 91, "Pressure": 97, "Physical": 102, "Agility": 88, "Intelligence": 111}'::jsonb,'Ebinuma'),
 (5418,'k/7/r/7r8rj4-elke','Wander Treeday','途切 秋国','Player','Middle School','earth','DF','["Kendo Club"]'::jsonb,'["VR"]'::jsonb,'Loves researching and testing out new training regimes but can''t stick with any for long.','{"Kick": 86, "Control": 88, "Technique": 91, "Pressure": 97, "Physical": 102, "Agility": 88, "Intelligence": 111}'::jsonb,'Togire'),
@@ -5468,7 +5468,7 @@ insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,tea
 (5874,'k/w/r/wrvt_bizzgu','Wolter Kruzsk','ワルター・コズルスキー','Coordinator','Exobeing','earth','MF','["Destroyers"]'::jsonb,'["VR"]'::jsonb,'Repeats every action that frustrates his opponents. He''s now under the Mind Eaters'' control.','{"Kick": 97, "Control": 112, "Technique": 113, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 100}'::jsonb,null),
 (5875,'k/1/i/1ivgoh44yau','Ah Dackchin','アー・ダッチン','Player','Adult','wood','GK','["Unaffiliated"]'::jsonb,'["VR"]'::jsonb,'A dancing mood-maker who gets so into the game he might bust a move mid-match.','{"Kick": 84, "Control": 92, "Technique": 86, "Pressure": 97, "Physical": 101, "Agility": 104, "Intelligence": 92}'::jsonb,'Ahdatchin'),
 (5876,'k/e/g/egkbfeec1p8','KOTA','コータ','Player','Adult','air','GK','["Unaffiliated"]'::jsonb,'["VR"]'::jsonb,'A music-loving charmer with a dazzling smile and perfect chemistry with Ton Nino.','{"Kick": 84, "Control": 92, "Technique": 86, "Pressure": 97, "Physical": 101, "Agility": 104, "Intelligence": 92}'::jsonb,'KOTA'),
-(5877,'k/_/j/_jjnn8tctrs','eshin','えーしん','Player','Adult','earth','FW','["Unaffiliated"]'::jsonb,'["VR"]'::jsonb,'A high-level powerhouse said to be the very first champion of a legendary tournament.','{"Kick": 113, "Control": 111, "Technique": 100, "Pressure": 90, "Physical": 87, "Agility": 83, "Intelligence": 99}'::jsonb,'Eshin');
+(5877,'k/_/j/_jjnn8tctrs','eshin','えーしん','Player','Adult','earth','FW','["Unaffiliated"]'::jsonb,'["VR"]'::jsonb,'A high-level powerhouse said to be the very first champion of a legendary tournament.','{"Kick": 113, "Control": 111, "Technique": 100, "Pressure": 90, "Physical": 87, "Agility": 83, "Intelligence": 99}'::jsonb,'Eshin') on conflict (no) do update set image_id=excluded.image_id,name=excluded.name,name_ja=excluded.name_ja,role=excluded.role,age=excluded.age,element=excluded.element,position=excluded.position,teams=excluded.teams,games=excluded.games,description=excluded.description,vr_lv50=excluded.vr_lv50,wiki_page=excluded.wiki_page;
 insert into public.staff (zukan_no,name,role,team,teams,games,age,element,image_url,description,wiki_page) values
 (17,'Silvia Woods','Coordinator','Raimon','["Raimon"]'::jsonb,'["IE1", "IE2", "IE3", "GO1", "GO2", "GO3"]'::jsonb,'Middle School','earth','https://dxi4wb638ujep.cloudfront.net/1/k/c/b/cb88nfolkwe.png','A strong and supportive big-sister type who brought the football club back to life with Mark Evans.',null),
 (18,'Celia Hills','Coordinator','Raimon','["Raimon"]'::jsonb,'["IE1", "IE2", "IE3", "GO1", "GO2", "GO3"]'::jsonb,'Middle School','air','https://dxi4wb638ujep.cloudfront.net/1/k/z/p/zpndk6oxjls.png','A master of digging up info, her footie knowledge may rival even Jude''s.','Otonashi Haruna'),
@@ -5642,7 +5642,7 @@ insert into public.staff (zukan_no,name,role,team,teams,games,age,element,image_
 (5855,'Boulder Vargan','Manager','Destroyers','["Destroyers"]'::jsonb,'["VR"]'::jsonb,'Exobeing','fire','https://dxi4wb638ujep.cloudfront.net/1/k/h/d/hdk0msnfaq0.png','A celebrated manager known as the Demon Sergeant, whose brutal training has led the team to countless victories.',null),
 (5856,'Wolter Kruzsk','Coordinator','Destroyers','["Destroyers"]'::jsonb,'["VR"]'::jsonb,'Exobeing','earth','https://dxi4wb638ujep.cloudfront.net/1/k/q/r/qr7vltrltzc.png','A shrewd pro with a knack for landing sponsorships who vanishes into thin air whenever things get dicey.',null),
 (5873,'Boulder Vargan','Manager','Destroyers','["Destroyers"]'::jsonb,'["VR"]'::jsonb,'Exobeing','fire','https://dxi4wb638ujep.cloudfront.net/1/k/b/d/bdeyskujet8.png','Pursues victory with demonic determination. He''s now under the Mind Eaters'' control.',null),
-(5874,'Wolter Kruzsk','Coordinator','Destroyers','["Destroyers"]'::jsonb,'["VR"]'::jsonb,'Exobeing','earth','https://dxi4wb638ujep.cloudfront.net/1/k/w/r/wrvt_bizzgu.png','Repeats every action that frustrates his opponents. He''s now under the Mind Eaters'' control.',null);
+(5874,'Wolter Kruzsk','Coordinator','Destroyers','["Destroyers"]'::jsonb,'["VR"]'::jsonb,'Exobeing','earth','https://dxi4wb638ujep.cloudfront.net/1/k/w/r/wrvt_bizzgu.png','Repeats every action that frustrates his opponents. He''s now under the Mind Eaters'' control.',null) on conflict (zukan_no) do update set name=excluded.name,role=excluded.role,team=excluded.team,teams=excluded.teams,games=excluded.games,age=excluded.age,element=excluded.element,image_url=excluded.image_url,description=excluded.description,wiki_page=excluded.wiki_page;
 insert into public.teams (name,name_es,name_fr,name_it,logo_url,logos) values
 ('Almighty Faith','Colegio Poderosa Fe','Collège de la Foi toute-puissante','Collegio Fiducia Incrollabile','https://static.wikia.nocookie.net/inazuma-eleven/images/b/b2/Mannouzaka_emblem.png/revision/latest?cb=20240411184619','{"VR": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/6f/Mannouzaka_emblem_%28VR%29.png/revision/latest?cb=20251119113316"}'::jsonb),
 ('Alpine','Alpino','Alpin','Alpine','https://static.wikia.nocookie.net/inazuma-eleven/images/1/1c/Hakuren_emblem.png/revision/latest?cb=20240410111140','{"GO": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/2a/Hakuren_%28GO%29_emblem.png/revision/latest?cb=20240411185220", "ARES": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/ec/Hakuren_%28Ares%29_emblem.png/revision/latest?cb=20251118125406", "VR": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/f2/Hakuren_emblem_%28VR%29.png/revision/latest?cb=20251118144140"}'::jsonb),
@@ -5830,7 +5830,7 @@ insert into public.teams (name,name_es,name_fr,name_it,logo_url,logos) values
 ('Track and Field Club','Club de Atletismo',null,null,'https://static.wikia.nocookie.net/inazuma-eleven/images/8/87/Rikujou_Bu_emblem.png/revision/latest?cb=20251121004018',null),
 ('Volleyball Club','Club de Voleibol',null,null,'https://static.wikia.nocookie.net/inazuma-eleven/images/e/e2/Volleyball_Bu_emblem.png/revision/latest?cb=20251121004033',null),
 ('Water Polo Club','Club de Waterpolo',null,null,'https://static.wikia.nocookie.net/inazuma-eleven/images/2/2d/Suikyuu_Bu_emblem.png/revision/latest?cb=20251121004025',null),
-('Wind Orchestra Club','Club de Banda de Viento',null,null,'https://static.wikia.nocookie.net/inazuma-eleven/images/0/0b/Suisougaku_Bu_emblem.png/revision/latest?cb=20251121004026',null);
+('Wind Orchestra Club','Club de Banda de Viento',null,null,'https://static.wikia.nocookie.net/inazuma-eleven/images/0/0b/Suisougaku_Bu_emblem.png/revision/latest?cb=20251121004026',null) on conflict (name) do update set name_es=excluded.name_es,name_fr=excluded.name_fr,name_it=excluded.name_it,logo_url=excluded.logo_url,logos=excluded.logos;
 insert into public.characters (id,name,wiki_page,zukan_no) values
 ('endou-mamoru','Mark Evans','Endou Mamoru',1),
 ('gouenji-shuuya','Axel Blaze','Gouenji Shuuya',2),
@@ -6331,7 +6331,7 @@ insert into public.characters (id,name,wiki_page,zukan_no) values
 ('utada','Alton Oldhat','Utada',534),
 ('yukiyama','Cal Cooler','Yukiyama',535),
 ('nekono','Tom Felix','Nekono',536),
-('inui','Terry Orr','Inui',537);
+('inui','Terry Orr','Inui',537) on conflict (id) do update set name=excluded.name,wiki_page=excluded.wiki_page,zukan_no=excluded.zukan_no;
 insert into public.characters (id,name,wiki_page,zukan_no) values
 ('sueno','Rudolph Rainder','Sueno',538),
 ('kaitou','Nick Swagg','Kaitou',539),
@@ -6832,7 +6832,7 @@ insert into public.characters (id,name,wiki_page,zukan_no) values
 ('yatsuda','Reg Thrift','Yatsuda',1034),
 ('kooriyama','Jools Iceberg','Kooriyama',1035),
 ('eiyuu','Mark Brent','Eiyuu',1036),
-('oomasa','Vern Ironfist','Oomasa',1037);
+('oomasa','Vern Ironfist','Oomasa',1037) on conflict (id) do update set name=excluded.name,wiki_page=excluded.wiki_page,zukan_no=excluded.zukan_no;
 insert into public.characters (id,name,wiki_page,zukan_no) values
 ('fujisaki','Rob Burnsides','Fujisaki',1038),
 ('star','Ace Bragg','Star',1039),
@@ -7333,7 +7333,7 @@ insert into public.characters (id,name,wiki_page,zukan_no) values
 ('yoshi','Ardel Kernel','Yoshi',1635),
 ('yanoura','Carl Belcher','Yanoura',1636),
 ('yoda','Mal Maroon','Yoda',1637),
-('araba','Ralph Fary','Araba',1638);
+('araba','Ralph Fary','Araba',1638) on conflict (id) do update set name=excluded.name,wiki_page=excluded.wiki_page,zukan_no=excluded.zukan_no;
 insert into public.characters (id,name,wiki_page,zukan_no) values
 ('iitani','Floyd Spades','Iitani',1639),
 ('kaizuka','Remy Diggun','Kaizuka',1640),
@@ -7834,7 +7834,7 @@ insert into public.characters (id,name,wiki_page,zukan_no) values
 ('milk','Laititia Cheeseman','Milk',2185),
 ('hana-scout-character','Isodoura Bouquet','Hana (scout character)',2186),
 ('sentoku','May Jarrett','Sentoku',2187),
-('samukawa','Des Einer','Samukawa',2188);
+('samukawa','Des Einer','Samukawa',2188) on conflict (id) do update set name=excluded.name,wiki_page=excluded.wiki_page,zukan_no=excluded.zukan_no;
 insert into public.characters (id,name,wiki_page,zukan_no) values
 ('turban','Kev Fiyah','Turban',2189),
 ('asari','Shadi Mesmer','Asari',2190),
@@ -8335,7 +8335,7 @@ insert into public.characters (id,name,wiki_page,zukan_no) values
 ('kai','Yang','Kai',2716),
 ('kibayama-douzan','Pinkus Mountbatten','Kibayama Douzan',2717),
 ('hikita-koushirou','Flint Charcoal','Hikita Koushirou',2718),
-('ookazeya-giichi','Glaucous Gull','Ookazeya Giichi',2719);
+('ookazeya-giichi','Glaucous Gull','Ookazeya Giichi',2719) on conflict (id) do update set name=excluded.name,wiki_page=excluded.wiki_page,zukan_no=excluded.zukan_no;
 insert into public.characters (id,name,wiki_page,zukan_no) values
 ('rinno-fujiko','Ashley Silverwood','Rinno Fujiko',2720),
 ('mutou-genzou','Cinereous Slate','Mutou Genzou',2722),
@@ -8836,7 +8836,7 @@ insert into public.characters (id,name,wiki_page,zukan_no) values
 ('sphere','Drew Serkell','Sphere',3242),
 ('bun-scout-character','Jack O''Nonne','Bun (scout character)',3243),
 ('psyche','Delia Sykes','Psyche',3244),
-('shururi','Lucius Lox','Shururi',3245);
+('shururi','Lucius Lox','Shururi',3245) on conflict (id) do update set name=excluded.name,wiki_page=excluded.wiki_page,zukan_no=excluded.zukan_no;
 insert into public.characters (id,name,wiki_page,zukan_no) values
 ('border','Strata Pudden','Border',3246),
 ('kikuichi','Silvio Di Fence','Kikuichi',3247),
@@ -9337,7 +9337,7 @@ insert into public.characters (id,name,wiki_page,zukan_no) values
 ('sarana-kukri','Solada Kulkit','Sarana Kukri',4016),
 ('sarit-charat','Suchart Chaowarat','Sarit Charat',4017),
 ('nawat-lam','Naowarat Rahman','Nawat Lam',4018),
-('mei-chapati','Mei Chaptri','Mei Chapati',4019);
+('mei-chapati','Mei Chaptri','Mei Chapati',4019) on conflict (id) do update set name=excluded.name,wiki_page=excluded.wiki_page,zukan_no=excluded.zukan_no;
 insert into public.characters (id,name,wiki_page,zukan_no) values
 ('bark-sepakraw','Bhak Sepakroh','Bark Sepakraw',4020),
 ('kaolan-sagot','Klaharn Sangsorn','Kaolan Sagot',4021),
@@ -9838,7 +9838,7 @@ insert into public.characters (id,name,wiki_page,zukan_no) values
 ('li-hao','Jimmy Wongfu','Li Hao',4725),
 ('wan-tanmeo','Jet Long','Wan Tanmeo',4726),
 ('xiu-chuna','Stephen Chang','Xiu Chuna',4727),
-('chao-mao','Mars Hung','Chao Mao',4728);
+('chao-mao','Mars Hung','Chao Mao',4728) on conflict (id) do update set name=excluded.name,wiki_page=excluded.wiki_page,zukan_no=excluded.zukan_no;
 insert into public.characters (id,name,wiki_page,zukan_no) values
 ('chi-chinsu','Gordon Siu','Chi Chinsu',4729),
 ('domelgo-dom-nguez','Manuel Gutiérrez','Domelgo Domínguez',4734),
@@ -10339,7 +10339,7 @@ insert into public.characters (id,name,wiki_page,zukan_no) values
 ('kosen','Minerva Elderbright','Kosen',5337),
 ('nobutaka','Faris Creed','Nobutaka',5338),
 ('goishi','Sophia Goston','Goishi',5339),
-('tsumite','Stellan Checkman','Tsumite',5340);
+('tsumite','Stellan Checkman','Tsumite',5340) on conflict (id) do update set name=excluded.name,wiki_page=excluded.wiki_page,zukan_no=excluded.zukan_no;
 insert into public.characters (id,name,wiki_page,zukan_no) values
 ('aira','Ayla Bordaire','Aira',5341),
 ('mikuriya','Jerome Knight','Mikuriya',5342),
@@ -10814,7 +10814,7 @@ insert into public.characters (id,name,wiki_page,zukan_no) values
 ('zippy-doerr','Zyphar Doar','Zippy Doerr',5854),
 ('ahdatchin','Ah Dackchin','Ahdatchin',5875),
 ('kota','KOTA','KOTA',5876),
-('eshin','eshin','Eshin',5877);
+('eshin','eshin','Eshin',5877) on conflict (id) do update set name=excluded.name,wiki_page=excluded.wiki_page,zukan_no=excluded.zukan_no;
 insert into public.techniques (id,name,name_es,name_fr,name_it,name_jp,type,element,cost,cost_game,costs,description,image_url,zukan_types,traits) values
 ('GodHand','God Hand','Mano celestial','Main céleste','Mano di Luce','ゴッドハンド','Catch','god hand',10,'GO3','{"GO3": 10, "IE3": 22, "GO2": 30, "IE2": 21, "GO1": 30, "IE1": 45}'::jsonb,'Block any and all shots with a giant right hand brimming with passion for football.','https://dxi4wb638ujep.cloudfront.net/1/k/x/d/xdnwlgecfne.jpg','["Success", "Failure"]'::jsonb,'[]'::jsonb),
 ('GrenadeShot','Grenade Shot','Chut granada','Tir grenade','Tiro Fulminante','グレネードショット','Shoot','fire',20,'IE3','{"IE3": 20, "IE2": 17, "IE1": 25}'::jsonb,'Twist the body to build power and drive it into the ball all at once for a knockout special move.','https://dxi4wb638ujep.cloudfront.net/1/k/4/t/4tklxmjfiue.jpg','["Shot"]'::jsonb,'[]'::jsonb),
@@ -12095,7 +12095,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('domon-asuka--orion--base','domon-asuka','Bobby Shearer','ORION','IE','base','Star-Spangled Unicorns','DF','wood',84,'Top Player','A','Victory Road (tier 2) + técnicas + domon-asuka--ie3--unicorn',79,85,82,85,86,80,'https://dxi4wb638ujep.cloudfront.net/1/k/d/q/dqp0nyty5gm.png','k/d/q/dqp0nyty5gm',4588,5960,'Despite his somewhat frivolous nature, he has a warm heart and genuinely cares for his friends.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "Victory Road Lv50 · experimente", "Kick": 124, "Control": 133, "Technique": 130, "Pressure": 108, "Physical": 108, "Agility": 100, "Intelligence": 119}'::jsonb,false,null,null,null),
 ('borboleta-barbosa--ie3--base','borboleta-barbosa','Borboleta Barboza','IE3','IE','base','The Kingdom','MF','air',84,'Top Player','B','stats del juego',84,85,83,84,82,74,'https://dxi4wb638ujep.cloudfront.net/1/k/a/w/awnnwrzfqws.png','k/a/w/awnnwrzfqws',1929,1929,'He wants to look beyond the borders of Brazil and study the playing styles of other nations.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 67, "Body": 60, "Control": 69, "Guard": 62, "Speed": 65, "Stamina": 64, "Guts": 48}'::jsonb,false,null,null,null),
 ('taki-yoshihiko--go1--base','taki-yoshihiko','Bradford Ash','GO1','GO','base','Kirkwood','FW','earth',84,'Top Player','S','Xtreme (balancing)',82,90,88,81,80,72,'https://dxi4wb638ujep.cloudfront.net/1/k/x/o/xo3xi-xmc9m.png','k/x/o/xo3xi-xmc9m',2621,2621,'Langford''s little brother. He loves his big bro but sometimes feels inferior.','Hermano menor de Langford, al que admira con un complejo de inferioridad.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 114, "Dribbling": 96, "Technique": 138, "Block": 106, "Speed": 122, "Stamina": 98, "Catch": 60}'::jsonb,false,null,null,null),
-('afuro-terumi--ie3--fire-dragon','afuro-terumi','Byron Love','IE3','IE','Fire Dragon','Fire Dragon','MF','wood',84,'Top Player','S','Strikers 2013',91,84,83,83,74,74,'https://static.wikia.nocookie.net/inazuma-eleven/images/6/61/%28FD%29_Afuro_Terumi_sprite_%28VR%29.png/revision/latest?cb=20260512214749',null,null,5897,null,'Embelesa a rivales con un toque de balón cercano al arte más bello.','[]'::jsonb,'[]'::jsonb,'{"form": "Fire Dragon form", "Kick": 63, "Body": 60, "Control": 77, "Guard": 59, "Speed": 61, "Stamina": 59, "Guts": 58}'::jsonb,true,null,null,null);
+('afuro-terumi--ie3--fire-dragon','afuro-terumi','Byron Love','IE3','IE','Fire Dragon','Fire Dragon','MF','wood',84,'Top Player','S','Strikers 2013',91,84,83,83,74,74,'https://static.wikia.nocookie.net/inazuma-eleven/images/6/61/%28FD%29_Afuro_Terumi_sprite_%28VR%29.png/revision/latest?cb=20260512214749',null,null,5897,null,'Embelesa a rivales con un toque de balón cercano al arte más bello.','[]'::jsonb,'[]'::jsonb,'{"form": "Fire Dragon form", "Kick": 63, "Body": 60, "Control": 77, "Guard": 59, "Speed": 61, "Stamina": 59, "Guts": 58}'::jsonb,true,null,null,null) on conflict (id) do update set character_id=excluded.character_id,name=excluded.name,game=excluded.game,saga=excluded.saga,version=excluded.version,team=excluded.team,position=excluded.position,element=excluded.element,ovr=excluded.ovr,category=excluded.category,tier=excluded.tier,source=excluded.source,shooting=excluded.shooting,control=excluded.control,physical=excluded.physical,speed=excluded.speed,defense=excluded.defense,goalkeeping=excluded.goalkeeping,image_url=excluded.image_url,zukan_id=excluded.zukan_id,zukan_no=excluded.zukan_no,no=excluded.no,description=excluded.description,description_es=excluded.description_es,specials=excluded.specials,extra_teams=excluded.extra_teams,raw_stats=excluded.raw_stats,is_version=excluded.is_version,duel_att=excluded.duel_att,duel_con=excluded.duel_con,duel_def=excluded.duel_def;
 insert into public.cards (id,character_id,name,game,saga,version,team,position,element,ovr,category,tier,source,shooting,control,physical,speed,defense,goalkeeping,image_url,zukan_id,zukan_no,no,description,description_es,specials,extra_teams,raw_stats,is_version,duel_att,duel_con,duel_def) values
 ('kudou-fuyuka--go1--base','kudou-fuyuka','Camellia Travis','GO1','GO','base','Sub Character','DF','wood',84,'Top Player','S','Xtreme (balancing)',69,76,76,76,92,76,'https://dxi4wb638ujep.cloudfront.net/1/k/f/i/fi-sa_z3ule.png','k/f/i/fi-sa_z3ule',2801,2801,'Manager Travis''s daughter and childhood friend of Mark Evans, now a caring nurse at the hospital.','Amiga de la infancia de Mark. Algo tímida, pero cariñosa.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 69, "Dribbling": 65, "Technique": 86, "Block": 111, "Speed": 74, "Stamina": 72, "Catch": 35}'::jsonb,false,null,null,null),
 ('choi-chang-soo--go3--adult','choi-chang-soo','Changsu Choi','GO3','GO','Adult','Sub Character','MF','fire',84,'Top Player','S','Strikers 2013',81,91,90,72,81,73,'https://static.wikia.nocookie.net/inazuma-eleven/images/8/88/%28FD_%28GO%29%29_Choi_Chang-soo_sprite_%28coach%29_%28VR%29.png/revision/latest?cb=20251222163722','k/l/h/lhrjdsednmc',1829,5930,'A natural-born playmaker whose sharp control may even rival Jude.','Exjugador y actual entrenador de los Dragones de Fuego. Un genio del fútbol.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 95, "Dribbling": 149, "Technique": 100, "Block": 107, "Speed": 107, "Stamina": 109, "Catch": 90}'::jsonb,true,null,null,null),
@@ -12596,7 +12596,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('zatan--go2--base','zatan','Zatang','GO2','GO','base','Zan','MF','fire',81,'Advanced Player','B','stats del juego',78,87,86,73,75,82,'https://dxi4wb638ujep.cloudfront.net/1/k/f/k/fkc3mg0zph0.png','k/f/k/fkc3mg0zph0',3602,3602,'Loves to fight, and lives to do battle on the football pitch.','Le encanta luchar. Se toma el terreno de juego como un campo de batalla.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 90, "Dribbling": 149, "Technique": 112, "Block": 96, "Speed": 97, "Stamina": 116, "Catch": 100}'::jsonb,false,null,null,null),
 ('matsuda-shuusuke--vr--base','matsuda-shuusuke','Zayn Pinegrove','VR','IE','base','Baseball Club Team','DF','air',81,'Advanced Player','B','Victory Road (tier 1) + técnicas',82,77,82,78,83,77,'https://dxi4wb638ujep.cloudfront.net/1/k/o/r/orizw1jgf5m.png','k/o/r/orizw1jgf5m',5245,5245,'He barely talks but shines in clutch moments, doing everything with calm, focused intent.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "Victory Road Lv50 · experimente", "Kick": 121, "Control": 131, "Technique": 128, "Pressure": 106, "Physical": 107, "Agility": 97, "Intelligence": 116}'::jsonb,false,null,null,null),
 ('segata-ryuuichirou--ares--base','segata-ryuuichirou','Zeke Valanche','ARES','IE','base','Alia Academy','FW','air',81,'Advanced Player','B','Victory Road (tier 1) + técnicas + segata-ryuuichirou--ie2--base',83,76,81,80,77,82,'https://dxi4wb638ujep.cloudfront.net/1/k/f/e/ferqr3wgut0.png','k/f/e/ferqr3wgut0',4558,4558,'Fueled by a noble spirit, he tests his limits by flaunting his skill for all to see.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "Victory Road Lv50 · experimente", "Kick": 143, "Control": 136, "Technique": 122, "Pressure": 102, "Physical": 97, "Agility": 97, "Intelligence": 108}'::jsonb,false,null,null,null),
-('nestore-gatto--orion--base','nestore-gatto','Zerbino Savelli','ORION','IE','base','Guardians of the Queen','MF','wood',81,'Advanced Player','C','Victory Road (tier 0) + técnicas',82,83,82,79,82,77,'https://dxi4wb638ujep.cloudfront.net/1/k/v/_/v_tpijdojfk.png','k/v/_/v_tpijdojfk',4804,4804,'A perfectionist cook whose pasta is always flawlessly al dente.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "Victory Road Lv50 · grimpant", "Kick": 107, "Control": 123, "Technique": 124, "Pressure": 91, "Physical": 89, "Agility": 89, "Intelligence": 110}'::jsonb,false,null,null,null);
+('nestore-gatto--orion--base','nestore-gatto','Zerbino Savelli','ORION','IE','base','Guardians of the Queen','MF','wood',81,'Advanced Player','C','Victory Road (tier 0) + técnicas',82,83,82,79,82,77,'https://dxi4wb638ujep.cloudfront.net/1/k/v/_/v_tpijdojfk.png','k/v/_/v_tpijdojfk',4804,4804,'A perfectionist cook whose pasta is always flawlessly al dente.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "Victory Road Lv50 · grimpant", "Kick": 107, "Control": 123, "Technique": 124, "Pressure": 91, "Physical": 89, "Agility": 89, "Intelligence": 110}'::jsonb,false,null,null,null) on conflict (id) do update set character_id=excluded.character_id,name=excluded.name,game=excluded.game,saga=excluded.saga,version=excluded.version,team=excluded.team,position=excluded.position,element=excluded.element,ovr=excluded.ovr,category=excluded.category,tier=excluded.tier,source=excluded.source,shooting=excluded.shooting,control=excluded.control,physical=excluded.physical,speed=excluded.speed,defense=excluded.defense,goalkeeping=excluded.goalkeeping,image_url=excluded.image_url,zukan_id=excluded.zukan_id,zukan_no=excluded.zukan_no,no=excluded.no,description=excluded.description,description_es=excluded.description_es,specials=excluded.specials,extra_teams=excluded.extra_teams,raw_stats=excluded.raw_stats,is_version=excluded.is_version,duel_att=excluded.duel_att,duel_con=excluded.duel_con,duel_def=excluded.duel_def;
 insert into public.cards (id,character_id,name,game,saga,version,team,position,element,ovr,category,tier,source,shooting,control,physical,speed,defense,goalkeeping,image_url,zukan_id,zukan_no,no,description,description_es,specials,extra_teams,raw_stats,is_version,duel_att,duel_con,duel_def) values
 ('hakono-zuiichi--go1--base','hakono-zuiichi','Abram Cadabra','GO1','GO','base','Mirage','GK','earth',80,'Advanced Player','B','stats del juego',68,65,82,66,78,80,'https://dxi4wb638ujep.cloudfront.net/1/k/9/u/9u63nyaqk3k.png','k/9/u/9u63nyaqk3k',2626,2626,'Has amazing reflexes for his size, and considers penalty kicks his specialty.','Tiene buenos reflejos para su tamaño y es especialista en parar penaltis.','[{"type": "keshin", "name": "Dicey Dicer Lot", "name_es": "Gran jugador Lot", "armed": false, "hyper": "Lucky Dice", "hyper_es": "Dados de la suerte", "name_fr": "Dédé, Le Roi des Dés", "name_it": null, "hyper_fr": "Tirage chanceux", "hyper_it": "Dadi della Fortuna"}]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 79, "Dribbling": 82, "Technique": 97, "Block": 118, "Speed": 93, "Stamina": 124, "Catch": 113}'::jsonb,false,null,null,null),
 ('suizenji-chiita--ie1--base','suizenji-chiita','Adrian Speed','IE1','IE','base','Wild','FW','air',80,'Advanced Player','A','stats del juego',79,83,71,87,75,73,'https://dxi4wb638ujep.cloudfront.net/1/k/m/l/mly6v4mcfnu.png','k/m/l/mly6v4mcfnu',67,67,'He can run as fast as a cheetah— 100m in ten seconds flat!','Deja a todos sentados con su increíble marca de cien metros en diez segundos.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 63, "Body": 47, "Control": 69, "Guard": 55, "Speed": 79, "Stamina": 42, "Guts": 47}'::jsonb,false,null,null,null),
@@ -13097,7 +13097,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('itsumi-kunihiko--go1--base','itsumi-kunihiko','Colby Columbia','GO1','GO','base','Royal Academy','FW','fire',77,'Advanced Player','B','stats del juego',82,72,68,75,72,68,'https://dxi4wb638ujep.cloudfront.net/1/k/h/z/hzimoyz5tp0.png','k/h/z/hzimoyz5tp0',2549,2549,'His powers of observation never miss a telltale sign or opportunity.','No se le escapa ningún defecto o desliz del rival.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 146, "Dribbling": 89, "Technique": 116, "Block": 102, "Speed": 113, "Stamina": 92, "Catch": 56}'::jsonb,false,null,null,null),
 ('inoshita--vr--base','inoshita','Colter Fairburn','VR','IE','base','Martial Arts Club','FW','air',77,'Advanced Player','C','Victory Road (tier 0) + técnicas',79,75,77,78,75,75,'https://dxi4wb638ujep.cloudfront.net/1/k/v/s/vsy6vjbznxc.png','k/v/s/vsy6vjbznxc',5453,5453,'A boxing beast who came out of nowhere and started steamrolling the competition with pure power.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "Victory Road Lv50 · experimente", "Kick": 133, "Control": 130, "Technique": 118, "Pressure": 104, "Physical": 102, "Agility": 96, "Intelligence": 115}'::jsonb,false,null,null,null),
 ('sumitsuki--vr--base','sumitsuki','Cora Inkton','VR','IE','base','Newspaper Club','DF','earth',77,'Advanced Player','C','Victory Road (tier 0) + técnicas',72,78,75,78,79,73,'https://dxi4wb638ujep.cloudfront.net/1/k/y/1/y1hwuoazui8.png','k/y/1/y1hwuoazui8',5660,5660,'Writes a beloved corner column in the school paper where her warm stories brighten readers'' days.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "Victory Road Lv50 · experimente", "Kick": 120, "Control": 131, "Technique": 126, "Pressure": 104, "Physical": 106, "Agility": 97, "Intelligence": 116}'::jsonb,false,null,null,null),
-('sure--vr--base','sure','Corwin Lockhart','VR','IE','base','Volleyball Club','DF','air',77,'Advanced Player','C','Victory Road (tier 0) + técnicas',72,78,75,78,79,73,'https://dxi4wb638ujep.cloudfront.net/1/k/o/s/osotrejfqs8.png','k/o/s/osotrejfqs8',5495,5495,'Won''t set for players he doesn''t like and hides behind his bangs, but always follows the play without fail.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "Victory Road Lv50 · experimente", "Kick": 120, "Control": 131, "Technique": 126, "Pressure": 104, "Physical": 106, "Agility": 97, "Intelligence": 116}'::jsonb,false,null,null,null);
+('sure--vr--base','sure','Corwin Lockhart','VR','IE','base','Volleyball Club','DF','air',77,'Advanced Player','C','Victory Road (tier 0) + técnicas',72,78,75,78,79,73,'https://dxi4wb638ujep.cloudfront.net/1/k/o/s/osotrejfqs8.png','k/o/s/osotrejfqs8',5495,5495,'Won''t set for players he doesn''t like and hides behind his bangs, but always follows the play without fail.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "Victory Road Lv50 · experimente", "Kick": 120, "Control": 131, "Technique": 126, "Pressure": 104, "Physical": 106, "Agility": 97, "Intelligence": 116}'::jsonb,false,null,null,null) on conflict (id) do update set character_id=excluded.character_id,name=excluded.name,game=excluded.game,saga=excluded.saga,version=excluded.version,team=excluded.team,position=excluded.position,element=excluded.element,ovr=excluded.ovr,category=excluded.category,tier=excluded.tier,source=excluded.source,shooting=excluded.shooting,control=excluded.control,physical=excluded.physical,speed=excluded.speed,defense=excluded.defense,goalkeeping=excluded.goalkeeping,image_url=excluded.image_url,zukan_id=excluded.zukan_id,zukan_no=excluded.zukan_no,no=excluded.no,description=excluded.description,description_es=excluded.description_es,specials=excluded.specials,extra_teams=excluded.extra_teams,raw_stats=excluded.raw_stats,is_version=excluded.is_version,duel_att=excluded.duel_att,duel_con=excluded.duel_con,duel_def=excluded.duel_def;
 insert into public.cards (id,character_id,name,game,saga,version,team,position,element,ovr,category,tier,source,shooting,control,physical,speed,defense,goalkeeping,image_url,zukan_id,zukan_no,no,description,description_es,specials,extra_teams,raw_stats,is_version,duel_att,duel_con,duel_def) values
 ('cotopak-gerigar--go3--base','cotopak-gerigar','Cotopax Gerigar','GO3','GO','base','Magmavia Eleven','FW','earth',77,'Advanced Player','B','stats del juego',79,76,67,81,69,75,'https://dxi4wb638ujep.cloudfront.net/1/k/c/h/chn9zqmrbjs.png','k/c/h/chn9zqmrbjs',4069,4069,'He''s handsome by Magmavia''s standards and popular with everyone.','Es considerado el más atractivo de Magmavís y un gran héroe del planeta.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 138, "Dribbling": 100, "Technique": 131, "Block": 95, "Speed": 133, "Stamina": 88, "Catch": 98}'::jsonb,false,null,null,null),
 ('mikawa--vr--base','mikawa','Curia Caldwell','VR','IE','base','Tennis Club','DF','earth',77,'Advanced Player','C','Victory Road (tier 0) + técnicas',78,69,78,70,79,73,'https://dxi4wb638ujep.cloudfront.net/1/k/3/x/3xadanqlb9k.png','k/3/x/3xadanqlb9k',5537,5537,'Drawn to the strange and unusual, she can''t help but poke her nose where it doesn''t belong.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "Victory Road Lv50 · experimente", "Kick": 120, "Control": 131, "Technique": 126, "Pressure": 104, "Physical": 106, "Agility": 97, "Intelligence": 116}'::jsonb,false,null,null,null),
@@ -13598,7 +13598,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('clark-cain--ie3--base','clark-cain','Ken Crackham','IE3','IE','base','Big Waves','DF','wood',74,'Growing Player','B','stats del juego',67,77,67,65,79,79,'https://dxi4wb638ujep.cloudfront.net/1/k/t/a/tapz2x4bat8.png','k/t/a/tapz2x4bat8',1784,1784,'As well as a footballer, this player is an active conservationist of Australia''s rich biodiversity.','Este jugador lucha por preservar la flora y la fauna de Australia.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 52, "Body": 61, "Control": 62, "Guard": 68, "Speed": 52, "Stamina": 48, "Guts": 62}'::jsonb,false,null,null,null),
 ('khalfan-jibril--ie3--base','khalfan-jibril','Khalfan Jibril','IE3','IE','base','Desert Lions','DF','wood',74,'Growing Player','B','stats del juego',61,77,79,61,75,78,'https://dxi4wb638ujep.cloudfront.net/1/k/n/v/nvhmkgafj5k.png','k/n/v/nvhmkgafj5k',1811,1811,'This player is keen on preserving ancient mosques, and the fine arts of the Middle East.','Lucha por la conservación de las mezquitas y otras obras de arte de Oriente Medio.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 47, "Body": 63, "Control": 63, "Guard": 61, "Speed": 49, "Stamina": 73, "Guts": 69}'::jsonb,false,null,null,null),
 ('karmei-kohler--ie3--base','karmei-kohler','Kjell Snapper','IE3','IE','base','Big Waves','DF','wood',74,'Growing Player','B','stats del juego',80,67,65,71,81,81,'https://dxi4wb638ujep.cloudfront.net/1/k/c/y/cy-4boe7tgu.png','k/c/y/cy-4boe7tgu',1783,1783,'This player applies the wisdom of the ancients to his style of play.','El estilo de juego de este futbolista encierra la sabiduría de sus antepasados.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 69, "Body": 52, "Control": 52, "Guard": 72, "Speed": 56, "Stamina": 54, "Guts": 64}'::jsonb,false,null,null,null),
-('kinboshi-yatsuru--vr--base','kinboshi-yatsuru','Laymark Starwyn','VR','IE','base','West Manor','MF','earth',74,'Growing Player','C','Victory Road (tier 0) + técnicas',75,76,75,72,75,70,'https://dxi4wb638ujep.cloudfront.net/1/k/n/9/n94yvdhzy5u.png','k/n/9/n94yvdhzy5u',4926,4926,'Strict, sharp, and tactical, he never lets a rival school get the better of him.','Estricto, inteligente y estratégico. Siente una fuerte rivalidad hacia los estuantes de otras escuelas.','[]'::jsonb,'[]'::jsonb,'{"form": "Victory Road Lv50 · normal", "Kick": 97, "Control": 112, "Technique": 113, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 100}'::jsonb,false,null,null,null);
+('kinboshi-yatsuru--vr--base','kinboshi-yatsuru','Laymark Starwyn','VR','IE','base','West Manor','MF','earth',74,'Growing Player','C','Victory Road (tier 0) + técnicas',75,76,75,72,75,70,'https://dxi4wb638ujep.cloudfront.net/1/k/n/9/n94yvdhzy5u.png','k/n/9/n94yvdhzy5u',4926,4926,'Strict, sharp, and tactical, he never lets a rival school get the better of him.','Estricto, inteligente y estratégico. Siente una fuerte rivalidad hacia los estuantes de otras escuelas.','[]'::jsonb,'[]'::jsonb,'{"form": "Victory Road Lv50 · normal", "Kick": 97, "Control": 112, "Technique": 113, "Pressure": 83, "Physical": 81, "Agility": 81, "Intelligence": 100}'::jsonb,false,null,null,null) on conflict (id) do update set character_id=excluded.character_id,name=excluded.name,game=excluded.game,saga=excluded.saga,version=excluded.version,team=excluded.team,position=excluded.position,element=excluded.element,ovr=excluded.ovr,category=excluded.category,tier=excluded.tier,source=excluded.source,shooting=excluded.shooting,control=excluded.control,physical=excluded.physical,speed=excluded.speed,defense=excluded.defense,goalkeeping=excluded.goalkeeping,image_url=excluded.image_url,zukan_id=excluded.zukan_id,zukan_no=excluded.zukan_no,no=excluded.no,description=excluded.description,description_es=excluded.description_es,specials=excluded.specials,extra_teams=excluded.extra_teams,raw_stats=excluded.raw_stats,is_version=excluded.is_version,duel_att=excluded.duel_att,duel_con=excluded.duel_con,duel_def=excluded.duel_def;
 insert into public.cards (id,character_id,name,game,saga,version,team,position,element,ovr,category,tier,source,shooting,control,physical,speed,defense,goalkeeping,image_url,zukan_id,zukan_no,no,description,description_es,specials,extra_teams,raw_stats,is_version,duel_att,duel_con,duel_def) values
 ('lionel-cruz--ie3--base','lionel-cruz','Lionel Cruz','IE3','IE','base','The Empire','GK','air',74,'Growing Player','B','stats del juego',69,65,78,74,72,73,'https://dxi4wb638ujep.cloudfront.net/1/k/w/n/wn3idncicck.png','k/w/n/wn3idncicck',1884,1884,'He makes incredible pork sausages. It''s like a hobby for him.','Le chiflan las salchicas y sabe hacerlas él mismo: las de cerdo le salen riquísimas.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 52, "Body": 60, "Control": 49, "Guard": 56, "Speed": 57, "Stamina": 60, "Guts": 56}'::jsonb,false,null,null,null),
 ('nishinosora-yoichi--go1--base','nishinosora-yoichi','Lucas Skywalk','GO1','GO','base','Milky Way Charter','MF','air',74,'Growing Player','B','stats del juego',70,80,65,72,71,66,'https://dxi4wb638ujep.cloudfront.net/1/k/-/0/-0ygbou8xg0.png','k/-/0/-0ygbou8xg0',2513,2513,'Used to play football properly, but has come to rely on dirty tricks.','Solía jugar al fútbol con deportividad, pero el juego sucio lo sedujo.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 88, "Dribbling": 147, "Technique": 117, "Block": 106, "Speed": 111, "Stamina": 91, "Catch": 56}'::jsonb,false,null,null,null),
@@ -14099,7 +14099,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('furuto-meiji--go1--base','furuto-meiji','Nix Pluto','GO1','GO','base','Universal','MF','fire',69,'Growing Player','B','stats del juego',69,67,61,79,66,62,'https://dxi4wb638ujep.cloudfront.net/1/k/b/z/bzns7imbope.png','k/b/z/bzns7imbope',2648,2648,'His status as a member of the team is sometimes called into question.','Aunque solo construye aparatos para sí mismo, se considera un inventor.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 85, "Dribbling": 99, "Technique": 94, "Block": 89, "Speed": 137, "Stamina": 80, "Catch": 49}'::jsonb,false,null,null,null),
 ('orca--go2--base','orca','November','GO2','GO','base','Protocol Omega 2.0','MF','fire',69,'Growing Player','S','Xtreme (wiki)',68,69,72,68,68,69,'https://dxi4wb638ujep.cloudfront.net/1/k/l/h/lh4kxza07bs.png','k/l/h/lh4kxza07bs',3515,3515,'A midfielder with a wiry body like a spring. Good friends with Beta.',null,'[{"type": "mixi", "name": "Zanark"}]'::jsonb,'[]'::jsonb,'{"form": "Normal form", "Kick": 114, "Dribbling": 146, "Technique": 116, "Block": 117, "Speed": 114, "Stamina": 102, "Catch": 112}'::jsonb,false,null,null,null),
 ('sasotsuka-eiji--ares--base','sasotsuka-eiji','Oscar Pio','ARES','IE','base','Polestar Academy','MF','fire',69,'Growing Player','C','Victory Road (tier 0) + técnicas',70,71,65,69,65,65,'https://dxi4wb638ujep.cloudfront.net/1/k/l/m/lmtdubliqpc.png','k/l/m/lmtdubliqpc',4414,4414,'Easygoing and popular, he sets up seamless plays for his teammates.','Tranquilo y popular. Ayuda a sus compañeros con sus dotes de trabajo en equipo.','[]'::jsonb,'[]'::jsonb,'{"form": "Victory Road Lv50 · grimpant", "Kick": 110, "Control": 120, "Technique": 116, "Pressure": 96, "Physical": 97, "Agility": 89, "Intelligence": 107}'::jsonb,false,null,null,null),
-('owen-easter--go3--base','owen-easter','Owe Noyster','GO3','GO','base','Big Waves','DF','fire',69,'Growing Player','B','stats del juego',64,63,69,58,73,73,'https://dxi4wb638ujep.cloudfront.net/1/k/v/w/vwu3nslenvm.png','k/v/w/vwu3nslenvm',3989,3989,'A light eater who''s easily satisfied, while Sunny cleans up whatever he leaves behind.','Se alimenta con pan y un poco de la comida de sus compañeros.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 83, "Dribbling": 90, "Technique": 104, "Block": 131, "Speed": 81, "Stamina": 102, "Catch": 107}'::jsonb,false,null,null,null);
+('owen-easter--go3--base','owen-easter','Owe Noyster','GO3','GO','base','Big Waves','DF','fire',69,'Growing Player','B','stats del juego',64,63,69,58,73,73,'https://dxi4wb638ujep.cloudfront.net/1/k/v/w/vwu3nslenvm.png','k/v/w/vwu3nslenvm',3989,3989,'A light eater who''s easily satisfied, while Sunny cleans up whatever he leaves behind.','Se alimenta con pan y un poco de la comida de sus compañeros.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 83, "Dribbling": 90, "Technique": 104, "Block": 131, "Speed": 81, "Stamina": 102, "Catch": 107}'::jsonb,false,null,null,null) on conflict (id) do update set character_id=excluded.character_id,name=excluded.name,game=excluded.game,saga=excluded.saga,version=excluded.version,team=excluded.team,position=excluded.position,element=excluded.element,ovr=excluded.ovr,category=excluded.category,tier=excluded.tier,source=excluded.source,shooting=excluded.shooting,control=excluded.control,physical=excluded.physical,speed=excluded.speed,defense=excluded.defense,goalkeeping=excluded.goalkeeping,image_url=excluded.image_url,zukan_id=excluded.zukan_id,zukan_no=excluded.zukan_no,no=excluded.no,description=excluded.description,description_es=excluded.description_es,specials=excluded.specials,extra_teams=excluded.extra_teams,raw_stats=excluded.raw_stats,is_version=excluded.is_version,duel_att=excluded.duel_att,duel_con=excluded.duel_con,duel_def=excluded.duel_def;
 insert into public.cards (id,character_id,name,game,saga,version,team,position,element,ovr,category,tier,source,shooting,control,physical,speed,defense,goalkeeping,image_url,zukan_id,zukan_no,no,description,description_es,specials,extra_teams,raw_stats,is_version,duel_att,duel_con,duel_def) values
 ('pardo-berillo--ie3--base','pardo-berillo','Pardo Berillo','IE3','IE','base','Team D','DF','wood',69,'Growing Player','B','stats del juego',62,66,76,63,68,68,'https://dxi4wb638ujep.cloudfront.net/1/k/h/p/hpsva6hkxie.png','k/h/p/hpsva6hkxie',1868,1868,'Initially he''d hoped to be an opera singer, but his vocal cords gave out.','Quería trabajar en la ópera, pero sus cuerdas vocales no dan para mucho.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 40, "Body": 64, "Control": 50, "Guard": 52, "Speed": 44, "Stamina": 52, "Guts": 55}'::jsonb,false,null,null,null),
 ('oomi-kunihiro--go1--base','oomi-kunihiro','Pike Pollack','GO1','GO','base','Ivy Selective','DF','air',69,'Growing Player','B','stats del juego',67,66,66,66,72,70,'https://dxi4wb638ujep.cloudfront.net/1/k/n/i/nitybiipby8.png','k/n/i/nitybiipby8',2778,2778,'The son of a fisherman. Never fails to catch his mark.','Hijo de un experimentado pescador, da mucha caña en el campo de fútbol.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 90, "Dribbling": 93, "Technique": 111, "Block": 124, "Speed": 105, "Stamina": 98, "Catch": 69}'::jsonb,false,null,null,null),
@@ -14600,7 +14600,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('shoukou--ie3--base','shoukou','Tiny Jetson','IE3','IE','base','Unaffiliated','FW','earth',64,'Common Player','C','stats del juego',69,63,55,58,59,58,'https://dxi4wb638ujep.cloudfront.net/1/k/p/1/p1fwwiiow4k.png','k/p/1/p1fwwiiow4k',2228,2228,'He''s got a strange and very specific passion for miniature jet engines.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 63, "Body": 63, "Control": 56, "Guard": 54, "Speed": 53, "Stamina": 43, "Guts": 54}'::jsonb,false,null,null,null),
 ('dada--go1--base','dada','Tom-Tom Thrasher','GO1','GO','base','Unaffiliated','DF','fire',64,'Common Player','C','stats del juego',49,50,68,62,65,63,'https://dxi4wb638ujep.cloudfront.net/1/k/2/_/2_mnoq4_tak.png','k/2/_/2_mnoq4_tak',3189,3189,'A glam rock drummer. His style is basically to hit everything really hard.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 70, "Dribbling": 88, "Technique": 88, "Block": 126, "Speed": 115, "Stamina": 132, "Catch": 74}'::jsonb,false,null,null,null),
 ('touring--ie3--base','touring','Tori Torrence','IE3','IE','base','Unaffiliated','FW','earth',64,'Common Player','C','stats del juego',62,72,52,72,55,58,'https://dxi4wb638ujep.cloudfront.net/1/k/o/n/onqf2hgovte.png','k/o/n/onqf2hgovte',2333,2333,'One day, she wants to go on a big road trip round the whole country.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 55, "Body": 48, "Control": 69, "Guard": 50, "Speed": 72, "Stamina": 47, "Guts": 57}'::jsonb,false,null,null,null),
-('nunomura--ie1--base','nunomura','Trey Hugger','IE1','IE','base','Unaffiliated','GK','fire',64,'Common Player','C','stats del juego',55,62,57,55,68,65,'https://dxi4wb638ujep.cloudfront.net/1/k/p/9/p9jrldqf6tm.png','k/p/9/p9jrldqf6tm',372,372,'Refuses to wear anything but soft, natural, earth-friendly fibers.','Lleva ropa de materiales naturales porque es agradable al tacto.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 36, "Body": 73, "Control": 60, "Guard": 73, "Speed": 35, "Stamina": 28, "Guts": 58}'::jsonb,false,null,null,null);
+('nunomura--ie1--base','nunomura','Trey Hugger','IE1','IE','base','Unaffiliated','GK','fire',64,'Common Player','C','stats del juego',55,62,57,55,68,65,'https://dxi4wb638ujep.cloudfront.net/1/k/p/9/p9jrldqf6tm.png','k/p/9/p9jrldqf6tm',372,372,'Refuses to wear anything but soft, natural, earth-friendly fibers.','Lleva ropa de materiales naturales porque es agradable al tacto.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 36, "Body": 73, "Control": 60, "Guard": 73, "Speed": 35, "Stamina": 28, "Guts": 58}'::jsonb,false,null,null,null) on conflict (id) do update set character_id=excluded.character_id,name=excluded.name,game=excluded.game,saga=excluded.saga,version=excluded.version,team=excluded.team,position=excluded.position,element=excluded.element,ovr=excluded.ovr,category=excluded.category,tier=excluded.tier,source=excluded.source,shooting=excluded.shooting,control=excluded.control,physical=excluded.physical,speed=excluded.speed,defense=excluded.defense,goalkeeping=excluded.goalkeeping,image_url=excluded.image_url,zukan_id=excluded.zukan_id,zukan_no=excluded.zukan_no,no=excluded.no,description=excluded.description,description_es=excluded.description_es,specials=excluded.specials,extra_teams=excluded.extra_teams,raw_stats=excluded.raw_stats,is_version=excluded.is_version,duel_att=excluded.duel_att,duel_con=excluded.duel_con,duel_def=excluded.duel_def;
 insert into public.cards (id,character_id,name,game,saga,version,team,position,element,ovr,category,tier,source,shooting,control,physical,speed,defense,goalkeeping,image_url,zukan_id,zukan_no,no,description,description_es,specials,extra_teams,raw_stats,is_version,duel_att,duel_con,duel_def) values
 ('shirato-kiyoshirou--go1--base','shirato-kiyoshirou','Ultima Nextworld','GO1','GO','base','Almighty Faith','FW','air',64,'Common Player','B','stats del juego',66,69,55,58,62,55,'https://dxi4wb638ujep.cloudfront.net/1/k/j/x/jxthg7zmsac.png','k/j/x/jxthg7zmsac',2531,2531,'A cool-headed master of analysis. Also plays keyboard in a band.','Una mente fría y analítica, también toca los teclados en una banda.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 104, "Dribbling": 129, "Technique": 112, "Block": 106, "Speed": 101, "Stamina": 89, "Catch": 54}'::jsonb,false,null,null,null),
 ('douzan--go1--base','douzan','Val Cano','GO1','GO','base','Unaffiliated','MF','earth',64,'Common Player','C','stats del juego',57,67,56,71,59,54,'https://dxi4wb638ujep.cloudfront.net/1/k/l/n/lnmyv1ocu80.png','k/l/n/lnmyv1ocu80',3102,3102,'A calm, unflappable girl who somehow always makes her opponents panic.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 72, "Dribbling": 102, "Technique": 112, "Block": 85, "Speed": 129, "Stamina": 85, "Catch": 41}'::jsonb,false,null,null,null),
@@ -15101,7 +15101,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('mozaki-itaru--go1--base','mozaki-itaru','Suno Aisu','GO1','GO','base','Alpine','GK','earth',61,'Common Player','B','stats del juego',48,45,60,48,57,62,'https://dxi4wb638ujep.cloudfront.net/1/k/g/m/gmswrjsgv3s.png','k/g/m/gmswrjsgv3s',2603,2603,'Originally from the far east of Japan. His greatest wish is world peace.','Llegando del noroeste de Japón, su mayor deseo es la paz mundial.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 73, "Dribbling": 78, "Technique": 86, "Block": 108, "Speed": 92, "Stamina": 108, "Catch": 94}'::jsonb,false,null,null,null),
 ('yaono-sumiko--ie1--base','yaono-sumiko','Suzanne Yuma','IE1','IE','base','Street Sally''s','GK','earth',61,'Common Player','B','stats del juego',61,60,59,61,64,61,'https://dxi4wb638ujep.cloudfront.net/1/k/p/v/pvffvewm8xm.png','k/p/v/pvffvewm8xm',241,241,'A greengrocing gran who''s good at keeping vegetables and footballs.','Verdulera que vigila el género con el mismo celo que la línea de meta.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 44, "Body": 44, "Control": 43, "Guard": 56, "Speed": 49, "Stamina": 46, "Guts": 45}'::jsonb,false,null,null,null),
 ('sendai-hiroaki--go1--base','sendai-hiroaki','Tahoma Sequoia','GO1','GO','base','Kirkwood','MF','wood',61,'Common Player','B','stats del juego',62,64,52,57,65,56,'https://dxi4wb638ujep.cloudfront.net/1/k/e/o/eoifyfw4bou.png','k/e/o/eoifyfw4bou',2624,2624,'Freshwater fish are his favorite food, so he often goes fishing in rivers.','Investiga cómo limpiar los lagos y pantanos contaminados.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 88, "Dribbling": 123, "Technique": 91, "Block": 112, "Speed": 98, "Stamina": 81, "Catch": 54}'::jsonb,false,null,null,null),
-('harsonki--go3--base','harsonki','Tanky Hanson','GO3','GO','base','Unaffiliated','FW','fire',61,'Common Player','C','stats del juego',63,60,60,57,47,59,'https://dxi4wb638ujep.cloudfront.net/1/k/e/q/eqhmy98mh6c.png','k/e/q/eqhmy98mh6c',4314,4314,'Calm and even-tempered despite his fierce appearance, he''s rarely angered by provocation.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 144, "Dribbling": 126, "Technique": 107, "Block": 78, "Speed": 112, "Stamina": 109, "Catch": 102}'::jsonb,false,null,null,null);
+('harsonki--go3--base','harsonki','Tanky Hanson','GO3','GO','base','Unaffiliated','FW','fire',61,'Common Player','C','stats del juego',63,60,60,57,47,59,'https://dxi4wb638ujep.cloudfront.net/1/k/e/q/eqhmy98mh6c.png','k/e/q/eqhmy98mh6c',4314,4314,'Calm and even-tempered despite his fierce appearance, he''s rarely angered by provocation.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 144, "Dribbling": 126, "Technique": 107, "Block": 78, "Speed": 112, "Stamina": 109, "Catch": 102}'::jsonb,false,null,null,null) on conflict (id) do update set character_id=excluded.character_id,name=excluded.name,game=excluded.game,saga=excluded.saga,version=excluded.version,team=excluded.team,position=excluded.position,element=excluded.element,ovr=excluded.ovr,category=excluded.category,tier=excluded.tier,source=excluded.source,shooting=excluded.shooting,control=excluded.control,physical=excluded.physical,speed=excluded.speed,defense=excluded.defense,goalkeeping=excluded.goalkeeping,image_url=excluded.image_url,zukan_id=excluded.zukan_id,zukan_no=excluded.zukan_no,no=excluded.no,description=excluded.description,description_es=excluded.description_es,specials=excluded.specials,extra_teams=excluded.extra_teams,raw_stats=excluded.raw_stats,is_version=excluded.is_version,duel_att=excluded.duel_att,duel_con=excluded.duel_con,duel_def=excluded.duel_def;
 insert into public.cards (id,character_id,name,game,saga,version,team,position,element,ovr,category,tier,source,shooting,control,physical,speed,defense,goalkeeping,image_url,zukan_id,zukan_no,no,description,description_es,specials,extra_teams,raw_stats,is_version,duel_att,duel_con,duel_def) values
 ('fukurou-scout-character--go1--base','fukurou-scout-character','Tawny Screech','GO1','GO','base','Unaffiliated','DF','air',61,'Common Player','C','stats del juego',62,58,53,62,65,50,'https://dxi4wb638ujep.cloudfront.net/1/k/y/c/ycyirzw-b08.png','k/y/c/ycyirzw-b08',2865,2865,'A night owl who can''t stop listening to late-night radio programs.','Ave nocturna. Duerme por la mañana y escucha la radio de madrugada.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 104, "Dribbling": 116, "Technique": 95, "Block": 142, "Speed": 123, "Stamina": 93, "Catch": 54}'::jsonb,false,null,null,null),
 ('tamada--ie1--base','tamada','Theo Bernoulli','IE1','IE','base','Unaffiliated','MF','wood',61,'Common Player','C','stats del juego',62,58,67,60,64,63,'https://dxi4wb638ujep.cloudfront.net/1/k/r/-/r-7urdvznpk.png','k/r/-/r-7urdvznpk',922,922,'Talented with the flute, he plays for the local orchestra.','Toca muy bien la flauta travesera y colabora en la banda provincial.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 60, "Body": 70, "Control": 51, "Guard": 68, "Speed": 56, "Stamina": 70, "Guts": 55}'::jsonb,false,null,null,null),
@@ -15602,7 +15602,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('toriyama--ie2--base','toriyama','Achilles Chinner','IE2','IE','base','Unaffiliated','GK','earth',57,'Common Player','C','stats del juego',52,52,56,56,57,58,'https://dxi4wb638ujep.cloudfront.net/1/k/d/h/dhjlbqhicck.png','k/d/h/dhjlbqhicck',1541,1541,'He''s got a strong physique, but has a glass jaw.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 61, "Body": 63, "Control": 61, "Guard": 70, "Speed": 68, "Stamina": 69, "Guts": 68}'::jsonb,false,null,null,null),
 ('oki-chan--ie3--base','oki-chan','Adora Shivers','IE3','IE','base','Unaffiliated','MF','air',57,'Common Player','C','stats del juego',52,57,51,66,53,52,'https://dxi4wb638ujep.cloudfront.net/1/k/g/-/g-d4savpmnm.png','k/g/-/g-d4savpmnm',2258,2258,'She''s interested in ghost stories and spooky films, but she''s still level-headed.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 46, "Body": 44, "Control": 52, "Guard": 48, "Speed": 60, "Stamina": 51, "Guts": 51}'::jsonb,false,null,null,null),
 ('maitan--ie1--base','maitan','Ainsley Burns','IE1','IE','base','Unaffiliated','FW','earth',57,'Common Player','C','stats del juego',54,62,58,58,54,57,'https://dxi4wb638ujep.cloudfront.net/1/k/m/q/mqknqyavfb8.png','k/m/q/mqknqyavfb8',369,369,'Worries about getting sunburnt, so he''s always slathered in sun block.','Le preocupa quemarse con el sol, por lo que siempre está untado con protector solar.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 46, "Body": 58, "Control": 68, "Guard": 51, "Speed": 60, "Stamina": 62, "Guts": 63}'::jsonb,false,null,null,null),
-('mutsuyama--ie1--base','mutsuyama','Al Urgy','IE1','IE','base','Unaffiliated','DF','earth',57,'Common Player','C','stats del juego',59,52,61,55,57,58,'https://dxi4wb638ujep.cloudfront.net/1/k/p/o/pothbqzg8_k.png','k/p/o/pothbqzg8_k',681,681,'Sneezes uncontrollably whenever there is anything bad in the air.','Cuando el aire está sucio, no puede parar de estornudar.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 62, "Body": 68, "Control": 46, "Guard": 60, "Speed": 55, "Stamina": 67, "Guts": 61}'::jsonb,false,null,null,null);
+('mutsuyama--ie1--base','mutsuyama','Al Urgy','IE1','IE','base','Unaffiliated','DF','earth',57,'Common Player','C','stats del juego',59,52,61,55,57,58,'https://dxi4wb638ujep.cloudfront.net/1/k/p/o/pothbqzg8_k.png','k/p/o/pothbqzg8_k',681,681,'Sneezes uncontrollably whenever there is anything bad in the air.','Cuando el aire está sucio, no puede parar de estornudar.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 62, "Body": 68, "Control": 46, "Guard": 60, "Speed": 55, "Stamina": 67, "Guts": 61}'::jsonb,false,null,null,null) on conflict (id) do update set character_id=excluded.character_id,name=excluded.name,game=excluded.game,saga=excluded.saga,version=excluded.version,team=excluded.team,position=excluded.position,element=excluded.element,ovr=excluded.ovr,category=excluded.category,tier=excluded.tier,source=excluded.source,shooting=excluded.shooting,control=excluded.control,physical=excluded.physical,speed=excluded.speed,defense=excluded.defense,goalkeeping=excluded.goalkeeping,image_url=excluded.image_url,zukan_id=excluded.zukan_id,zukan_no=excluded.zukan_no,no=excluded.no,description=excluded.description,description_es=excluded.description_es,specials=excluded.specials,extra_teams=excluded.extra_teams,raw_stats=excluded.raw_stats,is_version=excluded.is_version,duel_att=excluded.duel_att,duel_con=excluded.duel_con,duel_def=excluded.duel_def;
 insert into public.cards (id,character_id,name,game,saga,version,team,position,element,ovr,category,tier,source,shooting,control,physical,speed,defense,goalkeeping,image_url,zukan_id,zukan_no,no,description,description_es,specials,extra_teams,raw_stats,is_version,duel_att,duel_con,duel_def) values
 ('kei-kun--go1--base','kei-kun','Alan McCallum','GO1','GO','base','Unaffiliated','FW','wood',57,'Common Player','C','stats del juego',60,53,56,53,58,57,'https://dxi4wb638ujep.cloudfront.net/1/k/d/f/dfmouw-d7ds.png','k/d/f/dfmouw-d7ds',3086,3086,'A kind, well-meaning boy who is always putting his foot in his mouth.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 103, "Dribbling": 113, "Technique": 85, "Block": 113, "Speed": 103, "Stamina": 100, "Catch": 65}'::jsonb,false,null,null,null),
 ('ootama-konomi--ie1--base','ootama-konomi','Alex Lovely','IE1','IE','base','Street Sally''s','DF','air',57,'Common Player','B','stats del juego',59,57,57,57,57,56,'https://dxi4wb638ujep.cloudfront.net/1/k/e/o/eoxlrmfukiu.png','k/e/o/eoxlrmfukiu',243,243,'She always treats football fans to extra helpings at her restaurant.','Trabaja en una pizzería. Hace descuento a los futboleros.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 49, "Body": 44, "Control": 44, "Guard": 44, "Speed": 44, "Stamina": 51, "Guts": 44}'::jsonb,false,null,null,null),
@@ -16103,7 +16103,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('aooni--go1--base','aooni','Bloomer Topp','GO1','GO','base','Unaffiliated','GK','air',54,'Common Player','C','stats del juego',47,42,57,57,40,58,'https://dxi4wb638ujep.cloudfront.net/1/k/y/4/y4yngh_vb28.png','k/y/4/y4yngh_vb28',2972,2972,'Usually quiet, but prone to bouts of fury which give his friends nightmares.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 84, "Dribbling": 92, "Technique": 89, "Block": 75, "Speed": 134, "Stamina": 121, "Catch": 127}'::jsonb,false,null,null,null),
 ('beat-scout-character--go1--base','beat-scout-character','Bluster Tryadd','GO1','GO','base','Unaffiliated','DF','air',54,'Common Player','C','stats del juego',50,49,47,44,61,43,'https://dxi4wb638ujep.cloudfront.net/1/k/q/b/qbow_dojyqc.png','k/q/b/qbow_dojyqc',3152,3152,'The second of triplets. A solitary boy whose behavior verges on bizarre.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 81, "Dribbling": 104, "Technique": 88, "Block": 137, "Speed": 86, "Stamina": 90, "Catch": 48}'::jsonb,false,null,null,null),
 ('nakayama--ie1--base','nakayama','Bo Ling','IE1','IE','base','Unaffiliated','DF','wood',54,'Common Player','C','stats del juego',52,66,53,55,52,51,'https://dxi4wb638ujep.cloudfront.net/1/k/_/4/_488sdjol58.png','k/_/4/_488sdjol58',325,325,'A bowling prodigy who got his first perfect 300 while still in primary school.','Profesional de los bolos. Hizo 300 puntos cuando iba a primaria.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 45, "Body": 55, "Control": 79, "Guard": 50, "Speed": 56, "Stamina": 57, "Guts": 52}'::jsonb,false,null,null,null),
-('nishikawa--ie2--base','nishikawa','Brenda Brandish','IE2','IE','base','Unaffiliated','FW','air',54,'Common Player','C','stats del juego',58,53,55,40,56,52,'https://dxi4wb638ujep.cloudfront.net/1/k/r/0/r0rjyxhvuzs.png','k/r/0/r0rjyxhvuzs',1422,1422,'A master of the sword, and the sharpest slicer on the block.','Una maestra de la espada que desenfunda a la velocidad del rayo.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 68, "Body": 61, "Control": 60, "Guard": 64, "Speed": 31, "Stamina": 64, "Guts": 55}'::jsonb,false,null,null,null);
+('nishikawa--ie2--base','nishikawa','Brenda Brandish','IE2','IE','base','Unaffiliated','FW','air',54,'Common Player','C','stats del juego',58,53,55,40,56,52,'https://dxi4wb638ujep.cloudfront.net/1/k/r/0/r0rjyxhvuzs.png','k/r/0/r0rjyxhvuzs',1422,1422,'A master of the sword, and the sharpest slicer on the block.','Una maestra de la espada que desenfunda a la velocidad del rayo.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 68, "Body": 61, "Control": 60, "Guard": 64, "Speed": 31, "Stamina": 64, "Guts": 55}'::jsonb,false,null,null,null) on conflict (id) do update set character_id=excluded.character_id,name=excluded.name,game=excluded.game,saga=excluded.saga,version=excluded.version,team=excluded.team,position=excluded.position,element=excluded.element,ovr=excluded.ovr,category=excluded.category,tier=excluded.tier,source=excluded.source,shooting=excluded.shooting,control=excluded.control,physical=excluded.physical,speed=excluded.speed,defense=excluded.defense,goalkeeping=excluded.goalkeeping,image_url=excluded.image_url,zukan_id=excluded.zukan_id,zukan_no=excluded.zukan_no,no=excluded.no,description=excluded.description,description_es=excluded.description_es,specials=excluded.specials,extra_teams=excluded.extra_teams,raw_stats=excluded.raw_stats,is_version=excluded.is_version,duel_att=excluded.duel_att,duel_con=excluded.duel_con,duel_def=excluded.duel_def;
 insert into public.cards (id,character_id,name,game,saga,version,team,position,element,ovr,category,tier,source,shooting,control,physical,speed,defense,goalkeeping,image_url,zukan_id,zukan_no,no,description,description_es,specials,extra_teams,raw_stats,is_version,duel_att,duel_con,duel_def) values
 ('hotoke--ie1--base','hotoke','Buddy Goodman','IE1','IE','base','Unaffiliated','DF','wood',54,'Common Player','C','stats del juego',54,53,58,52,53,60,'https://dxi4wb638ujep.cloudfront.net/1/k/z/a/zawqpgt3kyk.png','k/z/a/zawqpgt3kyk',349,349,'A cheerful boy who always has time to feed stray dogs.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 47, "Body": 75, "Control": 48, "Guard": 48, "Speed": 43, "Stamina": 45, "Guts": 76}'::jsonb,false,null,null,null),
 ('kazumichi--ie1--base','kazumichi','Cam Broadsheet','IE1','IE','base','Unaffiliated','MF','wood',54,'Common Player','C','stats del juego',50,55,58,55,53,51,'https://dxi4wb638ujep.cloudfront.net/1/k/e/l/ellgo-a5i_0.png','k/e/l/ellgo-a5i_0',695,695,'Likes collecting foreign magazines. Wants to open his own newsstand.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 44, "Body": 60, "Control": 60, "Guard": 56, "Speed": 60, "Stamina": 71, "Guts": 52}'::jsonb,false,null,null,null),
@@ -16604,7 +16604,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('kappah--go1--base','kappah','Sal Armando','GO1','GO','base','Unaffiliated','MF','air',51,'Common Player','C','stats del juego',45,48,60,64,42,45,'https://dxi4wb638ujep.cloudfront.net/1/k/j/_/j_kzelsdzlk.png','k/j/_/j_kzelsdzlk',2974,2974,'A keen swimmer, his eyes light up when he''s by a lake or the sea.','Un gran nadador al que le brillan los ojos a la vista de un lago o del mar.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 72, "Dribbling": 100, "Technique": 88, "Block": 65, "Speed": 174, "Stamina": 115, "Catch": 49}'::jsonb,false,null,null,null),
 ('kouko-scout-character--ie1--base','kouko-scout-character','Sal Curie','IE1','IE','base','Unaffiliated','DF','fire',51,'Common Player','C','stats del juego',50,55,53,50,50,50,'https://dxi4wb638ujep.cloudfront.net/1/k/2/s/2su012pcdr8.png','k/2/s/2su012pcdr8',397,397,'Thinks cucumbers are the perfect remedy for sunburn.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 48, "Body": 56, "Control": 62, "Guard": 51, "Speed": 52, "Stamina": 62, "Guts": 55}'::jsonb,false,null,null,null),
 ('kitagata--ie2--base','kitagata','Sally Tare','IE2','IE','base','Unaffiliated','MF','air',51,'Common Player','C','stats del juego',56,50,55,48,48,50,'https://dxi4wb638ujep.cloudfront.net/1/k/g/t/gtn02aitf4k.png','k/g/t/gtn02aitf4k',1412,1412,'A master card player with lightning-fast reflexes.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 57, "Body": 56, "Control": 49, "Guard": 45, "Speed": 44, "Stamina": 61, "Guts": 61}'::jsonb,false,null,null,null),
-('reppuu--ie1--base','reppuu','Sam Gale','IE1','IE','base','Unaffiliated','GK','fire',51,'Common Player','C','stats del juego',51,58,52,53,49,51,'https://dxi4wb638ujep.cloudfront.net/1/k/-/m/-maydsn33pm.png','k/-/m/-maydsn33pm',485,485,'He might look like a thug, but he''s a real softy for kittens.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 48, "Body": 52, "Control": 66, "Guard": 44, "Speed": 55, "Stamina": 60, "Guts": 63}'::jsonb,false,null,null,null);
+('reppuu--ie1--base','reppuu','Sam Gale','IE1','IE','base','Unaffiliated','GK','fire',51,'Common Player','C','stats del juego',51,58,52,53,49,51,'https://dxi4wb638ujep.cloudfront.net/1/k/-/m/-maydsn33pm.png','k/-/m/-maydsn33pm',485,485,'He might look like a thug, but he''s a real softy for kittens.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 48, "Body": 52, "Control": 66, "Guard": 44, "Speed": 55, "Stamina": 60, "Guts": 63}'::jsonb,false,null,null,null) on conflict (id) do update set character_id=excluded.character_id,name=excluded.name,game=excluded.game,saga=excluded.saga,version=excluded.version,team=excluded.team,position=excluded.position,element=excluded.element,ovr=excluded.ovr,category=excluded.category,tier=excluded.tier,source=excluded.source,shooting=excluded.shooting,control=excluded.control,physical=excluded.physical,speed=excluded.speed,defense=excluded.defense,goalkeeping=excluded.goalkeeping,image_url=excluded.image_url,zukan_id=excluded.zukan_id,zukan_no=excluded.zukan_no,no=excluded.no,description=excluded.description,description_es=excluded.description_es,specials=excluded.specials,extra_teams=excluded.extra_teams,raw_stats=excluded.raw_stats,is_version=excluded.is_version,duel_att=excluded.duel_att,duel_con=excluded.duel_con,duel_def=excluded.duel_def;
 insert into public.cards (id,character_id,name,game,saga,version,team,position,element,ovr,category,tier,source,shooting,control,physical,speed,defense,goalkeeping,image_url,zukan_id,zukan_no,no,description,description_es,specials,extra_teams,raw_stats,is_version,duel_att,duel_con,duel_def) values
 ('ax--go2--base','ax','Scott Chegwin','GO2','GO','base','Unaffiliated','FW','wood',51,'Common Player','C','stats del juego',57,41,40,55,41,41,'https://dxi4wb638ujep.cloudfront.net/1/k/k/y/kyvb5a_lbqs.png','k/k/y/kyvb5a_lbqs',3854,3854,'A quick thinker able to scotch the carefully laid plans of any opposition.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 128, "Dribbling": 88, "Technique": 73, "Block": 71, "Speed": 117, "Stamina": 64, "Catch": 51}'::jsonb,false,null,null,null),
 ('tetsukita--ie2--base','tetsukita','Selma Heaver','IE2','IE','base','Unaffiliated','GK','air',51,'Common Player','C','stats del juego',49,63,54,61,48,51,'https://dxi4wb638ujep.cloudfront.net/1/k/e/_/e_i4lph7pl0.png','k/e/_/e_i4lph7pl0',1662,1662,'She has a merry laugh that cheers and inspires the team.','Sus risotadas le levantan el ánimo a todo el mundo.','[]'::jsonb,'[]'::jsonb,'{"form": "default", "Kick": 42, "Body": 53, "Control": 63, "Guard": 43, "Speed": 61, "Stamina": 61, "Guts": 62}'::jsonb,false,null,null,null),
@@ -16983,7 +16983,7 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('fukikoshi--ie1--base','fukikoshi','Shylock Watson','IE1','IE','base','Unaffiliated','DF','wood',45,'Common Player','C','stats del juego',45,45,44,45,45,45,'https://dxi4wb638ujep.cloudfront.net/1/k/1/d/1dl8yqazlh0.png','k/1/d/1dl8yqazlh0',415,415,'This junior detective buys all of his spy gadgets from magazine adverts.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 43, "Body": 42, "Control": 41, "Guard": 45, "Speed": 40, "Stamina": 44, "Guts": 49}'::jsonb,false,null,null,null),
 ('gari--ie1--base','gari','Stu Dent','IE1','IE','base','Unaffiliated','GK','fire',45,'Common Player','C','stats del juego',54,46,46,60,45,45,'https://dxi4wb638ujep.cloudfront.net/1/k/k/8/k8di59sp5n8.png','k/k/8/k8di59sp5n8',344,344,'Cooks up his own energy drinks to stay up and study all night.','Crea sus propias bebidas energéticas para quedarse despierto y estudiar toda la noche.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 68, "Body": 34, "Control": 44, "Guard": 29, "Speed": 73, "Stamina": 62, "Guts": 56}'::jsonb,false,null,null,null),
 ('takano--ie1--base','takano','Horty Courture','IE1','IE','base','Unaffiliated','FW','wood',44,'Common Player','C','stats del juego',43,44,44,49,45,43,'https://dxi4wb638ujep.cloudfront.net/1/k/2/9/29b5ngnbqxe.png','k/2/9/29b5ngnbqxe',575,575,'Likes brand clothing. Even his school uniform cost a fortune.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 29, "Body": 48, "Control": 43, "Guard": 48, "Speed": 60, "Stamina": 47, "Guts": 42}'::jsonb,false,null,null,null),
-('mutsu--ie1--base','mutsu','Walter Card','IE1','IE','base','Unaffiliated','FW','earth',44,'Common Player','C','stats del juego',41,57,41,41,41,41,'https://dxi4wb638ujep.cloudfront.net/1/k/a/u/auyzcpaoeqm.png','k/a/u/auyzcpaoeqm',532,532,'An aspiring comedian whose repertoire of jokes is fifty years out of date.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 32, "Body": 30, "Control": 79, "Guard": 33, "Speed": 39, "Stamina": 36, "Guts": 35}'::jsonb,false,null,null,null);
+('mutsu--ie1--base','mutsu','Walter Card','IE1','IE','base','Unaffiliated','FW','earth',44,'Common Player','C','stats del juego',41,57,41,41,41,41,'https://dxi4wb638ujep.cloudfront.net/1/k/a/u/auyzcpaoeqm.png','k/a/u/auyzcpaoeqm',532,532,'An aspiring comedian whose repertoire of jokes is fifty years out of date.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 32, "Body": 30, "Control": 79, "Guard": 33, "Speed": 39, "Stamina": 36, "Guts": 35}'::jsonb,false,null,null,null) on conflict (id) do update set character_id=excluded.character_id,name=excluded.name,game=excluded.game,saga=excluded.saga,version=excluded.version,team=excluded.team,position=excluded.position,element=excluded.element,ovr=excluded.ovr,category=excluded.category,tier=excluded.tier,source=excluded.source,shooting=excluded.shooting,control=excluded.control,physical=excluded.physical,speed=excluded.speed,defense=excluded.defense,goalkeeping=excluded.goalkeeping,image_url=excluded.image_url,zukan_id=excluded.zukan_id,zukan_no=excluded.zukan_no,no=excluded.no,description=excluded.description,description_es=excluded.description_es,specials=excluded.specials,extra_teams=excluded.extra_teams,raw_stats=excluded.raw_stats,is_version=excluded.is_version,duel_att=excluded.duel_att,duel_con=excluded.duel_con,duel_def=excluded.duel_def;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('hakuryuu--go2--chrono-storm','WhiteHurricane',1),
 ('hakuryuu--go2--chrono-storm','TenchiRaimei',2),
@@ -17484,7 +17484,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('mistrene-callous--ie3--base','DeathRain',2),
 ('mistrene-callous--ie3--base','JudgeThrough2',3),
 ('mistrene-callous--ie3--base','DevilBall',4),
-('kazemaru-ichirouta--ie2--dark-emperors','DarkPhoenix',1);
+('kazemaru-ichirouta--ie2--dark-emperors','DarkPhoenix',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('kazemaru-ichirouta--ie2--dark-emperors','BunshinFeint',2),
 ('kazemaru-ichirouta--go2--inazuma-legend-japan','ShippuuDash',1),
@@ -17985,7 +17985,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('boofuu--go2--base','ShootPocket',2),
 ('boofuu--go2--base','Wormhole',3),
 ('boofuu--go2--base','StarReflection',4),
-('bind-hermit--go3--base','AtlasSword',1);
+('bind-hermit--go3--base','AtlasSword',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('bind-hermit--go3--base','MagnetDraw',2),
 ('bind-hermit--go3--base','StormZone',3),
@@ -18486,7 +18486,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('marco-maserati--ie3--base','EchoBall',3),
 ('endou-mamoru--ie1--base','GodHand',1),
 ('endou-mamoru--ie1--base','GrenadeShot',2),
-('endou-mamoru--ie1--base','MajinTheHand',3);
+('endou-mamoru--ie1--base','MajinTheHand',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('endou-mamoru--ie1--base','TripleDefense',4),
 ('maxi-kuu--ie3--base','GaiaBreak',1),
@@ -18987,7 +18987,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('yamashiro-reihou--ares--base','SkyWalk',1),
 ('yamashiro-reihou--ares--base','Zanzou',2),
 ('yamashiro-reihou--ares--base','QuickDraw',3),
-('yamashiro-reihou--ares--base','SpiralDraw',4);
+('yamashiro-reihou--ares--base','SpiralDraw',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('hakari-tomokazu--vr--base','BlitzBridge',1),
 ('hakari-tomokazu--vr--base','Transmove',2),
@@ -19488,7 +19488,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('zat--go2--base','BritanniaCross',4),
 ('zippy-doerr--vr--base','StormZone',1),
 ('zippy-doerr--vr--base','GrandSweeper',2),
-('zippy-doerr--vr--base','AsteriskRock',3);
+('zippy-doerr--vr--base','AsteriskRock',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('zippy-doerr--vr--base','MueiRanbu',4),
 ('zippy-doerr--vr--destroyers','StormZone',1),
@@ -19989,7 +19989,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('tony-stridas--ie3--base','PatriotShoot',3),
 ('tony-stridas--ie3--base','HornTrain',4),
 ('takarabune-daiba--vr--base','SpinningCut',1),
-('takarabune-daiba--vr--base','Sargasso',2);
+('takarabune-daiba--vr--base','Sargasso',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('takarabune-daiba--vr--base','FuujinNoMai',3),
 ('takarabune-daiba--vr--base','HurricaneArrow',4),
@@ -20490,7 +20490,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('matsuda-shuusuke--vr--base','Senpuujin',2),
 ('matsuda-shuusuke--vr--base','Cyclone',3),
 ('matsuda-shuusuke--vr--base','GoToHeaven',4),
-('segata-ryuuichirou--ares--base','GanymedeProton',1);
+('segata-ryuuichirou--ares--base','GanymedeProton',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('segata-ryuuichirou--ares--base','Wormhole',2),
 ('segata-ryuuichirou--ares--base','GaiaBreak',3),
@@ -20991,7 +20991,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('yagihara-katsumi--ares--base','KillerSlide',1),
 ('yagihara-katsumi--ares--base','vr_whd01490',2),
 ('yagihara-katsumi--ares--base','SuperScanOF',3),
-('yagihara-katsumi--ares--base','vr_who01410',4);
+('yagihara-katsumi--ares--base','vr_who01410',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('atora-suuri--vr--base','BritanniaCross',1),
 ('atora-suuri--vr--base','vr_who00640',2),
@@ -21492,7 +21492,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('eiai--vr--base','HeavensTime',3),
 ('eiai--vr--base','FuujinNoMai',4),
 ('tanka--vr--base','IceGround',1),
-('tanka--vr--base','WhiteBlade',2);
+('tanka--vr--base','WhiteBlade',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('tanka--vr--base','DashStorm',3),
 ('tanka--vr--base','vr_who00640',4),
@@ -21993,7 +21993,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('meidou-kazuomi--vr--base','AstroBreak',1),
 ('meidou-kazuomi--vr--base','KageNui',2),
 ('meidou-kazuomi--vr--base','DashStorm',3),
-('meidou-kazuomi--vr--base','Gravitation',4);
+('meidou-kazuomi--vr--base','Gravitation',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('eddie-howard--ie3--base','SpinningCut',1),
 ('eddie-howard--ie3--base','SpinningShoot',2),
@@ -22494,7 +22494,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('seki-ganjirou--go1--base','DashTrain',3),
 ('seki-ganjirou--go1--base','BurningSummer',4),
 ('murazumi-hakka--vr--base','WaterVeil',1),
-('murazumi-hakka--vr--base','IceGround',2);
+('murazumi-hakka--vr--base','IceGround',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('murazumi-hakka--vr--base','AuroraDribble',3),
 ('murazumi-hakka--vr--base','FuujinNoMai',4),
@@ -22995,7 +22995,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('burado-kiba--ie1--base','DokugiriNoJutsu',3),
 ('burado-kiba--ie1--base','JigokuGuruma',4),
 ('elma-chiti--orion--base','vr_whs03030',1),
-('elma-chiti--orion--base','RollingSlide',2);
+('elma-chiti--orion--base','RollingSlide',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('elma-chiti--orion--base','AirBullet',3),
 ('tenguuji-rei--vr--base','TsunamiBoost',1),
@@ -23496,7 +23496,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('nagi--vr--base','HyakuretsuShot',1),
 ('nagi--vr--base','TrickBall',2),
 ('nagi--vr--base','UltraMoon',3),
-('nagi--vr--base','KillerFields',4);
+('nagi--vr--base','KillerFields',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('tamako--vr--base','TarzanKick',1),
 ('tamako--vr--base','SkyWalk',2),
@@ -23997,7 +23997,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('yamano-ban--go2--base','DecoyRelease',3),
 ('tawara--vr--base','ExcellentBreast',1),
 ('tawara--vr--base','NoboriRyuu',2),
-('tawara--vr--base','SkyWalk',3);
+('tawara--vr--base','SkyWalk',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('tawara--vr--base','SuperElastico',4),
 ('gibo-kanekatsu--ie2--base','NoEscape',1),
@@ -24498,7 +24498,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('ikkaku-ooji--ares--base','CondorDive',1),
 ('ikkaku-ooji--ares--base','Aikidou',2),
 ('ikkaku-ooji--ares--base','EternalBlizzard',3),
-('ikkaku-ooji--ares--base','RevolutionV',4);
+('ikkaku-ooji--ares--base','RevolutionV',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('karasuma-takechiyo--go1--base','SonicShot',1),
 ('karasuma-takechiyo--go1--base','ThiefEye',2),
@@ -24999,7 +24999,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('ujiki-mikimaru--go2--base','WhiteHurricane',2),
 ('oshiya-manbe--ares--base','vr_whd00150',1),
 ('oshiya-manbe--ares--base','IceGround',2),
-('oshiya-manbe--ares--base','RunBallRun',3);
+('oshiya-manbe--ares--base','RunBallRun',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('oshiya-manbe--ares--base','Cyclone',4),
 ('monstro--ie3--base','RollingSlide',1),
@@ -25500,7 +25500,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('zara-kusu--go2--base','DokonjouBat',2),
 ('zara-kusu--go2--base','MadJuggler',3),
 ('zara-kusu--go2--perfect-cascade','TwinMixer',1),
-('zara-kusu--go2--perfect-cascade','DokonjouBat',2);
+('zara-kusu--go2--perfect-cascade','DokonjouBat',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('zara-kusu--go2--perfect-cascade','MadJuggler',3),
 ('far-farouk--ie3--base','ScissorsBomb',1),
@@ -26001,7 +26001,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('belial-noze--orion--base','vr_who00400',4),
 ('sakite-masaru--ie2--base','SuperScanOF',1),
 ('sakite-masaru--ie2--base','FakeBomber',2),
-('sakite-masaru--ie2--base','ProfileZone',3);
+('sakite-masaru--ie2--base','ProfileZone',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('sakite-masaru--ie2--base','SecurityShot',4),
 ('tennouji-mari--ie2--base','RollingKick',1),
@@ -26502,7 +26502,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('tamakura-geki--ie2--base','SafetyProtect',4),
 ('shuuhou--ie2--base','Zanzou',1),
 ('shuuhou--ie2--base','DragonCrash',2),
-('shuuhou--ie2--base','HawkShot',3);
+('shuuhou--ie2--base','HawkShot',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('shuuhou--ie2--base','BunshinShoot',4),
 ('saeri--ie2--base','Magic',1),
@@ -27003,7 +27003,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('nezu-mitsuo--ie1--base','FakeBall',1),
 ('nezu-mitsuo--ie1--base','Gorimuchuu',2),
 ('nezu-mitsuo--ie1--base','Kamikakushi',3),
-('nezu-mitsuo--ie1--base','Zanzou',4);
+('nezu-mitsuo--ie1--base','Zanzou',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('hashiguchi--ie1--base','QuickDraw',1),
 ('hashiguchi--ie1--base','BladeAttack',2),
@@ -27504,7 +27504,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('oota--go1--base','RyuuseiBlade',3),
 ('oota--go1--base','ShippuuDash',4),
 ('seita--ie3--base','FireTornado',1),
-('seita--ie3--base','HeatTackle',2);
+('seita--ie3--base','HeatTackle',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('seita--ie3--base','NininSankyaku',3),
 ('seita--ie3--base','ThePhoenix',4),
@@ -28005,7 +28005,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('torihara--ie2--base','CrossDrive',2),
 ('torihara--ie2--base','FlameDance',3),
 ('torihara--ie2--base','BackTornado',4),
-('kettle--go1--base','BoomerangFeint',1);
+('kettle--go1--base','BoomerangFeint',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('kettle--go1--base','Zeroyon',2),
 ('kettle--go1--base','FireTornadoDD',3),
@@ -28506,7 +28506,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('renjishi--vr--base','ShootBreak',2),
 ('renjishi--vr--base','PowerSpike',3),
 ('renjishi--vr--base','MillionHands',4),
-('tousaka--vr--base','HitoriOneTwo',1);
+('tousaka--vr--base','HitoriOneTwo',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('tousaka--vr--base','ZigzagFlame',2),
 ('tousaka--vr--base','RollingSlide',3),
@@ -29007,7 +29007,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('ouen--ie1--base','BunshinFeint',4),
 ('daikaku--ie3--base','GrenadeShot',1),
 ('daikaku--ie3--base','ReflectBuster',2),
-('daikaku--ie3--base','ToumeiFeint',3);
+('daikaku--ie3--base','ToumeiFeint',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('daikaku--ie3--base','MoguraShuffle',4),
 ('umami--ie2--base','GiantSpin',1),
@@ -29508,7 +29508,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('oosaki--ie1--base','KillerSlide',2),
 ('oosaki--ie1--base','UshiroNoShoumen',3),
 ('oosaki--ie1--base','Counterstrike',4),
-('idehara--go1--base','SonicShot',1);
+('idehara--go1--base','SonicShot',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('idehara--go1--base','ButtobiJump',2),
 ('erise--go1--base','PowerSpike',1),
@@ -30009,7 +30009,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('kairiki--ie3--base','DashAccel',1),
 ('kairiki--ie3--base','HitoriOneTwo',2),
 ('kairiki--ie3--base','GiantSpin',3),
-('rokuta--ie1--base','KillerBlade',1);
+('rokuta--ie1--base','KillerBlade',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('rokuta--ie1--base','ShootPocket',2),
 ('rokuta--ie1--base','KumoNoIto',3),
@@ -30510,7 +30510,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('mimura--ie1--base','Doppelganger',1),
 ('mimura--ie1--base','Magic',2),
 ('mimura--ie1--base','KageNui',3),
-('mimura--ie1--base','DokugiriNoJutsu',4);
+('mimura--ie1--base','DokugiriNoJutsu',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('tsugaru--ie3--base','MeteorAttack',1),
 ('tsugaru--ie3--base','PsychoShot',2),
@@ -31011,7 +31011,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('kuromajo--ie3--base','BoostGlider',4),
 ('cauca--ie3--base','Moonsault',1),
 ('cauca--ie3--base','Gravitation',2),
-('cauca--ie3--base','MeteorShower',3);
+('cauca--ie3--base','MeteorShower',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('cauca--ie3--base','RyuuseiBlade',4),
 ('fez--ie3--base','AssaultShoot',1),
@@ -31512,7 +31512,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('matsumura--ie2--base','Onryou',1),
 ('matsumura--ie2--base','SuperScanOF',2),
 ('matsumura--ie2--base','ToumeiFeint',3),
-('matsumura--ie2--base','KumoNoIto',4);
+('matsumura--ie2--base','KumoNoIto',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('hiyama--ie1--base','DynamiteShoot',1),
 ('hiyama--ie1--base','MeteorAttack',2),
@@ -32013,7 +32013,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('subaru--ie1--base','Tsumuji',2),
 ('subaru--ie1--base','SuiseiShoot',3),
 ('subaru--ie1--base','Moonsault',4),
-('seiya--go1--base','KillerWhale',1);
+('seiya--go1--base','KillerWhale',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('seiya--go1--base','Claymore',2),
 ('seiya--go1--base','MaboroshiShot',3),
@@ -32514,7 +32514,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('yacht--ie1--base','FreezeShot',2),
 ('yacht--ie1--base','Tsumuji',3),
 ('yacht--ie1--base','BackTornado',4),
-('zouchou--go1--base','HeadBazooka',1);
+('zouchou--go1--base','HeadBazooka',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('zouchou--go1--base','BurningSummer',2),
 ('zouchou--go1--base','FireTornadoDD',3),
@@ -33015,7 +33015,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('login--go2--base','BurningSummer',2),
 ('login--go2--base','TwinMixer',3),
 ('login--go2--base','CrazySunlight',4),
-('mowka--go3--base','BigScissors',1);
+('mowka--go3--base','BigScissors',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('mowka--go3--base','OilRush',2),
 ('mowka--go3--base','MushroomHop',3),
@@ -33516,7 +33516,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('lonely--ie3--base','DragonCannon',3),
 ('lonely--ie3--base','HeatTackle',4),
 ('shimane--ie1--base','HornTrain',1),
-('shimane--ie1--base','DokugiriNoJutsu',2);
+('shimane--ie1--base','DokugiriNoJutsu',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('shimane--ie1--base','DashStorm',3),
 ('shimane--ie1--base','HurricaneArrow',4),
@@ -34017,7 +34017,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('ootsuki--ie2--base','FuusenGum',2),
 ('ootsuki--ie2--base','Tsumuji',3),
 ('ootsuki--ie2--base','Kamaitachi',4),
-('hemo--go3--base','BatAttack',1);
+('hemo--go3--base','BatAttack',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('hemo--go3--base','Wormhole',2),
 ('hemo--go3--base','ReboundLayer',3),
@@ -34518,7 +34518,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('hana-scout-character--ie3--base','MaboroshiDribble',2),
 ('hana-scout-character--ie3--base','FireTornado',3),
 ('hana-scout-character--ie3--base','IceGround',4),
-('nakazaki--go1--base','BurningSummer',1);
+('nakazaki--go1--base','BurningSummer',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('nakazaki--go1--base','BoomerangFeint',2),
 ('nakazaki--go1--base','SpiralDraw',3),
@@ -35019,7 +35019,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('nakao--ie2--base','Cyclone',3),
 ('nakao--ie2--base','AuroraCurtain',4),
 ('kuramochi--ie2--base','KillerSlide',1),
-('kuramochi--ie2--base','Kogarashi',2);
+('kuramochi--ie2--base','Kogarashi',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('kuramochi--ie2--base','Hanafubuki',3),
 ('kuramochi--ie2--base','KumoNoIto',4),
@@ -35520,7 +35520,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('koumoto--ie1--base','FakeBall',1),
 ('koumoto--ie1--base','KumoNoIto',2),
 ('koumoto--ie1--base','DokugiriNoJutsu',3),
-('koumoto--ie1--base','Kamikakushi',4);
+('koumoto--ie1--base','Kamikakushi',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('yakko--go2--base','Gorimuchuu',1),
 ('yakko--go2--base','Ichiyajou',2),
@@ -36021,7 +36021,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('fukudome--ie2--base','TamanoriPierrot',1),
 ('fukudome--ie2--base','Doppelganger',2),
 ('fukudome--ie2--base','RunBallRun',3),
-('fukudome--ie2--base','IceGround',4);
+('fukudome--ie2--base','IceGround',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('houka--go1--base','ThiefEye',1),
 ('houka--go1--base','MadJuggler',2),
@@ -36522,7 +36522,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('somemiya--ie2--base','SnakeShot',1),
 ('somemiya--ie2--base','SuiseiShoot',2),
 ('somemiya--ie2--base','TatsumakiSenpuu',3),
-('somemiya--ie2--base','KurukuruHead',4);
+('somemiya--ie2--base','KurukuruHead',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('tentou--ie1--base','TamanoriPierrot',1),
 ('tentou--ie1--base','Doppelganger',2),
@@ -36555,7 +36555,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('mutsu--ie1--base','Shikofumi',1),
 ('mutsu--ie1--base','Noroi',2),
 ('mutsu--ie1--base','UshiroNoShoumen',3),
-('mutsu--ie1--base','TsuchiDaruma',4);
+('mutsu--ie1--base','TsuchiDaruma',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 -- cambios hechos desde el CRUD de la app (supabase/admin.sql): se vuelven a aplicar encima
 select public.admin_replay();
 commit;
