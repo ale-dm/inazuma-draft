@@ -253,34 +253,51 @@ export function attackers(t: FatalTeam): FatalCard[] {
 export const controllers = (t: FatalTeam) => t.cards.filter(c => role(c.slot) === 'CM' || role(c.slot) === 'MF' || WIDE.has(c.slot))
 export const defenders = (t: FatalTeam) => t.cards.filter(c => ['CB', 'GK', 'DF'].includes(role(c.slot)) || c.slot === 'LB' || c.slot === 'RB')
 
-function pick3(list: FatalCard[], rnd: () => number): FatalCard {
-  const three = [...list].sort(() => rnd() - 0.5).slice(0, 3)
-  return three[Math.floor(rnd() * three.length)]
+/** 3 cartas al azar de la lista y, de ellas, la que juega (como en MADFUT: el juego elige 3 y una de las 3 al azar) */
+function draw3(list: FatalCard[], rnd: () => number): { pool: FatalCard[]; card: FatalCard } {
+  const pool = [...list].sort(() => rnd() - 0.5).slice(0, 3)
+  return { pool, card: pool[Math.floor(rnd() * pool.length)] }
 }
 
 export interface SimChance {
   /** Batalla de control: [tuya, rival] */
   control: [FatalCard, FatalCard]
+  /** Las 3 cartas candidatas de cada lado en la batalla de control: [tuyas, del rival] */
+  controlPools: [FatalCard[], FatalCard[]]
   /** Quién se lleva el balón (−1: fuera) */
   ball: 0 | 1 | -1
   /** Ataque de quien tiene el balón contra la defensa del otro: [atacante, defensor] */
   shot?: [FatalCard, FatalCard]
+  /** Las 3 candidatas de quien ataca y las 3 de quien defiende: [atacantes, defensores] */
+  shotPools?: [FatalCard[], FatalCard[]]
   goal?: boolean
+  /** Minuto del reloj de la simulación */
+  minute: number
 }
+
+/** Minuto de cada ocasión (el reloj de la simulación es corto: 6 ocasiones en unos 20 minutos) */
+export const SIM_MINUTES = [3, 7, 10, 14, 17, 20]
 
 export function simulate(me: FatalTeam, opp: FatalTeam, rnd = Math.random): SimChance[] {
   const out: SimChance[] = []
   for (let i = 0; i < SIM_CHANCES; i++) {
-    const a = pick3(controllers(me).length ? controllers(me) : me.cards, rnd)
-    const b = pick3(controllers(opp).length ? controllers(opp) : opp.cards, rnd)
-    const ball = a.st.con === b.st.con ? -1 : a.st.con > b.st.con ? 0 : 1
-    if (ball === -1) { out.push({ control: [a, b], ball }); continue }
+    const a = draw3(controllers(me).length ? controllers(me) : me.cards, rnd)
+    const b = draw3(controllers(opp).length ? controllers(opp) : opp.cards, rnd)
+    const ball = a.card.st.con === b.card.st.con ? -1 : a.card.st.con > b.card.st.con ? 0 : 1
+    const base = { control: [a.card, b.card] as [FatalCard, FatalCard], controlPools: [a.pool, b.pool] as [FatalCard[], FatalCard[]], ball: ball as 0 | 1 | -1, minute: SIM_MINUTES[i] }
+    if (ball === -1) { out.push(base); continue }
     const [att, def] = ball === 0 ? [attackers(me), defenders(opp)] : [attackers(opp), defenders(me)]
-    const x = pick3(att.length ? att : (ball === 0 ? me : opp).cards, rnd)
-    const y = pick3(def.length ? def : (ball === 0 ? opp : me).cards, rnd)
-    out.push({ control: [a, b], ball, shot: [x, y], goal: x.st.att > y.st.def })
+    const x = draw3(att.length ? att : (ball === 0 ? me : opp).cards, rnd)
+    const y = draw3(def.length ? def : (ball === 0 ? opp : me).cards, rnd)
+    out.push({ ...base, shot: [x.card, y.card], shotPools: [x.pool, y.pool], goal: x.card.st.att > y.card.st.def })
   }
   return out
+}
+
+/** Los 3 números de un equipo en la simulación (media de sus atacantes, controladores y defensas): las barras del marcador */
+export function simTeamStats(t: FatalTeam): { att: number; con: number; def: number } {
+  const avg = (l: FatalCard[], k: 'att' | 'con' | 'def') => Math.round(l.reduce((s, c) => s + c.st[k], 0) / Math.max(1, l.length))
+  return { att: avg(attackers(t), 'att'), con: avg(controllers(t), 'con'), def: avg(defenders(t), 'def') }
 }
 
 export const simScore = (ch: SimChance[]): [number, number] => [

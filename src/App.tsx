@@ -32,7 +32,7 @@ const Objectives = lazy(() => import('./components/club/Objectives'))
 /** Pantalla de cada ruta (hash); sin ruta conocida, el inicio */
 function screenFor(route: string): ReactNode | null {
   const [duelSource, seriesId] = route.startsWith(`${DUEL_HASH}/`) ? route.slice(DUEL_HASH.length + 1).split('/') as [DuelSource, string?] : [null]
-  if (duelSource && ['club', 'sim', 'draft'].includes(duelSource)) return <Duel key={route} source={duelSource} seriesId={seriesId} />
+  if (duelSource && ['club', 'sim', 'draft', 'draftsim'].includes(duelSource)) return <Duel key={route} source={duelSource} seriesId={seriesId} />
   const screens: Record<string, ReactNode> = {
     [DRAFT_HASH]: <DraftScreen />, [DRAFT_SUMMARY_HASH]: <DraftSummary />, [FATAL_DRAFT_HASH]: <FatalDraft />,
     [STORE_HASH]: <Store />, [CLUB_HASH]: <MyCards />, [COLLECTIONS_HASH]: <Collections />, [OBJECTIVES_HASH]: <Objectives />,

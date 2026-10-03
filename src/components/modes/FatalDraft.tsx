@@ -77,7 +77,9 @@ export default function FatalDraft() {
       )}
 
       <div className="fdr-modes">
-        <button type="button" className="fdr-mode fdr-mode--sim" disabled><span>FATAL</span><small>SIM</small><em>{t('hub.soon')}</em></button>
+        {last
+          ? <a href={`${DUEL_HASH}/draftsim`} className="fdr-mode fdr-mode--sim"><span>FATAL</span><small>SIM</small></a>
+          : <button type="button" className="fdr-mode fdr-mode--sim" disabled><span>FATAL</span><small>SIM</small></button>}
         {last
           ? <a href={`${DUEL_HASH}/draft`} className="fdr-mode fdr-mode--classic"><span>FATAL</span><small>CLASSIC</small></a>
           : <button type="button" className="fdr-mode fdr-mode--classic" disabled><span>FATAL</span><small>CLASSIC</small></button>}

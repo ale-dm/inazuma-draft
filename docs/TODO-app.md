@@ -77,7 +77,7 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] El último draft queda guardado y se juega en Fatal Draft y en las copas hasta hacer otro
 - [x] Fatal Draft: división, temporada, boost de la semana, escalera de divisiones con premios, Fatal Classic (duelos) y Fatal Sim (pronto)
 - [x] Copas de draft con el último draft: tarjetas con rondas, premio y boost (si el once lo cumple, +4 de química)
-- [ ] Fatal Sim (la simulación del partido: control, ocasión de ataque y defensa; ver las capturas de MADFUT 25)
+- [x] Fatal Sim: partido pasivo de 6 ocasiones (control → ataque/defensa → gol) desde el Fatal Draft; ver [fatal-sim.md](fatal-sim.md)
 
 ## Técnicas: TP balanceado
 - [x] Hoja «Sheet2» cruzada con la tabla `techniques`: `balance_tp` + potencias por la escala TP→potencia ([balance-tp.md](balance-tp.md))

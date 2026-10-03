@@ -18,10 +18,11 @@ import DuelCard from '../DuelCard'
 import Coin from '../Coin'
 import Screen from '../club/Screen'
 import { ElementIcon } from '../GameIcon'
+import SimMatch from './SimMatch'
 import SquadPicker, { draftSquad, type PickedSquad } from './SquadPicker'
 import { DRAFT_HASH, FATAL_DRAFT_HASH } from '../../lib/route'
 
-export type DuelSource = 'club' | 'sim' | 'draft'
+export type DuelSource = 'club' | 'sim' | 'draft' | 'draftsim'
 
 const STAT_KEY: Record<DuelKey, TranslationKey> = { att: 'hl.stat.att', con: 'hl.stat.con', def: 'hl.stat.def' }
 
@@ -58,13 +59,13 @@ function payout(res: 0 | 1 | -1, onResult: OnResult): Paid {
 export default function Duel({ source, seriesId }: { source: DuelSource; seriesId?: string }) {
   const { t } = useAppSettings()
   // Fatal Draft se juega con el último draft; Mi club y Simulación, con una de Mis plantillas
-  const [picked, setPicked] = useState<PickedSquad | null>(() => (source === 'draft' ? draftSquad(t('duel.you')) : null))
+  const [picked, setPicked] = useState<PickedSquad | null>(() => (source === 'draft' || source === 'draftsim' ? draftSquad(t('duel.you')) : null))
   const [game, setGame] = useState(0)
   const boost = useMemo(() => weeklyBoost(), [])
   const series = seriesId ? findSeries(seriesId) ?? null : null
 
   const onResult: OnResult = res => {
-    if (source === 'draft') {
+    if (source === 'draft' || source === 'draftsim') {
       const r = addDraftResult(res)
       return r.promoted ? t('fatal.promoted') : t('fatal.divPoints', { n: r.points })
     }
@@ -73,10 +74,10 @@ export default function Duel({ source, seriesId }: { source: DuelSource; seriesI
     return r.completed ? t('fatal.seriesDone') : r.points ? t('fatal.seriesPoints', { n: r.points }) : null
   }
 
-  const title = `${t('hub.duel')} · ${t(source === 'club' ? 'hub.duelClub' : source === 'sim' ? 'hub.duelSim' : 'hub.draft')}${series ? ` ${series.cap ?? 'X'}` : ''}`
+  const title = `${t('hub.duel')} · ${t(source === 'club' ? 'hub.duelClub' : source === 'sim' ? 'hub.duelSim' : source === 'draftsim' ? 'sim.title' : 'hub.draft')}${series ? ` ${series.cap ?? 'X'}` : ''}`
   const boostText = t('duel.boost', { n: boost.amount, what: boost.kind === 'game' ? boost.value : t(`element.${boost.value}` as TranslationKey) })
 
-  if (!picked && source === 'draft') {
+  if (!picked && (source === 'draft' || source === 'draftsim')) {
     return (
       <Screen title={title}>
         <p className="fd-hint">{t('fdr.noDraft')}</p>
@@ -97,9 +98,9 @@ export default function Duel({ source, seriesId }: { source: DuelSource; seriesI
   }
 
   const again = () => setGame(g => g + 1)
-  const back = source === 'draft' ? FATAL_DRAFT_HASH : '#/fatal'
-  return source === 'sim'
-    ? <SimMatch key={game} title={title} squad={picked} boostText={boostText} onAgain={again} onResult={onResult} backHref={back} />
+  const back = source === 'draft' || source === 'draftsim' ? FATAL_DRAFT_HASH : '#/fatal'
+  return source === 'sim' || source === 'draftsim'
+    ? <SimMatch key={game} title={title} squad={picked} boostText={boostText} settle={res => payout(res, onResult)} onAgain={again} backHref={back} />
     : <FatalMatch key={game} title={title} squad={picked} boostText={boostText} onAgain={again} onResult={onResult} backHref={back} />
 }
 
@@ -334,95 +335,6 @@ function RoundView({ round }: { round: Round }) {
         </span>
       </span>
       <DuelCard player={theirs.p} size="xs" values={theirs.st} mod={theirs.mod} highlight={theirKey} />
-    </div>
-  )
-}
-
-// ---------------------------------------------------------------- Simulación
-
-function SimMatch({ title, squad, boostText, onAgain, onResult, backHref }: { title: string; squad: PickedSquad; boostText: string; onAgain: () => void; onResult: OnResult; backHref: string }) {
-  const { t, locale } = useAppSettings()
-  const [{ opp, chances }] = useState(() => {
-    const me = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation)
-    const opp_ = rivalTeam(teamRating(squad.xi))
-    return { opp: opp_, chances: simulate(me, opp_) }
-  })
-  const [shown, setShown] = useState(0)
-  const [paid, setPaid] = useState<Paid | null>(null)
-  const done = shown >= chances.length
-  const s = simScore(chances.slice(0, shown))
-
-  useEffect(() => {
-    if (done) return
-    const id = setTimeout(() => {
-      const c = chances[shown]
-      if (c.goal) playSfx(c.ball === 0 ? 'goal' : 'pick')
-      setShown(n => n + 1)
-    }, 1400)
-    return () => clearTimeout(id)
-  }, [shown, done, chances])
-
-  useEffect(() => {
-    if (done && !paid) {
-      const f = simScore(chances)
-      setPaid(payout(f[0] === f[1] ? -1 : f[0] > f[1] ? 0 : 1, onResult))
-    }
-  }, [done, paid, chances])
-
-  return (
-    <Screen title={title}>
-      <div className="duel-score">
-        <span className="duel-score__team">{t('duel.you')}</span>
-        <b>{s[0]}</b><i>–</i><b>{s[1]}</b>
-        <span className="duel-score__team">{teamLabel(opp.name, locale)}</span>
-        <small className="duel-score__round">{done ? t('duel.fullTime') : t('duel.chance', { n: Math.min(shown + 1, SIM_CHANCES), total: SIM_CHANCES })}</small>
-      </div>
-      <p className="duel-boost">{boostText}</p>
-      {!done && <button type="button" className="chip self-center" onClick={() => setShown(chances.length)}>{t('duel.skip')}</button>}
-      {done && (
-        <div className="duel-end">
-          <h2 className="fd-title">{s[0] > s[1] ? t('duel.win') : s[0] === s[1] ? t('duel.draw') : t('duel.loss')}</h2>
-          {paid && <p className="reward-line">+<Coin className="w-5 h-5" /> {paid.coins} · +{paid.xp} XP</p>}
-          {paid?.note && <p className="fatal-note">{paid.note}</p>}
-          <button type="button" className="sheet-cta" onClick={onAgain}>{t('duel.again')}</button>
-          <a href={backHref} className="chip self-center">{t('fatal.back')}</a>
-        </div>
-      )}
-      <ol className="duel-log">
-        {chances.slice(0, shown).map((c, k) => <li key={k}><ChanceView c={c} n={k + 1} /></li>).reverse()}
-      </ol>
-    </Screen>
-  )
-}
-
-function ChanceView({ c, n }: { c: SimChance; n: number }) {
-  const { t } = useAppSettings()
-  // en el tiro, a la izquierda siempre tu carta
-  const shotMine = c.shot ? (c.ball === 0 ? c.shot[0] : c.shot[1]) : null
-  const shotTheirs = c.shot ? (c.ball === 0 ? c.shot[1] : c.shot[0]) : null
-  return (
-    <div className="sim-chance">
-      <small className="sheet-label">{t('duel.chanceN', { n })}</small>
-      <div className="duel-round">
-        <DuelCard player={c.control[0].p} size="xs" values={c.control[0].st} highlight="con" />
-        <span className="duel-line">
-          <span>{t('hl.stat.con')} <b>{c.control[0].st.con}</b> – <b>{c.control[1].st.con}</b></span>
-          <span>{c.ball === 0 ? t('duel.ballYou') : c.ball === 1 ? t('duel.ballOpp') : t('duel.out')}</span>
-        </span>
-        <DuelCard player={c.control[1].p} size="xs" values={c.control[1].st} highlight="con" />
-      </div>
-      {c.shot && shotMine && shotTheirs && (
-        <div className="duel-round">
-          <DuelCard player={shotMine.p} size="xs" values={shotMine.st} highlight={c.ball === 0 ? 'att' : 'def'} />
-          <span className="duel-line">
-            {c.ball === 0
-              ? <span>{t('hl.stat.att')} <b>{shotMine.st.att}</b> – <b>{shotTheirs.st.def}</b> {t('hl.stat.def')}</span>
-              : <span>{t('hl.stat.def')} <b>{shotMine.st.def}</b> – <b>{shotTheirs.st.att}</b> {t('hl.stat.att')}</span>}
-            <span className={c.goal ? (c.ball === 0 ? 'is-goal' : 'is-conceded') : ''}>{c.goal ? t('duel.goal') : t('duel.saved')}</span>
-          </span>
-          <DuelCard player={shotTheirs.p} size="xs" values={shotTheirs.st} highlight={c.ball === 0 ? 'def' : 'att'} />
-        </div>
-      )}
     </div>
   )
 }
