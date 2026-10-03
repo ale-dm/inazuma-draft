@@ -5,6 +5,7 @@ import { getFormation, lineupToArray, type FormationId, type LineupMap, type Slo
 import { MAX_TEAM_CHEM, chemistry, teamRating } from '../../lib/chemistry'
 import { SQUADS_HASH } from '../../lib/route'
 import { useClub, type Squad } from '../../lib/club'
+import { lastDraftXI, loadLastDraft } from '../../lib/last-draft'
 
 export interface PickedSquad {
   name: string
@@ -24,6 +25,14 @@ export function squadLineup(q: Squad): LineupMap {
     if (p) l[slot as keyof LineupMap] = p
   }
   return l
+}
+
+/** El último draft como equipo para jugar (Fatal Draft y copas de draft); null si todavía no hay ninguno */
+export function draftSquad(name: string): PickedSquad | null {
+  const d = loadLastDraft()
+  if (!d) return null
+  const { lineup, xi } = lastDraftXI(d)
+  return xi.length === 11 ? { name, xi, chem: d.chem, lineup, captain: d.captain, formation: d.formation } : null
 }
 
 /** Elegir una de Mis plantillas completas (11 cartas) para jugar un modo con tus cartas */

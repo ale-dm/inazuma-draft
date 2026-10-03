@@ -14,8 +14,6 @@ const c = (event: string) => (s: ClubState) => s.career[event] ?? 0
 export const ACHIEVEMENTS: Achievement[] = [
   { id: 'draft1', key: 'ach.draft', goal: 1, value: c('drafts') },
   { id: 'draft25', key: 'ach.draft', goal: 25, value: c('drafts') },
-  { id: 'title1', key: 'ach.title', goal: 1, value: c('titles') },
-  { id: 'title10', key: 'ach.title', goal: 10, value: c('titles') },
   { id: 'duel10', key: 'ach.duel', goal: 10, value: c('duelWins') },
   { id: 'duel100', key: 'ach.duel', goal: 100, value: c('duelWins') },
   { id: 'cup1', key: 'ach.cup', goal: 1, value: c('cupWins') },

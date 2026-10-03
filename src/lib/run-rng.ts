@@ -1,22 +1,4 @@
-import { createRngFromSeed } from './rng'
-
-let rng: () => number = Math.random
-let runSeed: string | null = null
-
-export function initRunRng(seed: string) {
-  runSeed = seed
-  rng = createRngFromSeed(seed)
-}
-
-export function resetRunRng() {
-  runSeed = null
-  rng = Math.random
-}
-
-export function getRunSeed(): string | null {
-  return runSeed
-}
-
+/** Número al azar de 0 a 1 para los sorteos del draft y la simulación (Math.random) */
 export function random(): number {
-  return rng()
+  return Math.random()
 }

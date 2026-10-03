@@ -1,4 +1,4 @@
-import type { Player, MatchResult, MatchEvent, GroupStanding } from '../types'
+import type { Player, MatchResult, MatchEvent } from '../types'
 import { teamPower } from '../lib/power'
 import { random } from '../lib/run-rng'
 
@@ -174,81 +174,4 @@ export function matchWinner(result: MatchResult): 0 | 1 | -1 {
     if (result.penalties[1] > result.penalties[0]) return 1
   }
   return -1
-}
-
-export function simulateGroupStage(
-  teams: { name: string; players: Player[] }[]
-): { standings: GroupStanding[]; matches: MatchResult[] } {
-  const standings: GroupStanding[] = teams.map(t => ({
-    teamName: t.name, played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0, points: 0,
-  }))
-  const matches: MatchResult[] = []
-
-  for (let i = 0; i < teams.length; i++) {
-    for (let j = i + 1; j < teams.length; j++) {
-      const result = simulateMatch(teams[i].players, teams[j].players, teams[i].name, teams[j].name)
-      matches.push(result)
-      const si = standings.find(s => s.teamName === teams[i].name)!
-      const sj = standings.find(s => s.teamName === teams[j].name)!
-      si.played++; sj.played++
-      si.gf += result.score[0]; si.ga += result.score[1]
-      sj.gf += result.score[1]; sj.ga += result.score[0]
-      if (result.score[0] > result.score[1]) { si.won++; si.points += 3; sj.lost++ }
-      else if (result.score[0] < result.score[1]) { sj.won++; sj.points += 3; si.lost++ }
-      else { si.drawn++; sj.drawn++; si.points++; sj.points++ }
-    }
-  }
-
-  standings.sort((a, b) => b.points - a.points || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf)
-  return { standings, matches }
-}
-
-export function initStandings(teamNames: string[]): GroupStanding[] {
-  return teamNames.map(teamName => ({
-    teamName, played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0, points: 0,
-  }))
-}
-
-export function applyMatchToStandings(standings: GroupStanding[], result: MatchResult): GroupStanding[] {
-  const next = standings.map(s => ({ ...s }))
-  const si = next.find(s => s.teamName === result.team1Name)!
-  const sj = next.find(s => s.teamName === result.team2Name)!
-  si.played++; sj.played++
-  si.gf += result.score[0]; si.ga += result.score[1]
-  sj.gf += result.score[1]; sj.ga += result.score[0]
-  if (result.score[0] > result.score[1]) { si.won++; si.points += 3; sj.lost++ }
-  else if (result.score[0] < result.score[1]) { sj.won++; sj.points += 3; si.lost++ }
-  else { si.drawn++; sj.drawn++; si.points++; sj.points++ }
-  return sortStandings(next)
-}
-
-export function sortStandings(standings: GroupStanding[]): GroupStanding[] {
-  return [...standings].sort(
-    (a, b) => b.points - a.points || (b.gf - b.ga) - (a.gf - a.ga) || b.gf - a.gf
-  )
-}
-
-export function simulateRemainingGroupMatches(
-  teams: { name: string; players: Player[] }[],
-  played: MatchResult[],
-): { standings: GroupStanding[]; matches: MatchResult[] } {
-  const playedKey = (a: string, b: string) => [a, b].sort().join('|')
-  const done = new Set(played.map(m => playedKey(m.team1Name, m.team2Name)))
-
-  let standings = initStandings(teams.map(t => t.name))
-  const matches: MatchResult[] = [...played]
-  for (const m of played) standings = applyMatchToStandings(standings, m)
-
-  for (let i = 0; i < teams.length; i++) {
-    for (let j = i + 1; j < teams.length; j++) {
-      const key = playedKey(teams[i].name, teams[j].name)
-      if (done.has(key)) continue
-      const result = simulateMatch(teams[i].players, teams[j].players, teams[i].name, teams[j].name)
-      matches.push(result)
-      standings = applyMatchToStandings(standings, result)
-      done.add(key)
-    }
-  }
-
-  return { standings: sortStandings(standings), matches }
 }

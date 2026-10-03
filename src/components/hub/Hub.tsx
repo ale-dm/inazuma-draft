@@ -3,27 +3,19 @@ import type { Player } from '../../types'
 import { useAppSettings } from '../../context/AppSettings'
 import { getAllPlayers, getCharacterVersions, teamLogo } from '../../data/catalog'
 import { loadProgress, uniqueCharacters } from '../../lib/progress'
-import { ADMIN_HASH, BADGES_HASH, CODES_HASH, FATAL_HASH, FREE_HASH, SBC_HASH, CLUB_HASH, COLLECTIONS_HASH, CUPS_HASH, DUEL_HASH, HL_HASH, OBJECTIVES_HASH, PLAYERS_HASH, PUZZLES_HASH, SQUADS_HASH, STORE_HASH } from '../../lib/route'
+import { ADMIN_HASH, BADGES_HASH, CODES_HASH, DRAFT_HASH, FATAL_HASH, FREE_HASH, SBC_HASH, CLUB_HASH, COLLECTIONS_HASH, CUPS_HASH, HL_HASH, OBJECTIVES_HASH, PLAYERS_HASH, PUZZLES_HASH, SQUADS_HASH, STORE_HASH } from '../../lib/route'
 import { useClub } from '../../lib/club'
 import { pendingRewards } from '../../lib/objectives'
 import InaCard from '../InaCard'
 import Coin from '../Coin'
-import { ArrowLeftRight, BookOpen, ClipboardList, Cloud, Gift, Layers, Puzzle, Settings, Shield, ShoppingBag, Target, Zap } from 'lucide-react'
+import { ArrowLeftRight, ArrowUpDown, BookOpen, ClipboardList, Cloud, Gift, Grid3x3, Layers, Puzzle, Settings, Shield, ShoppingBag, Target, Trophy, Zap } from 'lucide-react'
 import RulesModal from '../RulesModal'
 import StatsModal from '../StatsModal'
 import Sheet from './Sheet'
 import SettingsSheet from './SettingsSheet'
-import { loadDraft } from '../../lib/saved-draft'
+import { clearDraft, loadDraft } from '../../lib/saved-draft'
 import BackupSheet from './BackupSheet'
 import { doneCount, fatalProgress } from '../../lib/fatal-series'
-
-interface Props {
-  mode: 'classic' | 'memory'
-  seed: string | null
-  onModeChange: (mode: 'classic' | 'memory') => void
-  /** 'fut' = draft MADFUT (1 de 6 con química) · 'ffi' = draft por sorteo de equipo + juego */
-  onStart: (kind: 'fut' | 'fut-resume' | 'ffi') => void
-}
 
 /** Foto grande de los paneles: la mejor carta del personaje, mejor con retrato de zukan que con sprite de la wiki */
 function heroOf(characterId: string): string | null {
@@ -33,10 +25,10 @@ function heroOf(characterId: string): string | null {
 }
 
 /** Pantalla principal estilo MADFUT: barra de progreso arriba y tres páginas de paneles que se deslizan */
-export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
+export default function Hub() {
   const { t } = useAppSettings()
   const [page, setPage] = useState(0)
-  const [sheet, setSheet] = useState<'mode' | 'settings' | 'rules' | 'stats' | 'backup' | null>(null)
+  const [sheet, setSheet] = useState<'draft' | 'settings' | 'rules' | 'stats' | 'backup' | null>(null)
   const pager = useRef<HTMLDivElement>(null)
   /** 7 toques en el logo → CRUD oculto */
   const taps = useRef(0)
@@ -52,6 +44,8 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
     .sort((a, b) => b.ovr - a.ovr)).slice(0, 3), [])
 
   const go = (hash: string) => () => { window.location.hash = hash }
+  /** «Draft» lleva directo al draft; si hay uno a medias, primero se pregunta si seguirlo */
+  const startDraft = () => { if (loadDraft()?.formation) setSheet('draft'); else go(DRAFT_HASH)() }
   const goPlayers = go(PLAYERS_HASH)
   const goPage = (i: number) => pager.current?.scrollTo({ left: i * pager.current.clientWidth, behavior: 'smooth' })
 
@@ -96,10 +90,8 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
             </span>
           </button>
           <div className="hub-grid hub-grid--tall">
-            <Tile label={t('hub.modeFfi')} onClick={() => setSheet('mode')}>
-              <span className="tile__big">FFI</span>
-            </Tile>
-            <Tile label={t('hub.draftModes')} onClick={() => setSheet('mode')} tall>
+            <Tile label={t('hub.cups')} onClick={go(CUPS_HASH)}><Trophy className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
+            <Tile label={t('hub.draft')} onClick={startDraft} tall>
               <CardFan players={progress.showcase} />
             </Tile>
             <Tile label={t('hub.trading')} soon={t('hub.soon')}><ArrowLeftRight className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
@@ -108,12 +100,14 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
 
         {/* 2 · Draft + tienda, últimas cartas, objetivos y retos */}
         <section className="hub-page hub-page--violet">
-          <HeroTile title={t('hub.draft')} sub={t('hub.draftSub')} image={heroes.draft} onClick={() => setSheet('mode')} />
+          <HeroTile title={t('hub.draft')} sub={t('hub.draftSub')} image={heroes.draft} onClick={startDraft} />
           <div className="hub-grid">
             <Tile label={t('hub.store')} onClick={go(STORE_HASH)}><ShoppingBag className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
             <Tile label={t('hub.latest')} onClick={goPlayers}><CardFan players={latest} /></Tile>
             <Tile label={t('hub.objectives')} onClick={go(OBJECTIVES_HASH)} badge={pending}><Target className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
             <Tile label={t('hub.sbc')} onClick={go(SBC_HASH)}><Puzzle className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
+            <Tile label={t('hub.puzzles')} onClick={go(PUZZLES_HASH)}><Grid3x3 className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
+            <Tile label={t('hub.higherLower')} onClick={go(HL_HASH)}><ArrowUpDown className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
           </div>
         </section>
 
@@ -129,7 +123,7 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
             <Tile label={t('hub.badges')} onClick={go(BADGES_HASH)}><Shield className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
             <Tile label={t('hub.myStats')} onClick={() => setSheet('stats')}>
               <span className="hub-stats">
-                {([['hub.titles', progress.titles], ['hub.finals', progress.finals], ['hub.drafts', progress.drafts]] as const).map(([k, v]) => (
+                {([['hub.drafts', progress.drafts], ['hub.wins', progress.wins], ['hub.cups', progress.cups]] as const).map(([k, v]) => (
                   <span key={k}><b>{v}</b><small>{t(k)}</small></span>
                 ))}
               </span>
@@ -151,39 +145,13 @@ export default function Hub({ mode, seed, onModeChange, onStart }: Props) {
         ))}
       </nav>
 
-      <Sheet open={sheet === 'mode'} title={t('hub.chooseMode')} onClose={() => setSheet(null)}>
-        {seed && <p className="sheet-note">{t('seed.sharedRun', { seed })}</p>}
-        {sheet === 'mode' && loadDraft()?.formation && (
-          <button type="button" className="sheet-choice sheet-choice--mode mb-3" onClick={() => onStart('fut-resume')}>
-            <b>{t('hub.resumeDraft')}</b>
-            <small>{t('hub.resumeDraftSub')}</small>
-          </button>
-        )}
-        <button type="button" className="sheet-choice sheet-choice--mode mb-4" onClick={() => onStart('fut')}>
-          <b>{t('hub.modeFut')}</b>
+      <Sheet open={sheet === 'draft'} title={t('hub.draft')} onClose={() => setSheet(null)}>
+        <p className="sheet-note">{t('hub.draftInProgress')}</p>
+        <button type="button" className="sheet-cta mb-3" onClick={go(DRAFT_HASH)}>{t('hub.resumeDraft')}</button>
+        <button type="button" className="sheet-choice sheet-choice--mode" onClick={() => { clearDraft(); go(DRAFT_HASH)() }}>
+          <b>{t('hub.newDraft')}</b>
           <small>{t('hub.modeFutSub')}</small>
         </button>
-        <div className="sheet-choice mb-3">
-          <b>{t('hub.modeFfi')}</b>
-          <small>{t('hub.modeFfiSub')}</small>
-          <div className="grid grid-cols-2 gap-2 mt-2">
-            {(['classic', 'memory'] as const).map(m => (
-              <button key={m} type="button" onClick={() => onModeChange(m)} className={`sheet-choice sheet-choice--row ${mode === m ? 'on' : ''}`}>
-                <b>{m === 'classic' ? t('landing.mode.classic') : t('landing.mode.memory')}</b>
-              </button>
-            ))}
-          </div>
-          <small className="mt-1">{mode === 'classic' ? t('landing.mode.classicHint') : t('landing.mode.memoryHint')}</small>
-        </div>
-        <button type="button" className="sheet-cta" onClick={() => onStart('ffi')}>{t('landing.play')}</button>
-        <h3 className="sheet-label mt-5">{t('hub.moreModes')}</h3>
-        <div className="grid gap-2">
-          {([[CUPS_HASH, 'hub.cups', 'hub.cupsSub'], [PUZZLES_HASH, 'hub.puzzles', 'hub.puzzlesSub'], [HL_HASH, 'hub.higherLower', 'hub.higherLowerSub']] as const).map(([h, k, sub]) => (
-            <button key={h} type="button" className="sheet-choice sheet-choice--row" onClick={() => { setSheet(null); window.location.hash = h }}>
-              <b>{t(k)}</b><small>{t(sub)}</small>
-            </button>
-          ))}
-        </div>
       </Sheet>
       <SettingsSheet open={sheet === 'settings'} onClose={() => setSheet(null)} />
       <RulesModal open={sheet === 'rules'} onClose={() => setSheet(null)} />

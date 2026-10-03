@@ -8,10 +8,25 @@ import { today } from './club'
 import type { Reward } from './objectives'
 
 /**
- * Copas (fase 4): eliminatorias con una de Mis plantillas. Por saga: 8 equipos (cuartos, semis y final) de los
- * juegos de esa saga, cada ronda más difícil. Diaria: 4 equipos (semis y final), los mismos rivales para todos ese
- * día y una sola vez al día.
+ * Copas de draft (como en MADFUT): eliminatorias con tu último draft. Por saga: 8 equipos (cuartos, semis y final) de
+ * los juegos de esa saga, cada ronda más difícil. Diaria: 4 equipos (semis y final), los mismos rivales para todos
+ * ese día y una sola vez al día. Cada copa tiene un boost (en MADFUT, "Ligas: mín. 6"): si tu once cumple lo que pide,
+ * sube su química durante la copa.
  */
+export interface CupBoost {
+  /** Cartas de estos juegos (null: juegos distintos en el once) */
+  games: GameId[] | null
+  /** Cuántas hacen falta */
+  min: number
+  /** Química que suma (el equipo no pasa de 33) */
+  chem: number
+}
+
+/** Cuántas cartas del once cuentan para el boost de la copa */
+export function boostCount(b: CupBoost, xi: Player[]): number {
+  return b.games ? xi.filter(p => b.games!.includes(p.game)).length : new Set(xi.map(p => p.game)).size
+}
+
 export interface CupDef {
   id: string
   nameKey: TranslationKey
@@ -23,14 +38,15 @@ export interface CupDef {
   perRound: number
   /** Premio al campeón */
   prize: Reward
+  boost: CupBoost
 }
 
 export const CUPS: CupDef[] = [
-  { id: 'daily', nameKey: 'cup.daily', games: null, rounds: 2, daily: true, perRound: 300, prize: { coins: 1000, pack: 'gold' } },
-  { id: 'ie', nameKey: 'cup.ie', games: ['IE1', 'IE2', 'IE3'], rounds: 3, perRound: 250, prize: { coins: 1000, pack: 'saga-ie' } },
-  { id: 'go', nameKey: 'cup.go', games: ['GO1', 'GO2', 'GO3'], rounds: 3, perRound: 250, prize: { coins: 1000, pack: 'saga-go' } },
-  { id: 'ares', nameKey: 'cup.ares', games: ['ARES', 'ORION'], rounds: 3, perRound: 250, prize: { coins: 1000, pack: 'saga-ares' } },
-  { id: 'vr', nameKey: 'cup.vr', games: ['VR'], rounds: 3, perRound: 250, prize: { coins: 1000, pack: 'saga-vr' } },
+  { id: 'daily', nameKey: 'cup.daily', games: null, rounds: 2, daily: true, perRound: 300, prize: { coins: 1000, pack: 'gold' }, boost: { games: null, min: 4, chem: 4 } },
+  { id: 'ie', nameKey: 'cup.ie', games: ['IE1', 'IE2', 'IE3'], rounds: 3, perRound: 250, prize: { coins: 1000, pack: 'saga-ie' }, boost: { games: ['IE1', 'IE2', 'IE3'], min: 4, chem: 4 } },
+  { id: 'go', nameKey: 'cup.go', games: ['GO1', 'GO2', 'GO3'], rounds: 3, perRound: 250, prize: { coins: 1000, pack: 'saga-go' }, boost: { games: ['GO1', 'GO2', 'GO3'], min: 4, chem: 4 } },
+  { id: 'ares', nameKey: 'cup.ares', games: ['ARES', 'ORION'], rounds: 3, perRound: 250, prize: { coins: 1000, pack: 'saga-ares' }, boost: { games: ['ARES', 'ORION'], min: 4, chem: 4 } },
+  { id: 'vr', nameKey: 'cup.vr', games: ['VR'], rounds: 3, perRound: 250, prize: { coins: 1000, pack: 'saga-vr' }, boost: { games: ['VR'], min: 4, chem: 4 } },
 ]
 
 export interface CupOpponent {

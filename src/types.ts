@@ -122,23 +122,3 @@ export interface MatchResult {
   penalties?: [number, number]
   decidedByPenalties?: boolean
 }
-
-export interface GroupStanding {
-  teamName: string
-  played: number
-  won: number
-  drawn: number
-  lost: number
-  gf: number
-  ga: number
-  points: number
-}
-
-export interface FFITeam {
-  name: string
-  country: string
-  block: 'A' | 'B'
-  players: Player[]
-}
-
-export type GamePhase = 'landing' | 'draft' | 'futdraft' | 'lineup' | 'tournament' | 'result'

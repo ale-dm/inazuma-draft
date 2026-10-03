@@ -5,7 +5,7 @@ import {
   type Series,
 } from '../../lib/fatal-series'
 import { getPack } from '../../lib/packs'
-import { DUEL_HASH } from '../../lib/route'
+import { DUEL_HASH, FATAL_DRAFT_HASH } from '../../lib/route'
 import { formatLeft } from '../../lib/store-extra'
 import type { Reward } from '../../lib/objectives'
 import Coin from '../Coin'
@@ -13,7 +13,7 @@ import Screen from '../club/Screen'
 import { Check, Clock } from 'lucide-react'
 
 /** Milisegundos hasta el lunes que viene (nueva temporada) */
-function msToSeason(now = new Date()): number {
+export function msToSeason(now = new Date()): number {
   const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()))
   const day = d.getUTCDay() || 7
   d.setUTCDate(d.getUTCDate() + 8 - day)
@@ -95,7 +95,7 @@ export default function Fatal() {
             <small>{f.division ? t('fatal.promoReward') : t('fatal.eliteReward')}</small>
             <RewardBadge r={DIVISION_REWARD[f.division]} />
           </span>
-          <a href={`${DUEL_HASH}/draft`} className="sheet-cta fatal-draft__play">{t('modes.play')}</a>
+          <a href={FATAL_DRAFT_HASH} className="sheet-cta fatal-draft__play">{t('modes.play')}</a>
         </div>
       </section>
     </Screen>

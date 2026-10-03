@@ -288,3 +288,16 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
 - **Optimización**: pantallas con `React.lazy` (bundle inicial de 514 a 355 kB). **Diseño**: explorador de
   jugadores con la carta nueva y filtros plegables; pestañas, selectores y rarezas con los colores de la app; campo de
   la alineación del FFI igual que los demás; cartas del campo algo más grandes.
+
+## Flujo de MADFUT: draft → resumen → Fatal Draft / Copas
+- **Quitado el modo clásico** (Draft FFI y Memoria, alineación, torneo, pantalla de resultado, semillas compartidas,
+  estadísticas del FFI y el panel de reglas antiguo). Los objetivos y logros «Gana el FFI» / «Llega a semifinales» pasan
+  a «Gana un duelo» y «Gana una copa». Las estadísticas salen ahora de los contadores del club.
+- **Draft directo**: el panel Draft del inicio abre `#/draft`. Si había uno a medias, pregunta seguir o nuevo.
+- **Resumen** (`#/draft-resumen`): media (estrellas), química, puntos de draft (Σ de lo que cada titular pasa de 50 + 5
+  por punto de química) con récord personal y rango (bronce/plata/oro/élite), y juegos/equipos/afinidades del once. Abajo,
+  Fatal Draft y Copas de draft. El draft se guarda como «último draft» (`ffi-last-draft-v1`).
+- **Fatal Draft** (`#/fatal-draft`): división, temporada con cuenta atrás, barra de puntos, boost de la semana, escalera
+  de divisiones con premio y los modos Fatal Classic (duelos con el último draft) y Fatal Sim (pronto).
+- **Copas de draft** (`#/copas`): se juegan con el último draft; cada copa tiene un boost (cartas de su saga o juegos
+  distintos: +4 de química si el once lo cumple).

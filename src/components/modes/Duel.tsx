@@ -14,13 +14,12 @@ import { addCoins, addXp, track } from '../../lib/club'
 import { addDraftResult, addSeriesResult, findSeries } from '../../lib/fatal-series'
 import { playSfx } from '../../lib/sfx'
 import type { TranslationKey } from '../../i18n/translations'
-import type { Player } from '../../types'
 import DuelCard from '../DuelCard'
-import FutDraft from '../futdraft/FutDraft'
 import Coin from '../Coin'
 import Screen from '../club/Screen'
 import { ElementIcon } from '../GameIcon'
-import SquadPicker, { type PickedSquad } from './SquadPicker'
+import SquadPicker, { draftSquad, type PickedSquad } from './SquadPicker'
+import { DRAFT_HASH, FATAL_DRAFT_HASH } from '../../lib/route'
 
 export type DuelSource = 'club' | 'sim' | 'draft'
 
@@ -58,7 +57,8 @@ function payout(res: 0 | 1 | -1, onResult: OnResult): Paid {
  */
 export default function Duel({ source, seriesId }: { source: DuelSource; seriesId?: string }) {
   const { t } = useAppSettings()
-  const [picked, setPicked] = useState<PickedSquad | null>(null)
+  // Fatal Draft se juega con el último draft; Mi club y Simulación, con una de Mis plantillas
+  const [picked, setPicked] = useState<PickedSquad | null>(() => (source === 'draft' ? draftSquad(t('duel.you')) : null))
   const [game, setGame] = useState(0)
   const boost = useMemo(() => weeklyBoost(), [])
   const series = seriesId ? findSeries(seriesId) ?? null : null
@@ -73,20 +73,17 @@ export default function Duel({ source, seriesId }: { source: DuelSource; seriesI
     return r.completed ? t('fatal.seriesDone') : r.points ? t('fatal.seriesPoints', { n: r.points }) : null
   }
 
-  if (source === 'draft' && !picked) {
-    return (
-      <FutDraft
-        ctaLabel={t('duel.playDuel')}
-        onExit={() => { window.location.hash = '#/' }}
-        onComplete={(l, formation, captain, chem) => setPicked({
-          name: t('duel.you'), xi: Object.values(l).filter((p): p is Player => !!p), chem, lineup: l, captain, formation,
-        })}
-      />
-    )
-  }
-
   const title = `${t('hub.duel')} · ${t(source === 'club' ? 'hub.duelClub' : source === 'sim' ? 'hub.duelSim' : 'hub.draft')}${series ? ` ${series.cap ?? 'X'}` : ''}`
   const boostText = t('duel.boost', { n: boost.amount, what: boost.kind === 'game' ? boost.value : t(`element.${boost.value}` as TranslationKey) })
+
+  if (!picked && source === 'draft') {
+    return (
+      <Screen title={title}>
+        <p className="fd-hint">{t('fdr.noDraft')}</p>
+        <a href={DRAFT_HASH} className="sheet-cta">{t('fdr.makeDraft')}</a>
+      </Screen>
+    )
+  }
 
   if (!picked) {
     return (
@@ -99,15 +96,16 @@ export default function Duel({ source, seriesId }: { source: DuelSource; seriesI
     )
   }
 
-  const again = () => (source === 'draft' ? setPicked(null) : setGame(g => g + 1))
+  const again = () => setGame(g => g + 1)
+  const back = source === 'draft' ? FATAL_DRAFT_HASH : '#/fatal'
   return source === 'sim'
-    ? <SimMatch key={game} title={title} squad={picked} boostText={boostText} onAgain={again} onResult={onResult} />
-    : <FatalMatch key={game} title={title} squad={picked} boostText={boostText} onAgain={again} onResult={onResult} />
+    ? <SimMatch key={game} title={title} squad={picked} boostText={boostText} onAgain={again} onResult={onResult} backHref={back} />
+    : <FatalMatch key={game} title={title} squad={picked} boostText={boostText} onAgain={again} onResult={onResult} backHref={back} />
 }
 
 // ---------------------------------------------------------------- Mi club / Draft
 
-function FatalMatch({ title, squad, boostText, onAgain, onResult }: { title: string; squad: PickedSquad; boostText: string; onAgain: () => void; onResult: OnResult }) {
+function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref }: { title: string; squad: PickedSquad; boostText: string; onAgain: () => void; onResult: OnResult; backHref: string }) {
   const { t, locale } = useAppSettings()
   const [m, setM] = useState<Match>(() => {
     const me = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation)
@@ -179,7 +177,7 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult }: { title: str
       {paid?.note && <p className="fatal-note">{paid.note}</p>}
       <div className="duel-end__actions">
         <button type="button" className="sheet-cta" onClick={onAgain}>{t('duel.again')}</button>
-        <a href="#/fatal" className="chip">{t('fatal.back')}</a>
+        <a href={backHref} className="chip">{t('fatal.back')}</a>
       </div>
     </div>
   )
@@ -342,7 +340,7 @@ function RoundView({ round }: { round: Round }) {
 
 // ---------------------------------------------------------------- Simulación
 
-function SimMatch({ title, squad, boostText, onAgain, onResult }: { title: string; squad: PickedSquad; boostText: string; onAgain: () => void; onResult: OnResult }) {
+function SimMatch({ title, squad, boostText, onAgain, onResult, backHref }: { title: string; squad: PickedSquad; boostText: string; onAgain: () => void; onResult: OnResult; backHref: string }) {
   const { t, locale } = useAppSettings()
   const [{ opp, chances }] = useState(() => {
     const me = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation)
@@ -387,7 +385,7 @@ function SimMatch({ title, squad, boostText, onAgain, onResult }: { title: strin
           {paid && <p className="reward-line">+<Coin className="w-5 h-5" /> {paid.coins} · +{paid.xp} XP</p>}
           {paid?.note && <p className="fatal-note">{paid.note}</p>}
           <button type="button" className="sheet-cta" onClick={onAgain}>{t('duel.again')}</button>
-          <a href="#/fatal" className="chip self-center">{t('fatal.back')}</a>
+          <a href={backHref} className="chip self-center">{t('fatal.back')}</a>
         </div>
       )}
       <ol className="duel-log">

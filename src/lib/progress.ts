@@ -1,16 +1,17 @@
 import type { Player } from '../types'
 import { getAllPlayers, getPlayer } from '../data/catalog'
 import type { ClubState } from './club'
-import { loadLocalStats } from './local-stats'
 
-/** Progreso del jugador: nivel y colección del club (en este dispositivo) + títulos, finales y drafts de las estadísticas */
+/** Progreso del jugador: nivel y colección del club (en este dispositivo) + drafts, victorias y copas de sus contadores */
 export interface Progress {
   level: number
   /** 0–100 hacia el siguiente nivel */
   levelPct: number
-  titles: number
-  finals: number
   drafts: number
+  /** Victorias en Fatal */
+  wins: number
+  /** Copas ganadas */
+  cups: number
   /** Cartas distintas del club */
   owned: number
   collectionPct: number
@@ -27,7 +28,6 @@ export function uniqueCharacters(players: Player[]): Player[] {
 }
 
 export function loadProgress(club: ClubState): Progress {
-  const s = loadLocalStats()
   const total = getAllPlayers().length
   const owned = Object.keys(club.cards).filter(id => club.cards[id] > 0).map(getPlayer).filter((p): p is Player => !!p)
   const byOvr = (a: Player, b: Player) => b.ovr - a.ovr
@@ -37,9 +37,9 @@ export function loadProgress(club: ClubState): Progress {
   return {
     level: Math.floor(club.xp / XP_PER_LEVEL) + 1,
     levelPct: Math.floor(((club.xp % XP_PER_LEVEL) / XP_PER_LEVEL) * 100),
-    titles: s.championships,
-    finals: s.finalsReached,
-    drafts: s.draftsCompleted,
+    drafts: club.career.drafts ?? 0,
+    wins: club.career.duelWins ?? 0,
+    cups: club.career.cupWins ?? 0,
     owned: owned.length,
     collectionPct: total ? Math.floor((owned.length / total) * 100) : 0,
     showcase,

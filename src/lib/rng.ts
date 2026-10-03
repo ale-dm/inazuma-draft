@@ -1,4 +1,4 @@
-/** Mulberry32 — PRNG déterministe pour seeds partagées. */
+/** Mulberry32: generador de números al azar con semilla (copa diaria, ofertas de hoy, puzzles). */
 export function mulberry32(seed: number): () => number {
   let s = seed >>> 0
   return () => {
@@ -20,33 +20,4 @@ export function hashSeed(input: string): number {
 
 export function createRngFromSeed(seed: string): () => number {
   return mulberry32(hashSeed(seed.trim().toLowerCase()))
-}
-
-export function generateSeedString(): string {
-  const bytes = new Uint32Array(2)
-  crypto.getRandomValues(bytes)
-  return `${bytes[0].toString(36)}${bytes[1].toString(36)}`.slice(0, 10)
-}
-
-export function readSeedFromLocation(search = window.location.search): string | null {
-  const seed = new URLSearchParams(search).get('seed')?.trim()
-  return seed && seed.length >= 4 ? seed : null
-}
-
-export function readModeFromLocation(search = window.location.search): 'classic' | 'memory' | null {
-  const m = new URLSearchParams(search).get('mode')
-  return m === 'classic' || m === 'memory' ? m : null
-}
-
-export function buildShareUrl(seed: string, mode: 'classic' | 'memory'): string {
-  const url = new URL(window.location.href)
-  url.searchParams.set('seed', seed)
-  url.searchParams.set('mode', mode)
-  url.hash = ''
-  return url.toString()
-}
-
-export function syncRunUrl(seed: string, mode: 'classic' | 'memory') {
-  const next = buildShareUrl(seed, mode)
-  window.history.replaceState(null, '', next)
 }

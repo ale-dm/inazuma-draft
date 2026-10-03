@@ -21,6 +21,10 @@ export const ADMIN_HASH = '#/admin'
 export const FATAL_HASH = '#/fatal'
 export const FREE_HASH = '#/sobre-gratis'
 export const CODES_HASH = '#/codigos'
+/** Draft (directo al draft MADFUT), su resumen y Fatal Draft */
+export const DRAFT_HASH = '#/draft'
+export const DRAFT_SUMMARY_HASH = '#/draft-resumen'
+export const FATAL_DRAFT_HASH = '#/fatal-draft'
 
 /** Ruta mínima por hash: '#/jugadores' abre el explorador sin perder la partida en curso */
 export function useHashRoute(): string {

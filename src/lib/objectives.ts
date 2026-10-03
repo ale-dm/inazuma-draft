@@ -57,8 +57,8 @@ export const DAILY_OBJECTIVES: Objective[] = [
   { id: 'draft', event: 'drafts', goal: 1, reward: { coins: 300 } },
   { id: 'packs', event: 'packs', goal: 2, reward: { coins: 300 } },
   { id: 'chem', event: 'chem', goal: 24, reward: { coins: 500 } },   // química de 0–33
-  { id: 'semis', event: 'semis', goal: 1, reward: { coins: 400 } },
-  { id: 'title', event: 'titles', goal: 1, reward: { pack: 'gold' } },
+  { id: 'duel', event: 'duelWins', goal: 1, reward: { coins: 400 } },
+  { id: 'cup', event: 'cupWins', goal: 1, reward: { pack: 'gold' } },
 ]
 
 export function objectiveProgress(o: Objective): number {
@@ -87,15 +87,13 @@ export const WEEKLY_OBJECTIVES: Objective[] = [
   { id: 'w-duels', event: 'duelWins', goal: 3, reward: { pack: 'gold' } },
   { id: 'w-cups', event: 'cups', goal: 3, reward: { coins: 1500 } },
   { id: 'w-hl', event: 'hl', goal: 5, reward: { coins: 800 } },
-  { id: 'w-titles', event: 'titles', goal: 2, reward: { coins: 2000, pack: 'gold' } },
+  { id: 'w-cupwins', event: 'cupWins', goal: 2, reward: { coins: 2000, pack: 'gold' } },
 ]
 
 /** Objetivos de carrera (para siempre, por escalones) */
 export const CAREER_OBJECTIVES: Objective[] = [
   { id: 'c-drafts-10', event: 'drafts', goal: 10, reward: { coins: 2000 } },
   { id: 'c-drafts-50', event: 'drafts', goal: 50, reward: { pack: 'legend' } },
-  { id: 'c-titles-1', event: 'titles', goal: 1, reward: { pack: 'gold' } },
-  { id: 'c-titles-10', event: 'titles', goal: 10, reward: { pack: 'legend' } },
   { id: 'c-packs-25', event: 'packs', goal: 25, reward: { coins: 2000 } },
   { id: 'c-packs-100', event: 'packs', goal: 100, reward: { pack: 'legend' } },
   { id: 'c-duels-10', event: 'duelWins', goal: 10, reward: { pack: 'gold' } },

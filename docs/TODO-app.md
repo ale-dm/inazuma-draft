@@ -70,6 +70,15 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] Números de duelo con la escala de MADFUT (el fuerte, media − 1 a − 3; nunca por encima)
 - [ ] Intercambios (necesita cuentas, fase 6/7)
 
+## Flujo de MADFUT (draft → resumen → Fatal Draft / copas)
+- [x] Fuera el modo clásico (Draft FFI, Memoria, alineación, torneo, resultado, semillas y sus estadísticas)
+- [x] «Draft» (inicio) va directo al draft; si hay uno a medias pregunta si seguirlo o empezar otro
+- [x] Resumen del draft: media con estrellas, química, puntos de draft con récord y rango, juegos/equipos/afinidades, y abajo Fatal Draft y Copas de draft
+- [x] El último draft queda guardado y se juega en Fatal Draft y en las copas hasta hacer otro
+- [x] Fatal Draft: división, temporada, boost de la semana, escalera de divisiones con premios, Fatal Classic (duelos) y Fatal Sim (pronto)
+- [x] Copas de draft con el último draft: tarjetas con rondas, premio y boost (si el once lo cumple, +4 de química)
+- [ ] Fatal Sim (la simulación del partido: control, ocasión de ataque y defensa; ver las capturas de MADFUT 25)
+
 ## Herramientas
 - [x] Nombres FR/IT: técnicas 740/513, equipos 133/107, espíritus 212/55 de 289 (wikis fr/it + enlaces entre idiomas de la inglesa). Sin fuente para las descripciones en FR/IT (zukan solo en inglés/japonés)
 - [x] Carga más rápida: cada pantalla en su propio archivo (el inicial pasa de 514 a 355 kB)

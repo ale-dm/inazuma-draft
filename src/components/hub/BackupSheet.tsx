@@ -3,7 +3,7 @@ import { useAppSettings } from '../../context/AppSettings'
 import Sheet from './Sheet'
 
 /** Lo que se guarda en la copia: el club, el draft guardado, estadísticas, preferencias y ajustes */
-const KEYS = ['ffi-club-v1', 'ffi-saved-draft-v1', 'ffi-draft-local-stats-v1', 'ffi-card-stats', 'iz-lang', 'iz-sound', 'iz-theme']
+const KEYS = ['ffi-club-v1', 'ffi-saved-draft-v1', 'ffi-last-draft-v1', 'ffi-card-stats', 'iz-lang', 'iz-sound', 'iz-theme']
 
 /** Copia de seguridad (como Backup de MADFUT, sin cuenta): exportar el club a un archivo e importarlo en otro sitio */
 export default function BackupSheet({ open, onClose }: { open: boolean; onClose: () => void }) {

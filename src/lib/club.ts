@@ -60,6 +60,8 @@ export interface ClubState {
   today: { day: string | null; taken: Record<string, number> }
   /** Códigos canjeados */
   codes: string[]
+  /** Mejores puntos de draft conseguidos (resumen del draft) */
+  draftBest: number
 }
 
 export interface FatalProgress {
@@ -80,7 +82,7 @@ const fresh = (): ClubState => ({
   day: null, counters: {}, claimed: [], collections: [], squads: [],
   week: null, weekCounters: {}, weekClaimed: [], career: {}, careerClaimed: [], dailyCup: null, puzzles: [], hlBest: 0, sbcDone: {}, crest: null,
   fatal: { season: null, points: {}, done: [], division: 3, divPoints: 0 },
-  tokens: {}, freePack: { last: 0, bonus: 0, best: 0 }, today: { day: null, taken: {} }, codes: [],
+  tokens: {}, freePack: { last: 0, bonus: 0, best: 0 }, today: { day: null, taken: {} }, codes: [], draftBest: 0,
 })
 
 function read(): ClubState {
