@@ -1195,3 +1195,25 @@ a.fdr-mode:active { transform: scale(.97); }
 .sim-verdict { text-align: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-style: italic; font-size: 1.4rem; text-transform: uppercase; margin: 0; }
 .sim-verdict.is-goal { color: #2ecc71; } .sim-verdict.is-conceded { color: #e74c3c; }
 .sim-goalchance { text-align: center; margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; color: #7dff9b; font-size: 1.05rem; }
+.sim-tension { display: flex; align-items: center; gap: .5rem; margin: .2rem 0; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; font-size: .85rem; }
+.sim-tension__bar { position: relative; flex: 1; height: .8rem; border-radius: 99px; background: rgba(255, 255, 255, .1); overflow: hidden; }
+.sim-tension__bar i { position: absolute; inset: 0 auto 0 0; border-radius: 99px; background: linear-gradient(90deg, #f1c40f, #ff7a1a, #ff3d6e); transition: width .3s; }
+.sim-tension__bar em { position: absolute; top: 0; bottom: 0; width: 3px; background: #6ab7ff; }
+.sim-tension b { min-width: 2rem; text-align: right; }
+button.sim-pool__card { background: none; border: 0; padding: 0; cursor: pointer; }
+button.sim-pool__card.is-pickable:not(:disabled) { opacity: .75; }
+button.sim-pool__card:disabled:not(.is-played) { cursor: not-allowed; }
+.sim-techs { display: flex; flex-wrap: wrap; gap: .4rem; justify-content: center; }
+.sim-tech { display: flex; flex-direction: column; align-items: center; padding: .35rem .7rem; border-radius: 12px; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .2); color: #fff; }
+.sim-tech small { opacity: .75; }
+.sim-tech.is-on { background: linear-gradient(135deg, #ff7a1a, #ff3d6e); border-color: #ffd23d; }
+.sim-tech:disabled { opacity: .35; }
+.sim-countdown { display: block; height: 3px; border-radius: 3px; background: #ffd23d; transform-origin: left; animation: sim-countdown linear forwards; }
+@keyframes sim-countdown { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+.sim-used { display: flex; flex-direction: column; align-items: center; gap: .15rem; margin: 0; font-size: .85rem; }
+.sim-used .is-mine { color: #ffd23d; } .sim-used .is-opp { color: #6ab7ff; }
+.sim-assist { text-align: center; margin: 0; opacity: .8; font-size: .9rem; }
+.sim-tactics { display: flex; gap: .4rem; justify-content: center; }
+.sim-tactics .chip.is-on { background: #ffd23d; color: #111; }
+.sim-panel--goal { animation: sim-goal .9s ease-out; }
+@keyframes sim-goal { 0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, .9); } 100% { box-shadow: 0 0 0 28px rgba(46, 204, 113, 0); } }
