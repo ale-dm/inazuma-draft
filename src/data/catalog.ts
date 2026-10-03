@@ -1,5 +1,6 @@
 import type { Category, DraftPool, DraftPoolKey, Element, GameId, Player, Position, Special, Staff, StaffRole, Technique } from '../types'
 import { GAME_LABEL } from './games'
+import nicknames from './nicknames.json'
 
 /**
  * Catálogo de jugadores desde Supabase (generado por tools/db/build.py).
@@ -221,6 +222,7 @@ export function rebuildCatalog() {
       id: r.id,
       characterId: r.character_id,
       name: r.name,
+      nickname: (nicknames as Record<string, string>)[r.character_id] ?? null,
       game: r.game,
       team: r.team ?? 'Unaffiliated',
       version: r.version,
