@@ -21,8 +21,8 @@ export const TECH_KEY: Record<Technique['type'], DuelKey> = { Shoot: 'att', Drib
 
 export const techCost = (t: Technique) => Math.round(tpOf(t) * 2)
 
-/** Lo que suma al número de la fase: TP/17 (30 TP → +2, 100 → +6, 200 → +12) y +2 si es de la afinidad de la carta */
-export const techBonus = (t: Technique, card: FatalCard) => Math.max(2, Math.round(tpOf(t) / 17)) + (t.element && t.element === card.p.element ? 2 : 0)
+/** Lo que suma al número de la fase: TP/40 (30 TP → +1, 100 → +3, 200 → +5) y +1 si es de la afinidad de la carta */
+export const techBonus = (t: Technique, card: FatalCard) => Math.max(1, Math.round(tpOf(t) / 40)) + (t.element && t.element === card.p.element ? 1 : 0)
 
 /** Supertécnicas de la carta que valen para ese número (la parada solo en porteros), de más a menos TP */
 export function usableTechs(card: FatalCard, key: DuelKey): Technique[] {
@@ -35,10 +35,10 @@ export function usableTechs(card: FatalCard, key: DuelKey): Technique[] {
 export const gainTension = (cur: number, n: number) => Math.min(TENSION_MAX, cur + n)
 
 /** Acciones de equipo del Sim (aparte de las supertécnicas) */
-export const PRESS = { cost: 80, bonus: 4 }          // presión alta: +4 al control de esa ocasión
-export const HYPER = { cost: 200, bonus: 6 }         // hiperenergía: una vez por partido, carta con espíritu guerrero / Mixi Max / tótem
+export const PRESS = { cost: 80, bonus: 3 }          // presión alta: +3 al control de esa ocasión
+export const HYPER = { cost: 200, bonus: 4 }         // hiperenergía: una vez por partido, carta con espíritu guerrero / Mixi Max / tótem
 export const SHOUT_COST = 120                        // grito del portero: para seguro el ataque rival, una vez por parte
-export const COUNTER_BONUS = 3                       // tras parar un ataque, +3 al control de la siguiente ocasión
+export const COUNTER_BONUS = 2                       // tras parar un ataque, +2 al control de la siguiente ocasión
 
 /** Fatal clásico (duelo de 10 rondas): tensión inicial y ganancia por ronda (+60 al ganarla, +30 al perderla o empatarla) */
 export const DUEL_TENSION = { start: 60, win: 60, lose: 30, draw: 30 }

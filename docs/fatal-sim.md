@@ -42,14 +42,14 @@ en Victory Road es 300 con la técnica más cara en 100: aquí las técnicas lle
 ### Qué puedes hacer en tu turno (se pueden combinar)
 - **Cambiar de carta** entre las 3 que salen (`PICK_COST` 100); salen el nombre y el número, con ▲/▼ si es mejor/peor.
 - **Supertécnica** de la carta que juega, del tipo del número (Regate→control, Tiro→ataque, Bloqueo→defensa,
-  Parada→defensa solo en porteros). Coste **TP × 2** (`techCost`); bonus **TP/17**, mínimo 2, **+2 si es de la afinidad
-  de la carta** (`techBonus`).
-- **Presión alta** (solo en el medio campo): coste 80, +4 al control de esa ocasión (`PRESS`).
-- **Hiperenergía** (una vez por partido, si la carta tiene espíritu guerrero / Mixi Max / tótem): coste 200, +6 al
+  Parada→defensa solo en porteros). Coste **TP × 2** (`techCost`); bonus **TP/40**, mínimo 1, **+1 si es de la afinidad
+  de la carta** (30 TP → +1, 100 → +3, 200 → +5) (`techBonus`).
+- **Presión alta** (solo en el medio campo): coste 80, +3 al control de esa ocasión (`PRESS`).
+- **Hiperenergía** (una vez por partido, si la carta tiene espíritu guerrero / Mixi Max / tótem): coste 200, +4 al
   número de la fase (`HYPER`).
 - **Grito del portero** (solo defendiendo, una vez por parte): coste 120, el ataque rival no entra (`SHOUT_COST`).
-- **Contraataque** (automático): tras parar un ataque rival, +3 al control de tu siguiente ocasión (`COUNTER_BONUS`).
-- **Táctica del descanso** (gratis): Ofensiva (+3 ataque, −3 defensa), Equilibrada o Defensiva (al revés) hasta el
+- **Contraataque** (automático): tras parar un ataque rival, +2 al control de tu siguiente ocasión (`COUNTER_BONUS`).
+- **Táctica del descanso** (gratis): Ofensiva (+2 ataque, −2 defensa), Equilibrada o Defensiva (al revés) hasta el
   final (`TACTIC_MOD`).
 - **IA**: usa su mejor técnica asequible con probabilidad `AI_TECH_PROB` (0,35) en cada fase; mismas reglas de tensión.
 - El resultado se calcula al revelar la fase con lo elegido: `controlWinner` y `shotResult` (`fatal.ts`); la probabilidad

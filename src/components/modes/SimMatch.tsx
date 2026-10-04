@@ -17,6 +17,8 @@ import DuelCard from '../DuelCard'
 import Coin from '../Coin'
 import Screen from '../club/Screen'
 import TensionBar from './TensionBar'
+import ActButton from './ActButton'
+import { ElementIcon, SpecialIcon, TechniqueIcon } from '../GameIcon'
 import type { PickedSquad } from './SquadPicker'
 
 export type Paid = { coins: number; xp: number; note: string | null }
@@ -26,7 +28,7 @@ const QUICK_MS = 1600    // fase sin decisión posible: se ve el cara a cara y s
 const RESULT_MS = 3600   // el resultado se queda en pantalla (o «Siguiente»)
 const HALF_WAIT_MS = 20000
 /** Cambio táctico del descanso: cuánto sube un número y cuánto baja el otro, el resto de la segunda parte */
-const TACTIC_MOD = 3
+const TACTIC_MOD = 2
 /** Probabilidad de que la IA use una supertécnica asequible en cada fase */
 const AI_TECH_PROB = 0.35
 
@@ -38,7 +40,7 @@ type Tone = 'mine' | 'opp' | 'neutral'
 interface LogEntry { minute: number; text: string; tone: Tone }
 
 /** Una acción que se puede elegir en tu turno */
-interface Action { id: string; label: string; desc: string; cost: number; bonus: number; kind: 'tech' | 'press' | 'hyper' | 'shout' }
+interface Action { id: string; label: string; desc: string; cost: number; bonus: number; kind: 'tech' | 'press' | 'hyper' | 'shout'; tech?: Technique }
 
 /** Qué se decide en la fase: dónde juega mi carta y con qué número */
 interface Decision { key: DuelKey; pool: FatalCard[]; pick: number; opp: FatalCard; oppKey: DuelKey; who: Side | null }
@@ -116,7 +118,7 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
   function actions(): Action[] {
     if (!dec || !myCard) return []
     const out: Action[] = usableTechs(myCard, dec.key).map(x => ({
-      id: `t:${x.id}`, kind: 'tech', label: techniqueName(x, locale), cost: techCost(x), bonus: techBonus(x, myCard), desc: t('sim.act.tech', { n: techBonus(x, myCard), stat: statLabel(dec.key) }),
+      id: `t:${x.id}`, kind: 'tech', tech: x, label: techniqueName(x, locale), cost: techCost(x), bonus: techBonus(x, myCard), desc: t('sim.act.tech', { n: techBonus(x, myCard), stat: statLabel(dec.key) }),
     }))
     if (phase === 'control') out.push({ id: 'press', kind: 'press', label: t('sim.act.press'), cost: PRESS.cost, bonus: PRESS.bonus, desc: t('sim.act.pressDesc', { n: PRESS.bonus }) })
     if (!hyperUsed && myCard.p.specials.length) out.push({ id: 'hyper', kind: 'hyper', label: t('sim.act.hyper'), cost: HYPER.cost, bonus: HYPER.bonus, desc: t('sim.act.hyperDesc', { n: HYPER.bonus, stat: statLabel(dec.key) }) })
@@ -334,9 +336,10 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
             )}
             <div className="sim-acts">
               {acts.map(a => (
-                <button key={a.id} type="button" disabled={!sel.includes(a.id) && a.cost > free} onClick={() => toggle(a)} className={`sim-act sim-act--${a.kind} ${sel.includes(a.id) ? 'is-on' : ''}`}>
-                  <b>{a.label}</b><small>{a.desc}</small><em>{a.cost}</em>
-                </button>
+                <ActButton key={a.id} label={a.label} desc={a.desc} cost={a.cost} on={sel.includes(a.id)} disabled={!sel.includes(a.id) && a.cost > free} onClick={() => toggle(a)}
+                  tone={a.tech?.element ?? (a.kind === 'tech' ? 'none' : a.kind)}
+                  icon={a.tech ? <><TechniqueIcon type={a.tech.type} traits={a.tech.traits} className="act-icon" />{a.tech.element && <ElementIcon element={a.tech.element} className="act-icon act-icon--el" />}</>
+                    : a.kind === 'hyper' ? <SpecialIcon type={myCard!.p.specials[0].type} className="act-icon" /> : <span className="act-glyph">{a.kind === 'press' ? '⚡' : '🧤'}</span>} />
               ))}
             </div>
             <button type="button" className="sheet-cta" onClick={confirm}>{t('sim.go')}{selCost ? ` (−${selCost})` : ''}</button>

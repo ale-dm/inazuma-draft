@@ -18,9 +18,11 @@ import type { Technique } from '../../types'
 import DuelCard from '../DuelCard'
 import Coin from '../Coin'
 import Screen from '../club/Screen'
-import { ElementIcon } from '../GameIcon'
+import { ElementIcon, TechniqueIcon } from '../GameIcon'
 import SimMatch from './SimMatch'
 import TensionBar from './TensionBar'
+import ActButton from './ActButton'
+
 import { COMBO_DISCOUNT, COMBO_MAX, DUEL_TENSION, comboCost, gainTension, techBonus, techCost, usableTechs } from '../../lib/tension'
 import { techniqueName } from '../../data/catalog'
 import SquadPicker, { draftSquad, type PickedSquad } from './SquadPicker'
@@ -429,9 +431,9 @@ function Stage({ step, rv, plan, choice, lead, pending, theirsHidden, round, myT
                   {myTechs.map(x => {
                     const cost = comboCost(x, combo)
                     return (
-                      <button key={x.id} type="button" disabled={cost > tension[0]} onClick={() => onTech(x.id)} className={`sim-act sim-act--tech ${techSel === x.id ? 'is-on' : ''}`}>
-                        <b>{techniqueName(x, locale)}</b><small>{t('sim.act.tech', { n: techBonus(x, choice.card), stat: t(STAT_KEY[myKey]) })}</small><em>{cost}</em>
-                      </button>
+                      <ActButton key={x.id} label={techniqueName(x, locale)} desc={t('sim.act.tech', { n: techBonus(x, choice.card), stat: t(STAT_KEY[myKey]) })} cost={cost}
+                        on={techSel === x.id} disabled={cost > tension[0]} onClick={() => onTech(x.id)} tone={x.element ?? 'none'}
+                        icon={<><TechniqueIcon type={x.type} traits={x.traits} className="act-icon" />{x.element && <ElementIcon element={x.element} className="act-icon act-icon--el" />}</>} />
                     )
                   })}
                 </div>

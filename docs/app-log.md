@@ -325,3 +325,5 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
 - Guía de balance (docs/balance-guide.md): cartas, química, modos, series, draft, economía, sobres, TP y receta para medir.
 
 - Duelo clásico: tensión (400), supertécnicas, combo y ventana por pasos con animaciones (ver docs/duelo.md).
+
+- Supertécnicas más suaves (bonus TP/40, +1 afinidad; presión +3, hiperenergía +4, contraataque +2, táctica 2), botones con icono de tipo y afinidad y color de fondo, y fondo de campo en las ventanas de jugada.

@@ -1229,10 +1229,6 @@ a.fdr-mode:active { transform: scale(.97); }
 .sim-switch button b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .sim-switch button:disabled { opacity: .35; }
 .sim-acts { display: flex; flex-direction: column; gap: .35rem; }
-.sim-act { display: grid; grid-template-columns: 1fr auto; grid-template-areas: 'name cost' 'desc cost'; align-items: center; gap: 0 .6rem; padding: .4rem .6rem; border-radius: 12px; text-align: left; color: #fff; background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .2); }
-.sim-act b { grid-area: name; font-size: .95rem; } .sim-act small { grid-area: desc; opacity: .75; }
-.sim-act em { grid-area: cost; font-style: normal; font-weight: 900; font-size: 1.1rem; color: #ffd23d; }
-.sim-act--press b { color: #6ab7ff; } .sim-act--hyper b { color: #ff7ad9; } .sim-act--shout b { color: #7dff9b; }
 .sim-act.is-on { background: linear-gradient(135deg, rgba(255, 122, 26, .45), rgba(255, 61, 110, .45)); border-color: #ffd23d; }
 .sim-act:disabled:not(.is-on) { opacity: .35; }
 .sim-next { align-self: center; padding: .5rem 1.4rem; border-radius: 99px; background: #ffd23d; color: #111; font-weight: 900; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; }
@@ -1295,3 +1291,22 @@ a.fdr-mode:active { transform: scale(.97); }
 @keyframes ds-bounce { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-5px); } }
 @keyframes ds-float { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .ds-backdrop, .ds-panel, .ds-slide-l, .ds-slide-r, .ds-vs b, .ds-result, .ds-gain, .duel-pop { animation: none; } .ds-flip { transition: none; } }
+
+/* Botones de acción con icono y color de afinidad */
+.sim-act { --tone: 255, 255, 255; display: grid; grid-template-columns: auto 1fr auto; grid-template-areas: 'icon name cost' 'icon desc cost'; align-items: center; gap: 0 .65rem; padding: .45rem .65rem; border-radius: 14px; text-align: left; color: #fff;
+  background: linear-gradient(110deg, rgba(var(--tone), .38), rgba(var(--tone), .1) 70%), rgba(255, 255, 255, .05); border: 1px solid rgba(var(--tone), .65); }
+.sim-act b { grid-area: name; font-size: .95rem; } .sim-act small { grid-area: desc; opacity: .8; }
+.sim-act em { grid-area: cost; font-style: normal; font-weight: 900; font-size: 1.15rem; color: #ffd23d; }
+.sim-act__icon { grid-area: icon; display: flex; align-items: center; gap: .15rem; }
+.act-icon { width: 1.7rem; height: 1.7rem; object-fit: contain; filter: drop-shadow(0 1px 3px rgba(0, 0, 0, .6)); }
+.act-icon--el { width: 1.3rem; height: 1.3rem; }
+.act-glyph { font-size: 1.5rem; line-height: 1; }
+.sim-act.is-on { background: linear-gradient(110deg, rgba(var(--tone), .75), rgba(var(--tone), .3) 75%); border-color: #ffd23d; box-shadow: 0 0 0 2px rgba(255, 210, 61, .5), 0 0 14px rgba(var(--tone), .5); }
+.sim-act:disabled:not(.is-on) { opacity: .35; }
+.act-tone--fire { --tone: 255, 106, 43; } .act-tone--air { --tone: 90, 190, 255; } .act-tone--wood { --tone: 80, 200, 100; } .act-tone--earth { --tone: 205, 150, 80; }
+.act-tone--press { --tone: 70, 140, 255; } .act-tone--hyper { --tone: 255, 90, 210; } .act-tone--shout { --tone: 110, 255, 150; }
+/* Fondo de campo en las ventanas de la jugada */
+.ds-panel, .sim-stage { background:
+  linear-gradient(180deg, rgba(5, 12, 28, .78), rgba(5, 12, 28, .62)),
+  repeating-linear-gradient(0deg, #14562f 0 26px, #104a28 26px 52px); }
+.ds-face, .sim-face { position: relative; padding: .5rem .3rem; border-radius: 16px; background: radial-gradient(ellipse at center, rgba(255, 255, 255, .08), transparent 70%); }
