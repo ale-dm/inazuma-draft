@@ -39,3 +39,10 @@ export const PRESS = { cost: 80, bonus: 4 }          // presión alta: +4 al con
 export const HYPER = { cost: 200, bonus: 6 }         // hiperenergía: una vez por partido, carta con espíritu guerrero / Mixi Max / tótem
 export const SHOUT_COST = 120                        // grito del portero: para seguro el ataque rival, una vez por parte
 export const COUNTER_BONUS = 3                       // tras parar un ataque, +3 al control de la siguiente ocasión
+
+/** Fatal clásico (duelo de 10 rondas): tensión inicial y ganancia por ronda (+60 al ganarla, +30 al perderla o empatarla) */
+export const DUEL_TENSION = { start: 60, win: 60, lose: 30, draw: 30 }
+/** Combo: ganar una ronda usando supertécnica abarata la siguiente un 10 % por nivel (máx. 3) */
+export const COMBO_MAX = 3
+export const COMBO_DISCOUNT = 0.1
+export const comboCost = (t: Technique, combo: number) => Math.round(techCost(t) * (1 - COMBO_DISCOUNT * combo))

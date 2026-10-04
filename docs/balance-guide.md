@@ -114,6 +114,16 @@ Detalle en [fatal-sim.md](fatal-sim.md). Resumen de números:
 - Con TP 30–200: coste 60–400, bonus +2…+12. Para que las técnicas pesen más o menos: `techBonus` (divisor 17); para
   que se usen más o menos: `techCost` (factor 2) y `TENSION_GAIN`.
 
+### 2.6 Tensión en el Fatal clásico — `tension.ts`, `Duel.tsx`
+- Barra 0–400, inicio `DUEL_TENSION.start` 60; por ronda: +60 al ganarla, +30 al perderla o empatarla.
+- Una supertécnica por ronda, del tipo del número que juegas (Tiro→ataque, Regate→control, Bloqueo→defensa, Parada→defensa
+  solo porteros). Mismo coste y bonus que en el Sim (`techCost`, `techBonus`); suma al número **antes** de comparar (si
+  empatan, la suma de los 3 también la incluye).
+- **Combo** (`COMBO_MAX` 3, `COMBO_DISCOUNT` 10 %): ganar una ronda con supertécnica abarata la siguiente; usarla sin
+  ganar, o perder, lo reinicia (`comboCost`).
+- IA: `AI_TECH_PROB` 0,35 en `Duel.tsx` con su mejor técnica asequible; mismas reglas.
+- Ritmo de pantalla: `DUEL_THINK_MS` (rival piensa), `AI_LEAD_MS`, y los pasos de la revelación (900/1300/1500 ms).
+
 ## 3. Progresión por modo de Fatal (`src/lib/fatal-series.ts`)
 
 | Concepto | Valor |
@@ -225,6 +235,7 @@ falta, topes: por día, cooldown (`freePack.last` ya se guarda) o quitar venta d
 | Boost semanal | `fatal.ts` · `weeklyBoost` (`amount`) |
 | Dificultad de la IA clásica | `fatal.ts` · `rivalTeam` (±4), `generatedRival`, `aiRespond` |
 | Goles y equilibrio del Sim | `fatal.ts` · `goalChance`, `adaptRival(pull)`, `SIM_CHANCES`, `draw3` |
+| Tensión del duelo clásico y combo | `tension.ts` · `DUEL_TENSION`, `COMBO_*`; `Duel.tsx` · `AI_TECH_PROB` |
 | Tensión, técnicas y táctica del Sim | `tension.ts` · `TENSION_*`, `PICK_COST`, `techCost`, `techBonus`; `SimMatch.tsx` · `TACTIC_MOD`, `AI_TECH_PROB`, `DECIDE_MS` |
 | Duración del Sim | `SimMatch.tsx` · `TICK_MS`, `CONTROL_MS`, `SHOT_MS`, `HALF_MS` |
 | Puntos y premios de Fatal | `fatal-series.ts` · `MATCH_POINTS`, `SERIES_GOAL`, `CLUB_SERIES`, `SIM_SERIES`, `DIVISION_REWARD` |

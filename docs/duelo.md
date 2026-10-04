@@ -46,7 +46,18 @@ Donnarumma 89: 39/34/88).
   responde, estima tu número por la pista de tu carta (tus cartas que comparten esa afinidad, juego o equipo) y juega la carta más floja que lo supera, o "tira" la peor.
 - **Premio**: victoria 400 monedas + 60 XP · empate 150 + 30 · derrota 50 + 15.
 
-## Supertécnicas en el partido: qué se podría hacer (sin hacer todavía)
+## Supertécnicas y flujo de cada ronda (hecho)
+Cada ronda tiene pasos con pausa y animaciones (ventana `ds-*` en `Duel.tsx`):
+1. **Elegir** carta en el campo (y el número si llevas tú).
+2. **Preparar**: ventana con tu carta, el número y, si la carta tiene supertécnicas de ese tipo, botones para usar una
+   (gasta tensión; el número sube en amarillo). «¡Jugar!» confirma, «Cambiar carta» vuelve.
+3. **El rival elige** (puntos animados 1,4 s); si lleva el rival, también «piensa» 1,3 s antes de enseñar su pista.
+4. **Revelación** en 3 tiempos: cartas sobre la mesa (rival boca abajo) → se da la vuelta → supertécnicas y números
+   finales → veredicto (la ganadora se ilumina, la otra se apaga) con la tensión ganada. «Siguiente ronda» continúa;
+   tocar fuera o «Saltar» adelanta la animación.
+Reglas de tensión, combo y costes: [balance-guide.md](balance-guide.md) §2.6.
+
+## Otras ideas (sin hacer todavía)
 
 Ya cuentan en los **números** de la carta (punto 3 de arriba); lo de abajo serían efectos dentro del partido.
 

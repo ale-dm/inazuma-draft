@@ -323,3 +323,5 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
 - Fatal Sim (MADFUT): SimMatch con marcador, línea de ocasiones y paneles de control/ataque; ruta `#/duelo/draftsim`; ver docs/fatal-sim.md.
 
 - Guía de balance (docs/balance-guide.md): cartas, química, modos, series, draft, economía, sobres, TP y receta para medir.
+
+- Duelo clásico: tensión (400), supertécnicas, combo y ventana por pasos con animaciones (ver docs/duelo.md).

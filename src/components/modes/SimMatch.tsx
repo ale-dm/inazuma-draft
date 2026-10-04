@@ -7,7 +7,7 @@ import {
   type FatalCard, type SimChance, type SimResult,
 } from '../../lib/fatal'
 import {
-  COUNTER_BONUS, HYPER, PICK_COST, PRESS, SHOUT_COST, TENSION_GAIN, TENSION_MAX, TENSION_START, gainTension, techBonus, techCost, usableTechs,
+  COUNTER_BONUS, HYPER, PICK_COST, PRESS, SHOUT_COST, TENSION_GAIN, TENSION_START, gainTension, techBonus, techCost, usableTechs,
 } from '../../lib/tension'
 import type { DuelKey } from '../../lib/duel'
 import type { TranslationKey } from '../../i18n/translations'
@@ -16,6 +16,7 @@ import { playSfx } from '../../lib/sfx'
 import DuelCard from '../DuelCard'
 import Coin from '../Coin'
 import Screen from '../club/Screen'
+import TensionBar from './TensionBar'
 import type { PickedSquad } from './SquadPicker'
 
 export type Paid = { coins: number; xp: number; note: string | null }
@@ -478,20 +479,6 @@ function Summary({ title, chances }: { title: string; chances: SimResult[] }) {
       <h3 className="sheet-label">{title}</h3>
       {rows.map(([k, a, b]) => <div key={k} className="sim-stat"><b>{a}</b><span>{k}</span><b>{b}</b></div>)}
     </section>
-  )
-}
-
-function TensionBar({ value, spend, opp, label }: { value: number; spend: number; opp: number; label: string }) {
-  return (
-    <div className="sim-tension" aria-label={label}>
-      <span className="sim-tension__label">{label}</span>
-      <div className="sim-tension__bar">
-        <i style={{ width: `${(Math.max(0, value - spend) / TENSION_MAX) * 100}%` }} />
-        {spend > 0 && <u style={{ left: `${(Math.max(0, value - spend) / TENSION_MAX) * 100}%`, width: `${(Math.min(spend, value) / TENSION_MAX) * 100}%` }} />}
-        <em style={{ left: `${(opp / TENSION_MAX) * 100}%` }} title={String(opp)} />
-      </div>
-      <b>{value - spend}<small>/{TENSION_MAX}</small></b>
-    </div>
   )
 }
 
