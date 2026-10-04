@@ -6,7 +6,7 @@ import { duelReward, type DuelKey } from '../../lib/duel'
 import { getFormation } from '../../lib/lineup'
 import { fieldY } from '../pitch/Pitch'
 import {
-  FATAL_ROUNDS, SIM_CHANCES, aiLead, aiRespond, chooseBoosts, counter, fatalTeam, finalResult, needsTiebreak, perceive, playRound, rivalTeam,
+  FATAL_ROUNDS, SIM_CHANCES, aiLead, adaptRivalDuel, aiRespond, chooseBoosts, counter, fatalTeam, finalResult, needsTiebreak, perceive, playRound, rivalTeam,
   score, simScore, simulate, tiebreak, total, weeklyBoost,
   type FatalCard, type FatalTeam, type Round, type SimChance,
 } from '../../lib/fatal'
@@ -140,7 +140,7 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref }: { 
   const { t, locale } = useAppSettings()
   const [m, setM] = useState<Match>(() => {
     const me = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation)
-    const opp = rivalTeam(teamRating(squad.xi))
+    const opp = adaptRivalDuel(me, rivalTeam(teamRating(squad.xi)))
     return { me, opp, myHand: me.cards, oppHand: opp.cards, rounds: [], first: Math.random() < 0.5 ? 0 : 1, pending: null }
   })
   const [metas, setMetas] = useState<Meta[]>([])

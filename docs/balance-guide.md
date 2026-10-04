@@ -86,8 +86,8 @@ Detalle en [fatal-sim.md](fatal-sim.md). Resumen de números:
   fuera.
 - Ataque: 3 atacantes vs 3 defensas, 1 de cada; **gol con probabilidad** `goalChance(att, def) = clamp(0,08–0,8,
   1/(1+e^(−(att−def−5)/9)))`: igualados ≈ 35 %, +10 ≈ 65 %, −10 ≈ 12 %.
-- **IA** `adaptRival(me, opp, pull = 1)`: suma/resta a todas sus cartas la diferencia entre tus medias de
-  ataque/control/defensa y las suyas (`pull` 1 = las iguala; 0,75 = deja algo de ventaja a quien sea mejor).
+- **IA** `adaptRival(me, opp, pull = SIM_PULL = 0,8)`: suma/resta a todas sus cartas la diferencia entre tus medias de
+  ataque/control/defensa y las suyas (`pull` 1 = las iguala; menos deja ventaja a quien vaya mejor equipado).
 - Puestos: atacantes ST/RW/LW/FW (+CM/MF si hay < 3), controladores CM/MF/LB/RB/LW/RW, defensas CB/GK/DF/LB/RB.
 - Muestra media de ataque/control/defensa (`simTeamStats`) en el marcador.
 - **IA del Sim** (`SimMatch.tsx`, usa `ai.ts`): paga `PICK_COST` para jugar la mejor de sus 3 cartas si gana ≥ 3 y la ocasión
@@ -230,7 +230,24 @@ falta, topes: por día, cooldown (`freePack.last` ya se guarda) o quitar venta d
 
 ---
 
-## 7. Cómo medir un cambio (receta)
+## 7. Medir el equilibrio automáticamente (`npm run balance`)
+`tools/balance/` juega miles de partidos **sin pantalla con el código real** (`src/lib`) y escribe
+[balance-report.md](balance-report.md); sale con error si un indicador se sale de su rango (los rangos están en
+`tools/balance/harness.ts`). `npm run balance -- --n 4000` para más partidos, `-- --live` para usar el catálogo de Supabase
+(por defecto `build/players.json`, con azar con semilla: dos ejecuciones dan lo mismo).
+- **Escenarios**: duelo IA contra IA por nivel (con y sin supertécnicas), tú (humano fuerte o al azar) contra la IA, ventaja
+  de media, química (un solo juego), **condiciones reales** (un once mezclado contra el rival que genera el juego), y el
+  Sim (espejo, sin usar tensión, y ventaja de ir mejor según `SIM_PULL`).
+- **Aproximaciones**: en el Sim no se simulan el cambio de carta pagado, el grito, la hiperenergía ni la táctica del descanso.
+  El «humano fuerte» ve el número exacto de la IA al responder pero lleva con una carta media y su mejor número: es
+  un jugador razonable, no experto.
+- **Lo que encontró** (y se corrigió): el duelo se decide comparando números exactos, así que **+1 a los tres números ya da
+  ~60 % de victorias y +3, ~85 %**. El rival de club entero (+2 de química en todas las cartas) y de media algo mayor
+  ganaba el 85–90 % a un once mezclado. Ahora el rival se adapta (`adaptRivalDuel`, `DUEL_PULL` 0,9) y el Sim deja algo
+  de ventaja a quien va mejor equipado (`SIM_PULL` 0,8, antes 1: ir 8 puntos mejor daba 43 %, sin ventaja).
+- Tras cambiar números de este documento, vuelve a lanzarlo y mira los ⚠.
+
+## 8. Cómo medir un cambio a mano (receta antigua)
 1. `npm run build && npx vite preview --port 4173`.
 2. Seed de un «último draft» en `localStorage` (`ffi-last-draft-v1`) y repetir `#/duelo/draftsim` pulsando «Saltar»;
    leer el marcador (`.sim-score`). Los scripts de prueba están en el historial de la sesión (`sim-many.mjs`):
@@ -240,13 +257,14 @@ falta, topes: por día, cooldown (`freePack.last` ya se guarda) o quitar venta d
 4. Para economía: sumar monedas/día de los objetivos (diarios ≈ 1500 + diario ≈ 300–1200) y compararlo con precios de
    sobres (§5.2).
 
-## 8. Índice rápido de «mandos»
+## 9. Índice rápido de «mandos»
 
 | Quiero cambiar… | Archivo · constante |
 |---|---|
 | Números de una carta por puesto | `duel.ts` · `TEMPLATE`, 0,3, −6/+2, +2 técnicas |
 | Cuánto pesa la química | `fatal.ts` · `CHEM_MOD`; `chemistry.ts` · `THRESHOLDS` |
 | Boost semanal | `fatal.ts` · `weeklyBoost` (`amount`) |
+| Cuánto se adapta el rival (duelo / Sim) | `fatal.ts` · `DUEL_PULL`, `SIM_PULL` |
 | Dificultad de la IA clásica | `fatal.ts` · `rivalTeam` (±4), `generatedRival`, `aiRespond` |
 | Goles y equilibrio del Sim | `fatal.ts` · `goalChance`, `adaptRival(pull)`, `SIM_CHANCES`, `draw3` |
 | Tensión del duelo clásico y combo | `tension.ts` · `DUEL_TENSION`, `COMBO_*`; `Duel.tsx` · `AI_TECH_PROB` |

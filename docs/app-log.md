@@ -329,3 +329,5 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
 - Supertécnicas más suaves (bonus TP/40, +1 afinidad; presión +3, hiperenergía +4, contraataque +2, táctica 2), botones con icono de tipo y afinidad y color de fondo, y fondo de campo en las ventanas de jugada.
 
 - IA competitiva del Fatal (clásico y Sim): decide con las cartas restantes (src/lib/ai.ts), usa tensión y supertécnicas con criterio. 71 % contra la IA antigua en pruebas.
+
+- `npm run balance` (tools/balance): partidos sin pantalla con el código real e informe docs/balance-report.md. Corrige el duelo (rival adaptado, DUEL_PULL 0,9) y el Sim (SIM_PULL 0,8).

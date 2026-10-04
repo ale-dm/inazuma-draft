@@ -308,14 +308,33 @@ function halfMinutes(from: number, to: number, rnd: () => number): number[] {
  */
 export const goalChance = (att: number, def: number) => Math.min(0.8, Math.max(0.08, 1 / (1 + Math.exp(-(att - def - 5) / 9))))
 
+/** Cuánto de la distancia cierra la IA del Sim hacia tus números: 1 = los iguala del todo; menos deja ventaja a quien esté mejor equipado (medido con `npm run balance`) */
+export const SIM_PULL = 0.8
+
 /**
  * La IA se adapta a ti (como en MADFUT): sus tres números (ataque, control, defensa) se igualan a los tuyos (`pull` = parte
  * de la distancia que cierra), así el partido es parejo y lo deciden las cartas que salen, el control y la suerte.
  */
-export function adaptRival(me: FatalTeam, opp: FatalTeam, pull = 1): FatalTeam {
+export function adaptRival(me: FatalTeam, opp: FatalTeam, pull = SIM_PULL): FatalTeam {
   const a = simTeamStats(me), b = simTeamStats(opp)
   const d = { att: Math.round((a.att - b.att) * pull), con: Math.round((a.con - b.con) * pull), def: Math.round((a.def - b.def) * pull) }
   return { ...opp, cards: opp.cards.map(c => ({ ...c, st: { att: c.st.att + d.att, con: c.st.con + d.con, def: c.st.def + d.def } })) }
+}
+
+/** Cuánto de la distancia cierra el rival del duelo clásico hacia tus números (medido con `npm run balance`) */
+export const DUEL_PULL = 0.9
+
+/**
+ * Duelo clásico: el rival se adapta a ti, como en el Sim. Cada ronda se decide comparando números exactos, así que 1 punto
+ * de más en los tres números ya da ~60 % de victorias y 3 puntos, ~85 %; sin adaptar, un once mezclado (sin química)
+ * perdía casi siempre contra un rival de club entero y de media algo mayor. Se le suma o resta a todos sus números `pull`
+ * veces la diferencia entre la media de tus números y la suya.
+ */
+export function adaptRivalDuel(me: FatalTeam, opp: FatalTeam, pull = DUEL_PULL): FatalTeam {
+  const mean = (t: FatalTeam) => t.cards.reduce((n, c) => n + c.st.att + c.st.con + c.st.def, 0) / Math.max(1, t.cards.length * 3)
+  const d = Math.round((mean(me) - mean(opp)) * pull)
+  if (!d) return opp
+  return { ...opp, cards: opp.cards.map(c => ({ ...c, st: { att: c.st.att + d, con: c.st.con + d, def: c.st.def + d } })) }
 }
 
 export function simulate(me: FatalTeam, opp: FatalTeam, rnd = Math.random): SimChance[] {
