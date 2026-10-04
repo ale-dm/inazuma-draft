@@ -207,38 +207,7 @@ export function finalResult(s: [number, number], tb: 0 | 1 | -1 | null): 0 | 1 |
 
 // ---------------------------------------------------------------- la máquina
 
-const best = (c: FatalCard): DuelKey => (['att', 'con', 'def'] as const).reduce((a, k) => (c.st[k] > c.st[a] ? k : a), 'att' as DuelKey)
-
-/** La máquina lleva: una carta de "clase media" (ni la mejor ni la peor, como aconseja la guía) con su mejor número */
-export function aiLead(hand: FatalCard[], rnd = Math.random): { card: FatalCard; stat: DuelKey } {
-  const sorted = [...hand].sort((a, b) => b.st[best(b)] - a.st[best(a)])
-  const mid = Math.floor(sorted.length / 2)
-  const span = Math.max(1, Math.floor(sorted.length / 3))
-  const i = Math.min(sorted.length - 1, Math.max(0, mid + Math.floor((rnd() - 0.5) * 2 * span)))
-  const card = sorted[i]
-  return { card, stat: best(card) }
-}
-
-/** ¿Encaja la carta con la pista de otra? (misma afinidad / juego / equipo, según su pista) */
-export function matchesHint(c: FatalCard, lead: FatalCard): boolean {
-  if (lead.hint === 'element') return c.p.element === lead.p.element
-  if (lead.hint === 'game') return c.p.game === lead.p.game
-  return c.p.team === lead.p.team
-}
-
-/**
- * La máquina responde viendo la pista de tu carta: estima su número (media de tus cartas que encajan con la pista) y
- * juega la carta más floja que lo supera; si ninguna lo supera, "tira" su peor carta para ese número.
- */
-export function aiRespond(hand: FatalCard[], stat: DuelKey, lead: FatalCard, rivalLeft: FatalCard[], rnd = Math.random): FatalCard {
-  const likely = rivalLeft.filter(c => matchesHint(c, lead))
-  const pool = likely.length ? likely : rivalLeft
-  const est = pool.reduce((s, c) => s + c.st[stat], 0) / Math.max(1, pool.length)
-  const k = counter(stat)
-  const beats = hand.filter(c => c.st[k] > est + (rnd() - 0.5) * 6).sort((a, b) => a.st[k] - b.st[k])
-  if (beats.length) return beats[0]
-  return [...hand].sort((a, b) => a.st[k] - b.st[k] || total(a) - total(b))[0]
-}
+export { aiLead, aiRespond, matchesHint, chooseBoosts, perceive } from './ai'
 
 // ---------------------------------------------------------------- simulación
 

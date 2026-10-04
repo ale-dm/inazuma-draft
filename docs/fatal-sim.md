@@ -51,7 +51,9 @@ en Victory Road es 300 con la técnica más cara en 100: aquí las técnicas lle
 - **Contraataque** (automático): tras parar un ataque rival, +2 al control de tu siguiente ocasión (`COUNTER_BONUS`).
 - **Táctica del descanso** (gratis): Ofensiva (+2 ataque, −2 defensa), Equilibrada o Defensiva (al revés) hasta el
   final (`TACTIC_MOD`).
-- **IA**: usa su mejor técnica asequible con probabilidad `AI_TECH_PROB` (0,35) en cada fase; mismas reglas de tensión.
+- **IA competitiva** (`ai.ts` + `aiPlan` en `SimMatch.tsx`): cambia de carta pagando tensión si le compensa, usa supertécnica,
+  presión, hiperenergía y grito solo cuando cambian el resultado, y elige táctica en el descanso según el marcador. Mismas
+  reglas de tensión que tú; ve tus números con error de ±2 y no sabe qué vas a usar.
 - El resultado se calcula al revelar la fase con lo elegido: `controlWinner` y `shotResult` (`fatal.ts`); la probabilidad
   de gol usa `goalChance(ataque + bonus, defensa + bonus)`. Los goles muestran goleador y asistente.
 - «Saltar» resuelve lo que quede sin usar tensión (`autoResults`).

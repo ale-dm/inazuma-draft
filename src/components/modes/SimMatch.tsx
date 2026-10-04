@@ -4,7 +4,7 @@ import { teamLabel, techniqueName } from '../../data/catalog'
 import { teamRating } from '../../lib/chemistry'
 import {
   SIM_CHANCES, SIM_PER_HALF, adaptRival, autoResults, cardOf, controlWinner, fatalTeam, goalChance, rivalTeam, shotResult, simScore, simTeamStats, simulate,
-  type FatalCard, type SimChance, type SimResult,
+  chooseBoosts, perceive, type FatalCard, type SimChance, type SimResult,
 } from '../../lib/fatal'
 import {
   COUNTER_BONUS, HYPER, PICK_COST, PRESS, SHOUT_COST, TENSION_GAIN, TENSION_START, gainTension, techBonus, techCost, usableTechs,
@@ -29,8 +29,6 @@ const RESULT_MS = 3600   // el resultado se queda en pantalla (o «Siguiente»)
 const HALF_WAIT_MS = 20000
 /** Cambio táctico del descanso: cuánto sube un número y cuánto baja el otro, el resto de la segunda parte */
 const TACTIC_MOD = 2
-/** Probabilidad de que la IA use una supertécnica asequible en cada fase */
-const AI_TECH_PROB = 0.35
 
 type Phase = 'run' | 'control' | 'ctrlRes' | 'shot' | 'shotRes' | 'runout' | 'half' | 'end'
 type Tactic = 'bal' | 'att' | 'def'
@@ -81,6 +79,9 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
   const [outcome, setOutcome] = useState<Outcome>({ mine: [], opp: null, bonus: [0, 0], shout: false })
   const [hyperUsed, setHyperUsed] = useState(false)
   const [shoutUsed, setShoutUsed] = useState<[boolean, boolean]>([false, false])
+  const [oppHyperUsed, setOppHyperUsed] = useState(false)
+  const [oppShoutUsed, setOppShoutUsed] = useState<[boolean, boolean]>([false, false])
+  const [oppTactic, setOppTactic] = useState<Tactic>('bal')
   const [counter, setCounter] = useState(false)
   const [paid, setPaid] = useState<Paid | null>(null)
   const [last, setLast] = useState<SimResult | null>(null)
@@ -149,25 +150,51 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
     }))
   }
 
-  /** La IA usa su mejor técnica asequible con probabilidad AI_TECH_PROB (no ve la mía) */
-  function aiTech(card: FatalCard, key: DuelKey): Technique | null {
-    const opts = usableTechs(card, key).filter(x => techCost(x) <= tension[1])
-    return opts.length && Math.random() < AI_TECH_PROB ? opts[0] : null
+  /** Táctica de la IA (en la segunda parte): +/- TACTIC_MOD al ataque y la defensa */
+  const oppTacticBonus = (key: DuelKey) => (secondHalf && oppTactic !== 'bal' ? (key === 'att' ? 1 : key === 'def' ? -1 : 0) * (oppTactic === 'att' ? TACTIC_MOD : -TACTIC_MOD) : 0)
+
+  /**
+   * La IA decide sus refuerzos como un jugador: mira cuánto le falta (con tus números vistos con error y sin saber qué vas
+   * a usar), y gasta lo más barato que cubra la diferencia: supertécnica, presión alta, hiperenergía o grito del portero.
+   */
+  function aiPlan(d: Decision, mine: FatalCard): { bonus: number; cost: number; names: string[]; tech: Technique | null; shout: boolean; hyper: boolean } {
+    const own = d.opp
+    const ownNum = own.st[d.oppKey] + oppTacticBonus(d.oppKey)
+    const myNum = perceive(mine.st[d.key] + tacticBonus(d.key) + (phase === 'control' && counter ? COUNTER_BONUS : 0))
+    const none = { bonus: 0, cost: 0, names: [] as string[], tech: null, shout: false, hyper: false }
+    // grito del portero: si defiende y tu ataque tiene muchas opciones
+    if (d.who === 0 && !oppShoutUsed[half] && tension[1] >= SHOUT_COST && goalChance(mine.st.att, own.st.def) >= 0.5 && Math.random() < 0.85) {
+      return { ...none, cost: SHOUT_COST, shout: true, names: [t('sim.act.shout')] }
+    }
+    const techs = usableTechs(own, d.oppKey)
+    const opts: { id: string; cost: number; bonus: number }[] = techs.map(x => ({ id: `t:${x.id}`, cost: techCost(x), bonus: techBonus(x, own) }))
+    if (phase === 'control') opts.push({ id: 'press', cost: PRESS.cost, bonus: PRESS.bonus })
+    if (!oppHyperUsed && own.p.specials.length) opts.push({ id: 'hyper', cost: HYPER.cost, bonus: HYPER.bonus })
+    // control: hay que superar tu número; ataque: llegar a la altura de tu defensa + 5; defensa: dejar tu ataque a ≤ 1
+    const need = d.key === 'con' ? myNum - ownNum + 1 : d.who === 0 ? myNum - ownNum - 1 : myNum - ownNum + 6
+    const picked = chooseBoosts(opts, need, tension[1], 2)
+    if (!picked.length) return none
+    const tech = techs.find(x => picked.some(o => o.id === `t:${x.id}`)) ?? null
+    return {
+      bonus: picked.reduce((n, o) => n + o.bonus, 0), cost: picked.reduce((n, o) => n + o.cost, 0), tech, shout: false, hyper: picked.some(o => o.id === 'hyper'),
+      names: picked.map(o => (o.id === 'press' ? t('sim.act.press') : o.id === 'hyper' ? t('sim.act.hyper') : tech ? techniqueName(tech, locale) : '')),
+    }
   }
 
   function confirm() {
     if (!dec || !myCard) return
     const chosen = acts.filter(a => sel.includes(a.id) && a.cost <= tension[0])
-    const spent: [number, number] = [chosen.reduce((n, a) => n + a.cost, 0), 0]
-    const oppT = aiTech(dec.opp, dec.oppKey)
-    spent[1] = oppT ? techCost(oppT) : 0
+    const ai = aiPlan(dec, myCard)
+    const spent: [number, number] = [chosen.reduce((n, a) => n + a.cost, 0), ai.cost]
     const bm = chosen.reduce((n, a) => n + a.bonus, 0) + tacticBonus(dec.key) + (phase === 'control' && counter ? COUNTER_BONUS : 0)
-    const bo = oppT ? techBonus(oppT, dec.opp) : 0
-    const shout = chosen.some(a => a.kind === 'shout')
+    const bo = ai.bonus + oppTacticBonus(dec.oppKey)
+    if (ai.hyper) setOppHyperUsed(true)
+    if (ai.shout) setOppShoutUsed(([a, b]) => (half ? [a, true] : [true, b]))
+    const shout = chosen.some(a => a.kind === 'shout') || ai.shout
     if (chosen.some(a => a.kind === 'hyper')) setHyperUsed(true)
     if (shout) setShoutUsed(([a, b]) => (half ? [a, true] : [true, b]))
     const names = chosen.map(a => a.label)
-    setOutcome({ mine: names, opp: oppT ? techniqueName(oppT, locale) : null, bonus: [bm, bo], shout })
+    setOutcome({ mine: names, opp: ai.names.length ? ai.names.join(' + ') : null, bonus: [bm, bo], shout })
     setSel([])
     if (phase === 'control') {
       const ball = controlWinner(c, [bm, bo])
@@ -236,6 +263,32 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
     return () => clearTimeout(id)
   }, [phase, clock, idx, chances])
 
+  // la IA, como tú, puede pagar para jugar la mejor de sus 3 cartas (si le compensa y le llega la tensión)
+  const aiPicked = useRef('')
+  useEffect(() => {
+    if ((phase !== 'control' && phase !== 'shot') || (phase === 'shot' && ballNow === -1)) return
+    const key = `${idx}-${phase}`
+    if (aiPicked.current === key || !dec || !myCard) return
+    aiPicked.current = key
+    const pool = dec.who === 0 ? c.atk[0].pools[1] : dec.who === 1 ? c.atk[1].pools[0] : c.control.pools[1]
+    const cur = pool.indexOf(dec.opp)
+    const bestI = pool.reduce((b, x, i) => (x.st[dec.oppKey] > pool[b].st[dec.oppKey] ? i : b), 0)
+    const gain = pool[bestI].st[dec.oppKey] - dec.opp.st[dec.oppKey]
+    const close = Math.abs(myCard.st[dec.key] - dec.opp.st[dec.oppKey]) <= 10
+    if (bestI === cur || gain < 3 || !close || tension[1] < PICK_COST + 20) return
+    setTension(([a, b]) => [a, b - PICK_COST])
+    setChances(list => list.map((x, i) => {
+      if (i !== idx) return x
+      if (phase === 'control') return { ...x, control: { ...x.control, pick: [x.control.pick[0], bestI] } }
+      const w = ballNow as Side
+      const d = x.atk[w]
+      const pick: [number, number] = w === 0 ? [d.pick[0], bestI] : [bestI, d.pick[1]]
+      const atk: [typeof d, typeof d] = w === 0 ? [{ ...d, pick }, x.atk[1]] : [x.atk[0], { ...d, pick }]
+      return { ...x, atk }
+    }))
+    say(t('sim.log.aiSwap', { name: pool[bestI].p.name }), 'opp')
+  }, [phase, idx, ballNow]) // eslint-disable-line react-hooks/exhaustive-deps
+
   // decisiones (esperan si hay algo que decidir) y resultados (se quedan en pantalla)
   useEffect(() => {
     if (phase === 'control' || phase === 'shot') {
@@ -262,7 +315,7 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
   }, [done, paid, results]) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    if (phase === 'half') say(t('sim.log.half', { a: s[0], b: s[1] }), 'neutral', 45)
+    if (phase === 'half') { say(t('sim.log.half', { a: s[0], b: s[1] }), 'neutral', 45); setOppTactic(s[1] < s[0] ? 'att' : s[1] > s[0] ? 'def' : 'bal') }
     if (phase === 'end') say(t('sim.log.end', { a: s[0], b: s[1] }), 'neutral', 90)
   }, [phase]) // eslint-disable-line react-hooks/exhaustive-deps
 

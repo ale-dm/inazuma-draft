@@ -61,9 +61,19 @@ las stats individuales; el +2 de técnicas, cuánto pesan.
   suma de los 3; si sigue igual, nadie puntúa.
 - **Desempate** si la diferencia final es ≤ 1: carta restante de cada uno, suma de los 3, gana quien saque más de
   `TIEBREAK_MARGIN = 5`; si no, empate.
-- **IA al llevar** (`aiLead`): carta de «clase media» con su mejor número. **IA al responder** (`aiRespond`): estima tu
-  número con la media de tus cartas que comparten la pista, juega la más floja que la supera (margen aleatorio ±3) o
-  tira la peor.
+- **IA** (`src/lib/ai.ts`): compite con las cartas que os quedan, no al azar.
+  - *Al llevar* (`aiLead`): para cada carta y número mira tu mejor respuesta posible con lo que te queda (tu mayor número
+    del contrario, visto con error de ±`AI_NOISE` = 2) y juega el que más probabilidad de ganar da gastando la carta
+    más barata (`COST_WEIGHT` 0,45 penaliza gastar cartas buenas). Ataca por donde eres débil y guarda las fuertes para
+    responder.
+  - *Al responder* (`aiRespond`): candidatas = tus cartas que encajan con la pista de la que juegas (las de número alto
+    pesan más, `exp((v − máx)/4)`); juega la carta con más probabilidad de ganarte sin gastar una buena; si ninguna llega
+    al 20 %, tira la peor.
+  - *Supertécnicas* (`chooseBoosts`): gasta la más barata que le dé la victoria si va perdiendo por poco (o, el 40 %, una
+    barata si gana por muy poco); no las gasta si no cubren la diferencia. Ve tu número con error y no sabe qué técnica
+    usas.
+  - Medido (4000 partidos de prueba, mismo nivel): nueva vence a la antigua el 71 %; contra un «humano» que ve el número
+    exacto de la IA al responder, la nueva empata (49 %) y la antigua perdía (25 %).
 - **Rival** (`rivalTeam`): 50 % equipo real del catálogo (su mejor once, media a ±4 de la tuya; si no hay, los 5 más
   cercanos) y 50 % generado «Fatal IA» (`generatedRival`: formación al azar, 11 del mismo juego, mismo elemento si puede,
   OVR de cada carta a ±3 de tu media, escalando a ±7 y sin límite).
@@ -80,6 +90,10 @@ Detalle en [fatal-sim.md](fatal-sim.md). Resumen de números:
   ataque/control/defensa y las suyas (`pull` 1 = las iguala; 0,75 = deja algo de ventaja a quien sea mejor).
 - Puestos: atacantes ST/RW/LW/FW (+CM/MF si hay < 3), controladores CM/MF/LB/RB/LW/RW, defensas CB/GK/DF/LB/RB.
 - Muestra media de ataque/control/defensa (`simTeamStats`) en el marcador.
+- **IA del Sim** (`SimMatch.tsx`, usa `ai.ts`): paga `PICK_COST` para jugar la mejor de sus 3 cartas si gana ≥ 3 y la ocasión
+  está igualada (≤ 10 de diferencia); decide sus refuerzos con `chooseBoosts` (supertécnica, presión alta, hiperenergía
+  una vez por partido) y grita (`SHOUT_COST`) cuando tu ataque tiene ≥ 50 % de gol; en el descanso elige táctica según el
+  marcador (pierde → ofensiva, gana → defensiva).
 - Medida de referencia (25 partidos de prueba con un equipo de OVR ~68): ≈ 3,4 goles/partido, reparto parejo.
 
 ### 2.3 Copas de draft (`src/lib/cups.ts`, `Cups.tsx`) — usan el motor antiguo `src/engine/sim.ts`

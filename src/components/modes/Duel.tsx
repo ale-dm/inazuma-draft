@@ -6,7 +6,7 @@ import { duelReward, type DuelKey } from '../../lib/duel'
 import { getFormation } from '../../lib/lineup'
 import { fieldY } from '../pitch/Pitch'
 import {
-  FATAL_ROUNDS, SIM_CHANCES, aiLead, aiRespond, counter, fatalTeam, finalResult, needsTiebreak, playRound, rivalTeam,
+  FATAL_ROUNDS, SIM_CHANCES, aiLead, aiRespond, chooseBoosts, counter, fatalTeam, finalResult, needsTiebreak, perceive, playRound, rivalTeam,
   score, simScore, simulate, tiebreak, total, weeklyBoost,
   type FatalCard, type FatalTeam, type Round, type SimChance,
 } from '../../lib/fatal'
@@ -133,7 +133,6 @@ interface Plan {
 
 const DUEL_THINK_MS = 1400
 const AI_LEAD_MS = 1300
-const AI_TECH_PROB = 0.35
 
 const withBonus = (c: FatalCard, k: DuelKey, n: number): FatalCard => (n ? { ...c, st: { ...c.st, [k]: c.st[k] + n } } : c)
 
@@ -169,7 +168,7 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref }: { 
   // la máquina lleva: se toma un momento y elige al empezar su ronda
   useEffect(() => {
     if (over || lead !== 1 || m.pending || step !== 'pick') return
-    const id = setTimeout(() => setM(x => ({ ...x, pending: aiLead(x.oppHand) })), AI_LEAD_MS)
+    const id = setTimeout(() => setM(x => ({ ...x, pending: aiLead(x.oppHand, x.myHand) })), AI_LEAD_MS)
     return () => clearTimeout(id)
   }, [over, lead, m.pending, step])
 
@@ -202,15 +201,18 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref }: { 
     }
   }
 
-  function aiTech(card: FatalCard, key: DuelKey): Technique | null {
-    const opts = usableTechs(card, key).filter(x => techCost(x) <= tension[1])
-    return opts.length && Math.random() < AI_TECH_PROB ? opts[0] : null
+  /** La IA usa su supertécnica si con ella pasa de perder (o de ganar por muy poco) a ganar, viendo tu número con error */
+  function aiTech(card: FatalCard, key: DuelKey, myNum: number): Technique | null {
+    const techs = usableTechs(card, key)
+    const opts = techs.map(x => ({ id: x.id, cost: techCost(x), bonus: techBonus(x, card) }))
+    const pick = chooseBoosts(opts, perceive(myNum) - card.st[key] + 1, tension[1], 1)[0]
+    return pick ? techs.find(x => x.id === pick.id) ?? null : null
   }
 
   function beginReveal(mine: { card: FatalCard; stat: DuelKey }, theirs: FatalCard, theirKey: DuelKey) {
     const myKey = lead === 0 ? mine.stat : counter(m.pending!.stat)
     const mineTech = selTech && comboCost(selTech, combo) <= tension[0] ? selTech : null
-    const oppTech = aiTech(theirs, theirKey)
+    const oppTech = aiTech(theirs, theirKey, mine.card.st[myKey])
     const bm = mineTech ? techBonus(mineTech, mine.card) : 0
     const bo = oppTech ? techBonus(oppTech, theirs) : 0
     const statLead = lead === 0 ? myKey : theirKey
