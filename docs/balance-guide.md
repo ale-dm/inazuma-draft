@@ -111,7 +111,7 @@ Detalle en [fatal-sim.md](fatal-sim.md). Resumen de números:
   `SHOUT_COST` 120 (una vez por parte, para seguro) · contraataque `COUNTER_BONUS` +2 (todo en `tension.ts`).
 - Táctica del descanso `TACTIC_MOD` 2 (`SimMatch.tsx`); IA: `AI_TECH_PROB` 0,35. El partido espera tus decisiones; tiempos de
   pantalla en `SimMatch.tsx` (`QUICK_MS`, `RESULT_MS`).
-- Con TP 30–200: coste 60–400, bonus +1…+5 (+1 con afinidad; antes TP/17 daba hasta +12, demasiado). Para que las técnicas pesen más o menos: `techBonus` (divisor 17); para
+- Con TP 30–200: coste 60–400, bonus +1…+5 (+1 con afinidad; antes TP/17 daba hasta +12, demasiado). Para que las técnicas pesen más o menos: `techBonus` (divisor 40); para
   que se usen más o menos: `techCost` (factor 2) y `TENSION_GAIN`.
 
 ### 2.6 Tensión en el Fatal clásico — `tension.ts`, `Duel.tsx`
