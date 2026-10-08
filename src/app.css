@@ -1310,3 +1310,14 @@ a.fdr-mode:active { transform: scale(.97); }
   linear-gradient(180deg, rgba(5, 12, 28, .78), rgba(5, 12, 28, .62)),
   repeating-linear-gradient(0deg, #14562f 0 26px, #104a28 26px 52px); }
 .ds-face, .sim-face { position: relative; padding: .5rem .3rem; border-radius: 16px; background: radial-gradient(ellipse at center, rgba(255, 255, 255, .08), transparent 70%); }
+
+/* Guía de la primera vez */
+.tut { z-index: 70; }
+.tut__panel { gap: .9rem; text-align: center; }
+.tut__count { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; letter-spacing: .08em; opacity: .7; }
+.tut__text { margin: 0; font-size: 1.05rem; line-height: 1.4; min-height: 6.5rem; animation: ds-fade .4s ease-out; }
+.tut__dots { display: flex; justify-content: center; gap: .4rem; }
+.tut__dots i { width: .55rem; height: .55rem; border-radius: 99px; background: rgba(255, 255, 255, .25); transition: background .3s, transform .3s; }
+.tut__dots i.is-done { background: rgba(255, 210, 61, .6); }
+.tut__dots i.is-on { background: #ffd23d; transform: scale(1.3); }
+.tut .ds-actions .sheet-cta { flex: 1; }

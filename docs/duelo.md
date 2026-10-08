@@ -57,6 +57,14 @@ Cada ronda tiene pasos con pausa y animaciones (ventana `ds-*` en `Duel.tsx`):
    tocar fuera o «Saltar» adelanta la animación.
 Reglas de tensión, combo y costes: [balance-guide.md](balance-guide.md) §2.6.
 
+## Sonido, vibración y guía (hecho)
+- **Sonidos** (`src/lib/sfx.ts`, mismo interruptor que el resto): al dar la vuelta la carta (`flip`), al subir supertécnicas
+  (`tech`), al ganar o perder el punto (`win`/`lose`, `tick` en empate), y en el Sim el gol (`goal`/`lose`), el grito del
+  portero (`shout`) y la parada (`tick`).
+- **Vibración** (`buzz`): gol, encajar gol, empate y grito. En dispositivos sin vibración (iPhone, escritorio) no hace nada.
+- **Guía** (`Tutorial.tsx`): tres pasos la primera vez que entras a cada modo (`ffi-tut-fatal-v1`, `ffi-tut-sim-v1`). Se
+  puede saltar y no vuelve a salir.
+
 ## Otras ideas (sin hacer todavía)
 
 Ya cuentan en los **números** de la carta (punto 3 de arriba); lo de abajo serían efectos dentro del partido.

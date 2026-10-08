@@ -12,7 +12,7 @@ import {
 } from '../../lib/fatal'
 import { addCoins, addXp, track } from '../../lib/club'
 import { addDraftResult, addSeriesResult, findSeries } from '../../lib/fatal-series'
-import { playSfx } from '../../lib/sfx'
+import { buzz, playSfx } from '../../lib/sfx'
 import type { TranslationKey } from '../../i18n/translations'
 import type { Technique } from '../../types'
 import DuelCard from '../DuelCard'
@@ -22,6 +22,7 @@ import { ElementIcon, TechniqueIcon } from '../GameIcon'
 import SimMatch from './SimMatch'
 import TensionBar from './TensionBar'
 import ActButton from './ActButton'
+import Tutorial from './Tutorial'
 
 import { COMBO_DISCOUNT, COMBO_MAX, DUEL_TENSION, comboCost, gainTension, techBonus, techCost, usableTechs } from '../../lib/tension'
 import { techniqueName } from '../../data/catalog'
@@ -105,9 +106,14 @@ export default function Duel({ source, seriesId }: { source: DuelSource; seriesI
 
   const again = () => setGame(g => g + 1)
   const back = source === 'draft' || source === 'draftsim' ? FATAL_DRAFT_HASH : '#/fatal'
-  return source === 'sim' || source === 'draftsim'
+  const isSim = source === 'sim' || source === 'draftsim'
+  const match = isSim
     ? <SimMatch key={game} title={title} squad={picked} boostText={boostText} settle={res => payout(res, onResult)} onAgain={again} backHref={back} />
     : <FatalMatch key={game} title={title} squad={picked} boostText={boostText} onAgain={again} onResult={onResult} backHref={back} />
+  return <>
+    <Tutorial key={`tut-${game}`} kind={isSim ? 'sim' : 'fatal'} />
+    {match}
+  </>
 }
 
 // ---------------------------------------------------------------- Mi club / Draft
@@ -241,12 +247,23 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref }: { 
     return () => clearTimeout(id)
   }, [step, plan, rv])
 
+  // sonido de cada tiempo de la revelación: se da la vuelta, suben las supertécnicas y, al final, el resultado
+  useEffect(() => {
+    if (step !== 'reveal' || !plan) return
+    if (rv === 1) playSfx('flip')
+    if (rv === 2 && (plan.mineTech || plan.oppTech)) playSfx('tech')
+    if (rv === 3) {
+      const w = plan.round.winner
+      playSfx(w === 0 ? 'win' : w === 1 ? 'lose' : 'tick')
+      buzz(w === 0 ? 'goal' : w === 1 ? 'conceded' : 'tap')
+    }
+  }, [step, plan, rv])
+
   // al llegar al veredicto se apunta la ronda
   useEffect(() => {
     if (step !== 'reveal' || !plan || rv < 3 || applied.current) return
     applied.current = true
     const { round, orig } = plan
-    if (round.winner === 0) playSfx('goal')
     setM(x => ({ ...x, myHand: x.myHand.filter(c => c !== orig[0]), oppHand: x.oppHand.filter(c => c !== orig[1]), rounds: [...x.rounds, round], pending: null }))
     setMetas(x => [...x, { orig }])
     setTension(plan.tension)

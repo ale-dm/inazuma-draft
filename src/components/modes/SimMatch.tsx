@@ -12,7 +12,7 @@ import {
 import type { DuelKey } from '../../lib/duel'
 import type { TranslationKey } from '../../i18n/translations'
 import type { Technique } from '../../types'
-import { playSfx } from '../../lib/sfx'
+import { buzz, playSfx } from '../../lib/sfx'
 import DuelCard from '../DuelCard'
 import Coin from '../Coin'
 import Screen from '../club/Screen'
@@ -224,9 +224,12 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
     const assist = r.assist !== r.scorer ? t('sim.log.assist', { name: r.assist.p.name }) : ''
     if (goal) {
       say(t('sim.log.goal', { team: who === 0 ? t('duel.you') : oppName, name: r.scorer.p.name, def: defender.p.name }) + assist, who === 0 ? 'mine' : 'opp')
-      playSfx(who === 0 ? 'goal' : 'pick')
+      playSfx(who === 0 ? 'goal' : 'lose')
+      buzz(who === 0 ? 'goal' : 'conceded')
     } else {
       say(shout ? t('sim.log.shout') : t('sim.log.saved', { def: defender.p.name, name: r.scorer.p.name }), who === 0 ? 'opp' : 'mine')
+      playSfx(shout ? 'shout' : 'tick')
+      if (shout) buzz('tap')
       if (who === 1) setCounter(true)
     }
     setPhase('shotRes')
