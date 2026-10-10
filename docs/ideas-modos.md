@@ -1,5 +1,7 @@
 # Ideas de modos de juego (gacha gratuito con tus cartas)
 
+Plan de cada modo, con pasos y criterio de hecho: [plan-modos.md](plan-modos.md).
+
 Lista para decidir qué hacer después. Cada modo dice de qué juego sale la idea, cómo se juega, qué aporta a la
 colección y el coste de construirlo: **S** (horas, sin backend), **M** (días, lógica nueva), **L** (semanas o backend).
 Todo gratis: el premio sale de jugar (monedas, sobres, fichas), sin compras con dinero.
