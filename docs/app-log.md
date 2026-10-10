@@ -335,3 +335,5 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
 - Sonidos nuevos en las revelaciones y el Sim, vibración en el móvil y guía de tres pasos la primera vez en Fatal y Sim.
 
 - Sim: penaltis con elección de dirección (1 de cada 10 ataques ganados) y cambios de suplentes en el descanso (solo con el último draft).
+
+- Historial de Fatal (src/lib/history.ts, components/modes/MatchHistory.tsx): cada partido de club, Sim y draft se guarda en el dispositivo con marcador, rival y modo (máx. 200). En la página de Fatal: números, racha, forma y últimos 8 partidos con filtro.
