@@ -155,3 +155,24 @@ Para no tener todo el juego basado en el mismo verbo, este orden alterna:
 2. ¿El **pronóstico** de la Liga debe dar puntos extra solo en monedas (sin tocar el resultado), o también en cartas?
 3. ¿El **farol** del Torneo de técnicas está bien, o es demasiado azar?
 4. ¿Quieres que el **penalti del Sim** pase a calibrar (barra de tiempo) en vez de elegir dirección? Es el primer test del verbo nuevo en un modo que ya existe.
+
+## 7. Estado de implementación
+
+Lógica con pruebas (`npm run test:minigames`, 9 pruebas) y una pantalla para probarlos: **`#/minijuegos`**
+(sin premio, para sentir el juego).
+
+| Mecánica | Lógica | Pantalla de prueba | Conectada a un modo |
+|---|---|---|---|
+| Calibrar (barra) | `src/lib/minigames/calibrate.ts` (`barPos`, `calibrate`) | sí | no (pendiente: Ruleta y tiro de la Campaña) |
+| Farol (técnica boca abajo) | `src/lib/minigames/bluff.ts` (`bluffOutcome`, `aiBluffGuess`) | sí | no (pendiente: Torneo de técnicas) |
+| Pronóstico de jornada | `src/lib/minigames/forecast.ts` (`forecastScore`) | sí | no (pendiente: Liga) |
+| Tablero de fusiones | `src/lib/minigames/board.ts` (`matchRecipe`, `readyRecipes`, `merge`) | no | no (pendiente: Fusión) |
+
+**Lo que no está hecho** y conviene decidir antes:
+- Conectar la calibración a un modo. La opción más barata es el penalti del Sim (pregunta 4 de este documento): pasar
+  de elegir dirección a calibrar.
+- La pantalla del tablero de fusiones. La lógica ya sirve; falta dibujarla con arrastrar y soltar.
+- Las recetas reales (`fusions.json`) y las reglas de farol contra la máquina en el torneo.
+
+**Cómo se mide que la variedad funciona** (§4): cuando un modo use su mecánica, se mide su tiempo por decisión en el
+navegador y se cuentan las decisiones reales de diez partidas.
