@@ -12,6 +12,7 @@ import Coin from '../Coin'
 import Screen from '../club/Screen'
 import MatchHistory from './MatchHistory'
 import Challenges from './Challenges'
+import DifficultyPicker from './DifficultyPicker'
 import { Check, Clock } from 'lucide-react'
 
 /** Milisegundos hasta el lunes que viene (nueva temporada) */
@@ -70,6 +71,7 @@ export default function Fatal() {
   return (
     <Screen title="FATAL">
       <p className="fd-hint">{t('fatal.intro')}</p>
+      <DifficultyPicker />
       <section className="fatal-panel fatal-panel--club">
         <header>
           <b className="fatal-panel__title">{t('hub.duelClub')}</b>

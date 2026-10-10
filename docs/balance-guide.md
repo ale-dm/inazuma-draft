@@ -138,6 +138,20 @@ Detalle en [fatal-sim.md](fatal-sim.md). Resumen de números:
 - IA: `AI_TECH_PROB` 0,35 en `Duel.tsx` con su mejor técnica asequible; mismas reglas.
 - Ritmo de pantalla: `DUEL_THINK_MS` (rival piensa), `AI_LEAD_MS`, y los pasos de la revelación (900/1300/1500 ms).
 
+### 2.7 Dificultad (`src/lib/difficulty.ts`)
+Se elige en la página del Fatal y se guarda en el club. Cambia la IA (`noise`: error con que ve tus números; `cost`: cuánto
+cuida sus cartas buenas), cuánto se adapta su equipo al tuyo (`duelPull`, `simPull`) y el premio (`reward`).
+
+| Nivel | Error al ver tus números | Cuida cartas | Rival duelo / Sim | Premio |
+|---|---|---|---|---|
+| Fácil | 3,5 | 0,6 | 1,05 / 1,0 | ×0,7 |
+| Normal | 2 | 0,45 | 0,9 / 0,8 | ×1 |
+| Difícil | 0,8 | 0,3 | 0,6 / 0,5 | ×1,5 |
+
+Ojo con el signo de `pull`: 1 iguala al rival contigo; por encima de 1 queda por debajo de ti (más fácil); por debajo, sigue
+más fuerte (más difícil). Medido con `npm run balance -- --difficulty easy|hard`: un jugador razonable (5b, media 68) gana
+el 48 % en fácil, el 40 % en normal y el 15 % en difícil.
+
 ## 3. Progresión por modo de Fatal (`src/lib/fatal-series.ts`)
 
 | Concepto | Valor |
@@ -267,7 +281,7 @@ falta, topes: por día, cooldown (`freePack.last` ya se guarda) o quitar venta d
 | Números de una carta por puesto | `duel.ts` · `TEMPLATE`, 0,3, −6/+2, +2 técnicas |
 | Cuánto pesa la química | `fatal.ts` · `CHEM_MOD`; `chemistry.ts` · `THRESHOLDS` |
 | Boost semanal | `fatal.ts` · `weeklyBoost` (`amount`) |
-| Cuánto se adapta el rival (duelo / Sim) | `fatal.ts` · `DUEL_PULL`, `SIM_PULL` |
+| Cuánto se adapta el rival (duelo / Sim) | `fatal.ts` · `DUEL_PULL`, `SIM_PULL`; por nivel: `difficulty.ts` · `LEVELS` |
 | Dificultad de la IA clásica | `fatal.ts` · `rivalTeam` (±4), `generatedRival`, `aiRespond` |
 | Goles y equilibrio del Sim | `fatal.ts` · `goalChance`, `adaptRival(pull)`, `SIM_CHANCES`, `draw3` |
 | Tensión del duelo clásico y combo | `tension.ts` · `DUEL_TENSION`, `COMBO_*`; `Duel.tsx` · `AI_TECH_PROB` |

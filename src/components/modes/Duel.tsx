@@ -24,6 +24,7 @@ import TensionBar from './TensionBar'
 import ActButton from './ActButton'
 import Tutorial from './Tutorial'
 import { recordMatch } from '../../lib/history'
+import { level } from '../../lib/difficulty'
 import type { MatchRecord } from '../../lib/club'
 
 import { COMBO_DISCOUNT, COMBO_MAX, DUEL_TENSION, comboCost, gainTension, techBonus, techCost, usableTechs } from '../../lib/tension'
@@ -58,7 +59,9 @@ function payout(res: 0 | 1 | -1, onResult: OnResult, rec: { mode: DuelSource; gf
     track('fatalWins')
     if (rec.spent === 0) track('fatalNoSpend')
   }
-  const r = duelReward(res === 0 ? [1, 0] : res === 1 ? [0, 1] : [0, 0])
+  const base = duelReward(res === 0 ? [1, 0] : res === 1 ? [0, 1] : [0, 0])
+  const mult = level().reward
+  const r = { coins: Math.round(base.coins * mult), xp: Math.round(base.xp * mult) }
   addCoins(r.coins)
   addXp(r.xp)
   track('duels')

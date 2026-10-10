@@ -1,4 +1,5 @@
 import type { DuelKey, DuelStats } from './duel'
+import { level } from './difficulty'
 
 /**
  * La máquina del Fatal (clásico y Sim). Compite de verdad: calcula con las cartas que os quedan en lugar de jugar al
@@ -11,15 +12,11 @@ export interface AiCard {
   p: { element: string; game: string; team: string }
 }
 
-/** Error con el que la máquina ve tus números */
-export const AI_NOISE = 2
-/** Cuánto pesa gastar una carta buena (cada carta sólo se juega una vez en las 10 rondas) frente a ganar la ronda */
-const COST_WEIGHT = 0.45
 
 const counter = (k: DuelKey): DuelKey => (k === 'att' ? 'def' : k === 'def' ? 'att' : 'con')
 const total = (c: AiCard) => c.st.att + c.st.con + c.st.def
 const sigmoid = (x: number) => 1 / (1 + Math.exp(-x))
-const noise = (rnd: () => number) => (rnd() - 0.5) * 2 * AI_NOISE
+const noise = (rnd: () => number) => (rnd() - 0.5) * 2 * level().noise
 
 /** Coste de oportunidad de jugar la carta: 0 (la más floja de la mano) a 1 (la mejor) */
 function costs<T extends AiCard>(hand: T[]): Map<T, number> {
@@ -48,7 +45,7 @@ export function aiLead<T extends AiCard>(hand: T[], rivalLeft: T[], rnd = Math.r
       const k = counter(stat)
       const yourBest = Math.max(-1, ...rivalLeft.map(c => c.st[k])) + noise(rnd)
       const pWin = sigmoid((card.st[stat] - yourBest - 0.5) / 2.5)
-      const score = pWin - COST_WEIGHT * cost.get(card)! + (card.st[stat] - yourBest) / 60 + (rnd() - 0.5) * 0.06
+      const score = pWin - level().cost * cost.get(card)! + (card.st[stat] - yourBest) / 60 + (rnd() - 0.5) * 0.06
       if (!pick || score > pick.score) pick = { card, stat, score }
     }
   }
@@ -74,7 +71,7 @@ export function aiRespond<T extends AiCard>(hand: T[], stat: DuelKey, lead: AiCa
   for (const c of hand) {
     const p = cands.reduce((s, v, i) => s + (c.st[k] > v ? w[i] : 0), 0) / sw
     bestP = Math.max(bestP, p)
-    const score = p - COST_WEIGHT * cost.get(c)!
+    const score = p - level().cost * cost.get(c)!
     if (score > bestScore) { bestScore = score; bestCard = c }
   }
   if (bestP < 0.2) return [...hand].sort((a, b) => total(a) - total(b) || a.st[k] - b.st[k])[0]

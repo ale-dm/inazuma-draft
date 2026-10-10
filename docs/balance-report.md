@@ -1,78 +1,80 @@
 # Informe de equilibrio (generado)
 
-Generado por `npm run balance` (`tools/balance`) con 1500 partidos por escenario, catálogo de build/players.json y azar con semilla. Gana A = la parte que aparece primero. Rango de cada indicador entre paréntesis; fuera de rango se marca ⚠.
+Generado por `npm run balance` (`tools/balance`) con 400 partidos por escenario, catálogo de build/players.json y azar con semilla. Gana A = la parte que aparece primero. Rango de cada indicador entre paréntesis; fuera de rango se marca ⚠.
 
 ## 1. Duelo clásico: IA contra IA al mismo nivel
 
 | Media | Gana A % | Empate % | Gana B % | Desempate % | con supertécnicas: A / E / B % |
 |---|---|---|---|---|---|
-| 60 | 46.2 | 7.1 | 46.7 | 26.5 | 44.9 / 9.2 / 45.9 |
-| 68 | 46.9 | 8.1 | 45 | 28.2 | 46.5 / 6.3 / 47.2 |
-| 75 | 44.6 | 10.1 | 45.3 | 27.1 | 43.9 / 10.3 / 45.8 |
-| 82 | 45.1 | 9.7 | 45.3 | 27.9 | 45.6 / 9.7 / 44.7 |
-| 88 | 45.5 | 8.5 | 46 | 23.8 | 45.3 / 11.2 / 43.5 |
+| 60 | 41.5 | 8 | 50.5 | 23.5 | 47 / 8.8 / 44.3 |
+| 68 | 44 | 8.3 | 47.8 | 25.8 | 47.3 / 7 / 45.8 |
+| 75 | 41.5 | 9 | 49.5 | 27.3 | 49.3 / 7.8 / 43 |
+| 82 | 47.8 | 10.8 | 41.5 | 26.5 | 39.5 / 10.8 / 49.8 |
+| 88 | 45.3 | 11 | 43.8 | 25.5 | 47.3 / 8 / 44.8 |
 
 ## 2. Duelo clásico: tú contra la IA (media 75)
 
 | Tú juegas… | Ganas % | Empate % | Pierdes % |
 |---|---|---|---|
-| como un humano fuerte (ve el número exacto de la IA) | 38.1 | 8.4 | 53.5 |
-| sin criterio (al azar) | 0.9 | 0.8 | 98.3 |
+| como un humano fuerte (ve el número exacto de la IA) | 40.5 | 8 | 51.5 |
+| sin criterio (al azar) | 0.5 | 0.8 | 98.8 |
 
 ## 3. Duelo clásico: sensibilidad a la media (IA contra IA, sin adaptar al rival; solo informativo)
 
 | Media A / B | Gana A % | Empate % | Gana B % |
 |---|---|---|---|
-| 75 / 75 | 44.7 | 9.1 | 46.2 |
-| 78 / 75 | 84.3 | 5.3 | 10.4 |
-| 81 / 75 | 99.3 | 0.3 | 0.4 |
+| 75 / 75 | 45.5 | 10.5 | 44 |
+| 78 / 75 | 87.5 | 5 | 7.5 |
+| 81 / 75 | 98.8 | 0.8 | 0.5 |
 | 87 / 75 | 100 | 0 | 0 |
 
 ## 4. Duelo clásico: sensibilidad a la química (un solo juego contra mezclado, misma media 75, sin adaptar; solo informativo)
 
 | A | Gana A % | Empate % | Gana B % |
 |---|---|---|---|
-| solo IE1 | 96.2 | 1.1 | 2.7 |
-| solo GO1 | 86.9 | 5 | 8.1 |
-| solo VR | 87.7 | 6 | 6.3 |
+| solo IE1 | 95.8 | 1.5 | 2.8 |
+| solo GO1 | 83.8 | 8 | 8.3 |
+| solo VR | 88.5 | 5.5 | 6 |
 
 ## 5. Fatal Sim (12 ocasiones, 90 min)
 
 | Escenario | Gana A % | Empate % | Gana B % | Goles/partido | Posesión A % |
 |---|---|---|---|---|---|
-| media 68, los dos usan tensión | 38.3 | 19.7 | 41.9 | 4.30 | 49.4 |
-| media 82, los dos usan tensión | 41.3 | 18.7 | 40 | 4.37 | 50.8 |
-| media 75, A no usa tensión (como «Saltar») | 26.9 | 16.5 | 56.6 | 4.43 | 41.7 |
+| media 68, los dos usan tensión | 40.3 | 20.3 | 39.5 | 4.17 | 50.6 |
+| media 82, los dos usan tensión | 40 | 20.8 | 39.3 | 4.29 | 49.9 |
+| media 75, A no usa tensión (como «Saltar») | 24.8 | 19.8 | 55.5 | 4.51 | 42.4 |
 
 ## 5b. Duelo clásico en condiciones reales: tu equipo mezclado contra el rival que genera el juego
 
 | Tu media | Rival | Juegas como | Ganas % | Empate % | Pierdes % | Química media por carta, tuya / rival antes de adaptarlo |
 |---|---|---|---|---|---|---|
-| 68 | IA (equipo real o generado) | IA | 40.3 | 7.3 | 52.4 | -0.5 / 2.6 |
-| 68 | IA (equipo real o generado) | humano fuerte | 34.6 | 6.7 | 58.7 | -0.5 / 2.6 |
-| 75 | IA (equipo real o generado) | IA | 36.1 | 10.8 | 53.1 | -0.4 / 2.6 |
-| 75 | IA (equipo real o generado) | humano fuerte | 29.5 | 8.5 | 62 | -0.4 / 2.6 |
-| 82 | IA (equipo real o generado) | IA | 38.9 | 10.8 | 50.3 | -0.5 / 2.6 |
-| 82 | IA (equipo real o generado) | humano fuerte | 33.1 | 9.7 | 57.2 | -0.5 / 2.6 |
+| 68 | IA (equipo real o generado) | IA | 51.8 | 7 | 41.3 | -0.5 / 2.6 |
+| 68 | IA (equipo real o generado) | humano fuerte | 48 | 7 | 45 | -0.5 / 2.6 |
+| 75 | IA (equipo real o generado) | IA | 48.5 | 13 | 38.5 | -0.4 / 2.6 |
+| 75 | IA (equipo real o generado) | humano fuerte | 46.3 | 9.5 | 44.3 | -0.4 / 2.6 |
+| 82 | IA (equipo real o generado) | IA | 48.8 | 9.8 | 41.5 | -0.5 / 2.6 |
+| 82 | IA (equipo real o generado) | humano fuerte | 49.8 | 8 | 42.3 | -0.5 / 2.6 |
 
 ### Cuánto se adapta el rival del duelo (`DUEL_PULL`), media 75
 
 | pull | Humano fuerte gana % | IA gana % | Equipo con más química (+1,5 de media) gana % |
 |---|---|---|---|
-| 1 | 37.5 | 42 | 81.5 |
-| 0.9 | 27.9 | 36.3 | 78.5 |
-| 0.75 | 20.3 | 26.7 | 69.3 |
+| 1 | 43.8 | 41 | 79.3 |
+| 0.9 | 36 | 37.5 | 77.8 |
+| 0.75 | 24.3 | 27 | 70.8 |
 
 ## 6. Fatal Sim: ventaja de ir mejor equipado según cuánto se adapta la IA (`pull`)
 
 | Media A / B | pull | Gana A % | Empate % | Gana B % |
 |---|---|---|---|---|
-| 80 / 72 | 1 | 40 | 18.6 | 41.4 |
-| 80 / 72 | 0.8 | 58.3 | 14.2 | 27.5 |
-| 80 / 72 | 0.7 | 63.1 | 15.8 | 21.1 |
+| 80 / 72 | 1 | 42 | 17.3 | 40.8 |
+| 80 / 72 | 0.8 | 55.5 | 15.8 | 28.8 |
+| 80 / 72 | 0.7 | 63.3 | 16.8 | 20 |
 
 ## Indicadores fuera de rango
 
-Ninguno.
+- ⚠ Duelo espejo (media 60): gana A 41.5 % (42–58)
+- ⚠ Duelo espejo (media 75): gana A 41.5 % (42–58)
+- ⚠ Duelo espejo con supertécnicas (media 82): gana A 39.5 % (42–58)
 
-Tiempo: 291 s.
+Tiempo: 76 s.

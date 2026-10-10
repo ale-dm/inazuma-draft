@@ -3,6 +3,7 @@ import { FORMATIONS, autoAssign, getFormation, lineupToArray, type FormationId, 
 import { chemistry, teamRating } from './chemistry'
 import { duelStats, type DuelKey, type DuelStats } from './duel'
 import { isoWeek } from './club'
+import { level } from './difficulty'
 import { GAMES, getAllPlayers, getDraftPools, getTeamRoster, teamLogo } from '../data/catalog'
 import { pickBestXI } from '../data/ffi-rosters'
 
@@ -335,7 +336,7 @@ export const SIM_PULL = 0.8
  * La IA se adapta a ti (como en MADFUT): sus tres números (ataque, control, defensa) se igualan a los tuyos (`pull` = parte
  * de la distancia que cierra), así el partido es parejo y lo deciden las cartas que salen, el control y la suerte.
  */
-export function adaptRival(me: FatalTeam, opp: FatalTeam, pull = SIM_PULL): FatalTeam {
+export function adaptRival(me: FatalTeam, opp: FatalTeam, pull = level().simPull): FatalTeam {
   const a = simTeamStats(me), b = simTeamStats(opp)
   const d = { att: Math.round((a.att - b.att) * pull), con: Math.round((a.con - b.con) * pull), def: Math.round((a.def - b.def) * pull) }
   return { ...opp, cards: opp.cards.map(c => ({ ...c, st: { att: c.st.att + d.att, con: c.st.con + d.con, def: c.st.def + d.def } })) }
@@ -350,7 +351,7 @@ export const DUEL_PULL = 0.9
  * perdía casi siempre contra un rival de club entero y de media algo mayor. Se le suma o resta a todos sus números `pull`
  * veces la diferencia entre la media de tus números y la suya.
  */
-export function adaptRivalDuel(me: FatalTeam, opp: FatalTeam, pull = DUEL_PULL): FatalTeam {
+export function adaptRivalDuel(me: FatalTeam, opp: FatalTeam, pull = level().duelPull): FatalTeam {
   const mean = (t: FatalTeam) => t.cards.reduce((n, c) => n + c.st.att + c.st.con + c.st.def, 0) / Math.max(1, t.cards.length * 3)
   const d = Math.round((mean(me) - mean(opp)) * pull)
   if (!d) return opp

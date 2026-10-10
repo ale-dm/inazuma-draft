@@ -64,6 +64,8 @@ export interface ClubState {
   draftBest: number
   /** Partidos de Fatal jugados, el más reciente primero */
   history: MatchRecord[]
+  /** Dificultad de la IA del Fatal (por defecto, normal) */
+  difficulty?: 'easy' | 'normal' | 'hard'
 }
 
 /** Un partido de Fatal: de dónde sale, resultado (0 gana, 1 pierde, −1 empate), marcador y rival */

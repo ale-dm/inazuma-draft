@@ -339,3 +339,5 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
 - Historial de Fatal (src/lib/history.ts, components/modes/MatchHistory.tsx): cada partido de club, Sim y draft se guarda en el dispositivo con marcador, rival y modo (máx. 200). En la página de Fatal: números, racha, forma y últimos 8 partidos con filtro.
 
 - Retos de la semana de Fatal (src/lib/challenges.ts, components/modes/Challenges.tsx): 3 de 5 cada semana (siempre los mismos para todos), con contadores en los objetivos semanales (fatalTechs, fatalWins, fatalNoSpend, penGoals, subsMade) y premio al cobrar.
+
+- Dificultad del Fatal (fácil, normal, difícil): cambia la IA, el rival y el premio (src/lib/difficulty.ts); se elige en la página del Fatal.

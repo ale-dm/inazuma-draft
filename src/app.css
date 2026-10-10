@@ -1363,3 +1363,12 @@ a.fdr-mode:active { transform: scale(.97); }
 .chal__foot { display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
 .chal__foot .chip:disabled { opacity: .4; }
 .chal__ok { color: #3dff8a; font-weight: 800; text-transform: uppercase; font-size: .8rem; }
+
+/* Dificultad del Fatal */
+.diff { display: flex; flex-direction: column; gap: .35rem; }
+.diff__label { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; opacity: .75; }
+.diff__opts { display: grid; grid-template-columns: repeat(3, 1fr); gap: .4rem; }
+.diff__opts button { display: flex; flex-direction: column; align-items: center; padding: .45rem .3rem; border-radius: 12px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .2); color: #fff; }
+.diff__opts button b { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; text-transform: uppercase; }
+.diff__opts button small { opacity: .75; font-size: .72rem; }
+.diff__opts button.on { background: linear-gradient(135deg, #ff7a1a, #ff3d6e); border-color: #ffd23d; }

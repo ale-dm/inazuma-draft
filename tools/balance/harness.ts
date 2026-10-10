@@ -12,7 +12,7 @@ g.localStorage = { getItem: (k: string) => store.get(k) ?? null, setItem: (k: st
 let seed = 20261004
 Math.random = () => { seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296 }
 
-const A = g.__BALANCE_ARGS__ as { live: boolean; n: number; root: string }
+const A = g.__BALANCE_ARGS__ as { live: boolean; n: number; root: string; difficulty: string }
 if (!A.live) {
   const db = JSON.parse(fs.readFileSync(path.join(A.root, 'build/players.json'), 'utf8'))
   const cards = db.cards.map((c: { techniques: string[] }) => ({ ...c, card_techniques: [...new Set(c.techniques)].map((t, i) => ({ slot: i + 1, technique_id: t })) }))
@@ -35,6 +35,9 @@ type FatalTeam = import('../../src/lib/fatal').FatalTeam
 type FatalCard = import('../../src/lib/fatal').FatalCard
 type DuelKey = 'att' | 'con' | 'def'
 await loadCatalog()
+const { setDifficulty } = await import('../../src/lib/difficulty')
+setDifficulty(A.difficulty as 'easy' | 'normal' | 'hard')
+console.log(`Dificultad: ${A.difficulty}`)
 const ALL: Player[] = getAllPlayers().filter(p => p.image)
 const N = A.n
 const NO_BOOST = { kind: 'game' as const, value: 'NONE' as unknown as GameId, amount: 0 }

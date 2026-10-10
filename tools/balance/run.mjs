@@ -15,5 +15,6 @@ await build({
   define: { 'import.meta.env': '{"BASE_URL":"/"}' }, banner: { js: "import { createRequire } from 'module'; const require = createRequire(import.meta.url);" },
 })
 const args = process.argv.slice(2)
-globalThis.__BALANCE_ARGS__ = { live: args.includes('--live'), n: Number(args[args.indexOf('--n') + 1]) || 1500, root }
+const di = args.indexOf('--difficulty')
+globalThis.__BALANCE_ARGS__ = { live: args.includes('--live'), n: Number(args[args.indexOf('--n') + 1]) || 1500, root, difficulty: di >= 0 ? args[di + 1] : 'normal' }
 await import(pathToFileURL(out).href)
