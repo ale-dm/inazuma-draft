@@ -153,6 +153,12 @@ function sim(a: FatalTeam, b0: FatalTeam, pa: Pol, pull: number): SimOut {
     ten[1] = T.gainTension(ten[1] - bb.cost, ball === 1 ? T.TENSION_GAIN.ballWon : T.TENSION_GAIN.ballLost)
     if (ball === -1) continue
     out.balls++; if (ball === 0) out.ballA++
+    if (c.penalty) {
+      // penalti: direcciones al azar (el jugador elige algo mejor que el azar; la medida es conservadora)
+      const kick = Math.floor(Math.random() * 3) as F.PenDir, keep = Math.floor(Math.random() * 3) as F.PenDir
+      if (F.penaltyGoal(kick, keep, c.penRoll)) { if (ball === 0) out.ga++; else out.gb++ }
+      continue
+    }
     const d = c.atk[ball]
     const atkSide = ball, defSide = 1 - ball
     const sc = F.cardOf(d, 0), df = F.cardOf(d, 1)

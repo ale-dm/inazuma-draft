@@ -58,10 +58,16 @@ en Victory Road es 300 con la técnica más cara en 100: aquí las técnicas lle
   de gol usa `goalChance(ataque + bonus, defensa + bonus)`. Los goles muestran goleador y asistente.
 - «Saltar» resuelve lo que quede sin usar tensión (`autoResults`).
 
+### Penaltis y cambios (hecho)
+- **Penalti** (`PENALTY_RATE` 0,1): uno de cada diez ataques que ganan el balón acaba en penalti. Si chutas tú, eliges
+  izquierda, centro o derecha; si defiendes, eliges hacia dónde te lanzas. El otro lado elige al azar. Gol con
+  `penaltyGoal`: si las direcciones son distintas entra el 80 %; si el portero adivina, el 25 %. Sin tensión.
+- **Cambios** en el descanso (`MAX_SUBS` 2): solo con el último draft, que guarda el banquillo (`PickedSquad.bench`).
+  Tocas un titular y luego un suplente de su misma posición. La segunda parte se vuelve a sortear con el once nuevo.
+  Con un once de club (sin banquillo) no aparece el panel.
+
 ### Ideas que faltan
-- **Cambios** de jugador en el descanso (el draft tiene 7 suplentes).
-- **Penalti**: en una ocasión con probabilidad > 70 %, elegir el lado del tiro.
-- Animación de gol más vistosa y sonidos propios.
+- Animación de gol más vistosa.
 
 ## Suposiciones (sin confirmar)
 - Número y minutos de las ocasiones, y la curva de probabilidad de gol (en MADFUT solo se ve «probabilidad de ataque»).

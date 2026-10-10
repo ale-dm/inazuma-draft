@@ -249,7 +249,19 @@ export interface SimChance {
   roll: number
   /** Asistente: se elige entre los otros atacantes del pool */
   assist: number
+  /** Penalti: en vez del ataque, el chut lo decides tú (o el portero) con una dirección */
+  penalty: boolean
+  /** Tirada del resultado del penalti (0–1) */
+  penRoll: number
 }
+
+/** Uno de cada diez ataques que ganan el balón acaba en penalti */
+export const PENALTY_RATE = 0.1
+/** Dirección del chut / de la estirada: 0 izquierda, 1 centro, 2 derecha */
+export type PenDir = 0 | 1 | 2
+
+/** Penalti: si el portero adivina la dirección el gol es raro; si no, casi siempre entra */
+export const penaltyGoal = (kick: PenDir, keep: PenDir, roll: number) => (kick !== keep ? roll < 0.8 : roll < 0.25)
 
 export const cardOf = (d: Duelists, side: 0 | 1) => d.pools[side][d.pick[side]]
 
@@ -262,6 +274,10 @@ export interface SimResult {
   chance?: number
   scorer?: FatalCard
   assist?: FatalCard
+  /** Penalti: direcciones del chut y de la estirada */
+  penalty?: boolean
+  kick?: PenDir
+  keep?: PenDir
 }
 
 /** Control: gana el balón el de más control (con lo que sume cada uno); empate = fuera */
@@ -290,6 +306,10 @@ export function autoResults(chances: SimChance[]): SimResult[] {
   return chances.map(c => {
     const ball = controlWinner(c)
     if (ball === -1) return { minute: c.minute, ball, goal: false }
+    if (c.penalty) {
+      const kick = Math.floor(Math.random() * 3) as PenDir, keep = Math.floor(Math.random() * 3) as PenDir
+      return { minute: c.minute, ball, goal: penaltyGoal(kick, keep, c.penRoll), penalty: true, kick, keep }
+    }
     const r = shotResult(c, ball)
     return { minute: c.minute, ball, goal: r.goal, chance: r.chance, scorer: r.scorer, assist: r.assist }
   })
@@ -352,6 +372,8 @@ export function simulate(me: FatalTeam, opp: FatalTeam, rnd = Math.random): SimC
       atk: [duel(list(attackers, me), list(defenders, opp)), duel(list(attackers, opp), list(defenders, me))],
       roll: rnd(),
       assist: Math.floor(rnd() * 3),
+      penalty: rnd() < PENALTY_RATE,
+      penRoll: rnd(),
     })
   }
   return out

@@ -230,6 +230,9 @@ falta, topes: por día, cooldown (`freePack.last` ya se guarda) o quitar venta d
 
 ---
 
+- **Penaltis** (`PENALTY_RATE` 0,1, `penaltyGoal` en `fatal.ts`): 80 % si las direcciones son distintas, 25 % si el portero
+  adivina. El script los mide con direcciones al azar (el jugador real puede acertar más o menos).
+
 ## 7. Medir el equilibrio automáticamente (`npm run balance`)
 `tools/balance/` juega miles de partidos **sin pantalla con el código real** (`src/lib`) y escribe
 [balance-report.md](balance-report.md); sale con error si un indicador se sale de su rango (los rangos están en

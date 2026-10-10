@@ -4,14 +4,16 @@ import { teamLabel, techniqueName } from '../../data/catalog'
 import { teamRating } from '../../lib/chemistry'
 import {
   SIM_CHANCES, SIM_PER_HALF, adaptRival, autoResults, cardOf, controlWinner, fatalTeam, goalChance, rivalTeam, shotResult, simScore, simTeamStats, simulate,
-  chooseBoosts, perceive, type FatalCard, type SimChance, type SimResult,
+  chooseBoosts, perceive, penaltyGoal, type FatalCard, type PenDir, type SimChance, type SimResult,
 } from '../../lib/fatal'
 import {
   COUNTER_BONUS, HYPER, PICK_COST, PRESS, SHOUT_COST, TENSION_GAIN, TENSION_START, gainTension, techBonus, techCost, usableTechs,
 } from '../../lib/tension'
 import type { DuelKey } from '../../lib/duel'
 import type { TranslationKey } from '../../i18n/translations'
-import type { Technique } from '../../types'
+import type { Player, Technique } from '../../types'
+import type { LineupMap, SlotId } from '../../lib/lineup'
+import type { FatalTeam } from '../../lib/fatal'
 import { buzz, playSfx } from '../../lib/sfx'
 import DuelCard from '../DuelCard'
 import Coin from '../Coin'
@@ -27,6 +29,11 @@ const TICK_MS = 55       // un minuto de reloj entre ocasiones
 const QUICK_MS = 1600    // fase sin decisión posible: se ve el cara a cara y sigue
 const RESULT_MS = 3600   // el resultado se queda en pantalla (o «Siguiente»)
 const HALF_WAIT_MS = 20000
+const PEN_MS = 6000
+/** Cambios permitidos en el descanso */
+const MAX_SUBS = 2
+const DIRS: PenDir[] = [0, 1, 2]
+const DIR_KEY = ['sim.pen.left', 'sim.pen.centre', 'sim.pen.right'] as const
 /** Cambio táctico del descanso: cuánto sube un número y cuánto baja el otro, el resto de la segunda parte */
 const TACTIC_MOD = 2
 
@@ -61,13 +68,20 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
   title: string; squad: PickedSquad; boostText: string; settle: (res: 0 | 1 | -1) => Paid; onAgain: () => void; backHref: string
 }) {
   const { t, locale } = useAppSettings()
-  const [{ me, opp, init }] = useState(() => {
+  const [setup] = useState(() => {
     const me_ = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation)
     const opp_ = adaptRival(me_, rivalTeam(teamRating(squad.xi)))
     return { me: me_, opp: opp_, init: simulate(me_, opp_) }
   })
+  const opp = setup.opp
   const oppName = teamLabel(opp.name, locale)
-  const [chances, setChances] = useState<SimChance[]>(init)
+  // el once puede cambiar en el descanso: `me` y los tiempos de la segunda parte se rehacen
+  const [me, setMe] = useState<FatalTeam>(setup.me)
+  const [lineup, setLineup] = useState<LineupMap>(squad.lineup)
+  const [bench, setBench] = useState<Player[]>(squad.bench ?? [])
+  const [subsDone, setSubsDone] = useState(0)
+  const [subOut, setSubOut] = useState<string | null>(null)
+  const [chances, setChances] = useState<SimChance[]>(setup.init)
   const [idx, setIdx] = useState(0)
   const [phase, setPhase] = useState<Phase>('run')
   const [clock, setClock] = useState(0)
@@ -109,7 +123,9 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
     }
     return null
   }
-  const dec = decision()
+  // penalti: en vez de atacar se elige una dirección (ver penaltyGoal)
+  const isPen = phase === 'shot' && ballNow !== -1 && !!c.penalty
+  const dec = isPen ? null : decision()
   const myCard = dec ? dec.pool[dec.pick] : null
 
   const tacticBonus = (key: DuelKey) => (secondHalf && tactic !== 'bal' ? (key === 'att' ? 1 : key === 'def' ? -1 : 0) * (tactic === 'att' ? TACTIC_MOD : -TACTIC_MOD) : 0)
@@ -237,6 +253,46 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
   const act = useRef(confirm)
   act.current = confirm
 
+  /** Penalti: tú eliges la dirección (chutas, o te lanzas si defiendes) y el otro lado la elige al azar */
+  function confirmPenalty(mine: PenDir) {
+    const w = ballNow as Side
+    const other = Math.floor(Math.random() * 3) as PenDir
+    const kick = w === 0 ? mine : other
+    const keep = w === 0 ? other : mine
+    const goal = penaltyGoal(kick, keep, c.penRoll)
+    const res: SimResult = { minute: c.minute, ball: w, goal, penalty: true, kick, keep }
+    setLast(res)
+    setResults(x => [...x, res])
+    if (goal) {
+      say(t('sim.log.penGoal', { team: w === 0 ? t('duel.you') : oppName, name: cardOf(c.atk[w], 0).p.name }), w === 0 ? 'mine' : 'opp')
+      playSfx(w === 0 ? 'goal' : 'lose')
+      buzz(w === 0 ? 'goal' : 'conceded')
+    } else {
+      say(t('sim.log.penSave'), w === 0 ? 'opp' : 'mine')
+      playSfx('tick')
+    }
+    setPhase('shotRes')
+  }
+  const actPen = useRef(confirmPenalty)
+  actPen.current = confirmPenalty
+
+  /** Cambio en el descanso: sustituye al titular elegido por un suplente de su misma posición */
+  function doSub(p: Player) {
+    if (!subOut) return
+    const slot = subOut as SlotId
+    const out = me.cards.find(x => x.slot === slot)!.p
+    const nl = { ...lineup, [slot]: p } as LineupMap
+    const nm = fatalTeam(t('duel.you'), nl, squad.captain === slot ? null : squad.captain, squad.formation)
+    setLineup(nl)
+    setMe(nm)
+    setBench(b => [...b.filter(x => x !== p), out])
+    // la segunda parte se vuelve a sortear con el once nuevo; la primera ya se ha jugado
+    setChances(list => [...list.slice(0, SIM_PER_HALF), ...simulate(nm, opp).slice(SIM_PER_HALF)])
+    setSubsDone(n => n + 1)
+    setSubOut(null)
+    say(t('sim.log.sub', { out: out.name, in: p.name }), 'mine', 45)
+  }
+
   const next = (nextIdx: number) => {
     setIdx(nextIdx)
     setOutcome({ mine: [], opp: null, bonus: [0, 0], shout: false })
@@ -294,6 +350,10 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
 
   // decisiones (esperan si hay algo que decidir) y resultados (se quedan en pantalla)
   useEffect(() => {
+    if (phase === 'shot' && ballNow !== -1 && c.penalty) {
+      const id = setTimeout(() => actPen.current(Math.floor(Math.random() * 3) as PenDir), PEN_MS)
+      return () => clearTimeout(id)
+    }
     if (phase === 'control' || phase === 'shot') {
       if (phase === 'shot' && ballNow === -1) return
       if (hasOptions) return
@@ -373,7 +433,9 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
         )}
         {(phase === 'run' || phase === 'runout') && <p className="sim-run">{secondHalf ? t('sim.secondHalf') : t('sim.firstHalf')}…</p>}
         {dec && myCard && <FaceOff mine={myCard} theirs={dec.opp} myKey={dec.key} theirKey={dec.oppKey} bonus={[selBonus(), 0]} oppName={oppName} />}
-        {resultStep && <ResultFace c={c} phase={phase} ball={ballNow} last={last} outcome={outcome} oppName={oppName} />}
+        {resultStep && phase === 'shotRes' && last?.penalty && <PenaltyResult res={last} oppName={oppName} />}
+        {resultStep && !(phase === 'shotRes' && last?.penalty) && <ResultFace c={c} phase={phase} ball={ballNow} last={last} outcome={outcome} oppName={oppName} />}
+        {isPen && <PenaltyPanel mine={ballNow === 0} onPick={d => actPen.current(d)} />}
 
         {dec && myCard && hasOptions && (
           <div className="sim-turn">
@@ -406,6 +468,36 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
         {phase === 'half' && (
           <>
             <Summary title={t('sim.halfTime')} chances={results} />
+            {bench.length > 0 && (
+              <section className="sim-panel sim-subs">
+                <h3 className="sheet-label">{subsDone >= MAX_SUBS ? t('sim.subs') : t('sim.subsLeft', { n: MAX_SUBS - subsDone })}</h3>
+                {subsDone >= MAX_SUBS ? <p className="fd-hint">{t('sim.subsDone')}</p> : (
+                  <>
+                    <p className="fd-hint">{t('sim.subsHint')}</p>
+                    <div className="sim-subs__list">
+                      {me.cards.map(c => (
+                        <button key={c.slot} type="button" className={`sim-sub ${subOut === c.slot ? 'is-on' : ''}`} onClick={() => setSubOut(subOut === c.slot ? null : c.slot)}>
+                          <b>{c.p.name}</b><small>{c.p.position} · {c.p.ovr}</small>
+                        </button>
+                      ))}
+                    </div>
+                    {subOut && (() => {
+                      const pos = me.cards.find(x => x.slot === subOut)!.p.position
+                      const options = bench.filter(p => p.position === pos)
+                      return (
+                        <div className="sim-subs__list">
+                          {options.length ? options.map(p => (
+                            <button key={p.id} type="button" className="sim-sub sim-sub--in" onClick={() => doSub(p)}>
+                              <b>{p.name}</b><small>{p.position} · {p.ovr}</small>
+                            </button>
+                          )) : <p className="fd-hint">{t('sim.subsNone')}</p>}
+                        </div>
+                      )
+                    })()}
+                  </>
+                )}
+              </section>
+            )}
             <div className="sim-turn">
               <p className="sim-turn__head"><b>{t('sim.tactic')}</b></p>
               <p className="sim-hint">{t('sim.tacticHint', { n: TACTIC_MOD })}</p>
@@ -452,6 +544,7 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
 
   /** Una frase que dice qué está pasando */
   function narration(): string {
+    if (isPen) return t('sim.say.penalty', { team: ballNow === 0 ? t('duel.you') : oppName })
     if (phase === 'control') return counter ? `${t('sim.say.control')} ${t('sim.say.counter', { n: COUNTER_BONUS })}` : t('sim.say.control')
     if (phase === 'ctrlRes') return ballNow === -1 ? t('sim.say.outRes') : ballNow === 0 ? t('sim.say.ballYou') : t('sim.say.ballOpp', { team: oppName })
     if (phase === 'shot' && dec) return dec.who === 0 ? t('sim.say.myAttack', { name: cardOf(c.atk[0], 0).p.name }) : t('sim.say.oppAttack', { team: oppName, name: cardOf(c.atk[1], 0).p.name })
@@ -520,6 +613,39 @@ function ResultFace({ c, phase, ball, last, outcome, oppName }: { c: SimChance; 
       <p className={`sim-verdict ${last.goal ? (mine ? 'is-goal' : 'is-conceded') : ''}`}>{last.goal ? t('sim.goal', { name: sc.p.name }) : outcome.shout ? t('sim.shout') : t('duel.saved')}</p>
       {last.goal && last.assist && last.assist !== last.scorer && <p className="sim-assist">{t('sim.assist', { name: last.assist.p.name })}</p>}
     </div>
+  )
+}
+
+/** Penalti: el que chuta (o el que defiende) elige una de las tres direcciones */
+function PenaltyPanel({ mine, onPick }: { mine: boolean; onPick: (d: PenDir) => void }) {
+  const { t } = useAppSettings()
+  return (
+    <section className="sim-panel sim-pen">
+      <h3 className="sheet-label">{t('sim.pen.title')}</h3>
+      <p className="fd-hint">{t(mine ? 'sim.pen.kickHint' : 'sim.pen.keepHint')}</p>
+      <div className="sim-pen__dirs">
+        {DIRS.map(d => <button key={d} type="button" className="sim-pen__dir" onClick={() => onPick(d)}>{t(DIR_KEY[d])}</button>)}
+      </div>
+    </section>
+  )
+}
+
+/** Resultado del penalti: qué direcciones se eligieron y si entra */
+function PenaltyResult({ res, oppName }: { res: SimResult; oppName: string }) {
+  const { t } = useAppSettings()
+  const mine = res.ball === 0
+  const dir = (d: PenDir | undefined) => t(DIR_KEY[d ?? 1])
+  return (
+    <section className={`sim-panel ${res.goal ? 'sim-panel--goal' : ''}`}>
+      <h3 className="sheet-label">{t('sim.pen.title')} · {mine ? t('duel.you') : oppName}</h3>
+      <p className="sim-used">
+        {mine ? <span className="is-mine">{t('sim.pen.youKick', { dir: dir(res.kick) })}</span> : <span className="is-opp">{t('sim.pen.theyKick', { dir: dir(res.kick) })}</span>}
+      </p>
+      <p className="sim-used">
+        {mine ? <span className="is-opp">{t('sim.pen.theyKeep', { dir: dir(res.keep) })}</span> : <span className="is-mine">{t('sim.pen.youKeep', { dir: dir(res.keep) })}</span>}
+      </p>
+      <p className={`sim-verdict ${res.goal ? (mine ? 'is-goal' : 'is-conceded') : ''}`}>{res.goal ? t('sim.pen.goal') : t('sim.pen.saved')}</p>
+    </section>
   )
 }
 
