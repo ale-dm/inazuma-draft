@@ -9,6 +9,7 @@ export const OBJECTIVES_HASH = '#/objetivos'
 export const SQUADS_HASH = '#/plantillas'
 /** Modos (fase 4) */
 export const DUEL_HASH = '#/duelo'
+export const MINIGAMES_HASH = '#/minijuegos'
 export const HL_HASH = '#/higher-lower'
 export const CUPS_HASH = '#/copas'
 export const PUZZLES_HASH = '#/puzzles'

@@ -1372,3 +1372,14 @@ a.fdr-mode:active { transform: scale(.97); }
 .diff__opts button b { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; text-transform: uppercase; }
 .diff__opts button small { opacity: .75; font-size: .72rem; }
 .diff__opts button.on { background: linear-gradient(135deg, #ff7a1a, #ff3d6e); border-color: #ffd23d; }
+
+/* Minijuegos (calibrar, farol, pronóstico) */
+.mg { gap: .6rem; }
+.mg-bar { position: relative; height: 2.6rem; border-radius: 14px; background: linear-gradient(90deg, #ff4d5e 0%, #ffd23d 35%, #3dff8a 50%, #ffd23d 65%, #ff4d5e 100%); overflow: hidden; }
+.mg-bar__zone { position: absolute; left: 40%; width: 20%; top: 0; bottom: 0; border-left: 2px solid rgba(255, 255, 255, .7); border-right: 2px solid rgba(255, 255, 255, .7); background: rgba(255, 255, 255, .08); }
+.mg-bar__needle { position: absolute; top: -4px; bottom: -4px; width: 5px; margin-left: -2.5px; border-radius: 3px; background: #fff; box-shadow: 0 0 10px rgba(255, 255, 255, .9); }
+.mg-types { display: grid; grid-template-columns: repeat(2, 1fr); gap: .4rem; }
+.mg-types button { padding: .55rem .4rem; border-radius: 12px; background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .25); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-weight: 900; text-transform: uppercase; }
+.mg-types button:active { transform: scale(.97); }
+.mg-result { margin: 0; text-align: center; font-weight: 800; font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; text-transform: uppercase; }
+.mg-result--perfect { color: #3dff8a; } .mg-result--good { color: #ffd23d; } .mg-result--weak { color: #ff9a5a; } .mg-result--miss { color: #ff5a5a; }
