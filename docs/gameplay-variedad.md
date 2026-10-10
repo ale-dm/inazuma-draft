@@ -158,6 +158,8 @@ Para no tener todo el juego basado en el mismo verbo, este orden alterna:
 
 ## 7. Estado de implementación
 
+Análisis con cifras y recomendaciones: [gameplay-analisis.md](gameplay-analisis.md).
+
 Lógica con pruebas (`npm run test:minigames`, 9 pruebas) y una pantalla para probarlos: **`#/minijuegos`**
 (sin premio, para sentir el juego).
 
