@@ -273,6 +273,7 @@ falta, topes: por día, cooldown (`freePack.last` ya se guarda) o quitar venta d
 | Tensión del duelo clásico y combo | `tension.ts` · `DUEL_TENSION`, `COMBO_*`; `Duel.tsx` · `AI_TECH_PROB` |
 | Tensión, técnicas y táctica del Sim | `tension.ts` · `TENSION_*`, `PICK_COST`, `techCost`, `techBonus`; `SimMatch.tsx` · `TACTIC_MOD`, `AI_TECH_PROB`, `DECIDE_MS` |
 | Duración del Sim | `SimMatch.tsx` · `TICK_MS`, `CONTROL_MS`, `SHOT_MS`, `HALF_MS` |
+| Retos semanales de Fatal | `challenges.ts` · `CHALLENGES` (objetivo y premio) |
 | Puntos y premios de Fatal | `fatal-series.ts` · `MATCH_POINTS`, `SERIES_GOAL`, `CLUB_SERIES`, `SIM_SERIES`, `DIVISION_REWARD` |
 | Monedas/XP por partido | `duel.ts` · `duelReward` |
 | Copas | `cups.ts` · `CUPS`, `cupOpponents`; motor `engine/sim.ts` |

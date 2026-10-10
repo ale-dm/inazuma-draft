@@ -108,4 +108,4 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 - [x] Guía de balance con todos los números del juego y dónde tocarlos: [balance-guide.md](balance-guide.md)
 
 - [x] Historial de Fatal (partidos, racha, forma, filtro por modo) en este dispositivo
-- [ ] Retos semanales de Fatal (p. ej. «gana usando 3 supertécnicas», «gana sin gastar tensión») con premio
+- [x] Retos semanales de Fatal (supertécnicas, victorias, victoria sin gastar tensión, penaltis, cambios) con premio

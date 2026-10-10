@@ -1351,3 +1351,15 @@ a.fdr-mode:active { transform: scale(.97); }
 .hist__rival { grid-area: rival; font-size: .9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .hist__score { grid-area: score; font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-style: italic; }
 .hist__list li small { grid-area: date; opacity: .6; font-size: .72rem; }
+
+/* Retos de la semana */
+.chal__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .6rem; }
+.chal__list li { padding: .55rem .6rem; border-radius: 12px; background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .12); }
+.chal__list li.is-done { opacity: .6; }
+.chal__text { display: flex; justify-content: space-between; gap: .5rem; font-weight: 800; font-size: .95rem; }
+.chal__text small { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; opacity: .85; white-space: nowrap; }
+.chal__bar { height: .45rem; margin: .35rem 0 .45rem; border-radius: 99px; background: rgba(255, 255, 255, .1); overflow: hidden; }
+.chal__bar i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, #ffd23d, #3dff8a); transition: width .4s; }
+.chal__foot { display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
+.chal__foot .chip:disabled { opacity: .4; }
+.chal__ok { color: #3dff8a; font-weight: 800; text-transform: uppercase; font-size: .8rem; }

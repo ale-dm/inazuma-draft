@@ -15,6 +15,7 @@ import type { Player, Technique } from '../../types'
 import type { LineupMap, SlotId } from '../../lib/lineup'
 import type { FatalTeam } from '../../lib/fatal'
 import { buzz, playSfx } from '../../lib/sfx'
+import { track } from '../../lib/club'
 import DuelCard from '../DuelCard'
 import Coin from '../Coin'
 import Screen from '../club/Screen'
@@ -65,7 +66,7 @@ interface Outcome {
  * decidas. Una crónica va contando lo que pasa. Reglas en lib/tension.ts; ver docs/fatal-sim.md.
  */
 export default function SimMatch({ title, squad, boostText, settle, onAgain, backHref }: {
-  title: string; squad: PickedSquad; boostText: string; settle: (res: 0 | 1 | -1, score: [number, number], rival: string) => Paid; onAgain: () => void; backHref: string
+  title: string; squad: PickedSquad; boostText: string; settle: (res: 0 | 1 | -1, score: [number, number], rival: string, spent: number) => Paid; onAgain: () => void; backHref: string
 }) {
   const { t, locale } = useAppSettings()
   const [setup] = useState(() => {
@@ -98,6 +99,8 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
   const [oppTactic, setOppTactic] = useState<Tactic>('bal')
   const [counter, setCounter] = useState(false)
   const [paid, setPaid] = useState<Paid | null>(null)
+  /** Tensión gastada por ti en el partido (reto «gana sin gastar tensión») */
+  const spentTotal = useRef(0)
   const [last, setLast] = useState<SimResult | null>(null)
   const [ballNow, setBallNow] = useState<0 | 1 | -1>(-1)
   const done = phase === 'end'
@@ -202,6 +205,9 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
     const chosen = acts.filter(a => sel.includes(a.id) && a.cost <= tension[0])
     const ai = aiPlan(dec, myCard)
     const spent: [number, number] = [chosen.reduce((n, a) => n + a.cost, 0), ai.cost]
+    spentTotal.current += spent[0]
+    const techsUsed = chosen.filter(a => a.kind === 'tech').length
+    if (techsUsed) track('fatalTechs', techsUsed)
     const bm = chosen.reduce((n, a) => n + a.bonus, 0) + tacticBonus(dec.key) + (phase === 'control' && counter ? COUNTER_BONUS : 0)
     const bo = ai.bonus + oppTacticBonus(dec.oppKey)
     if (ai.hyper) setOppHyperUsed(true)
@@ -264,6 +270,7 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
     setLast(res)
     setResults(x => [...x, res])
     if (goal) {
+      if (w === 0) track('penGoals')
       say(t('sim.log.penGoal', { team: w === 0 ? t('duel.you') : oppName, name: cardOf(c.atk[w], 0).p.name }), w === 0 ? 'mine' : 'opp')
       playSfx(w === 0 ? 'goal' : 'lose')
       buzz(w === 0 ? 'goal' : 'conceded')
@@ -279,6 +286,7 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
   /** Cambio en el descanso: sustituye al titular elegido por un suplente de su misma posición */
   function doSub(p: Player) {
     if (!subOut) return
+    track('subsMade')
     const slot = subOut as SlotId
     const out = me.cards.find(x => x.slot === slot)!.p
     const nl = { ...lineup, [slot]: p } as LineupMap
@@ -373,7 +381,7 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
   useEffect(() => {
     if (done && !paid) {
       const f = simScore(results)
-      setPaid(settle(f[0] === f[1] ? -1 : f[0] > f[1] ? 0 : 1, f, oppName))
+      setPaid(settle(f[0] === f[1] ? -1 : f[0] > f[1] ? 0 : 1, f, oppName, spentTotal.current))
     }
   }, [done, paid, results]) // eslint-disable-line react-hooks/exhaustive-deps
 

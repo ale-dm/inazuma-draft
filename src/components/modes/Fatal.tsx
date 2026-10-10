@@ -11,6 +11,7 @@ import type { Reward } from '../../lib/objectives'
 import Coin from '../Coin'
 import Screen from '../club/Screen'
 import MatchHistory from './MatchHistory'
+import Challenges from './Challenges'
 import { Check, Clock } from 'lucide-react'
 
 /** Milisegundos hasta el lunes que viene (nueva temporada) */
@@ -99,6 +100,7 @@ export default function Fatal() {
           <a href={FATAL_DRAFT_HASH} className="sheet-cta fatal-draft__play">{t('modes.play')}</a>
         </div>
       </section>
+      <Challenges />
       <MatchHistory />
     </Screen>
   )

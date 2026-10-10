@@ -52,8 +52,12 @@ type Paid = { coins: number; xp: number; note: string | null }
 type OnResult = (res: 0 | 1 | -1) => string | null
 
 /** Premio del partido y guardado en el historial (marcador y rival) */
-function payout(res: 0 | 1 | -1, onResult: OnResult, rec: { mode: DuelSource; gf: number; ga: number; rival: string }): Paid {
+function payout(res: 0 | 1 | -1, onResult: OnResult, rec: { mode: DuelSource; gf: number; ga: number; rival: string; spent: number }): Paid {
   recordMatch({ mode: rec.mode as MatchRecord['mode'], res, gf: rec.gf, ga: rec.ga, rival: rec.rival })
+  if (res === 0) {
+    track('fatalWins')
+    if (rec.spent === 0) track('fatalNoSpend')
+  }
   const r = duelReward(res === 0 ? [1, 0] : res === 1 ? [0, 1] : [0, 0])
   addCoins(r.coins)
   addXp(r.xp)
@@ -112,7 +116,7 @@ export default function Duel({ source, seriesId }: { source: DuelSource; seriesI
   const back = source === 'draft' || source === 'draftsim' ? FATAL_DRAFT_HASH : '#/fatal'
   const isSim = source === 'sim' || source === 'draftsim'
   const match = isSim
-    ? <SimMatch key={game} title={title} squad={picked} boostText={boostText} settle={(res, sc, rival) => payout(res, onResult, { mode: source, gf: sc[0], ga: sc[1], rival })} onAgain={again} backHref={back} />
+    ? <SimMatch key={game} title={title} squad={picked} boostText={boostText} settle={(res, sc, rival, spent) => payout(res, onResult, { mode: source, gf: sc[0], ga: sc[1], rival, spent })} onAgain={again} backHref={back} />
     : <FatalMatch key={game} mode={source} title={title} squad={picked} boostText={boostText} onAgain={again} onResult={onResult} backHref={back} />
   return <>
     <Tutorial key={`tut-${game}`} kind={isSim ? 'sim' : 'fatal'} />
@@ -156,6 +160,8 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode
   const [metas, setMetas] = useState<Meta[]>([])
   const [sel, setSel] = useState<FatalCard | null>(null)
   const [paid, setPaid] = useState<Paid | null>(null)
+  /** Tensión gastada en el partido (para el reto «gana sin gastar tensión») */
+  const spentTotal = useRef(0)
   const [step, setStep] = useState<Step>('pick')
   const [choice, setChoice] = useState<{ card: FatalCard; stat: DuelKey } | null>(null)
   const [techSel, setTechSel] = useState<string | null>(null)
@@ -183,7 +189,7 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode
   }, [over, lead, m.pending, step])
 
   useEffect(() => {
-    if (result !== null && !paid && step === 'pick') setPaid(payout(result, onResult, { mode: mode, gf: s[0], ga: s[1], rival: teamLabel(m.opp.name, locale) }))
+    if (result !== null && !paid && step === 'pick') setPaid(payout(result, onResult, { mode: mode, gf: s[0], ga: s[1], rival: teamLabel(m.opp.name, locale), spent: spentTotal.current }))
   }, [result, paid, step])
 
   const myTechs = choice ? usableTechs(choice.card, choice.stat) : []
@@ -230,6 +236,8 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode
     const w = round.winner
     const gain: [number, number] = [w === 0 ? DUEL_TENSION.win : w === 1 ? DUEL_TENSION.lose : DUEL_TENSION.draw, w === 1 ? DUEL_TENSION.win : w === 0 ? DUEL_TENSION.lose : DUEL_TENSION.draw]
     const spent: [number, number] = [mineTech ? comboCost(mineTech, combo) : 0, oppTech ? techCost(oppTech) : 0]
+    spentTotal.current += spent[0]
+    if (mineTech) track('fatalTechs')
     // combo: ganar usando supertécnica sube un nivel; usarla sin ganar (o perder) lo pierde
     const newCombo = mineTech ? (w === 0 ? Math.min(COMBO_MAX, combo + 1) : 0) : w === 1 ? 0 : combo
     setPlan({
