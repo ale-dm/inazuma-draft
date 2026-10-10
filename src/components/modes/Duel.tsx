@@ -23,6 +23,8 @@ import SimMatch from './SimMatch'
 import TensionBar from './TensionBar'
 import ActButton from './ActButton'
 import Tutorial from './Tutorial'
+import { recordMatch } from '../../lib/history'
+import type { MatchRecord } from '../../lib/club'
 
 import { COMBO_DISCOUNT, COMBO_MAX, DUEL_TENSION, comboCost, gainTension, techBonus, techCost, usableTechs } from '../../lib/tension'
 import { techniqueName } from '../../data/catalog'
@@ -49,7 +51,9 @@ type Paid = { coins: number; xp: number; note: string | null }
 /** Tras cada partido: puntos de la serie / división de Fatal (texto para enseñar), o null fuera de Fatal */
 type OnResult = (res: 0 | 1 | -1) => string | null
 
-function payout(res: 0 | 1 | -1, onResult: OnResult): Paid {
+/** Premio del partido y guardado en el historial (marcador y rival) */
+function payout(res: 0 | 1 | -1, onResult: OnResult, rec: { mode: DuelSource; gf: number; ga: number; rival: string }): Paid {
+  recordMatch({ mode: rec.mode as MatchRecord['mode'], res, gf: rec.gf, ga: rec.ga, rival: rec.rival })
   const r = duelReward(res === 0 ? [1, 0] : res === 1 ? [0, 1] : [0, 0])
   addCoins(r.coins)
   addXp(r.xp)
@@ -108,8 +112,8 @@ export default function Duel({ source, seriesId }: { source: DuelSource; seriesI
   const back = source === 'draft' || source === 'draftsim' ? FATAL_DRAFT_HASH : '#/fatal'
   const isSim = source === 'sim' || source === 'draftsim'
   const match = isSim
-    ? <SimMatch key={game} title={title} squad={picked} boostText={boostText} settle={res => payout(res, onResult)} onAgain={again} backHref={back} />
-    : <FatalMatch key={game} title={title} squad={picked} boostText={boostText} onAgain={again} onResult={onResult} backHref={back} />
+    ? <SimMatch key={game} title={title} squad={picked} boostText={boostText} settle={(res, sc, rival) => payout(res, onResult, { mode: source, gf: sc[0], ga: sc[1], rival })} onAgain={again} backHref={back} />
+    : <FatalMatch key={game} mode={source} title={title} squad={picked} boostText={boostText} onAgain={again} onResult={onResult} backHref={back} />
   return <>
     <Tutorial key={`tut-${game}`} kind={isSim ? 'sim' : 'fatal'} />
     {match}
@@ -142,7 +146,7 @@ const AI_LEAD_MS = 1300
 
 const withBonus = (c: FatalCard, k: DuelKey, n: number): FatalCard => (n ? { ...c, st: { ...c.st, [k]: c.st[k] + n } } : c)
 
-function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref }: { title: string; squad: PickedSquad; boostText: string; onAgain: () => void; onResult: OnResult; backHref: string }) {
+function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode }: { mode: DuelSource; title: string; squad: PickedSquad; boostText: string; onAgain: () => void; onResult: OnResult; backHref: string }) {
   const { t, locale } = useAppSettings()
   const [m, setM] = useState<Match>(() => {
     const me = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation)
@@ -179,7 +183,7 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref }: { 
   }, [over, lead, m.pending, step])
 
   useEffect(() => {
-    if (result !== null && !paid && step === 'pick') setPaid(payout(result, onResult))
+    if (result !== null && !paid && step === 'pick') setPaid(payout(result, onResult, { mode: mode, gf: s[0], ga: s[1], rival: teamLabel(m.opp.name, locale) }))
   }, [result, paid, step])
 
   const myTechs = choice ? usableTechs(choice.card, choice.stat) : []

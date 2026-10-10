@@ -65,7 +65,7 @@ interface Outcome {
  * decidas. Una crónica va contando lo que pasa. Reglas en lib/tension.ts; ver docs/fatal-sim.md.
  */
 export default function SimMatch({ title, squad, boostText, settle, onAgain, backHref }: {
-  title: string; squad: PickedSquad; boostText: string; settle: (res: 0 | 1 | -1) => Paid; onAgain: () => void; backHref: string
+  title: string; squad: PickedSquad; boostText: string; settle: (res: 0 | 1 | -1, score: [number, number], rival: string) => Paid; onAgain: () => void; backHref: string
 }) {
   const { t, locale } = useAppSettings()
   const [setup] = useState(() => {
@@ -373,7 +373,7 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
   useEffect(() => {
     if (done && !paid) {
       const f = simScore(results)
-      setPaid(settle(f[0] === f[1] ? -1 : f[0] > f[1] ? 0 : 1))
+      setPaid(settle(f[0] === f[1] ? -1 : f[0] > f[1] ? 0 : 1, f, oppName))
     }
   }, [done, paid, results]) // eslint-disable-line react-hooks/exhaustive-deps
 

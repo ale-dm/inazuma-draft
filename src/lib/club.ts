@@ -62,6 +62,18 @@ export interface ClubState {
   codes: string[]
   /** Mejores puntos de draft conseguidos (resumen del draft) */
   draftBest: number
+  /** Partidos de Fatal jugados, el más reciente primero */
+  history: MatchRecord[]
+}
+
+/** Un partido de Fatal: de dónde sale, resultado (0 gana, 1 pierde, −1 empate), marcador y rival */
+export interface MatchRecord {
+  at: number
+  mode: 'club' | 'sim' | 'draft' | 'draftsim'
+  res: 0 | 1 | -1
+  gf: number
+  ga: number
+  rival: string
 }
 
 export interface FatalProgress {
@@ -82,7 +94,7 @@ const fresh = (): ClubState => ({
   day: null, counters: {}, claimed: [], collections: [], squads: [],
   week: null, weekCounters: {}, weekClaimed: [], career: {}, careerClaimed: [], dailyCup: null, puzzles: [], hlBest: 0, sbcDone: {}, crest: null,
   fatal: { season: null, points: {}, done: [], division: 3, divPoints: 0 },
-  tokens: {}, freePack: { last: 0, bonus: 0, best: 0 }, today: { day: null, taken: {} }, codes: [], draftBest: 0,
+  tokens: {}, freePack: { last: 0, bonus: 0, best: 0 }, today: { day: null, taken: {} }, codes: [], draftBest: 0, history: [],
 })
 
 function read(): ClubState {

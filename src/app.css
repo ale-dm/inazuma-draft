@@ -1331,3 +1331,23 @@ a.fdr-mode:active { transform: scale(.97); }
 .sim-sub small { opacity: .75; }
 .sim-sub.is-on { border-color: #ffd23d; background: rgba(255, 210, 61, .18); }
 .sim-sub--in { border-color: #3dff8a; background: rgba(61, 255, 138, .12); }
+
+/* Historial de Fatal */
+.hist__filters { display: flex; gap: .35rem; flex-wrap: wrap; }
+.hist__filters button { padding: .3rem .7rem; border-radius: 99px; background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .22); color: #fff; font-size: .8rem; font-weight: 800; text-transform: uppercase; }
+.hist__filters button.on { background: #ffd23d; color: #111; border-color: #ffd23d; }
+.hist__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: .4rem; text-align: center; font-family: 'Barlow Condensed', sans-serif; }
+.hist__stats span { display: flex; flex-direction: column; padding: .3rem; border-radius: 10px; background: rgba(255, 255, 255, .05); }
+.hist__stats b { font-size: 1.4rem; font-style: italic; line-height: 1; }
+.hist__stats small { text-transform: uppercase; opacity: .7; font-size: .7rem; }
+.hist__form { display: flex; gap: .3rem; }
+.hist__form i, .hist__list li::before { width: .6rem; height: .6rem; border-radius: 99px; background: #9fb3c8; display: inline-block; }
+.hist__form i.w, .hist__list li.w::before { background: #3dff8a; }
+.hist__form i.l, .hist__list li.l::before { background: #ff5a5a; }
+.hist__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .3rem; }
+.hist__list li { display: grid; grid-template-columns: auto 1fr auto; grid-template-areas: 'dot mode score' 'dot rival score' 'dot date date'; column-gap: .5rem; align-items: center; padding: .35rem .5rem; border-radius: 10px; background: rgba(255, 255, 255, .04); }
+.hist__list li::before { grid-area: dot; content: ''; }
+.hist__mode { grid-area: mode; font-weight: 800; text-transform: uppercase; font-size: .75rem; opacity: .85; }
+.hist__rival { grid-area: rival; font-size: .9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hist__score { grid-area: score; font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-style: italic; }
+.hist__list li small { grid-area: date; opacity: .6; font-size: .72rem; }
