@@ -3,7 +3,7 @@ import { useAppSettings } from '../../context/AppSettings'
 import { teamLabel, techniqueName } from '../../data/catalog'
 import { teamRating } from '../../lib/chemistry'
 import {
-  SIM_CHANCES, SIM_PER_HALF, adaptRival, autoResults, cardOf, controlWinner, fatalTeam, goalChance, rivalTeam, shotResult, simScore, simTeamStats, simulate,
+  SIM_CHANCES, SIM_PER_HALF, adaptRival, autoResults, cardOf, controlWinner, fatalTeam, goalChance, fullRival, shotResult, simScore, simTeamStats, simulate,
   chooseBoosts, perceive, penaltyGoal, type FatalCard, type PenDir, type SimChance, type SimResult,
 } from '../../lib/fatal'
 import {
@@ -71,7 +71,7 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
   const { t, locale } = useAppSettings()
   const [setup] = useState(() => {
     const me_ = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation)
-    const opp_ = adaptRival(me_, rivalTeam(teamRating(squad.xi)))
+    const opp_ = adaptRival(me_, fullRival(teamRating(squad.xi)))
     return { me: me_, opp: opp_, init: simulate(me_, opp_) }
   })
   const opp = setup.opp

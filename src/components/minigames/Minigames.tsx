@@ -40,7 +40,8 @@ function Calibrate() {
 
   const go = () => { start.current = performance.now(); setRes(null); setRunning(true) }
   const stop = () => {
-    const r = calibrate(pos)
+    // se juzga con el reloj en el momento del toque, no con el último frame pintado (docs/depuracion-minijuegos.md, H4)
+    const r = calibrate(barPos(performance.now() - start.current))
     setRunning(false)
     setRes(r)
     playSfx(r.tier === 'perfect' || r.tier === 'good' ? 'win' : r.tier === 'weak' ? 'tick' : 'lose')

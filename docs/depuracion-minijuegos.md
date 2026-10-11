@@ -161,4 +161,18 @@ error visible, pero el resultado no es reproducible.
 4. **H4** y **H5**: antes del playtest, porque ensucian la medida de la calibración y la sensación de respuesta.
 5. **H6** y **H7**: deuda, cuando se toque el archivo.
 
-Ninguno de estos cambios se ha aplicado todavía en el código: este documento es la propuesta.
+## Estado
+
+| Hallazgo | Estado | Cómo se comprobó |
+|---|---|---|
+| H1 · farol y rotación | **Corregido**: desempate al azar en `aiBluffGuess` | prueba `farol: rotar…` (antes 0,625; ahora dentro de 0,20–0,35) y `repetir…` (> 0,55) |
+| H2 · identificadores del tablero | **Corregido**: identidad por posición y id único (`freshId`) | tres pruebas de H2 (antes fallaban) |
+| H3 · manos vacías y rival incompleto | **Corregido**: `aiLead` y `aiRespond` devuelven `null` sin cartas; `fullRival` reintenta hasta 11 cartas en duelo y Sim | pruebas de IA con mano vacía; partido de Sim y duelo completos en el navegador |
+| H4 · calibración con el último frame | **Corregido**: la parada se juzga con `performance.now()` | revisión del código; sin prueba automática (depende del reloj del navegador) |
+| H5 · temporizador del rival sin limpieza | Pendiente | — |
+| H6 · guarda del pago en estado | Pendiente | — |
+| H7 · `aiLead` dentro de un actualizador | Pendiente | — |
+
+**Verificación tras los cambios.** `npm run test:minigames`: 16 pruebas OK. `npx tsc -b` y `npm run build` sin errores.
+Duelo clásico completo y Sim completo en el navegador sin errores. `npm run balance -- --n 1000`: ningún indicador fuera de
+rango (un arranque con 150 partidos marcó uno, que no se reproduce con más muestra).

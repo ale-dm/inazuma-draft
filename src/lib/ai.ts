@@ -37,7 +37,9 @@ export function matchesHint(c: AiCard, lead: AiCard): boolean {
  * del contrario, con error) y juega el que más probabilidad de ganar da gastando la carta más barata. Así ataca por
  * donde eres débil y guarda las cartas fuertes para responder.
  */
-export function aiLead<T extends AiCard>(hand: T[], rivalLeft: T[], rnd = Math.random): { card: T; stat: DuelKey } {
+export function aiLead<T extends AiCard>(hand: T[], rivalLeft: T[], rnd = Math.random): { card: T; stat: DuelKey } | null {
+  // sin cartas no hay jugada: null, y el llamador lo trata (docs/depuracion-minijuegos.md, H3)
+  if (!hand.length) return null
   const cost = costs(hand)
   let pick: { card: T; stat: DuelKey; score: number } | null = null
   for (const card of hand) {
@@ -57,7 +59,11 @@ export function aiLead<T extends AiCard>(hand: T[], rivalLeft: T[], rnd = Math.r
  * candidatas (las altas más probables, porque habrás elegido bien). Juega la carta con más probabilidad de ganarte sin
  * gastar una buena; si ninguna tiene opciones, tira la peor.
  */
-export function aiRespond<T extends AiCard>(hand: T[], stat: DuelKey, lead: AiCard, rivalLeft: AiCard[], rnd = Math.random): T {
+export function aiRespond<T extends AiCard>(hand: T[], stat: DuelKey, lead: AiCard, rivalLeft: AiCard[], rnd = Math.random): T | null {
+  if (!hand.length) return null
+  const weakest = () => [...hand].sort((a, b) => total(a) - total(b) || a.st[counter(stat)] - b.st[counter(stat)])[0]
+  // sin cartas del rival que estimar, se juega la más floja
+  if (!rivalLeft.length) return weakest()
   const likely = rivalLeft.filter(c => matchesHint(c, lead))
   const cands = (likely.length ? likely : rivalLeft).map(c => c.st[stat] + noise(rnd))
   const top = Math.max(...cands)
@@ -74,8 +80,8 @@ export function aiRespond<T extends AiCard>(hand: T[], stat: DuelKey, lead: AiCa
     const score = p - level().cost * cost.get(c)!
     if (score > bestScore) { bestScore = score; bestCard = c }
   }
-  if (bestP < 0.2) return [...hand].sort((a, b) => total(a) - total(b) || a.st[k] - b.st[k])[0]
-  return bestCard!
+  if (bestP < 0.2) return weakest()
+  return bestCard
 }
 
 export interface BoostOpt { id: string; cost: number; bonus: number }

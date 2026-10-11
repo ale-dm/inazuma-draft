@@ -87,6 +87,20 @@ export function fatalTeam(
   return { name, cards, formation }
 }
 
+/**
+ * Rival completo: un equipo con las 11 cartas (rivalTeam o generatedRival pueden dejar un puesto vacío si no hay
+ * jugador libre; ver docs/depuracion-minijuegos.md, H3). Reintenta; si no lo consigue, devuelve el más completo.
+ */
+export function fullRival(rating: number, rnd = Math.random, tries = 20): FatalTeam {
+  let best: FatalTeam | null = null
+  for (let i = 0; i < tries; i++) {
+    const t = rivalTeam(rating, rnd)
+    if (t.cards.length === 11) return t
+    if (!best || t.cards.length > best.cards.length) best = t
+  }
+  return best!
+}
+
 /** Once suelto (rival de la máquina) → colocado en la formación que le encaje */
 export function lineupFor(xi: Player[]): { lineup: LineupMap; formation: FormationId | null } {
   for (const f of FORMATIONS) {
