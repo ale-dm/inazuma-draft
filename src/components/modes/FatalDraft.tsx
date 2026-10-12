@@ -8,7 +8,8 @@ import { DRAFT_HASH, DUEL_HASH } from '../../lib/route'
 import type { TranslationKey } from '../../i18n/translations'
 import { MAX_TEAM_CHEM } from '../../lib/chemistry'
 import Screen from '../club/Screen'
-import { ElementIcon } from '../GameIcon'
+import { ElementIcon, SeriesIcon } from '../GameIcon'
+import type { GameId } from '../../types'
 import { RewardBadge, msToSeason } from './Fatal'
 import { Check, Clock } from 'lucide-react'
 
@@ -45,7 +46,7 @@ export default function FatalDraft() {
         <h3>FATAL BOOST</h3>
         <p>
           <span className="fdr-boost__icon">
-            {boost.kind === 'element' ? <ElementIcon element={boost.value as never} /> : <b>{boost.value}</b>}
+            {boost.kind === 'element' ? <ElementIcon element={boost.value as never} /> : <SeriesIcon game={boost.value as GameId} />}
           </span>
           {t('duel.boost', { n: boost.amount, what: boost.kind === 'game' ? boost.value : t(`element.${boost.value}` as TranslationKey) })}
         </p>
