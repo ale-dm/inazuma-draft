@@ -347,3 +347,7 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
 - Fatal: el historial se pliega por defecto (un toque para verlo) para acortar la página.
 
 - Depuración de los minijuegos (docs/depuracion-minijuegos.md): H1–H7 corregidos y comprobados en el navegador. La parada de la calibración coincide con el reloj en 40 de 40 pruebas.
+
+- Dojo (`#/dojo`, src/lib/dojo.ts, components/modes/Dojo.tsx): las copias de sobra suben el límite de rotura de una carta (0–3; Legendarias, 2). Cada nivel suma 1 a los tres números, y el tercero, 2. Se aplica en la ficha, en Mis cartas y en el duelo del propio equipo. Límite 3 medido: la media de los números sube 2,7 (con 5, 3,9).
+
+- Fusión Mixi Max (`#/fusion`, src/lib/fusion.ts, src/data/fusions.json): 19 recetas; dos personajes del mismo juego, cada uno con una copia de sobra, dan su Mixi Max. Una vez por cuenta.
