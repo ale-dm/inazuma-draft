@@ -9,7 +9,7 @@ import Screen from '../club/Screen'
 import { Heart } from 'lucide-react'
 import Coin from '../Coin'
 
-/** Expedición (docs/plan-modos.md §2): ocho rivales de media 70 → 88; tras cada victoria, elige una de tres recompensas */
+/** Expedición (docs/plan-modos.md §2): ocho rivales de media 68 → 80; tras cada victoria, elige una de tres recompensas */
 export default function Expedition() {
   const { t, locale } = useAppSettings()
   const club = useClub()

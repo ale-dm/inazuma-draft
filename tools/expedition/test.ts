@@ -29,10 +29,10 @@ const base = (over: Partial<ExpeditionRun> = {}): ExpeditionRun => ({
   boosts: {}, techs: {}, offer: null, rivals: [], results: [], over: false, ...over,
 })
 
-test('ocho rivales de media creciente, de 70 a 88', () => {
+test('ocho rivales de media creciente, de 68 a 80', () => {
   assert.equal(EXPEDITION_STEPS, 8)
-  assert.equal(rivalRating(0), 70)
-  assert.equal(rivalRating(7), 88)
+  assert.equal(rivalRating(0), 68)
+  assert.equal(rivalRating(7), 80)
   for (let i = 1; i < 8; i++) assert.ok(rivalRating(i) > rivalRating(i - 1))
 })
 

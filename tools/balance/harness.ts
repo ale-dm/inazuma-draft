@@ -296,13 +296,13 @@ for (const pull of [1, F.SIM_PULL, 0.7]) {
 }
 L.push('')
 
-// 7) Expedición (docs/plan-modos.md §2): ocho rivales de media 70 → 88 contra tu once. Tras cada victoria, un jugador
+// 7) Expedición (docs/plan-modos.md §2): ocho rivales de media 68 → 80 contra tu once. Tras cada victoria, un jugador
 //    razonable (brain humano) elige el fichaje que sube su peor carta a 84 si la oferta lo trae (casi siempre hay uno);
 //    si no mejora nada, el refuerzo (+5 a un número). Se simulan expediciones enteras con las probabilidades de cada
 //    paso (victoria, empate, derrota) medidas con el código real.
 {
   const NE = Math.min(N, 400)
-  const EXP_RIVAL = (s: number) => 70 + (s * 18) / 7
+  const EXP_RIVAL = (s: number) => 68 + (s * 12) / 7
   // tras k victorias: fichaje de 84 en la carta más floja (si mejora) o, si no, refuerzo de +5 a un número
   const boosted = (base: FatalTeam, k: number): FatalTeam => {
     const cards = base.cards.map(c => ({ ...c, st: { ...c.st } }))
@@ -320,7 +320,10 @@ L.push('')
     }
     return { ...base, cards }
   }
-  const base = buildTeam(72).team
+  // el equipo base sale de una plantilla real, como los rivales: buildTeam mezcla juegos y no tiene química
+  const base = F.rivalTeam(72)
+  const chemOf = (t: FatalTeam) => t.cards.reduce((n, c) => n + c.mod, 0) / t.cards.length
+  L.push('', `Química media por carta: equipo base ${chemOf(base).toFixed(1)}, rival de 70 ${chemOf(F.rivalTeam(70)).toFixed(1)}, rival de 88 ${chemOf(F.rivalTeam(88)).toFixed(1)}.`, '')
   const odds: Record<string, { w: number; d: number; l: number }> = {}
   for (let st = 0; st < 8; st++) for (let k = 0; k <= 7; k++) {
     let w = 0, d = 0, l = 0
@@ -349,7 +352,7 @@ L.push('')
   // diagnóstico: probabilidad de ganar cada paso según las victorias previas
   L.push('', '| Paso (media del rival) | Gana con 0 victorias previas | con 1 | con 2 |', '|---|---|---|---|')
   for (let st = 0; st < 8; st++) row([`${st + 1} (${Math.round(EXP_RIVAL(st))})`, pct(odds[`${st}:0`].w * E, E), pct(odds[`${st}:1`].w * E, E), pct(odds[`${st}:2`].w * E, E)])
-  L.push('## 7. Expedición: un jugador razonable (fichaje si mejora su peor carta, si no refuerzo), contra los 8 rivales (70 → 88)', '',
+  L.push('## 7. Expedición: un jugador razonable (fichaje si mejora su peor carta, si no refuerzo), contra los 8 rivales (68 → 80)', '',
     '| Victorias medias de 8 | Llega a 8 victorias | Se queda en 0–2 | Se queda en 3–5 |', '|---|---|---|---|')
   row([avg.toFixed(2), pct(clears, E), pct(dist[0] + dist[1] + dist[2], E), pct(dist[3] + dist[4] + dist[5], E)])
   flag(avg >= 2 && avg <= 5, `Expedición: victorias medias ${avg.toFixed(2)} (2–5: un jugador razonable llega a la mitad, sin ser trivial)`)

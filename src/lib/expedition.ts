@@ -1,6 +1,6 @@
 /**
  * Expedición (docs/plan-modos.md §2): un roguelike de draft con las cartas que ya tienes. Ocho rivales de media
- * creciente (70 → 88); tras cada victoria, una de tres recompensas que solo dura la expedición. Un empate avanza con
+ * creciente (68 → 80); tras cada victoria, una de tres recompensas que solo dura la expedición. Un empate avanza con
  * la mitad de las monedas; una derrota resta una vida (3 al empezar) y también avanza: cada rival se juega una vez.
  * Pura salvo las operaciones al final, que escriben en el club.
  */
@@ -14,14 +14,14 @@ import type { TeamMods } from './fatal'
 
 export const EXPEDITION_STEPS = 8
 export const START_LIVES = 3
-export const RIVAL_MIN = 70
-export const RIVAL_MAX = 88
+export const RIVAL_MIN = 68
+export const RIVAL_MAX = 80
 /** Refuerzo de la recompensa (+ a un número de una carta) */
 export const BOOST_AMOUNT = 5
 /** Sobre especial al vencer al octavo rival (packs.ts) */
 export const EXPEDITION_PACK = 'expedition'
 
-/** Media del rival del paso (0 a 7): de 70 a 88 en pasos iguales */
+/** Media del rival del paso (0 a 7): de 68 a 80 en pasos iguales (ajustado con el balance, ver docs/balance-report.md §7) */
 export const rivalRating = (step: number): number => RIVAL_MIN + (step * (RIVAL_MAX - RIVAL_MIN)) / (EXPEDITION_STEPS - 1)
 
 /** Monedas por victoria en ese paso: de 150 a 600. Un empate paga la mitad */

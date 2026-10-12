@@ -72,7 +72,7 @@ y ver el número nuevo en la ficha.
 
 **Reglas.**
 - Empiezas con un **equipo base** de 11 de tu último draft (o de una plantilla).
-- Son **8 rivales** en orden de dificultad (media de 70 a 88), uno por partido de Fatal (modo clásico, con la IA de siempre).
+- Son **8 rivales** en orden de dificultad (media de 68 a 80; ajustado de 70–88 con el balance, ver `docs/balance-report.md` §7), uno por partido de Fatal (modo clásico, con la IA de siempre).
 - Tras **cada victoria** eliges **1 de 3** recompensas: (a) un jugador de la lista, que entra al once; (b) un refuerzo: +5 a un número de una carta, o +1 química; (c) una supertécnica nueva para una carta.
 - Un empate avanza con la mitad de las monedas y sin recompensa de elección; una derrota acaba la expedición.
 - Vencer al octavo rival da el premio grande (sobre especial de expedición). Cada rival vencido da monedas.
@@ -88,7 +88,7 @@ y ver el número nuevo en la ficha.
 **Reutiliza.** Todo el motor de Fatal (`fatal.ts`, `ai.ts`, `tension.ts`), `history.ts` (guarda cada partido), `giveReward`.
 
 **Pasos.**
-1. `expedition.ts`: rivales por paso (media 70 → 88) y generación de las 3 recompensas. Pruebas puras, sin pantalla.
+1. `expedition.ts`: rivales por paso (media 68 → 80) y generación de las 3 recompensas. Pruebas puras, sin pantalla.
 2. Estado de la partida en el club (`run`), con guardar y reanudar al recargar.
 3. Pantalla del mapa: 8 nodos, el actual, los vencidos, y el botón de jugar.
 4. Partido: usa `FatalMatch` con el equipo de la expedición (con las recompensas de elección ya aplicadas).

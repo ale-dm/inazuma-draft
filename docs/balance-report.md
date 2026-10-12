@@ -72,29 +72,31 @@ Generado por `npm run balance` (`tools/balance`) con 1500 partidos por escenario
 | 80 / 72 | 0.7 | 63 | 15.7 | 21.3 |
 
 
+Química media por carta: equipo base 2.0, rival de 70 2.0, rival de 88 4.0.
+
+
 | Paso (media del rival) | Gana con 0 victorias previas | con 1 | con 2 |
 |---|---|---|---|
-| 1 (70) | 43.3 | 40 | 52.3 |
-| 2 (73) | 16 | 10.3 | 10 |
-| 3 (75) | 4.8 | 1.5 | 3 |
-| 4 (78) | 0.3 | 0.5 | 0.3 |
-| 5 (80) | 0 | 0 | 0 |
-| 6 (83) | 0 | 0 | 0 |
-| 7 (85) | 0 | 0 | 0 |
-| 8 (88) | 0 | 0 | 0 |
+| 1 (68) | 99.8 | 99 | 99.8 |
+| 2 (70) | 88.8 | 87.3 | 97 |
+| 3 (71) | 56.5 | 52 | 77.3 |
+| 4 (73) | 14.3 | 14 | 36 |
+| 5 (75) | 9 | 9.8 | 20 |
+| 6 (77) | 2.5 | 2.3 | 11.3 |
+| 7 (78) | 1 | 0.5 | 5.3 |
+| 8 (80) | 0 | 0 | 1.5 |
 ## 7. Expedición: un jugador razonable (fichaje si mejora su peor carta, si no refuerzo), contra los 8 rivales (70 → 88)
 
 | Victorias medias de 8 | Llega a 8 victorias | Se queda en 0–2 | Se queda en 3–5 |
 |---|---|---|---|
-| 0.61 | 0 | 100 | 0 |
+| 4.51 | 5.1 | 20.2 | 44.7 |
 
 | Victorias | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
 |---|---|---|---|---|---|---|---|---|---|
-| % | 44.8 | 49.4 | 5.9 | 0 | 0 | 0 | 0 | 0 | 0 |
+| % | 0 | 5.8 | 14.4 | 11.6 | 16.4 | 16.7 | 18.9 | 11.3 | 5.1 |
 
 ## Indicadores fuera de rango
 
-- ⚠ Expedición: victorias medias 0.61 (2–5: un jugador razonable llega a la mitad, sin ser trivial)
-- ⚠ Expedición: completa 0 % (2–20 %: el premio grande debe ser raro)
+Ninguno.
 
-Tiempo: 392 s.
+Tiempo: 318 s.
