@@ -101,6 +101,8 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
   const [paid, setPaid] = useState<Paid | null>(null)
   /** Tensión gastada por ti en el partido (reto «gana sin gastar tensión») */
   const spentTotal = useRef(0)
+  /** El pago se hace una sola vez (referencia síncrona, como en Duel) */
+  const paidRef = useRef(false)
   const [last, setLast] = useState<SimResult | null>(null)
   const [ballNow, setBallNow] = useState<0 | 1 | -1>(-1)
   const done = phase === 'end'
@@ -379,8 +381,9 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
   }, [phase, idx]) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    if (done && !paid) {
+    if (done && !paidRef.current) {
       const f = simScore(results)
+      paidRef.current = true
       setPaid(settle(f[0] === f[1] ? -1 : f[0] > f[1] ? 0 : 1, f, oppName, spentTotal.current))
     }
   }, [done, paid, results]) // eslint-disable-line react-hooks/exhaustive-deps

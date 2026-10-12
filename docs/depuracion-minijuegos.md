@@ -169,10 +169,10 @@ error visible, pero el resultado no es reproducible.
 | H2 · identificadores del tablero | **Corregido**: identidad por posición y id único (`freshId`) | tres pruebas de H2 (antes fallaban) |
 | H3 · manos vacías y rival incompleto | **Corregido**: `aiLead` y `aiRespond` devuelven `null` sin cartas; `fullRival` reintenta hasta 11 cartas en duelo y Sim | pruebas de IA con mano vacía; partido de Sim y duelo completos en el navegador |
 | H4 · calibración con el último frame | **Corregido**: la parada se juzga con `performance.now()` | revisión del código; sin prueba automática (depende del reloj del navegador) |
-| H5 · temporizador del rival sin limpieza | Pendiente | — |
-| H6 · guarda del pago en estado | Pendiente | — |
-| H7 · `aiLead` dentro de un actualizador | Pendiente | — |
+| H5 · temporizador del rival sin limpieza | **Corregido**: el temporizador se guarda en una referencia, se cancela al desmontar y al empezar otra respuesta | partida completa de duelo en el navegador; revisión del código |
+| H6 · guarda del pago en estado | **Corregido**: guarda síncrona (`paidRef`) en duelo y Sim | un partido de cada modo: una sola entrada en el historial y un pago |
+| H7 · `aiLead` dentro de un actualizador | **Corregido**: la elección se hace fuera del actualizador, que solo guarda el resultado | rondas con la IA llevando, en el navegador |
 
-**Verificación tras los cambios.** `npm run test:minigames`: 16 pruebas OK. `npx tsc -b` y `npm run build` sin errores.
+**Verificación tras los cambios.** `npm run test:minigames`: 16 pruebas OK. H5 a H7 no tienen prueba automática: se comprueban en el navegador (partidas completas y un pago por partido). `npx tsc -b` y `npm run build` sin errores.
 Duelo clásico completo y Sim completo en el navegador sin errores. `npm run balance -- --n 1000`: ningún indicador fuera de
 rango (un arranque con 150 partidos marcó uno, que no se reproduce con más muestra).

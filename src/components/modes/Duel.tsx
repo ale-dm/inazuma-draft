@@ -165,6 +165,11 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode
   const [paid, setPaid] = useState<Paid | null>(null)
   /** Tensión gastada en el partido (para el reto «gana sin gastar tensión») */
   const spentTotal = useRef(0)
+  /** El pago se hace una sola vez; la guarda es una referencia (síncrona) además del estado */
+  const paidRef = useRef(false)
+  /** Temporizador de la respuesta del rival: se cancela al desmontar o al empezar otra partida (H5) */
+  const thinkTimer = useRef<number | undefined>(undefined)
+  useEffect(() => () => window.clearTimeout(thinkTimer.current), [])
   const [step, setStep] = useState<Step>('pick')
   const [choice, setChoice] = useState<{ card: FatalCard; stat: DuelKey } | null>(null)
   const [techSel, setTechSel] = useState<string | null>(null)
@@ -187,12 +192,19 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode
   // la máquina lleva: se toma un momento y elige al empezar su ronda
   useEffect(() => {
     if (over || lead !== 1 || m.pending || step !== 'pick') return
-    const id = setTimeout(() => setM(x => ({ ...x, pending: aiLead(x.oppHand, x.myHand) })), AI_LEAD_MS)
+    // se decide fuera del actualizador (que debe ser puro: en StrictMode se ejecuta dos veces) y se guarda si sigue vacío
+    const id = setTimeout(() => {
+      const pick = aiLead(m.oppHand, m.myHand)
+      setM(x => (x.pending ? x : { ...x, pending: pick }))
+    }, AI_LEAD_MS)
     return () => clearTimeout(id)
   }, [over, lead, m.pending, step])
 
   useEffect(() => {
-    if (result !== null && !paid && step === 'pick') setPaid(payout(result, onResult, { mode: mode, gf: s[0], ga: s[1], rival: teamLabel(m.opp.name, locale), spent: spentTotal.current }))
+    if (result !== null && !paidRef.current && step === 'pick') {
+      paidRef.current = true
+      setPaid(payout(result, onResult, { mode: mode, gf: s[0], ga: s[1], rival: teamLabel(m.opp.name, locale), spent: spentTotal.current }))
+    }
   }, [result, paid, step])
 
   const myTechs = choice ? usableTechs(choice.card, choice.stat) : []
@@ -218,7 +230,8 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode
       if (!theirs) return
       setTheirsHidden(theirs)
       setStep('think')
-      setTimeout(() => beginReveal(choice, theirs, counter(choice.stat)), DUEL_THINK_MS)
+      window.clearTimeout(thinkTimer.current)
+      thinkTimer.current = window.setTimeout(() => beginReveal(choice, theirs, counter(choice.stat)), DUEL_THINK_MS)
     }
   }
 
