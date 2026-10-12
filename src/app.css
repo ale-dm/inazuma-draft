@@ -1406,6 +1406,21 @@ a.fdr-mode:active { transform: scale(.97); }
 .fusion-row__info .sheet-cta { width: 100%; }
 .fusion-row.is-done { opacity: .6; }
 .fusion-made { margin: 0; font-weight: 900; text-transform: uppercase; color: #ffd23d; }
+.exp-best, .exp-summary { margin: 0; text-align: center; font-weight: 800; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; }
+.exp-prize { margin: 0; text-align: center; color: #ffd23d; font-weight: 800; }
+.exp-bar { display: flex; justify-content: space-between; align-items: center; gap: .5rem; font-weight: 800; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; }
+.exp-lives { display: inline-flex; gap: .25rem; }
+.exp-lives svg { opacity: .25; } .exp-lives svg.on { opacity: 1; color: #ff5a5a; fill: #ff5a5a; }
+.exp-map { display: flex; flex-direction: column; gap: .4rem; }
+.exp-node { display: grid; grid-template-columns: 2rem 1fr auto; align-items: center; gap: .5rem; padding: .5rem .7rem; border-radius: 14px; background: rgba(20, 20, 26, .7); border: 1px solid rgba(255, 255, 255, .12); }
+.exp-node b { font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; }
+.exp-node small { font-weight: 800; text-transform: uppercase; opacity: .85; }
+.exp-node--current { border-color: #ffd23d; }
+.exp-node--win small { color: #3dff8a; } .exp-node--draw small { color: #ffd23d; } .exp-node--loss small { color: #ff5a5a; }
+.exp-node--future { opacity: .5; }
+.exp-offer { display: flex; flex-direction: column; gap: .5rem; }
+.exp-reward { padding: .8rem .9rem; border-radius: 14px; background: rgba(255, 210, 61, .12); border: 1px solid #ffd23d; color: #fff; text-align: left; font-weight: 800; }
+.exp-quit { align-self: center; }
 .mg-fav { margin: 0; text-align: center; font-weight: 800; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: .04em; color: #ffd23d; }
 .mg-meta { margin: 0; display: flex; justify-content: space-between; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; font-size: .9rem; opacity: .85; }
 .mg-result { margin: 0; text-align: center; font-weight: 800; font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; text-transform: uppercase; }

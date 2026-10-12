@@ -13,7 +13,7 @@ const IN: Record<Filter, (m: MatchRecord) => boolean> = {
   sim: m => m.mode === 'sim' || m.mode === 'draftsim',
   draft: m => m.mode === 'draft',
 }
-const MODE_KEY: Record<MatchRecord['mode'], TranslationKey> = { club: 'hub.duelClub', sim: 'hub.duelSim', draft: 'hub.draft', draftsim: 'hub.duelSim' }
+const MODE_KEY: Record<MatchRecord['mode'], TranslationKey> = { club: 'hub.duelClub', sim: 'hub.duelSim', draft: 'hub.draft', draftsim: 'hub.duelSim', expedition: 'hub.expedition' }
 const resKey = (r: 0 | 1 | -1): TranslationKey => (r === 0 ? 'duel.win' : r === 1 ? 'duel.loss' : 'duel.draw')
 
 /** Historial de Fatal (en este dispositivo): números, racha, forma y los últimos partidos */

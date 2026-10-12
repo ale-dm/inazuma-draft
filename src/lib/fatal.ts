@@ -74,17 +74,27 @@ function pickHint(p: Player, rnd: () => number): HintKind {
   return kinds[Math.floor(rnd() * kinds.length)]
 }
 
-/** `limits`: límites de rotura del Dojo de las cartas del club (solo para tu equipo; los rivales no tienen) */
+/**
+ * Modificadores del equipo propio (los rivales no los tienen): límites del Dojo, refuerzos de la expedición (+ números
+ * por carta) y química extra (suma a todas las cartas).
+ */
+export interface TeamMods {
+  limits?: Record<string, number>
+  stats?: Record<string, Partial<DuelStats>>
+  chem?: number
+}
+
 export function fatalTeam(
   name: string, lineup: LineupMap, captain: SlotId | null | undefined, formation: FormationId | null, boost = weeklyBoost(), rnd = Math.random,
-  limits: Record<string, number> = {},
+  mods: TeamMods = {},
 ): FatalTeam {
   const chem = chemistry(lineup, captain ?? undefined)
   const cards = (Object.entries(lineup) as [SlotId, Player | undefined][]).filter((e): e is [SlotId, Player] => !!e[1]).map(([slot, p]) => {
-    const mod = CHEM_MOD[chem.players[slot] ?? 0] + (boosted(p, boost) ? boost.amount : 0)
-    const d = duelStats(p, limits[p.id] ?? 0)
+    const mod = CHEM_MOD[chem.players[slot] ?? 0] + (boosted(p, boost) ? boost.amount : 0) + (mods.chem ?? 0)
+    const d = duelStats(p, mods.limits?.[p.id] ?? 0)
+    const extra = mods.stats?.[p.id] ?? {}
     const c = (v: number) => Math.max(1, Math.min(99, v + mod))
-    return { p, slot, st: { att: c(d.att), con: c(d.con), def: c(d.def) }, mod, hint: pickHint(p, rnd) }
+    return { p, slot, st: { att: c(d.att + (extra.att ?? 0)), con: c(d.con + (extra.con ?? 0)), def: c(d.def + (extra.def ?? 0)) }, mod, hint: pickHint(p, rnd) }
   })
   return { name, cards, formation }
 }

@@ -48,6 +48,8 @@ export const PACKS: PackDef[] = [
   { id: 'saga-go', nameKey: 'pack.sagaGo', price: 2500, cards: 4, tone: 'saga', odds: GOLD_ODDS, games: ['GO1', 'GO2', 'GO3'] },
   { id: 'saga-ares', nameKey: 'pack.sagaAres', price: 2500, cards: 4, tone: 'saga', odds: GOLD_ODDS, games: ['ARES', 'ORION'] },
   { id: 'saga-vr', nameKey: 'pack.sagaVr', price: 2500, cards: 4, tone: 'saga', odds: GOLD_ODDS, games: ['VR'] },
+  // premio de la expedición (no se compra): al vencer al octavo rival
+  { id: 'expedition', nameKey: 'pack.expedition', price: null, cards: 5, tone: 'special', odds: { 'Advanced Player': 30, 'Top Player': 60, 'Legendary Player': 10 }, guarantee: 'Top Player' },
   // por afinidad y por equipo (el equipo cambia cada semana)
   { id: 'el-fire', nameKey: 'pack.fire', price: 2000, cards: 4, tone: 'fire', odds: GOLD_ODDS, elements: ['fire'] },
   { id: 'el-air', nameKey: 'pack.air', price: 2000, cards: 4, tone: 'air', odds: GOLD_ODDS, elements: ['air'] },

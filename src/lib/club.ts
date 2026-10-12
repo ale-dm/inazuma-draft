@@ -3,6 +3,7 @@ import type { Category } from '../types'
 import type { FormationId, SlotId } from './lineup'
 import { canRaise } from './dojo'
 import type { Fusion } from './fusion'
+import type { ExpeditionState } from './expedition'
 
 /**
  * El club del jugador (fase 3, solo en este dispositivo): monedas, XP, cartas con duplicados, sobres guardados,
@@ -72,12 +73,14 @@ export interface ClubState {
   limits: Record<string, number>
   /** Fusiones Mixi Max hechas (ids de lib/fusion.ts), una vez por cuenta */
   fusions: string[]
+  /** Expedición en curso (una por cuenta) y récord de victorias */
+  expedition: ExpeditionState
 }
 
 /** Un partido de Fatal: de dónde sale, resultado (0 gana, 1 pierde, −1 empate), marcador y rival */
 export interface MatchRecord {
   at: number
-  mode: 'club' | 'sim' | 'draft' | 'draftsim'
+  mode: 'club' | 'sim' | 'draft' | 'draftsim' | 'expedition'
   res: 0 | 1 | -1
   gf: number
   ga: number
@@ -103,7 +106,7 @@ const fresh = (): ClubState => ({
   week: null, weekCounters: {}, weekClaimed: [], career: {}, careerClaimed: [], dailyCup: null, puzzles: [], hlBest: 0, sbcDone: {}, crest: null,
   fatal: { season: null, points: {}, done: [], division: 3, divPoints: 0 },
   tokens: {}, freePack: { last: 0, bonus: 0, best: 0 }, today: { day: null, taken: {} }, codes: [], draftBest: 0, history: [],
-  limits: {}, fusions: [],
+  limits: {}, fusions: [], expedition: { run: null, best: 0 },
 })
 
 function read(): ClubState {

@@ -296,6 +296,55 @@ for (const pull of [1, F.SIM_PULL, 0.7]) {
 }
 L.push('')
 
+// 7) Expedición (docs/plan-modos.md §2): ocho rivales de media 70 → 88 contra tu once, que sube un refuerzo (+5 a un
+//    número) por cada victoria. Un jugador razonable (brain humano) elige siempre el refuerzo; se simulan expediciones
+//    enteras con las probabilidades de cada paso (victoria, empate, derrota) medidas con el código real.
+{
+  const NE = Math.min(N, 400)
+  const EXP_RIVAL = (s: number) => 70 + (s * 18) / 7
+  const boosted = (base: FatalTeam, k: number): FatalTeam => {
+    const cards = base.cards.map(c => ({ ...c, st: { ...c.st } }))
+    for (let i = 0; i < k; i++) {
+      const c = cards[Math.floor(Math.random() * cards.length)]
+      const key = (['att', 'con', 'def'] as const)[Math.floor(Math.random() * 3)]
+      c.st[key] = Math.min(99, c.st[key] + 5)
+    }
+    return { ...base, cards }
+  }
+  const base = buildTeam(72).team
+  const odds: Record<string, { w: number; d: number; l: number }> = {}
+  for (let st = 0; st < 8; st++) for (let k = 0; k <= 7; k++) {
+    let w = 0, d = 0, l = 0
+    for (let i = 0; i < NE; i++) {
+      const r = duel(boosted(base, k), F.rivalTeam(EXP_RIVAL(st)), 'human', 'ai', false)
+      if (r.res === 0) w++; else if (r.res === 1) l++; else d++
+    }
+    odds[`${st}:${k}`] = { w: w / NE, d: d / NE, l: l / NE }
+  }
+  const E = 2000
+  let sumWins = 0, clears = 0
+  const dist = Array.from({ length: 9 }, () => 0)
+  for (let e = 0; e < E; e++) {
+    let lives = 3, wins = 0
+    for (let st = 0; st < 8; st++) {
+      const o = odds[`${st}:${wins}`]
+      const x = Math.random()
+      if (x < o.w) wins++
+      else if (x >= o.w + o.d) { lives--; if (lives === 0) break }
+    }
+    sumWins += wins
+    dist[wins]++
+    if (wins === 8) clears++
+  }
+  const avg = sumWins / E
+  L.push('## 7. Expedición: un jugador razonable que elige siempre el refuerzo, contra los 8 rivales (70 → 88)', '',
+    '| Victorias medias de 8 | Llega a 8 victorias | Se queda en 0–2 | Se queda en 3–5 |', '|---|---|---|---|')
+  row([avg.toFixed(2), pct(clears, E), pct(dist[0] + dist[1] + dist[2], E), pct(dist[3] + dist[4] + dist[5], E)])
+  flag(avg >= 2 && avg <= 5, `Expedición: victorias medias ${avg.toFixed(2)} (2–5: un jugador razonable llega a la mitad, sin ser trivial)`)
+  flag(clears / E >= 0.02 && clears / E <= 0.2, `Expedición: completa ${pct(clears, E)} % (2–20 %: el premio grande debe ser raro)`)
+  L.push('', '| Victorias | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |', '|---|---|---|---|---|---|---|---|---|---|', '| % | ' + dist.map(x => pct(x, E)).join(' | ') + ' |', '')
+}
+
 L.push('## Indicadores fuera de rango', '', ...(flags.length ? flags.map(f => `- ⚠ ${f}`) : ['Ninguno.']), '', `Tiempo: ${((Date.now() - t0) / 1000).toFixed(0)} s.`)
 fs.writeFileSync(path.join(A.root, 'docs/balance-report.md'), L.join('\n') + '\n')
 console.log(L.join('\n'))

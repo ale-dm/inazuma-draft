@@ -60,6 +60,14 @@ y ver el número nuevo en la ficha.
 
 ## 2. Expedición (roguelike de draft)
 
+**Estado:** en marcha (ver `src/lib/expedition.ts`, `src/components/modes/Expedition.tsx`, `npm run test:expedition`). Decisiones:
+- **Derrota:** resta una vida (3 al empezar) y la expedición pasa al rival siguiente; con 0 vidas, se acaba. Cada rival se juega una vez (no se repite).
+- **Empate:** avanza con media moneda del paso y sin recompensa de elección. **Victoria:** monedas del paso (150 → 600) y tres recompensas.
+- **Recompensas:** fichaje (si mejora un puesto de su línea), refuerzo (+5 a un número), supertécnica nueva; sin fichaje, +1 de química en vez del fichaje.
+- **Solo dura la expedición:** refuerzos, supertécnicas y química se guardan en la partida y se borran al cerrarla. Los fichajes entran al once solo ahí.
+- **Premio:** al vencer al octavo rival, un sobre de expedición (nuevo en `packs.ts`, sin precio).
+- El récord (`best`) es el mayor número de victorias en una expedición.
+
 **Objetivo.** Un modo nuevo y distinto cada vez, con las cartas que tienes sin gastar nada.
 
 **Reglas.**

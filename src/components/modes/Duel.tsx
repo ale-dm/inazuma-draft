@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useAppSettings } from '../../context/AppSettings'
-import { teamLabel, teamLogo } from '../../data/catalog'
+import { getAllPlayers, getAllTechniques, getPlayer, teamLabel, teamLogo } from '../../data/catalog'
 import { teamRating } from '../../lib/chemistry'
 import { duelReward, type DuelKey } from '../../lib/duel'
 import { getFormation } from '../../lib/lineup'
@@ -11,6 +11,7 @@ import {
   type FatalCard, type FatalTeam, type Round, type SimChance,
 } from '../../lib/fatal'
 import { addCoins, addXp, getClub, track } from '../../lib/club'
+import { expeditionSquad, rivalRating, recordExpeditionMatch, runMods } from '../../lib/expedition'
 import { addDraftResult, addSeriesResult, findSeries } from '../../lib/fatal-series'
 import { buzz, playSfx } from '../../lib/sfx'
 import type { TranslationKey } from '../../i18n/translations'
@@ -30,9 +31,9 @@ import type { MatchRecord } from '../../lib/club'
 import { COMBO_DISCOUNT, COMBO_MAX, DUEL_TENSION, comboCost, gainTension, techBonus, techCost, usableTechs } from '../../lib/tension'
 import { techniqueName } from '../../data/catalog'
 import SquadPicker, { draftSquad, type PickedSquad } from './SquadPicker'
-import { DRAFT_HASH, FATAL_DRAFT_HASH } from '../../lib/route'
+import { DRAFT_HASH, EXPEDITION_HASH, FATAL_DRAFT_HASH } from '../../lib/route'
 
-export type DuelSource = 'club' | 'sim' | 'draft' | 'draftsim'
+export type DuelSource = 'club' | 'sim' | 'draft' | 'draftsim' | 'expedition'
 
 const STAT_KEY: Record<DuelKey, TranslationKey> = { att: 'hl.stat.att', con: 'hl.stat.con', def: 'hl.stat.def' }
 
@@ -50,7 +51,7 @@ interface Match {
 
 type Paid = { coins: number; xp: number; note: string | null }
 /** Tras cada partido: puntos de la serie / división de Fatal (texto para enseñar), o null fuera de Fatal */
-type OnResult = (res: 0 | 1 | -1) => string | null
+type OnResult = (res: 0 | 1 | -1, rival: string) => string | null
 
 /** Premio del partido y guardado en el historial (marcador y rival) */
 function payout(res: 0 | 1 | -1, onResult: OnResult, rec: { mode: DuelSource; gf: number; ga: number; rival: string; spent: number }): Paid {
@@ -59,7 +60,8 @@ function payout(res: 0 | 1 | -1, onResult: OnResult, rec: { mode: DuelSource; gf
     track('fatalWins')
     if (rec.spent === 0) track('fatalNoSpend')
   }
-  const base = duelReward(res === 0 ? [1, 0] : res === 1 ? [0, 1] : [0, 0])
+  // la expedición paga por su cuenta (monedas por paso, ver lib/expedition.ts)
+  const base = rec.mode === 'expedition' ? { coins: 0, xp: 0 } : duelReward(res === 0 ? [1, 0] : res === 1 ? [0, 1] : [0, 0])
   const mult = level().reward
   const r = { coins: Math.round(base.coins * mult), xp: Math.round(base.xp * mult) }
   addCoins(r.coins)
@@ -67,7 +69,33 @@ function payout(res: 0 | 1 | -1, onResult: OnResult, rec: { mode: DuelSource; gf
   track('duels')
   if (res === 0) track('duelWins')
   playSfx(res === 0 ? 'qualify' : 'pick')
-  return { ...r, note: onResult(res) }
+  return { ...r, note: onResult(res, rec.rival) }
+}
+
+/** Expedición: el once de la partida (con sus refuerzos) y el rival del paso */
+function expeditionPicked(name: string): PickedSquad | null {
+  const run = getClub().expedition.run
+  if (!run || run.over) return null
+  const sq = expeditionSquad(run, getPlayer, id => getAllTechniques().find(x => x.id === id))
+  return sq ? { name, ...sq } : null
+}
+function expeditionMods() {
+  const run = getClub().expedition.run
+  return run ? runMods(run) : {}
+}
+function expeditionRival(): { rating: number; avoid: string[] } | undefined {
+  const run = getClub().expedition.run
+  return run && !run.over ? { rating: rivalRating(run.step), avoid: run.rivals } : undefined
+}
+/** Cartas que pueden salir como fichaje en la expedición: media alta y con foto */
+function expeditionPool() {
+  return getAllPlayers().filter(p => p.ovr >= 78 && !!p.image)
+}
+/** Rival del paso: si ya jugaste ese nombre, otro (hasta cinco intentos) */
+function rivalFor(e: { rating: number; avoid: string[] }) {
+  let r = fullRival(e.rating)
+  for (let i = 0; i < 5 && e.avoid.includes(r.name); i++) r = fullRival(e.rating)
+  return r
 }
 
 /**
@@ -77,12 +105,20 @@ function payout(res: 0 | 1 | -1, onResult: OnResult, rec: { mode: DuelSource; gf
 export default function Duel({ source, seriesId }: { source: DuelSource; seriesId?: string }) {
   const { t } = useAppSettings()
   // Fatal Draft se juega con el último draft; Mi club y Simulación, con una de Mis plantillas
-  const [picked, setPicked] = useState<PickedSquad | null>(() => (source === 'draft' || source === 'draftsim' ? draftSquad(t('duel.you')) : null))
+  const [picked, setPicked] = useState<PickedSquad | null>(() => {
+    if (source === 'draft' || source === 'draftsim') return draftSquad(t('duel.you'))
+    if (source === 'expedition') return expeditionPicked(t('duel.you'))
+    return null
+  })
   const [game, setGame] = useState(0)
   const boost = useMemo(() => weeklyBoost(), [])
   const series = seriesId ? findSeries(seriesId) ?? null : null
 
-  const onResult: OnResult = res => {
+  const onResult: OnResult = (res, rival) => {
+    if (source === 'expedition') {
+      recordExpeditionMatch(res, rival, expeditionPool(), getAllTechniques(), getPlayer)
+      return null
+    }
     if (source === 'draft' || source === 'draftsim') {
       const r = addDraftResult(res)
       return r.promoted ? t('fatal.promoted') : t('fatal.divPoints', { n: r.points })
@@ -92,8 +128,17 @@ export default function Duel({ source, seriesId }: { source: DuelSource; seriesI
     return r.completed ? t('fatal.seriesDone') : r.points ? t('fatal.seriesPoints', { n: r.points }) : null
   }
 
-  const title = `${t('hub.duel')} · ${t(source === 'club' ? 'hub.duelClub' : source === 'sim' ? 'hub.duelSim' : source === 'draftsim' ? 'sim.title' : 'hub.draft')}${series ? ` ${series.cap ?? 'X'}` : ''}`
+  const title = `${t('hub.duel')} · ${t(source === 'club' ? 'hub.duelClub' : source === 'sim' ? 'hub.duelSim' : source === 'draftsim' ? 'sim.title' : source === 'expedition' ? 'hub.expedition' : 'hub.draft')}${series ? ` ${series.cap ?? 'X'}` : ''}`
   const boostText = t('duel.boost', { n: boost.amount, what: boost.kind === 'game' ? boost.value : t(`element.${boost.value}` as TranslationKey) })
+
+  if (!picked && source === 'expedition') {
+    return (
+      <Screen title={title}>
+        <p className="fd-hint">{t('exp.noRun')}</p>
+        <a href={EXPEDITION_HASH} className="sheet-cta">{t('exp.back')}</a>
+      </Screen>
+    )
+  }
 
   if (!picked && (source === 'draft' || source === 'draftsim')) {
     return (
@@ -116,11 +161,11 @@ export default function Duel({ source, seriesId }: { source: DuelSource; seriesI
   }
 
   const again = () => setGame(g => g + 1)
-  const back = source === 'draft' || source === 'draftsim' ? FATAL_DRAFT_HASH : '#/fatal'
+  const back = source === 'draft' || source === 'draftsim' ? FATAL_DRAFT_HASH : source === 'expedition' ? EXPEDITION_HASH : '#/fatal'
   const isSim = source === 'sim' || source === 'draftsim'
   const match = isSim
     ? <SimMatch key={game} title={title} squad={picked} boostText={boostText} settle={(res, sc, rival, spent) => payout(res, onResult, { mode: source, gf: sc[0], ga: sc[1], rival, spent })} onAgain={again} backHref={back} />
-    : <FatalMatch key={game} mode={source} title={title} squad={picked} boostText={boostText} onAgain={again} onResult={onResult} backHref={back} />
+    : <FatalMatch key={game} mode={source} title={title} squad={picked} boostText={boostText} onAgain={again} onResult={onResult} backHref={back} expedition={source === 'expedition' ? expeditionRival() : undefined} />
   return <>
     <Tutorial key={`tut-${game}`} kind={isSim ? 'sim' : 'fatal'} />
     {match}
@@ -153,11 +198,12 @@ const AI_LEAD_MS = 1300
 
 const withBonus = (c: FatalCard, k: DuelKey, n: number): FatalCard => (n ? { ...c, st: { ...c.st, [k]: c.st[k] + n } } : c)
 
-function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode }: { mode: DuelSource; title: string; squad: PickedSquad; boostText: string; onAgain: () => void; onResult: OnResult; backHref: string }) {
+function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode, expedition }: { mode: DuelSource; title: string; squad: PickedSquad; boostText: string; onAgain: () => void; onResult: OnResult; backHref: string; expedition?: { rating: number; avoid: string[] } }) {
   const { t, locale } = useAppSettings()
   const [m, setM] = useState<Match>(() => {
-    const me = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation, undefined, undefined, getClub().limits)
-    const opp = adaptRivalDuel(me, fullRival(teamRating(squad.xi)))
+    const me = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation, undefined, undefined, { limits: getClub().limits, ...(mode === 'expedition' ? expeditionMods() : {}) })
+    // expedición: el rival del paso (media fija, sin no repetir); el resto, el rival de siempre adaptado a ti
+    const opp = expedition ? rivalFor(expedition) : adaptRivalDuel(me, fullRival(teamRating(squad.xi)))
     return { me, opp, myHand: me.cards, oppHand: opp.cards, rounds: [], first: Math.random() < 0.5 ? 0 : 1, pending: null }
   })
   const [metas, setMetas] = useState<Meta[]>([])
@@ -341,7 +387,7 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode
       {paid && <p className="reward-line">+<Coin className="w-5 h-5" /> {paid.coins} · +{paid.xp} XP</p>}
       {paid?.note && <p className="fatal-note">{paid.note}</p>}
       <div className="duel-end__actions">
-        <button type="button" className="sheet-cta" onClick={onAgain}>{t('duel.again')}</button>
+        {mode !== 'expedition' && <button type="button" className="sheet-cta" onClick={onAgain}>{t('duel.again')}</button>}
         <a href={backHref} className="chip">{t('fatal.back')}</a>
       </div>
     </div>

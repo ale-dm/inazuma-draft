@@ -70,7 +70,7 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
 }) {
   const { t, locale } = useAppSettings()
   const [setup] = useState(() => {
-    const me_ = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation, undefined, undefined, getClub().limits)
+    const me_ = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation, undefined, undefined, { limits: getClub().limits })
     const opp_ = adaptRival(me_, fullRival(teamRating(squad.xi)))
     return { me: me_, opp: opp_, init: simulate(me_, opp_) }
   })
@@ -292,7 +292,7 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
     const slot = subOut as SlotId
     const out = me.cards.find(x => x.slot === slot)!.p
     const nl = { ...lineup, [slot]: p } as LineupMap
-    const nm = fatalTeam(t('duel.you'), nl, squad.captain === slot ? null : squad.captain, squad.formation, undefined, undefined, getClub().limits)
+    const nm = fatalTeam(t('duel.you'), nl, squad.captain === slot ? null : squad.captain, squad.formation, undefined, undefined, { limits: getClub().limits })
     setLineup(nl)
     setMe(nm)
     setBench(b => [...b.filter(x => x !== p), out])
