@@ -2,6 +2,7 @@ import { useSyncExternalStore } from 'react'
 import type { Category } from '../types'
 import type { FormationId, SlotId } from './lineup'
 import { canRaise } from './dojo'
+import type { Fusion } from './fusion'
 
 /**
  * El club del jugador (fase 3, solo en este dispositivo): monedas, XP, cartas con duplicados, sobres guardados,
@@ -67,8 +68,10 @@ export interface ClubState {
   history: MatchRecord[]
   /** Dificultad de la IA del Fatal (por defecto, normal) */
   difficulty?: 'easy' | 'normal' | 'hard'
-  /** Dojo: id de carta → límite de rotura (0 a 5; ver lib/dojo.ts) */
+  /** Dojo: id de carta → límite de rotura (0 a 3; ver lib/dojo.ts) */
   limits: Record<string, number>
+  /** Fusiones Mixi Max hechas (ids de lib/fusion.ts), una vez por cuenta */
+  fusions: string[]
 }
 
 /** Un partido de Fatal: de dónde sale, resultado (0 gana, 1 pierde, −1 empate), marcador y rival */
@@ -100,7 +103,7 @@ const fresh = (): ClubState => ({
   week: null, weekCounters: {}, weekClaimed: [], career: {}, careerClaimed: [], dailyCup: null, puzzles: [], hlBest: 0, sbcDone: {}, crest: null,
   fatal: { season: null, points: {}, done: [], division: 3, divPoints: 0 },
   tokens: {}, freePack: { last: 0, bonus: 0, best: 0 }, today: { day: null, taken: {} }, codes: [], draftBest: 0, history: [],
-  limits: {},
+  limits: {}, fusions: [],
 })
 
 function read(): ClubState {
@@ -203,6 +206,19 @@ export function raiseLimit(id: string, category: Category): boolean {
   const level = state.limits[id] ?? 0
   if (!canRaise(have, level, category)) return false
   updateClub(s => ({ ...s, cards: { ...s.cards, [id]: have - 1 }, limits: { ...s.limits, [id]: level + 1 } }))
+  return true
+}
+
+/** Fusión: gasta una copia de cada ingrediente y da la Mixi Max (una vez por cuenta). Falso si no se puede */
+export function fuseCards(f: Fusion, [x, y]: [string, string]): boolean {
+  const cx = state.cards[x] ?? 0
+  const cy = state.cards[y] ?? 0
+  if (state.fusions.includes(f.id) || x === y || cx < 2 || cy < 2) return false
+  updateClub(s => ({
+    ...s,
+    cards: { ...s.cards, [x]: cx - 1, [y]: cy - 1, [f.result]: (s.cards[f.result] ?? 0) + 1 },
+    fusions: [...s.fusions, f.id],
+  }))
   return true
 }
 

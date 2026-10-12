@@ -143,6 +143,12 @@ Playwright: una expedición entera con un bot, y reanudar tras recargar.
 
 ## 4. Fusión Mixi Max
 
+**Estado:** hecho, con tres cambios respecto al texto de abajo, decididos al revisar los datos:
+- Las Mixi Max ya existen en la base (29 cartas de GO2, cada una con su media y técnicas). La fusión da **la Mixi Max de la base**, no una carta nueva con «mejor media + 2»: así no cambia el número de ninguna carta.
+- Recetas: **19** (pares de personajes revisados a mano con las descripciones de cada carta). Zeta y el Tyrannosaurus Rex no son personajes con carta, así que quedan fuera.
+- Ingredientes: dos personajes con una copia de sobra cada uno, **del mismo juego** (no tiene que ser GO2; por ejemplo Bailong y Tezcat se fusionan con cartas de GO1). Una vez por cuenta. Las Mixi Max siguen saliendo en sobres: la fusión es otra forma de conseguirlas.
+- Pantalla `#/fusion` (botón en el hub), pruebas `npm run test:fusion` (6), y `src/data/fusions.json` con las recetas.
+
 **Objetivo.** Dar un uso a los repetidos y a los personajes de la serie, con una carta por fusión.
 
 **Reglas.**

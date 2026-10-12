@@ -1398,6 +1398,14 @@ a.fdr-mode:active { transform: scale(.97); }
 .dojo-control { display: flex; flex-direction: column; gap: .45rem; width: 100%; }
 .dojo-control__row { display: flex; justify-content: space-between; align-items: center; font-weight: 800; text-transform: uppercase; }
 .dojo-control__hint { text-align: center; opacity: .8; }
+.fusion-list { display: flex; flex-direction: column; gap: .6rem; }
+.fusion-row { display: flex; align-items: center; gap: .8rem; padding: .5rem .6rem; border-radius: 16px; background: rgba(20, 20, 26, .7); border: 1px solid rgba(255, 255, 255, .12); }
+.fusion-row__info { display: flex; flex-direction: column; align-items: stretch; gap: .3rem; flex: 1; min-width: 0; text-align: left; }
+.fusion-row__info b { font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; text-transform: uppercase; }
+.fusion-row__info small { opacity: .8; }
+.fusion-row__info .sheet-cta { width: 100%; }
+.fusion-row.is-done { opacity: .6; }
+.fusion-made { margin: 0; font-weight: 900; text-transform: uppercase; color: #ffd23d; }
 .mg-fav { margin: 0; text-align: center; font-weight: 800; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: .04em; color: #ffd23d; }
 .mg-meta { margin: 0; display: flex; justify-content: space-between; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; font-size: .9rem; opacity: .85; }
 .mg-result { margin: 0; text-align: center; font-weight: 800; font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; text-transform: uppercase; }

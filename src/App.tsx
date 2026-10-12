@@ -3,7 +3,7 @@ import { useAppSettings } from './context/AppSettings'
 import GameShell from './components/hub/GameShell'
 import Hub from './components/hub/Hub'
 import {
-  ADMIN_HASH, BADGES_HASH, CODES_HASH, DOJO_HASH, DRAFT_HASH, DRAFT_SUMMARY_HASH, FATAL_DRAFT_HASH, FATAL_HASH, FREE_HASH, SBC_HASH, CLUB_HASH,
+  ADMIN_HASH, BADGES_HASH, CODES_HASH, DOJO_HASH, FUSION_HASH, DRAFT_HASH, DRAFT_SUMMARY_HASH, FATAL_DRAFT_HASH, FATAL_HASH, FREE_HASH, SBC_HASH, CLUB_HASH,
   COLLECTIONS_HASH, CUPS_HASH, DUEL_HASH, HL_HASH, MINIGAMES_HASH, OBJECTIVES_HASH, PLAYERS_HASH, PUZZLES_HASH, SQUADS_HASH, STORE_HASH, useHashRoute,
 } from './lib/route'
 import type { DuelSource } from './components/modes/Duel'
@@ -12,6 +12,7 @@ import type { DuelSource } from './components/modes/Duel'
 const Duel = lazy(() => import('./components/modes/Duel'))
 const DraftScreen = lazy(() => import('./components/futdraft/DraftScreen'))
 const Dojo = lazy(() => import('./components/modes/Dojo'))
+const Fusion = lazy(() => import('./components/modes/Fusion'))
 const DraftSummary = lazy(() => import('./components/futdraft/DraftSummary'))
 const FatalDraft = lazy(() => import('./components/modes/FatalDraft'))
 const PlayersExplorer = lazy(() => import('./components/PlayersExplorer'))
@@ -36,7 +37,7 @@ function screenFor(route: string): ReactNode | null {
   const [duelSource, seriesId] = route.startsWith(`${DUEL_HASH}/`) ? route.slice(DUEL_HASH.length + 1).split('/') as [DuelSource, string?] : [null]
   if (duelSource && ['club', 'sim', 'draft', 'draftsim'].includes(duelSource)) return <Duel key={route} source={duelSource} seriesId={seriesId} />
   const screens: Record<string, ReactNode> = {
-    [DOJO_HASH]: <Dojo />, [DRAFT_HASH]: <DraftScreen />, [DRAFT_SUMMARY_HASH]: <DraftSummary />, [FATAL_DRAFT_HASH]: <FatalDraft />,
+    [DOJO_HASH]: <Dojo />, [FUSION_HASH]: <Fusion />, [DRAFT_HASH]: <DraftScreen />, [DRAFT_SUMMARY_HASH]: <DraftSummary />, [FATAL_DRAFT_HASH]: <FatalDraft />,
     [STORE_HASH]: <Store />, [CLUB_HASH]: <MyCards />, [COLLECTIONS_HASH]: <Collections />, [OBJECTIVES_HASH]: <Objectives />,
     [SQUADS_HASH]: <Squads />, [HL_HASH]: <HigherLower />, [CUPS_HASH]: <Cups />, [PUZZLES_HASH]: <Puzzles />, [MINIGAMES_HASH]: <Minigames />, [ADMIN_HASH]: <Admin />,
     [SBC_HASH]: <SbcScreen />, [FATAL_HASH]: <Fatal />, [FREE_HASH]: <FreePack />, [CODES_HASH]: <Codes />, [BADGES_HASH]: <Badges />,
