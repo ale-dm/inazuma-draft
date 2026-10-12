@@ -2,7 +2,8 @@
  * Calibrar (ver docs/gameplay-variedad.md): una barra sube y baja; al parar, la posición decide la potencia. En el
  * centro de la zona verde, máximo; en el borde, nada. Pura: el tiempo se pasa desde fuera (testable).
  */
-export const CAL_PERIOD_MS = 1400
+/** 1800 ms por vuelta: a esa velocidad un frame (16 ms) mueve la aguja menos que la zona (gameplay-analisis §1) */
+export const CAL_PERIOD_MS = 1800
 
 /** Posición de la barra (0 a 1) en un instante: sube de 0 a 1 y vuelve, cada `periodMs` */
 export function barPos(elapsedMs: number, periodMs = CAL_PERIOD_MS): number {

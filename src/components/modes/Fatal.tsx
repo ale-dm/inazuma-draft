@@ -103,7 +103,10 @@ export default function Fatal() {
         </div>
       </section>
       <Challenges />
-      <MatchHistory />
+      <details className="fatal-more">
+        <summary>{t('hist.title')}</summary>
+        <MatchHistory />
+      </details>
     </Screen>
   )
 }

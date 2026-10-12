@@ -3,7 +3,9 @@ import { useAppSettings } from '../../context/AppSettings'
 import Screen from '../club/Screen'
 import { barPos, calibrate, CAL_PERIOD_MS, type CalResult } from '../../lib/minigames/calibrate'
 import { BLUFF_TYPES, aiBluffGuess, bluffOutcome, type TechType } from '../../lib/minigames/bluff'
-import { FORECAST_POINTS, forecastScore, pickOf, type Pick } from '../../lib/minigames/forecast'
+import {
+  FORECAST_DRAW_POINTS, FORECAST_POINTS, drawOutcome, favoriteOf, forecastScore, nextStreak, pickOf, streakBonus, type Pick,
+} from '../../lib/minigames/forecast'
 import { playSfx } from '../../lib/sfx'
 import type { TranslationKey } from '../../i18n/translations'
 
@@ -38,7 +40,8 @@ function Calibrate() {
     return () => cancelAnimationFrame(raf.current)
   }, [running])
 
-  const go = () => { start.current = performance.now(); setRes(null); setRunning(true) }
+  // la aguja vuelve al inicio al empezar; si no, en el primer frame se ve la posición de la vez anterior
+  const go = () => { start.current = performance.now(); setPos(barPos(0)); setRes(null); setRunning(true) }
   const stop = () => {
     // se juzga con el reloj en el momento del toque, no con el último frame pintado (docs/depuracion-minijuegos.md, H4)
     const r = calibrate(barPos(performance.now() - start.current))
@@ -98,34 +101,56 @@ function Bluff() {
   )
 }
 
+/** Diferencias de media posibles en el partido de prueba: igualados, o tú o el rival +3 (las cifras del balance) */
+const GAPS = [-3, 0, 3]
+const newGap = () => GAPS[Math.floor(Math.random() * GAPS.length)]
+
 function Forecast() {
   const { t } = useAppSettings()
+  const [gap, setGap] = useState(newGap)
   const [pick, setPick] = useState<Pick | null>(null)
-  const [out, setOut] = useState<{ res: 0 | 1 | -1; hit: boolean; points: number } | null>(null)
+  const [out, setOut] = useState<{ res: 0 | 1 | -1; hit: boolean; points: number; bonus: number } | null>(null)
+  const [streak, setStreak] = useState(0)
+  const [total, setTotal] = useState(0)
   const PICKS: Pick[] = ['win', 'draw', 'loss']
 
   const play = (p: Pick) => {
-    // partido de prueba: gana el 45 %, empata el 20 %, pierde el 35 %
-    const x = Math.random()
-    const res: 0 | 1 | -1 = x < 0.45 ? 0 : x < 0.65 ? -1 : 1
+    if (out) return
+    const res = drawOutcome(gap)
     const s = forecastScore(p, res)
+    const n = nextStreak(streak, s.hit)
+    const bonus = s.hit ? streakBonus(n) : 0
     setPick(p)
-    setOut({ res, ...s })
+    setOut({ res, ...s, bonus })
+    setStreak(n)
+    setTotal(x => x + s.points + bonus)
     playSfx(s.hit ? 'win' : 'lose')
   }
+  const next = () => { setGap(newGap()); setPick(null); setOut(null) }
 
   return (
     <section className="sim-panel mg">
       <h3 className="sheet-label">{t('mg.forecast.title')}</h3>
-      <p className="fd-hint">{t('mg.forecast.hint', { n: FORECAST_POINTS })}</p>
+      <p className="fd-hint">{t('mg.forecast.hint', { n: FORECAST_POINTS, d: FORECAST_DRAW_POINTS })}</p>
+      <p className="mg-fav">{t(`mg.forecast.fav.${favoriteOf(gap)}` as TranslationKey)}</p>
       <div className="mg-types">
-        {PICKS.map(p => <button key={p} type="button" onClick={() => play(p)}>{t(`mg.forecast.${p}` as TranslationKey)}</button>)}
+        {PICKS.map(p => (
+          <button key={p} type="button" disabled={!!out} className={pick === p ? 'is-on' : ''} onClick={() => play(p)}>
+            {t(`mg.forecast.${p}` as TranslationKey)}
+          </button>
+        ))}
       </div>
       {out && pick && (
         <p className={`mg-result mg-result--${out.hit ? 'perfect' : 'miss'}`}>
           {t('mg.forecast.result', { res: t(`mg.forecast.${pickOf(out.res)}` as TranslationKey) })} · {out.hit ? t('mg.forecast.hit', { n: out.points }) : t('mg.forecast.miss')}
+          {out.bonus > 0 && <> · {t('mg.forecast.bonus', { n: out.bonus })}</>}
         </p>
       )}
+      <p className="mg-meta">
+        <span>{t('mg.forecast.streak', { n: streak })}</span>
+        <span>{t('mg.forecast.total', { n: total })}</span>
+      </p>
+      {out && <div className="ds-actions"><button type="button" className="sheet-cta" onClick={next}>{t('mg.forecast.next')}</button></div>}
     </section>
   )
 }

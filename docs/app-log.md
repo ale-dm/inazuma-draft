@@ -341,3 +341,9 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
 - Retos de la semana de Fatal (src/lib/challenges.ts, components/modes/Challenges.tsx): 3 de 5 cada semana (siempre los mismos para todos), con contadores en los objetivos semanales (fatalTechs, fatalWins, fatalNoSpend, penGoals, subsMade) y premio al cobrar.
 
 - Dificultad del Fatal (fácil, normal, difícil): cambia la IA, el rival y el premio (src/lib/difficulty.ts); se elige en la página del Fatal.
+
+- Minijuegos (src/lib/minigames, ruta `#/minijuegos`): calibrar con vuelta de 1800 ms (recomendado en gameplay-analisis §1) y la aguja vuelve al inicio al empezar; pronóstico con favorito según la diferencia de media, empate a 3 puntos, racha (+2 al 3.º acierto, +5 al 5.º) y probabilidades del balance normalizadas. Pruebas: `npm run test:minigames` (21).
+
+- Fatal: el historial se pliega por defecto (un toque para verlo) para acortar la página.
+
+- Depuración de los minijuegos (docs/depuracion-minijuegos.md): H1–H7 corregidos y comprobados en el navegador. La parada de la calibración coincide con el reloj en 40 de 40 pruebas.

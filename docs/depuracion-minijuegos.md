@@ -168,7 +168,7 @@ error visible, pero el resultado no es reproducible.
 | H1 · farol y rotación | **Corregido**: desempate al azar en `aiBluffGuess` | prueba `farol: rotar…` (antes 0,625; ahora dentro de 0,20–0,35) y `repetir…` (> 0,55) |
 | H2 · identificadores del tablero | **Corregido**: identidad por posición y id único (`freshId`) | tres pruebas de H2 (antes fallaban) |
 | H3 · manos vacías y rival incompleto | **Corregido**: `aiLead` y `aiRespond` devuelven `null` sin cartas; `fullRival` reintenta hasta 11 cartas en duelo y Sim | pruebas de IA con mano vacía; partido de Sim y duelo completos en el navegador |
-| H4 · calibración con el último frame | **Corregido**: la parada se juzga con `performance.now()` | revisión del código; sin prueba automática (depende del reloj del navegador) |
+| H4 · calibración con el último frame | **Corregido**: la parada se juzga con `performance.now()` | revisión del código; en navegador, 40 paradas con retraso aleatorio dentro de la página: 40/40 coinciden con el reloj. Una lectura anómala del playtest (50–51 % «Fallo») era un artefacto del script, que leía la aguja de la ejecución anterior |
 | H5 · temporizador del rival sin limpieza | **Corregido**: el temporizador se guarda en una referencia, se cancela al desmontar y al empezar otra respuesta | partida completa de duelo en el navegador; revisión del código |
 | H6 · guarda del pago en estado | **Corregido**: guarda síncrona (`paidRef`) en duelo y Sim | un partido de cada modo: una sola entrada en el historial y un pago |
 | H7 · `aiLead` dentro de un actualizador | **Corregido**: la elección se hace fuera del actualizador, que solo guarda el resultado | rondas con la IA llevando, en el navegador |

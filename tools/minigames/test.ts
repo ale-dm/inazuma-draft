@@ -2,18 +2,19 @@
 import assert from 'node:assert/strict'
 import { barPos, calibrate } from '../../src/lib/minigames/calibrate'
 import { aiBluffGuess, bluffOutcome, BLUFF_TYPES, type TechType } from '../../src/lib/minigames/bluff'
-import { forecastScore, pickOf } from '../../src/lib/minigames/forecast'
+import { drawOutcome, favoriteOf, forecastScore, nextStreak, outcomeOdds, pickOf, streakBonus } from '../../src/lib/minigames/forecast'
 import { aiLead, aiRespond } from '../../src/lib/ai'
 import { matchRecipe, merge, readyRecipes, type Piece, type Recipe } from '../../src/lib/minigames/board'
 
 let n = 0
 const test = (name: string, fn: () => void) => { fn(); n++; console.log(`ok ${n} - ${name}`) }
 
-test('la barra sube y baja entre 0 y 1', () => {
+test('la barra sube y baja entre 0 y 1 (vuelta de 1800 ms)', () => {
   assert.equal(barPos(0), 0)
-  assert.equal(barPos(700), 1)
-  assert.equal(barPos(1400), 0)
-  assert.ok(Math.abs(barPos(350) - 0.5) < 1e-9)
+  assert.equal(barPos(900), 1)
+  assert.equal(barPos(1800), 0)
+  assert.ok(Math.abs(barPos(450) - 0.5) < 1e-9)
+  assert.ok(Math.abs(barPos(1350) - 0.5) < 1e-9)
 })
 
 test('calibrar: el centro es perfecto, el borde falla', () => {
@@ -72,6 +73,46 @@ test('pronóstico: acertar da puntos, fallar no quita nada', () => {
   assert.deepEqual(forecastScore('draw', 0), { hit: false, points: 0 })
   assert.equal(pickOf(-1), 'draw')
   assert.equal(pickOf(1), 'loss')
+})
+
+test('pronóstico: el empate da 3 puntos (sale poco)', () => {
+  assert.deepEqual(forecastScore('draw', -1), { hit: true, points: 3 })
+})
+
+test('pronóstico: el favorito sale de la diferencia de media', () => {
+  assert.equal(favoriteOf(3), 'me')
+  assert.equal(favoriteOf(-3), 'rival')
+  assert.equal(favoriteOf(0), 'even')
+  assert.equal(favoriteOf(1), 'even')
+})
+
+test('pronóstico: las probabilidades suman 1 y el favorito gana más', () => {
+  for (const d of [-3, 0, 3]) {
+    const o = outcomeOdds(d)
+    assert.ok(Math.abs(o.win + o.draw + o.loss - 1) < 1e-9, `suma ${d}`)
+  }
+  assert.ok(outcomeOdds(3).win > outcomeOdds(3).loss)
+  assert.ok(outcomeOdds(-3).loss > outcomeOdds(-3).win)
+})
+
+test('pronóstico: el reparto al azar respeta las probabilidades (+3 gana ~82 %)', () => {
+  let seed = 777
+  const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647 }
+  let wins = 0
+  const N = 20000
+  for (let i = 0; i < N; i++) if (drawOutcome(3, rnd) === 0) wins++
+  assert.ok(Math.abs(wins / N - outcomeOdds(3).win) < 0.015, `gana ${wins / N}`)
+  assert.equal(drawOutcome(0, () => 0.1), 0)
+  assert.equal(drawOutcome(0, () => 0.5), -1)
+  assert.equal(drawOutcome(0, () => 0.9), 1)
+})
+
+test('pronóstico: racha de 3 da +2, de 5 da +5, y un fallo la corta', () => {
+  assert.equal(nextStreak(2, true), 3)
+  assert.equal(nextStreak(3, false), 0)
+  assert.equal(streakBonus(3), 2)
+  assert.equal(streakBonus(4), 0)
+  assert.equal(streakBonus(5), 5)
 })
 
 const pieces: Piece[] = [
