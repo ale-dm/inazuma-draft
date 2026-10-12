@@ -100,6 +100,8 @@ favorito de +3 se gana más apostando contra él (pierdo: 0,93 de valor esperado
 premian **apostar en contra**, justo lo contrario de lo que se quiere.
 
 ### 3.3 Recomendación
+- **Decisión (estado actual):** el pronóstico se queda como pantalla de prueba, sin premio en el club. Con puntos fijos
+  y racha, un premio abriría otra fuente de monedas que habría que equilibrar con el balance. Se revisa tras el playtest con personas.
 - **Puntos fijos** (2) y **racha**: 3 aciertos seguidos suman +2 extra, 5 suman +5. La racha da una razón para volver
   sin cuotas.
 - **Mostrar el favorito**: cada partido enseña «favorito: tú» o «favorito: rival» según la diferencia de media (ya

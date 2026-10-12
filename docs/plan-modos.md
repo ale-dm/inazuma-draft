@@ -382,6 +382,8 @@ Semana a semana, con prueba del balance al final de cada modo que paga:
 7. Jefe mundial (con backend).
 
 ## Decisiones que necesito de ti antes de empezar
+
+Respuestas tomadas hasta ahora: penalti del Sim sin calibrar y pronóstico sin premio (ver `docs/fatal-sim.md` y `docs/gameplay-analisis.md` §3). Las ocho de abajo siguen abiertas.
 1. **Dojo**: límite 5 o 3, y si hay límite por rareza.
 2. **Expedición**: ¿las recompensas de jugador duran solo la expedición? ¿Vidas o una derrota la acaba?
 3. **Campaña**: ¿escribo los capítulos y las reglas (y los reviso contigo) o empiezo con tres mapas de muestra?

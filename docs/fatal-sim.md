@@ -62,6 +62,8 @@ en Victory Road es 300 con la técnica más cara en 100: aquí las técnicas lle
 - **Penalti** (`PENALTY_RATE` 0,1): uno de cada diez ataques que ganan el balón acaba en penalti. Si chutas tú, eliges
   izquierda, centro o derecha; si defiendes, eliges hacia dónde te lanzas. El otro lado elige al azar. Gol con
   `penaltyGoal`: si las direcciones son distintas entra el 80 %; si el portero adivina, el 25 %. Sin tensión.
+- **Decisión:** el penalti se queda con la elección de dirección y no pasa a calibrar. La calibración ya es un minijuego
+  aparte; meterla en el penalti añadiría un toque de tiempo justo antes de medir la latencia en móvil.
 - **Cambios** en el descanso (`MAX_SUBS` 2): solo con el último draft, que guarda el banquillo (`PickedSquad.bench`).
   Tocas un titular y luego un suplente de su misma posición. La segunda parte se vuelve a sortear con el once nuevo.
   Con un once de club (sin banquillo) no aparece el panel.
