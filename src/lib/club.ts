@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from 'react'
 import type { Category } from '../types'
 import type { FormationId, SlotId } from './lineup'
+import { canRaise } from './dojo'
 
 /**
  * El club del jugador (fase 3, solo en este dispositivo): monedas, XP, cartas con duplicados, sobres guardados,
@@ -66,6 +67,8 @@ export interface ClubState {
   history: MatchRecord[]
   /** Dificultad de la IA del Fatal (por defecto, normal) */
   difficulty?: 'easy' | 'normal' | 'hard'
+  /** Dojo: id de carta → límite de rotura (0 a 5; ver lib/dojo.ts) */
+  limits: Record<string, number>
 }
 
 /** Un partido de Fatal: de dónde sale, resultado (0 gana, 1 pierde, −1 empate), marcador y rival */
@@ -97,6 +100,7 @@ const fresh = (): ClubState => ({
   week: null, weekCounters: {}, weekClaimed: [], career: {}, careerClaimed: [], dailyCup: null, puzzles: [], hlBest: 0, sbcDone: {}, crest: null,
   fatal: { season: null, points: {}, done: [], division: 3, divPoints: 0 },
   tokens: {}, freePack: { last: 0, bonus: 0, best: 0 }, today: { day: null, taken: {} }, codes: [], draftBest: 0, history: [],
+  limits: {},
 })
 
 function read(): ClubState {
@@ -191,6 +195,15 @@ export const QUICK_SELL: Record<Category, number> = {
   'Advanced Player': 150,
   'Growing Player': 60,
   'Common Player': 25,
+}
+
+/** Dojo: gasta una copia de sobra y sube en 1 el límite de rotura de esa carta. Falso si no se puede (lib/dojo.ts) */
+export function raiseLimit(id: string, category: Category): boolean {
+  const have = state.cards[id] ?? 0
+  const level = state.limits[id] ?? 0
+  if (!canRaise(have, level, category)) return false
+  updateClub(s => ({ ...s, cards: { ...s.cards, [id]: have - 1 }, limits: { ...s.limits, [id]: level + 1 } }))
+  return true
 }
 
 /** Vende copias de una carta (nunca la última) */

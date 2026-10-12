@@ -11,7 +11,8 @@
     "data:rebuild": "node scripts/rebuild-db.mjs",
     "data:zukan": "node scripts/zukan-rebuild.mjs",
     "balance": "node tools/balance/run.mjs",
-    "test:minigames": "node tools/minigames/run.mjs"
+    "test:minigames": "node tools/minigames/run.mjs",
+    "test:dojo": "node tools/dojo/run.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

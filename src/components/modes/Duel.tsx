@@ -10,7 +10,7 @@ import {
   score, simScore, simulate, tiebreak, total, weeklyBoost,
   type FatalCard, type FatalTeam, type Round, type SimChance,
 } from '../../lib/fatal'
-import { addCoins, addXp, track } from '../../lib/club'
+import { addCoins, addXp, getClub, track } from '../../lib/club'
 import { addDraftResult, addSeriesResult, findSeries } from '../../lib/fatal-series'
 import { buzz, playSfx } from '../../lib/sfx'
 import type { TranslationKey } from '../../i18n/translations'
@@ -156,7 +156,7 @@ const withBonus = (c: FatalCard, k: DuelKey, n: number): FatalCard => (n ? { ...
 function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode }: { mode: DuelSource; title: string; squad: PickedSquad; boostText: string; onAgain: () => void; onResult: OnResult; backHref: string }) {
   const { t, locale } = useAppSettings()
   const [m, setM] = useState<Match>(() => {
-    const me = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation)
+    const me = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation, undefined, undefined, getClub().limits)
     const opp = adaptRivalDuel(me, fullRival(teamRating(squad.xi)))
     return { me, opp, myHand: me.cards, oppHand: opp.cards, rounds: [], first: Math.random() < 0.5 ? 0 : 1, pending: null }
   })

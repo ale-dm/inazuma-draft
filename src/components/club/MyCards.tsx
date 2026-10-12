@@ -3,12 +3,14 @@ import type { Category, Player, Position } from '../../types'
 import { useAppSettings } from '../../context/AppSettings'
 import { getPlayer } from '../../data/catalog'
 import { QUICK_SELL, quickSell, useClub } from '../../lib/club'
+import { sellPrice } from '../../lib/dojo'
 import { RARITY_CLASS, RARITY_ORDER } from '../../lib/packs'
 import InaCard from '../InaCard'
 import CardInfo from '../CardInfo'
 import Sheet from '../hub/Sheet'
 import Screen from './Screen'
 import Coin from '../Coin'
+import { LimitControl } from '../modes/Dojo'
 
 const POSITIONS: (Position | 'all')[] = ['all', 'GK', 'DF', 'MF', 'FW']
 
@@ -27,10 +29,11 @@ export default function MyCards() {
     .sort((a, b) => b.p.ovr - a.p.ovr), [club.cards])
   const shown = owned.filter(({ p, n }) =>
     (pos === 'all' || p.position === pos) && (rarity === 'all' || p.category === rarity) && (!dupesOnly || n > 1))
-  const dupeValue = owned.reduce((s, { p, n }) => s + (n - 1) * QUICK_SELL[p.category], 0)
+  const price = (p: Player) => sellPrice(QUICK_SELL[p.category], club.limits[p.id] ?? 0, p.category)
+  const dupeValue = owned.reduce((s, { p, n }) => s + (n - 1) * price(p), 0)
 
   function sellAllDupes() {
-    for (const { p, n } of owned) if (n > 1) quickSell(p.id, n - 1, QUICK_SELL[p.category])
+    for (const { p, n } of owned) if (n > 1) quickSell(p.id, n - 1, price(p))
   }
 
   return (
@@ -60,7 +63,7 @@ export default function MyCards() {
       <div className="card-grid">
         {shown.slice(0, 300).map(({ p, n }) => (
           <span key={p.id} className="card-grid__item">
-            <InaCard player={p} size="sm" onClick={() => setOpen(p)} />
+            <InaCard player={p} size="sm" limit={club.limits[p.id] ?? 0} onClick={() => setOpen(p)} />
             {n > 1 && <span className="dupe-badge">×{n}</span>}
           </span>
         ))}
@@ -69,10 +72,11 @@ export default function MyCards() {
       <Sheet open={!!open} title={open?.name ?? ''} onClose={() => setOpen(null)}>
         {open && (
           <div className="flex flex-col items-center gap-3">
-            <InaCard player={open} size="lg" />
+            <InaCard player={open} size="lg" limit={club.limits[open.id] ?? 0} />
+            <div className="w-full"><LimitControl player={open} copies={club.cards[open.id] ?? 0} level={club.limits[open.id] ?? 0} /></div>
             {(club.cards[open.id] ?? 0) > 1 && (
-              <button type="button" className="sheet-cta" onClick={() => quickSell(open.id, club.cards[open.id] - 1, QUICK_SELL[open.category])}>
-                {t('club.sell', { n: club.cards[open.id] - 1 })} · <Coin className="w-5 h-5" /> {((club.cards[open.id] - 1) * QUICK_SELL[open.category]).toLocaleString()}
+              <button type="button" className="sheet-cta" onClick={() => quickSell(open.id, club.cards[open.id] - 1, price(open))}>
+                {t('club.sell', { n: club.cards[open.id] - 1 })} · <Coin className="w-5 h-5" /> {((club.cards[open.id] - 1) * price(open)).toLocaleString()}
               </button>
             )}
             <div className="w-full"><CardInfo player={open} /></div>

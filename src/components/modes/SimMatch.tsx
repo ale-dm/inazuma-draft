@@ -15,7 +15,7 @@ import type { Player, Technique } from '../../types'
 import type { LineupMap, SlotId } from '../../lib/lineup'
 import type { FatalTeam } from '../../lib/fatal'
 import { buzz, playSfx } from '../../lib/sfx'
-import { track } from '../../lib/club'
+import { getClub, track } from '../../lib/club'
 import DuelCard from '../DuelCard'
 import Coin from '../Coin'
 import Screen from '../club/Screen'
@@ -70,7 +70,7 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
 }) {
   const { t, locale } = useAppSettings()
   const [setup] = useState(() => {
-    const me_ = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation)
+    const me_ = fatalTeam(t('duel.you'), squad.lineup, squad.captain, squad.formation, undefined, undefined, getClub().limits)
     const opp_ = adaptRival(me_, fullRival(teamRating(squad.xi)))
     return { me: me_, opp: opp_, init: simulate(me_, opp_) }
   })
@@ -292,7 +292,7 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
     const slot = subOut as SlotId
     const out = me.cards.find(x => x.slot === slot)!.p
     const nl = { ...lineup, [slot]: p } as LineupMap
-    const nm = fatalTeam(t('duel.you'), nl, squad.captain === slot ? null : squad.captain, squad.formation)
+    const nm = fatalTeam(t('duel.you'), nl, squad.captain === slot ? null : squad.captain, squad.formation, undefined, undefined, getClub().limits)
     setLineup(nl)
     setMe(nm)
     setBench(b => [...b.filter(x => x !== p), out])

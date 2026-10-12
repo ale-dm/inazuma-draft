@@ -26,6 +26,7 @@ export const CODES_HASH = '#/codigos'
 export const DRAFT_HASH = '#/draft'
 export const DRAFT_SUMMARY_HASH = '#/draft-resumen'
 export const FATAL_DRAFT_HASH = '#/fatal-draft'
+export const DOJO_HASH = '#/dojo'
 
 /** Ruta mínima por hash: '#/jugadores' abre el explorador sin perder la partida en curso */
 export function useHashRoute(): string {

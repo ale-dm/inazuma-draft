@@ -55,7 +55,15 @@ const TECH_SLOT: Record<string, 0 | 1 | 2> = { Shoot: 0, Dribble: 1, Block: 2, C
  * 4. nunca por encima de la media − 1 (como en MADFUT), mínimo 20
  * Si la carta tiene valores puestos a mano (CRUD oculto), mandan esos.
  */
-export function duelStats(p: Player): DuelStats {
+/**
+ * Bonus de los números por el límite de rotura del Dojo (docs/plan-modos.md §1): cada nivel suma 1 a los tres
+ * números, y el tercero suma 2 (así el total es 0, 1, 2, 4, 5, 6).
+ */
+export function limitBonus(level: number): number {
+  return level + (level >= 3 ? 1 : 0)
+}
+
+export function duelStats(p: Player, limit = 0): DuelStats {
   const s = p.stats
   const raw = [s.shooting, s.control, p.position === 'GK' ? s.goalkeeping : s.defense]
   const techs = [0, 0, 0]
@@ -68,7 +76,10 @@ export function duelStats(p: Player): DuelStats {
     const adj = Math.max(-6, Math.min(2, Math.round((raw[i] - p.ovr) * 0.3))) + Math.min(2, Math.floor(techs[i] / 2))
     return Math.max(20, Math.min(p.ovr - 1, p.ovr + off + adj))
   })
-  return { att: p.duel?.att ?? att, con: p.duel?.con ?? con, def: p.duel?.def ?? def }
+  // el límite sube el número sin pasar de OVR − 1 (el tope de MADFUT); con límite 0 no cambia nada
+  const bonus = limitBonus(limit)
+  const up = (v: number) => Math.min(Math.max(p.ovr - 1, v), v + bonus)
+  return { att: up(p.duel?.att ?? att), con: up(p.duel?.con ?? con), def: up(p.duel?.def ?? def) }
 }
 
 /** Quién gana un duelo en una acción: compara esa estadística de las dos cartas (empate → gana la nota general) */

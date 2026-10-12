@@ -3,12 +3,12 @@ import type { Player } from '../../types'
 import { useAppSettings } from '../../context/AppSettings'
 import { getAllPlayers, getCharacterVersions, teamLogo } from '../../data/catalog'
 import { loadProgress, uniqueCharacters } from '../../lib/progress'
-import { ADMIN_HASH, BADGES_HASH, CODES_HASH, DRAFT_HASH, FATAL_HASH, FREE_HASH, SBC_HASH, CLUB_HASH, COLLECTIONS_HASH, CUPS_HASH, HL_HASH, OBJECTIVES_HASH, PLAYERS_HASH, PUZZLES_HASH, SQUADS_HASH, STORE_HASH } from '../../lib/route'
+import { ADMIN_HASH, BADGES_HASH, CODES_HASH, DOJO_HASH, DRAFT_HASH, FATAL_HASH, FREE_HASH, SBC_HASH, CLUB_HASH, COLLECTIONS_HASH, CUPS_HASH, HL_HASH, OBJECTIVES_HASH, PLAYERS_HASH, PUZZLES_HASH, SQUADS_HASH, STORE_HASH } from '../../lib/route'
 import { useClub } from '../../lib/club'
 import { pendingRewards } from '../../lib/objectives'
 import InaCard from '../InaCard'
 import Coin from '../Coin'
-import { ArrowLeftRight, ArrowUpDown, BookOpen, ClipboardList, Cloud, Gift, Grid3x3, Layers, Puzzle, Settings, Shield, ShoppingBag, Target, Trophy, Zap } from 'lucide-react'
+import { ArrowLeftRight, ArrowUpDown, BookOpen, ChevronsUp, ClipboardList, Cloud, Gift, Grid3x3, Layers, Puzzle, Settings, Shield, ShoppingBag, Target, Trophy, Zap } from 'lucide-react'
 import RulesModal from '../RulesModal'
 import StatsModal from '../StatsModal'
 import Sheet from './Sheet'
@@ -108,6 +108,7 @@ export default function Hub() {
             <Tile label={t('hub.sbc')} onClick={go(SBC_HASH)}><Puzzle className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
             <Tile label={t('hub.puzzles')} onClick={go(PUZZLES_HASH)}><Grid3x3 className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
             <Tile label={t('hub.higherLower')} onClick={go(HL_HASH)}><ArrowUpDown className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
+            <Tile label={t('hub.dojo')} onClick={go(DOJO_HASH)}><ChevronsUp className="tile__icon" strokeWidth={1.6} aria-hidden /></Tile>
           </div>
         </section>
 

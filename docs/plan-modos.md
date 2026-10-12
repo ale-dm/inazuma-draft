@@ -18,6 +18,8 @@ guarda y dónde), **pantallas y archivos**, **reutiliza**, **pasos** en orden (c
 
 ## 1. Dojo: ascender con copias
 
+**Estado:** hecho. Límite máximo 3 (ver decisiones al final). Se puede subir desde el Dojo y desde la ficha de Mis cartas.
+
 **Objetivo.** Dar salida a los repetidos subiendo el límite de una carta.
 
 **Reglas.**
@@ -383,7 +385,19 @@ Semana a semana, con prueba del balance al final de cada modo que paga:
 
 ## Decisiones que necesito de ti antes de empezar
 
-Respuestas tomadas hasta ahora: penalti del Sim sin calibrar y pronóstico sin premio (ver `docs/fatal-sim.md` y `docs/gameplay-analisis.md` §3). Las ocho de abajo siguen abiertas.
+Decisiones tomadas (con la recomendación de cada pregunta, salvo donde se indica):
+- Penalti del Sim sin calibrar y pronóstico sin premio (ver `docs/fatal-sim.md` y `docs/gameplay-analisis.md` §3).
+- Dojo: límite máximo **3** (no 5: con 5 la media de los números subía 3,9 puntos; con 3, 2,7, dentro del objetivo de 2–3). Las Legendarias, hasta 2. Medido con el catálogo real.
+- Expedición: recompensas de jugador solo durante la expedición; 3 vidas; sin repetir rival en la misma expedición.
+- Campaña: tres mapas de muestra primero (los capítulos y reglas se revisan contigo después).
+- Fusión: Mixi Max de la serie **fusionables** (se conservan), con revisión de los ingredientes.
+- Liga: 10 jornadas de un partido; plantilla fija durante la temporada.
+- Ruleta: pity solo en Leyenda.
+- Torneo de técnicas: vida 20; mazo de técnicas; sin repetir técnicas en el mismo mazo.
+- Jefe mundial: descartado por ahora (sin usuarios no tiene sentido).
+- Evento semanal: la tabla global, por ahora, no (sin backend); usa el boost semanal.
+
+Estado: **Dojo hecho** (`src/lib/dojo.ts`, `src/components/modes/Dojo.tsx`, ruta `#/dojo`, pruebas `npm run test:dojo`).
 1. **Dojo**: límite 5 o 3, y si hay límite por rareza.
 2. **Expedición**: ¿las recompensas de jugador duran solo la expedición? ¿Vidas o una derrota la acaba?
 3. **Campaña**: ¿escribo los capítulos y las reglas (y los reviso contigo) o empiezo con tres mapas de muestra?

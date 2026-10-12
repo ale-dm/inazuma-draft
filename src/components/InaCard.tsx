@@ -25,6 +25,8 @@ interface Props {
   highlight?: DuelKey
   /** Números a enseñar (en el Duelo, ya con química y boost) */
   values?: DuelStats
+  /** Límite de rotura del Dojo de esta carta (sube sus números; ver lib/dojo.ts) */
+  limit?: number
 }
 
 /**
@@ -33,7 +35,7 @@ interface Props {
  * defensa) o, si están ocultos, el juego de la carta. Color por rareza (Victory Road) y esquinas cortadas. Mantener
  * pulsada abre la ficha (onLongPress) en vez de la acción normal de onClick.
  */
-export default function InaCard({ player, showRating = true, size = 'md', onClick, onLongPress, stats, highlight, values }: Props) {
+export default function InaCard({ player, showRating = true, size = 'md', onClick, onLongPress, stats, highlight, values, limit = 0 }: Props) {
   const { locale } = useAppSettings()
   const pref = useCardStats()
   const [failed, setFailed] = useState(false)
@@ -43,7 +45,7 @@ export default function InaCard({ player, showRating = true, size = 'md', onClic
   const surname = displayName.split(' ').slice(-1)[0]
   const logo = !NO_TEAM.has(player.team) && !badgeFailed ? teamLogo(player.team, player.game) : undefined
   const withStats = (stats ?? pref) && showRating
-  const d = withStats ? values ?? duelStats(player) : null
+  const d = withStats ? values ?? duelStats(player, limit) : null
   const small = size === 'xs'
 
   const pressTimer = useRef<number | undefined>(undefined)

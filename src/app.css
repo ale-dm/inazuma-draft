@@ -1391,6 +1391,13 @@ a.fdr-mode:active { transform: scale(.97); }
 .mg-types button:active { transform: scale(.97); }
 .mg-types button:disabled { opacity: .45; }
 .mg-types button.is-on { background: rgba(255, 210, 61, .22); border-color: #ffd23d; }
+.dojo-dots { display: inline-flex; gap: .3rem; align-items: center; }
+.dojo-dots i { display: inline-block; width: .55rem; height: .55rem; border-radius: 99px; border: 1.5px solid rgba(255, 255, 255, .5); }
+.dojo-dots i.on { background: #ffd23d; border-color: #ffd23d; }
+.dojo-item { display: flex; flex-direction: column; align-items: center; gap: .3rem; }
+.dojo-control { display: flex; flex-direction: column; gap: .45rem; width: 100%; }
+.dojo-control__row { display: flex; justify-content: space-between; align-items: center; font-weight: 800; text-transform: uppercase; }
+.dojo-control__hint { text-align: center; opacity: .8; }
 .mg-fav { margin: 0; text-align: center; font-weight: 800; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: .04em; color: #ffd23d; }
 .mg-meta { margin: 0; display: flex; justify-content: space-between; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; font-size: .9rem; opacity: .85; }
 .mg-result { margin: 0; text-align: center; font-weight: 800; font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; text-transform: uppercase; }
