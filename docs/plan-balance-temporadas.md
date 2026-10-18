@@ -99,11 +99,36 @@ Inazuma Eleven 77,5 · Shuriken 78,2 · Farm 79 · Kirkwood 80 · **Royal Academ
 
 Referencia de techo de GO1: Raimon 83,9 · Oscuridad Ancestral 83,5 · Luz Eterna 82,5.
 
+### IE2 — en curso (alienígenas y Caos hechos; normales pendientes)
+
+Escala de poder de los alienígenas (la dio el jefe; manda sobre el orden de `plan-base-jugadores.md §9`):
+
+**Géminis 76,7 < Épsilon 78,3 < Épsilon Plus 79,7 < Diamond/Prominence 81 < Royal Redux 82,7 < Génesis 84,1 <
+Emperadores Oscuros 85,5 < Raimon 87,0 < Caos 88,0.**
+
+- `_game.IE2.compress = 0,5`; capitán #1 en todos (a Kiyama se le puso `captain_cap` 89, y al Caos `cap` propio 92).
+- **Alienígenas** (8): Tormenta de Géminis 76,7 · Épsilon 78,3 · Épsilon Plus 79,7 · Prominence 81,0 · Diamond 81,3 ·
+  Royal Redux 82,7 · Génesis 84,1 · Emperadores Oscuros 85,5.
+- **Caos** (equipo nuevo, once 88, estrella 92): fusión de Prominence + Diamond Dust, **11 jugadores** con su «Chaos
+  form» (stats mejores). Se creó con `extra_versions` (`{page, game: IE2, team: Chaos}`; el build coge la forma «Chaos»
+  por `want='chaos'`) + `team_tuning['Chaos']` (`compress` 1 y `cap` 92 para que tenga dispersión y estrella). Escudo
+  (emblema del Caos) y nombre ES «Caos» salen solos. Cada carta queda +3 a +8 por encima de su versión de
+  Prominence/Diamond.
+- **Raimon** (protagonista) con curva: once 87,0, capitán Mark Evans 88. Por encima de Emperadores Oscuros y por debajo
+  del Caos.
+- **Normales (pendientes)**: Servicio Secreto 74,3 · Fauxshore 74,7 · Mary Times 74,9 · Mar de Árboles 77,1 · Alpino
+  77,2 · Claustro Sagrado 78,6 · Triple C 79,9 · Jóvenes Inazuma 80,5. (Los tres primeros están «fuera de la curva» por
+  el plan.)
+
+Firmas que **no** son el #1, por TP de IE2: Mary Times (Spring Millpond 75 · Remate del águila 59), Épsilon (Fedora 75 ·
+Remate asalto 44), Claustro (Dirk Artz 79 · Remate del águila 59), Royal Redux (David Samford 82 · Pingüino n.º1 62),
+Diamond (Frost 79 · Flecha divina 56), Prominence (Balcke 79 · Remate triple 64), Génesis (Kiwill 86 · Zona sigma 50).
+
 ### Pendientes (objetivos actuales, de `plan-base-jugadores.md` §9)
 
 | Temporada | Estado | Notas |
 |---|---|---|
-| IE2 | pendiente | Gemini Storm 76,5 → … → Génesis 86 |
+| IE2 | en curso | aliens: Géminis 76,7 → Caos 88,0 (escala del jefe); normales pendientes |
 | IE3 | pendiente | Big Waves 76 → … → Little Gigantes 86,5 |
 | GO1 | pendiente | Vía Láctea 74,5 → Luz Eterna 82,5 → Oscuridad Ancestral 83,5 (techo 87) |
 | GO2 | pendiente | Protocolo Omega 76 → … → Aullido Lunar 87 (techo 90) |
@@ -268,8 +293,8 @@ Galaxy/IE3).
   - **Royal Academy**: top 3 a mano (**Jude 87 · Samford 84 · King 84**) y el resto ~2 puntos por debajo porque se
     pasaban de alto (Gus Martin 85 → 83, Derek Swing 85 → 82, Herman Waldon 84 → 81, Daniel Hatch 83 → 80…). Se bajó el
     objetivo del once (`top11` 83 → 81) y se fijaron solo Jude/Samford/King. Once 83,5 → **81,5**.
-- **IE1 pool sin equipo (scouts)**: regla `scout_pool` en `tuning.py`: 40 % stats + 60 % técnica, **TP de IE1** (`cost:
-  IE1`, ya **EU**) por percentiles del propio pool, 50 % stats + 50 % técnica, **46–79** (cap 79). Los 788 sin equipo pasan
+- **IE1 pool sin equipo (scouts)**: regla `scout_pool` en `tuning.py`: **50 % stats + 50 % técnica**, **TP de IE1** (`cost:
+  IE1`, ya **EU**) por percentiles del propio pool, **46–79** (cap 79). Los 788 sin equipo pasan
   a **46–79**, mediana **61**. Los famosos suben solos (ReflectBuster EU 62, Shine Drive 42, Full Power Shield 34…):
   **Miles Ryan 79 · Sagaminator 78 · Rory Boomer 77 · Duncan Jump 59 · Darrel Jeeling 58 · Cash Barganier 57 · Nathin
   Gaunt 53 · Saul Dowd 52**. Miles Ryan (Strikers 2013) se fija a mano en **79** como techo. (Paul Peabody 78 y Erik
@@ -277,3 +302,12 @@ Galaxy/IE3).
 - **Stats: pool vs equipos**. Los scouts tienen las **mismas stats del juego** que los jugadores de equipo (mediana sin
   contar porteros: **402 vs 397**). Aun así su OVR queda algo por debajo (mediana **61 vs 74**) porque los equipos de la
   historia llevan la curva de `team_tuning` (+ hasta 8,8 puntos); el reparto los acerca «sin pasarse».
+- **IE2**: revisado con el **TP de IE2** (`costs.IE2`). `_game.IE2.compress = 0,5`. Rampa de alienígenas según la escala
+  del jefe (arriba); capitán #1 en todos (Kiyama 89). El orden salió **por encima** del plan: Royal Redux y Emperadores
+  Oscuros suben, Génesis baja, y **Raimon pasa a 87,0** (protagonista, con curva).
+- **IE2, Caos (equipo nuevo)**: 11 jugadores con la «Chaos form» de IE2 (Atsuishi Shigeto, Barazono Hana, Gokukawa
+  Kantarou, Honba Geki, Kadomichi Tooru, Kurakake Clara, Kurione Yuki, Nagumo Haruya, Netsuha Natsuhiko, Ooiwa Kurando y
+  Suzuno Fuusuke). Se creó con `extra_versions` (versión `Chaos`) y `team_tuning['Chaos']` (once 88, `compress` 1,
+  `cap` 92); capitán Ooiwa Kurando. Cada carta +3 a +8 sobre su versión de Prominence/Diamond.
+- **`tuning.py`**: `top_` (techo) ahora admite `cap` **por equipo** (antes solo por juego); `apply_scout_pool` para el
+  pool sin equipo. `extra_versions` sigue sirviendo para añadir versiones sin ficha de zukan (ahora también el Caos).

@@ -33,9 +33,63 @@ def apply_scout_pool(cards, ov, report):
         report.append(f'scout_pool: {g} {len(pool)} cartas · {n} con OVR nuevo')
 
 
+# Técnicas que cuentan para cada puesto (tipo → peso). Delanteros tiro (+regate), medios un poco de todo,
+# defensas bloqueo (+algo de regate), porteros parada.
+POS_TECH = {'GK': {'Catch': 1.0},
+            'DF': {'Block': 1.0, 'Dribble': 0.3},
+            'MF': {'Shoot': 0.4, 'Dribble': 0.4, 'Block': 0.4, 'Catch': 0.2},
+            'FW': {'Shoot': 1.0, 'Dribble': 0.4}}
+
+
+def apply_tech_balance(cards, ov, report):
+    """Rebalancea los jugadores CON equipo por stats + técnica del puesto (TP del juego indicado). Dentro de cada
+    equipo se conserva el rango (mín./máx. ya puestos por team_tuning) y se reordena por stats + técnica."""
+    cfg = {k: v for k, v in (ov.get('tech_balance') or {}).items() if not k.startswith('_')}
+    for g, sc in cfg.items():
+        cg = sc.get('cost', g)                        # juego del que se toma el TP (IE2 → TP de IE2)
+        cost_team = sc.get('cost_team', {})           # por equipo (Aliea: TP de IE3, que en IE2 va rebajado por la piedra)
+        ws, wt = sc.get('stats', 0.5), sc.get('tech', 0.5)
+        teams = {}
+        for c in cards:
+            if c['game'] == g and c['team'] and c['team'] not in ('Unaffiliated', 'Sub Character'):
+                teams.setdefault(c['team'], []).append(c)
+
+        def tval(c, game):
+            best = {}
+            for m in c.get('moves', []):
+                v = (m.get('costs') or {}).get(game)
+                if v is not None:
+                    best[m.get('type')] = max(best.get(m.get('type'), 0), v)
+            return sum(w * best.get(ty, 0) for ty, w in POS_TECH.get(c['position'], {}).items())
+
+        pct = lambda vals, v: sum(1 for x in vals if x < v) / len(vals)
+        dbg = {}
+        for tm, grp in teams.items():
+            if len(grp) < 3:
+                continue
+            cgt = cost_team.get(tm, cg)
+            raws = sorted(c.setdefault('ovr_untuned', c['ovr']) for c in grp)
+            techs = sorted(tval(c, cgt) for c in grp)
+            lo, hi = raws[0], raws[-1]                 # se conserva el rango crudo; la curva del equipo recentra el once
+            for c in grp:
+                qs, qm = pct(raws, c['ovr_untuned']), pct(techs, tval(c, cgt))
+                only = round(lo + (hi - lo) * qs)      # solo stats
+                c['ovr_untuned'] = round(lo + (hi - lo) * (ws * qs + wt * qm))
+                dbg[c['id']] = {'team': tm, 'name': c['name'], 'pos': c['position'], 'tech': round(tval(c, cgt)),
+                                'qs': round(qs, 3), 'qm': round(qm, 3), 'lo': lo, 'hi': hi,
+                                'stats_only': only, 'blend': c['ovr_untuned'], 'dtech': c['ovr_untuned'] - only}
+        if dbg:
+            import json, os
+            os.makedirs('/tmp/opencode', exist_ok=True)
+            json.dump(dbg, open('/tmp/opencode/tb.json', 'w'), ensure_ascii=False, indent=1)
+        if teams:
+            report.append(f'tech_balance: {g} {len(teams)} equipos reordenados por stats + técnica ({cg})')
+
+
 def apply_tuning(cards, games, ov, report):
     """team_tuning de esos juegos (los clásicos aquí; Ares, después de crear sus cartas)"""
     apply_scout_pool(cards, ov, report)
+    apply_tech_balance(cards, ov, report)          # reordena los de equipo por stats + técnica del puesto (antes de la curva)
     game_cfg = {k: v for k, v in ov.get('team_tuning', {}).get('_game', {}).items() if not k.startswith('_')}
     for g_, gc in game_cfg.items():                # escala de poder del juego: comprimir las notas muy altas (GO1 tipo IE1)
         if gc.get('compress_above') and g_ in games:
@@ -58,7 +112,7 @@ def apply_tuning(cards, games, ov, report):
                 report.append(f'team_tuning: {g_} {tm} sin cartas')
                 continue
             capt = [c for c in grp if c['page'] == cfg.get('captain')]
-            top_ = game_cfg.get(g_, {}).get('cap') or max(CEIL.get(g_, 88), 88)   # techo de las subidas; nadie baja por él
+            top_ = cfg.get('cap') or game_cfg.get(g_, {}).get('cap') or max(CEIL.get(g_, 88), 88)   # techo de las subidas
             cap_c = cfg.get('captain_cap', top_)      # techo propio del capitán (Barcelona Orb en Ares: 89)
             cp_, cr_ = game_cfg.get(g_, {}).get('captain_plus', 4), game_cfg.get(g_, {}).get('captain_raise', 6)
             n11 = min(11, len(grp))

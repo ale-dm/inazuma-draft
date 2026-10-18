@@ -351,3 +351,12 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
 - Dojo (`#/dojo`, src/lib/dojo.ts, components/modes/Dojo.tsx): las copias de sobra suben el límite de rotura de una carta (0–3; Legendarias, 2). Cada nivel suma 1 a los tres números, y el tercero, 2. Se aplica en la ficha, en Mis cartas y en el duelo del propio equipo. Límite 3 medido: la media de los números sube 2,7 (con 5, 3,9).
 
 - Fusión Mixi Max (`#/fusion`, src/lib/fusion.ts, src/data/fusions.json): 19 recetas; dos personajes del mismo juego, cada uno con una copia de sobra, dan su Mixi Max. Una vez por cuenta.
+
+## Balance de temporadas: IE1 cerrado e IE2 en curso
+
+Detalle completo en [plan-balance-temporadas.md](plan-balance-temporadas.md) (§3 el estado, §6 las firmas, §7 el registro).
+
+- **IE1 cerrado**: rampa 58 → 83,8 con `compress 0,5` y capitán #1; Raimon y Royal Academy a mano; pool **sin equipo** (789 cartas) repartido por **stats + TP de IE1** (46–79). El parser de técnicas ahora coge el **TP europeo (EU)** en vez del japonés (God Knows 59, God Hand 21, Defensa triple 50).
+- **IE2**: `compress 0,5` y rampa de **alienígenas** según la escala del juego: Géminis 76,7 < Épsilon 78,3 < Épsilon Plus 79,7 < Diamond/Prominence 81 < Royal Redux 82,7 < Génesis 84,1 < Emperadores Oscuros 85,5 < Raimon 87 < **Caos 88**. Capitán #1 en todos.
+- **Equipo nuevo: Caos** (IE2): fusión de Prominence + Diamond Dust, 11 jugadores con su «Chaos form» (stats mejores; +3 a +8 sobre su carta de Prominence/Diamond), escudo y nombre ES «Caos». Se crea con `overrides.extra_versions` (versión `Chaos`) y `team_tuning['Chaos']` (`cap` propio 92).
+- Pendiente: repasar los equipos **normales** de IE2 (Servicio Secreto, Fauxshore, Mary Times, Mar de Árboles, Alpino, Claustro, Triple C, Jóvenes Inazuma).
