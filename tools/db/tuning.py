@@ -20,33 +20,50 @@ def apply_tuning(cards, games, ov, report):
         if g_.startswith('_') or g_ not in games:
             continue
         for tm, cfg in tms.items():
+            if not isinstance(cfg, dict):
+                continue
             grp = [c for c in cards if c['game'] == g_ and c['team'] == tm]
             if not grp:
                 report.append(f'team_tuning: {g_} {tm} sin cartas')
                 continue
             capt = [c for c in grp if c['page'] == cfg.get('captain')]
             top_ = game_cfg.get(g_, {}).get('cap') or max(CEIL.get(g_, 88), 88)   # techo de las subidas; nadie baja por él
-            def tuned(c, delta):
-                new = max(25, min(max(c['ovr'], top_), c['ovr'] + delta))
-                if c in capt:                      # capitán: +2 y cerca de 4 por encima del once (subida máx. +6)
-                    cap_c = cfg.get('captain_cap', top_)      # techo propio del capitán (Barcelona Orb en Ares: 89)
-                    cp_, cr_ = game_cfg.get(g_, {}).get('captain_plus', 4), game_cfg.get(g_, {}).get('captain_raise', 6)
-                    new = min(max(cap_c, c['ovr']), max(new + 2, min(round(cfg['top11']) + cp_, new + cr_), c['ovr']))
-                return new
-            # desplazamiento entero más alto que no pasa del objetivo (con el capitán ya subido) y +1 a los más flojos del
-            # once hasta clavar la media: así el orden de la historia se cumple exacto
+            cap_c = cfg.get('captain_cap', top_)      # techo propio del capitán (Barcelona Orb en Ares: 89)
+            cp_, cr_ = game_cfg.get(g_, {}).get('captain_plus', 4), game_cfg.get(g_, {}).get('captain_raise', 6)
             n11 = min(11, len(grp))
-            mean11 = lambda d: sum(sorted(tuned(c, d) for c in grp)[-11:]) / n11
-            delta = max((d for d in range(-25, 26) if mean11(d) <= cfg['top11'] + 1e-9), default=-25)
-            once = sorted(grp, key=lambda c: tuned(c, delta))[-11:]
-            extra = {id(c) for c in once[:round((cfg['top11'] - mean11(delta)) * n11)] if c not in capt}
+            # k<1 comprime la dispersión del equipo hacia su media (evita que un crack suelto de un equipo flojo salga alto)
+            k_comp = cfg.get('compress', game_cfg.get(g_, {}).get('compress', 1.0))
             for c in grp:
-                new = min(max(cfg.get('captain_cap', top_) if c in capt else top_, c['ovr']), tuned(c, delta) + (id(c) in extra))
-                d_ = new - c['ovr']
                 c.setdefault('ovr_untuned', c['ovr'])
-                c['ovr'] = new
+            t11 = sum(sorted(c['ovr_untuned'] for c in grp)[-n11:]) / n11       # media del once antes de tocar nada
+            # 1) curva del equipo: se coloca la media en el objetivo y se comprime el reparto (k=1: solo se mueve la media)
+            for c in grp:
+                base = round(cfg['top11'] + (c['ovr_untuned'] - t11) * k_comp)
+                c['ovr'] = max(25, min(max(top_, c['ovr_untuned']), base))
+            # 2) capitán: +2 y cerca de 4 por encima del once (subida máx. +6)
+            for c in capt:
+                new = min(max(cap_c, c['ovr_untuned']),
+                          max(c['ovr'] + 2, min(round(cfg['top11']) + cp_, c['ovr'] + cr_), c['ovr_untuned']))
+                c['ovr'] = max(25, min(max(top_, c['ovr_untuned']), new))
+            # 3) +1 a los más flojos del once hasta clavar la media objetivo (redondeos)
+            for _ in range(60):
+                if sum(sorted(c['ovr'] for c in grp)[-n11:]) / n11 >= cfg['top11'] - 1e-9:
+                    break
+                once = sorted(grp, key=lambda c: c['ovr'])[-n11:]
+                weak = next((c for c in sorted(once, key=lambda c: c['ovr']) if c not in capt), None)
+                if weak is None or weak['ovr'] >= max(top_, weak['ovr_untuned']):
+                    break
+                weak['ovr'] += 1
+            # 4) el capitán siempre es la estrella del equipo: por encima del mejor no-capitán
+            others = max((c['ovr'] for c in grp if c not in capt), default=None)
+            for c in capt:
+                if others is not None and c['ovr'] <= others:
+                    c['ovr'] = max(c['ovr'], min(cap_c, others + 1))
+            # 5) stats y categoría
+            for c in grp:
+                d_ = c['ovr'] - c['ovr_untuned']
                 c['stats'] = {k: max(25, min(99, v + d_)) for k, v in c['stats'].items()}
-                c['category'] = category(new)
+                c['category'] = category(c['ovr'])
             for c in grp:                          # suelo del equipo: nadie por debajo (Zanark Outsiders en VR: 84)
                 if c['ovr'] < cfg.get('floor', 0):
                     c['stats'] = {k: max(25, min(99, v + cfg['floor'] - c['ovr'])) for k, v in c['stats'].items()}
@@ -68,3 +85,12 @@ def apply_tuning(cards, games, ov, report):
                 c['stats'] = {k: max(25, min(99, v + fl - c['ovr'])) for k, v in c['stats'].items()}
                 c['ovr'] = fl
                 c['category'] = category(fl)
+    # OVR a mano (overrides.ovr_manual): manda al final sobre la curva y las reglas (ficha|juego|versión → nota)
+    manual = {k: v for k, v in ov.get('ovr_manual', {}).items() if not k.startswith('_')}
+    for c in cards:
+        v = manual.get(f"{c['page']}|{c['game']}|{c['version']}")
+        if v is not None and c['ovr'] != v:
+            d_ = v - c['ovr']
+            c['stats'] = {k: max(25, min(99, s + d_)) for k, s in c['stats'].items()}
+            c['ovr'] = v
+            c['category'] = category(v)

@@ -146,7 +146,16 @@
     ]
   },
   "ovr_manual": {
-    "_doc": "OVR fijado a mano por carta: \"<page>|<game>|<versión>\": ovr"
+    "_doc": "OVR fijado a mano por carta: \"<page>|<game>|<versión>\": ovr. Manda al final sobre la curva de team_tuning (tuning.py).",
+    "Gouenji Shuuya|IE1|base": 84,
+    "Kazemaru Ichirouta|IE1|base": 82,
+    "Kabeyama Heigorou|IE1|base": 82,
+    "Ichinose Kazuya|IE1|base": 82,
+    "Handa Shinichi|IE1|base": 77,
+    "Kidou Yuuto|IE1|Raimon": 87,
+    "Kidou Yuuto|IE1|base": 87,
+    "Sakuma Jirou|IE1|base": 84,
+    "Genda Koujirou|IE1|base": 84
   },
   "team_es": {
     "_doc": "Nombre en castellano de equipos que no cruzan con la wiki en español (inazuma.fandom.com/es). El resto sale solo.",
@@ -247,54 +256,66 @@
     "_doc": "Ajuste fino por equipo y juego (orden de rivales de la historia). top11: media objetivo del once titular (las 11 mejores cartas); todo el equipo se mueve lo mismo (+1 a los más flojos del once hasta clavar la media). captain: ficha de la wiki del capitán: +2 y cerca de 4 por encima de esa media (subida máx. +6). Las subidas no pasan del techo del juego (CEIL) y nadie baja por él. captain_cap: techo propio del capitán (por encima del techo del juego).",
     "IE1": {
       "Royal Academy": {
-        "top11": 80.5,
+        "top11": 81.0,
         "captain": "Kidou Yuuto",
-        "note": "1 amistoso / 6 final regional"
+        "note": "1 amistoso / 6 final regional · campeón 40 años. Top 3 (Jude/Samford/King) fijado a mano y el resto 2 puntos por debajo (se pasaban de alto)"
       },
       "Occult": {
-        "top11": 73.5,
+        "top11": 68.0,
         "captain": "Yuukoku Hiroyuki",
         "note": "2"
       },
       "Wild": {
-        "top11": 74.0,
+        "top11": 70.0,
         "captain": "Torii Ryouta",
         "note": "3"
       },
       "Brainwashing": {
-        "top11": 74.5,
+        "top11": 72.0,
         "captain": "Sugimori Takeshi",
         "note": "4"
       },
       "Otaku": {
-        "top11": 75.0,
+        "top11": 73.0,
         "captain": "Karisawa Sou",
         "note": "5"
       },
       "Raimon Veterans": {
-        "top11": 80.9,
+        "top11": 77.0,
         "captain": "Hibiki Seigou",
-        "note": "7"
+        "note": "7 · abuelos: empataron 3-3 con Raimon"
       },
       "Shuriken": {
-        "top11": 81.3,
+        "top11": 78.0,
         "captain": "Kirigakure Saiji",
         "note": "8"
       },
       "Farm": {
-        "top11": 81.7,
+        "top11": 79.0,
         "captain": "Harano Tooru",
         "note": "9"
       },
       "Kirkwood": {
-        "top11": 82.1,
+        "top11": 80.0,
         "captain": "Mukata Masaru",
         "note": "10"
       },
       "Zeus": {
-        "top11": 82.6,
+        "top11": 83.5,
         "captain": "Afuro Terumi",
-        "note": "11 final"
+        "note": "11 final · jefe final, top de IE1 (justo bajo GO1)"
+      },
+      "Street Sally's": {
+        "top11": 58.0,
+        "note": "práctica"
+      },
+      "Inazuma Kids FC": {
+        "top11": 62.0,
+        "note": "práctica"
+      },
+      "Umbrella MS": {
+        "top11": 65.0,
+        "note": "práctica"
       }
     },
     "IE2": {
@@ -621,7 +642,10 @@
       }
     },
     "_game": {
-      "_doc": "Por juego: cap = techo de las subidas; compress_above/compress_factor = por encima de ese valor la nota se comprime (GO1: 92 → 88,5) para una escala de poder tipo IE1. captain_plus / captain_raise: cuánto destaca el capitán sobre el once (por defecto 4) y cuánto puede subir (6). stars: nota mínima por ficha de la wiki; hero_floor: nota mínima de los que tienen versión héroe/basara en VR. Se aplican después de la curva.",
+      "_doc": "Por juego: cap = techo de las subidas; compress = comprime la dispersión del equipo hacia su media (IE1 0,5: los cracks sueltos de equipos flojos bajan bastante); compress_above/compress_factor = por encima de ese valor la nota se comprime (GO1: 92 → 88,5) para una escala de poder tipo IE1. captain_plus / captain_raise: cuánto destaca el capitán sobre el once (por defecto 4) y cuánto puede subir (6). stars: nota mínima por ficha de la wiki; hero_floor: nota mínima de los que tienen versión héroe/basara en VR. Se aplican después de la curva.",
+      "IE1": {
+        "compress": 0.5
+      },
       "GO1": {
         "cap": 87,
         "compress_above": 84,
