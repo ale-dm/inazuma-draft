@@ -99,36 +99,44 @@ Inazuma Eleven 77,5 · Shuriken 78,2 · Farm 79 · Kirkwood 80 · **Royal Academ
 
 Referencia de techo de GO1: Raimon 83,9 · Oscuridad Ancestral 83,5 · Luz Eterna 82,5.
 
-### IE2 — en curso (alienígenas y Caos hechos; normales pendientes)
+### IE2 — hecho
 
-Escala de poder de los alienígenas (la dio el jefe; manda sobre el orden de `plan-base-jugadores.md §9`):
+Escala de poder de los alienígenas (la dio el jefe; manda sobre `plan-base-jugadores.md §9`):
 
-**Géminis 76,7 < Épsilon 78,3 < Épsilon Plus 79,7 < Diamond/Prominence 81 < Royal Redux 82,7 < Génesis 84,1 <
-Emperadores Oscuros 85,5 < Raimon 87,0 < Caos 88,0.**
+**Géminis 80,6 < Épsilon 81,3 < Épsilon Plus 82,1 < Prominence/Diamond 83,0 < Royal Redux 84,3 < Génesis 85,4 <
+Emperadores Oscuros 85,9 < Raimon 87,0 < Caos 87,9.**
 
-- `_game.IE2.compress = 0,5`; capitán #1 en todos (a Kiyama se le puso `captain_cap` 89, y al Caos `cap` propio 92).
-- **Alienígenas** (8): Tormenta de Géminis 76,7 · Épsilon 78,3 · Épsilon Plus 79,7 · Prominence 81,0 · Diamond 81,3 ·
-  Royal Redux 82,7 · Génesis 84,1 · Emperadores Oscuros 85,5.
-- **Caos** (equipo nuevo, once 88, estrella 92): fusión de Prominence + Diamond Dust, **11 jugadores** con su «Chaos
-  form» (stats mejores). Se creó con `extra_versions` (`{page, game: IE2, team: Chaos}`; el build coge la forma «Chaos»
-  por `want='chaos'`) + `team_tuning['Chaos']` (`compress` 1 y `cap` 92 para que tenga dispersión y estrella). Escudo
-  (emblema del Caos) y nombre ES «Caos» salen solos. Cada carta queda +3 a +8 por encima de su versión de
-  Prominence/Diamond.
-- **Raimon** (protagonista) con curva: once 87,0, capitán Mark Evans 88. Por encima de Emperadores Oscuros y por debajo
-  del Caos.
-- **Normales (pendientes)**: Servicio Secreto 74,3 · Fauxshore 74,7 · Mary Times 74,9 · Mar de Árboles 77,1 · Alpino
-  77,2 · Claustro Sagrado 78,6 · Triple C 79,9 · Jóvenes Inazuma 80,5. (Los tres primeros están «fuera de la curva» por
-  el plan.)
-
-Firmas que **no** son el #1, por TP de IE2: Mary Times (Spring Millpond 75 · Remate del águila 59), Épsilon (Fedora 75 ·
-Remate asalto 44), Claustro (Dirk Artz 79 · Remate del águila 59), Royal Redux (David Samford 82 · Pingüino n.º1 62),
-Diamond (Frost 79 · Flecha divina 56), Prominence (Balcke 79 · Remate triple 64), Génesis (Kiwill 86 · Zona sigma 50).
+- `_game.IE2.compress = 0,5`; **capitán #1** en todos (Kiyama con `captain_cap` 89; el Caos con `cap` propio 90).
+- **Alienígenas** (9): Tormenta de Géminis 80,6 · Épsilon 81,3 · Épsilon Plus 82,1 · Prominence 83,0 · Diamond 83,0 ·
+  Royal Redux 84,3 · Génesis 85,4 · Emperadores Oscuros 85,9 · **Caos 87,9**.
+  - **Caos** (equipo nuevo): fusión de Prominence + Diamond Dust, **11 jugadores** con su «Chaos form» (stats mejores). Se
+    creó con `extra_versions` (`{page, game: IE2, team: Chaos}`; el build coge la forma «Chaos» por `want='chaos'`) +
+    `team_tuning['Chaos']` (`compress` 1, `cap` 90). Top 1 = **Torch y Gazelle** (capitán Torch). Escudo y nombre ES
+    «Caos» salen solos. Cada carta +3 a +8 sobre su versión de Prominence/Diamond.
+  - **Emperadores Oscuros**: corregido a sus **11** reales (se quitaron 10 que eran de Raimon Veterans / Young Inazuma).
+  - **Génesis**: sus 11 (Xene… **Bellatrix**). Isabelle Trick = **Bellatrix** (Ulvida): nombre alien + sprite del zukan
+    1134 (antes salía como «Isabelle Trick»).
+- **Normales** (orden de la wiki/foros: Manyuuji ≈ Oumihara > Yokato; Hakuren flojo salvo Fubuki): **Claustro 80,5 ≈
+  Mary Times 80,3 > Servicio Secreto 79,5** (SP Fixers, 0-1 vs Raimon) **> Mar de Árboles 80,0 · Jóvenes Inazuma 80,0 >
+  Fauxshore 77,3** (Yokato, 0-4) **> Alpino 75,4 ≈ Triple C 74,6**.
+- **Raimon** (protagonista): once 87,0, capitán Mark Evans 88.
+- **Raimon-joiners** (dos versiones: la de su equipo, *regular*, y la de Raimon): Darren (Fauxshore 80 / Raimon 88) ·
+  Hurley (Mary Times 82 / 86) · Scott (Claustro 82 / 87) · **Shawn (Alpino 85 / 87-88, el mejor de los seis)** ·
+  Victoria (Servicio Secreto 83 / 87) · Suzette (Triple C 83 / 86). Solo con las técnicas que tenían en el partido vs
+  Raimon (nivel 1); las que aprenden después, no.
+- **Pool sin equipo**: 436 cartas, **46–84** (`scout_pool.IE2` = TP de IE2, 50/50 stats+técnica). Top: Tom Skipper 84;
+  Sumner/Autumn (los buenos de los foros) 83. No se repite con el pool de IE1.
+- **Técnicas**: `tech_balance` (50 % stats + 50 % técnica del puesto — tiro/regate para delanteros, todo para medios,
+  bloqueo para defensas, parada para porteros) con el **TP de IE2**; para los **alienígenas** se usa el **TP de IE3** (en
+  IE2 iba rebajado por la piedra Aliea).
+- **Apodos**: la app enseña el `nickname` (`src/data/nicknames.json`), no el nombre de la carta; los de Génesis se
+  corrigieron a su nombre alien (Xene, Bellatrix…).
 
 ### Pendientes (objetivos actuales, de `plan-base-jugadores.md` §9)
 
 | Temporada | Estado | Notas |
 |---|---|---|
-| IE2 | en curso | aliens: Géminis 76,7 → Caos 88,0 (escala del jefe); normales pendientes |
+| IE2 | **hecho** | escala del jefe: Géminis 80,6 → Caos 87,9; normales, Caos, Emperadores y pool | 
 | IE3 | pendiente | Big Waves 76 → … → Little Gigantes 86,5 |
 | GO1 | pendiente | Vía Láctea 74,5 → Luz Eterna 82,5 → Oscuridad Ancestral 83,5 (techo 87) |
 | GO2 | pendiente | Protocolo Omega 76 → … → Aullido Lunar 87 (techo 90) |
@@ -309,5 +317,11 @@ Galaxy/IE3).
   Kantarou, Honba Geki, Kadomichi Tooru, Kurakake Clara, Kurione Yuki, Nagumo Haruya, Netsuha Natsuhiko, Ooiwa Kurando y
   Suzuno Fuusuke). Se creó con `extra_versions` (versión `Chaos`) y `team_tuning['Chaos']` (once 88, `compress` 1,
   `cap` 92); capitán Ooiwa Kurando. Cada carta +3 a +8 sobre su versión de Prominence/Diamond.
-- **`tuning.py`**: `top_` (techo) ahora admite `cap` **por equipo** (antes solo por juego); `apply_scout_pool` para el
-  pool sin equipo. `extra_versions` sigue sirviendo para añadir versiones sin ficha de zukan (ahora también el Caos).
+- **`tuning.py`**: `top_` (techo) ahora admite `cap` **por equipo** (antes solo por juego); `apply_tech_balance` (stats +
+  técnica del puesto con el TP del juego) y `apply_scout_pool` para el pool sin equipo. `extra_versions` sigue sirviendo
+  para añadir versiones sin ficha de zukan (ahora también el Caos y las de Raimon de Victoria/Suzette).
+- **IE2, cierre**: normales rebalanceados (Claustro/Mary Times arriba, Fauxshore y Alpino abajo), capitanes del juego,
+  Dark Emperors corregido a 11, Isabelle → **Bellatrix** (Génesis, zukan 1134), Raimon-joiners con sus dos versiones
+  (Shawn el mejor), pool sin equipo 46–84 y apodos de Génesis arreglados.
+- **Supabase**: cargado con el workflow `db-load` (characters 4.976 · cards 5.393); el `seed.sql` solo hace upsert, así
+  que se conservan las filas del CRUD. Subido en la rama `app`.

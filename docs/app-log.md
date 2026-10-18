@@ -352,11 +352,13 @@ Qué se hizo, cuándo y por qué. Lo pendiente está en [TODO-app.md](TODO-app.m
 
 - Fusión Mixi Max (`#/fusion`, src/lib/fusion.ts, src/data/fusions.json): 19 recetas; dos personajes del mismo juego, cada uno con una copia de sobra, dan su Mixi Max. Una vez por cuenta.
 
-## Balance de temporadas: IE1 cerrado e IE2 en curso
+## Balance de temporadas: IE1 e IE2 cerrados
 
 Detalle completo en [plan-balance-temporadas.md](plan-balance-temporadas.md) (§3 el estado, §6 las firmas, §7 el registro).
 
-- **IE1 cerrado**: rampa 58 → 83,8 con `compress 0,5` y capitán #1; Raimon y Royal Academy a mano; pool **sin equipo** (789 cartas) repartido por **stats + TP de IE1** (46–79). El parser de técnicas ahora coge el **TP europeo (EU)** en vez del japonés (God Knows 59, God Hand 21, Defensa triple 50).
-- **IE2**: `compress 0,5` y rampa de **alienígenas** según la escala del juego: Géminis 76,7 < Épsilon 78,3 < Épsilon Plus 79,7 < Diamond/Prominence 81 < Royal Redux 82,7 < Génesis 84,1 < Emperadores Oscuros 85,5 < Raimon 87 < **Caos 88**. Capitán #1 en todos.
-- **Equipo nuevo: Caos** (IE2): fusión de Prominence + Diamond Dust, 11 jugadores con su «Chaos form» (stats mejores; +3 a +8 sobre su carta de Prominence/Diamond), escudo y nombre ES «Caos». Se crea con `overrides.extra_versions` (versión `Chaos`) y `team_tuning['Chaos']` (`cap` propio 92).
-- Pendiente: repasar los equipos **normales** de IE2 (Servicio Secreto, Fauxshore, Mary Times, Mar de Árboles, Alpino, Claustro, Triple C, Jóvenes Inazuma).
+- **IE1 cerrado**: rampa 54 → 79,8 con `compress 0,5` y capitán #1; Raimon y Royal Academy a mano; pool **sin equipo** repartido por **stats + técnica con TP de IE1** (42–75). El parser de técnicas coge el **TP europeo (EU)** en vez del japonés.
+- **IE2 cerrado**: `compress 0,5`; escala de **alienígenas** del juego: Géminis 80,6 < Épsilon 81,3 < Épsilon Plus 82,1 < Prominence/Diamond 83 < Royal Redux 84,3 < Génesis 85,4 < Emperadores Oscuros 85,9 < Raimon 87 < **Caos 87,9**. Capitán #1 en todos (Kiyama 89, Caos 90).
+- **Equipo nuevo: Caos** (IE2): fusión de Prominence + Diamond Dust, 11 jugadores con su «Chaos form» (escudo y nombre «Caos», top 1 Torch/Gazelle). Se crea con `overrides.extra_versions` + `team_tuning['Chaos']` (`cap` 90).
+- **IE2, correcciones**: Emperadores Oscuros a sus 11 reales; **Isabelle → Bellatrix** (nombre alien + sprite de zukan 1134) en Génesis; Raimon-joiners con sus dos versiones (regular en su equipo / Raimon final), Shawn el mejor; **normales** ordenados como la wiki/foros (Claustro ≈ Mary Times > SP Fixers > Fauxshore > Alpino); pool sin equipo **46–84**; `tech_balance` (técnica del puesto, y **TP de IE3** para los alienígenas porque en IE2 iba rebajado por la piedra Aliea); apodos de Génesis arreglados.
+- **Subido**: rama `app` + workflow `db-load` (Supabase: characters 4.976 · cards 5.393; upsert, sin borrar lo del CRUD).
+- Pendiente: **IE3** (y siguientes).
