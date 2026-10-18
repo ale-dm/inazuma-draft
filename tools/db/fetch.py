@@ -284,9 +284,12 @@ def infobox(content):
             fields[k] = m.group(1).strip()
     for k in ('tp_iego3', 'tp_ie3', 'tp_iego2', 'tp_ie2', 'tp_iego', 'tp_ie'):
         m = re.search(r'\|\s*' + k + r'\s*=\s*([^\n|]*)', content)
-        n = re.search(r'\d+', m.group(1)) if m else None
+        if not m:
+            continue
+        eu = re.search(r'(\d+)\s*\(EU\)', m.group(1))       # versión europea si el infobox trae JP y EU
+        n = eu or re.search(r'\d+', m.group(1))
         if n:
-            fields[k] = int(n.group())
+            fields[k] = int(n.group(1) if eu else n.group())
     return fields
 
 

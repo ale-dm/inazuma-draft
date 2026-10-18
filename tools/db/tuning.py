@@ -3,8 +3,39 @@ escala de poder de cada juego (compresión, techo) y suelos de estrellas. Lo lla
 from common import CEIL, category
 
 
+def apply_scout_pool(cards, ov, report):
+    """Pool sin equipo de cada juego: OVR por stats + técnica (percentiles del propio pool). overrides.scout_pool."""
+    cfg = {k: v for k, v in (ov.get('scout_pool') or {}).items() if not k.startswith('_')}
+    for g, sc in cfg.items():
+        pool = [c for c in cards if c['game'] == g and c['team'] in ('Unaffiliated', 'Sub Character')]
+        if not pool:
+            continue
+        pct = lambda vals, v: sum(1 for x in vals if x < v) / len(vals)
+        stats = sorted(c['ovr_raw'] for c in pool)
+        cg = sc.get('cost', 'IE3')                 # juego del que se toma el TP de las técnicas
+
+        def tval(c):                                # mejor técnica del jugador según ese juego
+            return max((m.get('costs', {}).get(cg) or 0 for m in c.get('moves', [])), default=0)
+        moves = sorted(tval(c) for c in pool)
+        lo, hi, cap = sc.get('lo', 44), sc.get('hi', 77), sc.get('cap', 81)
+        ws, wt = sc.get('stats', 0.4), sc.get('tech', 0.6)
+        for c in pool:
+            qs, qm = pct(stats, c['ovr_raw']), pct(moves, tval(c))
+            o = round(lo + (hi - lo) * (ws * qs + wt * qm) + (sc.get('bonus', 0) if qm >= 0.95 else 0))
+            o = max(sc.get('floor', 30), min(cap, o))
+            c.setdefault('ovr_untuned', c['ovr'])
+            if o != c['ovr']:
+                d = o - c['ovr']
+                c['stats'] = {k: max(25, min(99, v + d)) for k, v in c['stats'].items()}
+                c['ovr'] = o
+                c['category'] = category(o)
+        n = sum(1 for c in pool if c['ovr'] != c.get('ovr_untuned'))
+        report.append(f'scout_pool: {g} {len(pool)} cartas · {n} con OVR nuevo')
+
+
 def apply_tuning(cards, games, ov, report):
     """team_tuning de esos juegos (los clásicos aquí; Ares, después de crear sus cartas)"""
+    apply_scout_pool(cards, ov, report)
     game_cfg = {k: v for k, v in ov.get('team_tuning', {}).get('_game', {}).items() if not k.startswith('_')}
     for g_, gc in game_cfg.items():                # escala de poder del juego: comprimir las notas muy altas (GO1 tipo IE1)
         if gc.get('compress_above') and g_ in games:

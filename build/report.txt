@@ -1,13 +1,14 @@
 Cartas: 5378 (255 versiones extra) · personajes: 4974 · técnicas: 778
-Categorías: Legendary Player 110 · Top Player 631 · Advanced Player 1216 · Growing Player 978 · Common Player 2443
+Categorías: Legendary Player 110 · Top Player 631 · Advanced Player 1275 · Growing Player 1168 · Common Player 2194
 Niveles: S 409 · A 350 · B 1263 · C 3356
-OVR: mediana 67 · p90 84 · p99 90 · máx 92
+OVR: mediana 69 · p90 84 · p99 90 · máx 92
 
 Balancing doc del Xtreme sin ficha (7): añadir a overrides.xtreme_balancing_pages → Rhionne (Chaos), Dante Diavolo (Orpheus), Kino Aki (Girls Team), Oogu (Zanark Domain), Yasha (Zanark Domain), Goburis (Zanark Domain), Yamana Akane (Secret players (GO))
 Wiki del Xtreme: "Kino Aki" sin ficha (Kino Aki)
 Wiki del Xtreme: "Sorano Aoi" sin ficha (Sorano Aoi)
 Jugadores de zukan sin ficha en la wiki (1): Josephine
 Personajes sin stats de la saga principal (fuera): 1174
+scout_pool: IE1 789 cartas · 704 con OVR nuevo
 Equipo de Ares/Orion/VR en Venus Demila IE3: The Sambassadors → Unaffiliated
 Equipo de Ares/Orion/VR en Cao Cao GO2: Zanark's Outsiders → Sub Character
 Equipo de Ares/Orion/VR en Hurricane Zeta GO3: Zanark's Outsiders → Sub Character

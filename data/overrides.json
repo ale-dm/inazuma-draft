@@ -145,6 +145,18 @@
       "Onigiri"
     ]
   },
+  "scout_pool": {
+    "_doc": "Pool sin equipo: OVR por percentiles del propio pool (stats = ovr_raw, técnica = mejor TP del juego `cost`) y tope. IE1 usa el TP de IE1 (no el de IE3) y va 44-77 con cap 81.",
+    "IE1": {
+      "cost": "IE1",
+      "stats": 0.5,
+      "tech": 0.5,
+      "lo": 46,
+      "hi": 79,
+      "cap": 79,
+      "bonus": 0
+    }
+  },
   "ovr_manual": {
     "_doc": "OVR fijado a mano por carta: \"<page>|<game>|<versión>\": ovr. Manda al final sobre la curva de team_tuning (tuning.py).",
     "Gouenji Shuuya|IE1|base": 84,
@@ -155,7 +167,8 @@
     "Kidou Yuuto|IE1|Raimon": 87,
     "Kidou Yuuto|IE1|base": 87,
     "Sakuma Jirou|IE1|base": 84,
-    "Genda Koujirou|IE1|base": 84
+    "Genda Koujirou|IE1|base": 84,
+    "Miyasaka Ryou|IE1|base": 79
   },
   "team_es": {
     "_doc": "Nombre en castellano de equipos que no cruzan con la wiki en español (inazuma.fandom.com/es). El resto sale solo.",

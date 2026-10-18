@@ -46,6 +46,11 @@
 final**, por encima de la curva y de todas las reglas (también en equipos ajustados). Lo usa para retoques finos
 (Raimon, Royal Academy §6).
 
+`data/overrides.json` → `scout_pool.<JUEGO>`: OVR del pool **sin equipo** por percentiles del propio pool (`stats` =
+`ovr_raw`, `tech` = mejor TP de las técnicas del juego indicado en `cost`) con rango y tope (`cost`, `stats`, `tech`,
+`lo`, `hi`, `cap`, `bonus`). IE1 usa el **TP de IE1 EU** (no el de IE3), 50 % stats + 50 % técnica, 46–79, cap 79. Lo
+aplica `apply_scout_pool` (`tuning.py`) antes de las curvas.
+
 **Mecanismo** (`tools/db/tuning.py` → `apply_tuning`), en orden:
 
 1. Guarda la nota de partida (`ovr_untuned`).
@@ -211,9 +216,10 @@ lleva Mark 85 *(Defensa triple 47, Mano mágica 32)*, Erik 79 *(Fénix 55)*, Jud
 lleva dos.
 
 **Con el TP de IE1** (`tp_ie` → `costs.IE1`): la wiki da **dos valores por técnica**, `N (JP)` / `M (EU)` (versión
-japonesa y europea). El parser de `fetch.py` guarda el **JP**, y los dos difieren en **103 de las 118** técnicas con
-`tp_ie` (28 con Δ≥10). Casos extremos: **Sabiduría divina** (God Knows) JP 15 / **EU 59**; Mano celestial JP 45 / EU 21;
-Defensa triple JP 70 / EU 50. **El «Sabiduría divina 15» era el valor japonés**; el juego en español usa el **EU**.
+japonesa y europea), que difieren en **103 de las 118** técnicas con `tp_ie` (28 con Δ≥10). Casos extremos: **Sabiduría
+divina** (God Knows) JP 15 / **EU 59**; Mano celestial JP 45 / EU 21; Defensa triple JP 70 / EU 50. El parser guardaba el
+**JP** (de ahí el «Sabiduría divina 15»); **corregido**: `infobox()` (`fetch.py`) ahora coge el **(EU)**, que es el del
+juego en español (God Knows 59, God Hand 21, Defensa triple 50).
 - Rango **IE1 EU: 10–62** (JP: 15–70). Arriba Fénix 62 · Disparo con rebotes 62 · Triángulo Z 59 · Sabiduría divina 59 ·
   Triángulo letal 59 · Muralla infinita 57 · Pingüino n.º2 / Pájaro de fuego / Flecha divina 56; abajo Barrido defensivo
   10 y un grupo a 15–17 (Giro bobina, Entrada huracán, Niebla venenosa…).
@@ -262,3 +268,12 @@ Galaxy/IE3).
   - **Royal Academy**: top 3 a mano (**Jude 87 · Samford 84 · King 84**) y el resto ~2 puntos por debajo porque se
     pasaban de alto (Gus Martin 85 → 83, Derek Swing 85 → 82, Herman Waldon 84 → 81, Daniel Hatch 83 → 80…). Se bajó el
     objetivo del once (`top11` 83 → 81) y se fijaron solo Jude/Samford/King. Once 83,5 → **81,5**.
+- **IE1 pool sin equipo (scouts)**: regla `scout_pool` en `tuning.py`: 40 % stats + 60 % técnica, **TP de IE1** (`cost:
+  IE1`, ya **EU**) por percentiles del propio pool, 50 % stats + 50 % técnica, **46–79** (cap 79). Los 788 sin equipo pasan
+  a **46–79**, mediana **61**. Los famosos suben solos (ReflectBuster EU 62, Shine Drive 42, Full Power Shield 34…):
+  **Miles Ryan 79 · Sagaminator 78 · Rory Boomer 77 · Duncan Jump 59 · Darrel Jeeling 58 · Cash Barganier 57 · Nathin
+  Gaunt 53 · Saul Dowd 52**. Miles Ryan (Strikers 2013) se fija a mano en **79** como techo. (Paul Peabody 78 y Erik
+  Eagle 82 ya están en Raimon.)
+- **Stats: pool vs equipos**. Los scouts tienen las **mismas stats del juego** que los jugadores de equipo (mediana sin
+  contar porteros: **402 vs 397**). Aun así su OVR queda algo por debajo (mediana **61 vs 74**) porque los equipos de la
+  historia llevan la curva de `team_tuning` (+ hasta 8,8 puntos); el reparto los acerca «sin pasarse».
