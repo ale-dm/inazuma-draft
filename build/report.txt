@@ -1,5 +1,5 @@
 Cartas: 5381 (258 versiones extra) · personajes: 4974 · técnicas: 778
-Categorías: Legendary Player 114 · Top Player 597 · Advanced Player 1214 · Growing Player 1244 · Common Player 2212
+Categorías: Legendary Player 114 · Top Player 594 · Advanced Player 1218 · Growing Player 1243 · Common Player 2212
 Niveles: S 422 · A 345 · B 1258 · C 3356
 OVR: mediana 69 · p90 84 · p99 90 · máx 92
 
@@ -10,11 +10,10 @@ Jugadores de zukan sin ficha en la wiki (1): Josephine
 Personajes sin stats de la saga principal (fuera): 1174
 scout_pool: IE1 789 cartas · 742 con OVR nuevo
 scout_pool: IE2 436 cartas · 415 con OVR nuevo
-tech_balance: IE2 19 equipos reordenados por stats + técnica (IE2)
+tech_balance: IE2 18 equipos reordenados por stats + técnica (IE2)
 Equipo de Ares/Orion/VR en Venus Demila IE3: The Sambassadors → Unaffiliated
 Equipo de Ares/Orion/VR en Cao Cao GO2: Zanark's Outsiders → Sub Character
 Equipo de Ares/Orion/VR en Hurricane Zeta GO3: Zanark's Outsiders → Sub Character
-Equipo de Ares/Orion/VR en Isabelle Trick IE2: Alia Academy → Unaffiliated
 Equipo con un solo jugador, fuera: Japanese Resistance (GO3) → Caleb Stonewall sin equipo
 Equipo con un solo jugador, fuera: Team Sharp (IE3) → Isaac Glass sin equipo
 Equipo con un solo jugador, fuera: Demon's Horn (GO1) → Damien Blackloch sin equipo

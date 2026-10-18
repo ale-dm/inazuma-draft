@@ -128,6 +128,14 @@
   "sprite": "https://static.wikia.nocookie.net/inazuma/images/a/a5/%28G%29_Wittz_%28HVR%29.png/revision/latest?cb=20260204220033&path-prefix=es"
  },
  {
+  "id": "yagami-reina--ie2--base",
+  "name": "Bellatrix",
+  "game": "IE2",
+  "version": "base",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/s/4/s4xxzzzwq4e.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/2/2b/%28G%29_Bellatrix_%28HVR%29.png/revision/latest?cb=20260204220029&path-prefix=es"
+ },
+ {
   "id": "kiyama-hiroto--ie2--base",
   "name": "Xene",
   "game": "IE2",
