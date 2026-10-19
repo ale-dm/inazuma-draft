@@ -231,9 +231,9 @@
     "David Buckingham|IE3|base": 86,
     "Edge Ripper|IE3|base": 86,
     "Nick Woodgate|IE3|base": 85,
-    "Ichinose Kazuya|IE3|Unicorn": 93,
-    "Dylan Keith|IE3|base": 91,
-    "Mark Krueger|IE3|base": 94,
+    "Ichinose Kazuya|IE3|Unicorn": 90,
+    "Dylan Keith|IE3|base": 89,
+    "Mark Krueger|IE3|base": 92,
     "Domon Asuka|IE3|Unicorn": 89,
     "Michele Jacks|IE3|base": 88,
     "Billy Rapid|IE3|base": 86,
@@ -597,9 +597,8 @@
         "note": "FFI grupo B (España, 1-2 vs Os Reis y 2-1 vs Francia)"
       },
       "Unicorn": {
-        "top11": 87,
+        "top11": 88,
         "captain": "Mark Krueger",
-        "captain_cap": 94,
         "note": "7 · FFI grupo A vs EE. UU. (4-3)"
       },
       "Orpheus": {

@@ -152,9 +152,10 @@ historia/amistosos y los 4 extras, todos con capitán de la wiki).
   Edgar Valtinas · Demonio Strada · Pierre Godin · Jonas Pollack · Querardo Naval · Mark Krueger · Fidio Aldena
   (Nakata Hidetoshi es el *ex*-capitán; Fidio, el actual) · Teles Torrue · Mack Ronijo · Lubbock Henktacker ·
   Rococo Ulpa · Endou Mamoru · Jake Fana · Sein · Desuta · Baddap Sleed.
-- **Capitán #1**: Unicorn sube a Mark Krueger a **94** (`ovr_manual` + `captain_cap` 94) para pasar a Ichinose
-  (Erik Eagle) 93; Dragones de Fuego sube a Choi a **90** (`cap` 90) sobre Afuro/Suzuno 89; Knights of Queen sube a
-  **87,0** de objetivo (86,0 de once real) para quedar por encima de la final de Asia.
+- **Capitán #1**: Dragones de Fuego sube a Choi a **90** (`cap` 90) sobre Afuro/Suzuno 89; Knights of Queen sube a
+  **87,0** de objetivo (86,0 de once real) para quedar por encima de la final de Asia. Unicorn **baja** a sus 90
+  (Mark Krueger 92, Erik Eagle 90, Dylan Keats 89) para no quedar por delante de Os Reis y Little Gigantes; Mark sigue
+  siendo #1 y el once se mantiene en 86,9 subiendo el objetivo a **88,0**.
 - **Extras** (fuera de la rampa; amistosos, rutas taisen o post-game): Equipo D = *Team K* de Mister K (Italia);
   Zoolan Team = *Team Garshield*; Caimanes del Cabo = *The Great Horn* («The Cape Crusaders», Sudáfrica);
   Sky Team = *Tenkuu no Shito*; Dark Team = *Makai Gundan Z*; Equipo Ogro = *Ogre* (película / Team Ogre).
@@ -357,13 +358,14 @@ Galaxy/IE3).
 - **Supabase**: cargado con el workflow `db-load` (characters 4.976 · cards 5.393); el `seed.sql` solo hace upsert, así
   que se conservan las filas del CRUD. Subido en la rama `app`.
 - **IE3**: rampa nueva (84,4 → 89,9) con `_game.IE3.compress = 0,5` (antes iba sin comprimir), `tech_balance` con el TP
-  de IE3, `scout_pool.IE3` (46–87) y `ovr_manual` de las estrellas. Capitán #1 en todos: Unicorn pasa a Mark Krueger
-  94 (`captain_cap` 94) y Dragones de Fuego a Choi 90 (`cap` 90); Knights of Queen sube a 87,0 de objetivo para no
-  quedar por debajo de la final de Asia.
+  de IE3, `scout_pool.IE3` (46–87) y `ovr_manual` de las estrellas. Capitán #1 en todos: Dragones de Fuego sube a
+  Choi 90 (`cap` 90); Knights of Queen sube a 87,0 de objetivo para no quedar por debajo de la final de Asia; Unicorn
+  baja sus 90 (Mark Krueger 92, Erik Eagle 90, Dylan Keats 89) para no quedar por delante de Os Reis y Little Gigantes
+  (objetivo 88,0; el once sigue en 86,9).
 - **IE3, extras**: entran en `team_tuning` con el capitán de la wiki (Equipo D = Team K, Zoolan Team = Team Garshield,
   Caimanes del Cabo = The Great Horn, Sky Team = Tenkuu no Shito, Dark Team = Makai Gundan Z, Equipo Ogro = Ogre).
   Antes iban sin curva ni capitán.
-- **IE3, `CEIL`**: el techo de IE3 pasa de 91 a 93 (`common.py`); el máximo real es 94 (Mark Krueger, capitán de Unicorn).
+- **IE3, `CEIL`**: el techo de IE3 pasa de 91 a 93 (`common.py`); el máximo real es 93 (Mac Robingo y Rococo Ulpa, con los 92 de Os Reis y Little Gigantes).
 - **IE1 §3 (tabla)**: corregida con los valores reales del build (54 → 79,8); la tabla anterior (58 → 83,8) era de antes
   de `tech_balance`/`ovr_manual`.
 - **`tuning.py`**: el volcado de depuración de `tech_balance` por juego se escribe con `encoding='utf-8'` (en Windows

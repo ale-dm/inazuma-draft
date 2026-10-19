@@ -373,8 +373,9 @@ Detalle completo en [plan-balance-temporadas.md](plan-balance-temporadas.md) (§
 - **Capitanes**: Niese Dolphin · Bjorn Kyle · Saginuma Osamu (Neo Japón) · Choi Chang-soo · Edgar Valtinas ·
   Demonio Strada (Equipo D) · Pierre Godin · Jonas Pollack · Querardo Naval · Mark Krueger · Fidio Aldena (Nakata es el
   ex-capitán) · Teles Torrue · Mack Ronijo · Lubbock Henktacker (Zoolan) · Rococo Ulpa · Endou Mamoru · Jake Fana
-  (Caimanes) · Sein (Sky) · Desuta (Dark) · Baddap Sleed (Ogro). Unicorn sube a Mark Krueger a **94** y Dragones de
-  Fuego a Choi **90** para ser #1; Knights of Queen sube su once a 86,0 para no quedar por debajo de la final de Asia.
+  (Caimanes) · Sein (Sky) · Desuta (Dark) · Baddap Sleed (Ogro). Dragones de Fuego sube a Choi **90** para ser #1;
+  Knights of Queen sube su once a 86,0 para no quedar por debajo de la final de Asia; Unicorn **baja** a sus 90
+  (Mark Krueger 92, Erik Eagle 90, Dylan Keats 89) para no quedar por delante de Os Reis y Little Gigantes.
 - **Extras con curva y capitán**: Equipo D = *Team K* de Mister K; Zoolan Team = *Team Garshield*; Caimanes del Cabo =
   *The Great Horn* («The Cape Crusaders», Sudáfrica); Sky Team = *Tenkuu no Shito*; Dark Team = *Makai Gundan Z*;
   Equipo Ogro = *Ogre* (película / versión Team Ogre).
@@ -384,6 +385,6 @@ Detalle completo en [plan-balance-temporadas.md](plan-balance-temporadas.md) (§
   gana 27,2 % (rango 28–65), con el once mezclado a −0,5 de química contra 2,5 del rival. Con el pool a 46–86 el aviso
   pasaba a Expedición (5,27 victorias / 20,7 %), así que se deja **46–87**. La Expedición queda en **4,17 / 9,1 %**
   (con el catálogo anterior sin cerrar, 6,42 / 26,8 %).
-- De paso: el techo de IE3 pasa a 93 (`CEIL`) y el máximo real a 94; la tabla de IE1 de `plan-balance-temporadas.md` se
+- De paso: el techo de IE3 pasa a 93 (`CEIL`) y el máximo real queda en 93; la tabla de IE1 de `plan-balance-temporadas.md` se
   corrige a los valores reales (54 → 79,8); `tuning.py` escribe el volcado de depuración en UTF-8.
 - Pendiente: **GO1, GO2, GO3, Ares y Orion**.
