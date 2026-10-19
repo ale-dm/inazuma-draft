@@ -166,7 +166,9 @@ extras, todos con capitán de la wiki).
 - **Apodos/nombres**: la app muestra el `nickname`; los nombres de la wiki van en la carta (Hector Helio = Rococo Ulpa,
   Paolo Bianchi = Fidio Aldena, Bash Lancer = Baddap Sleed…). Los apodos pueden ser **por versión**
   (`personaje|juego|versión`): Neo Japan muestra los nombres del juego (Dave Quagmire, Zack Cummings, Wilbur Watkins,
-  Zeke Valanche, Ethan Whitering…) y Génesis se queda con los alien (Dvalin, Zohen, Wittz, Zell, Heat).
+  Zeke Valanche, Ethan Whitering…) y Génesis se queda con los alien (Dvalin, Zohen, Wittz, Zell, Heat). El **nombre de
+  la carta** también va por versión (`overrides.card_names`): la carta de Neo Japan guarda «Dave Quagmire» y la de
+  Épsilon «Dvalin», como en la wiki.
 
 ### Pendientes (objetivos actuales, de `plan-base-jugadores.md` §9)
 

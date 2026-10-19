@@ -901,6 +901,13 @@ def main(extra_z=None, write=True):
         ver = c['version'] if c['version'] != 'base' else 'base'
         c['id'] = f"{c['character_id']}--{c['game'].lower()}--{slug(ver)}"
 
+    # a mano: overrides.card_names (nombre de la carta por versión, p. ej. Neo Japan: Dave Quagmire)
+    card_names = {k: v for k, v in ov.get('card_names', {}).items() if not k.startswith('_')}
+    for c in cards:
+        nm = card_names.get(f"{c['page']}|{c['game']}|{c['version']}")
+        if nm:
+            c['name'] = nm
+
     apply_tuning(cards, set(MAIN), ov, report)
 
     # a mano: overrides.drop_cards (versiones descartadas)

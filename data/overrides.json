@@ -253,6 +253,14 @@
     "Formiga Clemens|IE3|base": 92,
     "Drago Hill|IE3|base": 92
   },
+  "card_names": {
+    "_doc": "Nombre de la carta por versión (\"<page>|<game>|<versión>\": nombre), para versiones cuyo nombre de zukan no es el del personaje. Neo Japan: el nombre del juego (Dave Quagmire…); la versión de Aliea/Génesis se queda con el suyo.",
+    "Saginuma Osamu|IE3|Neo Japan": "Dave Quagmire",
+    "Ishidaira Hanzou|IE3|Neo Japan": "Zack Cummings",
+    "Izuno Yuu|IE3|Neo Japan": "Wilbur Watkins",
+    "Segata Ryuuichirou|IE3|Neo Japan": "Zeke Valanche",
+    "Atsuishi Shigeto|IE3|Neo Japan": "Ethan Whitering"
+  },
   "team_es": {
     "_doc": "Nombre en castellano de equipos que no cruzan con la wiki en español (inazuma.fandom.com/es). El resto sale solo.",
     "Chaos": "Caos",

@@ -380,10 +380,10 @@ Detalle completo en [plan-balance-temporadas.md](plan-balance-temporadas.md) (§
   *Team Garshield*; Caimanes del Cabo = *The Great Horn* («The Cape Crusaders», Sudáfrica); Sky Team = *Tenkuu no
   Shito*; Dark Team = *Makai Gundan Z*; Equipo Ogro = *Ogre* (película / versión Team Ogre), subido a nivel de Little
   Gigantes (89,6, top 93).
-- **Nombres por versión**: el `nickname` de la app ya puede ser por versión (`personaje|juego|versión`). Neo Japan
-  muestra los nombres del juego (Dave Quagmire, Zack Cummings, Wilbur Watkins, Zeke Valanche, Ethan Whitering, Sail
-  Bluesea, Johan Tassman, Henry House, Argie Bargie, Mark Hillvalley, Joseph King) y Génesis se queda con los alien
-  (Dvalin, Zohen, Wittz, Zell, Heat).
+- **Nombres por versión**: el `nickname` de la app ya puede ser por versión (`personaje|juego|versión`) y el nombre de
+  la carta también (`overrides.card_names`). Neo Japan muestra/guarda los nombres del juego (Dave Quagmire, Zack
+  Cummings, Wilbur Watkins, Zeke Valanche, Ethan Whitering, Sail Bluesea, Johan Tassman, Henry House, Argie Bargie,
+  Mark Hillvalley, Joseph King) y Génesis/Épsilon se queda con los alien (Dvalin, Zohen, Wittz, Zell, Heat).
 - **Pool sin equipo** (`scout_pool.IE3`): 339 cartas, **46–87**, mediana 66; top Chucky Cardaway 87.
 - **Técnicas**: `tech_balance.IE3` (50 % stats + 50 % técnica del puesto, TP de IE3) en los 22 equipos.
 - **Balance** (`npm run balance`): queda un único aviso marginal: en «condiciones reales» (media 75, humano fuerte) se
