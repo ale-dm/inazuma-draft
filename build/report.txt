@@ -1,6 +1,6 @@
-Cartas: 5388 (264 versiones extra) · personajes: 4974 · técnicas: 778
-Categorías: Legendary Player 142 · Top Player 695 · Advanced Player 1235 · Growing Player 1244 · Common Player 2072
-Niveles: S 427 · A 345 · B 1259 · C 3357
+Cartas: 5390 (266 versiones extra) · personajes: 4974 · técnicas: 778
+Categorías: Legendary Player 143 · Top Player 697 · Advanced Player 1234 · Growing Player 1244 · Common Player 2072
+Niveles: S 429 · A 345 · B 1259 · C 3357
 OVR: mediana 70 · p90 85 · p99 90 · máx 94
 
 Balancing doc del Xtreme sin ficha (7): añadir a overrides.xtreme_balancing_pages → Rhionne (Chaos), Dante Diavolo (Orpheus), Kino Aki (Girls Team), Oogu (Zanark Domain), Yasha (Zanark Domain), Goburis (Zanark Domain), Yamana Akane (Secret players (GO))
@@ -16,6 +16,7 @@ tech_balance: IE2 18 equipos reordenados por stats + técnica (IE2)
 Equipo de Ares/Orion/VR en Venus Demila IE3: The Sambassadors → Unaffiliated
 Equipo de Ares/Orion/VR en Cao Cao GO2: Zanark's Outsiders → Sub Character
 Equipo de Ares/Orion/VR en Hurricane Zeta GO3: Zanark's Outsiders → Sub Character
+Equipo con un solo jugador, fuera: Inazuma Japan (Past) (GO1) → Janus sin equipo
 Equipo con un solo jugador, fuera: Japanese Resistance (GO3) → Caleb Stonewall sin equipo
 Equipo con un solo jugador, fuera: Team Sharp (IE3) → Isaac Glass sin equipo
 Equipo con un solo jugador, fuera: Demon's Horn (GO1) → Damien Blackloch sin equipo

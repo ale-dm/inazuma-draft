@@ -251,7 +251,25 @@
     "Ghoshu Flare|IE3|base": 92,
     "Walter Mountain|IE3|base": 92,
     "Formiga Clemens|IE3|base": 92,
-    "Drago Hill|IE3|base": 92
+    "Drago Hill|IE3|base": 92,
+    "_doc_ij": "Inazuma Japan (IE3): medias por rendimiento de la wiki (stats Lv99 + técnicas) y méritos de la final vs Little Gigant.",
+    "Endou Mamoru|IE3|Inazuma Japan": 94,
+    "Gouenji Shuuya|IE3|Inazuma Japan": 93,
+    "Kiyama Hiroto|IE3|Inazuma Japan": 93,
+    "Kidou Yuuto|IE3|Inazuma Japan": 92,
+    "Utsunomiya Toramaru|IE3|base": 90,
+    "Fubuki Shirou|IE3|Inazuma Japan": 90,
+    "Someoka Ryuugo|IE3|Inazuma Japan": 90,
+    "Tachimukai Yuuki|IE3|Inazuma Japan": 90,
+    "Kabeyama Heigorou|IE3|Inazuma Japan": 89,
+    "Fudou Akio|IE3|Inazuma Japan": 89,
+    "Sakuma Jirou|IE3|Inazuma Japan": 89,
+    "Tobitaka Seiya|IE3|base": 88,
+    "Kazemaru Ichirouta|IE3|Inazuma Japan": 88,
+    "Tsunami Jousuke|IE3|Inazuma Japan": 87,
+    "Hijikata Raiden|IE3|Inazuma Japan": 87,
+    "Kogure Yuuya|IE3|Inazuma Japan": 86,
+    "Kurimatsu Teppei|IE3|Inazuma Japan": 86
   },
   "card_names": {
     "_doc": "Nombre de la carta por versión (\"<page>|<game>|<versión>\": nombre), para versiones cuyo nombre de zukan no es el del personaje. Neo Japan: el nombre del juego (Dave Quagmire…); la versión de Aliea/Génesis se queda con el suyo.",
@@ -259,7 +277,8 @@
     "Ishidaira Hanzou|IE3|Neo Japan": "Zack Cummings",
     "Izuno Yuu|IE3|Neo Japan": "Wilbur Watkins",
     "Segata Ryuuichirou|IE3|Neo Japan": "Zeke Valanche",
-    "Atsuishi Shigeto|IE3|Neo Japan": "Ethan Whitering"
+    "Atsuishi Shigeto|IE3|Neo Japan": "Ethan Whitering",
+    "Kiyama Hiroto|IE3|Inazuma Japan": "Xavier Foster"
   },
   "team_es": {
     "_doc": "Nombre en castellano de equipos que no cruzan con la wiki en español (inazuma.fandom.com/es). El resto sale solo.",
@@ -361,7 +380,9 @@
     { "page": "Yuukoku Hiroyuki", "game": "IE3", "team": "Neo Japan" },
     { "page": "Mukata Tsutomu", "game": "IE3", "team": "Neo Japan" },
     { "page": "Makiya Hiroshi", "game": "IE3", "team": "Neo Japan" },
-    { "_doc": "Segundo Raimon (IE2): titulares de la wiki que no salen por su ficha de zukan. Kazemaru/Kurimatsu/Someoka NO (están en Dark Emperors).", "page": "Nakatani", "game": "IE2", "team": "Raimon" }
+    { "_doc": "Segundo Raimon (IE2): titulares de la wiki que no salen por su ficha de zukan. Kazemaru/Kurimatsu/Someoka NO (están en Dark Emperors).", "page": "Nakatani", "game": "IE2", "team": "Raimon" },
+    { "_doc": "Inazuma Japan (IE3): titulares con ficha de zukan en Inazuma National como 2º equipo (el build solo coge el 1º).", "page": "Kogure Yuuya", "game": "IE3", "team": "Inazuma Japan" },
+    { "page": "Kurimatsu Teppei", "game": "IE3", "team": "Inazuma Japan" }
   ],
   "zukan_wiki_pages": {
     "_doc": "Nombre de zukan (o '#Nº' si el nombre se repite en zukan) → ficha de la wiki inglesa, para los que no cruzan solos.",
@@ -388,7 +409,8 @@
       "kamimura-kirito--ie2--dark-emperors",
       "tamiyama-you--ie2--dark-emperors",
       "nakama-you--ie2--dark-emperors",
-      "teira-tamotsu--ie2--dark-emperors"
+      "teira-tamotsu--ie2--dark-emperors",
+      "midorikawa-ryuuji--ie3--inazuma-japan"
     ]
   },
   "team_tuning": {
@@ -552,10 +574,10 @@
     },
     "IE3": {
       "Inazuma Japan": {
-        "top11": 90.5,
+        "top11": 90.8,
         "cap": 94,
         "captain": "Endou Mamoru",
-        "note": "protagonista (FFI); un punto por encima de Little Gigantes"
+        "note": "protagonista (FFI); convocatoria de la final vs Little Gigant, medias por rendimiento (ovr_manual)"
       },
       "Big Waves": {
         "top11": 84.0,
