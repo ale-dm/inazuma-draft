@@ -1,7 +1,8 @@
 {
   "_doc": "Excepciones editables a mano para tools/db/build.py. Las claves 'page' son títulos de ficha de la wiki de Fandom (inazuma-eleven.fandom.com). Ver docs/plan-base-jugadores.md.",
   "names_i18n": {
-    "_doc": "Nombres en francés/italiano a mano (técnica, espíritu guerrero, tótem o equipo, por su nombre inglés): {\"Raimon\": {\"fr\": \"…\", \"it\": \"…\"}}. Sin entrada: doblaje de la wiki española (Nombre DOB) o wikis fr/it por nombre japonés; si no, inglés"
+    "_doc": "Nombres en francés/italiano a mano (técnica, espíritu guerrero, tótem o equipo, por su nombre inglés): {\"Raimon\": {\"fr\": \"…\", \"it\": \"…\"}}. Sin entrada: doblaje de la wiki española (Nombre DOB) o wikis fr/it por nombre japonés; si no, inglés",
+    "Dark Angel": { "fr": "Dark Sky", "it": "Dark Star" }
   },
   "special_es": {
     "_doc": "Nombre en castellano de espíritus guerreros e hipertécnicas de VR que la wiki española no enlaza (sacados de sus fichas)",
@@ -147,6 +148,11 @@
   },
   "tech_balance": {
     "_doc": "Rebalanceo de los jugadores CON equipo por stats + técnica del puesto (tiro/regate para delanteros, todo para medios, bloqueo para defensas, parada para porteros), con el TP del juego `cost`. Dentro de cada equipo se conserva el rango de team_tuning.",
+    "IE3": {
+      "cost": "IE3",
+      "stats": 0.5,
+      "tech": 0.5
+    },
     "IE2": {
       "cost": "IE2",
       "stats": 0.5,
@@ -207,11 +213,42 @@
     "Tsunami Jousuke|IE2|base": 82,
     "Kogure Yuuya|IE2|base": 82,
     "Fubuki Shirou|IE2|base": 85,
-    "Yagami Reina|IE2|base": 88
+    "Yagami Reina|IE2|base": 88,
+    "Suzuno Fuusuke|IE3|Fire Dragon": 89,
+    "Afuro Terumi|IE3|Fire Dragon": 89,
+    "Nagumo Haruya|IE3|Fire Dragon": 88,
+    "Edgar Valtinas|IE3|base": 92,
+    "Philip Owen|IE3|base": 89,
+    "Johnny Gascoigne|IE3|base": 88,
+    "David Buckingham|IE3|base": 86,
+    "Edge Ripper|IE3|base": 86,
+    "Nick Woodgate|IE3|base": 85,
+    "Ichinose Kazuya|IE3|Unicorn": 93,
+    "Dylan Keith|IE3|base": 91,
+    "Mark Krueger|IE3|base": 91,
+    "Domon Asuka|IE3|Unicorn": 89,
+    "Michele Jacks|IE3|base": 88,
+    "Billy Rapid|IE3|base": 86,
+    "Teles Torrue|IE3|base": 92,
+    "Hernán Tévez|IE3|base": 89,
+    "Julio Acosta|IE3|base": 89,
+    "Diego Oro|IE3|base": 89,
+    "Jorge Ortega|IE3|base": 89,
+    "Leone Batigo|IE3|base": 88,
+    "Fidio Aldena|IE3|base": 93,
+    "Mack Ronijo|IE3|base": 93,
+    "Rococo Ulpa|IE3|base": 93,
+    "Lagarto Carlos|IE3|base": 92,
+    "Gato|IE3|base": 92,
+    "Ghoshu Flare|IE3|base": 92,
+    "Walter Mountain|IE3|base": 92,
+    "Formiga Clemens|IE3|base": 92,
+    "Drago Hill|IE3|base": 92
   },
   "team_es": {
     "_doc": "Nombre en castellano de equipos que no cruzan con la wiki en español (inazuma.fandom.com/es). El resto sale solo.",
     "Chaos": "Caos",
+    "Dark Angel": "Ángel Oscuro",
     "Unaffiliated": "Sin equipo",
     "Sub Character": "Secundarios",
     "Adult": "Adultos",
@@ -303,7 +340,25 @@
     { "page": "Netsuha Natsuhiko", "game": "IE2", "team": "Chaos" },
     { "page": "Ooiwa Kurando", "game": "IE2", "team": "Chaos" },
     { "_doc": "Se unen al nuevo Raimon (Segundo Raimon): versión Raimon final.", "page": "Zaizen Touko", "game": "IE2", "team": "Raimon" },
-    { "page": "Urabe Rica", "game": "IE2", "team": "Raimon" }
+    { "page": "Urabe Rica", "game": "IE2", "team": "Raimon" },
+    { "_doc": "Neo Japan (IE3): titulares prestados (Zeus/Occult/Shuriken/Kirkwood/Farm) sin ficha de IE3 propia.", "page": "Gouin Takeshi", "game": "IE3", "team": "Neo Japan" },
+    { "page": "Kirigakure Saiji", "game": "IE3", "team": "Neo Japan" },
+    { "page": "Yuukoku Hiroyuki", "game": "IE3", "team": "Neo Japan" },
+    { "page": "Mukata Tsutomu", "game": "IE3", "team": "Neo Japan" },
+    { "page": "Makiya Hiroshi", "game": "IE3", "team": "Neo Japan" },
+    { "_doc": "Ángel Oscuro (IE3): fusión de Apostles from the Sky + Devil Army Z (5 ángeles + 6 demonios), capitán Desuta. Misma ficha de zukan, equipo propio." },
+    { "page": "Nenel", "game": "IE3", "team": "Dark Angel" },
+    { "page": "Elfel", "game": "IE3", "team": "Dark Angel" },
+    { "page": "Uinel", "game": "IE3", "team": "Dark Angel" },
+    { "page": "Gyuel", "game": "IE3", "team": "Dark Angel" },
+    { "page": "Sein", "game": "IE3", "team": "Dark Angel" },
+    { "page": "Astaroth", "game": "IE3", "team": "Dark Angel" },
+    { "page": "Beelzebu", "game": "IE3", "team": "Dark Angel" },
+    { "page": "Hebeemoth", "game": "IE3", "team": "Dark Angel" },
+    { "page": "Mephisto", "game": "IE3", "team": "Dark Angel" },
+    { "page": "Satanatos", "game": "IE3", "team": "Dark Angel" },
+    { "page": "Desuta", "game": "IE3", "team": "Dark Angel" },
+    { "_doc": "Segundo Raimon (IE2): titulares de la wiki que no salen por su ficha de zukan. Kazemaru/Kurimatsu/Someoka NO (están en Dark Emperors).", "page": "Nakatani", "game": "IE2", "team": "Raimon" }
   ],
   "zukan_wiki_pages": {
     "_doc": "Nombre de zukan (o '#Nº' si el nombre se repite en zukan) → ficha de la wiki inglesa, para los que no cruzan solos.",
@@ -493,13 +548,20 @@
       }
     },
     "IE3": {
+      "Inazuma Japan": {
+        "top11": 87.5,
+        "captain": "Endou Mamoru",
+        "note": "protagonista (FFI)"
+      },
       "Big Waves": {
-        "top11": 76.0,
+        "top11": 84.0,
+        "cap": 87,
         "captain": "Niese Dolphin",
         "note": "1"
       },
       "Desert Lions": {
-        "top11": 76.5,
+        "top11": 84.5,
+        "cap": 87,
         "captain": "Bjorn Kyle",
         "note": "2"
       },
@@ -509,12 +571,13 @@
         "note": "3"
       },
       "Fire Dragon": {
-        "top11": 80.0,
+        "top11": 85.0,
+        "cap": 87,
         "captain": "Choi Chang-soo",
         "note": "4"
       },
       "Queen's Knights": {
-        "top11": 81.0,
+        "top11": 85.5,
         "captain": "Edgar Valtinas",
         "note": "5"
       },
@@ -523,35 +586,72 @@
         "captain": "Demonio Strada",
         "note": "6"
       },
+      "Rose Griffons": {
+        "top11": 82,
+        "note": "Grifos de la Rosa (Francia) - 5º Block B"
+      },
+      "Brocken Brigade": {
+        "top11": 83,
+        "note": "Brockenborg (Alemania) - 3º Block B"
+      },
+      "Red Matador": {
+        "top11": 84,
+        "note": "Los Rojos (España) - 4º Block B, >= Alemania"
+      },
+      "The Cape Crusaders": {
+        "top11": 81,
+        "note": "Caimanes del Cabo (Sudáfrica) - 6º Block B"
+      },
       "Unicorn": {
-        "top11": 82.5,
+        "top11": 87,
         "captain": "Mark Krueger",
         "note": "7"
       },
       "Orpheus": {
-        "top11": 84.5,
+        "top11": 87,
         "captain": "Fidio Aldena",
         "note": "8"
       },
       "The Empire": {
-        "top11": 82.0,
+        "top11": 86.5,
         "captain": "Teles Torrue",
         "note": "9"
       },
       "The Kingdom": {
-        "top11": 84.5,
+        "top11": 89,
         "captain": "Mack Ronijo",
-        "note": "10"
+        "note": "10 - Brasil, ganó todas las previas"
       },
       "Team Zoolan": {
         "top11": 81.0,
+        "compress": 0.5,
         "captain": "Lubbock Henktacker",
         "note": "11"
       },
       "Little Gigantes": {
-        "top11": 86.5,
+        "top11": 89.5,
         "captain": "Rococo Ulpa",
-        "note": "12"
+        "note": "12 - Cotarl, finalista"
+      },
+      "Apostles from the Sky": {
+        "top11": 85.0,
+        "captain": "Sein",
+        "note": "post-FFI, isla Liocott (nivel 99)"
+      },
+      "Devil Army Z": {
+        "top11": 85.0,
+        "captain": "Desuta",
+        "note": "post-FFI, isla Liocott (nivel 99)"
+      },
+      "Dark Angel": {
+        "top11": 89.5,
+        "captain": "Desuta",
+        "note": "fusión de Sky Team + Dark Team (Liocott); un pelín por debajo del Equipo Ogro"
+      },
+      "Team Ogre": {
+        "top11": 92,
+        "captain": "Baddap Sleed",
+        "note": "película Team Ogre (nivel 99, Rank 16)"
       }
     },
     "GO1": {

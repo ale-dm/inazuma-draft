@@ -25,7 +25,7 @@ RANK = {'S+': 92, 'S': 88, 'A+': 84, 'A': 80, 'B+': 76, 'B': 72, 'C+': 68, 'C': 
 CATEGORIES = [('Legendary Player', 89), ('Top Player', 83), ('Advanced Player', 75), ('Growing Player', 65), ('Common Player', 0)]
 BAND = {'A': (66, 84), 'B': (56, 77), 'C': (44, 72)}
 CAP, CAP_C = 94, 80
-CEIL = {'IE1': 85, 'IE2': 88, 'IE3': 91, 'GO1': 90, 'GO2': 93, 'GO3': 94}
+CEIL = {'IE1': 85, 'IE2': 88, 'IE3': 93, 'GO1': 90, 'GO2': 93, 'GO3': 94}
 ELEMENT = {'Fire': 'fire', 'Forest': 'wood', 'Wood': 'wood', 'Wind': 'air', 'Air': 'air', 'Mountain': 'earth', 'Earth': 'earth'}
 SCOUT_TEAMS = {'Unaffiliated', 'Sub Character'}
 EXCLUDED_FORMS = ('real inazuma', 'mixi max', 'mixi-max', 'miximax', 'child', 'keshin armed')
@@ -52,7 +52,8 @@ TEAM_FORM_WORD = {v: k.lower() for k, v in WIKI_FORM_TEAM.items()} | {'Young Ina
 ALT_VERSION = ('mixi', 'dark emperors', 'chaos', 'atsuya', 'shirou', 'merged', 'ishido', 'gran', 'chrono storm')
 ILJ = 'Inazuma Legend Japan'
 # nombres de equipo de zukan → los de la base
-ZUKAN_TEAM = {'Inazuma National': 'Inazuma Japan', 'Inazuma Legend National': ILJ, 'Neo National': 'Neo Japan'}
+ZUKAN_TEAM = {'Inazuma National': 'Inazuma Japan', 'Inazuma Legend National': ILJ, 'Neo National': 'Neo Japan',
+             'Dark Angels': 'Dark Angel'}
 
 
 def load(name):
