@@ -140,10 +140,10 @@ Emperadores Oscuros 85,9 < Raimon 87,0 < Caos 87,9.**
 
 Rampa (media del once): Caimanes del Cabo 74,2 (rep. africana) · Neo Japón 80,9 (amistoso) · Zoolan Team 81,2 ·
 Grifos de la Rosa 82,5 · Brocken Brigade 83,0 · **Big Waves 84,4 → Leones del Desierto 84,6 → Dragones de Fuego 85,8 →
-Knights of Queen 86,0 → Emperadores 86,7 → Unicorn 86,9 → Orfeo 87,4 → Inazuma Japón 88,0 → Os Reis 89,1 →
-Little Giants 89,9** (final). Extras fuera de la rampa: Equipo D **86,5** (nivel Knights) y Equipo Ogro **89,6**
-(nivel Little). `_game.IE3.compress = 0,5`; **capitán #1 en los 20 equipos** (16 de la historia/amistosos y los 4
-extras, todos con capitán de la wiki).
+Knights of Queen 86,0 → Emperadores 86,7 → Unicorn 86,9 → Orfeo 87,4 → Os Reis 89,1 → Little Giants 89,9** (final),
+con **Inazuma Japón 90,9** (protagonista, un punto por encima de Little). Extras fuera de la rampa: Equipo D **86,5**
+(nivel Knights) y Equipo Ogro **89,6** (nivel Little, top 93). `_game.IE3.compress = 0,5`; **capitán #1 en los 20
+equipos** (16 de la historia/amistosos y los 4 extras, todos con capitán de la wiki).
 
 - **Orden de la historia** (wiki FFI): Asia → Big Waves (Australia, cuartos 2-1) → Leones del Desierto (Catar, semi 3-2)
   → Dragones de Fuego (Corea, final 4-3). FFI → Grupo A: Knights of Queen (Inglaterra 3-2) → Unicorn (EE. UU. 4-3) →
@@ -371,7 +371,7 @@ Galaxy/IE3).
 - **IE3, extras**: entran en `team_tuning` con el capitán de la wiki (Equipo D = Team K, Zoolan Team = Team Garshield,
   Caimanes del Cabo = The Great Horn, Sky Team = Tenkuu no Shito, Dark Team = Makai Gundan Z, Equipo Ogro = Ogre).
   Antes iban sin curva ni capitán.
-- **IE3, `CEIL`**: el techo de IE3 pasa de 91 a 93 (`common.py`); el máximo real es 93 (Mac Robingo y Rococo Ulpa, con los 92 de Os Reis y Little Gigantes).
+- **IE3, `CEIL`**: el techo de IE3 pasa de 91 a 93 (`common.py`); el máximo real es 94 (Mark Evans, capitán de Inazuma Japón, con Little Gigantes en 93).
 - **IE1 §3 (tabla)**: corregida con los valores reales del build (54 → 79,8); la tabla anterior (58 → 83,8) era de antes
   de `tech_balance`/`ovr_manual`.
 - **`tuning.py`**: el volcado de depuración de `tech_balance` por juego se escribe con `encoding='utf-8'` (en Windows

@@ -369,7 +369,7 @@ Detalle completo en [plan-balance-temporadas.md](plan-balance-temporadas.md) (§
 - **IE3 cerrado**: rampa **84,4 → 89,9** con `_game.IE3.compress = 0,5`. Asia: Big Waves (Australia) 84,4 → Leones del
   Desierto (Catar) 84,6 → Dragones de Fuego (Corea) 85,8. FFI: Knights of Queen (Inglaterra) 86,0 → Unicorn (EE. UU.)
   86,9 → Orfeo (Italia) 87,4 → Emperadores (Argentina) 86,7 → Os Reis (Brasil) 89,1 → **Little Gigantes (Cotarl) 89,9**
-  (final). Inazuma Japón (protagonista) 88,0. **Capitán #1 en los 20 equipos**, con los capitanes de la wiki.
+  (final). Inazuma Japón (protagonista) 90,9, un punto por encima de Little. **Capitán #1 en los 20 equipos**, con los capitanes de la wiki.
 - **Capitanes**: Niese Dolphin · Bjorn Kyle · Saginuma Osamu (Neo Japón) · Choi Chang-soo · Edgar Valtinas ·
   Demonio Strada (Equipo D) · Pierre Godin · Jonas Pollack · Querardo Naval · Mark Krueger · Fidio Aldena (Nakata es el
   ex-capitán) · Teles Torrue · Mack Ronijo · Lubbock Henktacker (Zoolan) · Rococo Ulpa · Endou Mamoru · Jake Fana
@@ -390,6 +390,6 @@ Detalle completo en [plan-balance-temporadas.md](plan-balance-temporadas.md) (§
   gana 27,2 % (rango 28–65), con el once mezclado a −0,5 de química contra 2,5 del rival. Con el pool a 46–86 el aviso
   pasaba a Expedición (5,27 victorias / 20,7 %), así que se deja **46–87**. La Expedición queda en **4,17 / 9,1 %**
   (con el catálogo anterior sin cerrar, 6,42 / 26,8 %).
-- De paso: el techo de IE3 pasa a 93 (`CEIL`) y el máximo real queda en 93; la tabla de IE1 de `plan-balance-temporadas.md` se
+- De paso: el techo de IE3 pasa a 93 (`CEIL`) y el máximo real queda en 94 (Mark Evans, Inazuma Japón); la tabla de IE1 de `plan-balance-temporadas.md` se
   corrige a los valores reales (54 → 79,8); `tuning.py` escribe el volcado de depuración en UTF-8.
 - Pendiente: **GO1, GO2, GO3, Ares y Orion**.
