@@ -160,22 +160,6 @@
   "sprite": "https://static.wikia.nocookie.net/inazuma/images/7/73/%28A%29_Shawn_%28HVR-DF%29.png/revision/latest?cb=20260203000229&path-prefix=es"
  },
  {
-  "id": "fubuki-shirou--ie2--raimon-shirou",
-  "name": "Shawn Froste",
-  "game": "IE2",
-  "version": "Raimon (Shirou)",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/o/p/opancch54ie.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/a/ad/%28R%29_Shawn_%28HVR-DF%29.png/revision/latest?cb=20260502205338&path-prefix=es"
- },
- {
-  "id": "fubuki-shirou--ie2--raimon-atsuya",
-  "name": "Shawn Froste",
-  "game": "IE2",
-  "version": "Raimon (Atsuya)",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/i/3/i30spf7yhce.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/a/ad/%28R%29_Shawn_%28HVR-DF%29.png/revision/latest?cb=20260502205338&path-prefix=es"
- },
- {
   "id": "fubuki-shirou--ie3--inazuma-japan",
   "name": "Shawn Froste",
   "game": "IE3",
@@ -190,6 +174,14 @@
   "version": "Mixi Max (Axel) «Shaxel»",
   "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/m/c/mc0a0kigy_k.png",
   "sprite": "https://static.wikia.nocookie.net/inazuma/images/e/e2/%28IJ%29_Shawn_%28HVR_Miximax%29.png/revision/latest?cb=20260711220339&path-prefix=es"
+ },
+ {
+  "id": "fubuki-shirou--ie2--alpine",
+  "name": "Shawn Froste",
+  "game": "IE2",
+  "version": "Alpine",
+  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/o/p/opancch54ie.png",
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/7/73/%28A%29_Shawn_%28HVR-DF%29.png/revision/latest?cb=20260203000229&path-prefix=es"
  },
  {
   "id": "tachimukai-yuuki--ie2--base",

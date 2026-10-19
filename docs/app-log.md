@@ -394,4 +394,8 @@ Detalle completo en [plan-balance-temporadas.md](plan-balance-temporadas.md) (§
   (con el catálogo anterior sin cerrar, 6,42 / 26,8 %).
 - De paso: el techo de IE3 pasa a 93 (`CEIL`) y el máximo real queda en 94 (Mark Evans, Inazuma Japón); la tabla de IE1 de `plan-balance-temporadas.md` se
   corrige a los valores reales (54 → 79,8); `tuning.py` escribe el volcado de depuración en UTF-8.
+- **Segundo Raimon (IE2)**: alineación de la final vs Emperadores Oscuros (Tachimukai; Kabeyama, Tsunami, Kogure,
+  Touko; Fubuki; Gouenji, Megane, Domon, Kidou; Endou capitán), **Fubuki en su forma fusionada** (el build admite
+  `form` en `extra_versions`), Nakatani fuera del equipo, y medias por méritos: Axel/Fubuki 89, Jude/Erik 88, Endou 88
+  (capitán), Darren 87, Tsunami 86, Kabeyama/Domon/Touko 85, Rica 84, Kogure 83, Megane 80. Once 86,7.
 - Pendiente: **GO1, GO2, GO3, Ares y Orion**.

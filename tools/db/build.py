@@ -717,7 +717,10 @@ def main(extra_z=None, write=True):
         # a mano: overrides.extra_versions (Nakata en Orfeo: sin ficha de zukan, hueco Nº 1922)
         for x in extra_ver:
             if x['page'] == pg and x['game'] in stats_by_game:
-                versions.append((x['game'], x['team'], x['team'], {'force': True}, None))
+                hint = {'force': True}
+                if x.get('form'):
+                    hint['want'] = x['form']          # forma concreta (Fubuki: Merged / Atsuya / Shirou)
+                versions.append((x['game'], x['team'], x['team'], hint, None))
 
         seen = set()
         for g, ver, tm, hint, entry in versions:

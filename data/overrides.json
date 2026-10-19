@@ -289,7 +289,21 @@
     "Long|IE3|base": 81,
     "Sniper|IE3|base": 82,
     "Milano|IE3|base": 82,
-    "Rodeo (scout character)|IE3|base": 83
+    "Rodeo (scout character)|IE3|base": 83,
+    "_doc_r2": "Segundo Raimon (IE2): méritos del arco Aliea (campeón, final vs Emperadores Oscuros) y rendimiento.",
+    "Endou Mamoru|IE2|Raimon": 88,
+    "Gouenji Shuuya|IE2|Raimon": 89,
+    "Fubuki Shirou|IE2|Raimon": 89,
+    "Kidou Yuuto|IE2|Raimon": 88,
+    "Ichinose Kazuya|IE2|Raimon": 88,
+    "Tachimukai Yuuki|IE2|Raimon": 87,
+    "Tsunami Jousuke|IE2|Raimon": 86,
+    "Kabeyama Heigorou|IE2|Raimon": 85,
+    "Domon Asuka|IE2|Raimon": 85,
+    "Urabe Rica|IE2|Raimon": 84,
+    "Megane Kakeru|IE2|Raimon": 80,
+    "Zaizen Touko|IE2|Raimon": 85,
+    "Kogure Yuuya|IE2|Raimon": 83
   },
   "card_names": {
     "_doc": "Nombre de la carta por versión (\"<page>|<game>|<versión>\": nombre), para versiones cuyo nombre de zukan no es el del personaje. Neo Japan: el nombre del juego (Dave Quagmire…); la versión de Aliea/Génesis se queda con el suyo.",
@@ -402,7 +416,8 @@
     { "page": "Makiya Hiroshi", "game": "IE3", "team": "Neo Japan" },
     { "_doc": "Segundo Raimon (IE2): titulares de la wiki que no salen por su ficha de zukan. Kazemaru/Kurimatsu/Someoka NO (están en Dark Emperors).", "page": "Nakatani", "game": "IE2", "team": "Raimon" },
     { "_doc": "Inazuma Japan (IE3): titulares con ficha de zukan en Inazuma National como 2º equipo (el build solo coge el 1º).", "page": "Kogure Yuuya", "game": "IE3", "team": "Inazuma Japan" },
-    { "page": "Kurimatsu Teppei", "game": "IE3", "team": "Inazuma Japan" }
+    { "page": "Kurimatsu Teppei", "game": "IE3", "team": "Inazuma Japan" },
+    { "_doc": "Segundo Raimon (IE2): Fubuki en su forma fusionada, la de la final vs Emperadores Oscuros.", "page": "Fubuki Shirou", "game": "IE2", "team": "Raimon", "form": "Merged", "image": "https://dxi4wb638ujep.cloudfront.net/1/k/o/p/opancch54ie.png" }
   ],
   "zukan_wiki_pages": {
     "_doc": "Nombre de zukan (o '#Nº' si el nombre se repite en zukan) → ficha de la wiki inglesa, para los que no cruzan solos.",
@@ -430,7 +445,10 @@
       "tamiyama-you--ie2--dark-emperors",
       "nakama-you--ie2--dark-emperors",
       "teira-tamotsu--ie2--dark-emperors",
-      "midorikawa-ryuuji--ie3--inazuma-japan"
+      "midorikawa-ryuuji--ie3--inazuma-japan",
+      "fubuki-shirou--ie2--raimon-atsuya",
+      "fubuki-shirou--ie2--raimon-shirou",
+      "nakatani--ie2--raimon"
     ]
   },
   "team_tuning": {

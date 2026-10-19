@@ -1,6 +1,6 @@
-Cartas: 5390 (266 versiones extra) · personajes: 4974 · técnicas: 778
-Categorías: Legendary Player 143 · Top Player 697 · Advanced Player 1224 · Growing Player 1258 · Common Player 2068
-Niveles: S 429 · A 345 · B 1259 · C 3357
+Cartas: 5389 (265 versiones extra) · personajes: 4974 · técnicas: 778
+Categorías: Legendary Player 145 · Top Player 694 · Advanced Player 1225 · Growing Player 1257 · Common Player 2068
+Niveles: S 429 · A 345 · B 1259 · C 3356
 OVR: mediana 70 · p90 85 · p99 90 · máx 94
 
 Balancing doc del Xtreme sin ficha (7): añadir a overrides.xtreme_balancing_pages → Rhionne (Chaos), Dante Diavolo (Orpheus), Kino Aki (Girls Team), Oogu (Zanark Domain), Yasha (Zanark Domain), Goburis (Zanark Domain), Yamana Akane (Secret players (GO))
@@ -8,7 +8,7 @@ Wiki del Xtreme: "Kino Aki" sin ficha (Kino Aki)
 Wiki del Xtreme: "Sorano Aoi" sin ficha (Sorano Aoi)
 Jugadores de zukan sin ficha en la wiki (1): Josephine
 Personajes sin stats de la saga principal (fuera): 1173
-scout_pool: IE1 789 cartas · 741 con OVR nuevo
+scout_pool: IE1 789 cartas · 742 con OVR nuevo
 scout_pool: IE2 436 cartas · 415 con OVR nuevo
 scout_pool: IE3 339 cartas · 315 con OVR nuevo
 tech_balance: IE3 22 equipos reordenados por stats + técnica (IE3)

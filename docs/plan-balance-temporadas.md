@@ -108,7 +108,7 @@ Referencia de techo de GO1: Raimon 83,9 · Oscuridad Ancestral 83,5 · Luz Etern
 Escala de poder de los alienígenas (la dio el jefe; manda sobre `plan-base-jugadores.md §9`):
 
 **Géminis 80,6 < Épsilon 81,3 < Épsilon Plus 82,1 < Prominence/Diamond 83,0 < Royal Redux 84,3 < Génesis 85,4 <
-Emperadores Oscuros 85,9 < Raimon 87,0 < Caos 87,9.**
+Emperadores Oscuros 85,9 < Raimon 86,7 < Caos 87,9.**
 
 - `_game.IE2.compress = 0,5`; **capitán #1** en todos (Kiyama con `captain_cap` 89; el Caos con `cap` propio 90).
 - **Alienígenas** (9): Tormenta de Géminis 80,6 · Épsilon 81,3 · Épsilon Plus 82,1 · Prominence 83,0 · Diamond 83,0 ·
@@ -123,7 +123,10 @@ Emperadores Oscuros 85,9 < Raimon 87,0 < Caos 87,9.**
 - **Normales** (orden de la wiki/foros: Manyuuji ≈ Oumihara > Yokato; Hakuren flojo salvo Fubuki): **Claustro 80,5 ≈
   Mary Times 80,3 > Servicio Secreto 79,5** (SP Fixers, 0-1 vs Raimon) **> Mar de Árboles 80,0 · Jóvenes Inazuma 80,0 >
   Fauxshore 77,3** (Yokato, 0-4) **> Alpino 75,4 ≈ Triple C 74,6**.
-- **Raimon** (protagonista): once 87,0, capitán Mark Evans 88.
+- **Raimon** (protagonista, Segundo Raimon): once **86,7**. Alineación de la final vs Emperadores Oscuros (Tachimukai;
+  Kabeyama, Tsunami, Kogure, Touko; **Fubuki fusionado**; Gouenji, Megane, Domon, Kidou; Endou capitán). Medias por
+  méritos: Axel y Fubuki **89**, Jude/Erik **88**, Endou **88** (capitán, pero no #1 por decisión del jefe), Darren 87,
+  Tsunami 86, Kabeyama/Domon/Touko 85, Rica 84, Kogure 83, Megane 80. Nakatani fuera del equipo (queda de scout).
 - **Raimon-joiners** (dos versiones: la de su equipo, *regular*, y la de Raimon): Darren (Fauxshore 80 / Raimon 88) ·
   Hurley (Mary Times 82 / 86) · Scott (Claustro 82 / 87) · **Shawn (Alpino 85 / 87-88, el mejor de los seis)** ·
   Victoria (Servicio Secreto 83 / 87) · Suzette (Triple C 83 / 86). Solo con las técnicas que tenían en el partido vs
