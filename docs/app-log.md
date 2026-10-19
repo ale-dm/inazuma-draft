@@ -384,7 +384,9 @@ Detalle completo en [plan-balance-temporadas.md](plan-balance-temporadas.md) (§
   la carta también (`overrides.card_names`). Neo Japan muestra/guarda los nombres del juego (Dave Quagmire, Zack
   Cummings, Wilbur Watkins, Zeke Valanche, Ethan Whitering, Sail Bluesea, Johan Tassman, Henry House, Argie Bargie,
   Mark Hillvalley, Joseph King) y Génesis/Épsilon se queda con los alien (Dvalin, Zohen, Wittz, Zell, Heat).
-- **Pool sin equipo** (`scout_pool.IE3`): 339 cartas, **46–87**, mediana 66; top Chucky Cardaway 87.
+- **Pool sin equipo** (`scout_pool.IE3`): 341 cartas, **46–88**, mediana 66; top Chucky Cardaway 88. Notables
+  cuadrados con el ranking competitivo (Sutefuda 88, Bernadette 87, Fudouyama 86, Libra 85, Ray Pier 85, Kazamatsuri
+  84, Virgo 82, Shippuu 81, Kappa 80…); el resto, reordenado por rendimiento (stats Lv99 + técnica por puesto).
 - **Técnicas**: `tech_balance.IE3` (50 % stats + 50 % técnica del puesto, TP de IE3) en los 22 equipos.
 - **Balance** (`npm run balance`): queda un único aviso marginal: en «condiciones reales» (media 75, humano fuerte) se
   gana 27,2 % (rango 28–65), con el once mezclado a −0,5 de química contra 2,5 del rival. Con el pool a 46–86 el aviso

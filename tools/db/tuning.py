@@ -15,6 +15,13 @@ def apply_scout_pool(cards, ov, report):
         cg = sc.get('cost', 'IE3')                 # juego del que se toma el TP de las técnicas
 
         def tval(c):                                # mejor técnica del jugador según ese juego
+            if sc.get('pos_tech'):                 # ponderada por puesto (tiro/regate/…), como tech_balance
+                best = {}
+                for m in c.get('moves', []):
+                    v = (m.get('costs') or {}).get(cg)
+                    if v is not None:
+                        best[m.get('type')] = max(best.get(m.get('type'), 0), v)
+                return sum(w * best.get(ty, 0) for ty, w in POS_TECH.get(c['position'], {}).items())
             return max((m.get('costs', {}).get(cg) or 0 for m in c.get('moves', [])), default=0)
         moves = sorted(tval(c) for c in pool)
         lo, hi, cap = sc.get('lo', 44), sc.get('hi', 77), sc.get('cap', 81)

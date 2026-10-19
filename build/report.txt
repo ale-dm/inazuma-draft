@@ -1,5 +1,5 @@
 Cartas: 5390 (266 versiones extra) · personajes: 4974 · técnicas: 778
-Categorías: Legendary Player 143 · Top Player 697 · Advanced Player 1234 · Growing Player 1244 · Common Player 2072
+Categorías: Legendary Player 143 · Top Player 697 · Advanced Player 1224 · Growing Player 1258 · Common Player 2068
 Niveles: S 429 · A 345 · B 1259 · C 3357
 OVR: mediana 70 · p90 85 · p99 90 · máx 94
 
@@ -10,7 +10,7 @@ Jugadores de zukan sin ficha en la wiki (1): Josephine
 Personajes sin stats de la saga principal (fuera): 1173
 scout_pool: IE1 789 cartas · 741 con OVR nuevo
 scout_pool: IE2 436 cartas · 415 con OVR nuevo
-scout_pool: IE3 339 cartas · 318 con OVR nuevo
+scout_pool: IE3 339 cartas · 315 con OVR nuevo
 tech_balance: IE3 22 equipos reordenados por stats + técnica (IE3)
 tech_balance: IE2 18 equipos reordenados por stats + técnica (IE2)
 Equipo de Ares/Orion/VR en Venus Demila IE3: The Sambassadors → Unaffiliated

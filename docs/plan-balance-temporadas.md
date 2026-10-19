@@ -161,8 +161,10 @@ equipos** (16 de la historia/amistosos y los 4 extras, todos con capitán de la 
   subido al nivel de Knights (**86,5**); Zoolan Team = *Team Garshield*; Caimanes del Cabo = *The Great Horn*
   («The Cape Crusaders», Sudáfrica); Sky Team = *Tenkuu no Shito*; Dark Team = *Makai Gundan Z*; Equipo Ogro = *Ogre*
   (película / Team Ogre), subido al nivel de Little Gigantes (**89,6**, top 93).
-- **Pool sin equipo** (`scout_pool.IE3` = TP de IE3, 50/50 stats+técnica): 339 cartas, **46–87**, mediana 66;
-  top **Chucky Cardaway 87**.
+- **Pool sin equipo** (`scout_pool.IE3` = TP de IE3, 50/50 stats+técnica **por puesto**): 341 cartas, **46–88**,
+  mediana 66; top **Chucky Cardaway 88**. Los notables cuadrados con el ranking competitivo (Sutefuda 88, Bernadette
+  Stoker 87, Fudouyama 86, Libra 85, Ray Pier 85, Kazamatsuri 84, Virgo 82, Shippuu 81, Kappa 80…) y el resto
+  reordenado por rendimiento (stats Lv99 + técnicas).
 - **Apodos/nombres**: la app muestra el `nickname`; los nombres de la wiki van en la carta (Hector Helio = Rococo Ulpa,
   Paolo Bianchi = Fidio Aldena, Bash Lancer = Baddap Sleed…). Los apodos pueden ser **por versión**
   (`personaje|juego|versión`): Neo Japan muestra los nombres del juego (Dave Quagmire, Zack Cummings, Wilbur Watkins,
