@@ -588,7 +588,8 @@ def main(extra_z=None, write=True):
     for p in featured:
         if p not in chars:
             report.append(f'Destacado sin carta: {p}')
-    pos_override = {(o['page'], o['game']): o['position'] for o in ov['position_by_version']}
+    pos_override = {(o['page'], o['game']): o['position'] for o in ov['position_by_version'] if not o.get('version')}
+    pos_ver = {(o['page'], o['game'], o.get('version')): o['position'] for o in ov['position_by_version'] if o.get('version')}
     manual = {k: v for k, v in ov.get('ovr_manual', {}).items() if not k.startswith('_')}
     extra_ver = [x for x in ov.get('extra_versions', []) if 'page' in x]
 
@@ -754,7 +755,7 @@ def main(extra_z=None, write=True):
             if not entry and subm:
                 entry = form_entry(pg, g, subm.group(1).lower())
             base_body = entry or base_entry(pg, g)
-            position = pos_override.get((pg, g)) or (lua_field(base_body, 'position') if base_body else None) \
+            position = pos_ver.get((pg, g, ver)) or pos_override.get((pg, g)) or (lua_field(base_body, 'position') if base_body else None) \
                 or (zs[0]['position'] if zs else 'MF')
             if position not in POSW:
                 position = 'MF'

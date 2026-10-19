@@ -16,6 +16,13 @@
       "game": "IE2",
       "position": "DF",
       "note": "Líbero en IE2 (en Strikers 2013 su forma Second Raimon tiene Catch A); Darren es el portero"
+    },
+    {
+      "page": "Fubuki Shirou",
+      "game": "IE2",
+      "version": "base",
+      "position": "DF",
+      "note": "En Hakuren/Alpine juega la forma Shirou, de defensa (la fusionada de Raimon va aparte)"
     }
   ],
   "xtreme_wiki_pages": {
@@ -448,7 +455,8 @@
       "midorikawa-ryuuji--ie3--inazuma-japan",
       "fubuki-shirou--ie2--raimon-atsuya",
       "fubuki-shirou--ie2--raimon-shirou",
-      "nakatani--ie2--raimon"
+      "nakatani--ie2--raimon",
+      "fubuki-shirou--ie2--alpine"
     ]
   },
   "team_tuning": {

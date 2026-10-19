@@ -1,6 +1,6 @@
-Cartas: 5389 (265 versiones extra) · personajes: 4974 · técnicas: 778
-Categorías: Legendary Player 145 · Top Player 695 · Advanced Player 1224 · Growing Player 1257 · Common Player 2068
-Niveles: S 429 · A 345 · B 1259 · C 3356
+Cartas: 5388 (264 versiones extra) · personajes: 4974 · técnicas: 778
+Categorías: Legendary Player 145 · Top Player 695 · Advanced Player 1224 · Growing Player 1256 · Common Player 2068
+Niveles: S 428 · A 345 · B 1259 · C 3356
 OVR: mediana 70 · p90 85 · p99 90 · máx 94
 
 Balancing doc del Xtreme sin ficha (7): añadir a overrides.xtreme_balancing_pages → Rhionne (Chaos), Dante Diavolo (Orpheus), Kino Aki (Girls Team), Oogu (Zanark Domain), Yasha (Zanark Domain), Goburis (Zanark Domain), Yamana Akane (Secret players (GO))
@@ -27,7 +27,7 @@ Equipo con un solo jugador, fuera: The Aquatic Wings (GO2) → Sting Xiang sin e
 Equipo con un solo jugador, fuera: The Night Vipers (GO2) → Venom Braggard sin equipo
 Equipo con un solo jugador, fuera: The Crimson Hounds (GO2) → Redd Hazzard sin equipo
 Versiones con sprite de Victory Road sin carta (36): Gouenji Shuuya: Kirkwood (Saga de Mark); Gouenji Shuuya: Earth Eleven (Saga de Mark); Gouenji Shuuya: Royal Academy (Saga de Mark); Gouenji Shuuya: Surtur (Armadura) (Saga de Mark); Gouenji Shuuya: Alex Zabel (Saga de Arion); Gouenji Shuuya: Casual (''Chrono Stones'') (Saga de Arion); Gouenji Shuuya: Equipación sencilla (''Galaxy'') (Saga de Arion); Tachimukai Yuuki: Raimon Equipo B (Saga de Mark); Tachimukai Yuuki: Earth Eleven (Saga de Mark); Tachimukai Yuuki: Casual (Saga de Arion); Tsunami Jousuke: Raimon Equipo B (Saga de Mark); Tsunami Jousuke: Earth Eleven (Saga de Mark); Kabeyama Heigorou: Earth Eleven (Saga de Mark); Kidou Yuuto: Orfeo (Saga de Mark); Kidou Yuuto: Raimon Equipo B (Saga de Mark); Kidou Yuuto: Raimon Revolucionario (Saga de Mark); Kidou Yuuto: Earth Eleven (Saga de Mark); Kidou Yuuto: Casual (Saga de Arion); Kidou Yuuto: Raimon Revolucionario (Saga de Arion); Endou Mamoru: Royal Academy (Saga de Mark); Endou Mamoru: Orfeo (Saga de Mark); Endou Mamoru: Raimon Revolucionario (Saga de Mark); Endou Mamoru: Los Arions (Saga de Mark); Endou Mamoru: Earth Eleven (Saga de Mark); Endou Mamoru: Grandius (Armadura) (Saga de Mark); Endou Mamoru: Casual (Saga de Arion); Endou Mamoru: Raimon Revolucionario (Saga de Arion); Kazemaru Ichirouta: Earth Eleven (Saga de Mark); Fubuki Shirou: Raimon Equipo B (Saga de Mark (Unión)); Fubuki Shirou: Raimon Revolucionario (Saga de Mark (Unión)); Fubuki Shirou: Earth Eleven (Saga de Mark (Unión)); Fubuki Shirou: Casual (Saga de Arion); Zaizen Touko: Inazuma Japón (Saga de Mark); Zaizen Touko: Raimon Equipo B (Saga de Mark); Zaizen Touko: Earth Eleven (Saga de Mark); Zaizen Touko: Adulta (Saga de Arion)
-Fichas de zukan de la saga principal sin carta (5; sin stats en esos juegos o sin entrada): Seymour Hillman (Nº 2804), Sonny Raimon (Nº 261), Chester Horse Sr (Nº 263), Ptumri Emnator (Nº 4143), Globulus Ava (Nº 4162)
+Fichas de zukan de la saga principal sin carta (6; sin stats en esos juegos o sin entrada): Seymour Hillman (Nº 2804), Sonny Raimon (Nº 261), Chester Horse Sr (Nº 263), Shawn Froste (Nº 1164), Ptumri Emnator (Nº 4143), Globulus Ava (Nº 4162)
 Ares: jugadores sin supertécnicas de VR (1): Chester Horse Sr
 Ares: supertécnicas de la carta — rtu 4, anime 26, wiki 169 (anime = wiki española «Desde Ares»; wiki = ficha principal del módulo PlayerData_AT de la wiki inglesa; rtu = Road to Ultimate, comunes + rama principal; vr = todas las de VR)
 Orion: jugadores sin supertécnicas de VR (4): Chester Horse Sr, André, Rio, Gustav Nikolsky
