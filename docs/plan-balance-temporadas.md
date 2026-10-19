@@ -125,7 +125,7 @@ Emperadores Oscuros 85,9 < Raimon 86,7 < Caos 87,9.**
   Fauxshore 77,3** (Yokato, 0-4) **> Alpino 75,4 ≈ Triple C 74,6**.
 - **Raimon** (protagonista, Segundo Raimon): once **86,7**. Alineación de la final vs Emperadores Oscuros (Tachimukai;
   Kabeyama, Tsunami, Kogure, Touko; **Fubuki fusionado**; Gouenji, Megane, Domon, Kidou; Endou capitán). Medias por
-  méritos: Axel y Fubuki **89**, Jude/Erik **88**, Endou **88** (capitán, pero no #1 por decisión del jefe), Darren 87,
+  méritos: Axel y Fubuki **89**, Jude **88**, Endou **88** (capitán, pero no #1 por decisión del jefe), Erik **86**, Darren 87,
   Tsunami 86, Kabeyama/Domon/Touko 85, Rica 84, Kogure 83, Megane 80. Nakatani fuera del equipo (queda de scout).
 - **Raimon-joiners** (dos versiones: la de su equipo, *regular*, y la de Raimon): Darren (Fauxshore 80 / Raimon 88) ·
   Hurley (Mary Times 82 / 86) · Scott (Claustro 82 / 87) · **Shawn (Alpino 85 / 87-88, el mejor de los seis)** ·
