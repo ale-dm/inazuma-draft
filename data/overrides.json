@@ -417,7 +417,7 @@
     { "_doc": "Segundo Raimon (IE2): titulares de la wiki que no salen por su ficha de zukan. Kazemaru/Kurimatsu/Someoka NO (están en Dark Emperors).", "page": "Nakatani", "game": "IE2", "team": "Raimon" },
     { "_doc": "Inazuma Japan (IE3): titulares con ficha de zukan en Inazuma National como 2º equipo (el build solo coge el 1º).", "page": "Kogure Yuuya", "game": "IE3", "team": "Inazuma Japan" },
     { "page": "Kurimatsu Teppei", "game": "IE3", "team": "Inazuma Japan" },
-    { "_doc": "Segundo Raimon (IE2): Fubuki en su forma fusionada, la de la final vs Emperadores Oscuros.", "page": "Fubuki Shirou", "game": "IE2", "team": "Raimon", "form": "Merged", "image": "https://dxi4wb638ujep.cloudfront.net/1/k/o/p/opancch54ie.png" }
+    { "_doc": "Segundo Raimon (IE2): Fubuki en su forma fusionada, la de la final vs Emperadores Oscuros.", "page": "Fubuki Shirou", "game": "IE2", "team": "Raimon", "form": "Merged", "image": "https://static.wikia.nocookie.net/inazuma/images/1/17/%28R%29_Shawn_%28HVR-DL%29.png/revision/latest/scale-to-width-down/78?cb=20251204134523&path-prefix=es" }
   ],
   "zukan_wiki_pages": {
     "_doc": "Nombre de zukan (o '#Nº' si el nombre se repite en zukan) → ficha de la wiki inglesa, para los que no cruzan solos.",

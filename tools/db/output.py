@@ -62,7 +62,7 @@ def write_balance():
                 f'from (values\n{vals}\n) as v(id, tp, mn, mx) where t.id = v.id;\n')
 
 
-def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
+def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report, dropped=None):
     os.makedirs(OUT, exist_ok=True)
     used = {t['id'] for c in cards for t in c['moves']}
     techs = [{k: v for k, v in t.items() if k != '_inf'} for t in techniques.values() if t and t['id'] in used]
@@ -104,9 +104,13 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
     links = [{'card_id': c['id'], 'technique_id': t, 'slot': i + 1}
              for c in public for i, t in enumerate(dict.fromkeys(c['techniques']))]
     seed = ['-- Generado por tools/db/build.py — no editar a mano.',
-            '-- Solo upserts: no se vacía ni se borra nada. Las filas nuevas se insertan y las que ya existen se actualizan en las',
-            '-- columnas de la carga; las columnas, filas y tablas añadidas a mano en la base se quedan como están.',
-            'begin;',
+            '-- Upserts: las filas nuevas se insertan y las que ya existen se actualizan en las columnas de la carga;',
+            '-- las columnas, filas y tablas añadidas a mano en la base se quedan como están (salvo overrides.drop_cards).',
+            'begin;']
+    if dropped:
+        seed += ['-- cartas descartadas a mano (overrides.drop_cards): se borran también de la base',
+                 f"delete from public.cards where id in ({', '.join(sql(i) for i in sorted(dropped))});"]
+    seed += [
             insert('zukan', ['no', 'image_id', 'name', 'name_ja', 'role', 'age', 'element', 'position', 'teams', 'games', 'description', 'vr_lv50', 'wiki_page'], zukan_rows, key='no'),
             insert('staff', ['zukan_no', 'name', 'role', 'team', 'teams', 'games', 'age', 'element', 'image_url', 'description', 'wiki_page'], staff, key='zukan_no'),
             insert('teams', ['name', 'name_es', 'name_fr', 'name_it', 'logo_url', 'logos'], teams, key='name'),
