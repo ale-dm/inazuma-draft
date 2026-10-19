@@ -138,11 +138,12 @@ Emperadores Oscuros 85,9 < Raimon 87,0 < Caos 87,9.**
 
 ### IE3 — hecho
 
-Rampa (media del once): Caimanes del Cabo 74,2 (rep. africana) · Neo Japón 80,9 (amistoso) · Equipo D 80,2 ·
-Zoolan Team 81,2 (extras) · Grifos de la Rosa 82,5 · Brocken Brigade 83,0 · **Big Waves 84,4 → Leones del Desierto 84,6 →
-Dragones de Fuego 85,8 → Knights of Queen 86,0 → Emperadores 86,7 → Unicorn 86,9 → Orfeo 87,4 → Inazuma Japón 88,0 →
-os Reis 89,1 → Little Giants 89,9** (final). `_game.IE3.compress = 0,5`; **capitán #1 en los 20 equipos** (16 de la
-historia/amistosos y los 4 extras, todos con capitán de la wiki).
+Rampa (media del once): Caimanes del Cabo 74,2 (rep. africana) · Neo Japón 80,9 (amistoso) · Zoolan Team 81,2 ·
+Grifos de la Rosa 82,5 · Brocken Brigade 83,0 · **Big Waves 84,4 → Leones del Desierto 84,6 → Dragones de Fuego 85,8 →
+Knights of Queen 86,0 → Emperadores 86,7 → Unicorn 86,9 → Orfeo 87,4 → Inazuma Japón 88,0 → Os Reis 89,1 →
+Little Giants 89,9** (final). Extras fuera de la rampa: Equipo D **86,5** (nivel Knights) y Equipo Ogro **89,6**
+(nivel Little). `_game.IE3.compress = 0,5`; **capitán #1 en los 20 equipos** (16 de la historia/amistosos y los 4
+extras, todos con capitán de la wiki).
 
 - **Orden de la historia** (wiki FFI): Asia → Big Waves (Australia, cuartos 2-1) → Leones del Desierto (Catar, semi 3-2)
   → Dragones de Fuego (Corea, final 4-3). FFI → Grupo A: Knights of Queen (Inglaterra 3-2) → Unicorn (EE. UU. 4-3) →
@@ -156,13 +157,16 @@ historia/amistosos y los 4 extras, todos con capitán de la wiki).
   **87,0** de objetivo (86,0 de once real) para quedar por encima de la final de Asia. Unicorn **baja** a sus 90
   (Mark Krueger 92, Erik Eagle 90, Dylan Keats 89) para no quedar por delante de Os Reis y Little Gigantes; Mark sigue
   siendo #1 y el once se mantiene en 86,9 subiendo el objetivo a **88,0**.
-- **Extras** (fuera de la rampa; amistosos, rutas taisen o post-game): Equipo D = *Team K* de Mister K (Italia);
-  Zoolan Team = *Team Garshield*; Caimanes del Cabo = *The Great Horn* («The Cape Crusaders», Sudáfrica);
-  Sky Team = *Tenkuu no Shito*; Dark Team = *Makai Gundan Z*; Equipo Ogro = *Ogre* (película / Team Ogre).
+- **Extras** (fuera de la rampa; amistosos, rutas taisen o post-game): Equipo D = *Team K* de Mister K (Italia),
+  subido al nivel de Knights (**86,5**); Zoolan Team = *Team Garshield*; Caimanes del Cabo = *The Great Horn*
+  («The Cape Crusaders», Sudáfrica); Sky Team = *Tenkuu no Shito*; Dark Team = *Makai Gundan Z*; Equipo Ogro = *Ogre*
+  (película / Team Ogre), subido al nivel de Little Gigantes (**89,6**, top 93).
 - **Pool sin equipo** (`scout_pool.IE3` = TP de IE3, 50/50 stats+técnica): 339 cartas, **46–87**, mediana 66;
   top **Chucky Cardaway 87**.
 - **Apodos/nombres**: la app muestra el `nickname`; los nombres de la wiki van en la carta (Hector Helio = Rococo Ulpa,
-  Paolo Bianchi = Fidio Aldena, Bash Lancer = Baddap Sleed…).
+  Paolo Bianchi = Fidio Aldena, Bash Lancer = Baddap Sleed…). Los apodos pueden ser **por versión**
+  (`personaje|juego|versión`): Neo Japan muestra los nombres del juego (Dave Quagmire, Zack Cummings, Wilbur Watkins,
+  Zeke Valanche, Ethan Whitering…) y Génesis se queda con los alien (Dvalin, Zohen, Wittz, Zell, Heat).
 
 ### Pendientes (objetivos actuales, de `plan-base-jugadores.md` §9)
 

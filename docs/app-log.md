@@ -376,9 +376,14 @@ Detalle completo en [plan-balance-temporadas.md](plan-balance-temporadas.md) (§
   (Caimanes) · Sein (Sky) · Desuta (Dark) · Baddap Sleed (Ogro). Dragones de Fuego sube a Choi **90** para ser #1;
   Knights of Queen sube su once a 86,0 para no quedar por debajo de la final de Asia; Unicorn **baja** a sus 90
   (Mark Krueger 92, Erik Eagle 90, Dylan Keats 89) para no quedar por delante de Os Reis y Little Gigantes.
-- **Extras con curva y capitán**: Equipo D = *Team K* de Mister K; Zoolan Team = *Team Garshield*; Caimanes del Cabo =
-  *The Great Horn* («The Cape Crusaders», Sudáfrica); Sky Team = *Tenkuu no Shito*; Dark Team = *Makai Gundan Z*;
-  Equipo Ogro = *Ogre* (película / versión Team Ogre).
+- **Extras con curva y capitán**: Equipo D = *Team K* de Mister K (subido a nivel de Knights, 86,5); Zoolan Team =
+  *Team Garshield*; Caimanes del Cabo = *The Great Horn* («The Cape Crusaders», Sudáfrica); Sky Team = *Tenkuu no
+  Shito*; Dark Team = *Makai Gundan Z*; Equipo Ogro = *Ogre* (película / versión Team Ogre), subido a nivel de Little
+  Gigantes (89,6, top 93).
+- **Nombres por versión**: el `nickname` de la app ya puede ser por versión (`personaje|juego|versión`). Neo Japan
+  muestra los nombres del juego (Dave Quagmire, Zack Cummings, Wilbur Watkins, Zeke Valanche, Ethan Whitering, Sail
+  Bluesea, Johan Tassman, Henry House, Argie Bargie, Mark Hillvalley, Joseph King) y Génesis se queda con los alien
+  (Dvalin, Zohen, Wittz, Zell, Heat).
 - **Pool sin equipo** (`scout_pool.IE3`): 339 cartas, **46–87**, mediana 66; top Chucky Cardaway 87.
 - **Técnicas**: `tech_balance.IE3` (50 % stats + 50 % técnica del puesto, TP de IE3) en los 22 equipos.
 - **Balance** (`npm run balance`): queda un único aviso marginal: en «condiciones reales» (media 75, humano fuerte) se

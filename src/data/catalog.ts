@@ -228,7 +228,8 @@ export function rebuildCatalog() {
       id: r.id,
       characterId: r.character_id,
       name: r.name,
-      nickname: (nicknames as Record<string, string>)[r.character_id] ?? null,
+      nickname: ((nicknames as Record<string, string>)[`${r.character_id}|${r.game}|${r.version}`]
+        ?? (nicknames as Record<string, string>)[r.character_id]) ?? null,
       game: r.game,
       team: r.team ?? 'Unaffiliated',
       version: r.version,
