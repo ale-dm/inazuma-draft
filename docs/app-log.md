@@ -361,4 +361,29 @@ Detalle completo en [plan-balance-temporadas.md](plan-balance-temporadas.md) (§
 - **Equipo nuevo: Caos** (IE2): fusión de Prominence + Diamond Dust, 11 jugadores con su «Chaos form» (escudo y nombre «Caos», top 1 Torch/Gazelle). Se crea con `overrides.extra_versions` + `team_tuning['Chaos']` (`cap` 90).
 - **IE2, correcciones**: Emperadores Oscuros a sus 11 reales; **Isabelle → Bellatrix** (nombre alien + sprite de zukan 1134) en Génesis; Raimon-joiners con sus dos versiones (regular en su equipo / Raimon final), Shawn el mejor; **normales** ordenados como la wiki/foros (Claustro ≈ Mary Times > SP Fixers > Fauxshore > Alpino); pool sin equipo **46–84**; `tech_balance` (técnica del puesto, y **TP de IE3** para los alienígenas porque en IE2 iba rebajado por la piedra Aliea); apodos de Génesis arreglados.
 - **Subido**: rama `app` + workflow `db-load` (Supabase: characters 4.976 · cards 5.393; upsert, sin borrar lo del CRUD).
-- Pendiente: **IE3** (y siguientes).
+
+## Balance de temporadas: IE3 cerrado
+
+Detalle completo en [plan-balance-temporadas.md](plan-balance-temporadas.md) (§3 el estado y §7 el registro).
+
+- **IE3 cerrado**: rampa **84,4 → 89,9** con `_game.IE3.compress = 0,5`. Asia: Big Waves (Australia) 84,4 → Leones del
+  Desierto (Catar) 84,6 → Dragones de Fuego (Corea) 85,8. FFI: Knights of Queen (Inglaterra) 86,0 → Unicorn (EE. UU.)
+  86,9 → Orfeo (Italia) 87,4 → Emperadores (Argentina) 86,7 → Os Reis (Brasil) 89,1 → **Little Gigantes (Cotarl) 89,9**
+  (final). Inazuma Japón (protagonista) 88,0. **Capitán #1 en los 20 equipos**, con los capitanes de la wiki.
+- **Capitanes**: Niese Dolphin · Bjorn Kyle · Saginuma Osamu (Neo Japón) · Choi Chang-soo · Edgar Valtinas ·
+  Demonio Strada (Equipo D) · Pierre Godin · Jonas Pollack · Querardo Naval · Mark Krueger · Fidio Aldena (Nakata es el
+  ex-capitán) · Teles Torrue · Mack Ronijo · Lubbock Henktacker (Zoolan) · Rococo Ulpa · Endou Mamoru · Jake Fana
+  (Caimanes) · Sein (Sky) · Desuta (Dark) · Baddap Sleed (Ogro). Unicorn sube a Mark Krueger a **94** y Dragones de
+  Fuego a Choi **90** para ser #1; Knights of Queen sube su once a 86,0 para no quedar por debajo de la final de Asia.
+- **Extras con curva y capitán**: Equipo D = *Team K* de Mister K; Zoolan Team = *Team Garshield*; Caimanes del Cabo =
+  *The Great Horn* («The Cape Crusaders», Sudáfrica); Sky Team = *Tenkuu no Shito*; Dark Team = *Makai Gundan Z*;
+  Equipo Ogro = *Ogre* (película / versión Team Ogre).
+- **Pool sin equipo** (`scout_pool.IE3`): 339 cartas, **46–87**, mediana 66; top Chucky Cardaway 87.
+- **Técnicas**: `tech_balance.IE3` (50 % stats + 50 % técnica del puesto, TP de IE3) en los 22 equipos.
+- **Balance** (`npm run balance`): queda un único aviso marginal: en «condiciones reales» (media 75, humano fuerte) se
+  gana 27,2 % (rango 28–65), con el once mezclado a −0,5 de química contra 2,5 del rival. Con el pool a 46–86 el aviso
+  pasaba a Expedición (5,27 victorias / 20,7 %), así que se deja **46–87**. La Expedición queda en **4,17 / 9,1 %**
+  (con el catálogo anterior sin cerrar, 6,42 / 26,8 %).
+- De paso: el techo de IE3 pasa a 93 (`CEIL`) y el máximo real a 94; la tabla de IE1 de `plan-balance-temporadas.md` se
+  corrige a los valores reales (54 → 79,8); `tuning.py` escribe el volcado de depuración en UTF-8.
+- Pendiente: **GO1, GO2, GO3, Ares y Orion**.

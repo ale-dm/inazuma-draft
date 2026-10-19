@@ -81,7 +81,7 @@ def apply_tech_balance(cards, ov, report):
         if dbg:
             import json, os
             os.makedirs('/tmp/opencode', exist_ok=True)
-            json.dump(dbg, open('/tmp/opencode/tb.json', 'w'), ensure_ascii=False, indent=1)
+            json.dump(dbg, open(f'/tmp/opencode/tb_{g}.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
         if teams:
             report.append(f'tech_balance: {g} {len(teams)} equipos reordenados por stats + técnica ({cg})')
 

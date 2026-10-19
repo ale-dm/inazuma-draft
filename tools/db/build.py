@@ -112,7 +112,7 @@ def main(extra_z=None, write=True):
                 keys = IEK if g.startswith('IE') else GOK
                 for ch in chunks:
                     label = ' '.join(re.findall(r'^;(.+)$', ch, re.M)) or 'default'
-                    v = {k: int(x) for k, x in re.findall(r"'''([A-Za-z]+)''':\s*(\d+)", ch)}
+                    v = {k: int(x) for k, x in re.findall(r"'''([A-Za-z]+):?'''\s*:?\s*(\d+)", ch)}
                     if all(k in v for k in keys):
                         games[g].append((label, [v[k] for k in keys]))
             else:

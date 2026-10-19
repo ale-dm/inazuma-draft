@@ -147,6 +147,11 @@
   },
   "tech_balance": {
     "_doc": "Rebalanceo de los jugadores CON equipo por stats + técnica del puesto (tiro/regate para delanteros, todo para medios, bloqueo para defensas, parada para porteros), con el TP del juego `cost`. Dentro de cada equipo se conserva el rango de team_tuning.",
+    "IE3": {
+      "cost": "IE3",
+      "stats": 0.5,
+      "tech": 0.5
+    },
     "IE2": {
       "cost": "IE2",
       "stats": 0.5,
@@ -165,7 +170,7 @@
     }
   },
   "scout_pool": {
-    "_doc": "Pool sin equipo: OVR por percentiles del propio pool (stats = ovr_raw, técnica = mejor TP del juego `cost`) y tope. IE1 usa el TP de IE1 (no el de IE3) y va 44-77 con cap 77.",
+    "_doc": "Pool sin equipo: OVR por percentiles del propio pool (stats = ovr_raw, técnica = mejor TP del juego `cost`) y tope. IE1 usa el TP de IE1 (no el de IE3) y va 42-75; IE2 46-84; IE3 46-87.",
     "IE1": {
       "cost": "IE1",
       "stats": 0.5,
@@ -182,6 +187,15 @@
       "lo": 46,
       "hi": 84,
       "cap": 84,
+      "bonus": 0
+    },
+    "IE3": {
+      "cost": "IE3",
+      "stats": 0.5,
+      "tech": 0.5,
+      "lo": 46,
+      "hi": 87,
+      "cap": 87,
       "bonus": 0
     }
   },
@@ -207,7 +221,37 @@
     "Tsunami Jousuke|IE2|base": 82,
     "Kogure Yuuya|IE2|base": 82,
     "Fubuki Shirou|IE2|base": 85,
-    "Yagami Reina|IE2|base": 88
+    "Yagami Reina|IE2|base": 88,
+    "Suzuno Fuusuke|IE3|Fire Dragon": 89,
+    "Afuro Terumi|IE3|Fire Dragon": 89,
+    "Nagumo Haruya|IE3|Fire Dragon": 88,
+    "Edgar Valtinas|IE3|base": 92,
+    "Philip Owen|IE3|base": 89,
+    "Johnny Gascoigne|IE3|base": 88,
+    "David Buckingham|IE3|base": 86,
+    "Edge Ripper|IE3|base": 86,
+    "Nick Woodgate|IE3|base": 85,
+    "Ichinose Kazuya|IE3|Unicorn": 93,
+    "Dylan Keith|IE3|base": 91,
+    "Mark Krueger|IE3|base": 94,
+    "Domon Asuka|IE3|Unicorn": 89,
+    "Michele Jacks|IE3|base": 88,
+    "Billy Rapid|IE3|base": 86,
+    "Teles Torrue|IE3|base": 92,
+    "Hernán Tévez|IE3|base": 89,
+    "Julio Acosta|IE3|base": 89,
+    "Diego Oro|IE3|base": 89,
+    "Jorge Ortega|IE3|base": 89,
+    "Leone Batigo|IE3|base": 88,
+    "Fidio Aldena|IE3|base": 93,
+    "Mack Ronijo|IE3|base": 93,
+    "Rococo Ulpa|IE3|base": 93,
+    "Lagarto Carlos|IE3|base": 92,
+    "Gato|IE3|base": 92,
+    "Ghoshu Flare|IE3|base": 92,
+    "Walter Mountain|IE3|base": 92,
+    "Formiga Clemens|IE3|base": 92,
+    "Drago Hill|IE3|base": 92
   },
   "team_es": {
     "_doc": "Nombre en castellano de equipos que no cruzan con la wiki en español (inazuma.fandom.com/es). El resto sale solo.",
@@ -303,7 +347,13 @@
     { "page": "Netsuha Natsuhiko", "game": "IE2", "team": "Chaos" },
     { "page": "Ooiwa Kurando", "game": "IE2", "team": "Chaos" },
     { "_doc": "Se unen al nuevo Raimon (Segundo Raimon): versión Raimon final.", "page": "Zaizen Touko", "game": "IE2", "team": "Raimon" },
-    { "page": "Urabe Rica", "game": "IE2", "team": "Raimon" }
+    { "page": "Urabe Rica", "game": "IE2", "team": "Raimon" },
+    { "_doc": "Neo Japan (IE3): titulares prestados (Zeus/Occult/Shuriken/Kirkwood/Farm) sin ficha de IE3 propia.", "page": "Gouin Takeshi", "game": "IE3", "team": "Neo Japan" },
+    { "page": "Kirigakure Saiji", "game": "IE3", "team": "Neo Japan" },
+    { "page": "Yuukoku Hiroyuki", "game": "IE3", "team": "Neo Japan" },
+    { "page": "Mukata Tsutomu", "game": "IE3", "team": "Neo Japan" },
+    { "page": "Makiya Hiroshi", "game": "IE3", "team": "Neo Japan" },
+    { "_doc": "Segundo Raimon (IE2): titulares de la wiki que no salen por su ficha de zukan. Kazemaru/Kurimatsu/Someoka NO (están en Dark Emperors).", "page": "Nakatani", "game": "IE2", "team": "Raimon" }
   ],
   "zukan_wiki_pages": {
     "_doc": "Nombre de zukan (o '#Nº' si el nombre se repite en zukan) → ficha de la wiki inglesa, para los que no cruzan solos.",
@@ -493,65 +543,109 @@
       }
     },
     "IE3": {
+      "Inazuma Japan": {
+        "top11": 87.5,
+        "captain": "Endou Mamoru",
+        "note": "protagonista (FFI)"
+      },
       "Big Waves": {
-        "top11": 76.0,
+        "top11": 84.0,
+        "cap": 87,
         "captain": "Niese Dolphin",
-        "note": "1"
+        "note": "1 · Asia, cuartos vs Australia (2-1)"
       },
       "Desert Lions": {
-        "top11": 76.5,
+        "top11": 84.5,
+        "cap": 87,
         "captain": "Bjorn Kyle",
-        "note": "2"
+        "note": "2 · Asia, semifinal vs Catar (3-2)"
       },
       "Neo Japan": {
         "top11": 80.5,
         "captain": "Saginuma Osamu",
-        "note": "3"
+        "note": "amistoso: equipo de Hitomiko/Saginuma para probar a Inazuma Japan"
       },
       "Fire Dragon": {
-        "top11": 80.0,
+        "top11": 85.0,
+        "cap": 90,
         "captain": "Choi Chang-soo",
-        "note": "4"
+        "note": "4 · Asia, final vs Corea (4-3)"
       },
       "Queen's Knights": {
-        "top11": 81.0,
+        "top11": 87.0,
         "captain": "Edgar Valtinas",
-        "note": "5"
+        "note": "5 · FFI grupo A vs Inglaterra (3-2)"
       },
       "Team D": {
         "top11": 79.5,
         "captain": "Demonio Strada",
-        "note": "6"
+        "note": "6 · Equipo K de Mister K (Italia), extra"
+      },
+      "Rose Griffons": {
+        "top11": 82,
+        "captain": "Pierre Godin",
+        "note": "FFI grupo B (Francia, 0-3 vs Os Reis)"
+      },
+      "Brocken Brigade": {
+        "top11": 83,
+        "captain": "Jonas Pollack",
+        "note": "FFI grupo B (Alemania, 1-3 vs Os Reis)"
+      },
+      "Red Matador": {
+        "top11": 84,
+        "captain": "Querardo Naval",
+        "note": "FFI grupo B (España, 1-2 vs Os Reis y 2-1 vs Francia)"
       },
       "Unicorn": {
-        "top11": 82.5,
+        "top11": 87,
         "captain": "Mark Krueger",
-        "note": "7"
+        "captain_cap": 94,
+        "note": "7 · FFI grupo A vs EE. UU. (4-3)"
       },
       "Orpheus": {
-        "top11": 84.5,
+        "top11": 87,
         "captain": "Fidio Aldena",
-        "note": "8"
+        "note": "8 · FFI grupo A vs Italia (3-3): Nakata ex-capitán, Fidio actual"
       },
       "The Empire": {
-        "top11": 82.0,
+        "top11": 86.5,
         "captain": "Teles Torrue",
-        "note": "9"
+        "note": "9 · FFI grupo A vs Argentina (1-2, única derrota)"
       },
       "The Kingdom": {
-        "top11": 84.5,
+        "top11": 89,
         "captain": "Mack Ronijo",
-        "note": "10"
+        "note": "10 · FFI grupo B (Brasil, ganó todas las previas) y semifinal (2-3)"
       },
       "Team Zoolan": {
         "top11": 81.0,
         "captain": "Lubbock Henktacker",
-        "note": "11"
+        "note": "11 · Equipo Garshield (extra)"
       },
       "Little Gigantes": {
-        "top11": 86.5,
+        "top11": 89.5,
         "captain": "Rococo Ulpa",
-        "note": "12"
+        "note": "12 · Cotarl, final (3-2)"
+      },
+      "The Cape Crusaders": {
+        "top11": 73.5,
+        "captain": "Jake Fana",
+        "note": "The Great Horn (Sudáfrica), repesca africana; ruta taisen (extra)"
+      },
+      "Apostles from the Sky": {
+        "top11": 80.5,
+        "captain": "Sein",
+        "note": "Tenkuu no Shito, torneos de rango (extra)"
+      },
+      "Devil Army Z": {
+        "top11": 79.9,
+        "captain": "Desuta",
+        "note": "Makai Gundan Z, post-game (extra)"
+      },
+      "Team Ogre": {
+        "top11": 85.1,
+        "captain": "Baddap Sleed",
+        "note": "Ogre, película / versión Team Ogre (extra)"
       }
     },
     "GO1": {
@@ -764,6 +858,9 @@
         "compress": 0.5
       },
       "IE2": {
+        "compress": 0.5
+      },
+      "IE3": {
         "compress": 0.5
       },
       "GO1": {

@@ -1,6 +1,6 @@
 # Plan: balance de rivales por temporadas (historia)
 
-> Estado: **IE1 hecho**; IE2, IE3, GO1, GO2, GO3, Ares y Orion **pendientes**.
+> Estado: **IE1, IE2 y IE3 hechos**; GO1, GO2, GO3, Ares y Orion **pendientes**.
 > Objetivo: que la curva de nota de los rivales de la historia (una temporada = un juego) sea coherente y siga el
 > orden de los partidos, con las reglas de abajo.
 > Complementa [`plan-base-jugadores.md`](./plan-base-jugadores.md) §3 (OVR) y §9 (`team_tuning`).
@@ -77,25 +77,29 @@ aplica `apply_scout_pool` (`tuning.py`) antes de las curvas.
 
 ### IE1 — hecho
 
-Rampa (media del once): Sallys 58 · Kids FC 62 · Umbrella 65,1 · Occult 69,1 · Wild 70,7 · Brain 72,2 · Otaku 73,7 ·
-Inazuma Eleven 77,5 · Shuriken 78,2 · Farm 79 · Kirkwood 80 · **Royal Academy 81,5 · Zeus 83,8** (justo bajo GO1 83,9).
-`compress: 0,5`. Capitán #1 en todos. Notas finales (estrella):
+Rampa (media del once): Sallys 54 · Kids FC 58 · Umbrella 61,1 · Occult 65,5 · Wild 67,1 · Brain 68,5 · Otaku 69,7 ·
+Inazuma Eleven 73,8 · Shuriken 74,2 · Farm 75,2 · Kirkwood 76,1 · **Royal Academy 77,9 · Raimon 79,5 · Zeus 79,8**.
+`compress: 0,5`. Capitán #1 en los 10 equipos con capitán fijado (los 3 de práctica no tienen). Notas finales (estrella):
 
 | Equipo (ES) | Once | #1 | Estrella / Capitán |
 |---|--:|--:|---|
-| Sallys | 58,0 | 65 | Alf Holmes |
-| Inazuma Kids FC | 62,0 | 70 | Millie Moonlight (antes 83) |
-| Umbrella | 65,1 | 69 | Alan Most |
-| Occult | 69,1 | 79 | Johan Tassman |
-| Wild | 70,7 | 76 | Hugo Tallgeese |
-| Brain | 72,2 | 81 | Thomas Feldt (antes ~84) |
-| Otaku | 73,7 | 78 | Spencer Gates |
-| Inazuma Eleven | 77,5 | 84 | Seymour Hillman |
-| Shuriken | 78,2 | 82 | Sail Bluesea (antes 85) |
-| Farm | 79,0 | 83 | Tom Walters |
-| Kirkwood | 80,0 | 85 | Marvin Murdock (antes 88) |
-| Royal Academy | 81,5 | 87 | Jude Sharp (Kidou, antes 83) |
-| Zeus | 83,8 | 88 | Byron Love |
+| Sallys | 54,0 | 61 | Alf Holmes |
+| Inazuma Kids FC | 58,0 | 66 | Millie Moonlight |
+| Umbrella | 61,1 | 65 | Alan Most |
+| Occult | 65,5 | 79 | Johan Tassman |
+| Wild | 67,1 | 76 | Hugo Tallgeese |
+| Brain | 68,5 | 81 | Thomas Feldt |
+| Otaku | 69,7 | 74 | Spencer Gates |
+| Inazuma Eleven (Veterans) | 73,8 | 84 | Seymour Hillman |
+| Shuriken | 74,2 | 78 | Sail Bluesea |
+| Farm | 75,2 | 83 | Tom Walters |
+| Kirkwood | 76,1 | 83 | Marvin Murdock |
+| Royal Academy | 77,9 | 83 | Jude Sharp (Kidou) |
+| Raimon (protagonista) | 79,5 | 85 | Mark Evans |
+| Zeus | 79,8 | 84 | Byron Love |
+
+> Los valores de esta tabla son los del `build` actual (después de `tech_balance` y `ovr_manual`); la primera versión de IE1
+> (58 → 83,8) era de antes de esos passos (ver §7).
 
 Referencia de techo de GO1: Raimon 83,9 · Oscuridad Ancestral 83,5 · Luz Eterna 82,5.
 
@@ -132,12 +136,39 @@ Emperadores Oscuros 85,9 < Raimon 87,0 < Caos 87,9.**
 - **Apodos**: la app enseña el `nickname` (`src/data/nicknames.json`), no el nombre de la carta; los de Génesis se
   corrigieron a su nombre alien (Xene, Bellatrix…).
 
+### IE3 — hecho
+
+Rampa (media del once): Caimanes del Cabo 74,2 (rep. africana) · Neo Japón 80,9 (amistoso) · Equipo D 80,2 ·
+Zoolan Team 81,2 (extras) · Grifos de la Rosa 82,5 · Brocken Brigade 83,0 · **Big Waves 84,4 → Leones del Desierto 84,6 →
+Dragones de Fuego 85,8 → Knights of Queen 86,0 → Emperadores 86,7 → Unicorn 86,9 → Orfeo 87,4 → Inazuma Japón 88,0 →
+os Reis 89,1 → Little Giants 89,9** (final). `_game.IE3.compress = 0,5`; **capitán #1 en los 20 equipos** (16 de la
+historia/amistosos y los 4 extras, todos con capitán de la wiki).
+
+- **Orden de la historia** (wiki FFI): Asia → Big Waves (Australia, cuartos 2-1) → Leones del Desierto (Catar, semi 3-2)
+  → Dragones de Fuego (Corea, final 4-3). FFI → Grupo A: Knights of Queen (Inglaterra 3-2) → Unicorn (EE. UU. 4-3) →
+  Orfeo (Italia 3-3) → Emperadores (Argentina 1-2, única derrota). Grupo B: Os Reis (Brasil, 2-3 en semifinal) y
+  Little Giants (Cotarl, final 3-2). Neo Japón es el amistoso previo (equipo de Hitomiko/Saginuma).
+- **Capitanes** (ficha `|captain=` de la wiki): Niese Dolphin · Bjorn Kyle · Saginuma Osamu · Choi Chang-soo ·
+  Edgar Valtinas · Demonio Strada · Pierre Godin · Jonas Pollack · Querardo Naval · Mark Krueger · Fidio Aldena
+  (Nakata Hidetoshi es el *ex*-capitán; Fidio, el actual) · Teles Torrue · Mack Ronijo · Lubbock Henktacker ·
+  Rococo Ulpa · Endou Mamoru · Jake Fana · Sein · Desuta · Baddap Sleed.
+- **Capitán #1**: Unicorn sube a Mark Krueger a **94** (`ovr_manual` + `captain_cap` 94) para pasar a Ichinose
+  (Erik Eagle) 93; Dragones de Fuego sube a Choi a **90** (`cap` 90) sobre Afuro/Suzuno 89; Knights of Queen sube a
+  **87,0** de objetivo (86,0 de once real) para quedar por encima de la final de Asia.
+- **Extras** (fuera de la rampa; amistosos, rutas taisen o post-game): Equipo D = *Team K* de Mister K (Italia);
+  Zoolan Team = *Team Garshield*; Caimanes del Cabo = *The Great Horn* («The Cape Crusaders», Sudáfrica);
+  Sky Team = *Tenkuu no Shito*; Dark Team = *Makai Gundan Z*; Equipo Ogro = *Ogre* (película / Team Ogre).
+- **Pool sin equipo** (`scout_pool.IE3` = TP de IE3, 50/50 stats+técnica): 339 cartas, **46–87**, mediana 66;
+  top **Chucky Cardaway 87**.
+- **Apodos/nombres**: la app muestra el `nickname`; los nombres de la wiki van en la carta (Hector Helio = Rococo Ulpa,
+  Paolo Bianchi = Fidio Aldena, Bash Lancer = Baddap Sleed…).
+
 ### Pendientes (objetivos actuales, de `plan-base-jugadores.md` §9)
 
 | Temporada | Estado | Notas |
 |---|---|---|
 | IE2 | **hecho** | escala del jefe: Géminis 80,6 → Caos 87,9; normales, Caos, Emperadores y pool | 
-| IE3 | pendiente | Big Waves 76 → … → Little Gigantes 86,5 |
+| IE3 | **hecho** | rampa 84,4 → 89,9; capitanes de la wiki, extras (Team K/Garshield/Great Horn/Tenkuu/Makai/Ogre) y pool 46–87 |
 | GO1 | pendiente | Vía Láctea 74,5 → Luz Eterna 82,5 → Oscuridad Ancestral 83,5 (techo 87) |
 | GO2 | pendiente | Protocolo Omega 76 → … → Aullido Lunar 87 (techo 90) |
 | GO3 | pendiente | Dragones de Fuego 73 → … → Supernova/Big Bang 84,5 (techo 90) |
@@ -325,3 +356,18 @@ Galaxy/IE3).
   (Shawn el mejor), pool sin equipo 46–84 y apodos de Génesis arreglados.
 - **Supabase**: cargado con el workflow `db-load` (characters 4.976 · cards 5.393); el `seed.sql` solo hace upsert, así
   que se conservan las filas del CRUD. Subido en la rama `app`.
+- **IE3**: rampa nueva (84,4 → 89,9) con `_game.IE3.compress = 0,5` (antes iba sin comprimir), `tech_balance` con el TP
+  de IE3, `scout_pool.IE3` (46–87) y `ovr_manual` de las estrellas. Capitán #1 en todos: Unicorn pasa a Mark Krueger
+  94 (`captain_cap` 94) y Dragones de Fuego a Choi 90 (`cap` 90); Knights of Queen sube a 87,0 de objetivo para no
+  quedar por debajo de la final de Asia.
+- **IE3, extras**: entran en `team_tuning` con el capitán de la wiki (Equipo D = Team K, Zoolan Team = Team Garshield,
+  Caimanes del Cabo = The Great Horn, Sky Team = Tenkuu no Shito, Dark Team = Makai Gundan Z, Equipo Ogro = Ogre).
+  Antes iban sin curva ni capitán.
+- **IE3, `CEIL`**: el techo de IE3 pasa de 91 a 93 (`common.py`); el máximo real es 94 (Mark Krueger, capitán de Unicorn).
+- **IE1 §3 (tabla)**: corregida con los valores reales del build (54 → 79,8); la tabla anterior (58 → 83,8) era de antes
+  de `tech_balance`/`ovr_manual`.
+- **`tuning.py`**: el volcado de depuración de `tech_balance` por juego se escribe con `encoding='utf-8'` (en Windows
+  fallaba con cp1252).
+- **IE3, balance** (`npm run balance`, N=1500): único aviso marginal, `5b` media 75 humano fuerte **27,2 %** (rango
+  28–65). Con el pool a 46–86 el aviso se movía a Expedición (5,27 / 20,7 %), así que se deja **46–87**. Expedición
+  queda en 4,17 victorias / 9,1 % de completar (con el catálogo anterior sin cerrar, 6,42 / 26,8 %).

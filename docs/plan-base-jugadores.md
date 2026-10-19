@@ -161,9 +161,12 @@ python3 tools/db/build.py            # genera build/players.json, build/review.c
   - `team_tuning`: ajuste fino por juego y equipo para que los rivales de la historia suban poco a poco.
     - `top11` es la media objetivo del once titular (sus 11 mejores cartas). Todo el equipo se mueve lo mismo, más +1 a los más flojos del once hasta clavar la media.
     - `captain` es la ficha de la wiki del capitán: +2 y cerca de 4 por encima del once (subida máx. +6, tope 88).
-    - IE1: Occult 73,5 → Wild 74 → Brain 74,5 → Otaku 75 → Royal Academy 80,5 → Veteranos 80,9 → Shuriken 81,3 → Farm 81,7 → Kirkwood 82,1 → Zeus 82,6.
+    - IE1 (**hecho**; ver `plan-balance-temporadas.md` §3): Sallys 54 → Kids FC 58 → Umbrella 61,1 → Occult 65,5 → Wild 67,1 → Brain 68,5 → Otaku 69,7 → Veteranos 73,8 → Shuriken 74,2 → Farm 75,2 → Kirkwood 76,1 → Royal Academy 77,9 → Zeus 79,8. Pool sin equipo 42–75.
     - IE2 (**hecho**; escala de alienígenas del jefe, ver `plan-balance-temporadas.md §3`): Géminis 80,6 → Épsilon 81,3 → Épsilon Plus 82,1 → Prominence/Diamond 83 → Royal Redux 84,3 → Génesis 85,4 → Emperadores Oscuros 85,9 → Raimon 87 → **Caos 87,9** (equipo nuevo, fusión de Prominence + Diamond Dust, 11 jugadores con su «Chaos form»). Normales: Claustro 80,5 ≈ Mary Times 80,3 > Servicio Secreto 79,5 > Mar de Árboles/Jóvenes Inazuma 80 > Fauxshore 77,3 > Alpino 75,4 ≈ Triple C 74,6. Pool sin equipo 46–84.
-    - IE3: Big Waves 76 → Leones del Desierto 76,5 → Neo Japón 80,5 → Dragones de Fuego 80 → Knights of Queen 81 → Equipo D 79,5 → Unicorn 82,5 → Orfeo 84,5 → Los Emperadores 82 → Os Reis 84,5 → Zoolan 81 → Little Gigantes 86,5 (ajustado a mano).
+    - IE3 (**hecho**; ver `plan-balance-temporadas.md` §3): Big Waves 84,4 → Leones del Desierto 84,6 → Dragones de
+      Fuego 85,8 → Knights of Queen 86,0 → Los Emperadores 86,7 → Unicorn 86,9 → Orfeo 87,4 → Inazuma Japón 88,0 →
+      Os Reis 89,1 → Little Gigantes 89,9. Extras: Neo Japón 80,9 · Equipo D 80,2 · Zoolan 81,2 · Grifos de la Rosa 82,5 ·
+      Brocken Brigade 83,0 · Los Rojos 84,5 · Caimanes del Cabo 74,2 · Sky 80,5 · Dark 80,2 · Ogro 85,6. Pool sin equipo 46–87.
     - GO1: escala tipo IE1, un pelín por encima.
       - Vía Láctea 74,5 → Poderosa Fe 75 → Royal Academy 76 → Cala Pirata 76,5 → Mar de Luna 77 → Alpino 77,5 → Kirkwood 78 → Espejismo 78,5 → Universal 79 → Monte Olimpo 80 → Dragon Link 81 → Luz Eterna 82,5 → Oscuridad Ancestral 83,5.
       - Las notas de más de 84 se comprimen a la mitad (92 → 88) y las subidas no pasan de 87.
