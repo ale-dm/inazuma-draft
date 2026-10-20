@@ -1,20 +1,22 @@
-Cartas: 5399 (275 versiones extra) · personajes: 4974 · técnicas: 779
-Categorías: Legendary Player 154 · Top Player 638 · Advanced Player 1213 · Growing Player 1190 · Common Player 2204
-Niveles: S 438 · A 345 · B 1259 · C 3357
-OVR: mediana 69 · p90 85 · p99 91 · máx 93
+Cartas: 5388 (264 versiones extra) · personajes: 4974 · técnicas: 785
+Categorías: Legendary Player 134 · Top Player 693 · Advanced Player 1276 · Growing Player 1217 · Common Player 2068
+Niveles: S 428 · A 345 · B 1259 · C 3356
+OVR: mediana 70 · p90 85 · p99 90 · máx 94
 
 Balancing doc del Xtreme sin ficha (7): añadir a overrides.xtreme_balancing_pages → Rhionne (Chaos), Dante Diavolo (Orpheus), Kino Aki (Girls Team), Oogu (Zanark Domain), Yasha (Zanark Domain), Goburis (Zanark Domain), Yamana Akane (Secret players (GO))
 Wiki del Xtreme: "Kino Aki" sin ficha (Kino Aki)
 Wiki del Xtreme: "Sorano Aoi" sin ficha (Sorano Aoi)
 Jugadores de zukan sin ficha en la wiki (1): Josephine
 Personajes sin stats de la saga principal (fuera): 1173
-scout_pool: IE1 789 cartas · 743 con OVR nuevo
+scout_pool: IE1 789 cartas · 742 con OVR nuevo
 scout_pool: IE2 436 cartas · 415 con OVR nuevo
-tech_balance: IE3 23 equipos reordenados por stats + técnica (IE3)
+scout_pool: IE3 339 cartas · 315 con OVR nuevo
+tech_balance: IE3 22 equipos reordenados por stats + técnica (IE3)
 tech_balance: IE2 18 equipos reordenados por stats + técnica (IE2)
 Equipo de Ares/Orion/VR en Venus Demila IE3: The Sambassadors → Unaffiliated
 Equipo de Ares/Orion/VR en Cao Cao GO2: Zanark's Outsiders → Sub Character
 Equipo de Ares/Orion/VR en Hurricane Zeta GO3: Zanark's Outsiders → Sub Character
+Equipo con un solo jugador, fuera: Inazuma Japan (Past) (GO1) → Janus sin equipo
 Equipo con un solo jugador, fuera: Japanese Resistance (GO3) → Caleb Stonewall sin equipo
 Equipo con un solo jugador, fuera: Team Sharp (IE3) → Isaac Glass sin equipo
 Equipo con un solo jugador, fuera: Demon's Horn (GO1) → Damien Blackloch sin equipo
@@ -25,7 +27,7 @@ Equipo con un solo jugador, fuera: The Aquatic Wings (GO2) → Sting Xiang sin e
 Equipo con un solo jugador, fuera: The Night Vipers (GO2) → Venom Braggard sin equipo
 Equipo con un solo jugador, fuera: The Crimson Hounds (GO2) → Redd Hazzard sin equipo
 Versiones con sprite de Victory Road sin carta (36): Gouenji Shuuya: Kirkwood (Saga de Mark); Gouenji Shuuya: Earth Eleven (Saga de Mark); Gouenji Shuuya: Royal Academy (Saga de Mark); Gouenji Shuuya: Surtur (Armadura) (Saga de Mark); Gouenji Shuuya: Alex Zabel (Saga de Arion); Gouenji Shuuya: Casual (''Chrono Stones'') (Saga de Arion); Gouenji Shuuya: Equipación sencilla (''Galaxy'') (Saga de Arion); Tachimukai Yuuki: Raimon Equipo B (Saga de Mark); Tachimukai Yuuki: Earth Eleven (Saga de Mark); Tachimukai Yuuki: Casual (Saga de Arion); Tsunami Jousuke: Raimon Equipo B (Saga de Mark); Tsunami Jousuke: Earth Eleven (Saga de Mark); Kabeyama Heigorou: Earth Eleven (Saga de Mark); Kidou Yuuto: Orfeo (Saga de Mark); Kidou Yuuto: Raimon Equipo B (Saga de Mark); Kidou Yuuto: Raimon Revolucionario (Saga de Mark); Kidou Yuuto: Earth Eleven (Saga de Mark); Kidou Yuuto: Casual (Saga de Arion); Kidou Yuuto: Raimon Revolucionario (Saga de Arion); Endou Mamoru: Royal Academy (Saga de Mark); Endou Mamoru: Orfeo (Saga de Mark); Endou Mamoru: Raimon Revolucionario (Saga de Mark); Endou Mamoru: Los Arions (Saga de Mark); Endou Mamoru: Earth Eleven (Saga de Mark); Endou Mamoru: Grandius (Armadura) (Saga de Mark); Endou Mamoru: Casual (Saga de Arion); Endou Mamoru: Raimon Revolucionario (Saga de Arion); Kazemaru Ichirouta: Earth Eleven (Saga de Mark); Fubuki Shirou: Raimon Equipo B (Saga de Mark (Unión)); Fubuki Shirou: Raimon Revolucionario (Saga de Mark (Unión)); Fubuki Shirou: Earth Eleven (Saga de Mark (Unión)); Fubuki Shirou: Casual (Saga de Arion); Zaizen Touko: Inazuma Japón (Saga de Mark); Zaizen Touko: Raimon Equipo B (Saga de Mark); Zaizen Touko: Earth Eleven (Saga de Mark); Zaizen Touko: Adulta (Saga de Arion)
-Fichas de zukan de la saga principal sin carta (5; sin stats en esos juegos o sin entrada): Seymour Hillman (Nº 2804), Sonny Raimon (Nº 261), Chester Horse Sr (Nº 263), Ptumri Emnator (Nº 4143), Globulus Ava (Nº 4162)
+Fichas de zukan de la saga principal sin carta (6; sin stats en esos juegos o sin entrada): Seymour Hillman (Nº 2804), Sonny Raimon (Nº 261), Chester Horse Sr (Nº 263), Shawn Froste (Nº 1164), Ptumri Emnator (Nº 4143), Globulus Ava (Nº 4162)
 Ares: jugadores sin supertécnicas de VR (1): Chester Horse Sr
 Ares: supertécnicas de la carta — rtu 4, anime 26, wiki 169 (anime = wiki española «Desde Ares»; wiki = ficha principal del módulo PlayerData_AT de la wiki inglesa; rtu = Road to Ultimate, comunes + rama principal; vr = todas las de VR)
 Orion: jugadores sin supertécnicas de VR (4): Chester Horse Sr, André, Rio, Gustav Nikolsky
@@ -33,7 +35,8 @@ Orion: supertécnicas de la carta — rtu 17, anime 28, wiki 162 (anime = wiki e
 Victory Road: jugadores sin supertécnicas de VR (5): Philip Star, Lucas Star, Alexander Allegrov, Cade Shelby, Josephine
 Victory Road: supertécnicas de la carta — rtu 21, wiki 922 (anime = wiki española «Desde Victory Road»; wiki = ficha principal del módulo PlayerData_VR de la wiki inglesa; rtu = Road to Ultimate, comunes + rama principal; vr = todas las de VR)
 Equipo con un solo jugador, fuera: Queens (VR) → Romica Glimmerly sin equipo
-Nombres fr: técnicas 809/1018 · equipos 133/188
-Nombres it: técnicas 555/1018 · equipos 110/188
-Escudos de equipo: 172/188 · con escudo distinto según la época: 95
-Técnicas: tiro largo 40 · bloqueo de tiros 49
+stats_mod: 2320 cartas con las stats del mod (nivel 40, IE1-3)
+Nombres fr: técnicas 811/1024 · equipos 132/187
+Nombres it: técnicas 556/1024 · equipos 109/187
+Escudos de equipo: 171/187 · con escudo distinto según la época: 94
+Técnicas: tiro largo 40 · bloqueo de tiros 50

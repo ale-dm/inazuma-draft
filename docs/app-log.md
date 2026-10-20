@@ -361,4 +361,114 @@ Detalle completo en [plan-balance-temporadas.md](plan-balance-temporadas.md) (§
 - **Equipo nuevo: Caos** (IE2): fusión de Prominence + Diamond Dust, 11 jugadores con su «Chaos form» (escudo y nombre «Caos», top 1 Torch/Gazelle). Se crea con `overrides.extra_versions` + `team_tuning['Chaos']` (`cap` 90).
 - **IE2, correcciones**: Emperadores Oscuros a sus 11 reales; **Isabelle → Bellatrix** (nombre alien + sprite de zukan 1134) en Génesis; Raimon-joiners con sus dos versiones (regular en su equipo / Raimon final), Shawn el mejor; **normales** ordenados como la wiki/foros (Claustro ≈ Mary Times > SP Fixers > Fauxshore > Alpino); pool sin equipo **46–84**; `tech_balance` (técnica del puesto, y **TP de IE3** para los alienígenas porque en IE2 iba rebajado por la piedra Aliea); apodos de Génesis arreglados.
 - **Subido**: rama `app` + workflow `db-load` (Supabase: characters 4.976 · cards 5.393; upsert, sin borrar lo del CRUD).
-- Pendiente: **IE3** (y siguientes).
+
+## Balance de temporadas: IE3 cerrado
+
+Detalle completo en [plan-balance-temporadas.md](plan-balance-temporadas.md) (§3 el estado y §7 el registro).
+
+- **IE3 cerrado**: rampa **84,4 → 89,9** con `_game.IE3.compress = 0,5`. Asia: Big Waves (Australia) 84,4 → Leones del
+  Desierto (Catar) 84,6 → Dragones de Fuego (Corea) 85,8. FFI: Knights of Queen (Inglaterra) 86,0 → Unicorn (EE. UU.)
+  86,9 → Orfeo (Italia) 87,4 → Emperadores (Argentina) 86,7 → Os Reis (Brasil) 89,1 → **Little Gigantes (Cotarl) 89,9**
+  (final). Inazuma Japón (protagonista) 90,9, un punto por encima de Little. **Capitán #1 en los 20 equipos**, con los capitanes de la wiki.
+- **Capitanes**: Niese Dolphin · Bjorn Kyle · Saginuma Osamu (Neo Japón) · Choi Chang-soo · Edgar Valtinas ·
+  Demonio Strada (Equipo D) · Pierre Godin · Jonas Pollack · Querardo Naval · Mark Krueger · Fidio Aldena (Nakata es el
+  ex-capitán) · Teles Torrue · Mack Ronijo · Lubbock Henktacker (Zoolan) · Rococo Ulpa · Endou Mamoru · Jake Fana
+  (Caimanes) · Sein (Sky) · Desuta (Dark) · Baddap Sleed (Ogro). Dragones de Fuego sube a Choi **90** para ser #1;
+  Knights of Queen sube su once a 86,0 para no quedar por debajo de la final de Asia; Unicorn **baja** a sus 90
+  (Mark Krueger 92, Erik Eagle 90, Dylan Keats 89) para no quedar por delante de Os Reis y Little Gigantes.
+- **Extras con curva y capitán**: Equipo D = *Team K* de Mister K (subido a nivel de Knights, 86,5); Zoolan Team =
+  *Team Garshield*; Caimanes del Cabo = *The Great Horn* («The Cape Crusaders», Sudáfrica); Sky Team = *Tenkuu no
+  Shito*; Dark Team = *Makai Gundan Z*; Equipo Ogro = *Ogre* (película / versión Team Ogre), subido a nivel de Little
+  Gigantes (89,6, top 93).
+- **Nombres por versión**: el `nickname` de la app ya puede ser por versión (`personaje|juego|versión`) y el nombre de
+  la carta también (`overrides.card_names`). Neo Japan muestra/guarda los nombres del juego (Dave Quagmire, Zack
+  Cummings, Wilbur Watkins, Zeke Valanche, Ethan Whitering, Sail Bluesea, Johan Tassman, Henry House, Argie Bargie,
+  Mark Hillvalley, Joseph King) y Génesis/Épsilon se queda con los alien (Dvalin, Zohen, Wittz, Zell, Heat).
+- **Pool sin equipo** (`scout_pool.IE3`): 341 cartas, **46–88**, mediana 66; top Chucky Cardaway 88. Notables
+  cuadrados con el ranking competitivo (Sutefuda 88, Bernadette 87, Fudouyama 86, Libra 85, Ray Pier 85, Kazamatsuri
+  84, Virgo 82, Shippuu 81, Kappa 80…); el resto, reordenado por rendimiento (stats Lv99 + técnica por puesto).
+- **Técnicas**: `tech_balance.IE3` (50 % stats + 50 % técnica del puesto, TP de IE3) en los 22 equipos.
+- **Balance** (`npm run balance`): queda un único aviso marginal: en «condiciones reales» (media 75, humano fuerte) se
+  gana 27,2 % (rango 28–65), con el once mezclado a −0,5 de química contra 2,5 del rival. Con el pool a 46–86 el aviso
+  pasaba a Expedición (5,27 victorias / 20,7 %), así que se deja **46–87**. La Expedición queda en **4,17 / 9,1 %**
+  (con el catálogo anterior sin cerrar, 6,42 / 26,8 %).
+- De paso: el techo de IE3 pasa a 93 (`CEIL`) y el máximo real queda en 94 (Mark Evans, Inazuma Japón); la tabla de IE1 de `plan-balance-temporadas.md` se
+  corrige a los valores reales (54 → 79,8); `tuning.py` escribe el volcado de depuración en UTF-8.
+- **Segundo Raimon (IE2)**: alineación de la final vs Emperadores Oscuros (Tachimukai; Kabeyama, Tsunami, Kogure,
+  Touko; Fubuki; Gouenji, Megane, Domon, Kidou; Endou capitán), **Fubuki en su forma fusionada** (el build admite
+  `form` en `extra_versions`), Nakatani fuera del equipo, y medias por méritos: Axel/Fubuki 89, Jude 88, Endou 88
+  (capitán), Erik 86, Darren 87, Tsunami 86, Kabeyama/Domon/Touko 85, Rica 84, Kogure 83, Megane 80. Once 86,5.
+- Pendiente: **GO1, GO2, GO3, Ares y Orion**.
+
+## Balance de técnicas de IE1/IE2/IE3 (escala B)
+
+Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con un doc por tipo: tiros (individuales, dobles y triples), regates, bloqueos y paradas.
+
+- **Aplicado**: 371 ids de `data/technique_balance.json` con la escala B en múltiplos de 10 — tiros 50–200 (individuales 50–160, dobles 60–180, triples 80–200), regates 50–150, bloqueos 50–150 y paradas 50–180. Cambian de TP 289; 17 ids no estaban en el JSON (técnicas añadidas a mano en Supabase) y se han incorporado.
+- **Potencias**: salen de la escala TP → potencia que ya tenía el JSON (50 → 50–300 … 200 → 270–1080), no de la hoja.
+- **Sin id**: Bola de tierra (tiro individual de IE1, TP 22 → 60) no existe ni en la base ni en el build; queda pendiente de alta.
+- **Carga**: `supabase/technique_balance.sql` regenerado desde el JSON; se aplica con el workflow `db-load` (`balance_only`).
+- **Aviso**: `tools/db/balance_xlsx.py` sigue regenerando el JSON desde la hoja y pisaría estos valores; si se vuelve a usar la hoja, hay que meter antes la escala de IE123.
+
+## Ares: temporada cuadrada
+
+- **Rampa** (once, #1): Bastión 76,0 (80) → Green Hill 76,4 (77) → Brain 77,1 (82) → Kirkwood 77,2 (83) → Royal Academy 78,4 (84) → Academia Polaris 79,8 (85) → Zeus 80,8 (86) → Ribera 81,2 (88) → Alpino 81,6 (86) → Academia Alia 82,9 (87) → Raimon 84,5 (87) → Academia Plenilunio 85,0 (87) → Barcelona Orb 86,1 (88).
+- **Compresión y ajuste**: `_game.ARES.compress = 0,5` y `ovr_shift = -1` (toda la temporada un punto más abajo). Sin la compresión los cracks de equipos flojos se disparaban (Brain 78,2 con Neil Turner 87; Polaris 80,5 con Acker Reese 88).
+- **Raimon (Inakuni)**: entra en la curva con 84,5 y capitán Sonny Wright (Asuto). Antes se quedaba en 80,5, por debajo de rivales a los que gana en la historia.
+- **Excepciones**: Mark Evans no baja (88), Axel Blaze sube a 83 (por delante de Mukata 81 y de Jude 81), Ribera baja al nivel de Alpino con Mark a mano y Green Hill sube al nivel de Bastión.
+- **Cobertura**: 199 cartas y 14 equipos; los 198 jugadores de zukan de Ares tienen carta. Green Hill (76,4) queda al nivel de Bastión; Secundarios (77,8) son los clásicos que se van del Raimon.
+- **Posición**: 1,8 por debajo de IE2 (Caos 87,9) y muy por encima de IE1 (Zeus 79,8); es el sustituto de IE2 en su línea temporal.
+- Cargado en Supabase con `db-load` tras el rebuild de `seed.sql`.
+
+## Stats de las cartas: balance del mod a nivel 40
+
+- **IE1-3** usan las stats del mod de Victory Road (`EditorMods/balance_last.json`, **modelo 3** con el reparto por puesto): `data/stats_mod.json` cruza **2.320 cartas** por código de modelo (`crc32` → `chara`) y por nombre + juego + equipo de las copias de versión (Axel IE2/IE3, Mark IE2/IE3, Shawn IE2 Raimon DEL / Alpine DEF…).
+- `build.py` las reescala a la media de la carta, las pasa a **nivel 40** con la curva de Character Reforged y guarda `stats40` (7 stats), `growth` y `freedom`.
+- Las **6 stats del motor** (`shooting`…`goalkeeping`) se derivan de las 7 con las fórmulas de duelo y se normalizan por puesto a 25-99, manteniendo el OVR.
+- La ficha enseña las **7 stats** con los iconos del juego, la letra por cuantiles y los **7 duelos**; GO, Ares, Orion y VR siguen con las 6 stats.
+- Cobertura: **2.320 de 2.335** cartas de IE1-3 (las 15 sin fila en el mod se quedan como estaban). Detalle en [balance-stats.md](balance-stats.md).
+- Regenerar: `python tools/db/import_stats_mod.py <EditorMods>` + `python tools/db/build.py`.
+
+## Orion: temporada cuadrada
+
+- **Rampa**: Bisonte Rojo 76,3 → Demonios Brillantes 76,6 → Bailarines Eternos 77,9 → Fénix Árabe 78,1 → Tropa Acrobática 79,5 → Gigantes Invencibles 80,9 → Star Unicorn 81,1 → Navy Invader 82,1 → Olé de Samba 83,1 → Guardianes de la Reina 84,6 → Chispas Perfectas 86,1 → Eclipse de Orión 87,0.
+- **Compresión**: `_game.ORION.compress = 0,5`. Sin ella los cracks de equipos flojos se disparaban (Bailarines 78,3 con Samba Sokolov 91; Navy 82,8 con Yoga 90).
+- **Inazuma Japón**: 89,7 y capitán Jude Sharp 92; no se toca (protagonista, por debajo del de IE3 90,8).
+- **Cobertura**: 207 cartas y 15 equipos; Secundarios (66,5) y Raimon (45,4) no son rivales de la historia.
+- Cargado en Supabase con `db-load`.
+
+## Técnicas de Ares y Orion
+
+- **451 técnicas** distintas usadas por cartas de Ares/Orion; **135 son exclusivas** de esos juegos (331 usos). Las compartidas con IE1-3 ya siguen la escala de [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md).
+- Faltaban **4 TP**: Niebla mística (90), Ataque de garza (80), Guardia acrobática (80) y Presa de sombras (50). Se han añadido y cargado.
+- El resto de exclusivas ya tenía TP en 50–200; el catálogo completo, con usos y potencia, está en [balance-tecnicas-ares-orion.md](balance-tecnicas-ares-orion.md) para revisar firmas por lore.
+
+## Técnicas de Ares/Orion desde la wiki
+
+- Revisadas las categorías de la wiki española: **49 técnicas introducidas en Ares** y **65 en Orion**. Faltaban 7: 6 son de fútbol (una ya existía como `vr_whs03290`, Last Resort D) y se han añadido al catálogo y a sus cartas.
+- Añadidas: **Entrada deslumbrante** (Acker Reese, Cygnus Starkey, Ari Zimmerman, Erik Eagle), **Mar de lágrimas** (Rolland Bowlby), **Muro colectivo** (los 4 defensas de Bastión), **Pingüino goleador** (Sonny y Elliot) y **Embestida bufalina** (Seok, Baek y Lee).
+- **Celebración sanadora** no se añade: la wiki la clasifica como supertécnica no de fútbol.
+- Detalle y usuarios en [tecnicas-wiki-ares-orion.md](tecnicas-wiki-ares-orion.md).
+
+## Tiros de Ares: comprobación de nombres
+
+- De los **24 tiros que debutan en Ares**, **23 ya estaban** en la app con otro nombre (se han cruzado por japonés/inglés con la wiki inglesa): Cabezazo fiero, Combo cósmico, Granizado de fuego, Ofensiva danzarina, Omnisabiduría divina, Nudo atrapaosos, Lancero real, Lanza polar, Tiro meteórico, Liebre blanca, Tiro centrífugo, Sierra celestial, Ímpetu de dragón, Detonador, Victoria tricolor, Frente frío, Remate en zigzag…
+- **Solo faltaba Pingüino Aéreo** (Overhead Penguin / Penguin Volley), añadido a Elliot Ember (Ares y Orion) y Jude Sharp (Orion).
+- Tabla completa en [tecnicas-wiki-ares-orion.md](tecnicas-wiki-ares-orion.md).
+
+## Variantes A de Victory Road
+
+- El zukan tiene **Fire Tornado A** y **Meteor Blade A** (las dos únicas variantes “A” de originales). Se han añadido como **Tornado de fuego A** (`vr_whs02750`) y **Cañón de meteoritos A** (`vr_whs03410`), con TP 70 y 120.
+- Asignadas a **Basile Hardy** (Ares y Orion) y **Hunter Foster** (Ares), que son sus usuarios.
+- Son variantes de la misma técnica, no técnicas nuevas: mismo poder que las originales (360 y 440 en VR).
+
+## Ares: tiros por número de jugadores
+
+- Revisados los tiros que debutan en Ares: **17 individuales, 4 dobles y 5 triples**. Tablas completas en [tecnicas-wiki-ares-orion.md](tecnicas-wiki-ares-orion.md).
+- **Cambios de TP**: Cañón de meteoritos A **120 → 100**, Detonador **100 → 120** y Lancero real **100 → 120**.
+- Escala de Ares **60–150**, un escalón por debajo de IE2 (60–180); el techo son Combo cósmico y Ventisca triple (150).
+
+## Técnicas con la placa del juego
+
+- La ficha pinta cada técnica como el editor: placa `plate_fsp_<el>` (elemento), icono de categoría, nombre, marcas de tiro lejano/bloqueo y TP.
+- Faltan las marcas de grado (`growthType` y grado evolucionado no están en la base) y las caras/escudos del juego (54 MB, pendiente de CDN). Detalle en [tecnicas-visual.md](tecnicas-visual.md).

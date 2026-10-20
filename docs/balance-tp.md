@@ -2,6 +2,8 @@
 
 Generado por `tools/db/balance_xlsx.py`. Se carga con `supabase/technique_balance.sql` (columnas `balance_tp`, `balance_power_min`, `balance_power_max` de `techniques`); la app enseña `balance_tp` como el TP de la técnica.
 
+> **Nota (2026-10-20):** los TP de las técnicas de IE1/IE2/IE3 se sustituyeron por la escala B de [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md). Este informe sigue describiendo la carga desde la hoja; el JSON ya no sale solo de ella.
+
 ## Resumen
 
 - Filas de la hoja: 792 · técnicas de la tabla con valor nuevo: 765 (de ellas, con TP distinto al anterior: 248)

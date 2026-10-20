@@ -15,6 +15,13 @@ def apply_scout_pool(cards, ov, report):
         cg = sc.get('cost', 'IE3')                 # juego del que se toma el TP de las técnicas
 
         def tval(c):                                # mejor técnica del jugador según ese juego
+            if sc.get('pos_tech'):                 # ponderada por puesto (tiro/regate/…), como tech_balance
+                best = {}
+                for m in c.get('moves', []):
+                    v = (m.get('costs') or {}).get(cg)
+                    if v is not None:
+                        best[m.get('type')] = max(best.get(m.get('type'), 0), v)
+                return sum(w * best.get(ty, 0) for ty, w in POS_TECH.get(c['position'], {}).items())
             return max((m.get('costs', {}).get(cg) or 0 for m in c.get('moves', [])), default=0)
         moves = sorted(tval(c) for c in pool)
         lo, hi, cap = sc.get('lo', 44), sc.get('hi', 77), sc.get('cap', 81)
@@ -81,7 +88,7 @@ def apply_tech_balance(cards, ov, report):
         if dbg:
             import json, os
             os.makedirs('/tmp/opencode', exist_ok=True)
-            json.dump(dbg, open(f'/tmp/opencode/tb_{g}.json', 'w'), ensure_ascii=False, indent=1)
+            json.dump(dbg, open(f'/tmp/opencode/tb_{g}.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
         if teams:
             report.append(f'tech_balance: {g} {len(teams)} equipos reordenados por stats + técnica ({cg})')
 
@@ -170,6 +177,19 @@ def apply_tuning(cards, games, ov, report):
                 c['stats'] = {k: max(25, min(99, v + fl - c['ovr'])) for k, v in c['stats'].items()}
                 c['ovr'] = fl
                 c['category'] = category(fl)
+    # desplazamiento global del juego (ARES: bajar la temporada un punto); antes de ovr_manual
+    for g_, gc in game_cfg.items():
+        sh = gc.get('ovr_shift', 0)
+        if not sh or g_ not in games:
+            continue
+        for c in cards:
+            if c['game'] != g_:
+                continue
+            c.setdefault('ovr_untuned', c['ovr'])
+            new = max(25, min(99, c['ovr'] + sh))
+            c['stats'] = {k: max(25, min(99, v + new - c['ovr'])) for k, v in c['stats'].items()}
+            c['ovr'] = new
+            c['category'] = category(new)
     # OVR a mano (overrides.ovr_manual): manda al final sobre la curva y las reglas (ficha|juego|versión → nota)
     manual = {k: v for k, v in ov.get('ovr_manual', {}).items() if not k.startswith('_')}
     for c in cards:

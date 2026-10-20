@@ -62,7 +62,7 @@ def write_balance():
                 f'from (values\n{vals}\n) as v(id, tp, mn, mx) where t.id = v.id;\n')
 
 
-def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
+def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report, dropped=None):
     os.makedirs(OUT, exist_ok=True)
     used = {t['id'] for c in cards for t in c['moves']}
     techs = [{k: v for k, v in t.items() if k != '_inf'} for t in techniques.values() if t and t['id'] in used]
@@ -79,6 +79,7 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
             'description': c.get('description'), 'description_es': c.get('description_es'), 'no': c['no'],
             'specials': c.get('specials') or [], 'extra_teams': c.get('extra_teams') or [],
             'raw_stats': {'form': c['form_label'], **dict(zip(c['raw_keys'], c['raw']))},
+            'stats40': c.get('stats40'), 'growth': c.get('growth'), 'freedom': c.get('freedom'),
             'techniques': [t['id'] for t in c['moves']],
             'duel_att': c.get('duel_att'), 'duel_con': c.get('duel_con'), 'duel_def': c.get('duel_def'),
         })
@@ -100,16 +101,20 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report):
     card_cols = ['id', 'character_id', 'name', 'game', 'saga', 'version', 'team', 'position', 'element', 'ovr', 'category',
                  'tier', 'source', 'shooting', 'control', 'physical', 'speed', 'defense', 'goalkeeping', 'image_url',
                  'zukan_id', 'zukan_no', 'no', 'description', 'description_es', 'specials', 'extra_teams', 'raw_stats', 'is_version',
+                 'stats40', 'growth', 'freedom',
                  'duel_att', 'duel_con', 'duel_def']
     links = [{'card_id': c['id'], 'technique_id': t, 'slot': i + 1}
              for c in public for i, t in enumerate(dict.fromkeys(c['techniques']))]
     seed = ['-- Generado por tools/db/build.py — no editar a mano.',
-            '-- Solo upserts: no se vacía ni se borra nada. Las filas nuevas se insertan y las que ya existen se actualizan en las',
-            '-- columnas de la carga; las columnas, filas y tablas añadidas a mano en la base se quedan como están.',
-            '-- Excepción: la limpieza puntual del duplicado antiguo es_remate-cazaosos (osos), sustituido por vr_whs02920.',
-            'begin;',
-            '-- Limpieza: el tiro antiguo es_remate-cazaosos se sustituye por vr_whs02920 (Remate cazaosos).',
-            "delete from public.techniques where id = 'es_remate-cazaosos';",
+            '-- Upserts: las filas nuevas se insertan y las que ya existen se actualizan en las columnas de la carga;',
+            '-- las columnas, filas y tablas añadidas a mano en la base se quedan como están (salvo overrides.drop_cards).',
+            'begin;']
+    if dropped:
+        seed += ['-- cartas descartadas a mano (overrides.drop_cards): se borran también de la base',
+                 f"delete from public.cards where id in ({', '.join(sql(i) for i in sorted(dropped))});"]
+    seed += ['-- Limpieza: el tiro antiguo es_remate-cazaosos se sustituye por vr_whs02920 (Remate cazaosos).',
+             "delete from public.techniques where id = 'es_remate-cazaosos';"]
+    seed += [
             insert('zukan', ['no', 'image_id', 'name', 'name_ja', 'role', 'age', 'element', 'position', 'teams', 'games', 'description', 'vr_lv50', 'wiki_page'], zukan_rows, key='no'),
             insert('staff', ['zukan_no', 'name', 'role', 'team', 'teams', 'games', 'age', 'element', 'image_url', 'description', 'wiki_page'], staff, key='zukan_no'),
             insert('teams', ['name', 'name_es', 'name_fr', 'name_it', 'logo_url', 'logos'], teams, key='name'),

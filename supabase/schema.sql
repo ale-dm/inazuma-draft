@@ -57,8 +57,14 @@ create table if not exists public.cards (
   zukan_id     text,
   zukan_no     int,                          -- nº oficial de la ficha de zukan de esta carta (foto)
   raw_stats    jsonb,                        -- stats originales del juego (nivel 99)
+  stats40      jsonb,                        -- 7 stats del balance del mod a nivel 40 [Kick, Control, Technique, Pressure, Physical, Intelligence, Agility]
+  growth       int,                          -- crecimiento de la ficha (0 slow, 1 normal, 2 fast), para la curva de nivel
+  freedom      int,                          -- libertad (no se toca; se enseña en la ficha)
   is_version   boolean not null default false -- true = versión extra (Strikers / protagonistas GO)
 );
+alter table public.cards add column if not exists stats40 jsonb;
+alter table public.cards add column if not exists growth int;
+alter table public.cards add column if not exists freedom int;
 alter table public.techniques add column if not exists name_es text;
 alter table public.techniques add column if not exists name_fr text;   -- doblaje francés (wikis es/fr)
 alter table public.techniques add column if not exists name_it text;   -- doblaje italiano (wikis es/it)

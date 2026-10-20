@@ -1,8 +1,7 @@
 {
   "_doc": "Excepciones editables a mano para tools/db/build.py. Las claves 'page' son títulos de ficha de la wiki de Fandom (inazuma-eleven.fandom.com). Ver docs/plan-base-jugadores.md.",
   "names_i18n": {
-    "_doc": "Nombres en francés/italiano a mano (técnica, espíritu guerrero, tótem o equipo, por su nombre inglés): {\"Raimon\": {\"fr\": \"…\", \"it\": \"…\"}}. Sin entrada: doblaje de la wiki española (Nombre DOB) o wikis fr/it por nombre japonés; si no, inglés",
-    "Dark Angel": { "fr": "Dark Sky", "it": "Dark Star" }
+    "_doc": "Nombres en francés/italiano a mano (técnica, espíritu guerrero, tótem o equipo, por su nombre inglés): {\"Raimon\": {\"fr\": \"…\", \"it\": \"…\"}}. Sin entrada: doblaje de la wiki española (Nombre DOB) o wikis fr/it por nombre japonés; si no, inglés"
   },
   "special_es": {
     "_doc": "Nombre en castellano de espíritus guerreros e hipertécnicas de VR que la wiki española no enlaza (sacados de sus fichas)",
@@ -11,92 +10,19 @@
     "Jinkou Keshin Plasma Shadow SH": "Guerrero artificial Sombra de plasma DE",
     "Meteoric Fire Tornado V": "Tornado de fuego meteoro V"
   },
-  "tech_es_fix": {
-    "_doc": "Corrige el cruce de nombres en castellano de técnicas (jp/en → nombre de la app). Manda sobre la wiki española.",
-    "Nudo atrapaosos": { "jp": ["必殺クマゴロシ縛"], "en": ["Ursa Binder"] },
-    "Remate cazaosos": { "jp": ["必殺クマゴロシ斬"], "en": ["Ursa Rager"] }
-  },
-  "tech_defs": {
-    "_doc": "Técnicas que no salen en los movesets de los juegos y se añaden a mano (Ares). Se meten en el catálogo antes de crear las cartas.",
-    "CounterdriveDF": {
-      "name": "Counter Drive",
-      "name_es": "Contragolpe doble",
-      "name_jp": "カウンタードライブ",
-      "type": "Block",
-      "element": "earth",
-      "cost": null,
-      "cost_game": null,
-      "costs": { "VR_power": 71 },
-      "description": "Stop the ball with a counter drive, turning the opponent's own momentum against them.",
-      "image_url": null,
-      "zukan_types": ["Defence"],
-      "name_fr": null,
-      "name_it": null,
-      "traits": []
-    },
-    "vr_whd01530": {
-      "name": "Wall for One",
-      "name_es": "Muro para uno",
-      "name_jp": "レンサ・ザ・ウォール",
-      "type": "Block",
-      "element": "earth",
-      "cost": null,
-      "cost_game": null,
-      "costs": { "VR_power": 540 },
-      "description": "Build an impenetrable wall with the whole team to stop the opponent's attack.",
-      "image_url": null,
-      "zukan_types": ["Defence"],
-      "name_fr": null,
-      "name_it": null,
-      "traits": []
-    },
-    "vr_whk01430": {
-      "name": "Flood of Feels",
-      "name_es": "Mar de lágrimas",
-      "name_jp": "涙で波だ",
-      "type": "Catch",
-      "element": "fire",
-      "cost": null,
-      "cost_game": null,
-      "costs": { "VR_power": 45 },
-      "description": "A wave of tears rises to stop the ball.",
-      "image_url": null,
-      "zukan_types": ["Success", "Failure"],
-      "name_fr": "Vague de larmes",
-      "name_it": "Ondata di Lacrime",
-      "traits": []
-    }
-  },
-  "tech_id_es": {
-    "_doc": "Nombre en castellano por id de técnica; manda sobre el cruce por nombre.",
-    "CounterdriveGK": "Rotación inversa",
-    "vr_whk01410": "Velo de sirena"
-  },
-  "tech_extra": {
-    "_doc": "Técnicas extra por carta (id de carta → ids de técnica). Para las que no salen en su moveset de Ares.",
-    "kozoumaru-sasuke--ares--base": ["CounterdriveDF"],
-    "inamori-asuto--ares--base": ["CounterdriveDF"],
-    "iwagaki-noborou--ares--base": ["vr_whd01530"],
-    "kabeyama-heigorou--ares--base": ["vr_whd01530"],
-    "banri-nagamine--ares--base": ["vr_whd01530"],
-    "maeno-taihou--ares--base": ["vr_whd01530"],
-    "moriagari-moko--ares--base": ["vr_whd01530"],
-    "hirata-taizou--ares--base": ["vr_whd01530"],
-    "umihara-norika--ares--base": ["vr_whk01400", "vr_whk01410"],
-    "kyouno-kyuuta--ares--base": ["vr_whk01430"]
-  },
-  "tech_remove": {
-    "_doc": "Técnicas a quitar por carta (id de carta → ids de técnica).",
-    "kozoumaru-sasuke--ares--base": ["CounterdriveGK"],
-    "inamori-asuto--ares--base": ["CounterdriveGK"],
-    "umihara-norika--ares--base": ["es_parada-remolino", "es_velo-de-sirena"]
-  },
   "position_by_version": [
     {
       "page": "Endou Mamoru",
       "game": "IE2",
       "position": "DF",
       "note": "Líbero en IE2 (en Strikers 2013 su forma Second Raimon tiene Catch A); Darren es el portero"
+    },
+    {
+      "page": "Fubuki Shirou",
+      "game": "IE2",
+      "version": "base",
+      "position": "DF",
+      "note": "En Hakuren/Alpine juega la forma Shirou, de defensa (la fusionada de Raimon va aparte)"
     }
   ],
   "xtreme_wiki_pages": {
@@ -250,8 +176,284 @@
       }
     }
   },
+  "stats_mod": {
+    "_doc": "Stats de IE1-3 desde el balance del mod de Victory Road (data/stats_mod.json, generado por tools/db/import_stats_mod.py con los balance_*.json del EditorMods). Se reescalan a la media de cada carta y se convierten a las 6 stats de la app; normalización por puesto y ajuste a OVR.",
+    "enabled": true
+  },
+  "extra_techniques": {
+    "_doc": "Técnicas que la wiki de Ares/Orion tiene y la base no (manga/videojuego/combinadas). Se añaden al catálogo; extra_moves las asigna a las cartas.",
+    "es_entrada-deslumbrante": {
+      "name": "Brilliant Move",
+      "name_es": "Entrada deslumbrante",
+      "name_jp": "ブリリアントムーヴ",
+      "type": "Block",
+      "element": "air",
+      "cost": null,
+      "cost_game": null,
+      "costs": {},
+      "description": "Bloqueo de aire exclusivo de los videojuegos (IE AC / SD).",
+      "image_url": null,
+      "zukan_types": [
+        "Defence"
+      ],
+      "traits": [
+        "block"
+      ]
+    },
+    "es_mar-de-lagrimas": {
+      "name": "Flood of Feels",
+      "name_es": "Mar de lágrimas",
+      "name_jp": "涙で波だ",
+      "type": "Catch",
+      "element": "fire",
+      "cost": null,
+      "cost_game": null,
+      "costs": {},
+      "description": "Parada de fuego del manga de Ares; Rolland Bowlby.",
+      "image_url": null,
+      "zukan_types": [
+        "Catch"
+      ],
+      "traits": []
+    },
+    "es_muro-colectivo": {
+      "name": "Wall for One",
+      "name_es": "Muro colectivo",
+      "name_jp": "レンサ・ザ・ウォール",
+      "type": "Block",
+      "element": "earth",
+      "cost": null,
+      "cost_game": null,
+      "costs": {
+        "VR_power": 120
+      },
+      "description": "Bloqueo de montaña de cuatro jugadores (El muro x4).",
+      "image_url": null,
+      "zukan_types": [
+        "Defence",
+        "Shot Block"
+      ],
+      "traits": [
+        "block"
+      ]
+    },
+    "es_ping-ino-goleador": {
+      "name": "Shining Penguin",
+      "name_es": "Pingüino goleador",
+      "name_jp": "シャイニングペンギン",
+      "type": "Shoot",
+      "element": null,
+      "cost": null,
+      "cost_game": null,
+      "costs": {},
+      "description": "Tiro de Sonny y Elliot en el manga de Ares.",
+      "image_url": null,
+      "zukan_types": [
+        "Shot"
+      ],
+      "traits": []
+    },
+    "es_embestida-bufalina": {
+      "name": "Bull Steam Ahead",
+      "name_es": "Embestida bufalina",
+      "name_jp": "特攻バッファロートレイン",
+      "type": "Dribble",
+      "element": null,
+      "cost": null,
+      "cost_game": null,
+      "costs": {},
+      "description": "Regate de tres jugadores de Orion (Bisonte Rojo).",
+      "image_url": null,
+      "zukan_types": [
+        "Dribble"
+      ],
+      "traits": []
+    },
+    "es_ping-ino-aereo": {
+      "name": "Overhead Penguin",
+      "name_es": "Pingüino Aéreo",
+      "name_jp": "オーバーヘッドペンギン",
+      "type": "Shoot",
+      "element": "fire",
+      "cost": null,
+      "cost_game": null,
+      "costs": {
+        "VR_power": 70
+      },
+      "description": "Tiro de Elliot (Ares) y Jude (Orion); versión de fuego.",
+      "image_url": null,
+      "zukan_types": [
+        "Shot"
+      ],
+      "traits": []
+    },
+    "vr_whs02750": {
+      "name": "Fire Tornado A",
+      "name_es": "Tornado de fuego A",
+      "name_jp": "ファイアトルネードＡ",
+      "type": "Shoot",
+      "element": "fire",
+      "cost": null,
+      "cost_game": null,
+      "costs": {
+        "VR_power": 360
+      },
+      "description": "A blazing shot cloaked in fierce flames, launched into the air with a fiery right-foot strike.",
+      "image_url": null,
+      "zukan_types": [
+        "Shot"
+      ],
+      "traits": []
+    },
+    "vr_whs03410": {
+      "name": "Meteor Blade A",
+      "name_es": "Cañón de meteoritos A",
+      "name_jp": "流星ブレードＡ",
+      "type": "Shoot",
+      "element": "fire",
+      "cost": null,
+      "cost_game": null,
+      "costs": {
+        "VR_power": 440
+      },
+      "description": "Launch the ball high and smash it with a mighty kick, tracing a sharp shot that gleams like a shooting star.",
+      "image_url": null,
+      "zukan_types": [
+        "Shot"
+      ],
+      "traits": []
+    },
+    "CounterdriveDF": {
+      "name": "Counter Drive",
+      "name_es": "Contragolpe doble",
+      "name_jp": "カウンタードライブ",
+      "type": "Block",
+      "element": "earth",
+      "cost": null,
+      "cost_game": null,
+      "costs": {
+        "VR_power": 71
+      },
+      "description": "Stop the ball with a counter drive, turning the opponent's own momentum against them.",
+      "image_url": null,
+      "zukan_types": [
+        "Defence"
+      ],
+      "traits": []
+    },
+    "vr_whd01540": {
+      "name": "Ursa Binder",
+      "name_es": "Nudo atrapaosos",
+      "name_jp": "必殺クマゴロシ縛",
+      "type": "Block",
+      "element": "earth",
+      "cost": null,
+      "cost_game": null,
+      "costs": {
+        "VR_power": 440
+      },
+      "description": "Block your target with force strong enough to stop even the fiercest bear.",
+      "image_url": null,
+      "zukan_types": [
+        "Defence",
+        "Shot Block"
+      ],
+      "traits": [
+        "block"
+      ]
+    }
+  },
+  "technique_names": {
+    "_doc": "Nombre en castellano para técnicas que ya existen pero no lo tenían (id de técnica -> nombre).",
+    "vr_whs03290": "Último recurso: Dragón",
+    "CounterdriveGK": "Rotación inversa",
+    "CounterdriveDF": "Contragolpe doble",
+    "vr_whs02920": "Remate cazaosos",
+    "vr_whd01540": "Nudo atrapaosos",
+    "vr_whk01410": "Velo de sirena"
+  },
+  "extra_moves": {
+    "_doc": "Técnicas extra por carta (id de carta -> ids de técnica). Se añaden después del build de Ares/Orion.",
+    "mizukamiya-seiryuu--ares--base": [
+      "es_entrada-deslumbrante"
+    ],
+    "mizukamiya-seiryuu--orion--base": [
+      "es_entrada-deslumbrante"
+    ],
+    "shiratori-tsumuki--ares--base": [
+      "es_entrada-deslumbrante"
+    ],
+    "yagihara-katsumi--ares--base": [
+      "es_entrada-deslumbrante"
+    ],
+    "ichinose-kazuya--ares--base": [
+      "es_entrada-deslumbrante"
+    ],
+    "ichinose-kazuya--orion--base": [
+      "es_entrada-deslumbrante"
+    ],
+    "kyouno-kyuuta--ares--base": [
+      "es_mar-de-lagrimas"
+    ],
+    "seok-min-woo--orion--base": [
+      "es_embestida-bufalina"
+    ],
+    "baek-shi-woo--orion--base": [
+      "es_embestida-bufalina"
+    ],
+    "lee-dong-hyuk--orion--base": [
+      "es_embestida-bufalina"
+    ],
+    "banri-nagamine--ares--base": [
+      "es_muro-colectivo"
+    ],
+    "hirata-taizou--ares--base": [
+      "es_muro-colectivo"
+    ],
+    "maeno-taihou--ares--base": [
+      "es_muro-colectivo"
+    ],
+    "moriagari-moko--ares--base": [
+      "es_muro-colectivo"
+    ],
+    "inamori-asuto--ares--base": [
+      "es_ping-ino-goleador",
+      "CounterdriveDF"
+    ],
+    "haizaki-ryouhei--ares--base": [
+      "es_ping-ino-goleador",
+      "es_ping-ino-aereo",
+      "vr_whs03410"
+    ],
+    "haizaki-ryouhei--orion--base": [
+      "es_ping-ino-aereo"
+    ],
+    "kidou-yuuto--orion--base": [
+      "es_ping-ino-aereo"
+    ],
+    "kozoumaru-sasuke--ares--base": [
+      "vr_whs02750",
+      "CounterdriveDF"
+    ],
+    "kozoumaru-sasuke--orion--base": [
+      "vr_whs02750"
+    ],
+    "iwagaki-noborou--ares--base": [
+      "es_muro-colectivo"
+    ],
+    "kabeyama-heigorou--ares--base": [
+      "es_muro-colectivo"
+    ],
+    "fubuki-atsuya--ares--base": [
+      "vr_whd01540"
+    ],
+    "umihara-norika--ares--base": [
+      "vr_whk01400",
+      "vr_whk01410"
+    ]
+  },
   "scout_pool": {
-    "_doc": "Pool sin equipo: OVR por percentiles del propio pool (stats = ovr_raw, técnica = mejor TP del juego `cost`) y tope. IE1 usa el TP de IE1 (no el de IE3) y va 44-77 con cap 77.",
+    "_doc": "Pool sin equipo: OVR por percentiles del propio pool (stats = ovr_raw, técnica = mejor TP del juego `cost`) y tope. IE1 usa el TP de IE1 (no el de IE3) y va 42-75; IE2 46-84; IE3 46-87.",
     "IE1": {
       "cost": "IE1",
       "stats": 0.5,
@@ -268,6 +470,16 @@
       "lo": 46,
       "hi": 84,
       "cap": 84,
+      "bonus": 0
+    },
+    "IE3": {
+      "cost": "IE3",
+      "stats": 0.5,
+      "tech": 0.5,
+      "pos_tech": true,
+      "lo": 46,
+      "hi": 88,
+      "cap": 88,
       "bonus": 0
     }
   },
@@ -303,9 +515,9 @@
     "David Buckingham|IE3|base": 86,
     "Edge Ripper|IE3|base": 86,
     "Nick Woodgate|IE3|base": 85,
-    "Ichinose Kazuya|IE3|Unicorn": 93,
-    "Dylan Keith|IE3|base": 91,
-    "Mark Krueger|IE3|base": 91,
+    "Ichinose Kazuya|IE3|Unicorn": 90,
+    "Dylan Keith|IE3|base": 89,
+    "Mark Krueger|IE3|base": 92,
     "Domon Asuka|IE3|Unicorn": 89,
     "Michele Jacks|IE3|base": 88,
     "Billy Rapid|IE3|base": 86,
@@ -324,12 +536,73 @@
     "Walter Mountain|IE3|base": 92,
     "Formiga Clemens|IE3|base": 92,
     "Drago Hill|IE3|base": 92,
-    "Endou Mamoru|ARES|base": 88
+    "_doc_ij": "Inazuma Japan (IE3): medias por rendimiento de la wiki (stats Lv99 + técnicas) y méritos de la final vs Little Gigant.",
+    "Endou Mamoru|IE3|Inazuma Japan": 94,
+    "Gouenji Shuuya|IE3|Inazuma Japan": 93,
+    "Kiyama Hiroto|IE3|Inazuma Japan": 93,
+    "Kidou Yuuto|IE3|Inazuma Japan": 92,
+    "Utsunomiya Toramaru|IE3|base": 90,
+    "Fubuki Shirou|IE3|Inazuma Japan": 90,
+    "Someoka Ryuugo|IE3|Inazuma Japan": 90,
+    "Tachimukai Yuuki|IE3|Inazuma Japan": 90,
+    "Kabeyama Heigorou|IE3|Inazuma Japan": 89,
+    "Fudou Akio|IE3|Inazuma Japan": 89,
+    "Sakuma Jirou|IE3|Inazuma Japan": 89,
+    "Tobitaka Seiya|IE3|base": 88,
+    "Kazemaru Ichirouta|IE3|Inazuma Japan": 88,
+    "Tsunami Jousuke|IE3|Inazuma Japan": 87,
+    "Hijikata Raiden|IE3|Inazuma Japan": 87,
+    "Kogure Yuuya|IE3|Inazuma Japan": 86,
+    "Kurimatsu Teppei|IE3|Inazuma Japan": 86,
+    "_doc_pool": "Scouts IE3 (sin equipo) notables, cuadrados con el ranking competitivo y el rendimiento (stats Lv99 + técnica).",
+    "Sutefuda|IE3|base": 88,
+    "Karen|IE3|base": 87,
+    "Fudouyama|IE3|base": 86,
+    "Libra|IE3|base": 85,
+    "Sword|IE3|base": 85,
+    "Kazamatsuri|IE3|base": 84,
+    "Seita|IE3|base": 83,
+    "Virgo|IE3|base": 82,
+    "Shippuu|IE3|base": 81,
+    "Kamezaki Kappa|IE3|base": 80,
+    "Tokushu|IE3|base": 80,
+    "Sagittari|IE3|base": 80,
+    "Takami|IE3|base": 81,
+    "Maiko|IE3|base": 82,
+    "Long|IE3|base": 81,
+    "Sniper|IE3|base": 82,
+    "Milano|IE3|base": 82,
+    "Rodeo (scout character)|IE3|base": 83,
+    "_doc_r2": "Segundo Raimon (IE2): méritos del arco Aliea (campeón, final vs Emperadores Oscuros) y rendimiento.",
+    "Endou Mamoru|IE2|Raimon": 88,
+    "Gouenji Shuuya|IE2|Raimon": 89,
+    "Fubuki Shirou|IE2|Raimon": 89,
+    "Kidou Yuuto|IE2|Raimon": 88,
+    "Ichinose Kazuya|IE2|Raimon": 86,
+    "Tachimukai Yuuki|IE2|Raimon": 87,
+    "Tsunami Jousuke|IE2|Raimon": 86,
+    "Kabeyama Heigorou|IE2|Raimon": 85,
+    "Domon Asuka|IE2|Raimon": 85,
+    "Urabe Rica|IE2|Raimon": 84,
+    "Megane Kakeru|IE2|Raimon": 80,
+    "Zaizen Touko|IE2|Raimon": 85,
+    "Kogure Yuuya|IE2|Raimon": 83,
+    "_doc_ares": "Ares: la temporada baja un punto (ovr_shift); Mark no baja y Axel sube al nivel de Jude.",
+    "Endou Mamoru|ARES|base": 88,
+    "Gouenji Shuuya|ARES|base": 83
+  },
+  "card_names": {
+    "_doc": "Nombre de la carta por versión (\"<page>|<game>|<versión>\": nombre), para versiones cuyo nombre de zukan no es el del personaje. Neo Japan: el nombre del juego (Dave Quagmire…); la versión de Aliea/Génesis se queda con el suyo.",
+    "Saginuma Osamu|IE3|Neo Japan": "Dave Quagmire",
+    "Ishidaira Hanzou|IE3|Neo Japan": "Zack Cummings",
+    "Izuno Yuu|IE3|Neo Japan": "Wilbur Watkins",
+    "Segata Ryuuichirou|IE3|Neo Japan": "Zeke Valanche",
+    "Atsuishi Shigeto|IE3|Neo Japan": "Ethan Whitering",
+    "Kiyama Hiroto|IE3|Inazuma Japan": "Xavier Foster"
   },
   "team_es": {
     "_doc": "Nombre en castellano de equipos que no cruzan con la wiki en español (inazuma.fandom.com/es). El resto sale solo.",
     "Chaos": "Caos",
-    "Dark Angel": "Ángel Oscuro",
     "Unaffiliated": "Sin equipo",
     "Sub Character": "Secundarios",
     "Adult": "Adultos",
@@ -408,38 +681,122 @@
     },
     {
       "_doc": "Caos (IE2): fusión de Prominence + Diamond Dust, con su «Chaos form» (stats mejores).",
-      "page": "Nagumo Haruya", "game": "IE2", "team": "Chaos"
+      "page": "Nagumo Haruya",
+      "game": "IE2",
+      "team": "Chaos"
     },
-    { "page": "Suzuno Fuusuke", "game": "IE2", "team": "Chaos" },
-    { "page": "Atsuishi Shigeto", "game": "IE2", "team": "Chaos" },
-    { "page": "Barazono Hana", "game": "IE2", "team": "Chaos" },
-    { "page": "Gokukawa Kantarou", "game": "IE2", "team": "Chaos" },
-    { "page": "Honba Geki", "game": "IE2", "team": "Chaos" },
-    { "page": "Kadomichi Tooru", "game": "IE2", "team": "Chaos" },
-    { "page": "Kurakake Clara", "game": "IE2", "team": "Chaos" },
-    { "page": "Kurione Yuki", "game": "IE2", "team": "Chaos" },
-    { "page": "Netsuha Natsuhiko", "game": "IE2", "team": "Chaos" },
-    { "page": "Ooiwa Kurando", "game": "IE2", "team": "Chaos" },
-    { "_doc": "Se unen al nuevo Raimon (Segundo Raimon): versión Raimon final.", "page": "Zaizen Touko", "game": "IE2", "team": "Raimon" },
-    { "page": "Urabe Rica", "game": "IE2", "team": "Raimon" },
-    { "_doc": "Neo Japan (IE3): titulares prestados (Zeus/Occult/Shuriken/Kirkwood/Farm) sin ficha de IE3 propia.", "page": "Gouin Takeshi", "game": "IE3", "team": "Neo Japan" },
-    { "page": "Kirigakure Saiji", "game": "IE3", "team": "Neo Japan" },
-    { "page": "Yuukoku Hiroyuki", "game": "IE3", "team": "Neo Japan" },
-    { "page": "Mukata Tsutomu", "game": "IE3", "team": "Neo Japan" },
-    { "page": "Makiya Hiroshi", "game": "IE3", "team": "Neo Japan" },
-    { "_doc": "Ángel Oscuro (IE3): fusión de Apostles from the Sky + Devil Army Z (5 ángeles + 6 demonios), capitán Desuta. Misma ficha de zukan, equipo propio." },
-    { "page": "Nenel", "game": "IE3", "team": "Dark Angel" },
-    { "page": "Elfel", "game": "IE3", "team": "Dark Angel" },
-    { "page": "Uinel", "game": "IE3", "team": "Dark Angel" },
-    { "page": "Gyuel", "game": "IE3", "team": "Dark Angel" },
-    { "page": "Sein", "game": "IE3", "team": "Dark Angel" },
-    { "page": "Astaroth", "game": "IE3", "team": "Dark Angel" },
-    { "page": "Beelzebu", "game": "IE3", "team": "Dark Angel" },
-    { "page": "Hebeemoth", "game": "IE3", "team": "Dark Angel" },
-    { "page": "Mephisto", "game": "IE3", "team": "Dark Angel" },
-    { "page": "Satanatos", "game": "IE3", "team": "Dark Angel" },
-    { "page": "Desuta", "game": "IE3", "team": "Dark Angel" },
-    { "_doc": "Segundo Raimon (IE2): titulares de la wiki que no salen por su ficha de zukan. Kazemaru/Kurimatsu/Someoka NO (están en Dark Emperors).", "page": "Nakatani", "game": "IE2", "team": "Raimon" }
+    {
+      "page": "Suzuno Fuusuke",
+      "game": "IE2",
+      "team": "Chaos"
+    },
+    {
+      "page": "Atsuishi Shigeto",
+      "game": "IE2",
+      "team": "Chaos"
+    },
+    {
+      "page": "Barazono Hana",
+      "game": "IE2",
+      "team": "Chaos"
+    },
+    {
+      "page": "Gokukawa Kantarou",
+      "game": "IE2",
+      "team": "Chaos"
+    },
+    {
+      "page": "Honba Geki",
+      "game": "IE2",
+      "team": "Chaos"
+    },
+    {
+      "page": "Kadomichi Tooru",
+      "game": "IE2",
+      "team": "Chaos"
+    },
+    {
+      "page": "Kurakake Clara",
+      "game": "IE2",
+      "team": "Chaos"
+    },
+    {
+      "page": "Kurione Yuki",
+      "game": "IE2",
+      "team": "Chaos"
+    },
+    {
+      "page": "Netsuha Natsuhiko",
+      "game": "IE2",
+      "team": "Chaos"
+    },
+    {
+      "page": "Ooiwa Kurando",
+      "game": "IE2",
+      "team": "Chaos"
+    },
+    {
+      "_doc": "Se unen al nuevo Raimon (Segundo Raimon): versión Raimon final.",
+      "page": "Zaizen Touko",
+      "game": "IE2",
+      "team": "Raimon"
+    },
+    {
+      "page": "Urabe Rica",
+      "game": "IE2",
+      "team": "Raimon"
+    },
+    {
+      "_doc": "Neo Japan (IE3): titulares prestados (Zeus/Occult/Shuriken/Kirkwood/Farm) sin ficha de IE3 propia.",
+      "page": "Gouin Takeshi",
+      "game": "IE3",
+      "team": "Neo Japan"
+    },
+    {
+      "page": "Kirigakure Saiji",
+      "game": "IE3",
+      "team": "Neo Japan"
+    },
+    {
+      "page": "Yuukoku Hiroyuki",
+      "game": "IE3",
+      "team": "Neo Japan"
+    },
+    {
+      "page": "Mukata Tsutomu",
+      "game": "IE3",
+      "team": "Neo Japan"
+    },
+    {
+      "page": "Makiya Hiroshi",
+      "game": "IE3",
+      "team": "Neo Japan"
+    },
+    {
+      "_doc": "Segundo Raimon (IE2): titulares de la wiki que no salen por su ficha de zukan. Kazemaru/Kurimatsu/Someoka NO (están en Dark Emperors).",
+      "page": "Nakatani",
+      "game": "IE2",
+      "team": "Raimon"
+    },
+    {
+      "_doc": "Inazuma Japan (IE3): titulares con ficha de zukan en Inazuma National como 2º equipo (el build solo coge el 1º).",
+      "page": "Kogure Yuuya",
+      "game": "IE3",
+      "team": "Inazuma Japan"
+    },
+    {
+      "page": "Kurimatsu Teppei",
+      "game": "IE3",
+      "team": "Inazuma Japan"
+    },
+    {
+      "_doc": "Segundo Raimon (IE2): Fubuki en su forma fusionada, la de la final vs Emperadores Oscuros.",
+      "page": "Fubuki Shirou",
+      "game": "IE2",
+      "team": "Raimon",
+      "form": "Merged",
+      "image": "https://static.wikia.nocookie.net/inazuma/images/1/17/%28R%29_Shawn_%28HVR-DL%29.png/revision/latest?cb=20251204134523&path-prefix=es"
+    }
   ],
   "zukan_wiki_pages": {
     "_doc": "Nombre de zukan (o '#Nº' si el nombre se repite en zukan) → ficha de la wiki inglesa, para los que no cruzan solos.",
@@ -466,7 +823,12 @@
       "kamimura-kirito--ie2--dark-emperors",
       "tamiyama-you--ie2--dark-emperors",
       "nakama-you--ie2--dark-emperors",
-      "teira-tamotsu--ie2--dark-emperors"
+      "teira-tamotsu--ie2--dark-emperors",
+      "midorikawa-ryuuji--ie3--inazuma-japan",
+      "fubuki-shirou--ie2--raimon-atsuya",
+      "fubuki-shirou--ie2--raimon-shirou",
+      "nakatani--ie2--raimon",
+      "fubuki-shirou--ie2--alpine"
     ]
   },
   "team_tuning": {
@@ -630,109 +992,108 @@
     },
     "IE3": {
       "Inazuma Japan": {
-        "top11": 87.5,
+        "top11": 90.8,
+        "cap": 94,
         "captain": "Endou Mamoru",
-        "note": "protagonista (FFI)"
+        "note": "protagonista (FFI); convocatoria de la final vs Little Gigant, medias por rendimiento (ovr_manual)"
       },
       "Big Waves": {
         "top11": 84.0,
         "cap": 87,
         "captain": "Niese Dolphin",
-        "note": "1"
+        "note": "1 · Asia, cuartos vs Australia (2-1)"
       },
       "Desert Lions": {
         "top11": 84.5,
         "cap": 87,
         "captain": "Bjorn Kyle",
-        "note": "2"
+        "note": "2 · Asia, semifinal vs Catar (3-2)"
       },
       "Neo Japan": {
         "top11": 80.5,
         "captain": "Saginuma Osamu",
-        "note": "3"
+        "note": "amistoso: equipo de Hitomiko/Saginuma para probar a Inazuma Japan"
       },
       "Fire Dragon": {
         "top11": 85.0,
-        "cap": 87,
+        "cap": 90,
         "captain": "Choi Chang-soo",
-        "note": "4"
+        "note": "4 · Asia, final vs Corea (4-3)"
       },
       "Queen's Knights": {
-        "top11": 85.5,
+        "top11": 87.0,
         "captain": "Edgar Valtinas",
-        "note": "5"
+        "note": "5 · FFI grupo A vs Inglaterra (3-2)"
       },
       "Team D": {
-        "top11": 79.5,
+        "top11": 86.0,
         "captain": "Demonio Strada",
-        "note": "6"
+        "note": "6 · Equipo K de Mister K (Italia), extra; al nivel de Knights o un poco más"
       },
       "Rose Griffons": {
         "top11": 82,
-        "note": "Grifos de la Rosa (Francia) - 5º Block B"
+        "captain": "Pierre Godin",
+        "note": "FFI grupo B (Francia, 0-3 vs Os Reis)"
       },
       "Brocken Brigade": {
         "top11": 83,
-        "note": "Brockenborg (Alemania) - 3º Block B"
+        "captain": "Jonas Pollack",
+        "note": "FFI grupo B (Alemania, 1-3 vs Os Reis)"
       },
       "Red Matador": {
         "top11": 84,
-        "note": "Los Rojos (España) - 4º Block B, >= Alemania"
-      },
-      "The Cape Crusaders": {
-        "top11": 81,
-        "note": "Caimanes del Cabo (Sudáfrica) - 6º Block B"
+        "captain": "Querardo Naval",
+        "note": "FFI grupo B (España, 1-2 vs Os Reis y 2-1 vs Francia)"
       },
       "Unicorn": {
-        "top11": 87,
+        "top11": 88,
         "captain": "Mark Krueger",
-        "note": "7"
+        "note": "7 · FFI grupo A vs EE. UU. (4-3)"
       },
       "Orpheus": {
         "top11": 87,
         "captain": "Fidio Aldena",
-        "note": "8"
+        "note": "8 · FFI grupo A vs Italia (3-3): Nakata ex-capitán, Fidio actual"
       },
       "The Empire": {
         "top11": 86.5,
         "captain": "Teles Torrue",
-        "note": "9"
+        "note": "9 · FFI grupo A vs Argentina (1-2, única derrota)"
       },
       "The Kingdom": {
         "top11": 89,
         "captain": "Mack Ronijo",
-        "note": "10 - Brasil, ganó todas las previas"
+        "note": "10 · FFI grupo B (Brasil, ganó todas las previas) y semifinal (2-3)"
       },
       "Team Zoolan": {
         "top11": 81.0,
-        "compress": 0.5,
         "captain": "Lubbock Henktacker",
-        "note": "11"
+        "note": "11 · Equipo Garshield (extra)"
       },
       "Little Gigantes": {
         "top11": 89.5,
         "captain": "Rococo Ulpa",
-        "note": "12 - Cotarl, finalista"
+        "note": "12 · Cotarl, final (3-2)"
+      },
+      "The Cape Crusaders": {
+        "top11": 73.5,
+        "captain": "Jake Fana",
+        "note": "The Great Horn (Sudáfrica), repesca africana; ruta taisen (extra)"
       },
       "Apostles from the Sky": {
-        "top11": 85.0,
+        "top11": 80.5,
         "captain": "Sein",
-        "note": "post-FFI, isla Liocott (nivel 99)"
+        "note": "Tenkuu no Shito, torneos de rango (extra)"
       },
       "Devil Army Z": {
-        "top11": 85.0,
+        "top11": 79.9,
         "captain": "Desuta",
-        "note": "post-FFI, isla Liocott (nivel 99)"
-      },
-      "Dark Angel": {
-        "top11": 89.5,
-        "captain": "Desuta",
-        "note": "fusión de Sky Team + Dark Team (Liocott); un pelín por debajo del Equipo Ogro"
+        "note": "Makai Gundan Z, post-game (extra)"
       },
       "Team Ogre": {
-        "top11": 92,
+        "top11": 89.5,
         "captain": "Baddap Sleed",
-        "note": "película Team Ogre (nivel 99, Rank 16)"
+        "note": "Ogre, película / versión Team Ogre (extra); al nivel de Little Gigantes"
       }
     },
     "GO1": {
@@ -940,11 +1301,14 @@
       }
     },
     "_game": {
-      "_doc": "Por juego: cap = techo de las subidas; compress = comprime la dispersión del equipo hacia su media (IE1 0,5: los cracks sueltos de equipos flojos bajan bastante); compress_above/compress_factor = por encima de ese valor la nota se comprime (GO1: 92 → 88,5) para una escala de poder tipo IE1. captain_plus / captain_raise: cuánto destaca el capitán sobre el once (por defecto 4) y cuánto puede subir (6). stars: nota mínima por ficha de la wiki; hero_floor: nota mínima de los que tienen versión héroe/basara en VR. Se aplican después de la curva.",
+      "_doc": "Por juego: cap = techo de las subidas; compress = comprime la dispersión del equipo hacia su media (IE1 0,5: los cracks sueltos de equipos flojos bajan bastante); compress_above/compress_factor = por encima de ese valor la nota se comprime (GO1: 92 → 88,5) para una escala de poder tipo IE1. captain_plus / captain_raise: cuánto destaca el capitán sobre el once (por defecto 4) y cuánto puede subir (6). stars: nota mínima por ficha de la wiki; hero_floor: nota mínima de los que tienen versión héroe/basara en VR. ovr_shift: desplaza la nota de todo el juego después de la curva y antes de ovr_manual (Ares: -1). Se aplican después de la curva.",
       "IE1": {
         "compress": 0.5
       },
       "IE2": {
+        "compress": 0.5
+      },
+      "IE3": {
         "compress": 0.5
       },
       "GO1": {
@@ -959,10 +1323,13 @@
         "cap": 90
       },
       "ARES": {
-        "cap": 88
+        "cap": 88,
+        "compress": 0.5,
+        "ovr_shift": -1
       },
       "ORION": {
-        "cap": 91
+        "cap": 91,
+        "compress": 0.5
       },
       "VR": {
         "cap": 88,
@@ -997,34 +1364,29 @@
         "note": "4 · ep. 9–10, final regional"
       },
       "Polestar Academy": {
-        "top11": 81.5,
+        "top11": 80.5,
         "captain": "Mizukamiya Seiryuu",
         "note": "5 · ep. 11–13, nacional"
       },
       "Zeus": {
-        "top11": 78.3,
+        "top11": 81.5,
         "captain": "Afuro Terumi",
         "note": "6 · ep. 14–15, nacional"
       },
       "Alpine": {
-        "top11": 80.5,
+        "top11": 82.5,
         "captain": "Fubuki Shirou",
         "note": "7 · ep. 16–17, nacional"
       },
       "Alia Academy": {
-        "top11": 84.5,
+        "top11": 83.5,
         "captain": "Kiyama Hiroto",
         "note": "8 · ep. 18–20, nacional"
       },
-      "Raimon": {
-        "top11": 83.5,
-        "note": "protagonista (Inakuni Raimon)"
-      },
       "Everytown": {
-        "top11": 79.0,
+        "top11": 81.9,
         "captain": "Endou Mamoru",
-        "compress": 0.15,
-        "note": "9 · ep. 21–23, semifinal; Mark 88 y el resto en el tier Royal-Zeus (sin Mark 78,9)"
+        "note": "9 · ep. 21–23, semifinal · bajado al nivel de Alpino"
       },
       "Lunar Prime Academy": {
         "top11": 86.0,
@@ -1036,6 +1398,16 @@
         "captain": "Clario Orvan",
         "note": "11 · amistoso internacional, por encima de Plenilunio",
         "captain_cap": 89
+      },
+      "Raimon": {
+        "top11": 85.5,
+        "captain": "Inamori Asuto",
+        "captain_cap": 88,
+        "note": "protagonista (Ares, Inakuni Raimon)"
+      },
+      "Green Hill": {
+        "top11": 77.0,
+        "note": "equipo mencionado · al nivel de Bastión"
       }
     },
     "ORION": {
@@ -1203,5 +1575,18 @@
         "note": "20 · nv 99 · crónica"
       }
     }
+  },
+  "tech_remove": {
+    "_doc": "Técnicas a quitar por carta (id de carta → ids de técnica).",
+    "kozoumaru-sasuke--ares--base": [
+      "CounterdriveGK"
+    ],
+    "inamori-asuto--ares--base": [
+      "CounterdriveGK"
+    ],
+    "umihara-norika--ares--base": [
+      "es_parada-remolino",
+      "es_velo-de-sirena"
+    ]
   }
 }

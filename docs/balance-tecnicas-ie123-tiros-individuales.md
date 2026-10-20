@@ -1,6 +1,6 @@
 # Tiros individuales (IE123) — propuesta B en múltiplos de 10
 
-> **Estado:** propuesta, sin cambios aplicados (2026-10-19).
+> **Estado:** aplicada (2026-10-20): TP en `data/technique_balance.json` y `supabase/technique_balance.sql`.
 > **Base:** 85 tiros individuales con `users = 1` en la wiki y TP de IE3.
 > **Marco general:** [balance-tecnicas-ie123.md](./balance-tecnicas-ie123.md)
 > **Dobles:** [balance-tecnicas-ie123-tiros-dobles.md](./balance-tecnicas-ie123-tiros-dobles.md)
@@ -151,5 +151,5 @@ Se usan los **12 niveles de 50 a 160**, sin huecos. Es el grupo más numeroso (8
 - Validar la ponderación y los casos concretos (Tornado de fuego en 70, Ventisca eterna en 90, Remate dragón en 70).
 - Revisar los jugadores de las cuatro técnicas que faltaban en el build.
 - Después: [regates](./balance-tecnicas-ie123-regates.md) (hecho), bloqueos y paradas.
-- **No se ha tocado ninguna técnica ni dato del juego.**
+- **Aplicado el 2026-10-20:** TP nuevo en `data/technique_balance.json` y `supabase/technique_balance.sql` (se carga con `db-load`, opción `balance_only`).
 

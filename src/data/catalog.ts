@@ -47,6 +47,9 @@ interface CardRow {
   duel_att?: number | null
   duel_con?: number | null
   duel_def?: number | null
+  stats40?: number[] | null
+  growth?: number | null
+  freedom?: number | null
   card_techniques: { slot: number; technique_id: string }[]
 }
 
@@ -126,12 +129,26 @@ const get = async <T>(path: string) => (await rest<T>(path)).data
 // solo lo que usa la app: las descripciones se piden al abrir la ficha (loadDescription)
 const CARD_COLUMNS = 'id,character_id,name,game,version,team,position,element,ovr,category,tier,'
   + 'shooting,control,physical,speed,defense,goalkeeping,image_url,is_version,zukan_no,no,specials,extra_teams,'
+  + 'stats40,growth,freedom,duel_att,duel_con,duel_def,card_techniques(slot,technique_id)'
+/** Si la base aún no tiene las columnas nuevas, se piden sin ellas (la ficha enseña las 6 stats de siempre) */
+const CARD_COLUMNS_OLD = 'id,character_id,name,game,version,team,position,element,ovr,category,tier,'
+  + 'shooting,control,physical,speed,defense,goalkeeping,image_url,is_version,zukan_no,no,specials,extra_teams,'
   + 'duel_att,duel_con,duel_def,card_techniques(slot,technique_id)'
 const TECHNIQUE_COLUMNS = 'id,name,name_es,name_fr,name_it,type,element,cost,cost_game,description,image_url,traits'
 /** TP balanceado y su potencia (si la base aún no tiene esas columnas, se piden sin ellas) */
 const BALANCE_COLUMNS = 'balance_tp,balance_power_min,balance_power_max'
-const cardsPage = (offset: number, headers?: Record<string, string>) =>
-  rest<CardRow[]>(`cards?select=${CARD_COLUMNS}&order=id&limit=${PAGE}&offset=${offset}`, headers)
+let cardColumns = CARD_COLUMNS
+const cardsPage = async (offset: number, headers?: Record<string, string>) => {
+  try {
+    return await rest<CardRow[]>(`cards?select=${cardColumns}&order=id&limit=${PAGE}&offset=${offset}`, headers)
+  } catch (e) {
+    if (cardColumns !== CARD_COLUMNS_OLD) {
+      cardColumns = CARD_COLUMNS_OLD
+      return cardsPage(offset, headers)
+    }
+    throw e
+  }
+}
 
 /** Cartas en páginas de PAGE pedidas a la vez (la primera dice cuántas hay) */
 async function loadCards(): Promise<CardRow[]> {
@@ -228,7 +245,8 @@ export function rebuildCatalog() {
       id: r.id,
       characterId: r.character_id,
       name: r.name,
-      nickname: (nicknames as Record<string, string>)[r.character_id] ?? null,
+      nickname: ((nicknames as Record<string, string>)[`${r.character_id}|${r.game}|${r.version}`]
+        ?? (nicknames as Record<string, string>)[r.character_id]) ?? null,
       game: r.game,
       team: r.team ?? 'Unaffiliated',
       version: r.version,
@@ -249,6 +267,9 @@ export function rebuildCatalog() {
       no: r.no ?? r.zukan_no,
       specials: r.specials ?? [],
       extraTeams: r.extra_teams ?? [],
+      stats40: r.stats40 ?? undefined,
+      growth: r.growth ?? undefined,
+      freedom: r.freedom ?? undefined,
       duel,
     }
   })

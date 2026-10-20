@@ -1,6 +1,6 @@
 # Tiros de 2 jugadores (IE123) — propuesta B en múltiplos de 10
 
-> **Estado:** propuesta, sin cambios aplicados (2026-10-19).
+> **Estado:** aplicada (2026-10-20): TP en `data/technique_balance.json` y `supabase/technique_balance.sql`.
 > **Base:** 30 tiros con `users = 2` en la wiki y TP de IE3.
 > **Marco general:** [balance-tecnicas-ie123.md](./balance-tecnicas-ie123.md)
 > **Baseline B pura:** [balance-tecnicas-ie123-tiros.md](./balance-tecnicas-ie123-tiros.md)
@@ -140,5 +140,5 @@ Tabla de todas las dobles, con quién la hace y qué pesa en la decisión: lore,
 - Validar el suelo de **60** para dobles (ya llega al nivel bajo de VR) y decidir si el mejor individual baja a 170 para que el 180 del mejor doble quede por encima.
 - Revisar el empate Cross Fire / The Dawn en 170 y el grupo de 160 (Fire Blizzard, Shadow Ray).
 - Después: individuales.
-- **No se ha tocado ninguna técnica ni dato del juego.**
+- **Aplicado el 2026-10-20:** TP nuevo en `data/technique_balance.json` y `supabase/technique_balance.sql` (se carga con `db-load`, opción `balance_only`).
 

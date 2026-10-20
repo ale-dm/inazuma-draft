@@ -1,6 +1,6 @@
 # Regates (IE123) — propuesta B en múltiplos de 10 (50–150)
 
-> **Estado:** propuesta, sin cambios aplicados (2026-10-19).
+> **Estado:** aplicada (2026-10-20): TP en `data/technique_balance.json` y `supabase/technique_balance.sql`.
 > **Base:** 65 regates con TP de IE3: 54 individuales, 9 de dos jugadores y 2 de tres.
 > **Marco general:** [balance-tecnicas-ie123.md](./balance-tecnicas-ie123.md)
 > **Tiros:** [individuales](./balance-tecnicas-ie123-tiros-individuales.md) · [dobles](./balance-tecnicas-ie123-tiros-dobles.md) · [triples](./balance-tecnicas-ie123-tiros-triples.md)
@@ -149,5 +149,5 @@ Ninguna combinada pasa de **130** y los dos triples se quedan en **110–120**, 
 
 - Validar el techo 150 y que Hora celestial sea el top 1.
 - Después: bloqueos y defensa con techo 150; portería con techo 180.
-- **No se ha tocado ninguna técnica ni dato del juego.**
+- **Aplicado el 2026-10-20:** TP nuevo en `data/technique_balance.json` y `supabase/technique_balance.sql` (se carga con `db-load`, opción `balance_only`).
 

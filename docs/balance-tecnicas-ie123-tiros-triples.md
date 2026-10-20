@@ -1,6 +1,6 @@
 # Tiros de 3 jugadores (IE123) — propuesta B en múltiplos de 10
 
-> **Estado:** propuesta, sin cambios aplicados (2026-10-19).
+> **Estado:** aplicada (2026-10-20): TP en `data/technique_balance.json` y `supabase/technique_balance.sql`.
 > **Base:** 25 tiros con `users = 3` en la wiki y TP de IE3, incluido **Jet Stream**.
 > **Marco general:** [balance-tecnicas-ie123.md](./balance-tecnicas-ie123.md)
 > **Baseline B pura:** [balance-tecnicas-ie123-tiros.md](./balance-tecnicas-ie123-tiros.md)
@@ -206,5 +206,5 @@ La escalera de la sección 4 ya incluye Jet Stream (25 técnicas): Jet Stream 20
 - Validar la relajación de la jerarquía: individuales y dobles pueden cruzarse; los triples no están obligados a quedar por encima.
 - Revisar el orden interno de los 180 (Big Bang / Chaos Break / Doom Break) y de los 150 (Dark Phoenix / The Galaxy / Neo Galaxy).
 - Después: bloqueos y paradas.
-- **No se ha tocado ninguna técnica ni dato del juego.**
+- **Aplicado el 2026-10-20:** TP nuevo en `data/technique_balance.json` y `supabase/technique_balance.sql` (se carga con `db-load`, opción `balance_only`).
 

@@ -156,24 +156,8 @@
   "name": "Shawn Froste",
   "game": "IE2",
   "version": "base",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/i/g/iggcoacccik.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/7/73/%28A%29_Shawn_%28HVR-DF%29.png/revision/latest?cb=20260203000229&path-prefix=es"
- },
- {
-  "id": "fubuki-shirou--ie2--raimon-shirou",
-  "name": "Shawn Froste",
-  "game": "IE2",
-  "version": "Raimon (Shirou)",
   "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/o/p/opancch54ie.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/a/ad/%28R%29_Shawn_%28HVR-DF%29.png/revision/latest?cb=20260502205338&path-prefix=es"
- },
- {
-  "id": "fubuki-shirou--ie2--raimon-atsuya",
-  "name": "Shawn Froste",
-  "game": "IE2",
-  "version": "Raimon (Atsuya)",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/i/3/i30spf7yhce.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/a/ad/%28R%29_Shawn_%28HVR-DF%29.png/revision/latest?cb=20260502205338&path-prefix=es"
+  "sprite": "https://static.wikia.nocookie.net/inazuma/images/7/73/%28A%29_Shawn_%28HVR-DF%29.png/revision/latest?cb=20260203000229&path-prefix=es"
  },
  {
   "id": "fubuki-shirou--ie3--inazuma-japan",

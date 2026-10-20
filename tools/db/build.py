@@ -32,6 +32,7 @@ from common import (AGE_VERSION, ALT_VERSION, BAND, CACHE, CAP, CAP_C, CEIL, COS
                     norm_jp, romaji, slug, tnorm)
 from es_text import es_description
 from tuning import apply_tuning
+from stats_mod import apply_stats_mod
 from i18n import localize
 from logos import assign_logos
 from output import write_outputs
@@ -596,9 +597,18 @@ def main(extra_z=None, write=True):
     for p in featured:
         if p not in chars:
             report.append(f'Destacado sin carta: {p}')
-    pos_override = {(o['page'], o['game']): o['position'] for o in ov['position_by_version']}
+    pos_override = {(o['page'], o['game']): o['position'] for o in ov['position_by_version'] if not o.get('version')}
+    pos_ver = {(o['page'], o['game'], o.get('version')): o['position'] for o in ov['position_by_version'] if o.get('version')}
     manual = {k: v for k, v in ov.get('ovr_manual', {}).items() if not k.startswith('_')}
     extra_ver = [x for x in ov.get('extra_versions', []) if 'page' in x]
+
+    # técnicas extra de la wiki que no están en la base (manga/videojuego/combinadas de Ares/Orion)
+    for tid, t in {k: v for k, v in ov.get('extra_techniques', {}).items() if not k.startswith('_')}.items():
+        t = dict(t)
+        if tid in techniques:
+            techniques[tid].update(t)
+        else:
+            techniques[tid] = {'id': tid, **t}
 
     # --- generación de cartas
     cards = []
@@ -725,7 +735,10 @@ def main(extra_z=None, write=True):
         # a mano: overrides.extra_versions (Nakata en Orfeo: sin ficha de zukan, hueco Nº 1922)
         for x in extra_ver:
             if x['page'] == pg and x['game'] in stats_by_game:
-                versions.append((x['game'], x['team'], x['team'], {'force': True}, None))
+                hint = {'force': True}
+                if x.get('form'):
+                    hint['want'] = x['form']          # forma concreta (Fubuki: Merged / Atsuya / Shirou)
+                versions.append((x['game'], x['team'], x['team'], hint, None))
 
         seen = set()
         for g, ver, tm, hint, entry in versions:
@@ -759,7 +772,7 @@ def main(extra_z=None, write=True):
             if not entry and subm:
                 entry = form_entry(pg, g, subm.group(1).lower())
             base_body = entry or base_entry(pg, g)
-            position = pos_override.get((pg, g)) or (lua_field(base_body, 'position') if base_body else None) \
+            position = pos_ver.get((pg, g, ver)) or pos_override.get((pg, g)) or (lua_field(base_body, 'position') if base_body else None) \
                 or (zs[0]['position'] if zs else 'MF')
             if position not in POSW:
                 position = 'MF'
@@ -908,6 +921,13 @@ def main(extra_z=None, write=True):
         c['category'] = category(c['ovr'])
         ver = c['version'] if c['version'] != 'base' else 'base'
         c['id'] = f"{c['character_id']}--{c['game'].lower()}--{slug(ver)}"
+
+    # a mano: overrides.card_names (nombre de la carta por versión, p. ej. Neo Japan: Dave Quagmire)
+    card_names = {k: v for k, v in ov.get('card_names', {}).items() if not k.startswith('_')}
+    for c in cards:
+        nm = card_names.get(f"{c['page']}|{c['game']}|{c['version']}")
+        if nm:
+            c['name'] = nm
 
     apply_tuning(cards, set(MAIN), ov, report)
 
@@ -1339,6 +1359,21 @@ def main(extra_z=None, write=True):
             report.append(f"Equipo con un solo jugador, fuera: {c['team']} ({c['game']}) → {c['name']} sin equipo")
             c['team'] = 'Unaffiliated'
     cards += a_cards
+    # técnicas extra por carta (overrides.extra_moves)
+    byid_card = {c['id']: c for c in cards}
+    for cid, tids in {k: v for k, v in ov.get('extra_moves', {}).items() if not k.startswith('_')}.items():
+        c = byid_card.get(cid)
+        if not c:
+            report.append(f'extra_moves: carta {cid} no encontrada')
+            continue
+        for tid in tids:
+            t = techniques.get(tid)
+            if t and all(x['id'] != tid for x in c['moves']):
+                c['moves'].append(t)
+    for tid, name in {k: v for k, v in ov.get('technique_names', {}).items() if not k.startswith('_')}.items():
+        if tid in techniques:
+            techniques[tid]['name_es'] = name
+    apply_stats_mod(cards, ov, report)                       # stats de IE1-3 desde el balance del mod de Victory Road
     known = {t['name'] for t in teams}
     for tm in sorted({c['team'] for c in a_cards} - known):
         teams.append({'name': tm, 'name_es': manual_es.get(tm) or es_team.get(tnorm(tm))})
@@ -1355,7 +1390,7 @@ def main(extra_z=None, write=True):
     assign_logos(teams, report)                              # escudo de cada equipo (logos.py)
     tech_traits(techniques, report)                          # tiro largo / bloqueo de tiros (WazaData: chr)
     if write:
-        write_outputs(cards, chars_out, techniques, teams, staff, zukan_rows, report)
+        write_outputs(cards, chars_out, techniques, teams, staff, zukan_rows, report, dropped=drop)
     return uncovered
 
 

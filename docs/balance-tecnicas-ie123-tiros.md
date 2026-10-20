@@ -1,6 +1,6 @@
 # Tiros IE123 — revisión de balance
 
-> **Estado:** propuesta, sin cambios aplicados (2026-10-19).
+> **Estado:** referencia (B pura); los valores aplicados son los de los docs de [individuales](./balance-tecnicas-ie123-tiros-individuales.md), [dobles](./balance-tecnicas-ie123-tiros-dobles.md) y [triples](./balance-tecnicas-ie123-tiros-triples.md) (2026-10-20).
 > **Base:** 137 tiros con TP de IE3. Jugadores según `users` de la wiki.
 > **Documento general:** [balance-tecnicas-ie123.md](./balance-tecnicas-ie123.md)
 > **Propuesta final:** B en múltiplos de 10, empezando por [los triples](./balance-tecnicas-ie123-tiros-triples.md). Este documento es la **B pura** de referencia para las 137 técnicas.

@@ -1,6 +1,6 @@
 # Bloqueos (IE123) — propuesta B en múltiplos de 10 (50–150)
 
-> **Estado:** propuesta, sin cambios aplicados (2026-10-20).
+> **Estado:** aplicada (2026-10-20): TP en `data/technique_balance.json` y `supabase/technique_balance.sql`.
 > **Base:** 71 bloqueos con TP de IE3: 55 individuales, 9 de dos jugadores y 7 de tres.
 > **Marco general:** [balance-tecnicas-ie123.md](./balance-tecnicas-ie123.md)
 > **Regates:** [balance-tecnicas-ie123-regates.md](./balance-tecnicas-ie123-regates.md)
@@ -154,5 +154,5 @@ Ninguna combinada pasa de **120**; los mejores individuales están en 130–150.
 
 - Validar el top 1 (La montaña vs Gran seísmo) y el castigo a combinadas (-12 dobles / -20 triples).
 - Después: paradas con techo 180 (máximo IE3 60 y balance VR 180).
-- **No se ha tocado ninguna técnica ni dato del juego.**
+- **Aplicado el 2026-10-20:** TP nuevo en `data/technique_balance.json` y `supabase/technique_balance.sql` (se carga con `db-load`, opción `balance_only`).
 

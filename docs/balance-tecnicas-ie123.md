@@ -1,6 +1,6 @@
 # Balance de técnicas de la saga original (IE1 · IE2 · IE3)
 
-> **Estado:** análisis, sin cambios aplicados (2026-10-20).
+> **Estado:** aplicado (2026-10-20): TP en `data/technique_balance.json` y `supabase/technique_balance.sql`.
 > **Objetivo:** separar el balance de IE123 del de Victory Road, con una escala propia de **50–200** basada en el TP de IE3.
 > **Detalle de tiros:** [balance-tecnicas-ie123-tiros.md](./balance-tecnicas-ie123-tiros.md)
 > **Detalle de regates:** [balance-tecnicas-ie123-regates.md](./balance-tecnicas-ie123-regates.md)
@@ -145,16 +145,16 @@ En **portería** casi no cambia nada porque casi todas las paradas son de 1 juga
 
 La columna «B pura» es la línea recta. En tiros se queda la propuesta cerrada (techo 200). En regates y bloqueos el techo es **150**; en portería, **180**. No hay bandas por número de jugadores: las combinadas no son las más fuertes.
 
-## 6. Siguiente paso
+## 6. Aplicación
 
-- **Tiros individuales**: [85 propuesta](./balance-tecnicas-ie123-tiros-individuales.md) en 50–160 (hecho).
-- **Tiros de dos jugadores**: [30 propuesta](./balance-tecnicas-ie123-tiros-dobles.md) en 60–180 (pendiente de validar el orden).
-- **Tiros de tres jugadores**: [25 propuesta final](./balance-tecnicas-ie123-tiros-triples.md) en 80–200, con Jet Stream (hecho).
-- **Regates**: [65 propuesta](./balance-tecnicas-ie123-regates.md) en 50–150 (54 individuales, 9 dobles y 2 triples; incluye Air Ride y Angel Ball; Hora celestial top 1; hecho).
-- **Bloqueos**: [71 propuesta](./balance-tecnicas-ie123-bloqueos.md) en 50–150 (La montaña y Muro de hierro top 1; mejor doble Presa 120 y mejor triple Escudo corporal 120; hecho).
-- **Paradas**: [70 propuesta](./balance-tecnicas-ie123-paradas.md) en 50–180 (Mano espiritual top 1; mejor combinada Voltaje dual 150; hecho).
-- Validar la relajación de la jerarquía: individuales y dobles pueden cruzarse; los triples no están obligados a quedar por encima.
-- El documento de [tiros](./balance-tecnicas-ie123-tiros.md) sigue siendo la B pura de referencia para las 137 del build; los docs de individuales/dobles/triples cubren las 140 de la wiki.
-- Con esto quedan revisados tiros, regates, bloqueos y paradas. Siguiente: aplicar los valores a `data/technique_balance.json` / Supabase.
-- **No se ha tocado ninguna técnica, ni `data/technique_balance.json`, ni Supabase.**
+- **Tiros individuales**: [85 propuesta](./balance-tecnicas-ie123-tiros-individuales.md) en 50–160 (aplicada).
+- **Tiros de dos jugadores**: [30 propuesta](./balance-tecnicas-ie123-tiros-dobles.md) en 60–180 (aplicada).
+- **Tiros de tres jugadores**: [25 propuesta final](./balance-tecnicas-ie123-tiros-triples.md) en 80–200 (aplicada).
+- **Regates**: [65 propuesta](./balance-tecnicas-ie123-regates.md) en 50–150 (aplicada).
+- **Bloqueos**: [71 propuesta](./balance-tecnicas-ie123-bloqueos.md) en 50–150 (aplicada).
+- **Paradas**: [70 propuesta](./balance-tecnicas-ie123-paradas.md) en 50–180 (aplicada).
+- **Resultado**: **371 ids** en `data/technique_balance.json` (345 de las 346 filas de la wiki, más las variantes y duplicados de la base: `_K`, `_Fire/_Wind`, `God Hand Blue`, `vr_*`). Cambian de TP **289** y **17 ids** no estaban antes en el JSON (los añadidos a mano en Supabase). Las potencias salen de la escala TP → potencia del propio JSON.
+- **Sin id**: **Bola de tierra** (tiro individual de IE1, TP 22 → 60) no existe ni en la base ni en el build; no se puede aplicar hasta darla de alta.
+- **Ojo**: `tools/db/balance_xlsx.py` regenera `data/technique_balance.json` desde la hoja y pisaría estos valores. Si se vuelve a usar la hoja, hay que meter antes la escala de IE123.
+- La carga en Supabase se hace con el workflow `db-load` (`balance_only`), que aplica `supabase/technique_balance.sql`.
 

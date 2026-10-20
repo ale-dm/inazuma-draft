@@ -1,6 +1,6 @@
 # Paradas (IE123) — propuesta B en múltiplos de 10 (50–180)
 
-> **Estado:** propuesta, sin cambios aplicados (2026-10-20).
+> **Estado:** aplicada (2026-10-20): TP en `data/technique_balance.json` y `supabase/technique_balance.sql`.
 > **Base:** 70 paradas únicas con TP de IE3: 65 individuales, 1 de dos jugadores y 4 de tres.
 > **Marco general:** [balance-tecnicas-ie123.md](./balance-tecnicas-ie123.md)
 > **Bloqueos:** [balance-tecnicas-ie123-bloqueos.md](./balance-tecnicas-ie123-bloqueos.md)
@@ -158,5 +158,5 @@ Ninguna combinada pasa de **150**; los mejores individuales están en 160–180.
 
 - Validar el top 1 (Mano espiritual vs Parada celestial) y los casos de Mano mágica / God Hand.
 - Con esto quedan revisados tiros, regates, bloqueos y paradas. El siguiente paso sería aplicar los valores a `data/technique_balance.json` / Supabase.
-- **No se ha tocado ninguna técnica ni dato del juego.**
+- **Aplicado el 2026-10-20:** TP nuevo en `data/technique_balance.json` y `supabase/technique_balance.sql` (se carga con `db-load`, opción `balance_only`).
 
