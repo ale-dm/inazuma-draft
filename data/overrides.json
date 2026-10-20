@@ -963,7 +963,8 @@
         "ovr_shift": -1
       },
       "ORION": {
-        "cap": 91
+        "cap": 91,
+        "compress": 0.5
       },
       "VR": {
         "cap": 88,

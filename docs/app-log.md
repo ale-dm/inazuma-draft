@@ -429,6 +429,14 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - Cobertura: **2.320 de 2.335** cartas de IE1-3 (las 15 sin fila en el mod se quedan como estaban). Detalle en [balance-stats.md](balance-stats.md).
 - Regenerar: `python tools/db/import_stats_mod.py <EditorMods>` + `python tools/db/build.py`.
 
+## Orion: temporada cuadrada
+
+- **Rampa**: Bisonte Rojo 76,3 → Demonios Brillantes 76,6 → Bailarines Eternos 77,9 → Fénix Árabe 78,1 → Tropa Acrobática 79,5 → Gigantes Invencibles 80,9 → Star Unicorn 81,1 → Navy Invader 82,1 → Olé de Samba 83,1 → Guardianes de la Reina 84,6 → Chispas Perfectas 86,1 → Eclipse de Orión 87,0.
+- **Compresión**: `_game.ORION.compress = 0,5`. Sin ella los cracks de equipos flojos se disparaban (Bailarines 78,3 con Samba Sokolov 91; Navy 82,8 con Yoga 90).
+- **Inazuma Japón**: 89,7 y capitán Jude Sharp 92; no se toca (protagonista, por debajo del de IE3 90,8).
+- **Cobertura**: 207 cartas y 15 equipos; Secundarios (66,5) y Raimon (45,4) no son rivales de la historia.
+- Cargado en Supabase con `db-load`.
+
 ## Técnicas con la placa del juego
 
 - La ficha pinta cada técnica como el editor: placa `plate_fsp_<el>` (elemento), icono de categoría, nombre, marcas de tiro lejano/bloqueo y TP.

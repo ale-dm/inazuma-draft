@@ -1,6 +1,6 @@
 # Plan: balance de rivales por temporadas (historia)
 
-> Estado: **IE1, IE2, IE3 y Ares hechos**; GO1, GO2, GO3 y Orion **pendientes**.
+> Estado: **IE1, IE2, IE3, Ares y Orion hechos**; GO1, GO2 y GO3 **pendientes**.
 > Objetivo: que la curva de nota de los rivales de la historia (una temporada = un juego) sea coherente y siga el
 > orden de los partidos, con las reglas de abajo.
 > Complementa [`plan-base-jugadores.md`](./plan-base-jugadores.md) §3 (OVR) y §9 (`team_tuning`).
@@ -202,6 +202,31 @@ más abajo); el capitán de Barcelona Orb puede llegar a 89.
 - **Green Hill** (Colina Verde) es el equipo que solo se menciona y no llega a jugar, pero se deja a la altura de Bastión. **Secundarios** (77,8) son los clásicos que se van del Raimon, no un rival de la historia.
 - **Cobertura**: 199 cartas y 14 equipos; los 198 jugadores de zukan de Ares tienen carta (la 199 es la segunda ficha de Hunter Foster). Sin avisos nuevos en `build/report.txt`.
 
+### Orion — hecho
+
+IE3 en la segunda línea temporal. Rampa de 76,3 a 87,0 con `_game.ORION.compress = 0,5` y cap 91; el
+Inazuma Japón (protagonista) se queda como estaba, en 89,7, por debajo del de IE3 (90,8).
+
+| Equipo (ES) | Once | #1 | Estrella / Capitán |
+|---|--:|--:|---|
+| Bisonte Rojo | 76,3 | 81 | Seok Tel-bull |
+| Demonios Brillantes | 76,6 | 82 | Seth Bael |
+| Bailarines Eternos | 77,9 | 85 | Samba Sokolov |
+| Ejército del Fénix Árabe | 78,1 | 84 | Falcon Al-Saqir |
+| Tropa Acrobática del Fútbol | 79,5 | 86 | Jackie Tan |
+| Gigantes Invencibles | 80,9 | 88 | Sergi Hernández |
+| Star Unicorn | 81,1 | 87 | Mark Krueger |
+| Navy Invader | 82,1 | 86 | Yoga |
+| Olé de Samba | 83,1 | 88 | Alegre |
+| Guardianes de la Reina | 84,6 | 90 | Orlando Pacelli |
+| Chispas Perfectas | 86,1 | 91 | Alexander Allegrov |
+| Eclipse de Orión | 87,0 | 91 | Jade Beor |
+
+- **Compresión**: `_game.ORION.compress = 0,5`, como IE3. Sin ella los cracks de equipos flojos se disparaban
+  (Bailarines 78,3 con Samba Sokolov 91; Navy 82,8 con Yoga 90).
+- **Inazuma Japón**: 89,7, capitán Jude Sharp 92; no se toca (protagonista, por debajo del Inazuma Japón de IE3).
+- **Cobertura**: 207 cartas y 15 equipos; Secundarios (66,5) y Raimon (45,4) no son rivales de la historia.
+
 ### Pendientes (objetivos actuales, de `plan-base-jugadores.md` §9)
 
 | Temporada | Estado | Notas |
@@ -212,7 +237,7 @@ más abajo); el capitán de Barcelona Orb puede llegar a 89.
 | GO2 | pendiente | Protocolo Omega 76 → … → Aullido Lunar 87 (techo 90) |
 | GO3 | pendiente | Dragones de Fuego 73 → … → Supernova/Big Bang 84,5 (techo 90) |
 | Ares | **hecho** | rampa 76,0 → 86,1 (Barcelona); Raimon 84,5; Ribera 81,2; Green Hill 76,4; `compress` 0,5 y `ovr_shift` -1; Mark 88 y Axel 83 a mano |
-| Orion | pendiente | Bisonte Rojo 76 → … → Eclipse de Orión 87 (techo 91) |
+| Orion | **hecho** | rampa 76,3 → 87,0 (Eclipse); Inazuma Japón 89,7; `compress` 0,5 |
 
 Cada temporada pendiente: revisar la rampa con la receta §2 (aplicar `compress`, capitán #1 y el criterio "por debajo de
 la siguiente") y anotar aquí el resultado.
@@ -412,3 +437,4 @@ Galaxy/IE3).
   28–65). Con el pool a 46–86 el aviso se movía a Expedición (5,27 / 20,7 %), así que se deja **46–87**. Expedición
   queda en 4,17 victorias / 9,1 % de completar (con el catálogo anterior sin cerrar, 6,42 / 26,8 %).
 - **Ares**: rampa 76,0 → 86,1 con `_game.ARES.compress = 0,5` y `ovr_shift = -1`. **Raimon (Inakuni)** entra en la curva con 84,5 y capitán Sonny Wright (Asuto); **Ribera** baja a 81,2 (Mark Evans se queda en 88) y **Green Hill** sube a 76,4, al nivel de Bastión. **Axel Blaze** sube a 83, por delante de Mukata (81) y de Jude (81). Barcelona Orb 86,1 queda **1,8 por debajo** del Caos de IE2 (87,9).
+- **Orion**: rampa 76,3 → 87,0 con `_game.ORION.compress = 0,5` (antes iba sin comprimir: Bailarines 78,3 con Samba Sokolov 91; Navy 82,8 con Yoga 90). El Inazuma Japón se queda en 89,7 (capitán Jude 92), por debajo del de IE3 (90,8). Techo 91.

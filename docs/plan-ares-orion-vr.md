@@ -59,7 +59,8 @@
   - Fuera las 19 técnicas básicas de Victory Road (potencia base 30, máx. 200: Power Shot, Dust Kick, Heel Flick, Deceptive Step…), las que todos aprenden a nivel 1.
   - La **nota** sigue saliendo de la potencia de sus supertécnicas de Victory Road.
 - Cuerpo técnico de Ares: a la pestaña de staff.
-- **Balance**: rampa 76,0 → 86,1 (Barcelona Orb), Raimon 84,5, Ribera 81,2 y Green Hill 76,4; `compress` 0,5 y `ovr_shift` -1 (Mark Evans 88; Axel Blaze 83); ver [plan-balance-temporadas.md](./plan-balance-temporadas.md) §3.
+- **Balance**: rampa 76,3 → 87,0 (Eclipse de Orión), Inazuma Japón 89,7 y `compress` 0,5; ver
+  [plan-balance-temporadas.md](./plan-balance-temporadas.md) §3.
 - Datos y fórmulas: `docs/victory-road-stats.md`, `data/azalee/`, `data/roadtoultimate/`.
 
 ## Qué hay
