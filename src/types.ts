@@ -77,6 +77,11 @@ export interface Player {
   specials: Special[]
   /** Equipos sin cartas propias en los que también juega (Caos: jugadores de Prominence / Diamond Dust) */
   extraTeams: string[]
+  /** 7 stats del balance del mod a nivel 40: Kick, Control, Technique, Pressure, Physical, Intelligence, Agility */
+  stats40?: number[]
+  /** Crecimiento de la ficha (0 slow, 1 normal, 2 fast) y libertad (no se toca) */
+  growth?: number
+  freedom?: number
   /** Estadísticas de duelo puestas a mano (CRUD); las que falten se calculan (lib/duel.ts) */
   duel?: { att: number | null; con: number | null; def: number | null }
 }

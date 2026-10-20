@@ -176,6 +176,10 @@
       }
     }
   },
+  "stats_mod": {
+    "_doc": "Stats de IE1-3 desde el balance del mod de Victory Road (data/stats_mod.json, generado por tools/db/import_stats_mod.py con los balance_*.json del EditorMods). Se reescalan a la media de cada carta y se convierten a las 6 stats de la app; normalización por puesto y ajuste a OVR.",
+    "enabled": true
+  },
   "scout_pool": {
     "_doc": "Pool sin equipo: OVR por percentiles del propio pool (stats = ovr_raw, técnica = mejor TP del juego `cost`) y tope. IE1 usa el TP de IE1 (no el de IE3) y va 42-75; IE2 46-84; IE3 46-87.",
     "IE1": {

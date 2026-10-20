@@ -79,6 +79,7 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report, dr
             'description': c.get('description'), 'description_es': c.get('description_es'), 'no': c['no'],
             'specials': c.get('specials') or [], 'extra_teams': c.get('extra_teams') or [],
             'raw_stats': {'form': c['form_label'], **dict(zip(c['raw_keys'], c['raw']))},
+            'stats40': c.get('stats40'), 'growth': c.get('growth'), 'freedom': c.get('freedom'),
             'techniques': [t['id'] for t in c['moves']],
             'duel_att': c.get('duel_att'), 'duel_con': c.get('duel_con'), 'duel_def': c.get('duel_def'),
         })
@@ -100,6 +101,7 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report, dr
     card_cols = ['id', 'character_id', 'name', 'game', 'saga', 'version', 'team', 'position', 'element', 'ovr', 'category',
                  'tier', 'source', 'shooting', 'control', 'physical', 'speed', 'defense', 'goalkeeping', 'image_url',
                  'zukan_id', 'zukan_no', 'no', 'description', 'description_es', 'specials', 'extra_teams', 'raw_stats', 'is_version',
+                 'stats40', 'growth', 'freedom',
                  'duel_att', 'duel_con', 'duel_def']
     links = [{'card_id': c['id'], 'technique_id': t, 'slot': i + 1}
              for c in public for i, t in enumerate(dict.fromkeys(c['techniques']))]

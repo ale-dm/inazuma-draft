@@ -419,3 +419,12 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - **Cobertura**: 199 cartas y 14 equipos; los 198 jugadores de zukan de Ares tienen carta. Green Hill (71,9) es el equipo mencionado que no juega y se queda fuera de la rampa.
 - **Posición**: 1,8 por debajo de IE2 (Caos 87,9) y muy por encima de IE1 (Zeus 79,8); es el sustituto de IE2 en su línea temporal.
 - Cargado en Supabase con `db-load` tras el rebuild de `seed.sql`.
+
+## Stats de las cartas: balance del mod a nivel 40
+
+- **IE1-3** usan las stats del mod de Victory Road (`EditorMods/balance_last.json`), no las que calculaba el build: `data/stats_mod.json` cruza **2.302 cartas** por código de modelo (`crc32` → `chara`) e incluye las copias de versión (Axel IE2/IE3, Mark IE2/IE3…).
+- `build.py` las reescala a la media de la carta, las pasa a **nivel 40** con la curva de Character Reforged y guarda `stats40` (7 stats), `growth` y `freedom`.
+- Las **6 stats del motor** (`shooting`…`goalkeeping`) se derivan de las 7 con las fórmulas de duelo y se normalizan por puesto a 25-99, manteniendo el OVR.
+- La ficha enseña las **7 stats** con los iconos del juego, la letra por cuantiles y los **7 duelos**; GO, Ares, Orion y VR siguen con las 6 stats.
+- Cobertura: **2.302 de 2.335** cartas de IE1-3 (las 33 sin fila en el mod se quedan como estaban). Detalle en [balance-stats.md](balance-stats.md).
+- Regenerar: `python tools/db/import_stats_mod.py <EditorMods>` + `python tools/db/build.py`.

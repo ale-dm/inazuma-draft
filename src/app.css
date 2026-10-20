@@ -421,6 +421,23 @@ button.ic:active { transform: scale(.95); }
 .card-info__stat b { font-variant-numeric: tabular-nums; }
 .card-info__stat i { grid-column: 1 / -1; height: .3rem; border-radius: 99px; background: rgba(255, 255, 255, .1); overflow: hidden; }
 .card-info__stat i span { display: block; height: 100%; background: linear-gradient(90deg, var(--hub-cyan, #3df2ff), var(--hub-neon, #c6ff3d)); }
+/* stats del juego (7, nivel 40) con letra por cuantiles y duelo */
+.stats40 { grid-template-columns: 1fr; }
+.stats40 .card-info__stat { grid-template-columns: 1fr auto auto; }
+.stats40-label { display: flex; align-items: center; gap: .3rem; }
+.stats40-icon { width: 1.05rem; height: 1.05rem; object-fit: contain; image-rendering: pixelated; }
+.stats40-level { margin-left: .4rem; font-size: .62rem; font-weight: 400; color: var(--hub-dim, #8fb3c9); }
+.stats40-rank { font-style: normal; font-size: .62rem; font-weight: 700; min-width: 1.5rem; text-align: center; border-radius: .3rem; padding: .05rem .2rem; }
+.stats40-rank.g-s { color: #ffd23a; background: rgba(255, 210, 58, .14); }
+.stats40-rank.g-a { color: #5aa8ff; background: rgba(90, 168, 255, .14); }
+.stats40-rank.g-b { color: #ff9a3a; background: rgba(255, 154, 58, .14); }
+.stats40-rank.g-c { color: #4fd06a; background: rgba(79, 208, 106, .14); }
+.stats40-meta { margin-top: .45rem; font-size: .72rem; color: var(--hub-dim, #8fb3c9); }
+.stats40-duels { margin-top: .8rem; }
+.stats40-duels__grid { display: grid; grid-template-columns: 1fr 1fr; gap: .2rem .9rem; font-size: .78rem; }
+.stats40-duels__grid div { display: flex; justify-content: space-between; gap: .5rem; }
+.stats40-duels__grid span { color: var(--hub-dim, #8fb3c9); }
+.stats40-duels__grid b { font-variant-numeric: tabular-nums; }
 .card-info__techs { display: flex; flex-direction: column; gap: .35rem; }
 .card-info__techs li { display: flex; align-items: center; gap: .5rem; font-size: .9rem; }
 .card-info__techs b { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

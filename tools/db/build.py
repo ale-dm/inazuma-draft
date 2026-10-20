@@ -32,6 +32,7 @@ from common import (AGE_VERSION, ALT_VERSION, BAND, CACHE, CAP, CAP_C, CEIL, COS
                     norm_jp, romaji, slug, tnorm)
 from es_text import es_description
 from tuning import apply_tuning
+from stats_mod import apply_stats_mod
 from i18n import localize
 from logos import assign_logos
 from output import write_outputs
@@ -1309,6 +1310,7 @@ def main(extra_z=None, write=True):
             report.append(f"Equipo con un solo jugador, fuera: {c['team']} ({c['game']}) → {c['name']} sin equipo")
             c['team'] = 'Unaffiliated'
     cards += a_cards
+    apply_stats_mod(cards, ov, report)                       # stats de IE1-3 desde el balance del mod de Victory Road
     known = {t['name'] for t in teams}
     for tm in sorted({c['team'] for c in a_cards} - known):
         teams.append({'name': tm, 'name_es': manual_es.get(tm) or es_team.get(tnorm(tm))})
