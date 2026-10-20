@@ -184,21 +184,22 @@ más abajo); el capitán de Barcelona Orb puede llegar a 89.
 | Equipo (ES) | Once | #1 | Estrella / Capitán |
 |---|--:|--:|---|
 | Bastión | 76,0 | 80 | Sebastian Fortwright |
-| Kirkwood | 77,1 | 82 | Axel Blaze (capitán: Marvin Murdock 81) |
+| Green Hill | 76,4 | 77 | Orphion Ordain |
 | Brain | 77,1 | 82 | Neil Turner |
+| Kirkwood | 77,2 | 83 | Axel Blaze (capitán: Marvin Murdock 81) |
 | Royal Academy | 78,4 | 84 | David Samford |
 | Academia Polaris | 79,8 | 85 | Acker Reese |
 | Zeus | 80,8 | 86 | Byron Love |
+| Ribera | 81,2 | 88 | Mark Evans |
 | Alpino | 81,6 | 86 | Shawn Froste |
 | Academia Alia | 82,9 | 87 | Hunter Foster |
-| Ribera | 83,8 | 88 | Mark Evans |
 | Raimon (Inakuni) | 84,5 | 87 | Sonny Wright (capitán) |
 | Academia Plenilunio | 85,0 | 87 | Duske Grayling |
 | Barcelona Orb | 86,1 | 88 | Sergi Hernández |
 
 - **Raimon (Inakuni)** entra en la curva: 84,5 y capitán Sonny Wright (Asuto, capitán temporal en el anime). Queda por debajo de Plenilunio (85,0) y Barcelona Orb (86,1): gana la final y pierde el amistoso 0-13, como en la serie.
-- **Excepciones al -1**: **Mark Evans** se queda en 88 (Ribera baja el resto) y **Axel Blaze** sube a 82, al nivel de Jude (81 tras el ajuste) y por encima del capitán de Kirkwood (Mukata, 81).
-- **Green Hill** (Colina Verde, 71,9) es el equipo que solo se menciona y no llega a jugar; se queda fuera de la rampa. **Secundarios** (77,8) son los clásicos que se van del Raimon, no un rival de la historia.
+- **Excepciones al -1**: **Mark Evans** se queda en 88 y **Axel Blaze** sube a **83**, por delante del capitán de Kirkwood (Mukata, 81) y de Jude (81). **Ribera** baja al nivel de Alpino (81,2 con Mark 88); **Green Hill** sube al nivel de Bastión (76,4).
+- **Green Hill** (Colina Verde) es el equipo que solo se menciona y no llega a jugar, pero se deja a la altura de Bastión. **Secundarios** (77,8) son los clásicos que se van del Raimon, no un rival de la historia.
 - **Cobertura**: 199 cartas y 14 equipos; los 198 jugadores de zukan de Ares tienen carta (la 199 es la segunda ficha de Hunter Foster). Sin avisos nuevos en `build/report.txt`.
 
 ### Pendientes (objetivos actuales, de `plan-base-jugadores.md` §9)
@@ -210,7 +211,7 @@ más abajo); el capitán de Barcelona Orb puede llegar a 89.
 | GO1 | pendiente | Vía Láctea 74,5 → Luz Eterna 82,5 → Oscuridad Ancestral 83,5 (techo 87) |
 | GO2 | pendiente | Protocolo Omega 76 → … → Aullido Lunar 87 (techo 90) |
 | GO3 | pendiente | Dragones de Fuego 73 → … → Supernova/Big Bang 84,5 (techo 90) |
-| Ares | **hecho** | rampa 76,0 → 86,1 (Barcelona); Raimon 84,5; `compress` 0,5 y `ovr_shift` -1; Mark y Axel a mano |
+| Ares | **hecho** | rampa 76,0 → 86,1 (Barcelona); Raimon 84,5; Ribera 81,2; Green Hill 76,4; `compress` 0,5 y `ovr_shift` -1; Mark 88 y Axel 83 a mano |
 | Orion | pendiente | Bisonte Rojo 76 → … → Eclipse de Orión 87 (techo 91) |
 
 Cada temporada pendiente: revisar la rampa con la receta §2 (aplicar `compress`, capitán #1 y el criterio "por debajo de
@@ -410,8 +411,4 @@ Galaxy/IE3).
 - **IE3, balance** (`npm run balance`, N=1500): único aviso marginal, `5b` media 75 humano fuerte **27,2 %** (rango
   28–65). Con el pool a 46–86 el aviso se movía a Expedición (5,27 / 20,7 %), así que se deja **46–87**. Expedición
   queda en 4,17 victorias / 9,1 % de completar (con el catálogo anterior sin cerrar, 6,42 / 26,8 %).
-- **Ares**: rampa 76,0 → 86,1 con `_game.ARES.compress = 0,5` y `ovr_shift = -1` (antes iba sin comprimir: Brain 78,2
-  tenía a Neil Turner 87 y Polaris 80,5 a Acker Reese 88). **Raimon (Inakuni)** entra en la curva con 84,5 y capitán Sonny
-  Wright (Asuto, capitán temporal); antes se quedaba en 80,5. Barcelona Orb 86,1 queda **1,8 por debajo** del Caos de IE2
-  (87,9). Excepciones al -1: Mark Evans se queda en 88 y Axel Blaze sube a 82 (Jude queda en 81; Mukata, 81). Green Hill
-  (71,9) se queda fuera por ser un equipo solo mencionado.
+- **Ares**: rampa 76,0 → 86,1 con `_game.ARES.compress = 0,5` y `ovr_shift = -1`. **Raimon (Inakuni)** entra en la curva con 84,5 y capitán Sonny Wright (Asuto); **Ribera** baja a 81,2 (Mark Evans se queda en 88) y **Green Hill** sube a 76,4, al nivel de Bastión. **Axel Blaze** sube a 83, por delante de Mukata (81) y de Jude (81). Barcelona Orb 86,1 queda **1,8 por debajo** del Caos de IE2 (87,9).

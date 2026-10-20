@@ -412,11 +412,11 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 
 ## Ares: temporada cuadrada
 
-- **Rampa** (once, #1): Bastión 76,0 (80) → Kirkwood 77,1 (82) → Brain 77,1 (82) → Royal Academy 78,4 (84) → Academia Polaris 79,8 (85) → Zeus 80,8 (86) → Alpino 81,6 (86) → Academia Alia 82,9 (87) → Ribera 83,8 (88) → Raimon 84,5 (87) → Academia Plenilunio 85,0 (87) → Barcelona Orb 86,1 (88).
+- **Rampa** (once, #1): Bastión 76,0 (80) → Green Hill 76,4 (77) → Brain 77,1 (82) → Kirkwood 77,2 (83) → Royal Academy 78,4 (84) → Academia Polaris 79,8 (85) → Zeus 80,8 (86) → Ribera 81,2 (88) → Alpino 81,6 (86) → Academia Alia 82,9 (87) → Raimon 84,5 (87) → Academia Plenilunio 85,0 (87) → Barcelona Orb 86,1 (88).
 - **Compresión y ajuste**: `_game.ARES.compress = 0,5` y `ovr_shift = -1` (toda la temporada un punto más abajo). Sin la compresión los cracks de equipos flojos se disparaban (Brain 78,2 con Neil Turner 87; Polaris 80,5 con Acker Reese 88).
 - **Raimon (Inakuni)**: entra en la curva con 84,5 y capitán Sonny Wright (Asuto). Antes se quedaba en 80,5, por debajo de rivales a los que gana en la historia.
-- **Excepciones**: Mark Evans no baja (88) y Axel Blaze sube a 82, al nivel de Jude (81 tras el ajuste) y por encima de Mukata (81, capitán de Kirkwood).
-- **Cobertura**: 199 cartas y 14 equipos; los 198 jugadores de zukan de Ares tienen carta. Green Hill (71,9) es el equipo mencionado que no juega y se queda fuera de la rampa.
+- **Excepciones**: Mark Evans no baja (88), Axel Blaze sube a 83 (por delante de Mukata 81 y de Jude 81), Ribera baja al nivel de Alpino con Mark a mano y Green Hill sube al nivel de Bastión.
+- **Cobertura**: 199 cartas y 14 equipos; los 198 jugadores de zukan de Ares tienen carta. Green Hill (76,4) queda al nivel de Bastión; Secundarios (77,8) son los clásicos que se van del Raimon.
 - **Posición**: 1,8 por debajo de IE2 (Caos 87,9) y muy por encima de IE1 (Zeus 79,8); es el sustituto de IE2 en su línea temporal.
 - Cargado en Supabase con `db-load` tras el rebuild de `seed.sql`.
 

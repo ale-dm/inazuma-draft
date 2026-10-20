@@ -317,7 +317,7 @@
     "Kogure Yuuya|IE2|Raimon": 83,
     "_doc_ares": "Ares: la temporada baja un punto (ovr_shift); Mark no baja y Axel sube al nivel de Jude.",
     "Endou Mamoru|ARES|base": 88,
-    "Gouenji Shuuya|ARES|base": 82
+    "Gouenji Shuuya|ARES|base": 83
   },
   "card_names": {
     "_doc": "Nombre de la carta por versión (\"<page>|<game>|<versión>\": nombre), para versiones cuyo nombre de zukan no es el del personaje. Neo Japan: el nombre del juego (Dave Quagmire…); la versión de Aliea/Génesis se queda con el suyo.",
@@ -1018,9 +1018,9 @@
         "note": "8 · ep. 18–20, nacional"
       },
       "Everytown": {
-        "top11": 84.5,
+        "top11": 81.9,
         "captain": "Endou Mamoru",
-        "note": "9 · ep. 21–23, semifinal"
+        "note": "9 · ep. 21–23, semifinal · bajado al nivel de Alpino"
       },
       "Lunar Prime Academy": {
         "top11": 86.0,
@@ -1038,6 +1038,10 @@
         "captain": "Inamori Asuto",
         "captain_cap": 88,
         "note": "protagonista (Ares, Inakuni Raimon)"
+      },
+      "Green Hill": {
+        "top11": 77.0,
+        "note": "equipo mencionado · al nivel de Bastión"
       }
     },
     "ORION": {
