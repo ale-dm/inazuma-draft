@@ -301073,7 +301073,10 @@
    ],
    "name_fr": "Tacle du héron",
    "name_it": "Rondine in Picchiata",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "AtomicFlare",
@@ -310792,7 +310795,10 @@
    ],
    "name_fr": "Esquive Acrobatique",
    "name_it": "Difesa Acrobatica",
-   "traits": []
+   "traits": [],
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "AllDelete",
@@ -311960,7 +311966,10 @@
    "name_it": "Nebbia Avvolgente",
    "traits": [
     "block"
-   ]
+   ],
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "DefenseHouteishiki",
@@ -316888,7 +316897,10 @@
    ],
    "name_fr": "Gants des Ténèbres",
    "name_it": "Presa Oscura",
-   "traits": []
+   "traits": [],
+   "balance_tp": 50,
+   "balance_power_min": 50,
+   "balance_power_max": 300
   },
   {
    "id": "vr_whd00150",

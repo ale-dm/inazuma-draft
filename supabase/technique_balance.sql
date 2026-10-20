@@ -3,6 +3,7 @@
 update public.techniques t set balance_tp = v.tp, balance_power_min = v.mn, balance_power_max = v.mx
 from (values
 ('Abisegeri',60,60,360),
+('AcrobatKeep',80,85,540),
 ('AggressiveBeat',60,60,360),
 ('Aikidou',110,120,720),
 ('AirBullet',110,120,720),
@@ -103,6 +104,7 @@ from (values
 ('DeathZone2',130,160,880),
 ('DecoyRelease',130,160,880),
 ('DeepJungle',160,195,930),
+('DeepMist',90,95,600),
 ('DefenseHouteishiki',50,50,300),
 ('DemonCut',130,160,880),
 ('DenraiHoutou',70,70,440),
@@ -552,6 +554,7 @@ from (values
 ('TripleBoost',140,170,890),
 ('TripleDash',120,140,800),
 ('TripleDefense',110,120,720),
+('TsubameGaeshi',80,85,540),
 ('TsuchiDaruma',50,50,300),
 ('Tsumuji',90,95,600),
 ('TsunamiBoost',100,100,640),
@@ -637,6 +640,7 @@ from (values
 ('vr_whk00360',80,85,540),
 ('vr_whk00400',120,140,800),
 ('vr_whk00510',110,120,720),
+('vr_whk00800',50,50,300),
 ('vr_whk00910',110,120,720),
 ('vr_whk01080',70,70,440),
 ('vr_whk01400',110,120,720),

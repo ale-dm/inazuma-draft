@@ -437,6 +437,12 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - **Cobertura**: 207 cartas y 15 equipos; Secundarios (66,5) y Raimon (45,4) no son rivales de la historia.
 - Cargado en Supabase con `db-load`.
 
+## Técnicas de Ares y Orion
+
+- **451 técnicas** distintas usadas por cartas de Ares/Orion; **135 son exclusivas** de esos juegos (331 usos). Las compartidas con IE1-3 ya siguen la escala de [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md).
+- Faltaban **4 TP**: Niebla mística (90), Ataque de garza (80), Guardia acrobática (80) y Presa de sombras (50). Se han añadido y cargado.
+- El resto de exclusivas ya tenía TP en 50–200; el catálogo completo, con usos y potencia, está en [balance-tecnicas-ares-orion.md](balance-tecnicas-ares-orion.md) para revisar firmas por lore.
+
 ## Técnicas con la placa del juego
 
 - La ficha pinta cada técnica como el editor: placa `plate_fsp_<el>` (elemento), icono de categoría, nombre, marcas de tiro lejano/bloqueo y TP.
