@@ -1,6 +1,6 @@
 # Plan: balance de rivales por temporadas (historia)
 
-> Estado: **IE1, IE2 y IE3 hechos**; GO1, GO2, GO3, Ares y Orion **pendientes**.
+> Estado: **IE1, IE2, IE3 y Ares hechos**; GO1, GO2, GO3 y Orion **pendientes**.
 > Objetivo: que la curva de nota de los rivales de la historia (una temporada = un juego) sea coherente y siga el
 > orden de los partidos, con las reglas de abajo.
 > Complementa [`plan-base-jugadores.md`](./plan-base-jugadores.md) §3 (OVR) y §9 (`team_tuning`).
@@ -175,6 +175,30 @@ equipos** (16 de la historia/amistosos y los 4 extras, todos con capitán de la 
   la carta** también va por versión (`overrides.card_names`): la carta de Neo Japan guarda «Dave Quagmire» y la de
   Épsilon «Dvalin», como en la wiki.
 
+### Ares — hecho
+
+Sustituto de IE2 en otra línea temporal: **un poco por debajo de IE2** (techo 87,1 frente a 87,9 del Caos).
+`_game.ARES.compress = 0,5` (la misma compresión que IE1/IE2) y cap 88; el capitán de Barcelona Orb puede llegar a 89.
+
+| Equipo (ES) | Once | #1 | Estrella / Capitán |
+|---|--:|--:|---|
+| Bastión | 77,0 | 81 | Sebastian Fortwright |
+| Kirkwood | 77,9 | 82 | Marvin Murdock |
+| Brain | 78,1 | 83 | Neil Turner |
+| Royal Academy | 79,4 | 85 | David Samford |
+| Academia Polaris | 80,8 | 86 | Acker Reese |
+| Zeus | 81,8 | 87 | Byron Love |
+| Alpino | 82,6 | 87 | Shawn Froste |
+| Academia Alia | 83,9 | 88 | Hunter Foster |
+| Ribera | 84,7 | 88 | Mark Evans |
+| Raimon (Inakuni) | 85,5 | 88 | Sonny Wright (capitán) |
+| Academia Plenilunio | 86,0 | 88 | Duske Grayling |
+| Barcelona Orb | 87,1 | 89 | Sergi Hernández |
+
+- **Raimon (Inakuni)** entra en la curva: 85,5 y capitán Sonny Wright (Asuto, capitán temporal en el anime). Queda por debajo de Plenilunio (86,0) y Barcelona Orb (87,1): gana la final y pierde el amistoso 0-13, como en la serie.
+- **Green Hill** (Colina Verde, 72,9) es el equipo que solo se menciona y no llega a jugar; se queda fuera de la rampa. **Secundarios** (78,8) son los clásicos que se van del Raimon, no un rival de la historia.
+- **Cobertura**: 199 cartas y 14 equipos; los 198 jugadores de zukan de Ares tienen carta (la 199 es la segunda ficha de Hunter Foster). Sin avisos nuevos en `build/report.txt`.
+
 ### Pendientes (objetivos actuales, de `plan-base-jugadores.md` §9)
 
 | Temporada | Estado | Notas |
@@ -184,7 +208,7 @@ equipos** (16 de la historia/amistosos y los 4 extras, todos con capitán de la 
 | GO1 | pendiente | Vía Láctea 74,5 → Luz Eterna 82,5 → Oscuridad Ancestral 83,5 (techo 87) |
 | GO2 | pendiente | Protocolo Omega 76 → … → Aullido Lunar 87 (techo 90) |
 | GO3 | pendiente | Dragones de Fuego 73 → … → Supernova/Big Bang 84,5 (techo 90) |
-| Ares | pendiente | Bastión 76,5 → … → Barcelona Orb 87 (techo 88) |
+| Ares | **hecho** | rampa 77,0 → 87,1 (Barcelona); Raimon 85,5; `compress` 0,5 |
 | Orion | pendiente | Bisonte Rojo 76 → … → Eclipse de Orión 87 (techo 91) |
 
 Cada temporada pendiente: revisar la rampa con la receta §2 (aplicar `compress`, capitán #1 y el criterio "por debajo de
@@ -384,3 +408,7 @@ Galaxy/IE3).
 - **IE3, balance** (`npm run balance`, N=1500): único aviso marginal, `5b` media 75 humano fuerte **27,2 %** (rango
   28–65). Con el pool a 46–86 el aviso se movía a Expedición (5,27 / 20,7 %), así que se deja **46–87**. Expedición
   queda en 4,17 victorias / 9,1 % de completar (con el catálogo anterior sin cerrar, 6,42 / 26,8 %).
+- **Ares**: rampa 77,0 → 87,1 con `_game.ARES.compress = 0,5` (antes iba sin comprimir: Brain 78,2 tenía a Neil Turner 87 y
+  Polaris 80,5 a Acker Reese 88). **Raimon (Inakuni)** entra en la curva con 85,5 y capitán Sonny Wright (Asuto, capitán
+  temporal); antes se quedaba en 80,5. Barcelona Orb 87,1 queda **0,8 por debajo** del Caos de IE2 (87,9). Green Hill
+  (72,9) se queda fuera por ser un equipo solo mencionado.

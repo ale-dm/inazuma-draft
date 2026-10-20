@@ -951,7 +951,8 @@
         "cap": 90
       },
       "ARES": {
-        "cap": 88
+        "cap": 88,
+        "compress": 0.5
       },
       "ORION": {
         "cap": 91
@@ -1023,6 +1024,12 @@
         "captain": "Clario Orvan",
         "note": "11 · amistoso internacional, por encima de Plenilunio",
         "captain_cap": 89
+      },
+      "Raimon": {
+        "top11": 85.5,
+        "captain": "Inamori Asuto",
+        "captain_cap": 88,
+        "note": "protagonista (Ares, Inakuni Raimon)"
       }
     },
     "ORION": {

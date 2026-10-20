@@ -409,3 +409,12 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - **Sin id**: Bola de tierra (tiro individual de IE1, TP 22 → 60) no existe ni en la base ni en el build; queda pendiente de alta.
 - **Carga**: `supabase/technique_balance.sql` regenerado desde el JSON; se aplica con el workflow `db-load` (`balance_only`).
 - **Aviso**: `tools/db/balance_xlsx.py` sigue regenerando el JSON desde la hoja y pisaría estos valores; si se vuelve a usar la hoja, hay que meter antes la escala de IE123.
+
+## Ares: temporada cuadrada
+
+- **Rampa** (once, #1): Bastión 77,0 (81) → Kirkwood 77,9 (82) → Brain 78,1 (83) → Royal Academy 79,4 (85) → Academia Polaris 80,8 (86) → Zeus 81,8 (87) → Alpino 82,6 (87) → Academia Alia 83,9 (88) → Ribera 84,7 (88) → Raimon 85,5 (88) → Academia Plenilunio 86,0 (88) → Barcelona Orb 87,1 (89).
+- **Compresión**: `_game.ARES.compress = 0,5`, como IE1/IE2. Sin ella los cracks de equipos flojos se disparaban (Brain 78,2 con Neil Turner 87; Polaris 80,5 con Acker Reese 88).
+- **Raimon (Inakuni)**: entra en la curva con 85,5 y capitán Sonny Wright (Asuto). Antes se quedaba en 80,5, por debajo de rivales a los que gana en la historia.
+- **Cobertura**: 199 cartas y 14 equipos; los 198 jugadores de zukan de Ares tienen carta. Green Hill (72,9) es el equipo mencionado que no juega y se queda fuera de la rampa.
+- **Posición**: 0,8 por debajo de IE2 (Caos 87,9) y muy por encima de IE1 (Zeus 79,8); es el sustituto de IE2 en su línea temporal.
+- Cargado en Supabase con `db-load` tras el rebuild de `seed.sql`.
