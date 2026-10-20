@@ -443,6 +443,23 @@ button.ic:active { transform: scale(.95); }
 .card-info__techs b { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .card-info__techs small { font-size: .7rem; opacity: .75; font-variant-numeric: tabular-nums; }
 .card-info__tech-icon { width: 1.8rem; height: 1.8rem; flex-shrink: 0; }
+/* Bloque de técnica como en el juego (placa, icono de categoría, nombre, marcas y TP) */
+.card-info__techs li { display: block; }
+.tblock { display: flex; align-items: center; gap: .45rem; padding: 3px 9px 3px 3px; border-radius: 9px; color: #fff; font-weight: 700;
+  background: linear-gradient(90deg, var(--a, #4aa8ff) 0%, var(--b, #1c58ad) 100%); border: 1px solid rgba(255, 255, 255, .22);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .65); min-height: 2.2rem; }
+.tb-el1 { --a: #4aa8ff; --b: #1c58ad; }
+.tb-el2 { --a: #62c64d; --b: #22741b; }
+.tb-el3 { --a: #f0584a; --b: #a51d1d; }
+.tb-el4 { --a: #f0a640; --b: #a85f12; }
+.tb-el5 { --a: #a07bff; --b: #4b2a9a; }
+.tblock.plate { background: var(--plate) left center / 100% 100% no-repeat; border-color: transparent; box-shadow: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .85), 0 0 4px rgba(0, 0, 0, .55); padding-left: 5px; }
+.tb-cat { width: 1.75rem; height: 1.75rem; object-fit: contain; flex-shrink: 0; image-rendering: pixelated; }
+.tbn { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tbf { width: 1.1rem; height: 1.1rem; object-fit: contain; flex-shrink: 0; }
+.tbtp { font-size: 1.15rem; font-weight: 800; font-style: italic; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tbtp small { font-size: .55rem; font-style: normal; margin-right: .1rem; }
 
 .coin { display: inline-block; flex-shrink: 0; vertical-align: -.15em; }
 .reward-inline { display: inline-flex; align-items: center; gap: .3rem; }

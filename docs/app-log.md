@@ -428,3 +428,8 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - La ficha enseña las **7 stats** con los iconos del juego, la letra por cuantiles y los **7 duelos**; GO, Ares, Orion y VR siguen con las 6 stats.
 - Cobertura: **2.302 de 2.335** cartas de IE1-3 (las 33 sin fila en el mod se quedan como estaban). Detalle en [balance-stats.md](balance-stats.md).
 - Regenerar: `python tools/db/import_stats_mod.py <EditorMods>` + `python tools/db/build.py`.
+
+## Técnicas con la placa del juego
+
+- La ficha pinta cada técnica como el editor: placa `plate_fsp_<el>` (elemento), icono de categoría, nombre, marcas de tiro lejano/bloqueo y TP.
+- Faltan las marcas de grado (`growthType` y grado evolucionado no están en la base) y las caras/escudos del juego (54 MB, pendiente de CDN). Detalle en [tecnicas-visual.md](tecnicas-visual.md).

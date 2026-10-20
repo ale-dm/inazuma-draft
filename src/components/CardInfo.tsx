@@ -1,13 +1,12 @@
 import type { Player } from '../types'
 import { useAppSettings } from '../context/AppSettings'
-import { techniqueName } from '../data/catalog'
 import { ALL_STAT_KEYS } from '../lib/power'
 import { DUEL40_KEYS, STAT40_ICONS, STAT40_KEYS, duels40, rankClass, statRank } from '../lib/stats40'
-import { TechniqueIcon } from './GameIcon'
+import TechBlock from './TechBlock'
 
 /** Estadísticas y supertécnicas de una carta (con el icono de tipo de Victory Road): ficha del jugador y Mis cartas */
 export default function CardInfo({ player }: { player: Player }) {
-  const { t, locale } = useAppSettings()
+  const { t } = useAppSettings()
   const s40 = player.stats40?.length === 7 ? player.stats40 : null
   const duelValues = s40 ? duels40(s40) : null
   return (
@@ -66,12 +65,8 @@ export default function CardInfo({ player }: { player: Player }) {
           : (
             <ul className="card-info__techs">
               {player.techniques.map(tech => (
-                <li key={tech.id} title={tech.description ?? undefined}>
-                  <TechniqueIcon type={tech.type} traits={tech.traits} title={t(`tech.${tech.type}`)} className="card-info__tech-icon" />
-                  <b title={tech.name}>{techniqueName(tech, locale)}</b>
-                  {tech.tp != null && (
-                    <small title={tech.powerMin != null && tech.powerMax != null ? t('tech.power', { min: tech.powerMin, max: tech.powerMax }) : undefined}>TP {tech.tp}</small>
-                  )}
+                <li key={tech.id}>
+                  <TechBlock tech={tech} />
                 </li>
               ))}
             </ul>
