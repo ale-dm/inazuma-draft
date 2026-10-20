@@ -3079,10 +3079,30 @@
    230,
    1000
   ],
+  "es_embestida-bufalina": [
+   110,
+   120,
+   720
+  ],
+  "es_entrada-deslumbrante": [
+   90,
+   95,
+   600
+  ],
   "es_guila-implacable": [
    120,
    140,
    800
+  ],
+  "es_mar-de-lagrimas": [
+   90,
+   95,
+   600
+  ],
+  "es_muro-colectivo": [
+   110,
+   120,
+   720
   ],
   "es_parada-remolino": [
    110,
@@ -3093,6 +3113,11 @@
    140,
    170,
    890
+  ],
+  "es_ping-ino-goleador": [
+   150,
+   180,
+   900
   ],
   "es_ping-inos-de-luz-y-sombra": [
    170,

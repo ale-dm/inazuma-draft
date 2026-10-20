@@ -594,6 +594,14 @@ def main(extra_z=None, write=True):
     manual = {k: v for k, v in ov.get('ovr_manual', {}).items() if not k.startswith('_')}
     extra_ver = [x for x in ov.get('extra_versions', []) if 'page' in x]
 
+    # técnicas extra de la wiki que no están en la base (manga/videojuego/combinadas de Ares/Orion)
+    for tid, t in {k: v for k, v in ov.get('extra_techniques', {}).items() if not k.startswith('_')}.items():
+        t = dict(t)
+        if tid in techniques:
+            techniques[tid].update(t)
+        else:
+            techniques[tid] = {'id': tid, **t}
+
     # --- generación de cartas
     cards = []
     chars_out = {}
@@ -1310,6 +1318,20 @@ def main(extra_z=None, write=True):
             report.append(f"Equipo con un solo jugador, fuera: {c['team']} ({c['game']}) → {c['name']} sin equipo")
             c['team'] = 'Unaffiliated'
     cards += a_cards
+    # técnicas extra por carta (overrides.extra_moves)
+    byid_card = {c['id']: c for c in cards}
+    for cid, tids in {k: v for k, v in ov.get('extra_moves', {}).items() if not k.startswith('_')}.items():
+        c = byid_card.get(cid)
+        if not c:
+            report.append(f'extra_moves: carta {cid} no encontrada')
+            continue
+        for tid in tids:
+            t = techniques.get(tid)
+            if t and all(x['id'] != tid for x in c['moves']):
+                c['moves'].append(t)
+    for tid, name in {k: v for k, v in ov.get('technique_names', {}).items() if not k.startswith('_')}.items():
+        if tid in techniques:
+            techniques[tid]['name_es'] = name
     apply_stats_mod(cards, ov, report)                       # stats de IE1-3 desde el balance del mod de Victory Road
     known = {t['name'] for t in teams}
     for tm in sorted({c['team'] for c in a_cards} - known):

@@ -443,6 +443,13 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - Faltaban **4 TP**: Niebla mística (90), Ataque de garza (80), Guardia acrobática (80) y Presa de sombras (50). Se han añadido y cargado.
 - El resto de exclusivas ya tenía TP en 50–200; el catálogo completo, con usos y potencia, está en [balance-tecnicas-ares-orion.md](balance-tecnicas-ares-orion.md) para revisar firmas por lore.
 
+## Técnicas de Ares/Orion desde la wiki
+
+- Revisadas las categorías de la wiki española: **49 técnicas introducidas en Ares** y **65 en Orion**. Faltaban 7: 6 son de fútbol (una ya existía como `vr_whs03290`, Last Resort D) y se han añadido al catálogo y a sus cartas.
+- Añadidas: **Entrada deslumbrante** (Acker Reese, Cygnus Starkey, Ari Zimmerman, Erik Eagle), **Mar de lágrimas** (Rolland Bowlby), **Muro colectivo** (los 4 defensas de Bastión), **Pingüino goleador** (Sonny y Elliot) y **Embestida bufalina** (Seok, Baek y Lee).
+- **Celebración sanadora** no se añade: la wiki la clasifica como supertécnica no de fútbol.
+- Detalle y usuarios en [tecnicas-wiki-ares-orion.md](tecnicas-wiki-ares-orion.md).
+
 ## Técnicas con la placa del juego
 
 - La ficha pinta cada técnica como el editor: placa `plate_fsp_<el>` (elemento), icono de categoría, nombre, marcas de tiro lejano/bloqueo y TP.

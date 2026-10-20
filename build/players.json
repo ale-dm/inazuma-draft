@@ -7853,7 +7853,8 @@
    "techniques": [
     "KouteiPenguin2gou",
     "es_dimensi-n-kamakura",
-    "es_ping-ino-emperador-n-2-tibur-n"
+    "es_ping-ino-emperador-n-2-tibur-n",
+    "es_entrada-deslumbrante"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -17690,7 +17691,8 @@
     "vr_whs02780",
     "vr_whs02760",
     "CounterdriveGK",
-    "vr_whs02830"
+    "vr_whs02830",
+    "es_ping-ino-goleador"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -25546,7 +25548,8 @@
    "growth": null,
    "freedom": null,
    "techniques": [
-    "vr_whd01490"
+    "vr_whd01490",
+    "es_entrada-deslumbrante"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -33363,7 +33366,8 @@
     "SpinningShoot",
     "SpinningCut",
     "IllusionBall",
-    "ThePhoenix"
+    "ThePhoenix",
+    "es_entrada-deslumbrante"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -41262,7 +41266,8 @@
     "DeathZone",
     "es_chilena-de-ping-ino",
     "vr_whs02880",
-    "HitoriOneTwo"
+    "HitoriOneTwo",
+    "es_ping-ino-goleador"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -52865,7 +52870,8 @@
     "GodHand_Blue",
     "BurningCatch",
     "BakuretsuPunch",
-    "NekketsuPunch"
+    "NekketsuPunch",
+    "es_mar-de-lagrimas"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -62834,7 +62840,8 @@
     "HornTrain",
     "HeatTackle",
     "IllusionBall",
-    "vr_whs03310"
+    "vr_whs03310",
+    "es_embestida-bufalina"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -65523,7 +65530,8 @@
     "vr_whs03200",
     "vr_whs03310",
     "HornTrain",
-    "RapidFire"
+    "RapidFire",
+    "es_embestida-bufalina"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -74219,7 +74227,8 @@
     "KillerSlide",
     "vr_whd01490",
     "SuperScanOF",
-    "vr_who01410"
+    "vr_who01410",
+    "es_entrada-deslumbrante"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -84700,7 +84709,8 @@
     "vr_who01420",
     "FlameDance",
     "IllusionBall",
-    "WhiteBlade"
+    "WhiteBlade",
+    "es_entrada-deslumbrante"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -95650,7 +95660,8 @@
     "SpinningShoot",
     "SpinningCut",
     "IllusionBall",
-    "ThePhoenix"
+    "ThePhoenix",
+    "es_entrada-deslumbrante"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -110905,7 +110916,8 @@
     "TheWall",
     "RockWallDam",
     "MegaQuake",
-    "SuperArmadillo"
+    "SuperArmadillo",
+    "es_muro-colectivo"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -110957,7 +110969,8 @@
     "TheWall",
     "RockWallDam",
     "ElephantPress",
-    "Earthquake"
+    "Earthquake",
+    "es_muro-colectivo"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -113335,7 +113348,8 @@
     "MokkoriOkaNoMoai",
     "TheWall",
     "MoguraFeint",
-    "SuperArmadillo"
+    "SuperArmadillo",
+    "es_muro-colectivo"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -114363,7 +114377,8 @@
     "vr_whd01510",
     "TheWall",
     "BlockCircus",
-    "Gravestone"
+    "Gravestone",
+    "es_muro-colectivo"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -130296,7 +130311,8 @@
     "vr_whs03200",
     "HornTrain",
     "RapidFire",
-    "Claymore"
+    "Claymore",
+    "es_embestida-bufalina"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -300383,6 +300399,121 @@
  ],
  "techniques": [
   {
+   "id": "es_entrada-deslumbrante",
+   "name": "Brilliant Move",
+   "name_es": "Entrada deslumbrante",
+   "name_jp": "ブリリアントムーヴ",
+   "type": "Block",
+   "element": "air",
+   "cost": null,
+   "cost_game": null,
+   "costs": {},
+   "description": "Bloqueo de aire exclusivo de los videojuegos (IE AC / SD).",
+   "image_url": null,
+   "zukan_types": [
+    "Defence"
+   ],
+   "traits": [],
+   "name_fr": null,
+   "name_it": null,
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
+  },
+  {
+   "id": "es_mar-de-lagrimas",
+   "name": "Flood of Feels",
+   "name_es": "Mar de lágrimas",
+   "name_jp": "涙で波だ",
+   "type": "Catch",
+   "element": "fire",
+   "cost": null,
+   "cost_game": null,
+   "costs": {},
+   "description": "Parada de fuego del manga de Ares; Rolland Bowlby.",
+   "image_url": null,
+   "zukan_types": [
+    "Catch"
+   ],
+   "traits": [],
+   "name_fr": "Vague de larmes",
+   "name_it": "Ondata di Lacrime",
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
+  },
+  {
+   "id": "es_muro-colectivo",
+   "name": "Wall for One",
+   "name_es": "Muro colectivo",
+   "name_jp": "レンサ・ザ・ウォール",
+   "type": "Block",
+   "element": "earth",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 120
+   },
+   "description": "Bloqueo de montaña de cuatro jugadores (El muro x4).",
+   "image_url": null,
+   "zukan_types": [
+    "Defence",
+    "Shot Block"
+   ],
+   "traits": [
+    "block"
+   ],
+   "name_fr": "Mur Force 4",
+   "name_it": "Muro Quadruplo",
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
+  },
+  {
+   "id": "es_ping-ino-goleador",
+   "name": "Shining Penguin",
+   "name_es": "Pingüino goleador",
+   "name_jp": "シャイニングペンギン",
+   "type": "Shoot",
+   "element": null,
+   "cost": null,
+   "cost_game": null,
+   "costs": {},
+   "description": "Tiro de Sonny y Elliot en el manga de Ares.",
+   "image_url": null,
+   "zukan_types": [
+    "Shot"
+   ],
+   "traits": [],
+   "name_fr": "Shainingu Pengin",
+   "name_it": null,
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
+  },
+  {
+   "id": "es_embestida-bufalina",
+   "name": "Bull Steam Ahead",
+   "name_es": "Embestida bufalina",
+   "name_jp": "特攻バッファロートレイン",
+   "type": "Dribble",
+   "element": null,
+   "cost": null,
+   "cost_game": null,
+   "costs": {},
+   "description": "Regate de tres jugadores de Orion (Bisonte Rojo).",
+   "image_url": null,
+   "zukan_types": [
+    "Dribble"
+   ],
+   "traits": [],
+   "name_fr": "Charge des Buffles",
+   "name_it": null,
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
+  },
+  {
    "id": "GodHand",
    "name": "God Hand",
    "name_es": "Mano celestial",
@@ -319042,7 +319173,7 @@
    "id": "vr_whs03290",
    "name": "Last Resort D",
    "name_jp": "ラストリゾートＤ",
-   "name_es": null,
+   "name_es": "Último recurso: Dragón",
    "type": "Shoot",
    "element": null,
    "cost": null,
