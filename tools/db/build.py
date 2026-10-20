@@ -445,6 +445,14 @@ def main(extra_z=None, write=True):
             es_by_jp.setdefault(norm_jp(j), es)
         for e in d['en']:
             es_by_en.setdefault(e.lower(), es)
+    for title, d in ov.get('tech_es_fix', {}).items():          # a mano: corrige cruces de la wiki española
+        if title.startswith('_'):
+            continue
+        es = re.sub(r'\s*\([^)]*\)$', '', title).strip()
+        for j in d.get('jp', []):
+            es_by_jp[norm_jp(j)] = es
+        for e in d.get('en', []):
+            es_by_en[e.lower()] = es
 
     zskills, zskills_en = {}, {}    # supertécnicas de zukan por nombre japonés / inglés (descripción, imagen, tipos; sin vídeo)
     for r in (json.load(open(os.path.join(ZUKAN_DIR, 'skills.json'), encoding='utf-8'))
@@ -1258,6 +1266,39 @@ def main(extra_z=None, write=True):
         a_cards += g_cards
         for k, v in g_chars.items():
             chars_out.setdefault(k, v)
+    for tid, d in ov.get('tech_defs', {}).items():              # a mano: técnicas que no salen en los movesets
+        if tid.startswith('_'):
+            continue
+        techniques.setdefault(tid, {'id': tid, **d})
+    for tid, es in ov.get('tech_id_es', {}).items():            # a mano: nombre en castellano por id
+        if tid.startswith('_'):
+            continue
+        if techniques.get(tid):
+            techniques[tid]['name_es'] = es
+    for cid, tids in ov.get('tech_remove', {}).items():         # a mano: quitar técnicas de una carta
+        if cid.startswith('_'):
+            continue
+        c = next((c for c in a_cards if c['id'] == cid), None)
+        if not c:
+            report.append(f'tech_remove: carta no encontrada ({cid})')
+            continue
+        c['moves'] = [m for m in c['moves'] if m['id'] not in set(tids)]
+    for cid, tids in ov.get('tech_extra', {}).items():          # a mano: técnicas extra por carta
+        if cid.startswith('_'):
+            continue
+        c = next((c for c in a_cards if c['id'] == cid), None)
+        if not c:
+            report.append(f'tech_extra: carta no encontrada ({cid})')
+            continue
+        have = {t['id'] for t in c['moves']}
+        for tid in tids:
+            t = techniques.get(tid)
+            if not t:
+                report.append(f'tech_extra: técnica no encontrada ({tid})')
+            elif tid not in have:
+                c['moves'].append(t)
+                have.add(tid)
+
     nxt = max(c['no'] for c in cards)                # ficha de Ares y Orion: la carta de Orion, un nº propio (después de los nuestros)
     for c in sorted((c for c in a_cards if not c['no']), key=lambda c: c['id']):
         nxt += 1

@@ -11,6 +11,86 @@
     "Jinkou Keshin Plasma Shadow SH": "Guerrero artificial Sombra de plasma DE",
     "Meteoric Fire Tornado V": "Tornado de fuego meteoro V"
   },
+  "tech_es_fix": {
+    "_doc": "Corrige el cruce de nombres en castellano de técnicas (jp/en → nombre de la app). Manda sobre la wiki española.",
+    "Nudo atrapaosos": { "jp": ["必殺クマゴロシ縛"], "en": ["Ursa Binder"] },
+    "Remate cazaosos": { "jp": ["必殺クマゴロシ斬"], "en": ["Ursa Rager"] }
+  },
+  "tech_defs": {
+    "_doc": "Técnicas que no salen en los movesets de los juegos y se añaden a mano (Ares). Se meten en el catálogo antes de crear las cartas.",
+    "CounterdriveDF": {
+      "name": "Counter Drive",
+      "name_es": "Contragolpe doble",
+      "name_jp": "カウンタードライブ",
+      "type": "Block",
+      "element": "earth",
+      "cost": null,
+      "cost_game": null,
+      "costs": { "VR_power": 71 },
+      "description": "Stop the ball with a counter drive, turning the opponent's own momentum against them.",
+      "image_url": null,
+      "zukan_types": ["Defence"],
+      "name_fr": null,
+      "name_it": null,
+      "traits": []
+    },
+    "vr_whd01530": {
+      "name": "Wall for One",
+      "name_es": "Muro para uno",
+      "name_jp": "レンサ・ザ・ウォール",
+      "type": "Block",
+      "element": "earth",
+      "cost": null,
+      "cost_game": null,
+      "costs": { "VR_power": 540 },
+      "description": "Build an impenetrable wall with the whole team to stop the opponent's attack.",
+      "image_url": null,
+      "zukan_types": ["Defence"],
+      "name_fr": null,
+      "name_it": null,
+      "traits": []
+    },
+    "vr_whk01430": {
+      "name": "Flood of Feels",
+      "name_es": "Mar de lágrimas",
+      "name_jp": "涙で波だ",
+      "type": "Catch",
+      "element": "fire",
+      "cost": null,
+      "cost_game": null,
+      "costs": { "VR_power": 45 },
+      "description": "A wave of tears rises to stop the ball.",
+      "image_url": null,
+      "zukan_types": ["Success", "Failure"],
+      "name_fr": "Vague de larmes",
+      "name_it": "Ondata di Lacrime",
+      "traits": []
+    }
+  },
+  "tech_id_es": {
+    "_doc": "Nombre en castellano por id de técnica; manda sobre el cruce por nombre.",
+    "CounterdriveGK": "Rotación inversa",
+    "vr_whk01410": "Velo de sirena"
+  },
+  "tech_extra": {
+    "_doc": "Técnicas extra por carta (id de carta → ids de técnica). Para las que no salen en su moveset de Ares.",
+    "kozoumaru-sasuke--ares--base": ["CounterdriveDF"],
+    "inamori-asuto--ares--base": ["CounterdriveDF"],
+    "iwagaki-noborou--ares--base": ["vr_whd01530"],
+    "kabeyama-heigorou--ares--base": ["vr_whd01530"],
+    "banri-nagamine--ares--base": ["vr_whd01530"],
+    "maeno-taihou--ares--base": ["vr_whd01530"],
+    "moriagari-moko--ares--base": ["vr_whd01530"],
+    "hirata-taizou--ares--base": ["vr_whd01530"],
+    "umihara-norika--ares--base": ["vr_whk01400", "vr_whk01410"],
+    "kyouno-kyuuta--ares--base": ["vr_whk01430"]
+  },
+  "tech_remove": {
+    "_doc": "Técnicas a quitar por carta (id de carta → ids de técnica).",
+    "kozoumaru-sasuke--ares--base": ["CounterdriveGK"],
+    "inamori-asuto--ares--base": ["CounterdriveGK"],
+    "umihara-norika--ares--base": ["es_parada-remolino", "es_velo-de-sirena"]
+  },
   "position_by_version": [
     {
       "page": "Endou Mamoru",
@@ -243,7 +323,8 @@
     "Ghoshu Flare|IE3|base": 92,
     "Walter Mountain|IE3|base": 92,
     "Formiga Clemens|IE3|base": 92,
-    "Drago Hill|IE3|base": 92
+    "Drago Hill|IE3|base": 92,
+    "Endou Mamoru|ARES|base": 88
   },
   "team_es": {
     "_doc": "Nombre en castellano de equipos que no cruzan con la wiki en español (inazuma.fandom.com/es). El resto sale solo.",
@@ -916,29 +997,34 @@
         "note": "4 · ep. 9–10, final regional"
       },
       "Polestar Academy": {
-        "top11": 80.5,
+        "top11": 81.5,
         "captain": "Mizukamiya Seiryuu",
         "note": "5 · ep. 11–13, nacional"
       },
       "Zeus": {
-        "top11": 81.5,
+        "top11": 78.3,
         "captain": "Afuro Terumi",
         "note": "6 · ep. 14–15, nacional"
       },
       "Alpine": {
-        "top11": 82.5,
+        "top11": 80.5,
         "captain": "Fubuki Shirou",
         "note": "7 · ep. 16–17, nacional"
       },
       "Alia Academy": {
-        "top11": 83.5,
+        "top11": 84.5,
         "captain": "Kiyama Hiroto",
         "note": "8 · ep. 18–20, nacional"
       },
+      "Raimon": {
+        "top11": 83.5,
+        "note": "protagonista (Inakuni Raimon)"
+      },
       "Everytown": {
-        "top11": 84.5,
+        "top11": 79.0,
         "captain": "Endou Mamoru",
-        "note": "9 · ep. 21–23, semifinal"
+        "compress": 0.15,
+        "note": "9 · ep. 21–23, semifinal; Mark 88 y el resto en el tier Royal-Zeus (sin Mark 78,9)"
       },
       "Lunar Prime Academy": {
         "top11": 86.0,
