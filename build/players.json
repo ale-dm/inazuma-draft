@@ -1145,7 +1145,8 @@
    "techniques": [
     "es_chilena-de-ping-ino",
     "vr_whs03180",
-    "es_ping-ino-emperador-n-2-tibur-n"
+    "es_ping-ino-emperador-n-2-tibur-n",
+    "es_ping-ino-aereo"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -9216,7 +9217,8 @@
     "vr_whs03275",
     "KouteiPenguin2gou",
     "vr_whs03280",
-    "vr_whs03240"
+    "vr_whs03240",
+    "es_ping-ino-aereo"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -41267,7 +41269,8 @@
     "es_chilena-de-ping-ino",
     "vr_whs02880",
     "HitoriOneTwo",
-    "es_ping-ino-goleador"
+    "es_ping-ino-goleador",
+    "es_ping-ino-aereo"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -300512,6 +300515,30 @@
    "balance_tp": 110,
    "balance_power_min": 120,
    "balance_power_max": 720
+  },
+  {
+   "id": "es_ping-ino-aereo",
+   "name": "Overhead Penguin",
+   "name_es": "Pingüino Aéreo",
+   "name_jp": "オーバーヘッドペンギン",
+   "type": "Shoot",
+   "element": "fire",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 70
+   },
+   "description": "Tiro de Elliot (Ares) y Jude (Orion); versión de fuego.",
+   "image_url": null,
+   "zukan_types": [
+    "Shot"
+   ],
+   "traits": [],
+   "name_fr": null,
+   "name_it": null,
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "GodHand",

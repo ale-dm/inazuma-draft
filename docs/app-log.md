@@ -450,6 +450,12 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - **Celebración sanadora** no se añade: la wiki la clasifica como supertécnica no de fútbol.
 - Detalle y usuarios en [tecnicas-wiki-ares-orion.md](tecnicas-wiki-ares-orion.md).
 
+## Tiros de Ares: comprobación de nombres
+
+- De los **24 tiros que debutan en Ares**, **23 ya estaban** en la app con otro nombre (se han cruzado por japonés/inglés con la wiki inglesa): Cabezazo fiero, Combo cósmico, Granizado de fuego, Ofensiva danzarina, Omnisabiduría divina, Nudo atrapaosos, Lancero real, Lanza polar, Tiro meteórico, Liebre blanca, Tiro centrífugo, Sierra celestial, Ímpetu de dragón, Detonador, Victoria tricolor, Frente frío, Remate en zigzag…
+- **Solo faltaba Pingüino Aéreo** (Overhead Penguin / Penguin Volley), añadido a Elliot Ember (Ares y Orion) y Jude Sharp (Orion).
+- Tabla completa en [tecnicas-wiki-ares-orion.md](tecnicas-wiki-ares-orion.md).
+
 ## Técnicas con la placa del juego
 
 - La ficha pinta cada técnica como el editor: placa `plate_fsp_<el>` (elemento), icono de categoría, nombre, marcas de tiro lejano/bloqueo y TP.

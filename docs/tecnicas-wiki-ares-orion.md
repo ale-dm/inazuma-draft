@@ -4,7 +4,44 @@
 > Fuente: wiki española (`https://inazuma.fandom.com/es/api.php`), categorías
 > `Supertécnicas introducidas en Inazuma Eleven Ares` / `... Orion` y `Supertécnicas (IE Ares)` / `(IE Orion)`.
 
+## Tiros que debutan en Ares
+
+De los **24 tiros** que debutan en Ares, **23 ya estaban en la app con otro nombre** (misma técnica por
+japonés/inglés). Solo faltaba **Pingüino Aéreo** (Overhead Penguin), que se ha añadido.
+
+| Wiki de Ares | En la app | ID |
+|---|---|---|
+| Cabezazo Inverso | Cabezazo fiero | `vr_whs02820` |
+| Explosión Cósmica | Combo cósmico | `vr_whs02980_or_02` |
+| Limonada de Fuego | Granizado de fuego | `vr_whs02850` |
+| Baile del Destello | Ofensiva danzarina | `vr_whs02800` |
+| Sabiduría Suprema | Omnisabiduría divina | `vr_whs02900` |
+| Daruma de Fuego | Daruma de fuego | `vr_whs02840` |
+| Supertécnica Asesina de Osos: Ataque | Nudo atrapaosos | `vr_whs02920` |
+| Oso Polar N.º 2 | Oso polar n.º 2 | `vr_whs02770` |
+| Lanza del Rey | Lancero real | `vr_whs02890` |
+| Lanza de Hielo | Lanza polar | `vr_whs02810` |
+| Caída de Meteoritos | Tiro meteórico | `vr_whs02780` |
+| Sapo Ninja | Sapo ninja | `vr_whs02790` |
+| Pingüino Perfecto | Pingüino perfecto | `vr_whs02880` |
+| Pájaro Luminoso | Ave goleadora | `vr_whs02760` |
+| Remate Rápido del Conejo Blanco | Liebre blanca | `vr_whs02940` |
+| Magna Espectral | Tiro centrífugo | `vr_whs02860` |
+| Aspa del Cielo | Sierra celestial | `vr_whs02910` |
+| Dragón del Cielo | Ímpetu de dragón | `vr_whs02990` |
+| Explosión | Detonador | `vr_whs02960` |
+| Ventisca Triple | Ventisca triple | `vr_whs02950` |
+| Remate Tricolor | Victoria tricolor | `vr_whs02830` |
+| Ventisca de Doble Impacto | Frente frío | `vr_whs02930` |
+| Ataque en Zig Zag | Remate en zigzag | `vr_whs02970` |
+| **Pingüino Aéreo** | **añadido** | `es_ping-ino-aereo` |
+
+`Pingüino Aéreo` (Overhead Penguin / Penguin Volley, tiro de fuego) se ha añadido a Elliot Ember (Ares y
+Orion) y a Jude Sharp (Orion).
+
 ## Cobertura de la wiki
+
+La tabla es el estado de la primera pasada; después se añadieron los tiros de arriba.
 
 | Categoría | Técnicas | En la app antes | Añadidas |
 |---|---:|---:|---:|

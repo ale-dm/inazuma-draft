@@ -609,6 +609,7 @@ from (values
 ('es_mar-de-lagrimas',90,95,600),
 ('es_muro-colectivo',110,120,720),
 ('es_parada-remolino',110,120,720),
+('es_ping-ino-aereo',80,85,540),
 ('es_ping-ino-emperador-n-2-tibur-n',140,170,890),
 ('es_ping-ino-goleador',150,180,900),
 ('es_ping-inos-de-luz-y-sombra',170,215,980),

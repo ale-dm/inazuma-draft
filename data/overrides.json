@@ -251,6 +251,20 @@
       "image_url": null,
       "zukan_types": ["Dribble"],
       "traits": []
+    },
+    "es_ping-ino-aereo": {
+      "name": "Overhead Penguin",
+      "name_es": "Pingüino Aéreo",
+      "name_jp": "オーバーヘッドペンギン",
+      "type": "Shoot",
+      "element": "fire",
+      "cost": null,
+      "cost_game": null,
+      "costs": {"VR_power": 70},
+      "description": "Tiro de Elliot (Ares) y Jude (Orion); versión de fuego.",
+      "image_url": null,
+      "zukan_types": ["Shot"],
+      "traits": []
     }
   },
   "technique_names": {
@@ -274,7 +288,9 @@
     "maeno-taihou--ares--base": ["es_muro-colectivo"],
     "moriagari-moko--ares--base": ["es_muro-colectivo"],
     "inamori-asuto--ares--base": ["es_ping-ino-goleador"],
-    "haizaki-ryouhei--ares--base": ["es_ping-ino-goleador"]
+    "haizaki-ryouhei--ares--base": ["es_ping-ino-goleador", "es_ping-ino-aereo"],
+    "haizaki-ryouhei--orion--base": ["es_ping-ino-aereo"],
+    "kidou-yuuto--orion--base": ["es_ping-ino-aereo"]
   },
   "scout_pool": {    "_doc": "Pool sin equipo: OVR por percentiles del propio pool (stats = ovr_raw, técnica = mejor TP del juego `cost`) y tope. IE1 usa el TP de IE1 (no el de IE3) y va 42-75; IE2 46-84; IE3 46-87.",
     "IE1": {
