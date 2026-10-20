@@ -310,7 +310,10 @@
     "Urabe Rica|IE2|Raimon": 84,
     "Megane Kakeru|IE2|Raimon": 80,
     "Zaizen Touko|IE2|Raimon": 85,
-    "Kogure Yuuya|IE2|Raimon": 83
+    "Kogure Yuuya|IE2|Raimon": 83,
+    "_doc_ares": "Ares: la temporada baja un punto (ovr_shift); Mark no baja y Axel sube al nivel de Jude.",
+    "Endou Mamoru|ARES|base": 88,
+    "Gouenji Shuuya|ARES|base": 82
   },
   "card_names": {
     "_doc": "Nombre de la carta por versión (\"<page>|<game>|<versión>\": nombre), para versiones cuyo nombre de zukan no es el del personaje. Neo Japan: el nombre del juego (Dave Quagmire…); la versión de Aliea/Génesis se queda con el suyo.",
@@ -929,7 +932,7 @@
       }
     },
     "_game": {
-      "_doc": "Por juego: cap = techo de las subidas; compress = comprime la dispersión del equipo hacia su media (IE1 0,5: los cracks sueltos de equipos flojos bajan bastante); compress_above/compress_factor = por encima de ese valor la nota se comprime (GO1: 92 → 88,5) para una escala de poder tipo IE1. captain_plus / captain_raise: cuánto destaca el capitán sobre el once (por defecto 4) y cuánto puede subir (6). stars: nota mínima por ficha de la wiki; hero_floor: nota mínima de los que tienen versión héroe/basara en VR. Se aplican después de la curva.",
+      "_doc": "Por juego: cap = techo de las subidas; compress = comprime la dispersión del equipo hacia su media (IE1 0,5: los cracks sueltos de equipos flojos bajan bastante); compress_above/compress_factor = por encima de ese valor la nota se comprime (GO1: 92 → 88,5) para una escala de poder tipo IE1. captain_plus / captain_raise: cuánto destaca el capitán sobre el once (por defecto 4) y cuánto puede subir (6). stars: nota mínima por ficha de la wiki; hero_floor: nota mínima de los que tienen versión héroe/basara en VR. ovr_shift: desplaza la nota de todo el juego después de la curva y antes de ovr_manual (Ares: -1). Se aplican después de la curva.",
       "IE1": {
         "compress": 0.5
       },
@@ -952,7 +955,8 @@
       },
       "ARES": {
         "cap": 88,
-        "compress": 0.5
+        "compress": 0.5,
+        "ovr_shift": -1
       },
       "ORION": {
         "cap": 91

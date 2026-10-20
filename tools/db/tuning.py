@@ -177,6 +177,19 @@ def apply_tuning(cards, games, ov, report):
                 c['stats'] = {k: max(25, min(99, v + fl - c['ovr'])) for k, v in c['stats'].items()}
                 c['ovr'] = fl
                 c['category'] = category(fl)
+    # desplazamiento global del juego (ARES: bajar la temporada un punto); antes de ovr_manual
+    for g_, gc in game_cfg.items():
+        sh = gc.get('ovr_shift', 0)
+        if not sh or g_ not in games:
+            continue
+        for c in cards:
+            if c['game'] != g_:
+                continue
+            c.setdefault('ovr_untuned', c['ovr'])
+            new = max(25, min(99, c['ovr'] + sh))
+            c['stats'] = {k: max(25, min(99, v + new - c['ovr'])) for k, v in c['stats'].items()}
+            c['ovr'] = new
+            c['category'] = category(new)
     # OVR a mano (overrides.ovr_manual): manda al final sobre la curva y las reglas (ficha|juego|versión → nota)
     manual = {k: v for k, v in ov.get('ovr_manual', {}).items() if not k.startswith('_')}
     for c in cards:

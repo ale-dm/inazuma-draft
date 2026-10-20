@@ -412,9 +412,10 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 
 ## Ares: temporada cuadrada
 
-- **Rampa** (once, #1): Bastión 77,0 (81) → Kirkwood 77,9 (82) → Brain 78,1 (83) → Royal Academy 79,4 (85) → Academia Polaris 80,8 (86) → Zeus 81,8 (87) → Alpino 82,6 (87) → Academia Alia 83,9 (88) → Ribera 84,7 (88) → Raimon 85,5 (88) → Academia Plenilunio 86,0 (88) → Barcelona Orb 87,1 (89).
-- **Compresión**: `_game.ARES.compress = 0,5`, como IE1/IE2. Sin ella los cracks de equipos flojos se disparaban (Brain 78,2 con Neil Turner 87; Polaris 80,5 con Acker Reese 88).
-- **Raimon (Inakuni)**: entra en la curva con 85,5 y capitán Sonny Wright (Asuto). Antes se quedaba en 80,5, por debajo de rivales a los que gana en la historia.
-- **Cobertura**: 199 cartas y 14 equipos; los 198 jugadores de zukan de Ares tienen carta. Green Hill (72,9) es el equipo mencionado que no juega y se queda fuera de la rampa.
-- **Posición**: 0,8 por debajo de IE2 (Caos 87,9) y muy por encima de IE1 (Zeus 79,8); es el sustituto de IE2 en su línea temporal.
+- **Rampa** (once, #1): Bastión 76,0 (80) → Kirkwood 77,1 (82) → Brain 77,1 (82) → Royal Academy 78,4 (84) → Academia Polaris 79,8 (85) → Zeus 80,8 (86) → Alpino 81,6 (86) → Academia Alia 82,9 (87) → Ribera 83,8 (88) → Raimon 84,5 (87) → Academia Plenilunio 85,0 (87) → Barcelona Orb 86,1 (88).
+- **Compresión y ajuste**: `_game.ARES.compress = 0,5` y `ovr_shift = -1` (toda la temporada un punto más abajo). Sin la compresión los cracks de equipos flojos se disparaban (Brain 78,2 con Neil Turner 87; Polaris 80,5 con Acker Reese 88).
+- **Raimon (Inakuni)**: entra en la curva con 84,5 y capitán Sonny Wright (Asuto). Antes se quedaba en 80,5, por debajo de rivales a los que gana en la historia.
+- **Excepciones**: Mark Evans no baja (88) y Axel Blaze sube a 82, al nivel de Jude (81 tras el ajuste) y por encima de Mukata (81, capitán de Kirkwood).
+- **Cobertura**: 199 cartas y 14 equipos; los 198 jugadores de zukan de Ares tienen carta. Green Hill (71,9) es el equipo mencionado que no juega y se queda fuera de la rampa.
+- **Posición**: 1,8 por debajo de IE2 (Caos 87,9) y muy por encima de IE1 (Zeus 79,8); es el sustituto de IE2 en su línea temporal.
 - Cargado en Supabase con `db-load` tras el rebuild de `seed.sql`.
