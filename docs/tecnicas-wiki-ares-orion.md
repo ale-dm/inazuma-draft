@@ -39,6 +39,19 @@ japonés/inglés). Solo faltaba **Pingüino Aéreo** (Overhead Penguin), que se 
 `Pingüino Aéreo` (Overhead Penguin / Penguin Volley, tiro de fuego) se ha añadido a Elliot Ember (Ares y
 Orion) y a Jude Sharp (Orion).
 
+## Variantes A de Victory Road (zukan)
+
+El zukan también tiene las dos variantes “A” de Ares:
+
+| Zukan | Nombre en la app | Tipo | Poder VR | Usuario |
+|---|---|---|---:|---|
+| Fire Tornado A | **Tornado de fuego A** | Tiro / Fuego | 360 | Basile Hardy (Ares y Orion) |
+| Meteor Blade A | **Cañón de meteoritos A** | Tiro / Fuego | 440 | Hunter Foster (Ares) |
+
+Se han añadido como técnicas de la app (`vr_whs02750` y `vr_whs03410`) con las descripciones del
+zukan, TP 70 y 120 respectivamente, y se han puesto en sus cartas. Son variantes de la misma técnica,
+no técnicas nuevas de la saga: el zukan las lista aparte, con la misma potencia que las originales.
+
 ## Cobertura de la wiki
 
 La tabla es el estado de la primera pasada; después se añadieron los tiros de arriba.

@@ -13385,7 +13385,8 @@
     "BakunetsuStorm_K",
     "CounterdriveGK",
     "vr_whs02830",
-    "vr_whs02840"
+    "vr_whs02840",
+    "vr_whs02750"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -13435,7 +13436,8 @@
    "freedom": null,
    "techniques": [
     "vr_whs03050",
-    "vr_whs03275"
+    "vr_whs03275",
+    "vr_whs02750"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -41270,7 +41272,8 @@
     "vr_whs02880",
     "HitoriOneTwo",
     "es_ping-ino-goleador",
-    "es_ping-ino-aereo"
+    "es_ping-ino-aereo",
+    "vr_whs03410"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -300539,6 +300542,54 @@
    "balance_tp": 80,
    "balance_power_min": 85,
    "balance_power_max": 540
+  },
+  {
+   "id": "vr_whs02750",
+   "name": "Fire Tornado A",
+   "name_es": "Tornado de fuego A",
+   "name_jp": "ファイアトルネードＡ",
+   "type": "Shoot",
+   "element": "fire",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 360
+   },
+   "description": "A blazing shot cloaked in fierce flames, launched into the air with a fiery right-foot strike.",
+   "image_url": null,
+   "zukan_types": [
+    "Shot"
+   ],
+   "traits": [],
+   "name_fr": null,
+   "name_it": null,
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
+  },
+  {
+   "id": "vr_whs03410",
+   "name": "Meteor Blade A",
+   "name_es": "Cañón de meteoritos A",
+   "name_jp": "流星ブレードＡ",
+   "type": "Shoot",
+   "element": "fire",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 440
+   },
+   "description": "Launch the ball high and smash it with a mighty kick, tracing a sharp shot that gleams like a shooting star.",
+   "image_url": null,
+   "zukan_types": [
+    "Shot"
+   ],
+   "traits": [],
+   "name_fr": null,
+   "name_it": null,
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "GodHand",

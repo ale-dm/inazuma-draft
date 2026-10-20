@@ -456,6 +456,12 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - **Solo faltaba Pingüino Aéreo** (Overhead Penguin / Penguin Volley), añadido a Elliot Ember (Ares y Orion) y Jude Sharp (Orion).
 - Tabla completa en [tecnicas-wiki-ares-orion.md](tecnicas-wiki-ares-orion.md).
 
+## Variantes A de Victory Road
+
+- El zukan tiene **Fire Tornado A** y **Meteor Blade A** (las dos únicas variantes “A” de originales). Se han añadido como **Tornado de fuego A** (`vr_whs02750`) y **Cañón de meteoritos A** (`vr_whs03410`), con TP 70 y 120.
+- Asignadas a **Basile Hardy** (Ares y Orion) y **Hunter Foster** (Ares), que son sus usuarios.
+- Son variantes de la misma técnica, no técnicas nuevas: mismo poder que las originales (360 y 440 en VR).
+
 ## Técnicas con la placa del juego
 
 - La ficha pinta cada técnica como el editor: placa `plate_fsp_<el>` (elemento), icono de categoría, nombre, marcas de tiro lejano/bloqueo y TP.
