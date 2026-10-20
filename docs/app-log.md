@@ -462,6 +462,12 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - Asignadas a **Basile Hardy** (Ares y Orion) y **Hunter Foster** (Ares), que son sus usuarios.
 - Son variantes de la misma técnica, no técnicas nuevas: mismo poder que las originales (360 y 440 en VR).
 
+## Ares: tiros por número de jugadores
+
+- Revisados los tiros que debutan en Ares: **17 individuales, 4 dobles y 5 triples**. Tablas completas en [tecnicas-wiki-ares-orion.md](tecnicas-wiki-ares-orion.md).
+- **Cambios de TP**: Cañón de meteoritos A **120 → 100**, Detonador **100 → 120** y Lancero real **100 → 120**.
+- Escala de Ares **60–150**, un escalón por debajo de IE2 (60–180); el techo son Combo cósmico y Ventisca triple (150).
+
 ## Técnicas con la placa del juego
 
 - La ficha pinta cada técnica como el editor: placa `plate_fsp_<el>` (elemento), icono de categoría, nombre, marcas de tiro lejano/bloqueo y TP.

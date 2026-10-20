@@ -300587,9 +300587,9 @@
    "traits": [],
    "name_fr": null,
    "name_it": null,
-   "balance_tp": 120,
-   "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "GodHand",
@@ -317082,9 +317082,9 @@
    "name_fr": "Lancier Royal",
    "name_it": "Tiro del Tridente",
    "traits": [],
-   "balance_tp": 100,
-   "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whk00800",
@@ -317586,9 +317586,9 @@
    "name_fr": "La déflagration",
    "name_it": "Detonatiro",
    "traits": [],
-   "balance_tp": 100,
-   "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whs02970",
