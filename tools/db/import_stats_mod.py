@@ -18,7 +18,9 @@ Uso:  python3 tools/db/import_stats_mod.py [ruta del EditorMods]
 import collections
 import json
 import os
+import re
 import sys
+import unicodedata
 import zlib
 
 from common import ROOT
@@ -42,8 +44,36 @@ def main():
             if pl.get('card'):
                 row_season.setdefault(pl['card'], s)
     copies_by_template = collections.defaultdict(list)
+    copies_all = []
     for hexrow, cp in (V.get('copies') or {}).items():
-        copies_by_template[cp['template']].append((int(hexrow, 16), cp))
+        row = int(hexrow, 16)
+        copies_by_template[cp['template']].append((row, cp))
+        parts = [x.strip() for x in str(cp.get('card') or '').split('·')]
+        copies_all.append((row, cp, parts[0] if parts else '', parts[-1] if parts else ''))
+
+    def norm_team(s):
+        s = unicodedata.normalize('NFKD', str(s or '')).encode('ascii', 'ignore').decode().lower()
+        return re.sub(r'[^a-z0-9]+', '', s)
+
+    def copy_for(base, card):
+        cands = [x for x in copies_by_template.get(base, []) if x[1].get('saga') == card['game']]
+        if not cands:
+            return None
+        team = card.get('team') or ''
+        ver = card.get('version') or ''
+        same = [x for x in cands if norm_team(x[1].get('card', '').split('·')[-1]) == norm_team(team)]
+        if not same:
+            same = [x for x in cands if norm_team(x[1].get('card', '').split('·')[-1]) == norm_team(ver)]
+        return (same or cands)[0]
+
+    def copy_for_card(card):
+        """Copia de versión por nombre + juego + equipo/versión (para cartas sin modelo enlazado)."""
+        for row, cp, name, team in copies_all:
+            if cp.get('saga') != card['game'] or norm_team(name) != norm_team(card['name']):
+                continue
+            if norm_team(team) in (norm_team(card.get('team')), norm_team(card.get('version'))):
+                return row, cp
+        return None
     by_chara = collections.defaultdict(list)
     for row, b in (B.get('rows') or {}).items():
         by_chara[b['chara']].append(int(row))
@@ -62,6 +92,15 @@ def main():
     for c in d['cards']:
         if c['game'] not in ('IE1', 'IE2', 'IE3'):
             continue
+        cp_match = copy_for_card(c)
+        if cp_match:
+            row, cp = cp_match
+            base = cp['template']
+            if str(row) in L and str(base) in B['rows']:
+                b = B['rows'][str(base)]
+                out[c['id']] = {'stats': L[str(row)], 'media': cp['media'], 'growth': b.get('growth', 1),
+                                'freedom': b.get('freedom'), 'copy': True, 'pos': cp.get('pos')}
+                continue
         code = card_code.get(c['id'])
         if not code:
             miss.append((c['name'], c['game'], c['team'], 'sin código'))
@@ -72,7 +111,7 @@ def main():
             continue
         same = [r for r in rows if row_season.get(r) == c['game']]
         base = (same or rows)[0]
-        cp = next((x for x in copies_by_template.get(base, []) if x[1]['saga'] == c['game']), None)
+        cp = copy_for(base, c)
         row = cp[0] if cp else base
         if str(row) not in L:
             miss.append((c['name'], c['game'], c['team'], 'sin stats finales'))
@@ -86,7 +125,7 @@ def main():
             continue
         b = B['rows'][str(base)]
         out[c['id']] = {'stats': L[str(row)], 'media': media, 'growth': b.get('growth', 1),
-                        'freedom': b.get('freedom'), 'copy': bool(cp)}
+                        'freedom': b.get('freedom'), 'copy': bool(cp), 'pos': cp[1].get('pos') if cp else b.get('pos')}
 
     print(f'cartas con datos: {len(out)} · sin datos: {len(miss)}')
     print(collections.Counter(m[3] for m in miss))

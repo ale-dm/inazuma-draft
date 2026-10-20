@@ -14,8 +14,9 @@
    - `balance_last.json`: **stats finales de nivel 200** (lo que genera el mod).
    - `balance_versiones.json` / `balance_copies.json`: copias de versión (Axel IE2/IE3, Mark IE2/IE3…).
    - `proyecto.json`: temporada de cada ficha.
-   El cruce usa el código de modelo (`c01000100` → `crc32` → `chara` de la ficha), así que no depende
-   del nombre. El resultado se guarda en `data/stats_mod.json` (2302 cartas).
+   El cruce usa el código de modelo (`c01000100` → `crc32` → `chara` de la ficha) y, si la carta no
+   está enlazada, el nombre + juego + equipo de las **copias de versión** (46 en el último balance).
+   El resultado se guarda en `data/stats_mod.json` (2.320 cartas).
 2. `tools/db/stats_mod.py` (lo llama `build.py` después de `apply_tuning`):
    - reescala las 7 stats a la media (OVR) de la carta si la copia se calculó con otra media;
    - las pasa a **nivel 40** con la curva de Character Reforged:
@@ -25,23 +26,44 @@
      a la escala 25–99 y ajustadas para que su media ponderada siga siendo el OVR.
 3. La ficha del jugador (`CardInfo`) enseña las **7 stats a nivel 40** con los iconos del juego, la
    letra por cuantiles, la libertad y los **7 duelos**. Las cartas sin datos del mod (GO, Ares, Orion,
-   VR y 33 fichas de IE1-3 sin fila) siguen con las 6 stats de siempre.
+   VR y 15 fichas de IE1-3 sin fila) siguen con las 6 stats de siempre.
 
 ## Cobertura
 
 | Juego | Cartas | Con stats del mod |
 |---|---:|---:|
 | IE1 | 1.014 | 1.014 |
-| IE2 | 673 | 655 |
-| IE3 | 648 | 633 |
+| IE2 | 673 | 666 |
+| IE3 | 648 | 640 |
 | GO1/GO2/GO3 | 1.704 | — |
 | Ares / Orion | 406 | — |
 | VR | 943 | — |
-| **Total** | **5.388** | **2.302** |
+| **Total** | **5.388** | **2.320** |
 
-Las 33 fichas de IE1-3 sin datos son las que no están enlazadas en `card_victorymods_map` o no tienen
-fila en el mod (Jude IE3, Kevin IE3, Shawn IE3, los Chaos de IE2, Bellatrix…); se quedan con las 6 stats
+Las 15 fichas de IE1-3 sin datos son las que no están enlazadas en `card_victorymods_map` ni en una
+copia de versión (los Chaos de IE2 que faltan, Bellatrix, Shawn IE3…); se quedan con las 6 stats
 anteriores y sin bloque de nivel 40.
+
+## Modelo 3: reparto por puesto
+
+El balance del mod reparte el total de puntos `T` de cada jugador (el que da su media) en dos partes:
+**60 %** con el perfil ideal de su puesto (`PROFILE`) y **40 %** con su reparto propio. El perfil se mezcla
+un **30 %** con el puesto secundario (el de la ficha del juego si Supabase dice otro).
+
+| Puesto | Kick | Control | Technique | Pressure | Physical | Intelligence | Agility |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| DEL | 27 | 21 | 10 | 5 | 15 | 14 | 8 |
+| MED | 14 | 23 | 25 | 8 | 9 | 12 | 9 |
+| DEF | 5 | 6 | 16 | 19 | 18 | 27 | 9 |
+| POR | 7 | 8 | 8 | 12 | 19 | 19 | 27 |
+
+El **puesto es el de la carta de Supabase de esa versión**, no el de la ficha del juego: Shawn IE2 en
+Raimon reparte como delantero y su ficha de Alpine como defensa; Mark IE2 reparte como defensa.
+
+La app **no recalcula** este paso: `import_stats_mod.py` lee `balance_last.json`, donde ya está aplicado,
+y usa la copia de versión que corresponde por nombre + juego + equipo. Ejemplos del último balance:
+Axel IE3 (nivel 200) `419 / 391 / 285 / 148 / 252 / 249 / 175` → a nivel 40
+`142 / 133 / 97 / 50 / 86 / 84 / 60`.
 
 ## Fórmulas
 
