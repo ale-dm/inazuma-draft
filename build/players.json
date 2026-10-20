@@ -318532,9 +318532,9 @@
    "name_fr": "Nébuleuse Bleue",
    "name_it": null,
    "traits": [],
-   "balance_tp": 110,
-   "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "vr_whs03230",
@@ -318678,9 +318678,9 @@
    "name_fr": "Tourbillon de Poison",
    "name_it": null,
    "traits": [],
-   "balance_tp": 80,
-   "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whs03130",
