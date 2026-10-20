@@ -399,3 +399,13 @@ Detalle completo en [plan-balance-temporadas.md](plan-balance-temporadas.md) (§
   `form` en `extra_versions`), Nakatani fuera del equipo, y medias por méritos: Axel/Fubuki 89, Jude 88, Endou 88
   (capitán), Erik 86, Darren 87, Tsunami 86, Kabeyama/Domon/Touko 85, Rica 84, Kogure 83, Megane 80. Once 86,5.
 - Pendiente: **GO1, GO2, GO3, Ares y Orion**.
+
+## Balance de técnicas de IE1/IE2/IE3 (escala B)
+
+Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con un doc por tipo: tiros (individuales, dobles y triples), regates, bloqueos y paradas.
+
+- **Aplicado**: 371 ids de `data/technique_balance.json` con la escala B en múltiplos de 10 — tiros 50–200 (individuales 50–160, dobles 60–180, triples 80–200), regates 50–150, bloqueos 50–150 y paradas 50–180. Cambian de TP 289; 17 ids no estaban en el JSON (técnicas añadidas a mano en Supabase) y se han incorporado.
+- **Potencias**: salen de la escala TP → potencia que ya tenía el JSON (50 → 50–300 … 200 → 270–1080), no de la hoja.
+- **Sin id**: Bola de tierra (tiro individual de IE1, TP 22 → 60) no existe ni en la base ni en el build; queda pendiente de alta.
+- **Carga**: `supabase/technique_balance.sql` regenerado desde el JSON; se aplica con el workflow `db-load` (`balance_only`).
+- **Aviso**: `tools/db/balance_xlsx.py` sigue regenerando el JSON desde la hoja y pisaría estos valores; si se vuelve a usar la hoja, hay que meter antes la escala de IE123.
