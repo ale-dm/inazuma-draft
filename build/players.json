@@ -305384,9 +305384,9 @@
    "balance_tp": 100,
    "balance_power_min": 100,
    "balance_power_max": 640,
-   "balance_tp_go1": 110,
-   "balance_power_min_go1": 120,
-   "balance_power_max_go1": 720
+   "balance_tp_go1": 130,
+   "balance_power_min_go1": 160,
+   "balance_power_max_go1": 880
   },
   {
    "id": "DragonBlaster",
@@ -309637,9 +309637,9 @@
    "balance_tp": 60,
    "balance_power_min": 60,
    "balance_power_max": 360,
-   "balance_tp_go1": 80,
-   "balance_power_min_go1": 85,
-   "balance_power_max_go1": 540
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
   },
   {
    "id": "RocketHead",
@@ -309695,9 +309695,9 @@
    "balance_tp": 80,
    "balance_power_min": 85,
    "balance_power_max": 540,
-   "balance_tp_go1": 110,
-   "balance_power_min_go1": 120,
-   "balance_power_max_go1": 720
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "BlackHole",
@@ -310827,9 +310827,9 @@
    "balance_tp": 120,
    "balance_power_min": 140,
    "balance_power_max": 800,
-   "balance_tp_go1": 120,
-   "balance_power_min_go1": 140,
-   "balance_power_max_go1": 800
+   "balance_tp_go1": 130,
+   "balance_power_min_go1": 160,
+   "balance_power_max_go1": 880
   },
   {
    "id": "SafetyProtect",
@@ -311444,9 +311444,9 @@
    "balance_tp": 100,
    "balance_power_min": 100,
    "balance_power_max": 640,
-   "balance_tp_go1": 100,
-   "balance_power_min_go1": 100,
-   "balance_power_max_go1": 640
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "GreatBlaster",
@@ -315222,9 +315222,9 @@
    "balance_tp": 60,
    "balance_power_min": 60,
    "balance_power_max": 360,
-   "balance_tp_go1": 60,
-   "balance_power_min_go1": 60,
-   "balance_power_max_go1": 360
+   "balance_tp_go1": 70,
+   "balance_power_min_go1": 70,
+   "balance_power_max_go1": 440
   },
   {
    "id": "ButtobiJump",
@@ -315395,9 +315395,9 @@
    "balance_tp": 80,
    "balance_power_min": 85,
    "balance_power_max": 540,
-   "balance_tp_go1": 80,
-   "balance_power_min_go1": 85,
-   "balance_power_max_go1": 540
+   "balance_tp_go1": 100,
+   "balance_power_min_go1": 100,
+   "balance_power_max_go1": 640
   },
   {
    "id": "CoilUpper",
@@ -315587,9 +315587,9 @@
    "name_fr": "Ronces Noires",
    "name_it": "Nastri Paralizzanti",
    "traits": [],
-   "balance_tp_go1": 70,
-   "balance_power_min_go1": 70,
-   "balance_power_max_go1": 440
+   "balance_tp_go1": 130,
+   "balance_power_min_go1": 160,
+   "balance_power_max_go1": 880
   },
   {
    "id": "DarkSpace",
@@ -318049,9 +318049,9 @@
    "name_fr": "Volée de Coups",
    "name_it": null,
    "traits": [],
-   "balance_tp_go1": 70,
-   "balance_power_min_go1": 70,
-   "balance_power_max_go1": 440
+   "balance_tp_go1": 130,
+   "balance_power_min_go1": 160,
+   "balance_power_max_go1": 880
   },
   {
    "id": "MadJuggler",
@@ -318078,9 +318078,9 @@
    "balance_tp": 50,
    "balance_power_min": 50,
    "balance_power_max": 300,
-   "balance_tp_go1": 50,
-   "balance_power_min_go1": 50,
-   "balance_power_max_go1": 300
+   "balance_tp_go1": 60,
+   "balance_power_min_go1": 60,
+   "balance_power_max_go1": 360
   },
   {
    "id": "MagicAmp",
@@ -318554,9 +318554,9 @@
    "balance_tp": 120,
    "balance_power_min": 140,
    "balance_power_max": 800,
-   "balance_tp_go1": 130,
-   "balance_power_min_go1": 160,
-   "balance_power_max_go1": 880
+   "balance_tp_go1": 140,
+   "balance_power_min_go1": 170,
+   "balance_power_max_go1": 890
   },
   {
    "id": "OmegaAttack",
@@ -318728,9 +318728,9 @@
    "name_fr": "Vitesse supersonique",
    "name_it": "Ultrasuono",
    "traits": [],
-   "balance_tp_go1": 50,
-   "balance_power_min_go1": 50,
-   "balance_power_max_go1": 300
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "PantherBlizzard",
@@ -318809,9 +318809,9 @@
    "name_fr": "Éclair de Pégase",
    "name_it": "Lampo di Pegaso",
    "traits": [],
-   "balance_tp_go1": 70,
-   "balance_power_min_go1": 70,
-   "balance_power_max_go1": 440
+   "balance_tp_go1": 130,
+   "balance_power_min_go1": 160,
+   "balance_power_max_go1": 880
   },
   {
    "id": "PenguinTheHand",
@@ -318947,9 +318947,9 @@
    "balance_tp": 60,
    "balance_power_min": 60,
    "balance_power_max": 360,
-   "balance_tp_go1": 80,
-   "balance_power_min_go1": 85,
-   "balance_power_max_go1": 540
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
   },
   {
    "id": "PrimeLegend",
@@ -319457,9 +319457,9 @@
    "name_fr": "Griffes d'or",
    "name_it": "Graffio Letale",
    "traits": [],
-   "balance_tp_go1": 90,
-   "balance_power_min_go1": 95,
-   "balance_power_max_go1": 600
+   "balance_tp_go1": 140,
+   "balance_power_min_go1": 170,
+   "balance_power_max_go1": 890
   },
   {
    "id": "ScreamOfEden",
@@ -319701,9 +319701,9 @@
    "balance_tp": 100,
    "balance_power_min": 100,
    "balance_power_max": 640,
-   "balance_tp_go1": 100,
-   "balance_power_min_go1": 100,
-   "balance_power_max_go1": 640
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "SkytreeFall",
@@ -320272,9 +320272,9 @@
    "balance_tp": 60,
    "balance_power_min": 60,
    "balance_power_max": 360,
-   "balance_tp_go1": 70,
-   "balance_power_min_go1": 70,
-   "balance_power_max_go1": 440
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
   },
   {
    "id": "ThiefEye",
@@ -320571,9 +320571,9 @@
    "balance_tp": 100,
    "balance_power_min": 100,
    "balance_power_max": 640,
-   "balance_tp_go1": 100,
-   "balance_power_min_go1": 100,
-   "balance_power_max_go1": 640
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "WhiteBreath",

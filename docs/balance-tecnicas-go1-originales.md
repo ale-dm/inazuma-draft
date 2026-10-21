@@ -1,7 +1,7 @@
 # Técnicas originales de GO1 — TP y colocación
 
-> **Estado:** **aplicado** con TP por saga. Lista completa de técnicas **originales de GO1** (debut GO1: coste GO1 y sin coste IE1/IE2/IE3), sacadas de `Module:WazaData` y contrastadas con la wiki inglesa.
-> Los valores GO1 viven en `data/technique_balance_go1.json` y en las columnas `balance_*_go1`; no se toca el `balance_tp` global de IE/GO2/GO3.
+> **Estado:** revisión. Lista completa de técnicas **originales de GO1** (debut GO1: coste GO1 y sin coste IE1/IE2/IE3), sacadas de `Module:WazaData` y contrastadas con la wiki inglesa.
+> **Aplicado** con TP por saga: las cartas GO1 leen `balance_tp_go1`; el `balance_tp` global de IE/GO2/GO3 no se toca.
 
 ## 1. Cobertura y rango de TP
 
@@ -13,7 +13,7 @@
 | Paradas | 26 | 20 | 80 | 45 |
 | **Total** | **127** | **20** | **150** | — |
 
-- **93** están ya en la app; **34** solo están en la wiki/WazaData y habría que añadirlas.
+- **127** están ya en el catálogo; **0** pendientes.
 - El rango útil para GO1 es **20–150 de TP**, no 50–200: los tiros llegan a 150, pero regates y bloqueos se quedan en 50 y las paradas en 80.
 
 ## 2. Escala propuesta
@@ -23,7 +23,7 @@ Propuesta de colocación por tipo, por debajo de GO2 y con los mismos escalones 
 | Tipo | Rango propuesto | Techo |
 |---|---:|---|
 | Tiros | 50–200 | `SwordExcalibur` / `SwordOfFire` 200 |
-| Regates | 50–140 | `SprintWarp` 140; `FuujinNoMai` 130 |
+| Regates | 50-140 | `SprintWarp`, `ScratchRaid` y `OlympusHarmony` 140; `NoboriRyuu` / `RoundSpark` 130 |
 | Bloqueos | 50–130 | `VanishingCut` 130 |
 | Paradas | 50–180 | `GodHandV`, `MajinTheHand_K`, `GreatTheHand`, `HellsFist`, `KingFire` 180 |
 
@@ -33,7 +33,7 @@ Criterio:
 - **Lore**: los tiros/paradas finales suben uno o dos niveles; los bloqueos/regates con nombre propio también.
 - **Sin castigo por ser GO1**: no hay combinadas en esta lista; no se aplica el castigo de 2/3 jugadores.
 - **Tiros**: 25→50, 30→60, 35→70, 40→80, 45→90, 50→100, 55→110, 60→120, 70→140/170, 75→150, 85→170, 150→200.
-- **Regates**: 20→50, 24→60, 25/28→70, 32→80, 35/36→90/100, 40→110, 45→120, 50→140.
+- **Regates**: 20→50/60/120, 24→60/70, 25→130, 28→70/90, 32→90/100, 35→140, 36→100/120, 40→120, 45→130, 50→140.
 - **Bloqueos**: 20→50, 24→60, 28→70, 32→80, 35/36→90, 40→100, 45→120, 50→130.
 - **Paradas**: 20→50, 25→60, 30→70, 35→80, 40→90, 45→100, 50→120, 55→130/180, 70→160/170, 80→180.
 
@@ -55,19 +55,19 @@ Criterio:
 | 40 | 100 | Remate dinosaurio | `DinosaurBreak` | 70 | **80** | sí |
 | 40 | 100 | Pentagrama | `Fortissimo` | 60 | **80** | sí |
 | 40 | 120 | Cabezazo cohete | `RocketHead` | 60 | **80** | sí |
-| 45 | 140 | Falco Wing | `FalcoWing` | — | **90** | no |
+| 45 | 140 | Alas de halcón | `FalcoWing` | — | **90** | sí |
 | 45 | 100 | Peces voladores | `FlyingFish` | 50 | **90** | sí |
-| 45 | 140 | Magician's Box | `MagiciansBox` | — | **90** | no |
+| 45 | 140 | Magician's Box | `MagiciansBox` | — | **90** | sí |
 | 45 | 100 | Burbujas arcoíris | `RainbowBubbleShot` | 60 | **90** | sí |
 | 50 | 120 | Tale of the Dragon | `DragonsTail` | 60 | **100** | sí |
 | 50 | 120 | Tiro espectral | `MaboroshiShot` | 70 | **100** | sí |
 | 55 | 140 | Aguijón letal | `DeathDrop` | 70 | **110** | sí |
 | 55 | 140 | Estrella oscura | `ExtendZone` | 90 | **110** | sí |
-| 55 | 160 | Gallop Buster | `GallopBuster` | — | **110** | no |
-| 55 | 160 | Harmonics | `Harmonics` | — | **110** | no |
-| 55 | 160 | Lost Angel | `LostAngel` | — | **110** | no |
+| 55 | 160 | Carga al galope | `GallopBuster` | — | **110** | sí |
+| 55 | 160 | Movimientos armónicos | `Harmonics` | — | **110** | sí |
+| 55 | 160 | Estocada de Lancelot | `LostAngel` | — | **110** | sí |
 | 55 | 140 | Leopardo de la ventisca | `PantherBlizzard` | 110 | **110** | sí |
-| 55 | 160 | Raging Claw | `RagingClaw` | — | **110** | no |
+| 55 | 160 | Asalto aéreo | `RagingClaw` | — | **110** | sí |
 | 55 | — | Tiro amasado | `YakimochiScrew` | 80 | **110** | sí |
 | 60 | 150 | Tiro balista | `BallistaShot` | 70 | **120** | sí |
 | 60 | 160 | Chut ancestral | `DenraiHoutou` | 70 | **120** | sí |
@@ -83,47 +83,47 @@ Criterio:
 | 70 | 180 | Ciclón blanco | `WhiteHurricane` | 150 | **140** | sí |
 | 70 | 200 | Zero Magnum | `ZeroMagnum` | 170 | **180** | sí |
 | 75 | 180 | Tormenta de fuego | `BakunetsuStorm_K` | 110 | **150** | sí |
-| 75 | 180 | Bushin Renzan | `BushinRenzan` | — | **150** | no |
-| 75 | 180 | Heavy Aqua Lance | `HeavyAquaLance` | — | **150** | no |
-| 75 | 180 | Icicle Road | `IcicleRoad` | — | **150** | no |
-| 75 | 180 | Sunshine Force | `SunshineForce` | — | **150** | no |
-| 85 | 200 | Checkmate | `Checkmate` | — | **170** | no |
-| 85 | 200 | Justice Wing | `JusticeWing` | — | **170** | no |
-| 85 | 200 | Maou no Ono | `MaouNoOno` | — | **170** | no |
-| 85 | 200 | Soul Bringer | `SoulBringer` | — | **170** | no |
-| 85 | 200 | White Breath | `WhiteBreath` | — | **170** | no |
-| 150 | 250 | Sword Excalibur | `SwordExcalibur` | — | **200** | no |
-| 150 | 250 | Sword of Fire | `SwordOfFire` | — | **200** | no |
+| 75 | 180 | Estocada samurai | `BushinRenzan` | — | **150** | sí |
+| 75 | 180 | Torpedo tridente | `HeavyAquaLance` | — | **150** | sí |
+| 75 | 180 | Lanza de carámbanos | `IcicleRoad` | — | **150** | sí |
+| 75 | 180 | Llamarada solar | `SunshineForce` | — | **150** | sí |
+| 85 | 200 | Jaque mate | `Checkmate` | — | **170** | sí |
+| 85 | 200 | Golpe justiciero | `JusticeWing` | — | **170** | sí |
+| 85 | 200 | Hacha del Azote negro | `MaouNoOno` | — | **170** | sí |
+| 85 | 200 | Desolación eterna | `SoulBringer` | — | **170** | sí |
+| 85 | 200 | Aliento blanco | `WhiteBreath` | — | **170** | sí |
+| 150 | 250 | Caliburn | `SwordExcalibur` | — | **200** | sí |
+| 150 | 250 | Flamberge | `SwordOfFire` | — | **200** | sí |
 
 ### Regate (26)
 
 | TP GO1 | Potencia GO1 | Técnica | ID | TP app actual | Propuesto | En app |
 |---:|---:|---|---|---:|---:|---|
 | 20 | 40 | Mirada al futuro | `FutureEye` | 50 | **50** | sí |
-| 20 | 60 | Rodillazos atómicos | `MadJuggler` | 50 | **50** | sí |
-| 20 | 140 | Overdrive | `Overdrive` | — | **50** | no |
-| 24 | 80 | Piroquinesis | `BurningSummer` | 60 | **60** | sí |
+| 20 | 60 | Rodillazos atómicos | `MadJuggler` | 50 | **60** | sí |
+| 20 | 140 | Carga hipersónica | `Overdrive` | — | **120** | sí |
+| 24 | 80 | Piroquinesis | `BurningSummer` | 60 | **70** | sí |
 | 24 | 60 | Remolino acuático | `NaminoriPierrot` | 40 | **60** | sí |
-| 25 | 160 | Dancing Ghost | `DancingGhost` | — | **70** | no |
-| 25 | 160 | Machine Gun Beat | `MachineGunBeat` | — | **70** | no |
-| 25 | 160 | Pegasus Break | `PegasusBreak` | — | **70** | no |
+| 25 | 160 | Lazos de oscuridad | `DancingGhost` | — | **130** | sí |
+| 25 | 160 | Puño metralleta | `MachineGunBeat` | — | **130** | sí |
+| 25 | 160 | Rayo celeste | `PegasusBreak` | — | **130** | sí |
 | 28 | 80 | Finta boomerang | `BoomerangFeint` | 50 | **70** | sí |
 | 28 | 80 | Brisa deslizante | `SoyokazeStep` | 60 | **70** | sí |
-| 28 | 100 | Sello gigante | `TheStamp` | 60 | **70** | sí |
-| 32 | 120 | Mina terrestre | `Claymore` | 80 | **80** | sí |
-| 32 | 100 | Visto y no visto | `PrestoTurn` | 60 | **80** | sí |
-| 32 | 100 | Arrancada | `Zeroyon` | 60 | **80** | sí |
-| 35 | 180 | Scratch Raid | `ScratchRaid` | — | **90** | no |
+| 28 | 100 | Sello gigante | `TheStamp` | 60 | **90** | sí |
+| 32 | 120 | Mina terrestre | `Claymore` | 80 | **100** | sí |
+| 32 | 100 | Visto y no visto | `PrestoTurn` | 60 | **90** | sí |
+| 32 | 100 | Arrancada | `Zeroyon` | 60 | **90** | sí |
+| 35 | 180 | Zarpazo real | `ScratchRaid` | — | **140** | sí |
 | 36 | 120 | Guardia acrobática | `AcrobatKeep` | 80 | **100** | sí |
 | 36 | 140 | Cruce explosivo | `BritanniaCross` | 120 | **120** | sí |
-| 36 | 140 | Remolino ígneo | `EndlessSummer` | 100 | **100** | sí |
+| 36 | 140 | Remolino ígneo | `EndlessSummer` | 100 | **120** | sí |
 | 36 | 120 | Truco balonazo | `TrickBall` | 70 | **100** | sí |
-| 36 | 140 | Círculo de hielo | `WhiteBlade` | 100 | **100** | sí |
-| 40 | 140 | Trance melódico | `MelodyWave` | 80 | **110** | sí |
-| 40 | 140 | Pasos aéreos | `SkyWalk` | 100 | **100** | sí |
-| 45 | 160 | Dragón ascendente | `NoboriRyuu` | 100 | **110** | sí |
-| 45 | 160 | Esferas luminosas | `RoundSpark` | 120 | **120** | sí |
-| 50 | 180 | Himno de Atenea | `OlympusHarmony` | 120 | **130** | sí |
+| 36 | 140 | Círculo de hielo | `WhiteBlade` | 100 | **120** | sí |
+| 40 | 140 | Trance melódico | `MelodyWave` | 80 | **120** | sí |
+| 40 | 140 | Pasos aéreos | `SkyWalk` | 100 | **120** | sí |
+| 45 | 160 | Dragón ascendente | `NoboriRyuu` | 100 | **130** | sí |
+| 45 | 160 | Esferas luminosas | `RoundSpark` | 120 | **130** | sí |
+| 50 | 180 | Himno de Atenea | `OlympusHarmony` | 120 | **140** | sí |
 | 50 | 180 | Regate supersónico | `SprintWarp` | 130 | **140** | sí |
 
 ### Bloqueo (25)
@@ -131,7 +131,7 @@ Criterio:
 | TP GO1 | Potencia GO1 | Técnica | ID | TP app actual | Propuesto | En app |
 |---:|---:|---|---|---:|---:|---|
 | 20 | 60 | A todo vapor | `DashTrain` | 40 | **50** | sí |
-| 20 | 140 | Dragon Storm | `DragonStorm` | — | **50** | no |
+| 20 | 140 | Lanza tornado | `DragonStorm` | — | **50** | sí |
 | 20 | 40 | Mirada ladrona | `ThiefEye` | 40 | **50** | sí |
 | 24 | 100 | Carga de elefantes | `ElephantPress` | 60 | **60** | sí |
 | 28 | 80 | Fuerza centrífuga | `SpiralDraw` | 40 | **70** | sí |
@@ -140,16 +140,16 @@ Criterio:
 | 32 | 100 | La niebla | `TheMist` | 50 | **80** | sí |
 | 32 | 120 | Picadora | `TwinMixer` | 50 | **80** | sí |
 | 32 | 100 | La gran muralla | `VivaBanriNoChoujou` | 50 | **80** | sí |
-| 35 | 180 | Bloody Encore | `BloodyEncore` | — | **90** | no |
-| 35 | 180 | Dark Space | `DarkSpace` | — | **90** | no |
-| 35 | 180 | Strong Tower | `StrongTower` | — | **90** | no |
+| 35 | 180 | Sentencia final | `BloodyEncore` | — | **90** | sí |
+| 35 | 180 | Espacio oscuro | `DarkSpace` | — | **90** | sí |
+| 35 | 180 | Golpe titánico | `StrongTower` | — | **90** | sí |
 | 36 | 160 | Pinzas cortantes | `BigScissors` | 80 | **90** | sí |
 | 36 | 140 | Defensa propulsada | `KattobiDefense` | 50 | **90** | sí |
 | 36 | 140 | Gran torbellino | `Sargasso` | 80 | **90** | sí |
 | 40 | 160 | Proyectil de ozono | `AirBullet` | 110 | **120** | sí |
 | 40 | 140 | Niebla mística | `DeepMist` | 90 | **100** | sí |
 | 40 | 140 | Corte mágico | `DimensionCut` | 100 | **110** | sí |
-| 40 | 200 | Hakai Danmaku | `HakaiDanmaku` | — | **100** | no |
+| 40 | 200 | Ráfaga de tiros | `HakaiDanmaku` | — | **100** | sí |
 | 40 | 140 | Red de caza | `HuntersNet` | 70 | **100** | sí |
 | 40 | 160 | Espectro oscuro | `SaikyousanShoukan` | 60 | **100** | sí |
 | 45 | 160 | Luz cegadora | `CrazySunlight` | 90 | **120** | sí |
@@ -169,67 +169,34 @@ Criterio:
 | 40 | 120 | Rotación inversa | `CounterdriveGK` | 50 | **90** | sí |
 | 40 | 120 | Barrera de cristal | `CrystalBarrier` | 70 | **90** | sí |
 | 40 | 140 | Barrera de Gaia | `FenceOfGaia` | 90 | **90** | sí |
-| 40 | 140 | Guardian Shield | `GuardianShield` | — | **90** | no |
+| 40 | 140 | Escudo guardián | `GuardianShield` | — | **90** | sí |
 | 40 | 140 | Estrella reflectante | `StarReflection` | 70 | **90** | sí |
 | 45 | 140 | Presa de sombras | `KageTsukami` | 50 | **100** | sí |
 | 45 | — | Recepción negativa | `ReverseWorld` | 90 | **100** | sí |
 | 45 | 140 | Rompetiros | `ShootBreak` | 90 | **100** | sí |
-| 50 | 160 | Lucky Dice | `LuckyDice` | — | **120** | no |
+| 50 | 160 | Dados de la suerte | `LuckyDice` | — | **120** | sí |
 | 50 | 160 | Mordisco de serpiente | `SerpentFang` | 60 | **120** | sí |
 | 55 | 180 | Manos liberadas | `BuraiHand` | 110 | **130** | sí |
 | 55 | 180 | God Hand V | `GodHandV` | 170 | **180** | sí |
 | 55 | 180 | Centro de gravedad | `GravityPoint` | 100 | **130** | sí |
 | 55 | 180 | Puente sin final | `KillBridge` | 100 | **130** | sí |
-| 70 | 180 | Crimson Sphere | `CrimsonSphere` | — | **170** | no |
-| 70 | 180 | Gigantic Bomb | `GiganticBomb` | — | **170** | no |
-| 80 | 200 | Great The Hand | `GreatTheHand` | — | **180** | no |
-| 80 | 200 | Hell's Fist | `HellsFist` | — | **180** | no |
-| 80 | 200 | King Fire | `KingFire` | — | **180** | no |
+| 70 | 180 | Cúpula carmesí | `CrimsonSphere` | — | **170** | sí |
+| 70 | 180 | Presa titánica | `GiganticBomb` | — | **170** | sí |
+| 80 | 200 | Mano grandiosa | `GreatTheHand` | — | **180** | sí |
+| 80 | 200 | Despeje demoníaco | `HellsFist` | — | **180** | sí |
+| 80 | 200 | Corona de fuego | `KingFire` | — | **180** | sí |
 | 80 | 200 | Mano mágica | `MajinTheHand_K` | 110 | **180** | sí |
 
-## 4. Técnicas que faltan en la app (34)
+## 4. Técnicas que faltan en la app (0)
 
-- `BloodyEncore` — Bloody Encore (Bloqueo, TP 35)
-- `BushinRenzan` — Bushin Renzan (Tiro, TP 75)
-- `Checkmate` — Checkmate (Tiro, TP 85)
-- `CrimsonSphere` — Crimson Sphere (Parada, TP 70)
-- `DancingGhost` — Dancing Ghost (Regate, TP 25)
-- `DarkSpace` — Dark Space (Bloqueo, TP 35)
-- `DragonStorm` — Dragon Storm (Bloqueo, TP 20)
-- `FalcoWing` — Falco Wing (Tiro, TP 45)
-- `GallopBuster` — Gallop Buster (Tiro, TP 55)
-- `GiganticBomb` — Gigantic Bomb (Parada, TP 70)
-- `GreatTheHand` — Great The Hand (Parada, TP 80)
-- `GuardianShield` — Guardian Shield (Parada, TP 40)
-- `HakaiDanmaku` — Hakai Danmaku (Bloqueo, TP 40)
-- `Harmonics` — Harmonics (Tiro, TP 55)
-- `HeavyAquaLance` — Heavy Aqua Lance (Tiro, TP 75)
-- `HellsFist` — Hell's Fist (Parada, TP 80)
-- `IcicleRoad` — Icicle Road (Tiro, TP 75)
-- `JusticeWing` — Justice Wing (Tiro, TP 85)
-- `KingFire` — King Fire (Parada, TP 80)
-- `LostAngel` — Lost Angel (Tiro, TP 55)
-- `LuckyDice` — Lucky Dice (Parada, TP 50)
-- `MachineGunBeat` — Machine Gun Beat (Regate, TP 25)
-- `MagiciansBox` — Magician's Box (Tiro, TP 45)
-- `MaouNoOno` — Maou no Ono (Tiro, TP 85)
-- `Overdrive` — Overdrive (Regate, TP 20)
-- `PegasusBreak` — Pegasus Break (Regate, TP 25)
-- `RagingClaw` — Raging Claw (Tiro, TP 55)
-- `ScratchRaid` — Scratch Raid (Regate, TP 35)
-- `SoulBringer` — Soul Bringer (Tiro, TP 85)
-- `StrongTower` — Strong Tower (Bloqueo, TP 35)
-- `SunshineForce` — Sunshine Force (Tiro, TP 75)
-- `SwordExcalibur` — Sword Excalibur (Tiro, TP 150)
-- `SwordOfFire` — Sword of Fire (Tiro, TP 150)
-- `WhiteBreath` — White Breath (Tiro, TP 85)
+
 
 ## 5. Aplicación
 
-1. Las **34 que faltaban** ya se añaden al catálogo de técnicas (819 en total) desde `technique_balance_go1.json`.
-2. El **TP por saga** está implementado: `balance_tp_go1`, `balance_power_min_go1` y `balance_power_max_go1` en `techniques`; el frontend los usa solo en cartas de GO1.
-3. La columna **Propuesto** de las tablas es la que se aplica en `data/technique_balance_go1.json` y `supabase/technique_balance.sql`.
-4. No se toca el `balance_tp` global: IE/GO2/GO3/Ares/Orion siguen con sus valores.
+1. Las **127 originales** están en el catálogo de técnicas (819 en total); las 34 que faltaban se añadieron.
+2. El **TP por saga** está implementado en `balance_tp_go1`, `balance_power_min_go1` y `balance_power_max_go1`; el frontend los usa solo en cartas GO1.
+3. La columna **Propuesto** es la aplicada en `data/technique_balance_go1.json` y `supabase/technique_balance.sql`.
+4. El `balance_tp` global de IE/GO2/GO3/Ares/Orion no se toca.
 
 ## 6. Fuentes
 
