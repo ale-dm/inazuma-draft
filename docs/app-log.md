@@ -591,3 +591,10 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - Añadidas las dos formas de Beta en Sub Character: Jouou-sama Mode (86) y as Benigiku (84), con Keshin Atenea y sus técnicas.
 - Tsurugi Yuuichi no necesita versión extra: la base GO2 ya es la forma alternativa de The Sherwinds.
 - 	ools/db/edits.py acepta specials en las cartas creadas a mano.
+
+
+## GO2: orden de historia y Mixi Max sin equipo
+
+- The Sherwinds/Tenmas (primer partido) baja de 85,55 a **73,27** (top Arion 76). Orden: Tenmas 73,3 → Protocol Omega 76 → 2.0 77,7 → White Deer 77,8 → 3.0 79,5 → ... → Ragnah 85,5.
+- Mixi Max deja de ser equipo: las 39 formas van a Unaffiliated (sin equipo) y se reconocen por la versión. Chrono Storm sigue como equipo oficial.
+- Creadas las 10 formas que faltaban: Saryuu/S Idenshi, Fran/Kuroi Bara, Garshah/G Idenshi, Vampheny/V Idenshi, Yuuichi/Kyousuke, Matsukaze/Shuu, Zanark/Cao Cao y Medam/Leiser/Einam con Zanark.

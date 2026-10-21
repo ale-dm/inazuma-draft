@@ -1077,6 +1077,12 @@ def main(extra_z=None, write=True):
         if not any(sp.get('name') == inherited.get('name') for sp in c['specials']):
             c['specials'].append(inherited)
 
+    # Mixi Max no es un equipo de la historia: es una forma. Las cartas van sin equipo y se
+    # reconocen por su versión (Mixi Max (...)); el Chrono Storm sí es equipo oficial.
+    for c in cards:
+        if c['team'] == 'Mixi Max':
+            c['team'] = 'Unaffiliated'
+
     # Caos: la carta base de ese juego (Prominence / Diamond Dust) cuenta también para ese equipo
     for c in cards:
         c['extra_teams'] = sorted({tm for g, tm in extra_team_pages.get(c['page'], ()) if g == c['game'] and c['version'] == 'base'})

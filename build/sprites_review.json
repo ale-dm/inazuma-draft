@@ -8,28 +8,12 @@
   "sprite": "https://static.wikia.nocookie.net/inazuma/images/9/94/%28R%29_Mark_%28HVR%29.png/revision/latest?cb=20251203220035&path-prefix=es"
  },
  {
-  "id": "endou-mamoru--go2--mixi-max-arion-markion",
-  "name": "Mark Evans",
-  "game": "GO2",
-  "version": "Mixi Max (Arion) «Markion»",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/q/y/qywocbe-mme.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/a/a8/%28IJ%29_Mark_%28HVR_Miximax%29.png/revision/latest?cb=20260511193159&path-prefix=es"
- },
- {
   "id": "gouenji-shuuya--ie1--base",
   "name": "Axel Blaze",
   "game": "IE1",
   "version": "base",
   "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/f/1/f1kh7d67sbs.png",
   "sprite": "https://static.wikia.nocookie.net/inazuma/images/0/0b/%28R%29_Axel_%28HVR%29.png/revision/latest?cb=20251203220407&path-prefix=es"
- },
- {
-  "id": "gouenji-shuuya--go2--mixi-max-shawn-shaxel",
-  "name": "Axel Blaze",
-  "game": "GO2",
-  "version": "Mixi Max (Shawn) «Shaxel»",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/b/a/babjxk4eh_s.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/6/6a/%28IJ%29_Axel_%28HVR_Miximax%29.png/revision/latest?cb=20260518190327&path-prefix=es"
  },
  {
   "id": "kabeyama-heigorou--ie1--base",
@@ -86,14 +70,6 @@
   "version": "base",
   "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/l/1/l1wbplzhm4k.png",
   "sprite": "https://static.wikia.nocookie.net/inazuma/images/1/1d/%28RA%29_Jude_%28HVR%29.png/revision/latest?cb=20251203221440&path-prefix=es"
- },
- {
-  "id": "kidou-yuuto--go2--mixi-max-caleb-juleb",
-  "name": "Jude Sharp",
-  "game": "GO2",
-  "version": "Mixi Max (Caleb) «Juleb»",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/x/0/x0f7z1ua1mm.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/a/ad/%28IJ%29_Jude_%28HVR-Miximax_Caleb%29.png/revision/latest?cb=20260709011803&path-prefix=es"
  },
  {
   "id": "afuro-terumi--ie1--base",
@@ -166,14 +142,6 @@
   "version": "Inazuma Japan",
   "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/w/k/wk5ezxf-7dm.png",
   "sprite": "https://static.wikia.nocookie.net/inazuma/images/3/3a/%28IJ%29_Shawn_%28HVR%29.png/revision/latest?cb=20260503122143&path-prefix=es"
- },
- {
-  "id": "fubuki-shirou--go2--mixi-max-axel-shaxel",
-  "name": "Shawn Froste",
-  "game": "GO2",
-  "version": "Mixi Max (Axel) «Shaxel»",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/m/c/mc0a0kigy_k.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/e/e2/%28IJ%29_Shawn_%28HVR_Miximax%29.png/revision/latest?cb=20260711220339&path-prefix=es"
  },
  {
   "id": "tachimukai-yuuki--ie2--base",

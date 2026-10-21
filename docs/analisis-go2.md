@@ -5,7 +5,7 @@
 
 ## 1. Resumen ejecutivo
 
-- **GO2 ya es el pico de GO**: 90,45 de media en Mixi Max, 88,82 en Chrono Storm y 87,0 en los extras. GO3 se queda en 84,82 y GO1 en 84,73.
+- **GO2 ya es el pico de GO**: 88,82 de media en Chrono Storm (mejor equipo) y cartas Mixi Max de hasta 92. GO3 se queda en 84,82 y GO1 en 84,73.
 - **Protocol Omega 2.0** ya está completa: **16 cartas / 16 personajes** y **77,73** (Beta 83). Medam, Leiser, Einam y Minenne creados desde la wiki.
 - **Protocol Omega 3.0** ya está completa: **11 cartas** y **79,55**. Medam, Leiser y Einam creados desde la wiki.
 - Los **duplicados base + versión** se han limpiado: las bases quedan en `Unaffiliated` (fuera de los pools de draft) y los equipos usan la versión.
@@ -17,6 +17,7 @@
 
 | Equipo | Objetivo | Real | Estrella | Notas |
 |---|---:|---:|---|---|
+| The Sherwinds (Tenmas) | 73 | **73,27** | Arion 76 | primer partido |
 | Protocol Omega | 76 | **76,00** | Alpha 90 | 13 cartas |
 | Protocol Omega 2.0 | 77,5 | **77,73** | Beta 83 | 16 cartas |
 | White Deer | 78 | **77,82** | Taian 88 | Ya rebajado |
@@ -34,15 +35,16 @@
 | Raimon | — | **86,09** | Goldie 90 | protagonista |
 | Chrono Storm | — | **88,82** | Bailong 92 | final de historia |
 | Inazuma Legend Japan | — | **88,36** | Axel 91 | extra |
-| Mixi Max | — | **90,45** | Bailong 92 | pico GO2 |
-| Sherwinds | — | **85,55** | Vladimir 89 | extra |
+| Mixi Max (formas) | — | — | — | **no es equipo**: 39 formas sin equipo |
+
+**Orden de partidos (historia):** The Sherwinds/Tenmas 73,3 → Protocol Omega 76 → Protocol Omega 2.0 77,7 → White Deer 77,8 → Protocol Omega 3.0 79,5 → Terracotta 80,9 → Zanark's Domain 81,5 → Perfect Cascade 82,0 → Zan 83,3 → Gihl 83,6 → Gahl 84,1 → Ragnah 85,5. Después vienen los extras (Despairadoes 86,6, Nosfanática 87,2, Aullido Lunar 87,0), Raimon 86,1, Chrono Storm 88,8 e Inazuma Legend Japan 88,4. **Mixi Max no es un equipo**: sus 39 formas van sin equipo.
 
 Comparación de picos por saga:
 
 | Saga | Mejor once | Estrella |
 |---|---:|---|
 | GO1 | 84,73 | Team Zero |
-| **GO2** | **90,45** | Mixi Max |
+| **GO2** | **88,82** | Chrono Storm |
 | GO3 | 84,82 | Supernova |
 
 GO3 ya queda por debajo de GO2 sin tocar nada. Si queremos que GO3 sea “algo menos fuerte”, el margen actual es suficiente; no hace falta subir GO2 más.
@@ -119,11 +121,11 @@ Los **Souls / tótems** son de **Galaxy (GO3)**, no de GO2. En la app están en 
 | Ishido form | **1** | Gouenji |
 | Teen | **1** | Gouenji Yuuka |
 
-En la app, GO2 tiene **461 cartas**: 339 base y 122 versiones. Las etiquetas más repetidas son Perfect Cascade (16), Raimon (16), Chrono Storm (12), Inazuma Legend Japan (11), Mixi Max (Zanark) (9), Protocol Omega 2.0 (13), Adult (6), Protocol Omega 3.0 (6) y luego muchas versiones únicas.
+En la app, GO2 tiene **471 cartas**: 339 base y 132 versiones. Las etiquetas más repetidas son Perfect Cascade (16), Raimon (16), Chrono Storm (12), Inazuma Legend Japan (11), Protocol Omega 2.0 (13), Adult (6), Protocol Omega 3.0 (6) y luego muchas versiones únicas.
 
 ### 4.1 Cobertura de versiones
 
-- **Mixi Max**: 29 cartas en el grupo `Mixi Max` + 12 en Chrono Storm. El PlayerData CS declara 31 formas; muchas de las que no están en el grupo son las de Chrono Storm (Taiyou, Kinako, Nishizono, Nishiki, Torb…), que sí existen como carta Chrono Storm pero **sin el tag de compañero**.
+- **Mixi Max**: **36 cartas de forma** (29 que ya había + 7 nuevas) en `Unaffiliated`; **no forman equipo**, igual que en el juego. Las 12 de Chrono Storm sí son equipo. El PlayerData CS declara 31 formas; las de Chrono Storm (Taiyou, Kinako, Nishizono, Nishiki, Torb…) están como carta de equipo con su tag.
 - **Hyper Dive**: las 16 versiones de Perfect Cascade parecen ser la forma Hyper Dive, aunque la etiqueta diga solo “Perfect Cascade”.
 - **Adult / Inazuma Legend Japan**: 17 cartas entre las dos etiquetas; cubre las 15 formas adultas y algún extra.
 - **Beta**: base, Protocol Omega 2.0, **Jouou-sama Mode** y **Benigiku** (estas dos en Sub Character).
@@ -159,10 +161,10 @@ Cada carta tiene un array `specials` con:
 
 | Métrica | Valor |
 |---|---:|
-| Cartas GO2 | 461 |
-| Con algún special | 177 |
-| Keshin | 133 |
-| Keshin Armed | 87 |
+| Cartas GO2 | 471 |
+| Con algún special | 187 |
+| Keshin | 134 |
+| Keshin Armed | 88 |
 | Keshin sin Armed | 46 |
 | Keshin únicos | 69 |
 | Mixi (tag) | 73 |
@@ -171,18 +173,17 @@ Cada carta tiene un array `specials` con:
 
 Cartas con combinaciones:
 
-- **Keshin + Mixi**: 29.
-- **Solo Mixi**: 44 (29 Mixi Max + 12 Chrono Storm + 3 bases con compañero; las demás ya tienen Keshin).
+- **Keshin + Mixi**: 30.
+- **Solo Mixi**: 53 (39 formas Mixi Max + 12 Chrono Storm + 2 bases con compañero; las demás ya tienen Keshin).
 - **Solo Keshin**: 104.
 
-Para comparar, el `PlayerData/CS` declara **392 entradas de Keshin**, **82 Keshin únicos** y **249 entradas marcadas Armed**. La app solo materializa las que tienen carta en GO2 (133 / 69 únicos / 87 Armed). GO1 tiene 83 Keshin y ninguno Armed; GO3 tiene 78 Keshin, 7 Armed y 71 Souls.
+Para comparar, el `PlayerData/CS` declara **392 entradas de Keshin**, **82 Keshin únicos** y **249 entradas marcadas Armed**. La app solo materializa las que tienen carta en GO2 (134 / 69 únicos / 88 Armed). GO1 tiene 83 Keshin y ninguno Armed; GO3 tiene 78 Keshin, 7 Armed y 71 Souls.
 
 Por equipo (Keshin / Armed / Mixi):
 
 | Equipo | Keshin | Armed | Mixi |
 |---|---:|---:|---:|
 | Perfect Cascade | 16 | 15 | 0 |
-| Mixi Max | 9 | 7 | 29 |
 | Chrono Storm | 0 | 0 | 12 |
 | Raimon | 7 | 7 | 8 |
 | Despairadoes | 5 | 3 | 0 |
@@ -203,18 +204,18 @@ Por equipo (Keshin / Armed / Mixi):
 
 ### 5.3 Mixi Max
 
-- **29 cartas** en el grupo `Mixi Max`; **12** en Chrono Storm.
+- **39 formas Mixi Max** (29 que ya había + 10 nuevas) en `Unaffiliated`; **12** en Chrono Storm.
 - **19 recetas** en `src/data/fusions.json`.
-- **10 cartas Mixi Max no tienen receta**: Shuu/Tezlong, Tsurugi/Baivic, Fubuki/Shaxel, Kidou/Juleb, Endou/Markion, Tsurugi/Victarion, Zanark/Zeta, Fei/Tyranno, Kirino/Aitriel y Kirino/Gabardo (algunas son la dirección inversa de una pareja o formas de historia).
-- Las 29 cartas Mixi Max y las 12 Chrono Storm muestran un **tag `mixi` con el compañero**. **9 Mixi Max heredan el Keshin del aura** (Markion, Victarion, Gabardo, Zanark, Kirino/Riccardo, etc.) cuando el usuario y el aura tienen Keshin en GO2; si el usuario no puede Armed, el heredado va sin Armed.
+- **20 formas no tienen receta**: las 10 antiguas (Shuu/Tezlong, Tsurugi/Baivic, Fubuki/Shaxel, Kidou/Juleb, Endou/Markion, Tsurugi/Victarion, Zanark/Zeta, Fei/Tyranno, Kirino/Aitriel, Kirino/Gabardo) y las 10 nuevas (Saryuu/S Idenshi, Fran/Kuroi Bara, Garshah/G Idenshi, Vampheny/V Idenshi, Yuuichi/Kyousuke, Matsukaze/Shuu, Zanark/Cao Cao, Medam/Leiser/Einam con Zanark).
+- Las 39 formas Mixi Max y las 12 Chrono Storm muestran un **tag `mixi` con el compañero**. **9 Mixi Max heredan el Keshin del aura** (Markion, Victarion, Gabardo, Zanark, Kirino/Riccardo, etc.) cuando el usuario y el aura tienen Keshin en GO2; si el usuario no puede Armed, el heredado va sin Armed.
 - La fusión es una **receta fija**: dos personajes del mismo juego, una vez por cuenta, y da la carta Mixi Max ya existente. No calcula stats a partir de los ingredientes; no hay Best Match, Mixi Trans ni herencia de técnicas/skills (solo Keshin cuando existe).
-- El grupo `Mixi Max` queda fuera de los pools del draft; es colección/endgame.
+- Las formas Mixi Max **no son equipo**: van sin equipo, como en el juego; el Chrono Storm sí es equipo oficial.
 
 ### 5.4 Keshin Armed
 
 - Es un **flag** en el Keshin, no una carta aparte. Es lo correcto: en el juego es un modo, no un personaje nuevo.
-- En la ficha se muestra “Armadura” y la hipertécnica; en el simulador la Hiperenergía es genérica (+4).
-- La Hiperenergía ya da **+5 normal y +7 con Armed** en el simulador. Faltan KP, coste 0 de técnicas y bloquear la hipertécnica del Keshin mientras está Armed.
+- En la ficha se muestra “Armadura” y la hipertécnica; en el simulador la Hiperenergía da **+5 normal y +7 con Armed**.
+- Faltan KP, coste 0 de técnicas y bloquear la hipertécnica del Keshin mientras está Armed.
 
 ### 5.5 “Armaduras” de Victory Road
 
@@ -224,21 +225,21 @@ En VR hay **24 Keshin, 17 Armed y 13 únicos**. El informe de sprites lista 36 v
 
 ### 6.1 Mixi Max
 
-Formas de GO2 que no están en la app (o no tienen tag):
+Cobertura de formas Mixi Max de GO2:
 
 | Forma | Compañero | Estado |
 |---|---|---|
-| Medam | Zanark | Sin carta base; falta Mixi Max |
-| Leiser | Zanark | Sin carta base; falta Mixi Max |
-| Einam | Zanark | Sin carta base; falta Mixi Max |
-| Saryuu Evan | S Idenshi | Falta Mixi Max |
-| Fran | Kuroi Bara | Falta Mixi Max |
-| Garshah Wolfein | G Idenshi | Falta Mixi Max |
-| Vampheny Vamp | V Idenshi | Falta Mixi Max |
-| Tsurugi Yuuichi | Tsurugi Kyousuke | Falta; la app tiene Yuuichi/Victor |
-| Matsukaze Tenma | Shuu | Falta; la app tiene Mark/Victor/Tezcat |
-| Zanark Avalonic | Cao Cao | Falta; la app tiene Zeta |
-| Fei / Hakuryuu / Nanobana / Nishizono / Nishiki / Torb / Shindou / Kirino / Tsurugi / Matsukaze / Zanark | Big / Zhuge / Dragon / Liu Bei / Sakamoto / Toh-chan / Nobunaga / Jeanne / Okita / Arthur / Clara Jane | Existen como **Chrono Storm**, pero sin tag de compañero |
+| Medam | Zanark | **Creado** (Mixi Max) |
+| Leiser | Zanark | **Creado** (Mixi Max) |
+| Einam | Zanark | **Creado** (Mixi Max) |
+| Saryuu Evan | S Idenshi | **Creado** |
+| Fran | Kuroi Bara | **Creado** |
+| Garshah Wolfein | G Idenshi | **Creado** |
+| Vampheny Vamp | V Idenshi | **Creado** |
+| Tsurugi Yuuichi | Tsurugi Kyousuke | **Creado** |
+| Matsukaze Tenma | Shuu | **Creado** |
+| Zanark Avalonic | Cao Cao | **Creado** |
+| Fei / Hakuryuu / Nanobana / Nishizono / Nishiki / Torb / Shindou / Kirino / Tsurugi / Matsukaze / Zanark | Big / Zhuge / Dragon / Liu Bei / Sakamoto / Toh-chan / Nobunaga / Jeanne / Okita / Arthur / Clara Jane | **Chrono Storm con tag de compañero** |
 
 También sobra **Mike (Tez Beyan) con Zanark**: no está en la lista de 11 formas Zanark del PlayerData (Lugic, Medam, Ward, Galling, Bahamus, Quorth, Orca, Dhanna, Leiser, Gamma, Einam). Hay que revisar si es una forma oficial o un emparejamiento manual.
 
@@ -297,7 +298,7 @@ También sobra **Mike (Tez Beyan) con Zanark**: no está en la lista de 11 forma
 ### P4 — Balance
 
 14. Después de P0, volver a mirar la rampa: 2.0 queda en 77,73 y 3.0 en 80,00. Si los 90 de Alpha/Taian/Gamma siguen chirriando, aplicar `compress_above: 86` con factor 0,5 o topes de capitán por equipo.
-15. GO3 no se toca: ya está por debajo de GO2 (84,82 vs 90,45).
+15. GO3 no se toca: ya está por debajo de GO2 (84,82 vs 88,82 de equipo; las cartas Mixi Max llegan a 92).
 
 ## 8. Fuentes
 

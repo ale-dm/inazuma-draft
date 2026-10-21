@@ -250,6 +250,336 @@
           "hyper_es": "Golpe de Atenea"
         }
       ]
+    },
+    "saryuu-evan--go2--mixi-max-s-idenshi": {
+      "character_id": "saryuu-evan",
+      "name": "Simeon Ayp",
+      "game": "GO2",
+      "version": "Mixi Max (S Idenshi)",
+      "team": "Unaffiliated",
+      "position": "FW",
+      "element": "earth",
+      "ovr": 91,
+      "category": "Top Player",
+      "tier": "A",
+      "is_version": true,
+      "shooting": 93,
+      "control": 91,
+      "physical": 90,
+      "speed": 85,
+      "defense": 82,
+      "goalkeeping": 79,
+      "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/w/p/wp98eqxvzq0.png",
+      "techniques": [
+        "ShellbitBurst",
+        "DecoyRelease",
+        "DragonBlaster",
+        "StormZone"
+      ],
+      "specials": [
+        {
+          "type": "mixi",
+          "name": "S Idenshi"
+        }
+      ]
+    },
+    "fran--go2--mixi-max-kuroi-bara": {
+      "character_id": "fran",
+      "name": "Flora",
+      "game": "GO2",
+      "version": "Mixi Max (Kuroi Bara)",
+      "team": "Unaffiliated",
+      "position": "FW",
+      "element": "air",
+      "ovr": 90,
+      "category": "Top Player",
+      "tier": "A",
+      "is_version": true,
+      "shooting": 93,
+      "control": 85,
+      "physical": 86,
+      "speed": 90,
+      "defense": 80,
+      "goalkeeping": 78,
+      "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/y/c/ycjjxo0duj8.png",
+      "techniques": [
+        "MagicalFlower",
+        "FloralDespair",
+        "AirBullet"
+      ],
+      "specials": [
+        {
+          "type": "mixi",
+          "name": "Kuroi Bara"
+        }
+      ]
+    },
+    "garshah-wolfein--go2--mixi-max-g-idenshi": {
+      "character_id": "garshah-wolfein",
+      "name": "Wolfram Vulpeen",
+      "game": "GO2",
+      "version": "Mixi Max (G Idenshi)",
+      "team": "Unaffiliated",
+      "position": "FW",
+      "element": "fire",
+      "ovr": 90,
+      "category": "Top Player",
+      "tier": "A",
+      "is_version": true,
+      "shooting": 92,
+      "control": 86,
+      "physical": 84,
+      "speed": 88,
+      "defense": 70,
+      "goalkeeping": 65,
+      "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/e/z/ezwgnutstvk.png",
+      "techniques": [
+        "BeastLord",
+        "AllDelete",
+        "OujaNoKiba",
+        "TheMonsters"
+      ],
+      "specials": [
+        {
+          "type": "mixi",
+          "name": "G Idenshi"
+        }
+      ]
+    },
+    "vampheny-vamp--go2--mixi-max-v-idenshi": {
+      "character_id": "vampheny-vamp",
+      "name": "Desmodus Drakul",
+      "game": "GO2",
+      "version": "Mixi Max (V Idenshi)",
+      "team": "Unaffiliated",
+      "position": "MF",
+      "element": "earth",
+      "ovr": 90,
+      "category": "Top Player",
+      "tier": "A",
+      "is_version": true,
+      "shooting": 90,
+      "control": 92,
+      "physical": 84,
+      "speed": 88,
+      "defense": 86,
+      "goalkeeping": 70,
+      "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/k/x/kx_rjdhzs6m.png",
+      "techniques": [
+        "VampireLord",
+        "HeavensTime",
+        "GodWind",
+        "TheMonsters"
+      ],
+      "specials": [
+        {
+          "type": "mixi",
+          "name": "V Idenshi"
+        }
+      ]
+    },
+    "tsurugi-yuuichi--go2--mixi-max-kyousuke": {
+      "character_id": "tsurugi-yuuichi",
+      "name": "Vladimir Blade",
+      "game": "GO2",
+      "version": "Mixi Max (Kyousuke)",
+      "team": "Unaffiliated",
+      "position": "FW",
+      "element": "fire",
+      "ovr": 91,
+      "category": "Top Player",
+      "tier": "A",
+      "is_version": true,
+      "shooting": 93,
+      "control": 90,
+      "physical": 88,
+      "speed": 85,
+      "defense": 79,
+      "goalkeeping": 79,
+      "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/w/xwnabrc2pos.png",
+      "techniques": [
+        "ThousandArrow",
+        "ShippuuDash",
+        "BakunetsuScrew",
+        "GreatBlaster"
+      ],
+      "specials": [
+        {
+          "type": "mixi",
+          "name": "Kyousuke"
+        },
+        {
+          "type": "keshin",
+          "name": "Heroic Swordsman Lancelot",
+          "name_es": "Caballero Lancelot",
+          "armed": true,
+          "hyper": "Lancelot Lunge",
+          "hyper_es": "Estocada de Lancelot",
+          "name_fr": "Lancelot, Le Spadassin Héroïque",
+          "name_it": "Maestro Spadaccino Lancelot",
+          "hyper_fr": "Botte de Lancelot",
+          "hyper_it": "Angelo Perduto"
+        }
+      ]
+    },
+    "matsukaze-tenma--go2--mixi-max-shuu": {
+      "character_id": "matsukaze-tenma",
+      "name": "Arion Sherwind",
+      "game": "GO2",
+      "version": "Mixi Max (Shuu)",
+      "team": "Unaffiliated",
+      "position": "MF",
+      "element": "air",
+      "ovr": 90,
+      "category": "Top Player",
+      "tier": "A",
+      "is_version": true,
+      "shooting": 88,
+      "control": 94,
+      "physical": 88,
+      "speed": 92,
+      "defense": 88,
+      "goalkeeping": 83,
+      "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/ed/%28T%29_Matsukaze_Tenma_sprite_%28VR%29.png/revision/latest?cb=20260808233408",
+      "techniques": [
+        "AggressiveBeat",
+        "WonderTrap",
+        "KazaanaDrive",
+        "GodWind",
+        "SoyokazeStep",
+        "MachWind"
+      ],
+      "specials": [
+        {
+          "type": "mixi",
+          "name": "Shuu"
+        }
+      ]
+    },
+    "zanark-avalonic--go2--mixi-max-cao-cao": {
+      "character_id": "zanark-avalonic",
+      "name": "Zanark Avalonic",
+      "game": "GO2",
+      "version": "Mixi Max (Cao Cao)",
+      "team": "Unaffiliated",
+      "position": "FW",
+      "element": "earth",
+      "ovr": 92,
+      "category": "Top Player",
+      "tier": "A",
+      "is_version": true,
+      "shooting": 95,
+      "control": 92,
+      "physical": 92,
+      "speed": 86,
+      "defense": 77,
+      "goalkeeping": 79,
+      "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/k/2/k2rrbkajamu.png",
+      "techniques": [
+        "DisasterBreak",
+        "BungeeThrust",
+        "Screwdriver"
+      ],
+      "specials": [
+        {
+          "type": "mixi",
+          "name": "Cao Cao"
+        }
+      ]
+    },
+    "medam--go2--mixi-max-zanark": {
+      "character_id": "medam",
+      "name": "Medam",
+      "game": "GO2",
+      "version": "Mixi Max (Zanark)",
+      "team": "Unaffiliated",
+      "position": "DF",
+      "element": "earth",
+      "ovr": 86,
+      "category": "Top Player",
+      "tier": "A",
+      "is_version": true,
+      "shooting": 62,
+      "control": 76,
+      "physical": 84,
+      "speed": 76,
+      "defense": 92,
+      "goalkeeping": 68,
+      "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/8/8a/%28PO%29_Medam_sprite.png/revision/latest?cb=20230527092612",
+      "techniques": [
+        "CoilUpper",
+        "ExcellentBreast",
+        "Sidewinder",
+        "MagnetDraw"
+      ],
+      "specials": [
+        {
+          "type": "mixi",
+          "name": "Zanark"
+        }
+      ]
+    },
+    "leiser--go2--mixi-max-zanark": {
+      "character_id": "leiser",
+      "name": "Leiser",
+      "game": "GO2",
+      "version": "Mixi Max (Zanark)",
+      "team": "Unaffiliated",
+      "position": "FW",
+      "element": "air",
+      "ovr": 86,
+      "category": "Top Player",
+      "tier": "A",
+      "is_version": true,
+      "shooting": 94,
+      "control": 76,
+      "physical": 72,
+      "speed": 84,
+      "defense": 52,
+      "goalkeeping": 56,
+      "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/ef/%28PO%29_Leiser_sprite.png/revision/latest?cb=20230527095356",
+      "techniques": [
+        "GaussShot",
+        "PlasmaBall",
+        "WhiteBlade"
+      ],
+      "specials": [
+        {
+          "type": "mixi",
+          "name": "Zanark"
+        }
+      ]
+    },
+    "einam--go2--mixi-max-zanark": {
+      "character_id": "einam",
+      "name": "Einam",
+      "game": "GO2",
+      "version": "Mixi Max (Zanark)",
+      "team": "Unaffiliated",
+      "position": "FW",
+      "element": "wood",
+      "ovr": 86,
+      "category": "Top Player",
+      "tier": "A",
+      "is_version": true,
+      "shooting": 94,
+      "control": 74,
+      "physical": 74,
+      "speed": 80,
+      "defense": 57,
+      "goalkeeping": 56,
+      "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/8/83/%28PO%29_Einam_sprite.png/revision/latest?cb=20230527095653",
+      "techniques": [
+        "GaussShot",
+        "PlasmaBall",
+        "SpringArrow"
+      ],
+      "specials": [
+        {
+          "type": "mixi",
+          "name": "Zanark"
+        }
+      ]
     }
   },
   "deleted": [],
