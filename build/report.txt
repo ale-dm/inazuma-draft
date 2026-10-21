@@ -35,7 +35,7 @@ Orion: supertécnicas de la carta — rtu 17, anime 28, wiki 162 (anime = wiki e
 Victory Road: jugadores sin supertécnicas de VR (5): Philip Star, Lucas Star, Alexander Allegrov, Cade Shelby, Josephine
 Victory Road: supertécnicas de la carta — rtu 21, wiki 922 (anime = wiki española «Desde Victory Road»; wiki = ficha principal del módulo PlayerData_VR de la wiki inglesa; rtu = Road to Ultimate, comunes + rama principal; vr = todas las de VR)
 Equipo con un solo jugador, fuera: Queens (VR) → Romica Glimmerly sin equipo
-stats_mod: 2320 cartas con las stats del mod (nivel 40, IE1-3)
+stats_mod: 5354 cartas con las stats del mod (nivel 40, IE1-3)
 Nombres fr: técnicas 818/1073 · equipos 133/187
 Nombres it: técnicas 559/1073 · equipos 110/187
 Escudos de equipo: 172/187 · con escudo distinto según la época: 95

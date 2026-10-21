@@ -665,3 +665,9 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - TP por lore de 109 técnicas de aura (escala ampliada hasta 250): espíritu guerrero GO2 hasta 230, tótems hasta 220, GO1 hasta 210. Las 36 de GO1 salen del TP por saga. Mixi Max: 11 técnicas con TP de GO2.
 - Fatal Sim: fuera la hiperenergía; acciones de espíritu guerrero / tótem, armadura y Mixi Max por puntos, también para la IA.
 - Detalle en docs/balance-tecnicas-auras.md.
+
+## Stats a nivel 40 en todas las sagas
+
+- `tools/db/mod_balance_all.py`: el mismo cálculo del balance del mod (modelo 3) con todas las sagas, en memoria (no toca EditorMods ni el juego).
+- `import_stats_mod.py` usa ese cálculo para GO1-3, Ares, Orion y VR; IE1-3 siguen con el balance instalado.
+- 5.354 de 5.443 cartas con las 7 stats a nivel 40 en la ficha (antes 2.320). Detalle en docs/balance-stats.md.

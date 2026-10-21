@@ -1,14 +1,19 @@
 # Stats de las cartas desde el balance del mod (nivel 40)
 
-> **Estado:** aplicado (2026-10-20). IE1, IE2 e IE3 usan las stats del mod de Victory Road;
-> Ares, Orion, GO y VR siguen con las suyas.
+> **Estado:** aplicado (2026-10-20; todas las sagas desde el 2026-10-21). IE1, IE2 e IE3 usan las stats del balance que el
+> mod de Victory Road tiene instalado; GO1-3, Ares, Orion y VR, el **mismo cálculo del mod con todas las sagas**, hecho en
+> memoria por `tools/db/mod_balance_all.py` (sin tocar EditorMods ni el juego).
 > **Fuente:** `C:\Program Files (x86)\Steam\steamapps\common\INAZUMA ELEVEN Victory Road\EditorMods\`
 > (explicación completa en `balance_stats_para_otra_conversacion.md` de esa misma carpeta).
 
 ## Qué se ha hecho
 
-1. `tools/db/import_stats_mod.py` lee los JSON del editor del mod y cruza cada carta de la app
-   (IE1/IE2/IE3) con su ficha del juego:
+0. `tools/db/mod_balance_all.py` carga el editor del mod (sus datos del juego, como al abrirlo) y lanza su `compute()` con
+   todas las sagas sobre una **copia** de su configuración; deja `build/mod_balance_all.json`. Para IE1-3 no se usa
+   (con todas las sagas en la población, la pendiente y la normalización por puesto cambian un poco): esas salen del
+   balance instalado.
+1. `tools/db/import_stats_mod.py` lee los JSON del editor del mod y cruza cada carta de la app con su ficha del juego
+   (IE1-3 con `balance_last.json`; el resto con `build/mod_balance_all.json`):
    - `balance_medias.json`: cartas de Supabase y modelo del juego (`codes`).
    - `balance_base.json`: crecimiento, libertad y stats base.
    - `balance_last.json`: **stats finales de nivel 200** (lo que genera el mod).
@@ -16,7 +21,7 @@
    - `proyecto.json`: temporada de cada ficha.
    El cruce usa el código de modelo (`c01000100` → `crc32` → `chara` de la ficha) y, si la carta no
    está enlazada, el nombre + juego + equipo de las **copias de versión** (46 en el último balance).
-   El resultado se guarda en `data/stats_mod.json` (2.320 cartas).
+   El resultado se guarda en `data/stats_mod.json` (5.354 cartas).
 2. `tools/db/stats_mod.py` (lo llama `build.py` después de `apply_tuning`):
    - reescala las 7 stats a la media (OVR) de la carta si la copia se calculó con otra media;
    - las pasa a **nivel 40** con la curva de Character Reforged:
@@ -25,8 +30,8 @@
    - calcula las 6 stats del motor con las mismas fórmulas de duelo del juego, normalizadas por puesto
      a la escala 25–99 y ajustadas para que su media ponderada siga siendo el OVR.
 3. La ficha del jugador (`CardInfo`) enseña las **7 stats a nivel 40** con los iconos del juego, la
-   letra por cuantiles, la libertad y los **7 duelos**. Las cartas sin datos del mod (GO, Ares, Orion,
-   VR y 15 fichas de IE1-3 sin fila) siguen con las 6 stats de siempre.
+   letra por cuantiles, la libertad y los **7 duelos**. Las pocas cartas sin datos del mod (sin código de
+   modelo o sin media base) siguen con las 6 stats de siempre.
 
 ## Cobertura
 
@@ -34,15 +39,18 @@
 |---|---:|---:|
 | IE1 | 1.014 | 1.014 |
 | IE2 | 673 | 666 |
-| IE3 | 648 | 640 |
-| GO1/GO2/GO3 | 1.704 | — |
-| Ares / Orion | 406 | — |
-| VR | 943 | — |
-| **Total** | **5.388** | **2.320** |
+| IE3 | 659 | 647 |
+| GO1 | 887 | 870 |
+| GO2 | 471 | 433 |
+| GO3 | 390 | 387 |
+| ARES | 199 | 192 |
+| ORION | 207 | 202 |
+| VR | 943 | 943 |
+| **Total** | **5.443** | **5.354** |
 
-Las 15 fichas de IE1-3 sin datos son las que no están enlazadas en `card_victorymods_map` ni en una
-copia de versión (los Chaos de IE2 que faltan, Bellatrix, Shawn IE3…); se quedan con las 6 stats
-anteriores y sin bloque de nivel 40.
+Las cartas sin datos son las que no están enlazadas en `card_victorymods_map` ni en una copia de versión (los Chaos de
+IE2 que faltan, Bellatrix, Bailong de Team Zero…) o cuyo modelo no tiene media base (versiones de GO2 como Victor
+Blade de Chrono Storm); se quedan con las 6 stats anteriores y sin bloque de nivel 40.
 
 ## Modelo 3: reparto por puesto
 
@@ -78,6 +86,7 @@ Axel IE3 (nivel 200) `419 / 391 / 285 / 148 / 252 / 249 / 175` → a nivel 40
 ## Regenerar
 
 ```powershell
+python tools/db/mod_balance_all.py "C:\Program Files (x86)\Steam\steamapps\common\INAZUMA ELEVEN Victory Road\EditorMods"
 python tools/db/import_stats_mod.py "C:\Program Files (x86)\Steam\steamapps\common\INAZUMA ELEVEN Victory Road\EditorMods"
 python tools/db/build.py
 ```

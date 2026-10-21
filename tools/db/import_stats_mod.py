@@ -2,7 +2,7 @@
 
 Lee balance_last.json (stats finales de nivel 200 por ficha), balance_copies.json /
 balance_versiones.json (copias de versión), balance_base.json (crecimiento y libertad) y
-balance_medias.json (medias de Supabase), y cruza cada carta de la app (IE1/IE2/IE3) con su ficha:
+balance_medias.json (medias de Supabase), y cruza cada carta de la app con su ficha:
 
   card_id -> {
     "stats": [kick, control, technique, pressure, physical, intelligence, agility],  # nivel 200
@@ -13,7 +13,12 @@ balance_medias.json (medias de Supabase), y cruza cada carta de la app (IE1/IE2/
 
 Las stats de la carta se reescalan a su OVR en tools/db/stats_mod.py y se pasan a nivel 40.
 
-Uso:  python3 tools/db/import_stats_mod.py [ruta del EditorMods]
+IE1-3 salen del balance que el mod tiene instalado (balance_last.json). El resto de sagas (GO1-3, Ares, Orion, VR), que
+el mod no balancea, salen del mismo cálculo del mod con todas las sagas, hecho en memoria por
+tools/db/mod_balance_all.py (no toca EditorMods ni el juego), que deja build/mod_balance_all.json.
+
+Uso:  python3 tools/db/mod_balance_all.py [ruta del EditorMods]
+      python3 tools/db/import_stats_mod.py [ruta del EditorMods]
 """
 import collections
 import json
@@ -37,6 +42,10 @@ def main():
     M, B, L, V, P = (load('balance_medias.json'), load('balance_base.json'), load('balance_last.json'),
                      load('balance_versiones.json'), load('proyecto.json'))
     d = json.load(open(os.path.join(ROOT, 'build', 'players.json'), encoding='utf-8'))
+    all_path = os.path.join(ROOT, 'build', 'mod_balance_all.json')
+    L_all = json.load(open(all_path, encoding='utf-8'))['last'] if os.path.exists(all_path) else {}
+    if not L_all:
+        print('aviso: falta build/mod_balance_all.json (tools/db/mod_balance_all.py): solo IE1-3')
     row_season = {}
     for t in P.get('teams') or []:
         s = SEASON.get((t.get('bb') or {}).get('season'))
@@ -89,8 +98,10 @@ def main():
             base_media[code] = max(vals)
 
     out, miss = {}, []
+    L_ie = L
     for c in d['cards']:
-        if c['game'] not in ('IE1', 'IE2', 'IE3'):
+        L = L_ie if c['game'] in ('IE1', 'IE2', 'IE3') else L_all
+        if not L:
             continue
         cp_match = copy_for_card(c)
         if cp_match:

@@ -68,4 +68,4 @@ def apply_stats_mod(cards, ov, report):
         report.append('stats_mod: ninguna carta con datos del mod')
         return
     # Las 6 stats del motor NO se tocan: el duelo/simulación de la app sigue con su balance.
-    report.append(f'stats_mod: {n} cartas con las stats del mod (nivel {LEVEL}, IE1-3)')
+    report.append(f'stats_mod: {n} cartas con las stats del mod (nivel {LEVEL}; IE1-3 del balance instalado, el resto del cálculo con todas las sagas)')
