@@ -623,3 +623,11 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - TP GO1 por tipo: tiros 25–150 (50), regates 20–50 (26), bloqueos 20–50 (25), paradas 20–80 (26).
 - 93 ya están en la app; **34 faltan** solo en la wiki. Propuesta de colocación en docs/balance-tecnicas-go1-originales.md.
 - No se aplican TP todavía: muchas se reutilizan en GO2/GO3 y el alance_tp es global. Elementos inválidos de AcrobatKeep/SkyWalk corregidos a air.
+
+
+## GO1: TP por saga aplicado
+
+- Añadidas las 127 técnicas originales de GO1 al catálogo (819 técnicas en total; 34 nuevas que no usaba ninguna carta).
+- Nuevas columnas alance_tp_go1, alance_power_min_go1 y alance_power_max_go1; el frontend las usa solo en cartas GO1.
+- Valores en data/technique_balance_go1.json y supabase/technique_balance.sql; el TP global de IE/GO2/GO3 no se toca.
+- Escala: tiros 50–200; regates 50–140; bloqueos 50–130; paradas 50–180.

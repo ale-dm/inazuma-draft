@@ -1472,6 +1472,16 @@ def main(extra_z=None, write=True):
                    'element': ELEMENT.get(z['element']), 'position': z['position'], 'teams': z['teams'], 'games': z['games'],
                    'description': (zdesc.get(str(z['no'])) or {}).get('desc'), 'vr_lv50': (zdesc.get(str(z['no'])) or {}).get('vr_lv50'),
                    'wiki_page': page_of(z)} for z in zukan if z.get('no')]
+    # GO1: las técnicas originales de GO1 pueden no estar usadas por ninguna carta
+    # (34 de las 127 solo viven en la wiki), pero las queremos en el catálogo para el TP por saga.
+    go1_balance_path = os.path.join(ROOT, 'data', 'technique_balance_go1.json')
+    if os.path.exists(go1_balance_path):
+        with open(go1_balance_path, encoding='utf-8') as f:
+            go1_ids = json.load(f).get('techniques', {})
+        for mid in go1_ids:
+            if mid not in techniques:
+                technique(mid)
+
     localize(cards, techniques, teams, ov, report)           # nombres en francés e italiano (i18n.py)
     assign_logos(teams, report)                              # escudo de cada equipo (logos.py)
     tech_traits(techniques, report)                          # tiro largo / bloqueo de tiros (WazaData: chr)

@@ -69,6 +69,9 @@ interface TechniqueRow {
   balance_tp?: number | null
   balance_power_min?: number | null
   balance_power_max?: number | null
+  balance_tp_go1?: number | null
+  balance_power_min_go1?: number | null
+  balance_power_max_go1?: number | null
 }
 
 interface StaffRow {
@@ -136,7 +139,8 @@ const CARD_COLUMNS_OLD = 'id,character_id,name,game,version,team,position,elemen
   + 'duel_att,duel_con,duel_def,card_techniques(slot,technique_id)'
 const TECHNIQUE_COLUMNS = 'id,name,name_es,name_fr,name_it,type,element,cost,cost_game,description,image_url,traits'
 /** TP balanceado y su potencia (si la base aún no tiene esas columnas, se piden sin ellas) */
-const BALANCE_COLUMNS = 'balance_tp,balance_power_min,balance_power_max'
+const BALANCE_COLUMNS = 'balance_tp,balance_power_min,balance_power_max,balance_tp_go1,balance_power_min_go1,balance_power_max_go1'
+const BALANCE_COLUMNS_OLD = 'balance_tp,balance_power_min,balance_power_max'
 let cardColumns = CARD_COLUMNS
 const cardsPage = async (offset: number, headers?: Record<string, string>) => {
   try {
@@ -164,7 +168,9 @@ export async function loadCatalog(): Promise<void> {
   if (players.length) return
   // todo a la vez; equipos y cuerpo técnico son opcionales (sin ellos: nombres en inglés, sin pestaña de staff)
   const [techniques, teams, staffRows, rows] = await Promise.all([
-    get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS},${BALANCE_COLUMNS}`).catch(() => get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS}`)),
+    get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS},${BALANCE_COLUMNS}`)
+      .catch(() => get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS},${BALANCE_COLUMNS_OLD}`))
+      .catch(() => get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS}`)),
     get<TeamRow[]>('teams?select=name,name_es,name_fr,name_it,logo_url,logos').catch(() => [] as TeamRow[]),
     get<StaffRow[]>('staff?select=zukan_no,name,role,team,teams,games,image_url,description&order=zukan_no').catch(() => [] as StaffRow[]),
     loadCards(),
@@ -231,6 +237,7 @@ export function rebuildCatalog() {
   const techById = new Map<string, Technique>(baseTechniques.map(t => [t.id, {
     id: t.id, name: t.name, nameEs: t.name_es, nameFr: t.name_fr, nameIt: t.name_it, type: t.type, element: t.element,
     cost: t.cost, costGame: t.cost_game, tp: t.balance_tp ?? t.cost, powerMin: t.balance_power_min ?? null, powerMax: t.balance_power_max ?? null,
+    tpGo1: t.balance_tp_go1 ?? null, powerMinGo1: t.balance_power_min_go1 ?? null, powerMaxGo1: t.balance_power_max_go1 ?? null,
     description: t.description, image: t.image_url, traits: t.traits ?? [],
   }]))
   techniquesById = techById
@@ -239,6 +246,9 @@ export function rebuildCatalog() {
   players = rows.map(r => {
     const techs = [...r.card_techniques].sort((a, b) => a.slot - b.slot)
       .map(ct => techById.get(ct.technique_id)).filter((t): t is Technique => !!t)
+      .map(t => r.game === 'GO1' && t.tpGo1 != null
+        ? { ...t, tp: t.tpGo1, powerMin: t.powerMinGo1 ?? null, powerMax: t.powerMaxGo1 ?? null }
+        : t)
     const duel = r.duel_att != null || r.duel_con != null || r.duel_def != null
       ? { att: r.duel_att ?? null, con: r.duel_con ?? null, def: r.duel_def ?? null } : undefined
     return {

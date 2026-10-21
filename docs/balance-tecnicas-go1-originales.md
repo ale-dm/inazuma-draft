@@ -1,7 +1,7 @@
 # Técnicas originales de GO1 — TP y colocación
 
-> **Estado:** revisión. Lista completa de técnicas **originales de GO1** (debut GO1: coste GO1 y sin coste IE1/IE2/IE3), sacadas de `Module:WazaData` y contrastadas con la wiki inglesa.
-> **No se han aplicado** los TP propuestos: muchas se reutilizan en GO2/GO3 y el `balance_tp` es global. La propuesta sirve para decidir la escala GO1.
+> **Estado:** **aplicado** con TP por saga. Lista completa de técnicas **originales de GO1** (debut GO1: coste GO1 y sin coste IE1/IE2/IE3), sacadas de `Module:WazaData` y contrastadas con la wiki inglesa.
+> Los valores GO1 viven en `data/technique_balance_go1.json` y en las columnas `balance_*_go1`; no se toca el `balance_tp` global de IE/GO2/GO3.
 
 ## 1. Cobertura y rango de TP
 
@@ -224,11 +224,12 @@ Criterio:
 - `SwordOfFire` — Sword of Fire (Tiro, TP 150)
 - `WhiteBreath` — White Breath (Tiro, TP 85)
 
-## 5. Cómo aplicarlo
+## 5. Aplicación
 
-1. **Añadir las 34 que faltan** a `techniques` (y a la tabla de la app) con su tipo, elemento, coste y descripción de la wiki.
-2. **Decidir el alcance del TP**: si se aplica el global, también cambian las cartas de GO2/GO3 que reutilizan estas técnicas. La alternativa limpia es un `balance_tp_go1` por saga.
-3. Aplicar la columna **Propuesto** de las tablas y revisar el impacto en GO1 (Raimon 83,9 · Luz Eterna 82,5 · Oscuridad Ancestral 83,5 · Equipo Zero 84,7).
+1. Las **34 que faltaban** ya se añaden al catálogo de técnicas (819 en total) desde `technique_balance_go1.json`.
+2. El **TP por saga** está implementado: `balance_tp_go1`, `balance_power_min_go1` y `balance_power_max_go1` en `techniques`; el frontend los usa solo en cartas de GO1.
+3. La columna **Propuesto** de las tablas es la que se aplica en `data/technique_balance_go1.json` y `supabase/technique_balance.sql`.
+4. No se toca el `balance_tp` global: IE/GO2/GO3/Ares/Orion siguen con sus valores.
 
 ## 6. Fuentes
 

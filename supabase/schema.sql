@@ -36,6 +36,9 @@ alter table public.techniques add column if not exists vr_aura_type text;
 alter table public.techniques add column if not exists balance_tp int;               -- TP nuevo, balanceado: el que enseña la app
 alter table public.techniques add column if not exists balance_power_min int;        -- potencia mínima / máxima que le corresponde a ese TP
 alter table public.techniques add column if not exists balance_power_max int;
+alter table public.techniques add column if not exists balance_tp_go1 int;           -- TP específico de GO1 (originales de GO1)
+alter table public.techniques add column if not exists balance_power_min_go1 int;
+alter table public.techniques add column if not exists balance_power_max_go1 int;
 alter table public.techniques add column if not exists source text;                  -- null = de la carga; otro valor = fila añadida a mano (no se toca)
 
 create table if not exists public.cards (

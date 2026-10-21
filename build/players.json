@@ -304175,7 +304175,37 @@
    "traits": [],
    "balance_tp": 170,
    "balance_power_min": 215,
-   "balance_power_max": 980
+   "balance_power_max": 980,
+   "balance_tp_go1": 180,
+   "balance_power_min_go1": 230,
+   "balance_power_max_go1": 1000
+  },
+  {
+   "id": "GreatTheHand",
+   "name": "Majin the Great",
+   "name_es": "Mano grandiosa",
+   "name_jp": "グレイト・ザ・ハンド",
+   "type": "Catch",
+   "element": "earth",
+   "cost": 70,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 70,
+    "GO2": 90,
+    "GO1": 80
+   },
+   "description": "Brimming with stormlike energy, extend your arm with your Keshin and intercept the ball in a flash of electric power.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/f/u/fueae-l6sk0.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ],
+   "name_fr": "Main du Grand Génie",
+   "name_it": "Mano di Grandius",
+   "traits": [],
+   "balance_tp_go1": 180,
+   "balance_power_min_go1": 230,
+   "balance_power_max_go1": 1000
   },
   {
    "id": "SoyokazeStep",
@@ -304201,7 +304231,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go1": 70,
+   "balance_power_min_go1": 70,
+   "balance_power_max_go1": 440
   },
   {
    "id": "InazumaBreak",
@@ -304523,7 +304556,10 @@
    "traits": [],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go1": 170,
+   "balance_power_min_go1": 215,
+   "balance_power_max_go1": 980
   },
   {
    "id": "BakunetsuStorm_K",
@@ -304551,7 +304587,10 @@
    "traits": [],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go1": 150,
+   "balance_power_min_go1": 180,
+   "balance_power_max_go1": 900
   },
   {
    "id": "TsubameGaeshi",
@@ -304855,7 +304894,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go1": 60,
+   "balance_power_min_go1": 60,
+   "balance_power_max_go1": 360
   },
   {
    "id": "DeepJungle",
@@ -305098,7 +305140,10 @@
    ],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "ZigzagSpark",
@@ -305309,7 +305354,10 @@
    "traits": [],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "NoboriRyuu",
@@ -305335,7 +305383,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go1": 110,
+   "balance_power_min_go1": 120,
+   "balance_power_max_go1": 720
   },
   {
    "id": "DragonBlaster",
@@ -305363,6 +305414,32 @@
    "balance_tp": 160,
    "balance_power_min": 195,
    "balance_power_max": 930
+  },
+  {
+   "id": "BushinRenzan",
+   "name": "Bushin Blades",
+   "name_es": "Estocada samurai",
+   "name_jp": "武神連斬",
+   "type": "Shoot",
+   "element": "earth",
+   "cost": 70,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 70,
+    "GO2": 70,
+    "GO1": 75
+   },
+   "description": "Imbue the ball with spirit through a relentless flurry of strikes and carve open the goal with a razor-sharp finish.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/q/2/q2tkqrk64iu.jpg",
+   "zukan_types": [
+    "Shot"
+   ],
+   "name_fr": "Le Coup du Samouraï",
+   "name_it": "Stoccata del Samurai",
+   "traits": [],
+   "balance_tp_go1": 150,
+   "balance_power_min_go1": 180,
+   "balance_power_max_go1": 900
   },
   {
    "id": "TamanoriPierrot",
@@ -306419,7 +306496,10 @@
    "traits": [],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go1": 100,
+   "balance_power_min_go1": 100,
+   "balance_power_max_go1": 640
   },
   {
    "id": "TheEarthInfinity",
@@ -306444,6 +306524,33 @@
    "balance_tp": 200,
    "balance_power_min": 270,
    "balance_power_max": 1080
+  },
+  {
+   "id": "LuckyDice",
+   "name": "Lucky Dice",
+   "name_es": "Dados de la suerte",
+   "name_jp": "*ラッキーダイス",
+   "type": "Catch",
+   "element": "wood",
+   "cost": 40,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 40,
+    "GO2": 50,
+    "GO1": 50
+   },
+   "description": "Cast six dice into the air, and when every one lands on six, the ball erupts in a spiraling aura of pure luck.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/c/p/cpnhnd3ovn0.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ],
+   "name_fr": "Tirage chanceux",
+   "name_it": "Dadi della Fortuna",
+   "traits": [],
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "SpinningShoot",
@@ -307090,7 +307197,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go1": 110,
+   "balance_power_min_go1": 120,
+   "balance_power_max_go1": 720
   },
   {
    "id": "FutureEye",
@@ -307116,7 +307226,10 @@
    "traits": [],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go1": 50,
+   "balance_power_min_go1": 50,
+   "balance_power_max_go1": 300
   },
   {
    "id": "VanishingCut",
@@ -307142,7 +307255,10 @@
    "traits": [],
    "balance_tp": 120,
    "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_power_max": 800,
+   "balance_tp_go1": 130,
+   "balance_power_min_go1": 160,
+   "balance_power_max_go1": 880
   },
   {
    "id": "DeathZone",
@@ -307511,7 +307627,10 @@
    ],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "DashAccel",
@@ -308973,7 +309092,10 @@
    ],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go1": 110,
+   "balance_power_min_go1": 120,
+   "balance_power_max_go1": 720
   },
   {
    "id": "Stargazer",
@@ -309338,7 +309460,10 @@
    "traits": [],
    "balance_tp": 120,
    "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_power_max": 800,
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "DarkTornado",
@@ -309395,7 +309520,10 @@
    ],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "FuurinkazanDestroyer",
@@ -309423,7 +309551,10 @@
    ],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "ExcellentBreast",
@@ -309476,7 +309607,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "Zeroyon",
@@ -309502,7 +309636,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go1": 80,
+   "balance_power_min_go1": 85,
+   "balance_power_max_go1": 540
   },
   {
    "id": "RocketHead",
@@ -309528,7 +309665,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go1": 80,
+   "balance_power_min_go1": 85,
+   "balance_power_max_go1": 540
   },
   {
    "id": "MelodyWave",
@@ -309554,7 +309694,10 @@
    "traits": [],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go1": 110,
+   "balance_power_min_go1": 120,
+   "balance_power_max_go1": 720
   },
   {
    "id": "BlackHole",
@@ -310654,7 +310797,10 @@
    ],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go1": 110,
+   "balance_power_min_go1": 120,
+   "balance_power_max_go1": 720
   },
   {
    "id": "RoundSpark",
@@ -310680,7 +310826,10 @@
    "traits": [],
    "balance_tp": 120,
    "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_power_max": 800,
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "SafetyProtect",
@@ -311188,7 +311337,10 @@
    "traits": [],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go1": 100,
+   "balance_power_min_go1": 100,
+   "balance_power_max_go1": 640
   },
   {
    "id": "MadExpress",
@@ -311291,7 +311443,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go1": 100,
+   "balance_power_min_go1": 100,
+   "balance_power_max_go1": 640
   },
   {
    "id": "GreatBlaster",
@@ -311673,7 +311828,10 @@
    ],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
   },
   {
    "id": "NininSankyaku",
@@ -311854,7 +312012,10 @@
    "traits": [],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
   },
   {
    "id": "SparkleWave",
@@ -312649,7 +312810,10 @@
    ],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go1": 80,
+   "balance_power_min_go1": 85,
+   "balance_power_max_go1": 540
   },
   {
    "id": "Galatyn",
@@ -314193,7 +314357,10 @@
    ],
    "balance_tp": 170,
    "balance_power_min": 215,
-   "balance_power_max": 980
+   "balance_power_max": 980,
+   "balance_tp_go1": 180,
+   "balance_power_min_go1": 230,
+   "balance_power_max_go1": 1000
   },
   {
    "id": "MachWind",
@@ -314221,7 +314388,10 @@
    ],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go1": 70,
+   "balance_power_min_go1": 70,
+   "balance_power_max_go1": 440
   },
   {
    "id": "SpiralDraw",
@@ -314247,7 +314417,36 @@
    "traits": [],
    "balance_tp": 40,
    "balance_power_min": 30,
-   "balance_power_max": 200
+   "balance_power_max": 200,
+   "balance_tp_go1": 70,
+   "balance_power_min_go1": 70,
+   "balance_power_max_go1": 440
+  },
+  {
+   "id": "JusticeWing",
+   "name": "Pegasus Punch",
+   "name_es": "Golpe justiciero",
+   "name_jp": "ジャスティスウィング",
+   "type": "Shoot",
+   "element": "air",
+   "cost": 90,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 90,
+    "GO2": 95,
+    "GO1": 85
+   },
+   "description": "Ascend on great wings and smash the ball down with a just and thunderous blow.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/t/y/tyfrt9zldic.jpg",
+   "zukan_types": [
+    "Shot"
+   ],
+   "name_fr": "Tir Pégase",
+   "name_it": null,
+   "traits": [],
+   "balance_tp_go1": 170,
+   "balance_power_min_go1": 215,
+   "balance_power_max_go1": 980
   },
   {
    "id": "WonderTrap",
@@ -314298,7 +314497,10 @@
    "traits": [],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go1": 100,
+   "balance_power_min_go1": 100,
+   "balance_power_max_go1": 640
   },
   {
    "id": "AllDelete",
@@ -314430,7 +314632,10 @@
    ],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "AtlasSword",
@@ -314481,7 +314686,10 @@
    "traits": [],
    "balance_tp": 30,
    "balance_power_min": 20,
-   "balance_power_max": 140
+   "balance_power_max": 140,
+   "balance_tp_go1": 70,
+   "balance_power_min_go1": 70,
+   "balance_power_max_go1": 440
   },
   {
    "id": "BeamKobushi",
@@ -314682,7 +314890,10 @@
    "traits": [],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
   },
   {
    "id": "BlackAsh",
@@ -314708,7 +314919,10 @@
    "traits": [],
    "balance_tp": 120,
    "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_power_max": 800,
+   "balance_tp_go1": 140,
+   "balance_power_min_go1": 170,
+   "balance_power_max_go1": 890
   },
   {
    "id": "BlackDawn",
@@ -314763,6 +314977,32 @@
    "balance_power_max": 440
   },
   {
+   "id": "BloodyEncore",
+   "name": "Grand Finale",
+   "name_es": "Sentencia final",
+   "name_jp": "ブラッディアンコール",
+   "type": "Block",
+   "element": "wood",
+   "cost": 60,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 60,
+    "GO2": 35,
+    "GO1": 35
+   },
+   "description": "Let out a shattering shout, forcing the opponent to falter, then seize the ball.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/j/4/j4vpfbkbwyu.jpg",
+   "zukan_types": [
+    "Defence"
+   ],
+   "name_fr": "Coup de Théâtre",
+   "name_it": null,
+   "traits": [],
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
+  },
+  {
    "id": "BoomerangFeint",
    "name": "Boomerang Bluff",
    "name_es": "Finta boomerang",
@@ -314786,7 +315026,10 @@
    "traits": [],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go1": 70,
+   "balance_power_min_go1": 70,
+   "balance_power_max_go1": 440
   },
   {
    "id": "BouncerRabbit",
@@ -314837,7 +315080,10 @@
    "traits": [],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go1": 60,
+   "balance_power_min_go1": 60,
+   "balance_power_max_go1": 360
   },
   {
    "id": "BraveShot",
@@ -314916,7 +315162,10 @@
    "traits": [],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go1": 130,
+   "balance_power_min_go1": 160,
+   "balance_power_max_go1": 880
   },
   {
    "id": "BurningCatch",
@@ -314943,7 +315192,10 @@
    "traits": [],
    "balance_tp": 40,
    "balance_power_min": 30,
-   "balance_power_max": 200
+   "balance_power_max": 200,
+   "balance_tp_go1": 60,
+   "balance_power_min_go1": 60,
+   "balance_power_max_go1": 360
   },
   {
    "id": "BurningSummer",
@@ -314969,7 +315221,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go1": 60,
+   "balance_power_min_go1": 60,
+   "balance_power_max_go1": 360
   },
   {
    "id": "ButtobiJump",
@@ -314997,7 +315252,10 @@
    ],
    "balance_tp": 40,
    "balance_power_min": 30,
-   "balance_power_max": 200
+   "balance_power_max": 200,
+   "balance_tp_go1": 70,
+   "balance_power_min_go1": 70,
+   "balance_power_max_go1": 440
   },
   {
    "id": "ButtobiPunch",
@@ -315054,7 +315312,10 @@
    ],
    "balance_tp": 30,
    "balance_power_min": 20,
-   "balance_power_max": 140
+   "balance_power_max": 140,
+   "balance_tp_go1": 60,
+   "balance_power_min_go1": 60,
+   "balance_power_max_go1": 360
   },
   {
    "id": "CastleGate",
@@ -315084,6 +315345,32 @@
    "balance_power_max": 890
   },
   {
+   "id": "Checkmate",
+   "name": "Checkmate",
+   "name_es": "Jaque mate",
+   "name_jp": "チェックメイト",
+   "type": "Shoot",
+   "element": "wood",
+   "cost": 80,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 80,
+    "GO2": 80,
+    "GO1": 85
+   },
+   "description": "Unleash a blinding strike of arcane power to drive the ball and seal the opponent's fate.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/e/t/etndfxn2tu8.jpg",
+   "zukan_types": [
+    "Shot"
+   ],
+   "name_fr": null,
+   "name_it": null,
+   "traits": [],
+   "balance_tp_go1": 170,
+   "balance_power_min_go1": 215,
+   "balance_power_max_go1": 980
+  },
+  {
    "id": "Claymore",
    "name": "Blast Mine",
    "name_es": "Mina terrestre",
@@ -315107,7 +315394,10 @@
    "traits": [],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go1": 80,
+   "balance_power_min_go1": 85,
+   "balance_power_max_go1": 540
   },
   {
    "id": "CoilUpper",
@@ -315159,7 +315449,10 @@
    "traits": [],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
   },
   {
    "id": "CrazySunlight",
@@ -315185,7 +315478,37 @@
    "traits": [],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
+  },
+  {
+   "id": "CrimsonSphere",
+   "name": "Crimson Sphere",
+   "name_es": "Cúpula carmesí",
+   "name_jp": "クリムゾンスフィア",
+   "type": "Catch",
+   "element": "fire",
+   "cost": 50,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 50,
+    "GO2": 70,
+    "GO1": 70
+   },
+   "description": "Encase the goal in a crimson barrier to absorb every shot and deny the opponent's goals.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/s/y/sykiush8gwm.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ],
+   "name_fr": "Sphère écarlate",
+   "name_it": "Sfera di Porpora",
+   "traits": [],
+   "balance_tp_go1": 170,
+   "balance_power_min_go1": 215,
+   "balance_power_max_go1": 980
   },
   {
    "id": "CrocodileFang",
@@ -315237,7 +315560,62 @@
    "traits": [],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
+  },
+  {
+   "id": "DancingGhost",
+   "name": "Black Briars",
+   "name_es": "Lazos de oscuridad",
+   "name_jp": "ダンシングゴースト",
+   "type": "Dribble",
+   "element": "wood",
+   "cost": 30,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 30,
+    "GO2": 50,
+    "GO1": 25
+   },
+   "description": "Summon wraithlike phantoms that dance around your foe, binding them tight in a chilling display of dread.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/q/6/q6q-1hjvydk.jpg",
+   "zukan_types": [
+    "Offence"
+   ],
+   "name_fr": "Ronces Noires",
+   "name_it": "Nastri Paralizzanti",
+   "traits": [],
+   "balance_tp_go1": 70,
+   "balance_power_min_go1": 70,
+   "balance_power_max_go1": 440
+  },
+  {
+   "id": "DarkSpace",
+   "name": "Dark Space",
+   "name_es": "Espacio oscuro",
+   "name_jp": "ダークスペース",
+   "type": "Block",
+   "element": "wood",
+   "cost": 40,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 40,
+    "GO2": 35,
+    "GO1": 35
+   },
+   "description": "Summon a shadowed dimension that drags your opponent into despair to break their will and strip the ball away.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/y/_/y_hbh5zzolm.jpg",
+   "zukan_types": [
+    "Defence"
+   ],
+   "name_fr": "Vide Sidéral",
+   "name_it": null,
+   "traits": [],
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
   },
   {
    "id": "DashTrain",
@@ -315263,7 +315641,10 @@
    "traits": [],
    "balance_tp": 40,
    "balance_power_min": 30,
-   "balance_power_max": 200
+   "balance_power_max": 200,
+   "balance_tp_go1": 50,
+   "balance_power_min_go1": 50,
+   "balance_power_max_go1": 300
   },
   {
    "id": "DeadStraight",
@@ -315338,7 +315719,10 @@
    ],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go1": 110,
+   "balance_power_min_go1": 120,
+   "balance_power_max_go1": 720
   },
   {
    "id": "DeathScytheLow",
@@ -315415,7 +315799,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go1": 70,
+   "balance_power_min_go1": 70,
+   "balance_power_max_go1": 440
   },
   {
    "id": "DecoyRelease",
@@ -315469,7 +315856,10 @@
    ],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go1": 100,
+   "balance_power_min_go1": 100,
+   "balance_power_max_go1": 640
   },
   {
    "id": "DefenseHouteishiki",
@@ -315569,7 +315959,10 @@
    "traits": [],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go1": 140,
+   "balance_power_min_go1": 170,
+   "balance_power_max_go1": 890
   },
   {
    "id": "DiffuseChord",
@@ -315696,7 +316089,10 @@
    ],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go1": 80,
+   "balance_power_min_go1": 85,
+   "balance_power_max_go1": 540
   },
   {
    "id": "DisasterBreak",
@@ -315777,6 +316173,32 @@
    "balance_power_max": 720
   },
   {
+   "id": "DragonStorm",
+   "name": "Dragon Storm",
+   "name_es": "Lanza tornado",
+   "name_jp": "ドラゴンストーム",
+   "type": "Block",
+   "element": "air",
+   "cost": 30,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 30,
+    "GO2": 20,
+    "GO1": 20
+   },
+   "description": "Spin a massive spear into a raging tornado to bulldoze through foes and rip the ball away.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/q/x/qxjyc9-xyt8.jpg",
+   "zukan_types": [
+    "Defence"
+   ],
+   "name_fr": "Tempête du Dragon",
+   "name_it": null,
+   "traits": [],
+   "balance_tp_go1": 50,
+   "balance_power_min_go1": 50,
+   "balance_power_max_go1": 300
+  },
+  {
    "id": "DragonsTail",
    "name": "Tale of the Dragon",
    "name_es": null,
@@ -315800,7 +316222,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go1": 100,
+   "balance_power_min_go1": 100,
+   "balance_power_max_go1": 640
   },
   {
    "id": "DryBlow",
@@ -315901,6 +316326,32 @@
    "balance_power_max": 890
   },
   {
+   "id": "FalcoWing",
+   "name": "Thunderclaw",
+   "name_es": "Alas de halcón",
+   "name_jp": "ファルコ・ウィング",
+   "type": "Shoot",
+   "element": "air",
+   "cost": 60,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 60,
+    "GO2": 40,
+    "GO1": 45
+   },
+   "description": "With wings spread wide, rise on the wind and drive the ball down from above in a thunderous claw strike.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/8/f/8fn_tfk5bbe.jpg",
+   "zukan_types": [
+    "Shot"
+   ],
+   "name_fr": "Ailes de faucon",
+   "name_it": "Ali di Falco",
+   "traits": [],
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
+  },
+  {
    "id": "FatalLift",
    "name": "Psychic Lift",
    "name_es": "Bloqueo telequinético",
@@ -315951,7 +316402,10 @@
    ],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
   },
   {
    "id": "FireTornadoTC",
@@ -316029,7 +316483,10 @@
    ],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
   },
   {
    "id": "FootworkDraw",
@@ -316081,7 +316538,10 @@
    ],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go1": 80,
+   "balance_power_min_go1": 85,
+   "balance_power_max_go1": 540
   },
   {
    "id": "FractalHouse",
@@ -316131,6 +316591,32 @@
    "balance_tp": 150,
    "balance_power_min": 180,
    "balance_power_max": 900
+  },
+  {
+   "id": "GallopBuster",
+   "name": "Destrier Charge",
+   "name_es": "Carga al galope",
+   "name_jp": "ギャロップバスター",
+   "type": "Shoot",
+   "element": "earth",
+   "cost": 50,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 50,
+    "GO2": 50,
+    "GO1": 55
+   },
+   "description": "Gallop forward at full speed and launch the ball with a surge of energy, driving it in a spiraling assault toward the net.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/k/8/k8u2wks-yom.jpg",
+   "zukan_types": [
+    "Shot"
+   ],
+   "name_fr": "Frappe du Destrier",
+   "name_it": "Carica al Galoppo",
+   "traits": [],
+   "balance_tp_go1": 110,
+   "balance_power_min_go1": 120,
+   "balance_power_max_go1": 720
   },
   {
    "id": "GammaStrike",
@@ -316261,6 +316747,33 @@
    "balance_tp": 60,
    "balance_power_min": 60,
    "balance_power_max": 360
+  },
+  {
+   "id": "GiganticBomb",
+   "name": "Giga Knuckle Sandwich",
+   "name_es": "Presa titánica",
+   "name_jp": "ギガンティックボム",
+   "type": "Catch",
+   "element": "earth",
+   "cost": 40,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 40,
+    "GO2": 70,
+    "GO1": 70
+   },
+   "description": "Unleash a thunderous roar as your fists crash into the ball, gripping it tight and stopping it cold.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/h/q/hqni9ykxilk.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ],
+   "name_fr": "Giga Presse Sandwich",
+   "name_it": "Presa d'Acciaio",
+   "traits": [],
+   "balance_tp_go1": 170,
+   "balance_power_min_go1": 215,
+   "balance_power_max_go1": 980
   },
   {
    "id": "GingaRocket",
@@ -316417,7 +316930,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go1": 130,
+   "balance_power_min_go1": 160,
+   "balance_power_max_go1": 880
   },
   {
    "id": "GreatMaxNaOre",
@@ -316443,6 +316959,35 @@
    "balance_tp": 160,
    "balance_power_min": 195,
    "balance_power_max": 930
+  },
+  {
+   "id": "GuardianShield",
+   "name": "Titanic Shield",
+   "name_es": "Escudo guardián",
+   "name_jp": "*ガーディアンシールド",
+   "type": "Catch",
+   "element": "air",
+   "cost": 40,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 40,
+    "GO2": 40,
+    "GO1": 40
+   },
+   "description": "Unleash the power of your fists to raise a colossal shield and turn aside every incoming strike.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/x/h/xhgho9ydluc.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ],
+   "name_fr": "Bouclier géant",
+   "name_it": "Scudo Titanico",
+   "traits": [
+    "punch"
+   ],
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
   },
   {
    "id": "GyroSaving",
@@ -316471,6 +317016,58 @@
    "balance_power_max": 540
   },
   {
+   "id": "HakaiDanmaku",
+   "name": "Scattershot",
+   "name_es": "Ráfaga de tiros",
+   "name_jp": "破壊弾幕",
+   "type": "Block",
+   "element": "fire",
+   "cost": 40,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 40,
+    "GO2": 50,
+    "GO1": 40
+   },
+   "description": "Unleash a barrage of bullets that explode all at once, blasting foes away.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/s/q/sqkuyks7dr8.jpg",
+   "zukan_types": [
+    "Defence"
+   ],
+   "name_fr": "Artillerie Lourde",
+   "name_it": null,
+   "traits": [],
+   "balance_tp_go1": 100,
+   "balance_power_min_go1": 100,
+   "balance_power_max_go1": 640
+  },
+  {
+   "id": "Harmonics",
+   "name": "Atomic Harmonic",
+   "name_es": "Movimientos armónicos",
+   "name_jp": "ハーモニクス",
+   "type": "Shoot",
+   "element": "wood",
+   "cost": 70,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 70,
+    "GO2": 50,
+    "GO1": 55
+   },
+   "description": "Shatter the silence with a crystal-clear strike and send the ball soaring in a cascade of reverberating energy.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/w/b/wbynpfullwm.jpg",
+   "zukan_types": [
+    "Shot"
+   ],
+   "name_fr": "Harmonie Atomique",
+   "name_it": "Armonia Atomica",
+   "traits": [],
+   "balance_tp_go1": 110,
+   "balance_power_min_go1": 120,
+   "balance_power_max_go1": 720
+  },
+  {
    "id": "HeadBazooka",
    "name": "Headbanger",
    "name_es": "Cabezazo bazuca",
@@ -316494,7 +317091,65 @@
    "traits": [],
    "balance_tp": 40,
    "balance_power_min": 30,
-   "balance_power_max": 200
+   "balance_power_max": 200,
+   "balance_tp_go1": 60,
+   "balance_power_min_go1": 60,
+   "balance_power_max_go1": 360
+  },
+  {
+   "id": "HeavyAquaLance",
+   "name": "Trident Torpedo",
+   "name_es": "Torpedo tridente",
+   "name_jp": "ヘヴィアクアランス",
+   "type": "Shoot",
+   "element": "air",
+   "cost": 50,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 50,
+    "GO2": 70,
+    "GO1": 75
+   },
+   "description": "Harness the fury of the raging sea and spear the goal with a trident-like shot.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/v/5/v5y3dklngoc.jpg",
+   "zukan_types": [
+    "Shot"
+   ],
+   "name_fr": "Trident-Torpille des Mers",
+   "name_it": "Arpione Silurante",
+   "traits": [],
+   "balance_tp_go1": 150,
+   "balance_power_min_go1": 180,
+   "balance_power_max_go1": 900
+  },
+  {
+   "id": "HellsFist",
+   "name": "Inferno Fist",
+   "name_es": "Despeje demoníaco",
+   "name_jp": "ヘルズフィスト",
+   "type": "Catch",
+   "element": "wood",
+   "cost": 60,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 60,
+    "GO2": 70,
+    "GO1": 80
+   },
+   "description": "Roar and unleash a full-power punch, sending the shot hurtling to the ends of hell.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/y/3/y3rpymmzv18.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ],
+   "name_fr": "Horion infernal",
+   "name_it": "Pugno Maligno",
+   "traits": [
+    "punch"
+   ],
+   "balance_tp_go1": 180,
+   "balance_power_min_go1": 230,
+   "balance_power_max_go1": 1000
   },
   {
    "id": "HinawaBullet",
@@ -316574,7 +317229,10 @@
    ],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go1": 100,
+   "balance_power_min_go1": 100,
+   "balance_power_max_go1": 640
   },
   {
    "id": "HydroAnchor",
@@ -316603,7 +317261,10 @@
    ],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go1": 70,
+   "balance_power_min_go1": 70,
+   "balance_power_max_go1": 440
   },
   {
    "id": "Ichiyajou",
@@ -316632,6 +317293,32 @@
    "balance_tp": 60,
    "balance_power_min": 60,
    "balance_power_max": 360
+  },
+  {
+   "id": "IcicleRoad",
+   "name": "Icicle Road",
+   "name_es": "Lanza de carámbanos",
+   "name_jp": "アイシクルロード",
+   "type": "Shoot",
+   "element": "air",
+   "cost": 70,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 70,
+    "GO2": 70,
+    "GO1": 75
+   },
+   "description": "Summon a storm of frost and send the ball racing toward the goal on a frozen path.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/c/w/cwukac_xu70.jpg",
+   "zukan_types": [
+    "Shot"
+   ],
+   "name_fr": "Chemin de Glace",
+   "name_it": null,
+   "traits": [],
+   "balance_tp_go1": 150,
+   "balance_power_min_go1": 180,
+   "balance_power_max_go1": 900
   },
   {
    "id": "Injection",
@@ -316729,7 +317416,10 @@
    "traits": [],
    "balance_tp": 120,
    "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_power_max": 800,
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "JudgmentRay",
@@ -316804,7 +317494,10 @@
    "traits": [],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go1": 100,
+   "balance_power_min_go1": 100,
+   "balance_power_max_go1": 640
   },
   {
    "id": "KattobiDefense",
@@ -316833,7 +317526,10 @@
    ],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
   },
   {
    "id": "Kazangan",
@@ -316939,7 +317635,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go1": 130,
+   "balance_power_min_go1": 160,
+   "balance_power_max_go1": 880
   },
   {
    "id": "KillerElbow",
@@ -316990,7 +317689,37 @@
    "traits": [],
    "balance_tp": 40,
    "balance_power_min": 30,
-   "balance_power_max": 200
+   "balance_power_max": 200,
+   "balance_tp_go1": 80,
+   "balance_power_min_go1": 85,
+   "balance_power_max_go1": 540
+  },
+  {
+   "id": "KingFire",
+   "name": "Crown Fire",
+   "name_es": "Corona de fuego",
+   "name_jp": "キングファイア",
+   "type": "Catch",
+   "element": "fire",
+   "cost": 70,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 70,
+    "GO2": 80,
+    "GO1": 80
+   },
+   "description": "Fuse your fiery energy into a raging wall of fire and smite the ball with unstoppable heat.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/i/g/ig8mbdar8ee.jpg",
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ],
+   "name_fr": "Couronne de feu",
+   "name_it": "Corona di Fuoco",
+   "traits": [],
+   "balance_tp_go1": 180,
+   "balance_power_min_go1": 230,
+   "balance_power_max_go1": 1000
   },
   {
    "id": "KirakiraIllusion",
@@ -317222,6 +317951,32 @@
    "balance_power_max": 640
   },
   {
+   "id": "LostAngel",
+   "name": "Lancelot Lunge",
+   "name_es": "Estocada de Lancelot",
+   "name_jp": "ロストエンジェル",
+   "type": "Shoot",
+   "element": "fire",
+   "cost": 70,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 70,
+    "GO2": 50,
+    "GO1": 55
+   },
+   "description": "Wrap the ball in searing dark fire and launch it with a knight's deadly precision, slicing straight for the net.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/n/z/nzpsigyxidk.jpg",
+   "zukan_types": [
+    "Shot"
+   ],
+   "name_fr": "Botte de Lancelot",
+   "name_it": "Angelo Perduto",
+   "traits": [],
+   "balance_tp_go1": 110,
+   "balance_power_min_go1": 120,
+   "balance_power_max_go1": 720
+  },
+  {
    "id": "LoveArrow",
    "name": "Cupid's Arrow",
    "name_es": "Flecha de Cupido",
@@ -317273,6 +318028,32 @@
    "balance_power_max": 880
   },
   {
+   "id": "MachineGunBeat",
+   "name": "Rat-a-Tat Pass",
+   "name_es": "Puño metralleta",
+   "name_jp": "マシンガンビート",
+   "type": "Dribble",
+   "element": "fire",
+   "cost": 30,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 30,
+    "GO2": 40,
+    "GO1": 25
+   },
+   "description": "Rain down a furious volley of blows to tear through the opposition's defence and drive the ball straight toward the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/p/6/p66sc5mm-cs.jpg",
+   "zukan_types": [
+    "Offence"
+   ],
+   "name_fr": "Volée de Coups",
+   "name_it": null,
+   "traits": [],
+   "balance_tp_go1": 70,
+   "balance_power_min_go1": 70,
+   "balance_power_max_go1": 440
+  },
+  {
    "id": "MadJuggler",
    "name": "Grand Slam",
    "name_es": "Rodillazos atómicos",
@@ -317296,7 +318077,10 @@
    "traits": [],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go1": 50,
+   "balance_power_min_go1": 50,
+   "balance_power_max_go1": 300
   },
   {
    "id": "MagicAmp",
@@ -317346,6 +318130,32 @@
    "balance_tp": 90,
    "balance_power_min": 95,
    "balance_power_max": 600
+  },
+  {
+   "id": "MagiciansBox",
+   "name": "Magician's Box",
+   "name_es": null,
+   "name_jp": "マジシャンズボックス",
+   "type": "Shoot",
+   "element": "wood",
+   "cost": 50,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 50,
+    "GO2": 40,
+    "GO1": 45
+   },
+   "description": "Trap the ball in a conjured box of magic and unleash it charged with dark energy straight at the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/n/3/n38e-gsd2os.jpg",
+   "zukan_types": [
+    "Shot"
+   ],
+   "name_fr": "Boîte à Surprises",
+   "name_it": "Scatola a Sorpresa",
+   "traits": [],
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
   },
   {
    "id": "MagmaCarpet",
@@ -317424,7 +318234,36 @@
    "traits": [],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go1": 180,
+   "balance_power_min_go1": 230,
+   "balance_power_max_go1": 1000
+  },
+  {
+   "id": "MaouNoOno",
+   "name": "Executioner's Axe",
+   "name_es": "Hacha del Azote negro",
+   "name_jp": "魔王の斧",
+   "type": "Shoot",
+   "element": "wood",
+   "cost": 90,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 90,
+    "GO2": 90,
+    "GO1": 85
+   },
+   "description": "Slam a massive, energy-wreathed axe into the ground and send the ball hurtling toward the goal with unstoppable force.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/k/u/ku17mlb35is.jpg",
+   "zukan_types": [
+    "Shot"
+   ],
+   "name_fr": "Sentence Irrévocable",
+   "name_it": null,
+   "traits": [],
+   "balance_tp_go1": 170,
+   "balance_power_min_go1": 215,
+   "balance_power_max_go1": 980
   },
   {
    "id": "MaximumFire",
@@ -317527,7 +318366,10 @@
    "traits": [],
    "balance_tp": 40,
    "balance_power_min": 30,
-   "balance_power_max": 200
+   "balance_power_max": 200,
+   "balance_tp_go1": 50,
+   "balance_power_min_go1": 50,
+   "balance_power_max_go1": 300
   },
   {
    "id": "MueiRanbu",
@@ -317603,7 +318445,10 @@
    "traits": [],
    "balance_tp": 40,
    "balance_power_min": 30,
-   "balance_power_max": 200
+   "balance_power_max": 200,
+   "balance_tp_go1": 60,
+   "balance_power_min_go1": 60,
+   "balance_power_max_go1": 360
   },
   {
    "id": "OgreBlade",
@@ -317708,7 +318553,10 @@
    "traits": [],
    "balance_tp": 120,
    "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_power_max": 800,
+   "balance_tp_go1": 130,
+   "balance_power_min_go1": 160,
+   "balance_power_max_go1": 880
   },
   {
    "id": "OmegaAttack",
@@ -317859,6 +318707,32 @@
    "balance_power_max": 640
   },
   {
+   "id": "Overdrive",
+   "name": "Hyperdrive",
+   "name_es": "Carga hipersónica",
+   "name_jp": "*オーバードライブ",
+   "type": "Dribble",
+   "element": "air",
+   "cost": 30,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 30,
+    "GO2": 40,
+    "GO1": 20
+   },
+   "description": "Surge forward with supercharged velocity, the ball a blur as you leave rivals behind.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/h/s/hshfy4fvfwm.jpg",
+   "zukan_types": [
+    "Offence"
+   ],
+   "name_fr": "Vitesse supersonique",
+   "name_it": "Ultrasuono",
+   "traits": [],
+   "balance_tp_go1": 50,
+   "balance_power_min_go1": 50,
+   "balance_power_max_go1": 300
+  },
+  {
    "id": "PantherBlizzard",
    "name": "Snowstorm Leopard",
    "name_es": "Leopardo de la ventisca",
@@ -317884,7 +318758,10 @@
    ],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go1": 110,
+   "balance_power_min_go1": 120,
+   "balance_power_max_go1": 720
   },
   {
    "id": "ParkourAttack",
@@ -317909,6 +318786,32 @@
    "balance_tp": 60,
    "balance_power_min": 60,
    "balance_power_max": 360
+  },
+  {
+   "id": "PegasusBreak",
+   "name": "Pegasus Bolt",
+   "name_es": "Rayo celeste",
+   "name_jp": "ペガサスブレイク",
+   "type": "Dribble",
+   "element": "air",
+   "cost": 60,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 60,
+    "GO2": 40,
+    "GO1": 25
+   },
+   "description": "Smash the ball with a charged, skyborne blow to unleash a storm of lightning that tears through the pitch.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/v/v/vvznrk5ul8c.jpg",
+   "zukan_types": [
+    "Offence"
+   ],
+   "name_fr": "Éclair de Pégase",
+   "name_it": "Lampo di Pegaso",
+   "traits": [],
+   "balance_tp_go1": 70,
+   "balance_power_min_go1": 70,
+   "balance_power_max_go1": 440
   },
   {
    "id": "PenguinTheHand",
@@ -317960,7 +318863,10 @@
    "traits": [],
    "balance_tp": 40,
    "balance_power_min": 30,
-   "balance_power_max": 200
+   "balance_power_max": 200,
+   "balance_tp_go1": 50,
+   "balance_power_min_go1": 50,
+   "balance_power_max_go1": 300
   },
   {
    "id": "Phalanx",
@@ -318011,7 +318917,10 @@
    "traits": [],
    "balance_tp": 40,
    "balance_power_min": 30,
-   "balance_power_max": 200
+   "balance_power_max": 200,
+   "balance_tp_go1": 80,
+   "balance_power_min_go1": 85,
+   "balance_power_max_go1": 540
   },
   {
    "id": "PrestoTurn",
@@ -318037,7 +318946,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go1": 80,
+   "balance_power_min_go1": 85,
+   "balance_power_max_go1": 540
   },
   {
    "id": "PrimeLegend",
@@ -318116,6 +319028,32 @@
    "balance_power_max": 540
   },
   {
+   "id": "RagingClaw",
+   "name": "Roc and Roll",
+   "name_es": "Asalto aéreo",
+   "name_jp": "レイジングクロウ",
+   "type": "Shoot",
+   "element": "earth",
+   "cost": 60,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 60,
+    "GO2": 60,
+    "GO1": 55
+   },
+   "description": "Smash the ball downward, raking the pitch with massive claw strikes as it tears toward the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/e/r/erpwubtdr90.jpg",
+   "zukan_types": [
+    "Shot"
+   ],
+   "name_fr": "Serres fatales",
+   "name_it": null,
+   "traits": [],
+   "balance_tp_go1": 110,
+   "balance_power_min_go1": 120,
+   "balance_power_max_go1": 720
+  },
+  {
    "id": "RainbowBubbleShot",
    "name": "Rainbow Bubble Burst",
    "name_es": "Burbujas arcoíris",
@@ -318141,7 +319079,10 @@
    ],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
   },
   {
    "id": "RapidFire",
@@ -318196,7 +319137,10 @@
    ],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go1": 50,
+   "balance_power_min_go1": 50,
+   "balance_power_max_go1": 300
   },
   {
    "id": "ReboundLayer",
@@ -318277,7 +319221,10 @@
    ],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go1": 100,
+   "balance_power_min_go1": 100,
+   "balance_power_max_go1": 640
   },
   {
    "id": "RisingSlash",
@@ -318430,7 +319377,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go1": 100,
+   "balance_power_min_go1": 100,
+   "balance_power_max_go1": 640
   },
   {
    "id": "SandCutter",
@@ -318484,6 +319434,32 @@
    "balance_tp": 110,
    "balance_power_min": 120,
    "balance_power_max": 720
+  },
+  {
+   "id": "ScratchRaid",
+   "name": "Back Slash",
+   "name_es": "Zarpazo real",
+   "name_jp": "スクラッチレイド",
+   "type": "Dribble",
+   "element": "earth",
+   "cost": 50,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 50,
+    "GO2": 50,
+    "GO1": 35
+   },
+   "description": "Slash the ground with monstrous claws and unleash a shockwave of yellow energy to knock foes aside.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/-/s/-slzvgqctve.jpg",
+   "zukan_types": [
+    "Offence"
+   ],
+   "name_fr": "Griffes d'or",
+   "name_it": "Graffio Letale",
+   "traits": [],
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
   },
   {
    "id": "ScreamOfEden",
@@ -318613,7 +319589,10 @@
    ],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go1": 100,
+   "balance_power_min_go1": 100,
+   "balance_power_max_go1": 640
   },
   {
    "id": "ShootEater",
@@ -318668,7 +319647,10 @@
    ],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go1": 70,
+   "balance_power_min_go1": 70,
+   "balance_power_max_go1": 440
   },
   {
    "id": "SilkRoad",
@@ -318718,7 +319700,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go1": 100,
+   "balance_power_min_go1": 100,
+   "balance_power_max_go1": 640
   },
   {
    "id": "SkytreeFall",
@@ -318769,7 +319754,10 @@
    "traits": [],
    "balance_tp": 40,
    "balance_power_min": 30,
-   "balance_power_max": 200
+   "balance_power_max": 200,
+   "balance_tp_go1": 70,
+   "balance_power_min_go1": 70,
+   "balance_power_max_go1": 440
   },
   {
    "id": "SouhiYuuseidan",
@@ -318797,6 +319785,32 @@
    "balance_tp": 130,
    "balance_power_min": 160,
    "balance_power_max": 880
+  },
+  {
+   "id": "SoulBringer",
+   "name": "Dark Reaver",
+   "name_es": "Desolación eterna",
+   "name_jp": "ソウル・ブリンガー",
+   "type": "Shoot",
+   "element": "void",
+   "cost": 90,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 90,
+    "GO2": 80,
+    "GO1": 85
+   },
+   "description": "Charge the sword with shadowed power and drive the ball in a sweeping, devastating arc.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/1/7/178ioobmadu.jpg",
+   "zukan_types": [
+    "Shot"
+   ],
+   "name_fr": "Déferlement d'Ombre",
+   "name_it": null,
+   "traits": [],
+   "balance_tp_go1": 170,
+   "balance_power_min_go1": 215,
+   "balance_power_max_go1": 980
   },
   {
    "id": "SoyoyagiStep",
@@ -318922,7 +319936,10 @@
    "traits": [],
    "balance_tp": 130,
    "balance_power_min": 160,
-   "balance_power_max": 880
+   "balance_power_max": 880,
+   "balance_tp_go1": 140,
+   "balance_power_min_go1": 170,
+   "balance_power_max_go1": 890
   },
   {
    "id": "StealthWalk",
@@ -318974,6 +319991,58 @@
    "balance_power_max": 890
   },
   {
+   "id": "StrongTower",
+   "name": "Titanic Slam",
+   "name_es": "Golpe titánico",
+   "name_jp": "ストロングタワー",
+   "type": "Block",
+   "element": "earth",
+   "cost": 40,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 40,
+    "GO2": 35,
+    "GO1": 35
+   },
+   "description": "Drive a colossal punch into the ground that sends a towering pillar of energy skyward, blasting enemies and rebounding the ball.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/h/z/hzstxcyt1eu.jpg",
+   "zukan_types": [
+    "Defence"
+   ],
+   "name_fr": "Choc Titanesque",
+   "name_it": null,
+   "traits": [],
+   "balance_tp_go1": 90,
+   "balance_power_min_go1": 95,
+   "balance_power_max_go1": 600
+  },
+  {
+   "id": "SunshineForce",
+   "name": "Solar Flare",
+   "name_es": "Llamarada solar",
+   "name_jp": "サンシャインフォース",
+   "type": "Shoot",
+   "element": "fire",
+   "cost": 70,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 70,
+    "GO2": 80,
+    "GO1": 75
+   },
+   "description": "Harness the sun's radiant energy and fire a scorching blast straight from the heavens.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/p/w/pw7cq5-vzus.jpg",
+   "zukan_types": [
+    "Shot"
+   ],
+   "name_fr": "Coup de Soleil",
+   "name_it": "Bagliore Solare",
+   "traits": [],
+   "balance_tp_go1": 150,
+   "balance_power_min_go1": 180,
+   "balance_power_max_go1": 900
+  },
+  {
    "id": "SunshineStorm",
    "name": "Solar Nexus",
    "name_es": "Tormenta solar",
@@ -318999,6 +320068,58 @@
    "balance_tp": 130,
    "balance_power_min": 160,
    "balance_power_max": 880
+  },
+  {
+   "id": "SwordExcalibur",
+   "name": "Caliburn",
+   "name_es": "Caliburn",
+   "name_jp": "ソードエクスカリバー",
+   "type": "Shoot",
+   "element": "void",
+   "cost": 150,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 150,
+    "GO2": 170,
+    "GO1": 150
+   },
+   "description": "Strike from the storm with a lightning-charged sword to send the ball crashing toward the goal in a dazzling arc of electricity.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/7/8/78eah09nure.jpg",
+   "zukan_types": [
+    "Shot"
+   ],
+   "name_fr": "Lame Mythique",
+   "name_it": "Caliburn",
+   "traits": [],
+   "balance_tp_go1": 200,
+   "balance_power_min_go1": 270,
+   "balance_power_max_go1": 1080
+  },
+  {
+   "id": "SwordOfFire",
+   "name": "Flamberge",
+   "name_es": "Flamberge",
+   "name_jp": "ソード・オブ・ファイア",
+   "type": "Shoot",
+   "element": "fire",
+   "cost": 170,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 170,
+    "GO2": 170,
+    "GO1": 150
+   },
+   "description": "Forge a blazing sword from searing fire and strike the ball with a scorching volley that erupts toward the goal.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/v/u/vufx710e19k.jpg",
+   "zukan_types": [
+    "Shot"
+   ],
+   "name_fr": null,
+   "name_it": null,
+   "traits": [],
+   "balance_tp_go1": 200,
+   "balance_power_min_go1": 270,
+   "balance_power_max_go1": 1080
   },
   {
    "id": "TaikokuOuka",
@@ -319096,7 +320217,10 @@
    "traits": [],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go1": 80,
+   "balance_power_min_go1": 85,
+   "balance_power_max_go1": 540
   },
   {
    "id": "TheMonsters",
@@ -319147,7 +320271,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go1": 70,
+   "balance_power_min_go1": 70,
+   "balance_power_max_go1": 440
   },
   {
    "id": "ThiefEye",
@@ -319173,7 +320300,10 @@
    "traits": [],
    "balance_tp": 40,
    "balance_power_min": 30,
-   "balance_power_max": 200
+   "balance_power_max": 200,
+   "balance_tp_go1": 50,
+   "balance_power_min_go1": 50,
+   "balance_power_max_go1": 300
   },
   {
    "id": "ThousandArrow",
@@ -319199,7 +320329,10 @@
    "traits": [],
    "balance_tp": 150,
    "balance_power_min": 180,
-   "balance_power_max": 900
+   "balance_power_max": 900,
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "TracePress",
@@ -319249,7 +320382,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "TwinMixer",
@@ -319275,7 +320411,10 @@
    "traits": [],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go1": 80,
+   "balance_power_min_go1": 85,
+   "balance_power_max_go1": 540
   },
   {
    "id": "TwistReach",
@@ -319431,7 +320570,36 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go1": 100,
+   "balance_power_min_go1": 100,
+   "balance_power_max_go1": 640
+  },
+  {
+   "id": "WhiteBreath",
+   "name": "White Breath",
+   "name_es": "Aliento blanco",
+   "name_jp": "ホワイトブレス",
+   "type": "Shoot",
+   "element": "air",
+   "cost": 90,
+   "cost_game": "GO3",
+   "costs": {
+    "GO3": 90,
+    "GO2": 90,
+    "GO1": 85
+   },
+   "description": "Gather light into a searing breath of power and drive it forward with a thunderous kick.",
+   "image_url": "https://dxi4wb638ujep.cloudfront.net/1/k/-/-/--kj9gyvede.jpg",
+   "zukan_types": [
+    "Shot"
+   ],
+   "name_fr": "Souffle de l'Aube",
+   "name_it": "Afflato Bianco",
+   "traits": [],
+   "balance_tp_go1": 170,
+   "balance_power_min_go1": 215,
+   "balance_power_max_go1": 980
   },
   {
    "id": "WhiteHurricane",
@@ -319459,7 +320627,10 @@
    ],
    "balance_tp": 150,
    "balance_power_min": 180,
-   "balance_power_max": 900
+   "balance_power_max": 900,
+   "balance_tp_go1": 140,
+   "balance_power_min_go1": 170,
+   "balance_power_max_go1": 890
   },
   {
    "id": "WildDunk",
@@ -319584,7 +320755,10 @@
    ],
    "balance_tp": 170,
    "balance_power_min": 215,
-   "balance_power_max": 980
+   "balance_power_max": 980,
+   "balance_tp_go1": 180,
+   "balance_power_min_go1": 230,
+   "balance_power_max_go1": 1000
   },
   {
    "id": "vr_whk01080",
