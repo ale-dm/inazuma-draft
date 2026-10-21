@@ -598,3 +598,11 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - The Sherwinds/Tenmas (primer partido) baja de 85,55 a **73,27** (top Arion 76). Orden: Tenmas 73,3 → Protocol Omega 76 → 2.0 77,7 → White Deer 77,8 → 3.0 79,5 → ... → Ragnah 85,5.
 - Mixi Max deja de ser equipo: las 39 formas van a Unaffiliated (sin equipo) y se reconocen por la versión. Chrono Storm sigue como equipo oficial.
 - Creadas las 10 formas que faltaban: Saryuu/S Idenshi, Fran/Kuroi Bara, Garshah/G Idenshi, Vampheny/V Idenshi, Yuuichi/Kyousuke, Matsukaze/Shuu, Zanark/Cao Cao y Medam/Leiser/Einam con Zanark.
+
+
+## GO2 cerrado
+
+- Mike/Tez Beyan con Zanark: ficha oficial de zukan (3921), forma extra fuera de las 11 de Zanark Domain; OVR corregido 68 → 86.
+- Mixi Max ya no es equipo: 39 formas sin equipo; Chrono Storm sigue siendo equipo.
+- Orden de historia: Tenmas 73,3 → Protocol Omega 76 → 2.0 77,7 → White Deer 77,8 → 3.0 79,5 → Terracotta 80,9 → Zanark 81,5 → Perfect Cascade 82,0 → Zan 83,3 → Gihl 83,6 → Gahl 84,1 → Ragnah 85,5.
+- GO2 queda cerrado; solo quedan mejoras finas opcionales de Keshin Armed (KP, coste 0, bloquear hipertécnica).

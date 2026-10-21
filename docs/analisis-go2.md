@@ -1,6 +1,6 @@
 # Análisis GO2 — Chrono Stone
 
-> Estado: **P0 aplicado** (plantillas 2.0/3.0, duplicados base/versión y White Deer). El resto son propuestas.
+> Estado: **GO2 cerrado** (plantillas, orden de historia, Mixi Max, Armed +7 y formas nuevas). Solo quedan mejoras finas opcionales de Armed.
 > Fecha: 2026-10-21.
 
 ## 1. Resumen ejecutivo
@@ -241,7 +241,7 @@ Cobertura de formas Mixi Max de GO2:
 | Zanark Avalonic | Cao Cao | **Creado** |
 | Fei / Hakuryuu / Nanobana / Nishizono / Nishiki / Torb / Shindou / Kirino / Tsurugi / Matsukaze / Zanark | Big / Zhuge / Dragon / Liu Bei / Sakamoto / Toh-chan / Nobunaga / Jeanne / Okita / Arthur / Clara Jane | **Chrono Storm con tag de compañero** |
 
-También sobra **Mike (Tez Beyan) con Zanark**: no está en la lista de 11 formas Zanark del PlayerData (Lugic, Medam, Ward, Galling, Bahamus, Quorth, Orca, Dhanna, Leiser, Gamma, Einam). Hay que revisar si es una forma oficial o un emparejamiento manual.
+**Mike (Tez Beyan) con Zanark** es una ficha oficial de zukan (nº 3921) con su propia descripción “Miximaxed with Zanark…”. No está en las 11 formas de Zanark Domain del PlayerData (Lugic, Medam, Ward, Galling, Bahamus, Quorth, Orca, Dhanna, Leiser, Gamma, Einam), así que se queda como **forma extra oficial**: 12 formas Zanark en total. Su OVR se ha subido de 68 a **86** para que no parezca un error.
 
 ### 6.2 Keshin Armed
 
@@ -281,7 +281,7 @@ También sobra **Mike (Tez Beyan) con Zanark**: no está en la lista de 11 forma
    - Medam, Leiser, Einam (Zanark).
    - Saryuu (S Idenshi), Fran (Kuroi Bara), Garshah (G Idenshi), Vampheny (V Idenshi).
    - Yuuichi/Kyousuke, Matsukaze/Shuu, Zanark/Cao Cao.
-7. Revisar **Mike/Zanark** y decidir si se queda o se cambia por una forma oficial.
+7. **Mike/Zanark revisado**: ficha oficial de zukan, forma extra; se queda con OVR 86.
 8. Decidir si las 10 cartas sin receta son solo de historia o deben tener receta. Hoy la fusión es una receta fija de 19; el juego permite muchas más combinaciones, pero la app eligió un catálogo corto.
 
 ### P2 — Keshin Armed

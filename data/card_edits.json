@@ -1,6 +1,18 @@
 {
   "_doc": "Altas a mano para completar plantillas que no están en zukan. Se aplican después del build; las stats/OVR van puestas para que encajen en el equipo.",
-  "cards": {},
+  "cards": {
+    "mike--go2--mixi-max-zanark": {
+      "ovr": 86,
+      "category": "Top Player",
+      "tier": "A",
+      "shooting": 90,
+      "control": 80,
+      "physical": 84,
+      "speed": 82,
+      "defense": 65,
+      "goalkeeping": 60
+    }
+  },
   "created": {
     "medam--go2--protocol-omega-2-0": {
       "character_id": "medam",

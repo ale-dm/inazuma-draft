@@ -1,6 +1,6 @@
 # Plan: balance de rivales por temporadas (historia)
 
-> Estado: **IE1, IE2, IE3, GO1, GO2 (base), Ares y Orion hechos**; GO3 y el contenido de GO2 (Mixi Max/Armed) **pendientes**.
+> Estado: **IE1, IE2, IE3, GO1, GO2, Ares y Orion hechos**; GO3 **pendiente**. GO2 queda cerrado salvo mejoras finas opcionales de Keshin Armed.
 > Objetivo: que la curva de nota de los rivales de la historia (una temporada = un juego) sea coherente y siga el
 > orden de los partidos, con las reglas de abajo.
 > Complementa [`plan-base-jugadores.md`](./plan-base-jugadores.md) §3 (OVR) y §9 (`team_tuning`).
@@ -252,7 +252,7 @@ Inazuma Japón (protagonista) se queda como estaba, en 89,7, por debajo del de I
 | IE2 | **hecho** | escala del jefe: Géminis 80,6 → Caos 87,9; normales, Caos, Emperadores y pool | 
 | IE3 | **hecho** | rampa 84,4 → 89,9; capitanes de la wiki, extras (Team K/Garshield/Great Horn/Tenkuu/Makai/Ogre) y pool 46–87 |
 | GO1 | **hecho** | rampa 75,0 → 83,5; Raimon 83,9; Equipo Zero 84,7; `compress_above` corregido (Bailong 92→88) |
-| GO2 | **base hecha** | rampa 76,0 → 87,0; 2.0/3.0 y duplicados corregidos; Mixi Max/Armed pendientes |
+| GO2 | **hecho** | Tenmas 73,3 → Ragnah 85,5; 2.0/3.0 completos; Mixi Max sin equipo y 39 formas; Armed +7; GO2 cerrado |
 | GO3 | pendiente | Dragones de Fuego 73 → … → Supernova/Big Bang 84,5 (techo 90) |
 | Ares | **hecho** | rampa 76,0 → 86,1 (Barcelona); Raimon 84,5; Ribera 81,2; Green Hill 76,4; `compress` 0,5 y `ovr_shift` -1; Mark 88 y Axel 83 a mano |
 | Orion | **hecho** | rampa 76,3 → 87,0 (Eclipse); Inazuma Japón 89,7; `compress` 0,5 |
