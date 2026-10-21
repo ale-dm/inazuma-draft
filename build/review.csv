@@ -5430,3 +5430,5 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 79,Advanced Player,Medam,GO2,Protocol Omega 3.0,Protocol Omega 3.0,DF,B,card_edits,58,66,78,70,84,62,Tesla Coil (15) · Breath Taker (8) · Sidewinder (20) · Magnetism (30),medam--go2--protocol-omega-3-0
 78,Advanced Player,Leiser,GO2,Protocol Omega 3.0,Protocol Omega 3.0,FW,B,card_edits,86,67,65,80,52,56,Gaussian Goal (40) · Plasma Ball (30) · Frosticle (55),leiser--go2--protocol-omega-3-0
 78,Advanced Player,Einam,GO2,Protocol Omega 3.0,Protocol Omega 3.0,FW,B,card_edits,86,66,67,76,57,56,Gaussian Goal (40) · Plasma Ball (30) · Double Helix (40),einam--go2--protocol-omega-3-0
+86,Top Player,Beta,GO2,Jouou-sama Mode,Sub Character,FW,A,card_edits,90,82,76,86,66,55,Fission and Fusion (55) · Spin Out (30) · Omega Assault (85) · Spin Meister (15) · Frosticle (55),beta--go2--jouou-sama
+84,Top Player,Beta,GO2,as Benigiku,Sub Character,FW,A,card_edits,88,80,74,84,64,54,Spin Meister (15) · Frosticle (55) · Flying Fish (20) · Snowstorm Leopard (40),beta--go2--benigiku

@@ -119,15 +119,15 @@ Los **Souls / tótems** son de **Galaxy (GO3)**, no de GO2. En la app están en 
 | Ishido form | **1** | Gouenji |
 | Teen | **1** | Gouenji Yuuka |
 
-En la app, GO2 tiene **459 cartas**: 339 base y 120 versiones. Las etiquetas más repetidas son Perfect Cascade (16), Raimon (16), Chrono Storm (12), Inazuma Legend Japan (11), Mixi Max (Zanark) (9), Protocol Omega 2.0 (13), Adult (6), Protocol Omega 3.0 (6) y luego muchas versiones únicas.
+En la app, GO2 tiene **461 cartas**: 339 base y 122 versiones. Las etiquetas más repetidas son Perfect Cascade (16), Raimon (16), Chrono Storm (12), Inazuma Legend Japan (11), Mixi Max (Zanark) (9), Protocol Omega 2.0 (13), Adult (6), Protocol Omega 3.0 (6) y luego muchas versiones únicas.
 
 ### 4.1 Cobertura de versiones
 
 - **Mixi Max**: 29 cartas en el grupo `Mixi Max` + 12 en Chrono Storm. El PlayerData CS declara 31 formas; muchas de las que no están en el grupo son las de Chrono Storm (Taiyou, Kinako, Nishizono, Nishiki, Torb…), que sí existen como carta Chrono Storm pero **sin el tag de compañero**.
 - **Hyper Dive**: las 16 versiones de Perfect Cascade parecen ser la forma Hyper Dive, aunque la etiqueta diga solo “Perfect Cascade”.
 - **Adult / Inazuma Legend Japan**: 17 cartas entre las dos etiquetas; cubre las 15 formas adultas y algún extra.
-- **Beta**: solo base y Protocol Omega 2.0. **Faltan Jouou-sama Mode y Benigiku.**
-- **Tsurugi Yuuichi**: base, Mixi Max (Victor) y Child. **Falta la forma alternativa.**
+- **Beta**: base, Protocol Omega 2.0, **Jouou-sama Mode** y **Benigiku** (estas dos en Sub Character).
+- **Tsurugi Yuuichi**: la base de GO2 ya es la forma alternativa (The Sherwinds), además de Mixi Max (Victor) y Child.
 - **Gouenji**: ILJ y Mixi Max (Shawn). **Falta la forma Ishido** (y la base GO2 no está como carta suelta).
 - **Real Inazuma, Chara Change, modos y disfraces**: quedan fuera por diseño; no son un olvido.
 
@@ -159,10 +159,10 @@ Cada carta tiene un array `specials` con:
 
 | Métrica | Valor |
 |---|---:|
-| Cartas GO2 | 459 |
-| Con algún special | 175 |
-| Keshin | 131 |
-| Keshin Armed | 85 |
+| Cartas GO2 | 461 |
+| Con algún special | 177 |
+| Keshin | 133 |
+| Keshin Armed | 87 |
 | Keshin sin Armed | 46 |
 | Keshin únicos | 69 |
 | Mixi (tag) | 73 |
@@ -173,9 +173,9 @@ Cartas con combinaciones:
 
 - **Keshin + Mixi**: 29.
 - **Solo Mixi**: 44 (29 Mixi Max + 12 Chrono Storm + 3 bases con compañero; las demás ya tienen Keshin).
-- **Solo Keshin**: 102.
+- **Solo Keshin**: 104.
 
-Para comparar, el `PlayerData/CS` declara **392 entradas de Keshin**, **82 Keshin únicos** y **249 entradas marcadas Armed**. La app solo materializa las que tienen carta en GO2 (131 / 69 únicos / 85 Armed). GO1 tiene 83 Keshin y ninguno Armed; GO3 tiene 78 Keshin, 7 Armed y 71 Souls.
+Para comparar, el `PlayerData/CS` declara **392 entradas de Keshin**, **82 Keshin únicos** y **249 entradas marcadas Armed**. La app solo materializa las que tienen carta en GO2 (133 / 69 únicos / 87 Armed). GO1 tiene 83 Keshin y ninguno Armed; GO3 tiene 78 Keshin, 7 Armed y 71 Souls.
 
 Por equipo (Keshin / Armed / Mixi):
 
@@ -250,8 +250,8 @@ También sobra **Mike (Tez Beyan) con Zanark**: no está en la lista de 11 forma
 
 ### 6.3 Versiones
 
-- Beta: faltan **Jouou-sama Mode** y **Benigiku**.
-- Tsurugi Yuuichi: falta la **forma alternativa**.
+- Beta: **Jouou-sama Mode** y **Benigiku** añadidos.
+- Tsurugi Yuuichi: la base GO2 es la forma alternativa.
 - Gouenji: falta **Ishido**; la base GO2 no está como carta suelta.
 - Perfect Cascade: las 16 versiones se llaman “Perfect Cascade”; podrían etiquetarse **Hyper Dive Mode**.
 - Real Inazuma / Chara Change / modos / disfraces: fuera por diseño; no urgentes.
@@ -291,7 +291,7 @@ También sobra **Mike (Tez Beyan) con Zanark**: no está en la lista de 11 forma
 
 ### P3 — Versiones y lore
 
-12. Beta Jouou-sama / Benigiku; Tsurugi Yuuichi alternativo; etiquetar Perfect Cascade como Hyper Dive; valorar Ishido/GO forms.
+12. Beta Jouou-sama / Benigiku **hechos**; etiquetar Perfect Cascade como Hyper Dive; valorar Ishido/GO forms.
 13. No mezclar los **43 Mixi Max de GO3/VR** (Sierra Mone, Kierry Reese, etc.) con el catálogo GO2: son otra tanda.
 
 ### P4 — Balance

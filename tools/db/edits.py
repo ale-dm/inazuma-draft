@@ -11,8 +11,8 @@ from common import ROOT
 
 PATH = os.path.join(ROOT, 'data', 'card_edits.json')
 CARD_FIELDS = {'character_id', 'name', 'game', 'version', 'team', 'position', 'element', 'ovr', 'category', 'tier',
-               'shooting', 'control', 'physical', 'speed', 'defense', 'goalkeeping', 'image_url', 'duel_att', 'duel_con',
-               'duel_def', 'is_version', 'no'}
+               'shooting', 'control', 'physical', 'speed', 'defense', 'goalkeeping', 'image_url', 'specials',
+               'duel_att', 'duel_con', 'duel_def', 'is_version', 'no'}
 TECH_FIELDS = {'name', 'name_es', 'type', 'element', 'cost', 'traits'}
 SAGA = {'IE1': 'IE', 'IE2': 'IE', 'IE3': 'IE', 'GO1': 'GO', 'GO2': 'GO', 'GO3': 'GO', 'ARES': 'IE', 'ORION': 'IE', 'VR': 'IE'}
 

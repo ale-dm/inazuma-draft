@@ -177,6 +177,79 @@
         "PlasmaBall",
         "SpringArrow"
       ]
+    },
+    "beta--go2--jouou-sama": {
+      "character_id": "beta",
+      "name": "Beta",
+      "game": "GO2",
+      "version": "Jouou-sama Mode",
+      "team": "Sub Character",
+      "position": "FW",
+      "element": "air",
+      "ovr": 86,
+      "category": "Top Player",
+      "tier": "A",
+      "is_version": true,
+      "shooting": 90,
+      "control": 82,
+      "physical": 76,
+      "speed": 86,
+      "defense": 66,
+      "goalkeeping": 55,
+      "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/9/96/%28PO%29_Beta_sprite_%28Jouou-sama%29_%28VR%29.png/revision/latest?cb=20260611104547",
+      "techniques": [
+        "DoubleShot",
+        "SpinningUpper",
+        "OmegaAttack",
+        "SpinningTransam",
+        "WhiteBlade"
+      ],
+      "specials": [
+        {
+          "type": "keshin",
+          "name": "Goddess of Just Warfare Athene",
+          "name_es": "Dueña del aire, Atenea",
+          "armed": true,
+          "hyper": "Athenian Assault",
+          "hyper_es": "Golpe de Atenea"
+        }
+      ]
+    },
+    "beta--go2--benigiku": {
+      "character_id": "beta",
+      "name": "Beta",
+      "game": "GO2",
+      "version": "as Benigiku",
+      "team": "Sub Character",
+      "position": "FW",
+      "element": "air",
+      "ovr": 84,
+      "category": "Top Player",
+      "tier": "A",
+      "is_version": true,
+      "shooting": 88,
+      "control": 80,
+      "physical": 74,
+      "speed": 84,
+      "defense": 64,
+      "goalkeeping": 54,
+      "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/2f/Benigiku_Boss_sprite.png/revision/latest?cb=20230620171117",
+      "techniques": [
+        "SpinningTransam",
+        "WhiteBlade",
+        "FlyingFish",
+        "PantherBlizzard"
+      ],
+      "specials": [
+        {
+          "type": "keshin",
+          "name": "Goddess of Just Warfare Athene",
+          "name_es": "Dueña del aire, Atenea",
+          "armed": true,
+          "hyper": "Athenian Assault",
+          "hyper_es": "Golpe de Atenea"
+        }
+      ]
     }
   },
   "deleted": [],

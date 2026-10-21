@@ -584,3 +584,10 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - 9 cartas Mixi Max heredan el Keshin del aura si el usuario y el aura tienen Keshin en GO2: Markion, Victarion, Zanark (Gamma/Quorth/Lugic), Gabardo, etc.
 - Si el usuario no puede Armed, el Keshin heredado queda rmed: false (regla del juego).
 - No se heredan técnicas/skills ni se implementa Mixi Trans.
+
+
+## GO2 P3: Beta Jouou-sama / Benigiku
+
+- Añadidas las dos formas de Beta en Sub Character: Jouou-sama Mode (86) y as Benigiku (84), con Keshin Atenea y sus técnicas.
+- Tsurugi Yuuichi no necesita versión extra: la base GO2 ya es la forma alternativa de The Sherwinds.
+- 	ools/db/edits.py acepta specials en las cartas creadas a mano.

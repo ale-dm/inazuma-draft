@@ -1,6 +1,6 @@
-Cartas: 5431 (307 versiones extra) · personajes: 4978 · técnicas: 785
-Categorías: Legendary Player 122 · Top Player 755 · Advanced Player 1319 · Growing Player 1160 · Common Player 2075
-Niveles: S 460 · A 345 · B 1270 · C 3356
+Cartas: 5433 (309 versiones extra) · personajes: 4978 · técnicas: 785
+Categorías: Legendary Player 122 · Top Player 757 · Advanced Player 1319 · Growing Player 1160 · Common Player 2075
+Niveles: S 460 · A 347 · B 1270 · C 3356
 OVR: mediana 70 · p90 85 · p99 90 · máx 94
 
 Balancing doc del Xtreme sin ficha (7): añadir a overrides.xtreme_balancing_pages → Rhionne (Chaos), Dante Diavolo (Orpheus), Kino Aki (Girls Team), Oogu (Zanark Domain), Yasha (Zanark Domain), Goburis (Zanark Domain), Yamana Akane (Secret players (GO))
@@ -40,4 +40,4 @@ Nombres fr: técnicas 813/1024 · equipos 133/188
 Nombres it: técnicas 557/1024 · equipos 110/188
 Escudos de equipo: 172/188 · con escudo distinto según la época: 95
 Técnicas: tiro largo 40 · bloqueo de tiros 50
-card_edits.json: cards 0 · created 7 · deleted 0 · techniques 0
+card_edits.json: cards 0 · created 9 · deleted 0 · techniques 0
