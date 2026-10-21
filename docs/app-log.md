@@ -499,3 +499,10 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 
 - Cambiados los 11 sprites del Equipo Zero por los de la sección **Victory Road** de las fichas inglesas (.../Game_appearance#Victory_Road): uniforme Zero (Z) ... sprite (VR).png. Los anteriores (Z) ... sprite.png eran los de GO1 y no cuadraban.
 - **Criterio desde ahora**: para sprites e info de jugadores/técnicas, revisar primero la **wiki inglesa** (inazuma-eleven.fandom.com), que tiene la galería completa por juego (Game_appearance → Victory Road).
+
+
+## Dark Angel y técnicas exclusivas de las combinadas
+
+- **Zero y Chaos**: ZeroMagnum sale de las cartas base de Bailong y Tezcat (Luz Eterna / Oscuridad Ancestral) y queda solo en **Equipo Zero**; Fire Blizzard sale de Prominence y Diamond Dust y queda solo en **Chaos**. 	ech_remove ahora funciona en IE/GO y el seed borra los enlaces viejos antes de reinsertar.
+- **Dark Angel** (IE3): creado el combinado de **Sky Team** + **Dark Team** con las 11 versiones (Astaroth, Hebeemoth, Beelzebu, Nenel, Elfel, Mephisto, Satanatos, Gyuel, Uinel, Desuta y Sein), target **83,5**, capitán **Desuta** y sprites (DA) de la wiki inglesa. **Dark Phoenix** sale de la carta base de Thanatos y queda solo en la versión de Dark Angel.
+- **Sprites**: Equipo Zero con los (Z) ... sprite (VR) de la wiki inglesa; Dark Angel con los (DA); en Chaos, Torch y Gazelle pasan a los (C) ... sprite (VR) ingleses. El resto de Chaos sigue con los (C) HVR porque la inglesa no tiene todos.

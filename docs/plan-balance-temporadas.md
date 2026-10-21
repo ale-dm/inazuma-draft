@@ -145,7 +145,7 @@ Rampa (media del once): Caimanes del Cabo 74,2 (rep. africana) · Neo Japón 80,
 Grifos de la Rosa 82,5 · Brocken Brigade 83,0 · **Big Waves 84,4 → Leones del Desierto 84,6 → Dragones de Fuego 85,8 →
 Knights of Queen 86,0 → Emperadores 86,7 → Unicorn 86,9 → Orfeo 87,4 → Os Reis 89,1 → Little Giants 89,9** (final),
 con **Inazuma Japón 90,9** (protagonista, un punto por encima de Little). Extras fuera de la rampa: Equipo D **86,5**
-(nivel Knights) y Equipo Ogro **89,6** (nivel Little, top 93). `_game.IE3.compress = 0,5`; **capitán #1 en los 20
+(nivel Knights), **Dark Angel 83,5** (combinado Sky Team + Dark Team) y Equipo Ogro **89,6** (nivel Little, top 93). `_game.IE3.compress = 0,5`; **capitán #1 en los 20
 equipos** (16 de la historia/amistosos y los 4 extras, todos con capitán de la wiki).
 
 - **Orden de la historia** (wiki FFI): Asia → Big Waves (Australia, cuartos 2-1) → Leones del Desierto (Catar, semi 3-2)
@@ -162,7 +162,8 @@ equipos** (16 de la historia/amistosos y los 4 extras, todos con capitán de la 
   siendo #1 y el once se mantiene en 86,9 subiendo el objetivo a **88,0**.
 - **Extras** (fuera de la rampa; amistosos, rutas taisen o post-game): Equipo D = *Team K* de Mister K (Italia),
   subido al nivel de Knights (**86,5**); Zoolan Team = *Team Garshield*; Caimanes del Cabo = *The Great Horn*
-  («The Cape Crusaders», Sudáfrica); Sky Team = *Tenkuu no Shito*; Dark Team = *Makai Gundan Z*; Equipo Ogro = *Ogre*
+  («The Cape Crusaders», Sudáfrica); Sky Team = *Tenkuu no Shito*; Dark Team = *Makai Gundan Z*; **Dark Angel** =
+  combinado de Sky Team + Dark Team (11 versiones con sprite (DA), target 83,5); Equipo Ogro = *Ogre*
   (película / Team Ogre), subido al nivel de Little Gigantes (**89,6**, top 93).
 - **Pool sin equipo** (`scout_pool.IE3` = TP de IE3, 50/50 stats+técnica **por puesto**): 341 cartas, **46–88**,
   mediana 66; top **Chucky Cardaway 88**. Los notables cuadrados con el ranking competitivo (Sutefuda 88, Bernadette

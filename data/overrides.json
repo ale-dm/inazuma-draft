@@ -493,6 +493,9 @@
     "umihara-norika--ares--base": [
       "vr_whk01400",
       "vr_whk01410"
+    ],
+    "satanatos--ie3--dark-angel": [
+      "DarkPhoenix"
     ]
   },
   "scout_pool": {
@@ -736,12 +739,14 @@
       "_doc": "Caos (IE2): fusión de Prominence + Diamond Dust, con su «Chaos form» (stats mejores).",
       "page": "Nagumo Haruya",
       "game": "IE2",
-      "team": "Chaos"
+      "team": "Chaos",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/5/57/%28C%29_Burn_sprite_%28VR%29.png/revision/latest?cb=20260713151712"
     },
     {
       "page": "Suzuno Fuusuke",
       "game": "IE2",
-      "team": "Chaos"
+      "team": "Chaos",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/8/8f/%28C%29_Gazel_sprite_%28VR%29.png/revision/latest?cb=20260713202540"
     },
     {
       "page": "Atsuishi Shigeto",
@@ -918,6 +923,75 @@
       "game": "GO1",
       "team": "Team Zero",
       "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/63/%28Z%29_Shuu_sprite_%28VR%29.png/revision/latest?cb=20260712234152"
+    },
+    {
+      "_doc": "Dark Angel (IE3): combinado de Sky Team (Tenkuu no Shito) + Dark Team (Makai Gundan Z), con sus sprites (DA)."
+    },
+    {
+      "page": "Astaroth",
+      "game": "IE3",
+      "team": "Dark Angel",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/e4/%28DA%29_Astaroth_sprite.png/revision/latest?cb=20230823172202"
+    },
+    {
+      "page": "Hebeemoth",
+      "game": "IE3",
+      "team": "Dark Angel",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/ef/%28DA%29_Hebeemoth_sprite.png/revision/latest?cb=20230823172350"
+    },
+    {
+      "page": "Beelzebu",
+      "game": "IE3",
+      "team": "Dark Angel",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/39/%28DA%29_Beelzebu_sprite.png/revision/latest?cb=20230823172506"
+    },
+    {
+      "page": "Nenel",
+      "game": "IE3",
+      "team": "Dark Angel",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/ee/%28DA%29_Nenel_sprite.png/revision/latest?cb=20230823172624"
+    },
+    {
+      "page": "Elfel",
+      "game": "IE3",
+      "team": "Dark Angel",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/0d/%28DA%29_Elfel_sprite.png/revision/latest?cb=20230823173019"
+    },
+    {
+      "page": "Mephisto",
+      "game": "IE3",
+      "team": "Dark Angel",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/06/%28DA%29_Mephisto_sprite.png/revision/latest?cb=20230823173124"
+    },
+    {
+      "page": "Satanatos",
+      "game": "IE3",
+      "team": "Dark Angel",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/29/%28DA%29_Satanatos_sprite.png/revision/latest?cb=20230823202645"
+    },
+    {
+      "page": "Gyuel",
+      "game": "IE3",
+      "team": "Dark Angel",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/04/%28DA%29_Gyuel_sprite.png/revision/latest?cb=20230823202748"
+    },
+    {
+      "page": "Uinel",
+      "game": "IE3",
+      "team": "Dark Angel",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/b/bb/%28DA%29_Uinel_sprite.png/revision/latest?cb=20230823202908"
+    },
+    {
+      "page": "Desuta",
+      "game": "IE3",
+      "team": "Dark Angel",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/0d/%28DA%29_Desuta_sprite.png/revision/latest?cb=20230823203007"
+    },
+    {
+      "page": "Sein",
+      "game": "IE3",
+      "team": "Dark Angel",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/7/74/%28DA%29_Sein_sprite.png/revision/latest?cb=20230823203100"
     }
   ],
   "zukan_wiki_pages": {
@@ -1211,6 +1285,11 @@
         "top11": 79.9,
         "captain": "Desuta",
         "note": "Makai Gundan Z, post-game (extra)"
+      },
+      "Dark Angel": {
+        "top11": 83.0,
+        "captain": "Desuta",
+        "note": "combinado de Sky Team (Tenkuu no Shito) + Dark Team (Makai Gundan Z), extra/post-game"
       },
       "Team Ogre": {
         "top11": 89.5,
@@ -1726,6 +1805,9 @@
     ],
     "suzuno-fuusuke--ie2--base": [
       "FireBlizzard_Wind"
+    ],
+    "satanatos--ie3--base": [
+      "DarkPhoenix"
     ]
   }
 }
