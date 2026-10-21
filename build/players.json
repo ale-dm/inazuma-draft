@@ -318035,9 +318035,9 @@
    "name_fr": "Triangle de la Mort Amélioré",
    "name_it": null,
    "traits": [],
-   "balance_tp": 170,
-   "balance_power_min": 215,
-   "balance_power_max": 980
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "es_dimensi-n-kamakura",
@@ -318143,9 +318143,9 @@
    "name_fr": "Frappe de Persée",
    "name_it": null,
    "traits": [],
-   "balance_tp": 160,
-   "balance_power_min": 195,
-   "balance_power_max": 930
+   "balance_tp": 170,
+   "balance_power_min": 215,
+   "balance_power_max": 980
   },
   {
    "id": "vr_whk01510",
