@@ -541,3 +541,9 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - Auditadas las 406 cartas de Ares/Orion con la wiki inglesa (Game_appearance → Victory Road). Asignados sprites de equipo a **Inazuma Japan** (IJ (O)), **Raimon** (IR), **Barcelona Orb** (BO) y unas 230 cartas más (Perfect Spark, Orion Eclipse, Guardians of Queen, Sambassadors, Lunar Prime, Alia, Zeus…).
 - Elliot Ember de Inazuma Japón (Orion) lleva la **Chilena de pingüino de fuego** (es_ping-ino-aereo); se quita la de bosque de esa carta.
 - Quedan 129 cartas de Ares/Orion con foto de zukan: Sub Character, Star Unicorn sin sprite de equipo en la wiki y algunos casos sin sprite base (Nishikage/Umihara/Saginuma en Inazuma Japón, Kiyama, Sakuma…).
+
+
+## GO2: White Deer y análisis
+
+- White Deer: Taian 90 → 88; el once queda en 77,82 (antes 78,00).
+- Análisis completo en docs/analisis-go2.md: lore de Chrono Stone, versiones de PlayerData, Keshin Armed, Mixi Max, plantillas 2.0/3.0 y duplicados base/versión.
