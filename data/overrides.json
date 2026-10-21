@@ -433,6 +433,8 @@
   },
   "technique_elements": {
     "_doc": "Elemento a la fuerza por técnica (id → fire/wood/air/earth): para las variantes que la wiki guarda como una sola ficha con el elemento en el nombre.",
+    "AcrobatKeep": "air",
+    "SkyWalk": "air",
     "ShadowRay_Forest": "wood",
     "ShadowRay_Mountain": "earth",
     "FireBlizzard_Fire": "fire",

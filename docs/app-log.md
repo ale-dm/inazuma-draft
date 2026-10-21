@@ -606,3 +606,12 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - Mixi Max ya no es equipo: 39 formas sin equipo; Chrono Storm sigue siendo equipo.
 - Orden de historia: Tenmas 73,3 → Protocol Omega 76 → 2.0 77,7 → White Deer 77,8 → 3.0 79,5 → Terracotta 80,9 → Zanark 81,5 → Perfect Cascade 82,0 → Zan 83,3 → Gihl 83,6 → Gahl 84,1 → Ragnah 85,5.
 - GO2 queda cerrado; solo quedan mejoras finas opcionales de Keshin Armed (KP, coste 0, bloquear hipertécnica).
+
+
+## GO1: revisión de bloqueos y regates
+
+- Revisadas las 48 técnicas de bloqueo (23) y regate (25) que usan las cartas de GO1, con su coste GO1 y el TP actual.
+- Propuesta en docs/balance-tecnicas-go1.md: bloqueos 50–130 y regates 50–140, con escala por coste y outliers de lore.
+- No se aplican aún los TP: las 48 son compartidas con IE/GO2/GO3/Ares/Orion y el alance_tp es global; hace falta separar el TP por saga.
+- Corregidos los elementos inválidos de AcrobatKeep y SkyWalk a **air**.
+- Pendiente: costes GO1 de LightningAccel y WarpDrive.

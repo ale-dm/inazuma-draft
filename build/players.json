@@ -314280,7 +314280,7 @@
    "name_es": "Guardia acrobática",
    "name_jp": "アクロバットキープ",
    "type": "Dribble",
-   "element": "acrobat keep",
+   "element": "air",
    "cost": 40,
    "cost_game": "GO3",
    "costs": {
@@ -318700,7 +318700,7 @@
    "name_es": "Pasos aéreos",
    "name_jp": "スカイウォーク",
    "type": "Dribble",
-   "element": "sky walk",
+   "element": "air",
    "cost": 55,
    "cost_game": "GO3",
    "costs": {
