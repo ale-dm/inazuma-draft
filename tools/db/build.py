@@ -1039,6 +1039,44 @@ def main(extra_z=None, write=True):
             c['specials'] = [x for x in c.get('specials') or [] if x['type'] != 'mixi'] + \
                 [{'type': 'mixi', 'name': ', '.join(partners[c['character_id']])}]
 
+    # Mixi Max: si el aura tiene Keshin y el usuario también, se hereda el Keshin del aura.
+    # Si el usuario no puede usar Armed, el Keshin heredado tampoco puede.
+    mixi_alias = {
+        'Victor': 'tsurugi-kyousuke', 'Tezcat': 'shuu', 'Bailong': 'hakuryuu',
+        'Shawn': 'fubuki-shirou', 'Axel': 'gouenji-shuuya', 'Mark': 'endou-mamoru',
+        'Jude': 'kidou-yuuto', 'Caleb': 'fudou-akio', 'Zanark': 'zanark-avalonic',
+        'Gabriel': 'kirino-ranmaru', 'Aitor': 'kariya-masaki', 'Riccardo Di': 'shindou-takuto',
+        'Gabi': 'shindou-takuto',
+    }
+    regular_keshin = {}
+    for c in cards:
+        if c['game'] == 'GO2' and c['team'] not in ('Mixi Max', 'Chrono Storm'):
+            for sp in c.get('specials') or []:
+                if sp['type'] == 'keshin' and c['character_id'] not in regular_keshin:
+                    regular_keshin[c['character_id']] = sp
+    name_to_char = {}
+    for c in cards:
+        if c['game'] == 'GO2' and c['team'] not in ('Mixi Max', 'Chrono Storm'):
+            name_to_char.setdefault(c['name'], c['character_id'])
+            for w in c['name'].split():
+                if len(w) > 3:
+                    name_to_char.setdefault(w, c['character_id'])
+    for c in cards:
+        if c['team'] not in ('Mixi Max', 'Chrono Storm'):
+            continue
+        mixi = next((sp for sp in c.get('specials') or [] if sp['type'] == 'mixi'), None)
+        if not mixi or not mixi.get('name'):
+            continue
+        partner = mixi['name']
+        pid = mixi_alias.get(partner) or name_to_char.get(partner)
+        uk, pk = regular_keshin.get(c['character_id']), regular_keshin.get(pid) if pid else None
+        if not uk or not pk or uk.get('name') == pk.get('name'):
+            continue
+        inherited = dict(pk)
+        inherited['armed'] = bool(pk.get('armed') and uk.get('armed'))
+        if not any(sp.get('name') == inherited.get('name') for sp in c['specials']):
+            c['specials'].append(inherited)
+
     # Caos: la carta base de ese juego (Prominence / Diamond Dust) cuenta también para ese equipo
     for c in cards:
         c['extra_teams'] = sorted({tm for g, tm in extra_team_pages.get(c['page'], ()) if g == c['game'] and c['version'] == 'base'})

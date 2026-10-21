@@ -9,9 +9,9 @@
 - **Protocol Omega 2.0** ya está completa: **16 cartas / 16 personajes** y **77,73** (Beta 83). Medam, Leiser, Einam y Minenne creados desde la wiki.
 - **Protocol Omega 3.0** ya está completa: **11 cartas** y **79,55**. Medam, Leiser y Einam creados desde la wiki.
 - Los **duplicados base + versión** se han limpiado: las bases quedan en `Unaffiliated` (fuera de los pools de draft) y los equipos usan la versión.
-- Las cartas **Mixi Max y Chrono Storm** ya muestran su compañero (`mixi`); falta la herencia de Keshin y las formas que no existen.
+- Las cartas **Mixi Max y Chrono Storm** ya muestran su compañero (`mixi`) y **9 Mixi Max heredan el Keshin del aura**; faltan las formas que no existen.
 - **White Deer** ya baja: Taian 90 → 88; el equipo queda en **77,82**.
-- **Keshin Armed** está implementado como flag + hipertécnica; **Mixi Max** como cartas fijas + 19 recetas. Las dos cosas funcionan, pero tienen lagunas de lore (herencia de Keshin, reglas de Armed, Mixi Trans, recetas).
+- **Keshin Armed** está implementado como flag + hipertécnica; **Mixi Max** como cartas fijas + 19 recetas. La herencia de Keshin ya funciona en 9 cartas; quedan reglas finas de Armed, Mixi Trans y recetas.
 
 ## 2. Rampa GO2
 
@@ -161,9 +161,9 @@ Cada carta tiene un array `specials` con:
 |---|---:|
 | Cartas GO2 | 459 |
 | Con algún special | 175 |
-| Keshin | 122 |
-| Keshin Armed | 78 |
-| Keshin sin Armed | 44 |
+| Keshin | 131 |
+| Keshin Armed | 85 |
+| Keshin sin Armed | 46 |
 | Keshin únicos | 69 |
 | Mixi (tag) | 73 |
 | Souls | 0 (son GO3) |
@@ -171,18 +171,18 @@ Cada carta tiene un array `specials` con:
 
 Cartas con combinaciones:
 
-- **Keshin + Mixi**: 20.
-- **Solo Mixi**: 53 (29 Mixi Max + 12 Chrono Storm + 12 bases con compañero).
+- **Keshin + Mixi**: 29.
+- **Solo Mixi**: 44 (29 Mixi Max + 12 Chrono Storm + 3 bases con compañero; las demás ya tienen Keshin).
 - **Solo Keshin**: 102.
 
-Para comparar, el `PlayerData/CS` declara **392 entradas de Keshin**, **82 Keshin únicos** y **249 entradas marcadas Armed**. La app solo materializa las que tienen carta en GO2 (122 / 69 únicos / 78 Armed). GO1 tiene 83 Keshin y ninguno Armed; GO3 tiene 78 Keshin, 7 Armed y 71 Souls.
+Para comparar, el `PlayerData/CS` declara **392 entradas de Keshin**, **82 Keshin únicos** y **249 entradas marcadas Armed**. La app solo materializa las que tienen carta en GO2 (131 / 69 únicos / 85 Armed). GO1 tiene 83 Keshin y ninguno Armed; GO3 tiene 78 Keshin, 7 Armed y 71 Souls.
 
 Por equipo (Keshin / Armed / Mixi):
 
 | Equipo | Keshin | Armed | Mixi |
 |---|---:|---:|---:|
 | Perfect Cascade | 16 | 15 | 0 |
-| Mixi Max | 0 | 0 | 29 |
+| Mixi Max | 9 | 7 | 29 |
 | Chrono Storm | 0 | 0 | 12 |
 | Raimon | 7 | 7 | 8 |
 | Despairadoes | 5 | 3 | 0 |
@@ -206,8 +206,8 @@ Por equipo (Keshin / Armed / Mixi):
 - **29 cartas** en el grupo `Mixi Max`; **12** en Chrono Storm.
 - **19 recetas** en `src/data/fusions.json`.
 - **10 cartas Mixi Max no tienen receta**: Shuu/Tezlong, Tsurugi/Baivic, Fubuki/Shaxel, Kidou/Juleb, Endou/Markion, Tsurugi/Victarion, Zanark/Zeta, Fei/Tyranno, Kirino/Aitriel y Kirino/Gabardo (algunas son la dirección inversa de una pareja o formas de historia).
-- Las 29 cartas Mixi Max y las 12 Chrono Storm ya muestran un **tag `mixi` con el compañero**; siguen **sin heredar Keshin** (no llevan Keshin/Armed).
-- La fusión es una **receta fija**: dos personajes del mismo juego, una vez por cuenta, y da la carta Mixi Max ya existente. No calcula stats a partir de los ingredientes; no hay Best Match, Mixi Trans ni herencia de Keshin.
+- Las 29 cartas Mixi Max y las 12 Chrono Storm muestran un **tag `mixi` con el compañero**. **9 Mixi Max heredan el Keshin del aura** (Markion, Victarion, Juleb, Gabardo, Zanark, etc.) cuando el usuario y el aura tienen Keshin en GO2; si el usuario no puede Armed, el heredado va sin Armed.
+- La fusión es una **receta fija**: dos personajes del mismo juego, una vez por cuenta, y da la carta Mixi Max ya existente. No calcula stats a partir de los ingredientes; no hay Best Match, Mixi Trans ni herencia de técnicas/skills (solo Keshin cuando existe).
 - El grupo `Mixi Max` queda fuera de los pools del draft; es colección/endgame.
 
 ### 5.4 Keshin Armed
@@ -287,7 +287,7 @@ También sobra **Mike (Tez Beyan) con Zanark**: no está en la lista de 11 forma
 
 9. Mantener Armed como **modo** (flag), no como carta.
 10. **Hecho**: Armed da **+7** en Hiperenergía (frente a +5 normal). Queda desactivar la hipertécnica del Keshin, permitir técnicas normales a coste 0 y consumir KP.
-11. Mixi Max + Armed: permitir la combinación y aplicar la restricción de que un Keshin heredado no puede ir Armed si el usuario no puede.
+11. Mixi Max + Armed: **aplicado en datos** para los 9 Keshin heredados; si el usuario no puede Armed, el heredado va con `armed: false`. Falta la parte de KP/TP.
 
 ### P3 — Versiones y lore
 

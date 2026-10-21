@@ -577,3 +577,10 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 
 - SimMatch usa hyperBonus: +5 normal y +7 si la carta tiene un Keshin con rmed: true.
 - Pendiente: KP, técnicas normales a coste 0 y bloquear la hipertécnica del Keshin mientras está Armed.
+
+
+## Mixi Max: herencia de Keshin
+
+- 9 cartas Mixi Max heredan el Keshin del aura si el usuario y el aura tienen Keshin en GO2: Markion, Victarion, Zanark (Gamma/Quorth/Lugic), Gabardo, etc.
+- Si el usuario no puede Armed, el Keshin heredado queda rmed: false (regla del juego).
+- No se heredan técnicas/skills ni se implementa Mixi Trans.

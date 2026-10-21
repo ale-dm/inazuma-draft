@@ -4103,6 +4103,18 @@
     {
      "type": "mixi",
      "name": "Mark"
+    },
+    {
+     "type": "keshin",
+     "name": "The Great Genie Majin",
+     "name_es": "Mágico gigante, Grandius",
+     "armed": false,
+     "hyper": "Majin the Great",
+     "hyper_es": "Mano grandiosa",
+     "name_fr": null,
+     "name_it": null,
+     "hyper_fr": "Main du Grand Génie",
+     "hyper_it": "Mano di Grandius"
     }
    ],
    "extra_teams": [],
@@ -4990,6 +5002,18 @@
     {
      "type": "mixi",
      "name": "Zanark"
+    },
+    {
+     "type": "keshin",
+     "name": "Prince of the Astral Plane Zodiac",
+     "name_es": "Príncipe del plano astral, Zodíaco",
+     "armed": true,
+     "hyper": "Crimson Prison",
+     "hyper_es": "Prisión escarlata",
+     "name_fr": "Zodiac, Prince du Plan Astral",
+     "name_it": "Zodiaco Principe del Piano Astrale",
+     "hyper_fr": "Prison Écarlate",
+     "hyper_it": null
     }
    ],
    "extra_teams": [],
@@ -5827,6 +5851,18 @@
     {
      "type": "mixi",
      "name": "Arion"
+    },
+    {
+     "type": "keshin",
+     "name": "Heavenly Horse Arch Pegasus",
+     "name_es": "Alado Archipegaso",
+     "armed": false,
+     "hyper": "Pegasus Punch",
+     "hyper_es": "Golpe justiciero",
+     "name_fr": "Archi Pégase, Le Cheval des Dieux",
+     "name_it": "Super Pegaso Alato",
+     "hyper_fr": "Tir Pégase",
+     "hyper_it": null
     }
    ],
    "extra_teams": [],
@@ -6776,6 +6812,18 @@
     {
      "type": "mixi",
      "name": "Victor"
+    },
+    {
+     "type": "keshin",
+     "name": "Heroic Swordsman Lancelot",
+     "name_es": "Caballero Lancelot",
+     "armed": true,
+     "hyper": "Lancelot Lunge",
+     "hyper_es": "Estocada de Lancelot",
+     "name_fr": "Lancelot, Le Spadassin Héroïque",
+     "name_it": "Maestro Spadaccino Lancelot",
+     "hyper_fr": "Botte de Lancelot",
+     "hyper_it": "Angelo Perduto"
     }
    ],
    "extra_teams": [],
@@ -7629,6 +7677,18 @@
     {
      "type": "mixi",
      "name": "Victor"
+    },
+    {
+     "type": "keshin",
+     "name": "Heroic Swordsman Lancelot",
+     "name_es": "Caballero Lancelot",
+     "armed": true,
+     "hyper": "Lancelot Lunge",
+     "hyper_es": "Estocada de Lancelot",
+     "name_fr": "Lancelot, Le Spadassin Héroïque",
+     "name_it": "Maestro Spadaccino Lancelot",
+     "hyper_fr": "Botte de Lancelot",
+     "hyper_it": "Angelo Perduto"
     }
    ],
    "extra_teams": [],
@@ -11907,6 +11967,18 @@
     {
      "type": "mixi",
      "name": "Arion"
+    },
+    {
+     "type": "keshin",
+     "name": "Heavenly Horse Arch Pegasus",
+     "name_es": "Alado Archipegaso",
+     "armed": true,
+     "hyper": "Pegasus Punch",
+     "hyper_es": "Golpe justiciero",
+     "name_fr": "Archi Pégase, Le Cheval des Dieux",
+     "name_it": "Super Pegaso Alato",
+     "hyper_fr": "Tir Pégase",
+     "hyper_it": null
     }
    ],
    "extra_teams": [],
@@ -27536,6 +27608,18 @@
     {
      "type": "mixi",
      "name": "Riccardo Di"
+    },
+    {
+     "type": "keshin",
+     "name": "Master Conductor Maestro",
+     "name_es": "Director Magister",
+     "armed": true,
+     "hyper": "Atomic Harmonic",
+     "hyper_es": "Movimientos armónicos",
+     "name_fr": "Maestro Virtuoso",
+     "name_it": null,
+     "hyper_fr": "Harmonie Atomique",
+     "hyper_it": "Armonia Atomica"
     }
    ],
    "extra_teams": [],
@@ -53434,6 +53518,18 @@
     {
      "type": "mixi",
      "name": "Zanark"
+    },
+    {
+     "type": "keshin",
+     "name": "Prince of the Astral Plane Zodiac",
+     "name_es": "Príncipe del plano astral, Zodíaco",
+     "armed": true,
+     "hyper": "Crimson Prison",
+     "hyper_es": "Prisión escarlata",
+     "name_fr": "Zodiac, Prince du Plan Astral",
+     "name_it": "Zodiaco Principe del Piano Astrale",
+     "hyper_fr": "Prison Écarlate",
+     "hyper_it": null
     }
    ],
    "extra_teams": [],
@@ -148454,6 +148550,18 @@
     {
      "type": "mixi",
      "name": "Zanark"
+    },
+    {
+     "type": "keshin",
+     "name": "Prince of the Astral Plane Zodiac",
+     "name_es": "Príncipe del plano astral, Zodíaco",
+     "armed": true,
+     "hyper": "Crimson Prison",
+     "hyper_es": "Prisión escarlata",
+     "name_fr": "Zodiac, Prince du Plan Astral",
+     "name_it": "Zodiaco Principe del Piano Astrale",
+     "hyper_fr": "Prison Écarlate",
+     "hyper_it": null
     }
    ],
    "extra_teams": [],
