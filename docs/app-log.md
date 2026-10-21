@@ -519,4 +519,5 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 
 - Añadido el elemento **Vacío** (`void`) a la app (`Element`, `EL_NUM` y traducciones) con la placa `plate_fsp_5.png`; las técnicas Void ya no usan el degradado morado de reserva.
 - Asignados 8 elementos que faltaban (Bull Steam Ahead, KAMAKURA D, Koutei Penguin 2gou feat. Shark, Triple G Strike, Penguin The God & Devil, Inazuma Break CG, Super God Hand y Tenkuu Hayabusadan) y 5 Void (Last Resort Σ/D, Mega Majin Trio, Black Shield y Black Field).
-- Quedan 24 técnicas con elemento único (`{{PAGENAME}}`/nombre propio) y 4 sin elemento en la wiki: Shining Penguin, Chilena de pingüino, Arrollador y Orion's Shade. Detalle en [tecnicas-visual.md](tecnicas-visual.md).
+- Las 4 que quedaban sin elemento se han resuelto con la wiki española: **Shining Penguin** → Vacío (manga sin elemento), **Chilena de pingüino** → Bosque (variante azul de Overhead Penguin; la negra/fuego es Pingüino Aéreo), **Arrollador** (= Coz/Judge Through) → Fuego y **Orion's Shade** → Vacío (Neutro en VR; Bosque en SD).
+- Quedan 24 técnicas con elemento único (`{{PAGENAME}}`/nombre propio). Detalle en [tecnicas-visual.md](tecnicas-visual.md).

@@ -427,7 +427,11 @@
     "vr_whk01660": "void",
     "vr_whs03290": "void",
     "vr_whk01600": "void",
-    "vr_whs03220": "void"
+    "vr_whs03220": "void",
+    "es_ping-ino-goleador": "void",
+    "es_chilena-de-ping-ino": "wood",
+    "es_arrollador": "fire",
+    "vr_whs03060": "void"
   },
   "extra_moves": {
     "_doc": "Técnicas extra por carta (id de carta -> ids de técnica). Se añaden después del build de Ares/Orion.",
