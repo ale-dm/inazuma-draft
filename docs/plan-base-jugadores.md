@@ -166,9 +166,10 @@ python3 tools/db/build.py            # genera build/players.json, build/review.c
     - IE3 (**hecho**; ver `plan-balance-temporadas.md` §3): Big Waves 84,4 → Leones del Desierto 84,6 → Dragones de
       Fuego 85,8 → Knights of Queen 86,0 → Los Emperadores 86,7 → Unicorn 86,9 → Orfeo 87,4 → Os Reis 89,1 → Little Gigantes 89,9, con Inazuma Japón 90,9 (protagonista, +1 sobre Little). Extras: Neo Japón 80,9 · Zoolan 81,2 · Grifos de la Rosa 82,5 ·
       Brocken Brigade 83,0 · Los Rojos 84,5 · Caimanes del Cabo 74,2 · Sky 80,5 · Dark 80,2 · Equipo D 86,5 (nivel Knights) · Ogro 89,6 (nivel Little). Pool sin equipo 46–88.
-    - GO1: escala tipo IE1, un pelín por encima.
+    - GO1 (**hecho**): escala tipo IE1, un pelín por encima.
       - Vía Láctea 74,5 → Poderosa Fe 75 → Royal Academy 76 → Cala Pirata 76,5 → Mar de Luna 77 → Alpino 77,5 → Kirkwood 78 → Espejismo 78,5 → Universal 79 → Monte Olimpo 80 → Dragon Link 81 → Luz Eterna 82,5 → Oscuridad Ancestral 83,5.
       - Las notas de más de 84 se comprimen a la mitad (92 → 88) y las subidas no pasan de 87.
+      - **Equipo Zero** (post-game): combinado de Luz Eterna + Oscuridad Ancestral, 11 versiones «Zero», target 85,0.
     - GO2 (orden por el nivel de la historia en la wiki): Protocolo Omega 76 → Omega 2.0 77,5 → Ciervo Blanco 78 → Omega 3.0 79,5 → Terracota 80 → Zanark Domain 81 → Cascada Perfecta 82 → Zan 83 → Gir 83,5 → Gar 84 → Ragnah 85,5; después de la historia: Desesperdidos 86,5, Nosfanáticos y Aullido Lunar 87. Techo 90.
     - GO3 (nivel de la historia): Dragones de Fuego 73 → Big Waves 73,5 → Cimitarras 74,5 → Muay Tigers 75 → Storm Wolves 76 → Sílice 77 → Naiadi 78 → Magmavís 79 → Fertilia 80 → Falam Medius 81 → Flota Ixar 82,5; después de la historia: Supernova y Big Bang 84,5. Techo 90.
     - Ares (**hecho**; equivalente a IE2 y GO2; orden por episodios del anime): Bastión 76,0 → Green Hill 76,4 → Brain 77,1 → Kirkwood 77,2 → Royal Academy 78,4 → Academia Polaris 79,8 → Zeus 80,8 → Ribera 81,2 → Alpino 81,6 → Academia Alia 82,9 → Raimon (Inakuni) 84,5 → Academia Plenilunio 85,0; Barcelona Orb (amistoso) 86,1, por encima. Techo 88, `compress` 0,5 y `ovr_shift` -1; Mark Evans se queda en 88, Axel Blaze sube a 83 y Ribera baja al nivel de Alpino. Green Hill sube al nivel de Bastión.

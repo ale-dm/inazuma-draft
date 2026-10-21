@@ -108,6 +108,7 @@ def apply_tuning(cards, games, ov, report):
                     c['stats'] = {k: max(25, min(99, v + new - c['ovr'])) for k, v in c['stats'].items()}
                     c['ovr'] = new
                     c['category'] = category(new)
+                    c['ovr_untuned'] = new
     for g_, tms in ov.get('team_tuning', {}).items():
         if g_.startswith('_') or g_ not in games:
             continue

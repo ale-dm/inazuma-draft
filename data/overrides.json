@@ -709,7 +709,13 @@
   "team_force": {
     "_doc": "Equipo a la fuerza para una carta: id de carta → equipo.",
     "nakata-hidetoshi--ie2--base": "Sub Character",
-    "yagami-reina--ie2--base": "Genesis"
+    "yagami-reina--ie2--base": "Genesis",
+    "gojou-masaru--go1--team-zero": "Sub Character",
+    "kibayama-douzan--go1--base": "Sub Character",
+    "hikita-koushirou--go1--base": "Sub Character",
+    "mutou-genzou--go1--base": "Sub Character",
+    "rinno-fujiko--go1--base": "Sub Character",
+    "ookazeya-giichi--go1--base": "Sub Character"
   },
   "extra_versions": [
     {
@@ -839,6 +845,75 @@
       "team": "Raimon",
       "form": "Merged",
       "image": "https://static.wikia.nocookie.net/inazuma/images/1/17/%28R%29_Shawn_%28HVR-DL%29.png/revision/latest?cb=20251204134523&path-prefix=es"
+    },
+    {
+      "_doc": "Equipo Zero (GO1): combinado de Luz Eterna + Oscuridad Ancestral, con su «Zero form» (post-game/película)."
+    },
+    {
+      "page": "Hebino Makito",
+      "game": "GO1",
+      "team": "Team Zero",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/9/97/%28Z%29_Hebino_Makito_sprite.png/revision/latest?cb=20230529182224"
+    },
+    {
+      "page": "Saki Yukio",
+      "game": "GO1",
+      "team": "Team Zero",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/c/ce/%28Z%29_Saki_Yukio_sprite.png/revision/latest?cb=20230529182622"
+    },
+    {
+      "page": "Ejima Kazuya",
+      "game": "GO1",
+      "team": "Team Zero",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/4/47/%28Z%29_Ejima_Kazuya_sprite.png/revision/latest?cb=20230529182805"
+    },
+    {
+      "page": "Onizuka Heita",
+      "game": "GO1",
+      "team": "Team Zero",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/de/%28Z%29_Onizuka_Heita_sprite.png/revision/latest?cb=20230529183028"
+    },
+    {
+      "page": "Kiya Kouji",
+      "game": "GO1",
+      "team": "Team Zero",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/3f/%28Z%29_Kiya_Kouji_sprite.png/revision/latest?cb=20230529183240"
+    },
+    {
+      "page": "Rinne Makoto",
+      "game": "GO1",
+      "team": "Team Zero",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/f9/%28Z%29_Rinne_Makoto_sprite.png/revision/latest?cb=20230529183449"
+    },
+    {
+      "page": "Seidou Dan",
+      "game": "GO1",
+      "team": "Team Zero",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/2d/%28Z%29_Seidou_Dan_sprite.png/revision/latest?cb=20230529183711"
+    },
+    {
+      "page": "Kai",
+      "game": "GO1",
+      "team": "Team Zero",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/fd/%28Z%29_Kai_sprite.png/revision/latest?cb=20230529183855"
+    },
+    {
+      "page": "Yuuki Jou",
+      "game": "GO1",
+      "team": "Team Zero",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/c/cf/%28Z%29_Yuuki_Jou_sprite.png/revision/latest?cb=20230529184152"
+    },
+    {
+      "page": "Hakuryuu",
+      "game": "GO1",
+      "team": "Team Zero",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/b/b6/%28Z%29_Hakuryuu_sprite.png/revision/latest?cb=20230520002623"
+    },
+    {
+      "page": "Shuu",
+      "game": "GO1",
+      "team": "Team Zero",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/3a/%28Z%29_Shuu_sprite.png/revision/latest?cb=20230529184646"
     }
   ],
   "zukan_wiki_pages": {
@@ -1204,6 +1279,11 @@
         "top11": 83.5,
         "captain": "Shuu",
         "note": "13"
+      },
+      "Team Zero": {
+        "top11": 85.0,
+        "captain": "Hakuryuu",
+        "note": "post-game · combinado de Luz Eterna + Oscuridad Ancestral (como el Caos de IE2)"
       }
     },
     "GO2": {

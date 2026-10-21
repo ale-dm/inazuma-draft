@@ -486,3 +486,10 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - Ajustadas **14 paradas** de Orion para que cada escalón de VR quede por encima de Ares: 640 → 150–190, 540 → 140–150, 440 → 120–130 y 360 → 100–110. Detalle en [balance-tecnicas-orion.md](balance-tecnicas-orion.md).
 - Añadida **Parada de espaguetis extra** (*Sauced-up Marinara Barrier*) a **Gonçalo/Macero** (Orion, slot 4) con TP **120**; estaba en el catálogo sin carta.
 - La ficha inglesa de cada técnica (potencia VR, 	_vr, evolución y Info) se ha usado para decidir el suelo de cada banda: las firmas suben a 130 en 440 y las que fallan en el anime se quedan en 120.
+
+
+## GO1: temporada y Equipo Zero
+
+- Revisada la temporada GO1: rampa **75,0 → 83,5**, Raimon **83,9**, techo 87. Corregido compress_above en 	uning.py para que la compresión de >84 no se pierda al aplicar la curva del equipo: Bailong 92 → 88, Iggie 90 → 87, Dracon 89 → 87… y desaparecen las tres fallas de capitán (Royal, Alpine y Kirkwood).
+- Creado **Equipo Zero** (post-game, combinado de **Luz Eterna + Oscuridad Ancestral**, como el Caos de IE2): 11 versiones «Zero» con sprites (Z), target **85,0** y capitán **Hakuryuu**. Los 6 cartas de cuerpo técnico/banquillo que el zukan ponía en Team Zero pasan a **Sub Character**.
+- Documentado en [plan-balance-temporadas.md](plan-balance-temporadas.md) y [plan-base-jugadores.md](plan-base-jugadores.md).

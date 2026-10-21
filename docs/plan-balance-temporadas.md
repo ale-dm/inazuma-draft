@@ -1,6 +1,6 @@
 # Plan: balance de rivales por temporadas (historia)
 
-> Estado: **IE1, IE2, IE3, Ares y Orion hechos**; GO1, GO2 y GO3 **pendientes**.
+> Estado: **IE1, IE2, IE3, GO1, Ares y Orion hechos**; GO2 y GO3 **pendientes**.
 > Objetivo: que la curva de nota de los rivales de la historia (una temporada = un juego) sea coherente y siga el
 > orden de los partidos, con las reglas de abajo.
 > Complementa [`plan-base-jugadores.md`](./plan-base-jugadores.md) §3 (OVR) y §9 (`team_tuning`).
@@ -175,6 +175,23 @@ equipos** (16 de la historia/amistosos y los 4 extras, todos con capitán de la 
   la carta** también va por versión (`overrides.card_names`): la carta de Neo Japan guarda «Dave Quagmire» y la de
   Épsilon «Dvalin», como en la wiki.
 
+### GO1 — hecho
+
+Rampa (media del once): **Vía Láctea 75,0 → Poderosa Fe 75,4 → Royal Academy 76,0 → Cala Pirata 76,5 → Mar de Luna
+77,0 → Alpino 78,5 → Kirkwood 78,2 → Espejismo 78,6 → Universal 79,0 → Monte Olimpo 80,0 → Dragon Link 81,0 →
+Luz Eterna 82,5 → Oscuridad Ancestral 83,5**, con **Raimon 83,9** y **Equipo Zero 84,7** (post-game). `_game.GO1`
+comprime las notas por encima de 84 a la mitad y el techo de subida es 87.
+
+- **Arreglo**: `compress_above` cambiaba `ovr` pero no `ovr_untuned`; la curva del equipo volvía a usar el valor bruto
+  y deshacía la compresión (Bailong 92, Iggie 90, Dracon 89…), dejando a los capitanes por debajo de sus outliers. Ahora
+  se guarda el valor comprimido: los outliers bajan (Bailong 88, Iggie 87…) y desaparecen las tres fallas de capitán.
+- **Equipo Zero**: equipo combinado de **Luz Eterna + Oscuridad Ancestral** (película/post-game de GO1), como el Caos
+  de IE2. 11 versiones «Zero» (Hebino, Saki, Ejima, Onizuka, Kiya, Rinne, Seidou, Kai, Yuuki, Hakuryuu y Shuu) con sus
+  sprites (Z), target **85,0** y capitán **Hakuryuu**. Los 6 cartas de cuerpo técnico/banquillo que el zukan ponía en
+  Team Zero pasan a **Sub Character**.
+- **Fuera de la rampa**: Black Templars, Prodigy Grammar, Golden Oldies y Raimon Second (equipos del anime sin sitio
+  confirmado en la historia).
+
 ### Ares — hecho
 
 Sustituto de IE2 en otra línea temporal: **un poco por debajo de IE2** (techo 86,1 frente a 87,9 del Caos).
@@ -233,7 +250,7 @@ Inazuma Japón (protagonista) se queda como estaba, en 89,7, por debajo del de I
 |---|---|---|
 | IE2 | **hecho** | escala del jefe: Géminis 80,6 → Caos 87,9; normales, Caos, Emperadores y pool | 
 | IE3 | **hecho** | rampa 84,4 → 89,9; capitanes de la wiki, extras (Team K/Garshield/Great Horn/Tenkuu/Makai/Ogre) y pool 46–87 |
-| GO1 | pendiente | Vía Láctea 74,5 → Luz Eterna 82,5 → Oscuridad Ancestral 83,5 (techo 87) |
+| GO1 | **hecho** | rampa 75,0 → 83,5; Raimon 83,9; Equipo Zero 84,7; `compress_above` corregido (Bailong 92→88) |
 | GO2 | pendiente | Protocolo Omega 76 → … → Aullido Lunar 87 (techo 90) |
 | GO3 | pendiente | Dragones de Fuego 73 → … → Supernova/Big Bang 84,5 (techo 90) |
 | Ares | **hecho** | rampa 76,0 → 86,1 (Barcelona); Raimon 84,5; Ribera 81,2; Green Hill 76,4; `compress` 0,5 y `ovr_shift` -1; Mark 88 y Axel 83 a mano |
