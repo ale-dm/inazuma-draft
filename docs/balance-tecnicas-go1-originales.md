@@ -23,17 +23,17 @@ Propuesta de colocación por tipo, por debajo de GO2 y con los mismos escalones 
 | Tipo | Rango propuesto | Techo |
 |---|---:|---|
 | Tiros | 50–200 | `SwordExcalibur` / `SwordOfFire` 200 |
-| Regates | 50-140 | `SprintWarp`, `ScratchRaid` y `OlympusHarmony` 140; `NoboriRyuu` / `RoundSpark` 130 |
+| Regates | 50-140 | `SprintWarp` y `OlympusHarmony` 140; `NoboriRyuu` / `RoundSpark` 120 |
 | Bloqueos | 50–130 | `VanishingCut` 130 |
 | Paradas | 50–180 | `GodHandV`, `MajinTheHand_K`, `GreatTheHand`, `HellsFist`, `KingFire` 180 |
 
 Criterio:
 
 - **TP GO1 manda**: a más TP, más nivel, con múltiplos de 10.
-- **Lore**: los tiros/paradas finales suben uno o dos niveles; los bloqueos/regates con nombre propio también.
+- **Potencia**: por ahora solo ajusta **±10** dentro del nivel de TP; no manda. El TP es la base.
 - **Sin castigo por ser GO1**: no hay combinadas en esta lista; no se aplica el castigo de 2/3 jugadores.
 - **Tiros**: 25→50, 30→60, 35→70, 40→80, 45→90, 50→100, 55→110, 60→120, 70→140/170, 75→150, 85→170, 150→200.
-- **Regates**: 20→50/60/120, 24→60/70, 25→130, 28→70/90, 32→90/100, 35→140, 36→100/120, 40→120, 45→130, 50→140.
+- **Regates**: 20→50/60, 24→60, 25→80, 28→70/80, 32→80/90, 35→100, 36→100/110, 40→110, 45→120, 50→140. La potencia solo ajusta ±10; no sube un nivel por sí sola.
 - **Bloqueos**: 20→50, 24→60, 28→70, 32→80, 35/36→90, 40→100, 45→120, 50→130.
 - **Paradas**: 20→50, 25→60, 30→70, 35→80, 40→90, 45→100, 50→120, 55→130/180, 70→160/170, 80→180.
 
@@ -101,28 +101,28 @@ Criterio:
 |---:|---:|---|---|---:|---:|---|
 | 20 | 40 | Mirada al futuro | `FutureEye` | 50 | **50** | sí |
 | 20 | 60 | Rodillazos atómicos | `MadJuggler` | 50 | **60** | sí |
-| 20 | 140 | Carga hipersónica | `Overdrive` | — | **120** | sí |
-| 24 | 80 | Piroquinesis | `BurningSummer` | 60 | **70** | sí |
+| 20 | 140 | Carga hipersónica | `Overdrive` | — | **60** | sí |
+| 24 | 80 | Piroquinesis | `BurningSummer` | 60 | **60** | sí |
 | 24 | 60 | Remolino acuático | `NaminoriPierrot` | 40 | **60** | sí |
-| 25 | 160 | Lazos de oscuridad | `DancingGhost` | — | **130** | sí |
-| 25 | 160 | Puño metralleta | `MachineGunBeat` | — | **130** | sí |
-| 25 | 160 | Rayo celeste | `PegasusBreak` | — | **130** | sí |
+| 25 | 160 | Lazos de oscuridad | `DancingGhost` | — | **80** | sí |
+| 25 | 160 | Puño metralleta | `MachineGunBeat` | — | **80** | sí |
+| 25 | 160 | Rayo celeste | `PegasusBreak` | — | **80** | sí |
 | 28 | 80 | Finta boomerang | `BoomerangFeint` | 50 | **70** | sí |
 | 28 | 80 | Brisa deslizante | `SoyokazeStep` | 60 | **70** | sí |
-| 28 | 100 | Sello gigante | `TheStamp` | 60 | **90** | sí |
-| 32 | 120 | Mina terrestre | `Claymore` | 80 | **100** | sí |
-| 32 | 100 | Visto y no visto | `PrestoTurn` | 60 | **90** | sí |
-| 32 | 100 | Arrancada | `Zeroyon` | 60 | **90** | sí |
-| 35 | 180 | Zarpazo real | `ScratchRaid` | — | **140** | sí |
+| 28 | 100 | Sello gigante | `TheStamp` | 60 | **80** | sí |
+| 32 | 120 | Mina terrestre | `Claymore` | 80 | **90** | sí |
+| 32 | 100 | Visto y no visto | `PrestoTurn` | 60 | **80** | sí |
+| 32 | 100 | Arrancada | `Zeroyon` | 60 | **80** | sí |
+| 35 | 180 | Zarpazo real | `ScratchRaid` | — | **100** | sí |
 | 36 | 120 | Guardia acrobática | `AcrobatKeep` | 80 | **100** | sí |
-| 36 | 140 | Cruce explosivo | `BritanniaCross` | 120 | **120** | sí |
-| 36 | 140 | Remolino ígneo | `EndlessSummer` | 100 | **120** | sí |
+| 36 | 140 | Cruce explosivo | `BritanniaCross` | 120 | **110** | sí |
+| 36 | 140 | Remolino ígneo | `EndlessSummer` | 100 | **110** | sí |
 | 36 | 120 | Truco balonazo | `TrickBall` | 70 | **100** | sí |
-| 36 | 140 | Círculo de hielo | `WhiteBlade` | 100 | **120** | sí |
-| 40 | 140 | Trance melódico | `MelodyWave` | 80 | **120** | sí |
-| 40 | 140 | Pasos aéreos | `SkyWalk` | 100 | **120** | sí |
-| 45 | 160 | Dragón ascendente | `NoboriRyuu` | 100 | **130** | sí |
-| 45 | 160 | Esferas luminosas | `RoundSpark` | 120 | **130** | sí |
+| 36 | 140 | Círculo de hielo | `WhiteBlade` | 100 | **110** | sí |
+| 40 | 140 | Trance melódico | `MelodyWave` | 80 | **110** | sí |
+| 40 | 140 | Pasos aéreos | `SkyWalk` | 100 | **110** | sí |
+| 45 | 160 | Dragón ascendente | `NoboriRyuu` | 100 | **120** | sí |
+| 45 | 160 | Esferas luminosas | `RoundSpark` | 120 | **120** | sí |
 | 50 | 180 | Himno de Atenea | `OlympusHarmony` | 120 | **140** | sí |
 | 50 | 180 | Regate supersónico | `SprintWarp` | 130 | **140** | sí |
 
