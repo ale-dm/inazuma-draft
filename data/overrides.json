@@ -1714,6 +1714,18 @@
     "umihara-norika--ares--base": [
       "es_parada-remolino",
       "es_velo-de-sirena"
+    ],
+    "hakuryuu--go1--base": [
+      "ZeroMagnum"
+    ],
+    "shuu--go1--base": [
+      "ZeroMagnum"
+    ],
+    "nagumo-haruya--ie2--base": [
+      "FireBlizzard_Fire"
+    ],
+    "suzuno-fuusuke--ie2--base": [
+      "FireBlizzard_Wind"
     ]
   }
 }

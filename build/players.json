@@ -7792,8 +7792,7 @@
    "techniques": [
     "WhiteHurricane",
     "SprintWarp",
-    "AirBullet",
-    "ZeroMagnum"
+    "AirBullet"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -8712,8 +8711,7 @@
    "freedom": 213,
    "techniques": [
     "NorthernImpact",
-    "WaterVeil",
-    "FireBlizzard_Wind"
+    "WaterVeil"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -11253,8 +11251,7 @@
    "freedom": 213,
    "techniques": [
     "AtomicFlare",
-    "FlameVeil",
-    "FireBlizzard_Fire"
+    "FlameVeil"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -17422,8 +17419,7 @@
    "techniques": [
     "BlackAsh",
     "SprintWarp",
-    "VanishingCut",
-    "ZeroMagnum"
+    "VanishingCut"
    ],
    "duel_att": null,
    "duel_con": null,

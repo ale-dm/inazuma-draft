@@ -133,7 +133,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 88,Top Player,Arion Sherwind,GO2,Mixi Max (Victor) «Victarion»,Mixi Max,MF,A,stats del juego,89,91,80,89,79,82,Easy Breezy (15) · Doomsword Slash (15) · Tornado Tunnel (70) · Fire Tornado DD (70),matsukaze-tenma--go2--mixi-max-victor-victarion
 88,Top Player,Arlo Galbrash,VR,base,Alpine,FW,C,Victory Road (tier 0) + técnicas,92,90,79,82,80,80,Warhead (30) · Aurora Dribble (39) · Cross Drive (28) · Double Grenade (31),sagae-kokichi--vr--base
 88,Top Player,Austin Hobbes,GO2,Adult,Sub Character,FW,S,Xtreme (balancing),95,83,79,81,78,71,Dragster (30) · Tiger Drive (40) · Guided Collide (20) · Fire Tornado DD (70),utsunomiya-toramaru--go2--adult
-88,Top Player,Bailong,GO1,base,Eternal Light,FW,S,Xtreme (wiki),91,87,83,82,71,68,White Hurricane (70) · Warp Step (70) · Ozone Flayer (55) · Zero Magnum (85),hakuryuu--go1--base
+88,Top Player,Bailong,GO1,base,Eternal Light,FW,S,Xtreme (wiki),91,87,83,82,71,68,White Hurricane (70) · Warp Step (70) · Ozone Flayer (55),hakuryuu--go1--base
 88,Top Player,Bailong,GO1,Team Zero,Team Zero,FW,S,Xtreme (wiki),91,87,83,82,71,68,White Hurricane (70) · Warp Step (70) · Ozone Flayer (55) · Zero Magnum (85),hakuryuu--go1--team-zero
 88,Top Player,Baller,IE2,Chaos,Chaos,DF,S,Strikers 2013,78,84,85,86,85,78,Ignite Steal (53) · Defence Scan (28) · Attack Scan (25) · Burnout (50),barazono-hana--ie2--chaos
 88,Top Player,Basile Hardy,ORION,Inazuma Japan,Inazuma Japan,FW,A,"Victory Road (tier 3, héroe) + técnicas",92,85,84,83,80,83,Brawl of the Wild (None) · Last Resort (None),kozoumaru-sasuke--orion--inazuma-japan
@@ -149,7 +149,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 88,Top Player,Elliot Ember,ORION,base,Inazuma Japan,FW,A,"Victory Road (tier 3, héroe) + técnicas",91,84,90,82,88,83,Pingüinos de luz y sombra (None) · Beyond the Death Zone (None) · Shark Shooter (None) · Last Resort (None) · Emperor Penguin No. 2 (55) · Last Resort Σ (None) · Perseus Strike (None) · Overhead Penguin (None),haizaki-ryouhei--orion--base
 88,Top Player,Falcão Da Silva,IE3,base,The Kingdom,GK,B,stats del juego,69,72,83,79,85,84,Capoeira Grab (40) · Wild Claw (25) · Tarzan Kick (20) · Mole Shuffle (42),falc-o-da-silva--ie3--base
 88,Top Player,Gabriel Jax,IE3,base,Unicorn,FW,B,stats del juego,91,94,93,77,83,81,Tri-Pegasus (55) · Zigzag Spark (55) · Revolution V (49) · Ultra Moon (44),michele-jacks--ie3--base
-88,Top Player,Gazelle,IE2,base,Diamond Dust,FW,S,Xtreme (balancing),93,85,84,92,85,85,Northern Impact (55) · Water Veil (53) · Fire Blizzard (64),suzuno-fuusuke--ie2--base
+88,Top Player,Gazelle,IE2,base,Diamond Dust,FW,S,Xtreme (balancing),93,85,84,92,85,85,Northern Impact (55) · Water Veil (53),suzuno-fuusuke--ie2--base
 88,Top Player,Govin Castlehoven,VR,base,Stormridge,DF,A,Victory Road (tier 2) + técnicas,89,89,86,89,90,84,Ghoulish Glare (None) · Side Swipe (70) · Harvest (48),yashiro-suberu--vr--base
 88,Top Player,Hidetoshi Nakata,IE3,Orpheus,Orpheus,MF,B,stats del juego,84,84,84,82,79,81,Brave Shot (76) · Circus Block (47) · Super Elastico (56),nakata-hidetoshi--ie3--orpheus
 88,Top Player,Holden Monday,VR,base,Back Alley Kickers,MF,C,Victory Road (tier 0) + técnicas,89,90,89,86,89,84,Killer Slide (10) · Slice and Dice (15) · Blast Mine (40) · Paladin Strike (43),tsukigawara-gensaku--vr--base
@@ -195,7 +195,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 88,Top Player,Sol Daystar,GO2,Chrono Storm,Chrono Storm,FW,S,Xtreme (wiki),91,87,87,82,86,74,Atomic Flare (70) · Thundertaker (85),amemiya-taiyou--go2--chrono-storm
 88,Top Player,Sonny Wright,ORION,base,Inazuma Japan,FW,A,"Victory Road (tier 3, héroe) + técnicas",90,89,84,89,80,83,Last Resort (None) · Solar Flex (None) · Last Resort Σ (None),inamori-asuto--orion--base
 88,Top Player,Thaddeus Bellefax,VR,base,Solaria-Zeus,FW,A,Victory Road (tier 2) + técnicas,91,90,79,83,80,80,Heaven's Time (70) · God Knows (70) · God Break (64),teita-tanji--vr--base
-88,Top Player,Torch,IE2,base,Prominence,FW,S,Xtreme (balancing),94,85,90,85,85,85,Atomic Flare (70) · Flame Veil (53) · Fire Blizzard (64),nagumo-haruya--ie2--base
+88,Top Player,Torch,IE2,base,Prominence,FW,S,Xtreme (balancing),94,85,90,85,85,85,Atomic Flare (70) · Flame Veil (53),nagumo-haruya--ie2--base
 88,Top Player,Torch,IE3,Fire Dragon,Fire Dragon,FW,S,Xtreme (balancing),95,84,91,85,93,95,Flame Veil (53) · Atomic Flare (70) · Fire Blizzard (64),nagumo-haruya--ie3--fire-dragon
 88,Top Player,Trixie Bren,VR,base,Gatekeepers,MF,C,Victory Road (tier 0) + técnicas,89,90,89,84,89,89,Decoy Deploy (70) · Accelerator Gears (15) · Format Disk (85),trixie-bren--vr--base
 88,Top Player,Vento Galliano,IE3,base,Orpheus,DF,S,Xtreme (balancing),69,72,79,91,91,83,Flurry Dash (20) · Barbarian Shield (53) · Dash Storm (46),vento-gagliano--ie3--base
@@ -303,7 +303,7 @@ ovr,categoría,nombre,juego,versión,equipo,pos,nivel,fuente,tiro,control,físic
 87,Top Player,Sol Daystar,GO1,base,Universal,FW,S,Xtreme (wiki),90,84,89,78,84,73,Meteor Blade (55) · Hey Presto (30) · Solar Surprise (40),amemiya-taiyou--go1--base
 87,Top Player,Sonny Wright,ARES,base,Raimon,FW,A,"Victory Road (tier 3, héroe) + técnicas",89,88,88,88,83,85,Flash Dash (None) · Polar Bear No. 2 (None) · Meteor Strike (None) · Golden Gull (None) · Flying Colours (None) · Shining Penguin (None) · Counter Drive (None),inamori-asuto--ares--base
 87,Top Player,Terracotta Warrior 1,GO2,base,The Terracotta Army,GK,B,stats del juego,70,79,88,80,80,89,Fist Beam (40) · Electric Impedance (30) · Close Counter (15),bingmayong-no-ichi--go2--base
-87,Top Player,Tezcat,GO1,base,Ancient Darkness,FW,S,Xtreme (wiki),85,93,91,80,84,74,Black Ash (70) · Warp Step (70) · Side Swipe (70) · Zero Magnum (85),shuu--go1--base
+87,Top Player,Tezcat,GO1,base,Ancient Darkness,FW,S,Xtreme (wiki),85,93,91,80,84,74,Black Ash (70) · Warp Step (70) · Side Swipe (70),shuu--go1--base
 87,Top Player,Thierry Reyes,VR,base,South Cirrus Junior High,MF,A,"Victory Road (tier 2, héroe) + técnicas",87,89,88,86,88,83,Heavenly Thunder (None) · Super Elastico (56) · Blast Mine (40),yagyuu-suruga--vr--base
 87,Top Player,Thomas Feldt,IE2,Dark Emperors,Dark Emperors,GK,S,Strikers 2013,90,90,90,81,90,90,Shot Pocket (15) · Double Rocket (47),sugimori-takeshi--ie2--dark-emperors
 87,Top Player,Thor Stoutberg,IE3,Inazuma Japan,Inazuma Japan,MF,S,Strikers 2013,88,87,97,78,90,90,Super Sumo Stomp (28) · Stone Wall (53) · Thunder Beast (49),hijikata-raiden--ie3--inazuma-japan

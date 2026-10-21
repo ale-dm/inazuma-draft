@@ -1298,7 +1298,7 @@ def main(extra_z=None, write=True):
     for cid, tids in ov.get('tech_remove', {}).items():         # a mano: quitar técnicas de una carta
         if cid.startswith('_'):
             continue
-        c = next((c for c in a_cards if c['id'] == cid), None)
+        c = next((c for c in a_cards + classic if c['id'] == cid), None)
         if not c:
             report.append(f'tech_remove: carta no encontrada ({cid})')
             continue
