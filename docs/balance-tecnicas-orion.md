@@ -56,3 +56,30 @@ Los bloqueos compartidos con Ares (Contragolpe doble, Muro colectivo, Torbellino
 | **140** | — | Gran seísmo · Subida a los cielos · Caída a los infiernos |
 | **130** | Huracán múltiple · León devorador | Corte diabólico · Escudo bárbaro · Cortafuegos · Rompehielos |
 | **120** | Meteorito ardiente | Entrada rodante · Jaula de piedra · Presa · Escudo corporal |
+
+## Tiros exclusivos de Orion
+
+De los **37 tiros exclusivos** de Orion, 15 estaban por debajo de su banda por potencia VR. Subidos:
+
+| Antes | Ahora | Técnica (app) | EN | VR |
+|---:|---:|---|---|---:|
+| 110 | **170** | Triángulo letal triturador | Beyond the Death Zone | 640 |
+| 140 | **160** | Sombra de Orión | Orion's Shade | 640 |
+| 140 | **160** | Último recurso: Dragón | Last Resort D | 640 |
+| 90 | **140** | Amanecer detonante | Solar Flex | 540 |
+| 100 | **130** | Fisura celestial | Crack Shot | 540 |
+| 110 | **140** | Tiburón abisal | Shark Shooter | 540 |
+| 110 | **140** | Chut de luna llena | Crescent Kick | 540 |
+| 110 | **140** | Águila bicéfala | Regal Eagle | 540 |
+| 120 | **140** | Cabezazo supermegatón | Super Megaton Head | 540 |
+| 130 | **140** | Granizado de fuego alto | Fizzy Fire Lemonade | 540 |
+| 110 | **120** | Auriga asolador | Twin Gallop | 440 |
+| 110 | **120** | Tiro capoeira | Capoeira Kick | 440 |
+| 110 | **120** | Tiro circense | Flurry-Go-Round | 440 |
+| 100 | **110** | Polvo de réquiem | Hollow Blare | 360 |
+| 90 | **110** | Pájaro ardiente | Flaming Firebird | 360 |
+
+- **Triángulo letal triturador** es combinada de 4 (VR 640): sube a 170, en la banda de las combinadas de IE3 (Grand Fire 190, Jet Stream 200).
+- **Sombra de Orión** y **Último recurso: Dragón** son VR 640 de un solo usuario: 160, como los tiros de 640 de IE3.
+- Los de VR 540 suben a 130–140; los de 440 a 120; los de 360 a 110.
+- Los demás ya estaban en su banda: Último recurso Σ 200, Último recurso 170, Orbe de Perseo 160, Campo umbrío 160, Lanza gélida 160, Chut vitral 140, Llamada salvaje 140, Ruptura planetaria 140, Uno para todos 140, Bala de cañón 130, Samba letal 130, Trance temporal 130, etc.

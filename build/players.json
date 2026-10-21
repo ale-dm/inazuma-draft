@@ -317894,9 +317894,9 @@
    "name_fr": "Soleil Fulgurant",
    "name_it": null,
    "traits": [],
-   "balance_tp": 90,
-   "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whs03280",
@@ -317966,9 +317966,9 @@
    "name_fr": "Limonade de feu ardent",
    "name_it": "Limonata di Fuoco Frizzante",
    "traits": [],
-   "balance_tp": 130,
-   "balance_power_min": 160,
-   "balance_power_max": 880
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whk01620",
@@ -318035,9 +318035,9 @@
    "name_fr": "Triangle de la Mort Amélioré",
    "name_it": null,
    "traits": [],
-   "balance_tp": 110,
-   "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_tp": 170,
+   "balance_power_min": 215,
+   "balance_power_max": 980
   },
   {
    "id": "es_dimensi-n-kamakura",
@@ -318119,9 +318119,9 @@
    "name_fr": "Requin ténébreux",
    "name_it": "Squalo degli Abissi",
    "traits": [],
-   "balance_tp": 110,
-   "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whs03240",
@@ -318217,9 +318217,9 @@
    "name_fr": "Talonnade de la Pleine Lune",
    "name_it": null,
    "traits": [],
-   "balance_tp": 110,
-   "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "es_ruptura-rel-mpago-cg",
@@ -318288,9 +318288,9 @@
    "name_fr": "Jonglage Multicolore",
    "name_it": null,
    "traits": [],
-   "balance_tp": 110,
-   "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whs03360",
@@ -318481,9 +318481,9 @@
    "name_fr": "Super Tête Explosive",
    "name_it": null,
    "traits": [],
-   "balance_tp": 120,
-   "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whd01560",
@@ -318751,9 +318751,9 @@
    "name_fr": "Tir du ténor",
    "name_it": "Requiem Pulviscolare",
    "traits": [],
-   "balance_tp": 100,
-   "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whk01540",
@@ -318824,9 +318824,9 @@
    "name_fr": "Coup du Phénix",
    "name_it": null,
    "traits": [],
-   "balance_tp": 90,
-   "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whk01690",
@@ -318900,9 +318900,9 @@
    "name_fr": "Fissure du sol",
    "name_it": "Fissura Ultraterrena",
    "traits": [],
-   "balance_tp": 100,
-   "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "es_guila-implacable",
@@ -319066,9 +319066,9 @@
    "name_fr": "Aigle Bicéphale",
    "name_it": null,
    "traits": [],
-   "balance_tp": 110,
-   "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whs01150",
@@ -319163,9 +319163,9 @@
    "name_fr": "Frappe Capoeira",
    "name_it": null,
    "traits": [],
-   "balance_tp": 110,
-   "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whk01640",
@@ -319236,9 +319236,9 @@
    "name_fr": "Char spectral",
    "name_it": "Biga Travolgente",
    "traits": [],
-   "balance_tp": 110,
-   "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whs03290",
@@ -319260,9 +319260,9 @@
    "name_fr": null,
    "name_it": null,
    "traits": [],
-   "balance_tp": 140,
-   "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "vr_who00260",
@@ -319358,9 +319358,9 @@
    "name_fr": "L'ombre d'Orion",
    "name_it": "Vipera Gemella Orion",
    "traits": [],
-   "balance_tp": 140,
-   "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "vr_whs03220",
