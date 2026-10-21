@@ -178,7 +178,7 @@ equipos** (16 de la historia/amistosos y los 4 extras, todos con capitán de la 
 ### GO1 — hecho
 
 Rampa (media del once): **Vía Láctea 75,0 → Poderosa Fe 75,4 → Royal Academy 76,0 → Cala Pirata 76,5 → Mar de Luna
-77,0 → Alpino 78,5 → Kirkwood 78,2 → Espejismo 78,6 → Universal 79,0 → Monte Olimpo 80,0 → Dragon Link 81,0 →
+77,0 → Alpino 77,7 → Kirkwood 78,2 → Espejismo 78,6 → Universal 79,0 → Monte Olimpo 80,0 → Dragon Link 81,0 →
 Luz Eterna 82,5 → Oscuridad Ancestral 83,5**, con **Raimon 83,9** y **Equipo Zero 84,7** (post-game). `_game.GO1`
 comprime las notas por encima de 84 a la mitad y el techo de subida es 87.
 
