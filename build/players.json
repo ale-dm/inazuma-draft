@@ -304176,9 +304176,9 @@
    "balance_tp": 170,
    "balance_power_min": 215,
    "balance_power_max": 980,
-   "balance_tp_go1": 180,
-   "balance_power_min_go1": 230,
-   "balance_power_max_go1": 1000
+   "balance_tp_go1": 150,
+   "balance_power_min_go1": 180,
+   "balance_power_max_go1": 900
   },
   {
    "id": "GreatTheHand",
@@ -304203,9 +304203,9 @@
    "name_fr": "Main du Grand Génie",
    "name_it": "Mano di Grandius",
    "traits": [],
-   "balance_tp_go1": 180,
-   "balance_power_min_go1": 230,
-   "balance_power_max_go1": 1000
+   "balance_tp_go1": 150,
+   "balance_power_min_go1": 180,
+   "balance_power_max_go1": 900
   },
   {
    "id": "SoyokazeStep",
@@ -307256,9 +307256,9 @@
    "balance_tp": 120,
    "balance_power_min": 140,
    "balance_power_max": 800,
-   "balance_tp_go1": 130,
-   "balance_power_min_go1": 160,
-   "balance_power_max_go1": 880
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "DeathZone",
@@ -315506,9 +315506,9 @@
    "name_fr": "Sphère écarlate",
    "name_it": "Sfera di Porpora",
    "traits": [],
-   "balance_tp_go1": 170,
-   "balance_power_min_go1": 215,
-   "balance_power_max_go1": 980
+   "balance_tp_go1": 150,
+   "balance_power_min_go1": 180,
+   "balance_power_max_go1": 900
   },
   {
    "id": "CrocodileFang",
@@ -316771,9 +316771,9 @@
    "name_fr": "Giga Presse Sandwich",
    "name_it": "Presa d'Acciaio",
    "traits": [],
-   "balance_tp_go1": 170,
-   "balance_power_min_go1": 215,
-   "balance_power_max_go1": 980
+   "balance_tp_go1": 150,
+   "balance_power_min_go1": 180,
+   "balance_power_max_go1": 900
   },
   {
    "id": "GingaRocket",
@@ -317147,9 +317147,9 @@
    "traits": [
     "punch"
    ],
-   "balance_tp_go1": 180,
-   "balance_power_min_go1": 230,
-   "balance_power_max_go1": 1000
+   "balance_tp_go1": 150,
+   "balance_power_min_go1": 180,
+   "balance_power_max_go1": 900
   },
   {
    "id": "HinawaBullet",
@@ -317717,9 +317717,9 @@
    "name_fr": "Couronne de feu",
    "name_it": "Corona di Fuoco",
    "traits": [],
-   "balance_tp_go1": 180,
-   "balance_power_min_go1": 230,
-   "balance_power_max_go1": 1000
+   "balance_tp_go1": 150,
+   "balance_power_min_go1": 180,
+   "balance_power_max_go1": 900
   },
   {
    "id": "KirakiraIllusion",
@@ -318235,9 +318235,9 @@
    "balance_tp": 110,
    "balance_power_min": 120,
    "balance_power_max": 720,
-   "balance_tp_go1": 180,
-   "balance_power_min_go1": 230,
-   "balance_power_max_go1": 1000
+   "balance_tp_go1": 150,
+   "balance_power_min_go1": 180,
+   "balance_power_max_go1": 900
   },
   {
    "id": "MaouNoOno",
@@ -318554,9 +318554,9 @@
    "balance_tp": 120,
    "balance_power_min": 140,
    "balance_power_max": 800,
-   "balance_tp_go1": 140,
-   "balance_power_min_go1": 170,
-   "balance_power_max_go1": 890
+   "balance_tp_go1": 130,
+   "balance_power_min_go1": 160,
+   "balance_power_max_go1": 880
   },
   {
    "id": "OmegaAttack",
@@ -319937,9 +319937,9 @@
    "balance_tp": 130,
    "balance_power_min": 160,
    "balance_power_max": 880,
-   "balance_tp_go1": 140,
-   "balance_power_min_go1": 170,
-   "balance_power_max_go1": 890
+   "balance_tp_go1": 130,
+   "balance_power_min_go1": 160,
+   "balance_power_max_go1": 880
   },
   {
    "id": "StealthWalk",
@@ -320091,9 +320091,9 @@
    "name_fr": "Lame Mythique",
    "name_it": "Caliburn",
    "traits": [],
-   "balance_tp_go1": 200,
-   "balance_power_min_go1": 270,
-   "balance_power_max_go1": 1080
+   "balance_tp_go1": 180,
+   "balance_power_min_go1": 230,
+   "balance_power_max_go1": 1000
   },
   {
    "id": "SwordOfFire",
@@ -320117,9 +320117,9 @@
    "name_fr": null,
    "name_it": null,
    "traits": [],
-   "balance_tp_go1": 200,
-   "balance_power_min_go1": 270,
-   "balance_power_max_go1": 1080
+   "balance_tp_go1": 180,
+   "balance_power_min_go1": 230,
+   "balance_power_max_go1": 1000
   },
   {
    "id": "TaikokuOuka",

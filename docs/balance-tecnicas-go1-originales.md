@@ -22,20 +22,20 @@ Propuesta de colocación por tipo, por debajo de GO2 y con los mismos escalones 
 
 | Tipo | Rango propuesto | Techo |
 |---|---:|---|
-| Tiros | 50–200 | `SwordExcalibur` / `SwordOfFire` 200 |
-| Regates | 50-140 | `SprintWarp` y `OlympusHarmony` 140; `NoboriRyuu` / `RoundSpark` 120 |
-| Bloqueos | 50–130 | `VanishingCut` 130 |
-| Paradas | 50–180 | `GodHandV`, `MajinTheHand_K`, `GreatTheHand`, `HellsFist`, `KingFire` 180 |
+| Tiros | 50-180 | `SwordExcalibur` / `SwordOfFire` 180 |
+| Regates | 50-130 | `SprintWarp` y `OlympusHarmony` 130; `NoboriRyuu` / `RoundSpark` 120 |
+| Bloqueos | 50-120 | `VanishingCut` 120 |
+| Paradas | 50-150 | `GodHandV`, `MajinTheHand_K`, `GreatTheHand`, `HellsFist`, `KingFire` 150 |
 
 Criterio:
 
 - **TP GO1 manda**: a más TP, más nivel, con múltiplos de 10.
 - **Potencia**: por ahora solo ajusta **±10** dentro del nivel de TP; no manda. El TP es la base.
 - **Sin castigo por ser GO1**: no hay combinadas en esta lista; no se aplica el castigo de 2/3 jugadores.
-- **Tiros**: 25→50, 30→60, 35→70, 40→80, 45→90, 50→100, 55→110, 60→120, 70→140/170, 75→150, 85→170, 150→200.
-- **Regates**: 20→50/60, 24→60, 25→80, 28→70/80, 32→80/90, 35→100, 36→100/110, 40→110, 45→120, 50→140. La potencia solo ajusta ±10; no sube un nivel por sí sola.
-- **Bloqueos**: 20→50, 24→60, 28→70, 32→80, 35/36→90, 40→100, 45→120, 50→130.
-- **Paradas**: 20→50, 25→60, 30→70, 35→80, 40→90, 45→100, 50→120, 55→130/180, 70→160/170, 80→180.
+- **Tiros**: 25→50, 30→60, 35→70, 40→80, 45→90, 50→100, 55→110, 60→120, 70→140/170, 75→150, 85→170, 150→180.
+- **Regates**: 20→50/60, 24→60, 25→80, 28→70/80, 32→80/90, 35→100, 36→100/110, 40→110, 45→120, 50→130. La potencia solo ajusta ±10; no sube un nivel por sí sola.
+- **Bloqueos**: 20→50, 24→60, 28→70, 32→80, 35/36→90, 40→100, 45→120, 50→120.
+- **Paradas**: 20→50, 25→60, 30→70, 35→80, 40→90, 45→100, 50→120, 55→130/150, 70→150, 80→150.
 
 ## 3. Lista completa
 
@@ -92,8 +92,8 @@ Criterio:
 | 85 | 200 | Hacha del Azote negro | `MaouNoOno` | — | **170** | sí |
 | 85 | 200 | Desolación eterna | `SoulBringer` | — | **170** | sí |
 | 85 | 200 | Aliento blanco | `WhiteBreath` | — | **170** | sí |
-| 150 | 250 | Caliburn | `SwordExcalibur` | — | **200** | sí |
-| 150 | 250 | Flamberge | `SwordOfFire` | — | **200** | sí |
+| 150 | 250 | Caliburn | `SwordExcalibur` | — | **180** | sí |
+| 150 | 250 | Flamberge | `SwordOfFire` | — | **180** | sí |
 
 ### Regate (26)
 
@@ -123,8 +123,8 @@ Criterio:
 | 40 | 140 | Pasos aéreos | `SkyWalk` | 100 | **110** | sí |
 | 45 | 160 | Dragón ascendente | `NoboriRyuu` | 100 | **120** | sí |
 | 45 | 160 | Esferas luminosas | `RoundSpark` | 120 | **120** | sí |
-| 50 | 180 | Himno de Atenea | `OlympusHarmony` | 120 | **140** | sí |
-| 50 | 180 | Regate supersónico | `SprintWarp` | 130 | **140** | sí |
+| 50 | 180 | Himno de Atenea | `OlympusHarmony` | 120 | **130** | sí |
+| 50 | 180 | Regate supersónico | `SprintWarp` | 130 | **130** | sí |
 
 ### Bloqueo (25)
 
@@ -154,7 +154,7 @@ Criterio:
 | 40 | 160 | Espectro oscuro | `SaikyousanShoukan` | 60 | **100** | sí |
 | 45 | 160 | Luz cegadora | `CrazySunlight` | 90 | **120** | sí |
 | 50 | 180 | Muralla de Atlantis | `AtlantisWall` | 90 | **120** | sí |
-| 50 | 180 | Salto dimensional | `VanishingCut` | 120 | **130** | sí |
+| 50 | 180 | Salto dimensional | `VanishingCut` | 120 | **120** | sí |
 
 ### Parada (26)
 
@@ -177,15 +177,15 @@ Criterio:
 | 50 | 160 | Dados de la suerte | `LuckyDice` | — | **120** | sí |
 | 50 | 160 | Mordisco de serpiente | `SerpentFang` | 60 | **120** | sí |
 | 55 | 180 | Manos liberadas | `BuraiHand` | 110 | **130** | sí |
-| 55 | 180 | God Hand V | `GodHandV` | 170 | **180** | sí |
+| 55 | 180 | God Hand V | `GodHandV` | 170 | **150** | sí |
 | 55 | 180 | Centro de gravedad | `GravityPoint` | 100 | **130** | sí |
 | 55 | 180 | Puente sin final | `KillBridge` | 100 | **130** | sí |
-| 70 | 180 | Cúpula carmesí | `CrimsonSphere` | — | **170** | sí |
-| 70 | 180 | Presa titánica | `GiganticBomb` | — | **170** | sí |
-| 80 | 200 | Mano grandiosa | `GreatTheHand` | — | **180** | sí |
-| 80 | 200 | Despeje demoníaco | `HellsFist` | — | **180** | sí |
-| 80 | 200 | Corona de fuego | `KingFire` | — | **180** | sí |
-| 80 | 200 | Mano mágica | `MajinTheHand_K` | 110 | **180** | sí |
+| 70 | 180 | Cúpula carmesí | `CrimsonSphere` | — | **150** | sí |
+| 70 | 180 | Presa titánica | `GiganticBomb` | — | **150** | sí |
+| 80 | 200 | Mano grandiosa | `GreatTheHand` | — | **150** | sí |
+| 80 | 200 | Despeje demoníaco | `HellsFist` | — | **150** | sí |
+| 80 | 200 | Corona de fuego | `KingFire` | — | **150** | sí |
+| 80 | 200 | Mano mágica | `MajinTheHand_K` | 110 | **150** | sí |
 
 ## 4. Técnicas que faltan en la app (0)
 
