@@ -62,7 +62,7 @@ def write_balance():
                 f'from (values\n{vals}\n) as v(id, tp, mn, mx) where t.id = v.id;\n')
 
 
-def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report, dropped=None):
+def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report, dropped=None, removed_cards=None):
     os.makedirs(OUT, exist_ok=True)
     used = {t['id'] for c in cards for t in c['moves']}
     techs = [{k: v for k, v in t.items() if k != '_inf'} for t in techniques.values() if t and t['id'] in used]
@@ -112,6 +112,9 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report, dr
     if dropped:
         seed += ['-- cartas descartadas a mano (overrides.drop_cards): se borran también de la base',
                  f"delete from public.cards where id in ({', '.join(sql(i) for i in sorted(dropped))});"]
+    if removed_cards:
+        seed += ['-- técnicas quitadas a mano (overrides.tech_remove): se borran sus enlaces antes de reinsertar',
+                 f"delete from public.card_techniques where card_id in ({', '.join(sql(i) for i in sorted(removed_cards))});"]
     seed += ['-- Limpieza: el tiro antiguo es_remate-cazaosos se sustituye por vr_whs02920 (Remate cazaosos).',
              "delete from public.techniques where id = 'es_remate-cazaosos';"]
     seed += [

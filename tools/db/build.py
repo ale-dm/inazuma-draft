@@ -1390,7 +1390,8 @@ def main(extra_z=None, write=True):
     assign_logos(teams, report)                              # escudo de cada equipo (logos.py)
     tech_traits(techniques, report)                          # tiro largo / bloqueo de tiros (WazaData: chr)
     if write:
-        write_outputs(cards, chars_out, techniques, teams, staff, zukan_rows, report, dropped=drop)
+        write_outputs(cards, chars_out, techniques, teams, staff, zukan_rows, report, dropped=drop,
+                      removed_cards=[k for k in ov.get('tech_remove', {}) if not k.startswith('_')])
     return uncovered
 
 

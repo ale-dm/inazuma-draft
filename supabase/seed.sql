@@ -4,6 +4,8 @@
 begin;
 -- cartas descartadas a mano (overrides.drop_cards): se borran también de la base
 delete from public.cards where id in ('aida-chikara--ie2--dark-emperors', 'batora-manabu--ie2--dark-emperors', 'biruda-kouichi--ie2--dark-emperors', 'fubuki-shirou--ie2--alpine', 'fubuki-shirou--ie2--raimon-atsuya', 'fubuki-shirou--ie2--raimon-shirou', 'hibiki-seigou--ie2--dark-emperors', 'ikari-gengorou--ie2--dark-emperors', 'kamimura-kirito--ie2--dark-emperors', 'midorikawa-ryuuji--ie3--inazuma-japan', 'nakama-you--ie2--dark-emperors', 'nakatani--ie2--raimon', 'sugata-iwao--ie2--dark-emperors', 'tamiyama-you--ie2--dark-emperors', 'teira-tamotsu--ie2--dark-emperors', 'ukishima-kazuto--ie2--dark-emperors');
+-- técnicas quitadas a mano (overrides.tech_remove): se borran sus enlaces antes de reinsertar
+delete from public.card_techniques where card_id in ('hakuryuu--go1--base', 'inamori-asuto--ares--base', 'kozoumaru-sasuke--ares--base', 'nagumo-haruya--ie2--base', 'shuu--go1--base', 'suzuno-fuusuke--ie2--base', 'umihara-norika--ares--base');
 -- Limpieza: el tiro antiguo es_remate-cazaosos se sustituye por vr_whs02920 (Remate cazaosos).
 delete from public.techniques where id = 'es_remate-cazaosos';
 insert into public.zukan (no,image_id,name,name_ja,role,age,element,position,teams,games,description,vr_lv50,wiki_page) values
