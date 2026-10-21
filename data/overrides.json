@@ -725,7 +725,10 @@
     "hikita-koushirou--go1--base": "Sub Character",
     "mutou-genzou--go1--base": "Sub Character",
     "rinno-fujiko--go1--base": "Sub Character",
-    "ookazeya-giichi--go1--base": "Sub Character"
+    "ookazeya-giichi--go1--base": "Sub Character",
+    "kosaka-motonari--go1--base": "Unaffiliated",
+    "mizumori-tatsuya--go1--base": "Unaffiliated",
+    "minamisawa-atsushi--go1--base": "Lunar Sea"
   },
   "extra_teams_remove": {
     "_doc": "Equipos extra a quitar por carta (id de carta → equipos): evita duplicados cuando la carta base ya tiene una versión propia del equipo combinado.",
@@ -1031,6 +1034,27 @@
       "game": "IE3",
       "team": "Dark Angel",
       "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/0a/%28TS%29_Sein_sprite_%28VR%29.png/revision/latest?cb=20260615125542"
+    },
+    {
+      "_doc": "Raimon First Squad (GO1): once del último partido del torneo (final vs Dragonlink); Tsurugi, Aoyama e Ichino suben al primer equipo."
+    },
+    {
+      "page": "Tsurugi Kyousuke",
+      "game": "GO1",
+      "team": "Raimon First Squad",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/1/1c/%28SR%29_Tsurugi_Kyousuke_sprite_%28VR%29.png/revision/latest?cb=20251129005336"
+    },
+    {
+      "page": "Aoyama Shunsuke",
+      "game": "GO1",
+      "team": "Raimon First Squad",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/d8/%28SR%29_Aoyama_Shunsuke_sprite_%28VR%29.png/revision/latest?cb=20260715214114"
+    },
+    {
+      "page": "Ichino Nanasuke",
+      "game": "GO1",
+      "team": "Raimon First Squad",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/fa/%28SR%29_Ichino_Nanasuke_sprite_%28VR%29.png/revision/latest?cb=20260715214114"
     }
   ],
   "zukan_wiki_pages": {
