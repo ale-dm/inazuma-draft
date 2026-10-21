@@ -63,7 +63,7 @@ def write_balance():
 
 
 def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report, dropped=None, removed_cards=None,
-                  dropped_techs=None, tech_remove=None):
+                  dropped_techs=None, tech_remove=None, reassert_cards=None):
     os.makedirs(OUT, exist_ok=True)
     used = {t['id'] for c in cards for t in c['moves']}
     techs = [{k: v for k, v in t.items() if k != '_inf'} for t in techniques.values() if t and t['id'] in used]
@@ -136,6 +136,11 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report, dr
         seed += ['-- limpieza final: las técnicas quitadas no vuelven por admin_replay']
         for cid, tids in sorted(tech_remove.items()):
             seed.append(f"delete from public.card_techniques where card_id = {sql(cid)} and technique_id in ({', '.join(sql(t) for t in tids)});")
+    if reassert_cards:
+        final_links = [l for l in links if l['card_id'] in set(reassert_cards)]
+        if final_links:
+            seed += ['-- reafirmar las técnicas de las cartas tocadas a mano (extra_moves/tech_remove)',
+                     insert('card_techniques', ['card_id', 'technique_id', 'slot'], final_links, key=('card_id', 'technique_id'))]
     seed += ['commit;', '']
     os.makedirs(os.path.join(ROOT, 'supabase'), exist_ok=True)
     with open(os.path.join(ROOT, 'supabase', 'seed.sql'), 'w', encoding='utf-8') as f:
