@@ -379,6 +379,25 @@
         "Shot"
       ],
       "traits": []
+    },
+    "vr_whk01615": {
+      "name": "Sauced-up Marinara Barrier",
+      "name_es": "Parada de espaguetis extra",
+      "name_jp": "マカロニスパゲッティソース増量",
+      "type": "Catch",
+      "element": "wood",
+      "cost": null,
+      "cost_game": null,
+      "costs": {
+        "VR_power": 440
+      },
+      "description": "Parada de bosque de un jugador; versión mejorada de la Parada de espaguetis. Macero (Gonçalo) en Orion, ep. 43.",
+      "image_url": null,
+      "zukan_types": [
+        "Success",
+        "Failure"
+      ],
+      "traits": []
     }
   },
   "technique_names": {
@@ -451,6 +470,9 @@
     ],
     "clario-orvan--orion--base": [
       "es_rayo-de-diamantes-curvo"
+    ],
+    "macero--orion--base": [
+      "vr_whk01615"
     ],
     "kozoumaru-sasuke--ares--base": [
       "vr_whs02750",

@@ -86780,7 +86780,8 @@
    "techniques": [
     "vr_whk01610",
     "PressurePunch",
-    "DualSmash"
+    "DualSmash",
+    "vr_whk01615"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -300668,6 +300669,31 @@
    "balance_tp": 140,
    "balance_power_min": 170,
    "balance_power_max": 890
+  },
+  {
+   "id": "vr_whk01615",
+   "name": "Sauced-up Marinara Barrier",
+   "name_es": "Parada de espaguetis extra",
+   "name_jp": "マカロニスパゲッティソース増量",
+   "type": "Catch",
+   "element": "wood",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 440
+   },
+   "description": "Parada de bosque de un jugador; versión mejorada de la Parada de espaguetis. Macero (Gonçalo) en Orion, ep. 43.",
+   "image_url": null,
+   "zukan_types": [
+    "Success",
+    "Failure"
+   ],
+   "traits": [],
+   "name_fr": "Spa-gant-ti Sauce XXL",
+   "name_it": null,
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "GodHand",
