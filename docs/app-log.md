@@ -527,3 +527,8 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 
 - Eliminadas **Pingüino goleador** (es_ping-ino-goleador, manga de Ares, sin elemento) y **Arrollador** (es_arrollador, que es el Coz de Ares). La app se queda con el **Coz** original de IE1 (JudgeThrough). 	ech_drop borra las dos filas de la base y 	ech_remove limpia sus enlaces.
 - **Chilena de pingüino** se queda con las dos versiones: es_ping-ino-aereo (fuego, pingüinos negros) y es_chilena-de-ping-ino (bosque, pingüinos azules).
+
+
+## Chilena de pingüino: nombre único
+
+- **Pingüino Aéreo** venía de la ficha inglesa (*Overhead Penguin*) que se añadió en la pasada de Ares; es la misma técnica que **Chilena de pingüino**. Se unifica el nombre en las dos variantes: es_ping-ino-aereo (**fuego**, pingüinos negros) y es_chilena-de-ping-ino (**bosque**, pingüinos azules).

@@ -301849,7 +301849,7 @@
   {
    "id": "es_ping-ino-aereo",
    "name": "Overhead Penguin",
-   "name_es": "Pingüino Aéreo",
+   "name_es": "Chilena de pingüino",
    "name_jp": "オーバーヘッドペンギン",
    "type": "Shoot",
    "element": "fire",
@@ -301858,17 +301858,39 @@
    "costs": {
     "VR_power": 70
    },
-   "description": "Tiro de Elliot (Ares) y Jude (Orion); versión de fuego.",
+   "description": "Tiro de Elliot (Ares) y Jude (Orion); versión de fuego (pingüinos negros).",
    "image_url": null,
    "zukan_types": [
     "Shot"
    ],
    "traits": [],
-   "name_fr": null,
-   "name_it": null,
+   "name_fr": "Volée de manchots",
+   "name_it": "Pinguino Volante",
    "balance_tp": 80,
    "balance_power_min": 85,
    "balance_power_max": 540
+  },
+  {
+   "id": "es_chilena-de-ping-ino",
+   "name": "Chilena de pingüino",
+   "name_es": "Chilena de pingüino",
+   "name_jp": "オーバーヘッドペンギン",
+   "type": "Shoot",
+   "element": "wood",
+   "cost": null,
+   "cost_game": null,
+   "costs": {},
+   "description": "Tiro de Elliot y Jude; versión de bosque (pingüinos azules).",
+   "image_url": null,
+   "zukan_types": [
+    "Shot"
+   ],
+   "traits": [],
+   "name_fr": "Volée de manchots",
+   "name_it": "Pinguino Volante",
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whs02750",
@@ -318279,26 +318301,6 @@
    "balance_tp": 70,
    "balance_power_min": 70,
    "balance_power_max": 440
-  },
-  {
-   "id": "es_chilena-de-ping-ino",
-   "name": "Chilena de pingüino",
-   "name_es": "Chilena de pingüino",
-   "name_jp": null,
-   "type": "Shoot",
-   "element": "wood",
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null,
-   "name_fr": "Volée de manchots",
-   "name_it": "Pinguino Volante",
-   "traits": [],
-   "balance_tp": 100,
-   "balance_power_min": 100,
-   "balance_power_max": 640
   },
   {
    "id": "vr_whs02880",

@@ -7,7 +7,7 @@
 ## Tiros que debutan en Ares
 
 De los **24 tiros** que debutan en Ares, **23 ya estaban en la app con otro nombre** (misma técnica por
-japonés/inglés). Solo faltaba **Pingüino Aéreo** (Overhead Penguin), que se ha añadido.
+japonés/inglés). Solo faltaba **Chilena de pingüino** (Overhead Penguin); ya existía como `es_chilena-de-ping-ino` (bosque) y se completó con la variante de fuego (`es_ping-ino-aereo`).
 
 | Wiki de Ares | En la app | ID |
 |---|---|---|
@@ -34,9 +34,9 @@ japonés/inglés). Solo faltaba **Pingüino Aéreo** (Overhead Penguin), que se 
 | Remate Tricolor | Victoria tricolor | `vr_whs02830` |
 | Ventisca de Doble Impacto | Frente frío | `vr_whs02930` |
 | Ataque en Zig Zag | Remate en zigzag | `vr_whs02970` |
-| **Pingüino Aéreo** | **añadido** | `es_ping-ino-aereo` |
+| **Chilena de pingüino (fuego)** | **añadida** | `es_ping-ino-aereo` |
 
-`Pingüino Aéreo` (Overhead Penguin / Penguin Volley, tiro de fuego) se ha añadido a Elliot Ember (Ares y
+`Chilena de pingüino` (Overhead Penguin / Penguin Volley) tiene dos versiones: **fuego** (pingüinos negros, `es_ping-ino-aereo`) y **bosque** (azules, `es_chilena-de-ping-ino`), en Elliot Ember (Ares y
 Orion) y a Jude Sharp (Orion).
 
 ## Variantes A de Victory Road (zukan)
@@ -68,7 +68,7 @@ Escala de Ares: **60–150**, un escalón por debajo de IE2 (60–180). Los TP s
 | Granizado de fuego | Limonada de Fuego | 90 | 95–600 | Adriano Donati |
 | Daruma de fuego | Daruma de Fuego | 90 | 95–600 | Basile Hardy |
 | Pingüino perfecto | Pingüino Perfecto | 90 | 95–600 | Elliot Ember |
-| Pingüino Aéreo | — | 80 | 85–540 | Elliot / Jude |
+| Chilena de pingüino (fuego) | — | 80 | 85–540 | Elliot / Jude |
 | Sierra celestial | Aspa del Cielo | 80 | 85–540 | Percy Hurst |
 | Remate en zigzag | Ataque en Zig Zag | 80 | 85–540 | Xavier Schiller |
 | Lanza polar | Lanza de Hielo | 70 | 70–440 | Valentin Eisner |

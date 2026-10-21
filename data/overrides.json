@@ -271,7 +271,7 @@
     },
     "es_ping-ino-aereo": {
       "name": "Overhead Penguin",
-      "name_es": "Pingüino Aéreo",
+      "name_es": "Chilena de pingüino",
       "name_jp": "オーバーヘッドペンギン",
       "type": "Shoot",
       "element": "fire",
@@ -280,7 +280,23 @@
       "costs": {
         "VR_power": 70
       },
-      "description": "Tiro de Elliot (Ares) y Jude (Orion); versión de fuego.",
+      "description": "Tiro de Elliot (Ares) y Jude (Orion); versión de fuego (pingüinos negros).",
+      "image_url": null,
+      "zukan_types": [
+        "Shot"
+      ],
+      "traits": []
+    },
+    "es_chilena-de-ping-ino": {
+      "name": "Chilena de pingüino",
+      "name_es": "Chilena de pingüino",
+      "name_jp": "オーバーヘッドペンギン",
+      "type": "Shoot",
+      "element": "wood",
+      "cost": null,
+      "cost_game": null,
+      "costs": {},
+      "description": "Tiro de Elliot y Jude; versión de bosque (pingüinos azules).",
       "image_url": null,
       "zukan_types": [
         "Shot"
@@ -482,13 +498,15 @@
     ],
     "haizaki-ryouhei--ares--base": [
       "es_ping-ino-aereo",
+      "es_chilena-de-ping-ino",
       "vr_whs03410"
     ],
     "haizaki-ryouhei--orion--base": [
       "es_ping-ino-aereo"
     ],
     "kidou-yuuto--orion--base": [
-      "es_ping-ino-aereo"
+      "es_ping-ino-aereo",
+      "es_chilena-de-ping-ino"
     ],
     "clario-orvan--orion--base": [
       "es_rayo-de-diamantes-curvo"
