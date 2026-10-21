@@ -140,3 +140,20 @@ Las que faltaban y no son la misma técnica con otro nombre:
 
 - Si se quiere que las combinadas cuenten como una sola técnica de equipo (y no una por carta), habría
   que añadir el número de jugadores al modelo de técnicas; ahora se muestran por carta.
+
+
+## Técnicas de Orion que faltaban en el catálogo
+
+La categoría inglesa Orion hissatsu tiene 70 técnicas; la española, 65. Las cinco de diferencia son:
+
+| Inglés | En la app | Estado |
+|---|---|---|
+| Magaru Diamond Ray | **Rayo de diamantes curvo** | Añadida (TP 140) |
+| Super God Hand | Supermano celestial | Ya estaba |
+| Triple G Strike | Tiro aéreo triple | Ya estaba |
+| Penguin The God & Devil | Pingüinos de luz y sombra | Ya estaba |
+| Healing Celebration | — | No es de fútbol; fuera |
+
+- **Magaru Diamond Ray** (Curving Diamond Ray) es la única que faltaba de verdad: se ha añadido a Sergi (Orion).
+- Las demás ya estaban con el nombre castellano; la categoría inglesa las lista con otro nombre.
+- En Victory Road queda una parada menor sin usuario (Gutsy Grit Punch) que no se ha añadido.

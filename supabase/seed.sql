@@ -10830,6 +10830,7 @@ insert into public.techniques (id,name,name_es,name_fr,name_it,name_jp,type,elem
 ('vr_whs03410','Meteor Blade A','Cañón de meteoritos A',null,null,'流星ブレードＡ','Shoot','fire',null,null,'{"VR_power": 440}'::jsonb,'Launch the ball high and smash it with a mighty kick, tracing a sharp shot that gleams like a shooting star.',null,'["Shot"]'::jsonb,'[]'::jsonb),
 ('CounterdriveDF','Counter Drive','Contragolpe doble','Contre en Tandem','Tiro Solcante','カウンタードライブ','Block','earth',null,null,'{"VR_power": 71}'::jsonb,'Stop the ball with a counter drive, turning the opponent''s own momentum against them.',null,'["Defence"]'::jsonb,'[]'::jsonb),
 ('vr_whd01540','Ursa Binder','Nudo atrapaosos','Ours entravé','Marcatura Furente','必殺クマゴロシ縛','Block','earth',null,null,'{"VR_power": 440}'::jsonb,'Block your target with force strong enough to stop even the fiercest bear.',null,'["Defence", "Shot Block"]'::jsonb,'["block"]'::jsonb),
+('es_rayo-de-diamantes-curvo','Curving Diamond Ray','Rayo de diamantes curvo','Frappe d''Orfèvre Courbée',null,'曲がるダイヤモンドレイ','Shoot','earth',null,null,'{"VR_power": 540}'::jsonb,'Tiro de montaña de un jugador; versión curva del Rayo de diamantes. Clario (Sergi) en Orion, ep. 26.',null,'["Shot"]'::jsonb,'[]'::jsonb),
 ('GodHand','God Hand','Mano celestial','Main céleste','Mano di Luce','ゴッドハンド','Catch','god hand',10,'GO3','{"GO3": 10, "IE3": 22, "GO2": 30, "IE2": 21, "GO1": 30, "IE1": 21}'::jsonb,'Block any and all shots with a giant right hand brimming with passion for football.','https://dxi4wb638ujep.cloudfront.net/1/k/x/d/xdnwlgecfne.jpg','["Success", "Failure"]'::jsonb,'[]'::jsonb),
 ('GrenadeShot','Grenade Shot','Chut granada','Tir grenade','Tiro Fulminante','グレネードショット','Shoot','fire',20,'IE3','{"IE3": 20, "IE2": 17, "IE1": 17}'::jsonb,'Twist the body to build power and drive it into the ball all at once for a knockout special move.','https://dxi4wb638ujep.cloudfront.net/1/k/4/t/4tklxmjfiue.jpg','["Shot"]'::jsonb,'[]'::jsonb),
 ('MajinTheHand','Majin The Hand','Mano mágica','Main magique','Mano del Colosso','マジン・ザ・ハンド','Catch','{{pagename}}',60,'GO3','{"GO3": 60, "IE3": 32, "GO2": 80, "IE2": 46, "GO1": 80, "IE1": 46}'::jsonb,'Unyielding heart and burning passion call forth the Majin, an Inazuma legend awakened anew.','https://dxi4wb638ujep.cloudfront.net/1/k/t/t/ttschxoszak.jpg','["Success", "Failure"]'::jsonb,'[]'::jsonb),
@@ -11318,9 +11319,9 @@ insert into public.techniques (id,name,name_es,name_fr,name_it,name_jp,type,elem
 ('Injection','Overclock Spiral','Bota propulsora','Spirale Centrifuge',null,'インジェクション','Shoot','fire',70,'GO3','{"GO3": 70}'::jsonb,'Channel cosmic energy through your legs and spiral the shot with overwhelming force.','https://dxi4wb638ujep.cloudfront.net/1/k/y/j/yjf9flpcmkk.jpg','["Shot"]'::jsonb,'[]'::jsonb),
 ('IvoryCrash','Tusk Force','Tiro elefante','Frappe d''Éléphant','Zanne d''Avorio','アイボリークラッシュ','Shoot','wood',30,'GO3','{"GO3": 30}'::jsonb,'Drive the ball forward with a sharp, elephantine knee strike honed in Muay Thai.','https://dxi4wb638ujep.cloudfront.net/1/k/b/a/bazact7uorm.jpg','["Shot"]'::jsonb,'[]'::jsonb),
 ('Jackknife','Whipperslapper','Bofetón látigo','Claque Fouettée','Schiaffo Atterrante','ジャックナイフ','Dribble','air',70,'GO3','{"GO3": 70}'::jsonb,'Feign a miss, then slice from behind with razor-sharp water blades.','https://dxi4wb638ujep.cloudfront.net/1/k/c/9/c9vm8i4bdme.jpg','["Offence"]'::jsonb,'[]'::jsonb),
-('JokerRains','Brimstone Rain','Lluvia de azufre','Tir d''unité','Pioggia di Zolfo','ジョーカーレインズ','Shoot','wood',55,'GO3','{"GO3": 55, "GO2": 60, "GO1": 60}'::jsonb,'The ball is charged with energy that hails down like a cold and unyielding rain.','https://dxi4wb638ujep.cloudfront.net/1/k/y/c/ycg1gdokx8c.jpg','["Shot"]'::jsonb,'[]'::jsonb),
-('JudgmentRay','Judgement Ray','Rayo del juicio','Rayon de la Justice',null,'ジャッジメント・レイ','Block','fire',55,'GO3','{"GO3": 55}'::jsonb,'Fire beams from a multitude of magical circles, delivering cosmic justice to the enemy.','https://dxi4wb638ujep.cloudfront.net/1/k/u/s/us9bz7bfg7e.jpg','["Defence"]'::jsonb,'[]'::jsonb) on conflict (id) do update set name=excluded.name,name_es=excluded.name_es,name_fr=excluded.name_fr,name_it=excluded.name_it,name_jp=excluded.name_jp,type=excluded.type,element=excluded.element,cost=excluded.cost,cost_game=excluded.cost_game,costs=excluded.costs,description=excluded.description,image_url=excluded.image_url,zukan_types=excluded.zukan_types,traits=excluded.traits;
+('JokerRains','Brimstone Rain','Lluvia de azufre','Tir d''unité','Pioggia di Zolfo','ジョーカーレインズ','Shoot','wood',55,'GO3','{"GO3": 55, "GO2": 60, "GO1": 60}'::jsonb,'The ball is charged with energy that hails down like a cold and unyielding rain.','https://dxi4wb638ujep.cloudfront.net/1/k/y/c/ycg1gdokx8c.jpg','["Shot"]'::jsonb,'[]'::jsonb) on conflict (id) do update set name=excluded.name,name_es=excluded.name_es,name_fr=excluded.name_fr,name_it=excluded.name_it,name_jp=excluded.name_jp,type=excluded.type,element=excluded.element,cost=excluded.cost,cost_game=excluded.cost_game,costs=excluded.costs,description=excluded.description,image_url=excluded.image_url,zukan_types=excluded.zukan_types,traits=excluded.traits;
 insert into public.techniques (id,name,name_es,name_fr,name_it,name_jp,type,element,cost,cost_game,costs,description,image_url,zukan_types,traits) values
+('JudgmentRay','Judgement Ray','Rayo del juicio','Rayon de la Justice',null,'ジャッジメント・レイ','Block','fire',55,'GO3','{"GO3": 55}'::jsonb,'Fire beams from a multitude of magical circles, delivering cosmic justice to the enemy.','https://dxi4wb638ujep.cloudfront.net/1/k/u/s/us9bz7bfg7e.jpg','["Defence"]'::jsonb,'[]'::jsonb),
 ('KabukiBreak','Kabuki Break','Golpe kabuki','Rupture Kabuki',null,'カブキブレイク','Shoot','wood',55,'GO3','{"GO3": 55}'::jsonb,'Strike a pose amid drifting cherry petals and fire a shot infused with kabuki spirit.','https://dxi4wb638ujep.cloudfront.net/1/k/i/l/il1uapmv-ok.jpg','["Shot"]'::jsonb,'[]'::jsonb),
 ('KageTsukami','Shadow Catch','Presa de sombras','Gants des Ténèbres','Presa Oscura','*かげつかみ','Catch','wood',20,'GO3','{"GO3": 20, "GO2": 45, "GO1": 45}'::jsonb,'Manipulate shadows to catch the ball using a hand filled with eerie dark energy.','https://dxi4wb638ujep.cloudfront.net/1/k/t/3/t39astljhcc.jpg','["Success", "Failure"]'::jsonb,'[]'::jsonb),
 ('KattobiDefense','Flapjack Defence','Defensa propulsada','Tir de défense canon','Balzo Boom','かっとびディフェンス','Block','earth',20,'GO3','{"GO3": 20, "GO2": 31, "GO1": 36}'::jsonb,'A high-speed, low-flying diving header which requires excellent synergy.','https://dxi4wb638ujep.cloudfront.net/1/k/z/2/z2bw1qqhi1e.jpg','["Defence", "Shot Block"]'::jsonb,'["block"]'::jsonb),
@@ -17726,6 +17727,7 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('clario-orvan--orion--base','vr_whs03000',1),
 ('clario-orvan--orion--base','vr_whd01560',2),
 ('clario-orvan--orion--base','vr_whs03240',3),
+('clario-orvan--orion--base','es_rayo-de-diamantes-curvo',4),
 ('amemiya-taiyou--go2--chrono-storm','AtomicFlare',1),
 ('amemiya-taiyou--go2--chrono-storm','TenchiRaimei',2),
 ('inamori-asuto--orion--base','vr_whs03275',1),
@@ -18005,9 +18007,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('luther-fandam--ares--base','SuperScanOF',3),
 ('luther-fandam--ares--base','DoubleTornado',4),
 ('lotus--go2--base','ShiningHole',1),
-('lotus--go2--base','ExcellentBreast',2),
-('lotus--go2--base','DestinyCloud',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('lotus--go2--base','ExcellentBreast',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('lotus--go2--base','DestinyCloud',3),
 ('sagitt--go2--base','DeathDrop',1),
 ('sagitt--go2--base','NoboriRyuu',2),
 ('sagitt--go2--base','SouhiYuuseidan',3),
@@ -18506,9 +18508,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('somni--go2--base','DimensionStorm',4),
 ('shourinji-ayumu--ie2--dark-emperors','KungFuAttack',1),
 ('shourinji-ayumu--ie2--dark-emperors','ShootingStar',2),
-('kurimatsu-teppei--ie3--inazuma-japan','MaboroshiDribble',1),
-('kurimatsu-teppei--ie3--inazuma-japan','SuiseiShoot',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('kurimatsu-teppei--ie3--inazuma-japan','MaboroshiDribble',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('kurimatsu-teppei--ie3--inazuma-japan','SuiseiShoot',2),
 ('kurimatsu-teppei--ie3--inazuma-japan','BlockCircus',3),
 ('tuli--go2--base','MagicalFlower',1),
 ('tuli--go2--base','Claymore',2),
@@ -19007,9 +19009,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('wanda-naoto--go1--base','EternalBlizzard',4),
 ('nicol-fino--orion--base','vr_whs03030',1),
 ('nicol-fino--orion--base','Kamaitachi',2),
-('nicol-fino--orion--base','Phalanx',3),
-('nicol-fino--orion--base','Moonsault',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('nicol-fino--orion--base','Phalanx',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('nicol-fino--orion--base','Moonsault',4),
 ('saginuma-osamu--ie3--neo-japan','IllusionBall',1),
 ('saginuma-osamu--ie3--neo-japan','DashStorm',2),
 ('saginuma-osamu--ie3--neo-japan','GodKnows',3),
@@ -19508,9 +19510,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('rasetsu--go2--base','ExtendZone',2),
 ('rasetsu--go2--base','MadJuggler',3),
 ('rasetsu--go2--base','RyuuseiBlade',4),
-('douhara-teito--go1--base','TrickBall',1),
-('douhara-teito--go1--base','TheMist',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('douhara-teito--go1--base','TrickBall',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('douhara-teito--go1--base','TheMist',2),
 ('douhara-teito--go1--base','WhiteBlade',3),
 ('douhara-teito--go1--base','RyuuseiBlade',4),
 ('david-waterman--ie3--base','Gravestone',1),
@@ -20009,9 +20011,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('dino--ie3--base','OdinSword',1),
 ('dino--ie3--base','DivineArrow',2),
 ('jips--go2--base','SpringArrow',1),
-('jips--go2--base','DecoyRelease',2),
-('jips--go2--base','BurningSummer',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('jips--go2--base','DecoyRelease',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('jips--go2--base','BurningSummer',3),
 ('jips--go2--base','BakunetsuScrew',4),
 ('dmitri-sobirov--go3--base','GoldFever',1),
 ('dmitri-sobirov--go3--base','SilkRoad',2),
@@ -20510,9 +20512,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('phoenix--ie2--base','TatsumakiSenpuu',1),
 ('phoenix--ie2--base','FireTornado',2),
 ('phoenix--ie2--base','ButterflyDream',3),
-('kurakake-clara--ares--base','WaterVeil',1),
-('kurakake-clara--ares--base','Wormhole',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('kurakake-clara--ares--base','WaterVeil',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('kurakake-clara--ares--base','Wormhole',2),
 ('kurakake-clara--ares--base','PhotonFlash',3),
 ('kurakake-clara--ares--base','FrozenSteal',4),
 ('claude-moreau--ie3--base','IllusionBall',1),
@@ -21011,9 +21013,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('gadou-bishamaru--vr--base','HinawaBullet',3),
 ('gadou-bishamaru--vr--base','DenraiHoutou',4),
 ('vivi-malade--vr--base','Screwdriver',1),
-('vivi-malade--vr--base','AsteriskRock',2),
-('vivi-malade--vr--base','vr_who00270',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('vivi-malade--vr--base','AsteriskRock',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('vivi-malade--vr--base','vr_who00270',3),
 ('magician--orion--base','vr_whs03080',1),
 ('magician--orion--base','Magic',2),
 ('magician--orion--base','BoundFlame',3),
@@ -21512,9 +21514,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('posei-donji--ares--base','GigantWall',2),
 ('posei-donji--ares--base','HolyZone',3),
 ('posei-donji--ares--base','ShiningHole',4),
-('shiki-yuuji--ie2--base','BunshinShoot',1),
-('kirigakure-saiji--ie3--neo-japan','Zanzou',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('shiki-yuuji--ie2--base','BunshinShoot',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('kirigakure-saiji--ie3--neo-japan','Zanzou',1),
 ('kirigakure-saiji--ie3--neo-japan','BunshinDefense',2),
 ('kirigakure-saiji--ie3--neo-japan','HonooNoKazamidori',3),
 ('manda-sontoku--ie2--base','ShineDrive',1),
@@ -22013,9 +22015,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('meidou-kazuomi--vr--base','AstroBreak',1),
 ('meidou-kazuomi--vr--base','KageNui',2),
 ('meidou-kazuomi--vr--base','DashStorm',3),
-('meidou-kazuomi--vr--base','Gravitation',4),
-('igari-tetsuta--vr--base','DashTrain',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('meidou-kazuomi--vr--base','Gravitation',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('igari-tetsuta--vr--base','DashTrain',1),
 ('igari-tetsuta--vr--base','ElephantPress',2),
 ('igari-tetsuta--vr--base','TwinMixer',3),
 ('igari-tetsuta--vr--base','Claymore',4),
@@ -22514,9 +22516,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('kiki-maharaja--vr--base','vr_who10060',1),
 ('kiki-maharaja--vr--base','ElephantPress',2),
 ('kiki-maharaja--vr--base','ZigzagFlame',3),
-('kiki-maharaja--vr--base','Gravitation',4),
-('glahsya--ie3--base','DevilBall',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('kiki-maharaja--vr--base','Gravitation',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('glahsya--ie3--base','DevilBall',1),
 ('glahsya--ie3--base','BarbarianNoTate',2),
 ('glahsya--ie3--base','Hellfire',3),
 ('glahsya--ie3--base','ScissorsBomb',4),
@@ -23015,9 +23017,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('atena-tomo--ie1--base','DashStorm',1),
 ('atena-tomo--ie1--base','ReflectBuster',2),
 ('atena-tomo--ie1--base','SuperScanDF',3),
-('atena-tomo--ie1--base','SuperScanOF',4),
-('kuromame--ie3--base','ZigzagFlame',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('atena-tomo--ie1--base','SuperScanOF',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('kuromame--ie3--base','ZigzagFlame',1),
 ('kuromame--ie3--base','TsuchiDaruma',2),
 ('kuromame--ie3--base','ShippuuDash',3),
 ('kuromame--ie3--base','SuperElastico',4),
@@ -23516,9 +23518,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('harihara--vr--base','MugenNoKabe',4),
 ('musou--ie2--base','Abisegeri',1),
 ('musou--ie2--base','HeatTackle',2),
-('musou--ie2--base','DoubleGrenade',3),
-('musou--ie2--base','DragonCannon',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('musou--ie2--base','DoubleGrenade',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('musou--ie2--base','DragonCannon',4),
 ('enzawa--vr--base','MagnetDraw',1),
 ('enzawa--vr--base','BunshinFeint',2),
 ('enzawa--vr--base','UltraMoon',3),
@@ -24017,9 +24019,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('shar-qiyah--go3--base','DarkTornado',4),
 ('shio--vr--base','GrenadeShot',1),
 ('shio--vr--base','SparkEdgeDribble',2),
-('shio--vr--base','BritanniaCross',3),
-('shio--vr--base','TheIkaros',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('shio--vr--base','BritanniaCross',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('shio--vr--base','TheIkaros',4),
 ('shishido-sakichi--ie1--base','GrenadeShot',1),
 ('shishido-sakichi--ie1--base','Gorimuchuu',2),
 ('shishido-sakichi--ie1--base','FakeBall',3),
@@ -24518,9 +24520,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('kutou-senji--go2--base','BurningSummer',3),
 ('kutou-senji--go2--base','Gorimuchuu',4),
 ('shiegetz--go2--base','MagicalFlower',1),
-('shiegetz--go2--base','Hanafubuki',2),
-('shiegetz--go2--base','TheStamp',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('shiegetz--go2--base','Hanafubuki',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('shiegetz--go2--base','TheStamp',3),
 ('shiegetz--go2--base','AsteriskRock',4),
 ('hash--go2--base','DragonBlaster',1),
 ('hash--go2--base','WhiteBlade',2),
@@ -25019,9 +25021,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('regi-stanin--go3--base','Claymore',4),
 ('tooshima--vr--base','PrestoTurn',1),
 ('tooshima--vr--base','DimensionCut',2),
-('tooshima--vr--base','DeepMist',3),
-('tooshima--vr--base','GoToHell',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('tooshima--vr--base','DeepMist',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('tooshima--vr--base','GoToHell',4),
 ('kosumoda--vr--base','KangarooKick',1),
 ('kosumoda--vr--base','Gravestone',2),
 ('kosumoda--vr--base','IronWall',3),
@@ -25520,9 +25522,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('lee-seung-jin--orion--base','vr_whs03200',3),
 ('lee-seung-jin--orion--base','NarakuOtoshi',4),
 ('lee-dong-hyuk--orion--base','vr_whs03200',1),
-('lee-dong-hyuk--orion--base','HornTrain',2),
-('lee-dong-hyuk--orion--base','RapidFire',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('lee-dong-hyuk--orion--base','HornTrain',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('lee-dong-hyuk--orion--base','RapidFire',3),
 ('lee-dong-hyuk--orion--base','Claymore',4),
 ('lee-dong-hyuk--orion--base','es_embestida-bufalina',5),
 ('nakasato--ie2--base','Onryou',1),
@@ -26021,9 +26023,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('geimu-konomu--ie1--base','FakeBall',3),
 ('geimu-konomu--ie1--base','ShineDrive',4),
 ('gustav-nikolsky--orion--base','BunshinDefense',1),
-('gustav-nikolsky--orion--base','AuroraDribble',2),
-('gustav-nikolsky--orion--base','NoEscape',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('gustav-nikolsky--orion--base','AuroraDribble',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('gustav-nikolsky--orion--base','NoEscape',3),
 ('gustav-nikolsky--orion--base','DimensionCut',4),
 ('ujima--ie1--base','TatsumakiSenpuu',1),
 ('ujima--ie1--base','HawkShot',2),
@@ -26522,9 +26524,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('judie-cassios--vr--base','Gorimuchuu',2),
 ('judie-cassios--vr--base','SkyWalk',3),
 ('judie-cassios--vr--base','BlockCircus',4),
-('cain-widget--vr--base','QuickDraw',1),
-('cain-widget--vr--base','FakeBall',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('cain-widget--vr--base','QuickDraw',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('cain-widget--vr--base','FakeBall',2),
 ('cain-widget--vr--base','StonePrison',3),
 ('cain-widget--vr--base','KangarooKick',4),
 ('ranbashi--ie2--base','BladeAttack',1),
@@ -27023,9 +27025,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('ari--ie1--base','HurricaneArrow',4),
 ('rashou-nozomu--go1--base','MelodyWave',1),
 ('rashou-nozomu--go1--base','VanishingCut',2),
-('romica--vr--base','Gorimuchuu',1),
-('romica--vr--base','KungFuAttack',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('romica--vr--base','Gorimuchuu',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('romica--vr--base','KungFuAttack',2),
 ('romica--vr--base','ButtobiJump',3),
 ('romica--vr--base','OgreBlade',4),
 ('salpa--vr--base','TarzanKick',1),
@@ -27524,9 +27526,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('robo-scout-character--vr--base','DevilBall',4),
 ('masaike--ie2--base','MeteorAttack',1),
 ('masaike--ie2--base','IllusionBall',2),
-('masaike--ie2--base','DynamiteShoot',3),
-('masaike--ie2--base','TwinBoost',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('masaike--ie2--base','DynamiteShoot',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('masaike--ie2--base','TwinBoost',4),
 ('deimon--vr--base','MeteorShower',1),
 ('deimon--vr--base','Hellfire',2),
 ('deimon--vr--base','ShineDrive',3),
@@ -28025,9 +28027,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('ooisokawa-tarou--go1--base','TheMist',3),
 ('mangetsu--ie1--base','Noroi',1),
 ('mangetsu--ie1--base','Onryou',2),
-('mangetsu--ie1--base','KageNui',3),
-('mangetsu--ie1--base','KagomeKagome',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('mangetsu--ie1--base','KageNui',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('mangetsu--ie1--base','KagomeKagome',4),
 ('utaba--ie1--base','SuiseiShoot',1),
 ('utaba--ie1--base','DynamiteShoot',2),
 ('utaba--ie1--base','IllusionBall',3),
@@ -28526,9 +28528,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('irishika--vr--base','AuroraDribble',1),
 ('irishika--vr--base','Sargasso',2),
 ('irishika--vr--base','DoubleCyclone',3),
-('irishika--vr--base','GoToHeaven',4),
-('tasuke-scout-character--ie1--base','PhantomShoot',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('irishika--vr--base','GoToHeaven',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('tasuke-scout-character--ie1--base','PhantomShoot',1),
 ('tasuke-scout-character--ie1--base','ZigzagSpark',2),
 ('tasuke-scout-character--ie1--base','BunshinShoot',3),
 ('tasuke-scout-character--ie1--base','DeathZone',4),
@@ -29027,9 +29029,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('eiyuu--ie1--base','IllusionBall',2),
 ('eiyuu--ie1--base','Moonsault',3),
 ('eiyuu--ie1--base','BunshinShoot',4),
-('shako--ie3--base','AuroraCurtain',1),
-('shako--ie3--base','CoilTurn',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('shako--ie3--base','AuroraCurtain',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('shako--ie3--base','CoilTurn',2),
 ('shako--ie3--base','DualSmash',3),
 ('shako--ie3--base','HeavyBaby',4),
 ('byeon-min-seo--go3--base','Doukasen',1),
@@ -29528,9 +29530,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('tsutsumi-kouji--ie1--base','HyakuretsuShot',4),
 ('saita--ie2--base','HitoriOneTwo',1),
 ('saita--ie2--base','UshiroNoShoumen',2),
-('saita--ie2--base','MoguraFeint',3),
-('saita--ie2--base','BunshinFeint',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('saita--ie2--base','MoguraFeint',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('saita--ie2--base','BunshinFeint',4),
 ('karasaki--ie3--base','DashAccel',1),
 ('karasaki--ie3--base','HornTrain',2),
 ('karasaki--ie3--base','BunshinDefense',3),
@@ -30029,9 +30031,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('kinoi-mami--ie1--base','YugamuKuukan',4),
 ('tora--go1--base','BoundFlame',1),
 ('tora--go1--base','RyuuseiBlade',2),
-('tora--go1--base','FireTornado',3),
-('takayanagi--ie1--base','QuickDraw',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('tora--go1--base','FireTornado',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('takayanagi--ie1--base','QuickDraw',1),
 ('takayanagi--ie1--base','KumoNoIto',2),
 ('takayanagi--ie1--base','KagomeKagome',3),
 ('takayanagi--ie1--base','HawkShot',4),
@@ -30530,9 +30532,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('makibishi--ie3--base','KumoNoIto',4),
 ('kuroha--go1--base','VivaBanriNoChoujou',1),
 ('kuroha--go1--base','HydroAnchor',2),
-('kuroha--go1--base','RyuuseiBlade',3),
-('bandai-kuromi--vr--base','TsubameGaeshi',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('kuroha--go1--base','RyuuseiBlade',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('bandai-kuromi--vr--base','TsubameGaeshi',1),
 ('bandai-kuromi--vr--base','HinawaBullet',2),
 ('bandai-kuromi--vr--base','AcrobatKeep',3),
 ('bandai-kuromi--vr--base','HurricaneArrow',4),
@@ -31031,9 +31033,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('setogawa--vr--base','IjigenTheHand',4),
 ('samekawa-hayate--vr--base','Cyclone',1),
 ('samekawa-hayate--vr--base','Sargasso',2),
-('samekawa-hayate--vr--base','SpinningCut',3),
-('samekawa-hayate--vr--base','HurricaneArrow',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('samekawa-hayate--vr--base','SpinningCut',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('samekawa-hayate--vr--base','HurricaneArrow',4),
 ('kamakiri--ie1--base','GrenadeShot',1),
 ('kamakiri--ie1--base','TsuchiDaruma',2),
 ('kamakiri--ie1--base','MoguraFeint',3),
@@ -31532,9 +31534,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('tsuya--ie2--base','RainbowLoop',3),
 ('tsuya--ie2--base','DokonjouBat',4),
 ('aikou--ie1--base','SnakeShot',1),
-('aikou--ie1--base','PatriotShoot',2),
-('aikou--ie1--base','TatsumakiSenpuu',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('aikou--ie1--base','PatriotShoot',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('aikou--ie1--base','TatsumakiSenpuu',3),
 ('aikou--ie1--base','SuperScanOF',4),
 ('haktwa--go3--base','AggressiveBeat',1),
 ('haktwa--go3--base','FireTornado',2),
@@ -32033,9 +32035,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('koomu--go1--base','BoundFlame',2),
 ('koomu--go1--base','NaminoriPierrot',3),
 ('mad--go1--base','Zeroyon',1),
-('mad--go1--base','IllusionBall',2),
-('mad--go1--base','ShippuuDash',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('mad--go1--base','IllusionBall',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('mad--go1--base','ShippuuDash',3),
 ('higashi-scout-character--ie1--base','NekketsuPunch',1),
 ('higashi-scout-character--ie1--base','PressurePunch',2),
 ('higashi-scout-character--ie1--base','TornadoCatch',3),
@@ -32534,9 +32536,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('okumura--ie1--base','ShineDrive',4),
 ('alumi--ie1--base','PressurePunch',1),
 ('alumi--ie1--base','ShootPocket',2),
-('alumi--ie1--base','MakiwariChop',3),
-('alumi--ie1--base','Tsumuji',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('alumi--ie1--base','MakiwariChop',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('alumi--ie1--base','Tsumuji',4),
 ('kinoshita-toukichirou--go2--base','Ichiyajou',1),
 ('kinoshita-toukichirou--go2--base','Shinkuuma',2),
 ('kinoshita-toukichirou--go2--base','HinawaBullet',3),
@@ -33035,9 +33037,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('ichigo--ie1--base','IllusionBall',3),
 ('ichigo--ie1--base','TwinBoost',4),
 ('suehisa--ie1--base','Shikofumi',1),
-('suehisa--ie1--base','Gorimuchuu',2),
-('suehisa--ie1--base','Earthquake',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('suehisa--ie1--base','Gorimuchuu',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('suehisa--ie1--base','Earthquake',3),
 ('suehisa--ie1--base','TsuchiDaruma',4),
 ('kawara--ie2--base','TarzanKick',1),
 ('kawara--ie2--base','CrossDrive',2),
@@ -33536,9 +33538,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('haruno--ie1--base','Doppelganger',1),
 ('haruno--ie1--base','MonkeyTurn',2),
 ('haruno--ie1--base','Zanzou',3),
-('haruno--ie1--base','SabakiNoTettsui',4),
-('nozack--ie2--base','Shikofumi',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('haruno--ie1--base','SabakiNoTettsui',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('nozack--ie2--base','Shikofumi',1),
 ('nozack--ie2--base','TheWall',2),
 ('nozack--ie2--base','Gorimuchuu',3),
 ('nozack--ie2--base','Earthquake',4),
@@ -34037,9 +34039,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('markiry--go3--base','GyroSaving',3),
 ('markiry--go3--base','BigMouth',4),
 ('chouko--go1--base','NaminoriPierrot',1),
-('chouko--go1--base','BoomerangFeint',2),
-('chouko--go1--base','SpiralDraw',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('chouko--go1--base','BoomerangFeint',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('chouko--go1--base','SpiralDraw',3),
 ('hotohara--ie1--base','TatsumakiSenpuu',1),
 ('hotohara--ie1--base','Magic',2),
 ('hotohara--ie1--base','PhantomShoot',3),
@@ -34538,9 +34540,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('hound--ie2--base','DashAccel',1),
 ('hound--ie2--base','BladeAttack',2),
 ('hound--ie2--base','RunBallRun',3),
-('hound--ie2--base','FakeBomber',4),
-('toki--ie3--base','DragonCrash',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('hound--ie2--base','FakeBomber',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('toki--ie3--base','DragonCrash',1),
 ('toki--ie3--base','FuusenGum',2),
 ('toki--ie3--base','Doppelganger',3),
 ('toki--ie3--base','NihyakuretsuShot',4),
@@ -35039,9 +35041,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('c-mon--go1--base','IllusionBall',2),
 ('c-mon--go1--base','ShippuuDash',3),
 ('samba-go--go1--base','RocketHead',1),
-('samba-go--go1--base','IllusionBall',2),
-('samba-go--go1--base','FireTornado',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('samba-go--go1--base','IllusionBall',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('samba-go--go1--base','FireTornado',3),
 ('kazama--ie1--base','ToughnessBlock',1),
 ('kazama--ie1--base','QuickDraw',2),
 ('kazama--ie1--base','Tsumuji',3),
@@ -35540,9 +35542,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('kawasemi--ie1--base','MoguraFeint',4),
 ('cinderella--go1--base','SoyokazeStep',1),
 ('cinderella--go1--base','FireTornado',2),
-('cinderella--go1--base','ShippuuDash',3),
-('hammer-scout-character--go1--base','HeadBazooka',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('cinderella--go1--base','ShippuuDash',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('hammer-scout-character--go1--base','HeadBazooka',1),
 ('hammer-scout-character--go1--base','KattobiDefense',2),
 ('hammer-scout-character--go1--base','FireTornado',3),
 ('hammer-scout-character--go1--base','ShippuuDash',4),
@@ -36041,9 +36043,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('yaji--ie1--base','QuickDraw',2),
 ('yaji--ie1--base','KumoNoIto',3),
 ('yaji--ie1--base','RunBallRun',4),
-('teshigawara--go1--base','FutureEye',1),
-('teshigawara--go1--base','NaminoriPierrot',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('teshigawara--go1--base','FutureEye',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('teshigawara--go1--base','NaminoriPierrot',2),
 ('teshigawara--go1--base','Senpuujin',3),
 ('chinou--ie3--base','Onryou',1),
 ('chinou--ie3--base','HyakuretsuShot',2),
@@ -36542,9 +36544,9 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('ebi--ie1--base','RocketKobushi',2),
 ('ebi--ie1--base','FakeBall',3),
 ('ebi--ie1--base','GodHand',4),
-('ueki--ie1--base','Doppelganger',1),
-('ueki--ie1--base','UshiroNoShoumen',2) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('ueki--ie1--base','Doppelganger',1) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 insert into public.card_techniques (card_id,technique_id,slot) values
+('ueki--ie1--base','UshiroNoShoumen',2),
 ('ueki--ie1--base','SuperArmadillo',3),
 ('ueki--ie1--base','Shikofumi',4),
 ('tokieda--ie1--base','NekketsuPunch',1),

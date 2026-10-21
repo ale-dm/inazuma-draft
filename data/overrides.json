@@ -361,6 +361,24 @@
       "traits": [
         "block"
       ]
+    },
+    "es_rayo-de-diamantes-curvo": {
+      "name": "Curving Diamond Ray",
+      "name_es": "Rayo de diamantes curvo",
+      "name_jp": "曲がるダイヤモンドレイ",
+      "type": "Shoot",
+      "element": "earth",
+      "cost": null,
+      "cost_game": null,
+      "costs": {
+        "VR_power": 540
+      },
+      "description": "Tiro de montaña de un jugador; versión curva del Rayo de diamantes. Clario (Sergi) en Orion, ep. 26.",
+      "image_url": null,
+      "zukan_types": [
+        "Shot"
+      ],
+      "traits": []
     }
   },
   "technique_names": {
@@ -430,6 +448,9 @@
     ],
     "kidou-yuuto--orion--base": [
       "es_ping-ino-aereo"
+    ],
+    "clario-orvan--orion--base": [
+      "es_rayo-de-diamantes-curvo"
     ],
     "kozoumaru-sasuke--ares--base": [
       "vr_whs02750",

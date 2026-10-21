@@ -83,3 +83,14 @@ De los **37 tiros exclusivos** de Orion, 15 estaban por debajo de su banda por p
 - **Sombra de Orión** y **Último recurso: Dragón** son VR 640 de un solo usuario: 160, como los tiros de 640 de IE3.
 - Los de VR 540 suben a 130–140; los de 440 a 120; los de 360 a 110.
 - Los demás ya estaban en su banda: Último recurso Σ 200, Último recurso 170, Orbe de Perseo 160, Campo umbrío 160, Lanza gélida 160, Chut vitral 140, Llamada salvaje 140, Ruptura planetaria 140, Uno para todos 140, Bala de cañón 130, Samba letal 130, Trance temporal 130, etc.
+
+
+## Rayo de diamantes curvo (añadido)
+
+| TP | Técnica (app) | EN / JP | VR | Usuario | Debut |
+|---:|---|---|---:|---|---|
+| **140** | Rayo de diamantes curvo | Curving Diamond Ray / 曲がるダイヤモンドレイ | 540 | Sergi Hernández (Clario) | Orion, ep. 26 |
+
+- Es la versión curva del **Rayo de diamantes** (130) y la que usa Clario en Orion; faltaba en el catálogo.
+- Queda en la banda de los tiros de VR 540 (140), por debajo de **Hoja diamantina** (150) y por encima de Rayo de diamantes.
+- En la categoría inglesa de Orion aparece como **Magaru Diamond Ray**; en Victory Road, *Arced Diamond Ray*.

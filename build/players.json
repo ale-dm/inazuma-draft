@@ -11892,7 +11892,8 @@
    "techniques": [
     "vr_whs03000",
     "vr_whd01560",
-    "vr_whs03240"
+    "vr_whs03240",
+    "es_rayo-de-diamantes-curvo"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -300643,6 +300644,30 @@
    "balance_tp": 110,
    "balance_power_min": 120,
    "balance_power_max": 720
+  },
+  {
+   "id": "es_rayo-de-diamantes-curvo",
+   "name": "Curving Diamond Ray",
+   "name_es": "Rayo de diamantes curvo",
+   "name_jp": "曲がるダイヤモンドレイ",
+   "type": "Shoot",
+   "element": "earth",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 540
+   },
+   "description": "Tiro de montaña de un jugador; versión curva del Rayo de diamantes. Clario (Sergi) en Orion, ep. 26.",
+   "image_url": null,
+   "zukan_types": [
+    "Shot"
+   ],
+   "traits": [],
+   "name_fr": "Frappe d'Orfèvre Courbée",
+   "name_it": null,
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "GodHand",

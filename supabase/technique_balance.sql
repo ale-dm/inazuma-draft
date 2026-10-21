@@ -614,6 +614,7 @@ from (values
 ('es_ping-ino-emperador-n-2-tibur-n',140,170,890),
 ('es_ping-ino-goleador',150,180,900),
 ('es_ping-inos-de-luz-y-sombra',170,215,980),
+('es_rayo-de-diamantes-curvo',140,170,890),
 ('es_ruptura-rel-mpago-cg',160,195,930),
 ('es_supermano-celestial',120,140,800),
 ('es_tiro-a-reo-triple',150,180,900),

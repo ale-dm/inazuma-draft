@@ -472,3 +472,10 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 
 - La ficha pinta cada técnica como el editor: placa `plate_fsp_<el>` (elemento), icono de categoría, nombre, marcas de tiro lejano/bloqueo y TP.
 - Faltan las marcas de grado (`growthType` y grado evolucionado no están en la base) y las caras/escudos del juego (54 MB, pendiente de CDN). Detalle en [tecnicas-visual.md](tecnicas-visual.md).
+
+
+## Orion: Rayo de diamantes curvo
+
+- Añadida **Rayo de diamantes curvo** (Magaru Diamond Ray / Curving Diamond Ray) a **Sergi Hernández** (Orion), TP **140**, VR 540. Es la evolución de Rayo de diamantes y faltaba en el catálogo.
+- Revisadas las 70 técnicas de la categoría inglesa de Orion y las 959 de Victory Road: el resto ya estaban con otro nombre en la app.
+- La única ausencia real de Orion era esta; en VR solo quedan variantes menores sin usuario (Gutsy Grit Punch y dos códigos sin nombre).
