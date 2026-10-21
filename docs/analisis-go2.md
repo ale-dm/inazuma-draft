@@ -153,7 +153,7 @@ Cada carta tiene un array `specials` con:
 - `hyper` es la hipertécnica del Keshin, sacada de `KeshinData`.
 - Los nombres en castellano salen de la wiki española (`es_keshin.json`, `es_souls.json`).
 - En la ficha (`PlayerDetail`) se muestran los poderes, la etiqueta “Armadura” y la hipertécnica.
-- En el simulador, cualquier carta con `specials` puede usar **Hiperenergía**: +4, una vez por partido. No distingue Keshin, Armed, Mixi ni Soul.
+- En el simulador, cualquier carta con `specials` puede usar **Hiperenergía**: +5 normal y **+7 si lleva Keshin Armed**, una vez por partido. Sigue sin distinguir Keshin normal, Mixi ni Soul a nivel de reglas.
 
 ### 5.2 Cobertura actual de GO2
 
@@ -214,7 +214,7 @@ Por equipo (Keshin / Armed / Mixi):
 
 - Es un **flag** en el Keshin, no una carta aparte. Es lo correcto: en el juego es un modo, no un personaje nuevo.
 - En la ficha se muestra “Armadura” y la hipertécnica; en el simulador la Hiperenergía es genérica (+4).
-- No hay KP, ni coste 0 de técnicas, ni bloqueo de la hipertécnica del Keshin, ni +7 por armadura. `docs/tension-vr.md` ya propone +7, pero no está implementado en GO2.
+- La Hiperenergía ya da **+5 normal y +7 con Armed** en el simulador. Faltan KP, coste 0 de técnicas y bloquear la hipertécnica del Keshin mientras está Armed.
 
 ### 5.5 “Armaduras” de Victory Road
 
@@ -245,7 +245,7 @@ También sobra **Mike (Tez Beyan) con Zanark**: no está en la lista de 11 forma
 ### 6.2 Keshin Armed
 
 - La hipertécnica del Keshin se muestra también cuando `armed: true`, pero el lore dice que Armed **no puede usar** la hipertécnica/skills del Keshin.
-- No hay distinción de gameplay entre Keshin normal y Armed: mismo +4, sin KP, sin coste 0, sin +7.
+- El simulador ya distingue Armed en Hiperenergía (+5 normal / +7 Armed); siguen faltando KP, coste 0 y bloqueo de la hipertécnica.
 - Las cartas Mixi Max no heredan el Keshin del aura, así que no se puede probar la combinación Mixi Max + Armed.
 
 ### 6.3 Versiones
@@ -286,7 +286,7 @@ También sobra **Mike (Tez Beyan) con Zanark**: no está en la lista de 11 forma
 ### P2 — Keshin Armed
 
 9. Mantener Armed como **modo** (flag), no como carta.
-10. Si se implementa gameplay: Armed da **+7** en Hiperenergía (frente a +4 normal), desactiva la hipertécnica del Keshin, permite técnicas normales a coste 0 y consume KP. Es la propuesta de `docs/tension-vr.md`.
+10. **Hecho**: Armed da **+7** en Hiperenergía (frente a +5 normal). Queda desactivar la hipertécnica del Keshin, permitir técnicas normales a coste 0 y consumir KP.
 11. Mixi Max + Armed: permitir la combinación y aplicar la restricción de que un Keshin heredado no puede ir Armed si el usuario no puede.
 
 ### P3 — Versiones y lore

@@ -36,7 +36,10 @@ export const gainTension = (cur: number, n: number) => Math.min(TENSION_MAX, cur
 
 /** Acciones de equipo del Sim (aparte de las supertécnicas) */
 export const PRESS = { cost: 80, bonus: 3 }          // presión alta: +3 al control de esa ocasión
-export const HYPER = { cost: 200, bonus: 4 }         // hiperenergía: una vez por partido, carta con espíritu guerrero / Mixi Max / tótem
+export const HYPER = { cost: 200, bonus: 5 }         // hiperenergía: una vez por partido, carta con espíritu guerrero / Mixi Max / tótem
+/** Keshin Armed sube la hiperenergía: +7 en vez de +5 (docs/tension-vr.md) */
+export const hyperBonus = (card: FatalCard) =>
+  HYPER.bonus + (card.p.specials.some(sp => sp.armed) ? 2 : 0)
 export const SHOUT_COST = 120                        // grito del portero: para seguro el ataque rival, una vez por parte
 export const COUNTER_BONUS = 2                       // tras parar un ataque, +2 al control de la siguiente ocasión
 

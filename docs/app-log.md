@@ -571,3 +571,9 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - Protocol Omega 2.0: 16/16, 77,73; los 4 nuevos son banquillo (68).
 - Protocol Omega 3.0: 11/11, 79,55; Medam 79, Leiser 78, Einam 78.
 - Técnicas: Medam (Tesla Coil, Breath Taker, Sidewinder, Magnetism), Leiser (Gaussian Goal, Plasma Ball, Frosticle), Einam (Gaussian Goal, Plasma Ball, Double Helix), Minenne (Spin Meister, Pincer Pinch).
+
+
+## Keshin Armed: hiperenergía
+
+- SimMatch usa hyperBonus: +5 normal y +7 si la carta tiene un Keshin con rmed: true.
+- Pendiente: KP, técnicas normales a coste 0 y bloquear la hipertécnica del Keshin mientras está Armed.

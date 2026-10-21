@@ -7,7 +7,7 @@ import {
   chooseBoosts, perceive, penaltyGoal, type FatalCard, type PenDir, type SimChance, type SimResult,
 } from '../../lib/fatal'
 import {
-  COUNTER_BONUS, HYPER, PICK_COST, PRESS, SHOUT_COST, TENSION_GAIN, TENSION_START, gainTension, techBonus, techCost, usableTechs,
+  COUNTER_BONUS, HYPER, hyperBonus, PICK_COST, PRESS, SHOUT_COST, TENSION_GAIN, TENSION_START, gainTension, techBonus, techCost, usableTechs,
 } from '../../lib/tension'
 import type { DuelKey } from '../../lib/duel'
 import type { TranslationKey } from '../../i18n/translations'
@@ -143,7 +143,7 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
       id: `t:${x.id}`, kind: 'tech', tech: x, label: techniqueName(x, locale), cost: techCost(x), bonus: techBonus(x, myCard), desc: t('sim.act.tech', { n: techBonus(x, myCard), stat: statLabel(dec.key) }),
     }))
     if (phase === 'control') out.push({ id: 'press', kind: 'press', label: t('sim.act.press'), cost: PRESS.cost, bonus: PRESS.bonus, desc: t('sim.act.pressDesc', { n: PRESS.bonus }) })
-    if (!hyperUsed && myCard.p.specials.length) out.push({ id: 'hyper', kind: 'hyper', label: t('sim.act.hyper'), cost: HYPER.cost, bonus: HYPER.bonus, desc: t('sim.act.hyperDesc', { n: HYPER.bonus, stat: statLabel(dec.key) }) })
+    if (!hyperUsed && myCard.p.specials.length) out.push({ id: 'hyper', kind: 'hyper', label: t('sim.act.hyper'), cost: HYPER.cost, bonus: hyperBonus(myCard), desc: t('sim.act.hyperDesc', { n: hyperBonus(myCard), stat: statLabel(dec.key) }) })
     if (dec.who === 1 && !shoutUsed[half]) out.push({ id: 'shout', kind: 'shout', label: t('sim.act.shout'), cost: SHOUT_COST, bonus: 0, desc: t('sim.act.shoutDesc') })
     return out
   }
@@ -190,7 +190,7 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
     const techs = usableTechs(own, d.oppKey)
     const opts: { id: string; cost: number; bonus: number }[] = techs.map(x => ({ id: `t:${x.id}`, cost: techCost(x), bonus: techBonus(x, own) }))
     if (phase === 'control') opts.push({ id: 'press', cost: PRESS.cost, bonus: PRESS.bonus })
-    if (!oppHyperUsed && own.p.specials.length) opts.push({ id: 'hyper', cost: HYPER.cost, bonus: HYPER.bonus })
+    if (!oppHyperUsed && own.p.specials.length) opts.push({ id: 'hyper', cost: HYPER.cost, bonus: hyperBonus(own) })
     // control: hay que superar tu número; ataque: llegar a la altura de tu defensa + 5; defensa: dejar tu ataque a ≤ 1
     const need = d.key === 'con' ? myNum - ownNum + 1 : d.who === 0 ? myNum - ownNum - 1 : myNum - ownNum + 6
     const picked = chooseBoosts(opts, need, tension[1], 2)
