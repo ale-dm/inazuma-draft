@@ -1,4 +1,4 @@
-Cartas: 5413 (289 versiones extra) · personajes: 4974 · técnicas: 787
+Cartas: 5413 (289 versiones extra) · personajes: 4974 · técnicas: 785
 Categorías: Legendary Player 124 · Top Player 752 · Advanced Player 1310 · Growing Player 1158 · Common Player 2069
 Niveles: S 453 · A 345 · B 1259 · C 3356
 OVR: mediana 70 · p90 85 · p99 90 · máx 94
@@ -36,7 +36,7 @@ Victory Road: jugadores sin supertécnicas de VR (5): Philip Star, Lucas Star, A
 Victory Road: supertécnicas de la carta — rtu 21, wiki 922 (anime = wiki española «Desde Victory Road»; wiki = ficha principal del módulo PlayerData_VR de la wiki inglesa; rtu = Road to Ultimate, comunes + rama principal; vr = todas las de VR)
 Equipo con un solo jugador, fuera: Queens (VR) → Romica Glimmerly sin equipo
 stats_mod: 2320 cartas con las stats del mod (nivel 40, IE1-3)
-Nombres fr: técnicas 813/1026 · equipos 133/188
-Nombres it: técnicas 556/1026 · equipos 110/188
+Nombres fr: técnicas 812/1024 · equipos 133/188
+Nombres it: técnicas 556/1024 · equipos 110/188
 Escudos de equipo: 172/188 · con escudo distinto según la época: 95
 Técnicas: tiro largo 40 · bloqueo de tiros 50

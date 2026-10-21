@@ -158,3 +158,5 @@ La categoría inglesa Orion hissatsu tiene 70 técnicas; la española, 65. Las c
 - Las demás ya estaban con el nombre castellano; la categoría inglesa las lista con otro nombre.
 - En Victory Road queda una parada menor sin usuario (Gutsy Grit Punch) que no se ha añadido.
 - **Parada de espaguetis extra** (*Macaroni Spaghetti Sauce Zouryou*, evolución 改 de la Parada de espaguetis) estaba en el catálogo pero sin carta; se ha añadido a **Gonçalo/Macero** (Orion, slot 4) con TP **120**.
+
+- **Pingüino goleador** (Shining Penguin) se ha eliminado del catálogo: era del manga de Ares, no tenía elemento y la app se queda con las técnicas de juego. **Arrollador** tampoco se queda: es el Coz de Ares; la app mantiene el **Coz** original de IE1 (JudgeThrough).

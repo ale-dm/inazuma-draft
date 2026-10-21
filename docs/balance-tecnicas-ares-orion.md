@@ -117,7 +117,6 @@ juego cuando existe (`VR_power`) o el coste GO.
 | 100 | Entrada relampagueante | Flash Dash | 1 | 1 | 440 |
 | 100 | Regate divino | Divine Dummy | 5 | 0 | 300 |
 | 100 | Viento centelleante | Sparky Spin | 2 | 2 | 540 |
-| 90 | Arrollador | Arrollador | 1 | 0 | — |
 | 90 | Laberinto | Short Circuit | 1 | 1 | 540 |
 | 80 | Tornado venenoso | Dark Whirlwind | 0 | 1 | 300 |
 | 60 | Equilibrismo | Rodeo Clown | 3 | 2 | 300 |

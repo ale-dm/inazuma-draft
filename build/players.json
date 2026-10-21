@@ -17401,7 +17401,6 @@
     "vr_whs02780",
     "vr_whs02760",
     "vr_whs02830",
-    "es_ping-ino-goleador",
     "CounterdriveDF"
    ],
    "duel_att": null,
@@ -42336,7 +42335,6 @@
     "es_chilena-de-ping-ino",
     "vr_whs02880",
     "HitoriOneTwo",
-    "es_ping-ino-goleador",
     "es_ping-ino-aereo",
     "vr_whs03410"
    ],
@@ -96639,8 +96637,7 @@
    "growth": null,
    "freedom": null,
    "techniques": [
-    "KouteiPenguin2gou",
-    "es_arrollador"
+    "KouteiPenguin2gou"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -301828,28 +301825,6 @@
    "balance_power_max": 720
   },
   {
-   "id": "es_ping-ino-goleador",
-   "name": "Shining Penguin",
-   "name_es": "Pingüino goleador",
-   "name_jp": "シャイニングペンギン",
-   "type": "Shoot",
-   "element": "void",
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": "Tiro de Sonny y Elliot en el manga de Ares.",
-   "image_url": null,
-   "zukan_types": [
-    "Shot"
-   ],
-   "traits": [],
-   "name_fr": "Shainingu Pengin",
-   "name_it": null,
-   "balance_tp": 150,
-   "balance_power_min": 180,
-   "balance_power_max": 900
-  },
-  {
    "id": "es_embestida-bufalina",
    "name": "Bull Steam Ahead",
    "name_es": "Embestida bufalina",
@@ -318668,26 +318643,6 @@
    "balance_tp": 120,
    "balance_power_min": 140,
    "balance_power_max": 800
-  },
-  {
-   "id": "es_arrollador",
-   "name": "Arrollador",
-   "name_es": "Arrollador",
-   "name_jp": null,
-   "type": "Dribble",
-   "element": "fire",
-   "cost": null,
-   "cost_game": null,
-   "costs": {},
-   "description": null,
-   "image_url": null,
-   "zukan_types": null,
-   "name_fr": null,
-   "name_it": null,
-   "traits": [],
-   "balance_tp": 90,
-   "balance_power_min": 95,
-   "balance_power_max": 600
   },
   {
    "id": "vr_whk00180",

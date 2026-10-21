@@ -478,11 +478,9 @@
       "es_muro-colectivo"
     ],
     "inamori-asuto--ares--base": [
-      "es_ping-ino-goleador",
       "CounterdriveDF"
     ],
     "haizaki-ryouhei--ares--base": [
-      "es_ping-ino-goleador",
       "es_ping-ino-aereo",
       "vr_whs03410"
     ],
@@ -1882,7 +1880,14 @@
       "CounterdriveGK"
     ],
     "inamori-asuto--ares--base": [
-      "CounterdriveGK"
+      "CounterdriveGK",
+      "es_ping-ino-goleador"
+    ],
+    "haizaki-ryouhei--ares--base": [
+      "es_ping-ino-goleador"
+    ],
+    "jimon-daiki--ares--base": [
+      "es_arrollador"
     ],
     "umihara-norika--ares--base": [
       "es_parada-remolino",
@@ -1906,5 +1911,10 @@
     "desuta--ie3--base": [
       "ShadowRay_Mountain"
     ]
+  },
+  "tech_drop": {
+    "_doc": "Técnicas a eliminar del catálogo y de la base (id → true).",
+    "es_ping-ino-goleador": true,
+    "es_arrollador": true
   }
 }

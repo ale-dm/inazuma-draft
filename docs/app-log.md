@@ -521,3 +521,9 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - Asignados 8 elementos que faltaban (Bull Steam Ahead, KAMAKURA D, Koutei Penguin 2gou feat. Shark, Triple G Strike, Penguin The God & Devil, Inazuma Break CG, Super God Hand y Tenkuu Hayabusadan) y 5 Void (Last Resort Σ/D, Mega Majin Trio, Black Shield y Black Field).
 - Las 4 que quedaban sin elemento se han resuelto con la wiki española: **Shining Penguin** → Vacío (manga sin elemento), **Chilena de pingüino** → Bosque (variante azul de Overhead Penguin; la negra/fuego es Pingüino Aéreo), **Arrollador** (= Coz/Judge Through) → Fuego y **Orion's Shade** → Vacío (Neutro en VR; Bosque en SD).
 - Quedan 24 técnicas con elemento único (`{{PAGENAME}}`/nombre propio). Detalle en [tecnicas-visual.md](tecnicas-visual.md).
+
+
+## Técnicas: Pingüino goleador y Arrollador fuera
+
+- Eliminadas **Pingüino goleador** (es_ping-ino-goleador, manga de Ares, sin elemento) y **Arrollador** (es_arrollador, que es el Coz de Ares). La app se queda con el **Coz** original de IE1 (JudgeThrough). 	ech_drop borra las dos filas de la base y 	ech_remove limpia sus enlaces.
+- **Chilena de pingüino** se queda con las dos versiones: es_ping-ino-aereo (fuego, pingüinos negros) y es_chilena-de-ping-ino (bosque, pingüinos azules).

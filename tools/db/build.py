@@ -1381,6 +1381,11 @@ def main(extra_z=None, write=True):
             t = techniques.get(tid)
             if t and all(x['id'] != tid for x in c['moves']):
                 c['moves'].append(t)
+    dropped_techs = [k for k in ov.get('tech_drop', {}) if not k.startswith('_')]
+    for tid in dropped_techs:
+        techniques.pop(tid, None)
+        for c in cards:
+            c['moves'] = [m for m in c['moves'] if m['id'] != tid]
     for tid, name in {k: v for k, v in ov.get('technique_names', {}).items() if not k.startswith('_')}.items():
         if tid in techniques:
             techniques[tid]['name_es'] = name
@@ -1405,7 +1410,8 @@ def main(extra_z=None, write=True):
     tech_traits(techniques, report)                          # tiro largo / bloqueo de tiros (WazaData: chr)
     if write:
         write_outputs(cards, chars_out, techniques, teams, staff, zukan_rows, report, dropped=drop,
-                      removed_cards=[k for k in ov.get('tech_remove', {}) if not k.startswith('_')])
+                      removed_cards=[k for k in ov.get('tech_remove', {}) if not k.startswith('_')],
+                      dropped_techs=dropped_techs)
     return uncovered
 
 
