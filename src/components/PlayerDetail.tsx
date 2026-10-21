@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import type { Player } from '../types'
-import { cardTeamLabel, getCharacterVersions, hyperName, loadDescription, type CardDescription, specialName, teamName } from '../data/catalog'
+import { cardTeamLabel, getCharacterVersions, loadDescription, type CardDescription, teamName } from '../data/catalog'
 import { GAME_LABEL } from '../data/games'
 import { useAppSettings } from '../context/AppSettings'
 import PlayerAvatar from './PlayerAvatar'
 import InaCard from './InaCard'
 import CardInfo from './CardInfo'
-import { ElementIcon, PositionIcon, SpecialIcon } from './GameIcon'
+import { ElementIcon, PositionIcon } from './GameIcon'
+import AuraBlock from './AuraBlock'
 import { CATEGORY_CLASS } from '../lib/categories'
 
 
@@ -73,25 +74,9 @@ export default function PlayerDetail({ player, onClose, onOpen }: Props) {
           {player.specials.length > 0 && (
             <section>
               <h3 className="font-heading text-sm font-bold text-accent mb-2">{t('players.specials')}</h3>
-              <ul className="space-y-1.5">
-                {player.specials.map((sp, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sm">
-                    <SpecialIcon type={sp.type} className="w-7 h-7 shrink-0" />
-                    <span className="text-[0.65rem] text-iz-muted">{t(`special.${sp.type}`)}</span>
-                    <span className="font-heading font-bold text-iz-heading truncate">
-                      {specialName(sp, locale)}
-                    </span>
-                    {sp.armed && <span className="ml-auto text-xs text-accent font-heading">{t('special.armed')}</span>}
-                  </li>
-                ))}
-                {player.specials.filter(sp => sp.hyper).map((sp, i) => (
-                  <li key={`h${i}`} className="flex items-center gap-2 text-sm">
-                    <SpecialIcon type="keshin" className="w-7 h-7 shrink-0 opacity-70" />
-                    <span className="text-[0.65rem] text-iz-muted">{t('special.hyper')}</span>
-                    <span className="font-heading font-bold text-hissatsu truncate">{hyperName(sp, locale)}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="aura-list">
+                {player.specials.map((sp, i) => <AuraBlock key={i} sp={sp} element={player.element} />)}
+              </div>
             </section>
           )}
 

@@ -671,3 +671,9 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - `tools/db/mod_balance_all.py`: el mismo cálculo del balance del mod (modelo 3) con todas las sagas, en memoria (no toca EditorMods ni el juego).
 - `import_stats_mod.py` usa ese cálculo para GO1-3, Ares, Orion y VR; IE1-3 siguen con el balance instalado.
 - 5.354 de 5.443 cartas con las 7 stats a nivel 40 en la ficha (antes 2.320). Detalle en docs/balance-stats.md.
+
+## Ficha: sección Aura
+
+- «Poderes especiales» pasa a **Aura**: cada espíritu guerrero, tótem y Mixi Max es un bloque con la placa del juego
+  (`plate_fs/fsa/soul/mixi`), su icono (`icon_sp_area05..08`), la reserva (PEG/SP/PE), su técnica con TP, el coste por
+  uso y los usos por partido; la armadura va en una segunda placa con su gasto por turno. Ver docs/tecnicas-visual.md.
