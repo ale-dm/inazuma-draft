@@ -632,7 +632,11 @@
     "Kogure Yuuya|IE2|Raimon": 83,
     "_doc_ares": "Ares: la temporada baja un punto (ovr_shift); Mark no baja y Axel sube al nivel de Jude.",
     "Endou Mamoru|ARES|base": 88,
-    "Gouenji Shuuya|ARES|base": 83
+    "Gouenji Shuuya|ARES|base": 83,
+    "_doc_go1": "GO1: Alpino por debajo de Kirkwood (su target 77,5 se pasaba a 78,5 por los outliers).",
+    "Makari Ginjirou|GO1|base": 84,
+    "Yukimura Hyouga|GO1|base": 83,
+    "Shirosaki Katsuya|GO1|base": 85
   },
   "card_names": {
     "_doc": "Nombre de la carta por versión (\"<page>|<game>|<versión>\": nombre), para versiones cuyo nombre de zukan no es el del personaje. Neo Japan: el nombre del juego (Dave Quagmire…); la versión de Aliea/Génesis se queda con el suyo.",
