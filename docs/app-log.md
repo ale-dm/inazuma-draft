@@ -551,11 +551,11 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 
 ## GO2 P0: plantillas y duplicados
 
-- Protocol Omega 2.0: 12 cartas, Beta 87; base Beta fuera. Faltan Medam, Leiser, Einam y Minenne.
-- Protocol Omega 3.0: 8 cartas con Ward, Quorth y Orca. Faltan Medam, Leiser y Einam.
+- Protocol Omega 2.0: 12 cartas, Beta 83; base Beta fuera. Faltan Medam, Leiser, Einam y Minenne.
+- Protocol Omega 3.0: 8 cartas con Ward, Quorth y Orca; compress 0.5. Faltan Medam, Leiser y Einam.
 - Perfect Cascade, Ragnah, Despairadoes, Nosfanática, Aullido Lunar, Chrono Storm y 2.0: bases duplicadas movidas a Unaffiliated (fuera de pools de draft).
 - La curva se aplica después de mover las bases (pre_unaff) para que no cuente el duplicado.
-- Resultado: 2.0 77,73; 3.0 79,63; Perfect Cascade 82,00; Ragnah 85,55.
+- Resultado: 2.0 77,73; 3.0 80,00; Perfect Cascade 82,00; Ragnah 85,55.
 
 
 ## GO2 P1: compañeros de Mixi Max

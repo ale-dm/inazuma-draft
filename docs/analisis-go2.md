@@ -6,8 +6,8 @@
 ## 1. Resumen ejecutivo
 
 - **GO2 ya es el pico de GO**: 90,45 de media en Mixi Max, 88,82 en Chrono Storm y 87,0 en los extras. GO3 se queda en 84,82 y GO1 en 84,73.
-- **Protocol Omega 2.0** ya está en **12 cartas / 12 personajes** y **77,73** (Beta 87). Faltan Medam, Leiser, Einam y Minenne para las 16.
-- **Protocol Omega 3.0** tiene ya **8 cartas** y **79,63**. Faltan Medam, Leiser y Einam para las 11.
+- **Protocol Omega 2.0** ya está en **12 cartas / 12 personajes** y **77,73** (Beta 83). Faltan Medam, Leiser, Einam y Minenne para las 16.
+- **Protocol Omega 3.0** tiene ya **8 cartas** y **80,00**. Faltan Medam, Leiser y Einam para las 11.
 - Los **duplicados base + versión** se han limpiado: las bases quedan en `Unaffiliated` (fuera de los pools de draft) y los equipos usan la versión.
 - Las cartas **Mixi Max y Chrono Storm** ya muestran su compañero (`mixi`); falta la herencia de Keshin y las formas que no existen.
 - **White Deer** ya baja: Taian 90 → 88; el equipo queda en **77,82**.
@@ -18,9 +18,9 @@
 | Equipo | Objetivo | Real | Estrella | Notas |
 |---|---:|---:|---|---|
 | Protocol Omega | 76 | **76,00** | Alpha 90 | 13 cartas |
-| Protocol Omega 2.0 | 77,5 | **77,73** | Beta 87 | 12 cartas; faltan 4 |
+| Protocol Omega 2.0 | 77,5 | **77,73** | Beta 83 | 12 cartas; faltan 4 |
 | White Deer | 78 | **77,82** | Taian 88 | Ya rebajado |
-| Protocol Omega 3.0 | 79,5 | **79,63** | Gamma 90 | 8 cartas; faltan 3 |
+| Protocol Omega 3.0 | 79,5 | **80,00** | Gamma 89 | 8 cartas; faltan 3 |
 | Terracotta Army | 80 | **80,91** | Terracotta 87 | 11 cartas |
 | Zanark's Domain | 81 | **81,55** | Zanark 89 | 16 cartas |
 | Perfect Cascade | 82 | **82,00** | Ar Ecks 90 | 16 cartas, 16 personajes (bases fuera) |
@@ -259,7 +259,7 @@ También sobra **Mike (Tez Beyan) con Zanark**: no está en la lista de 11 forma
 ### 6.4 Plantillas y duplicados
 
 - **Protocol Omega 2.0**: 12 cartas, 12 personajes, 77,73. Roster de la wiki: 16; faltan **Medam, Leiser, Einam y Minenne** por crear.
-- **Protocol Omega 3.0**: 8 cartas, 79,63. Historia 11; faltan **Medam, Leiser y Einam**.
+- **Protocol Omega 3.0**: 8 cartas, 80,00. Historia 11; faltan **Medam, Leiser y Einam**.
 - **Perfect Cascade**: 16 cartas para 16 personajes; las bases están en `Unaffiliated`.
 - **Ragnah**: 14 cartas, 14 personajes; Saryuu una vez.
 - **Despairadoes / Nosfanática / Aullido Lunar / Chrono Storm**: bases en `Unaffiliated`; el equipo usa solo la versión.
@@ -268,8 +268,8 @@ También sobra **Mike (Tez Beyan) con Zanark**: no está en la lista de 11 forma
 
 ### P0 - Datos y plantillas (aplicado)
 
-1. **2.0**: `beta--go2--base` fuera; versiones 2.0 de Zanou, Gaura, Quorth, Neira, Laszlo, Cople, Finik y Mechius. Quedan **12/16**; faltan Medam, Leiser, Einam y Minenne.
-2. **3.0**: versiones de Ward, Quorth y Orca. Queda **8/11**; faltan Medam, Leiser y Einam.
+1. **2.0**: `beta--go2--base` fuera; versiones 2.0 de Zanou, Gaura, Quorth, Neira, Laszlo, Cople, Finik y Mechius. Quedan **12/16**; faltan Medam, Leiser, Einam y Minenne. `compress: 0.5` y Beta 83 para que la plantilla no sea solo Beta + relleno.
+2. **3.0**: versiones de Ward, Quorth y Orca. Queda **8/11**; faltan Medam, Leiser y Einam. `compress: 0.5`.
 3. **Duplicados**: bases de Perfect Cascade, Ragnah, Despairadoes, Nosfanática, Aullido Lunar, Chrono Storm y 2.0 movidas a `Unaffiliated` (fuera de los pools de draft). Retuneado.
 4. **White Deer**: hecho (Taian 88; equipo 77,82).
 
@@ -296,7 +296,7 @@ También sobra **Mike (Tez Beyan) con Zanark**: no está en la lista de 11 forma
 
 ### P4 — Balance
 
-14. Después de P0, volver a mirar la rampa: 2.0 debería quedar en 77,5 y 3.0 en 79,5. Si los 90 de Alpha/Beta/Taian/Gamma siguen chirriando, aplicar `compress_above: 86` con factor 0,5 o topes de capitán por equipo.
+14. Después de P0, volver a mirar la rampa: 2.0 queda en 77,73 y 3.0 en 80,00. Si los 90 de Alpha/Taian/Gamma siguen chirriando, aplicar `compress_above: 86` con factor 0,5 o topes de capitán por equipo.
 15. GO3 no se toca: ya está por debajo de GO2 (84,82 vs 90,45).
 
 ## 8. Fuentes

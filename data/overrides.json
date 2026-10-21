@@ -687,7 +687,7 @@
     "Gouenji Shuuya|ARES|base": 83,
     "_doc_go2": "GO2: White Deer baja un poco la estrella (Taian 90 → 88); el equipo queda algo por debajo de 78.",
     "Inaba Taian|GO2|base": 88,
-    "Beta|GO2|Protocol Omega 2.0": 87,
+    "Beta|GO2|Protocol Omega 2.0": 83,
     "_doc_go1": "GO1: Alpino por debajo de Kirkwood (su target 77,5 se pasaba a 78,5 por los outliers).",
     "Makari Ginjirou|GO1|base": 84,
     "Yukimura Hyouga|GO1|base": 83,
@@ -1874,6 +1874,7 @@
       "Protocol Omega 2.0": {
         "top11": 77.5,
         "captain": "Beta",
+        "compress": 0.5,
         "note": "2"
       },
       "White Deer": {
@@ -1884,6 +1885,7 @@
       "Protocol Omega 3.0": {
         "top11": 79.5,
         "captain": "Gamma",
+        "compress": 0.5,
         "note": "4"
       },
       "The Terracotta Army": {
