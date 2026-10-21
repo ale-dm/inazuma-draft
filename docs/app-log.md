@@ -534,3 +534,10 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - **Pingüino Aéreo** venía de la ficha inglesa (*Overhead Penguin*) que se añadió en la pasada de Ares; es la misma técnica que **Chilena de pingüino**. Se unifica el nombre en las dos variantes: es_ping-ino-aereo (**fuego**, pingüinos negros) y es_chilena-de-ping-ino (**bosque**, pingüinos azules).
 
 - Las dos versiones de **Overhead Penguin / Chilena de pingüino** comparten nombre (Overhead Penguin / Chilena de pingüino), japonés, francés, italiano y origen (Ares/Orion); solo cambian el elemento (fuego/bosque) y el TP del balance.
+
+
+## Sprites de Ares y Orion
+
+- Auditadas las 406 cartas de Ares/Orion con la wiki inglesa (Game_appearance → Victory Road). Asignados sprites de equipo a **Inazuma Japan** (IJ (O)), **Raimon** (IR), **Barcelona Orb** (BO) y unas 230 cartas más (Perfect Spark, Orion Eclipse, Guardians of Queen, Sambassadors, Lunar Prime, Alia, Zeus…).
+- Elliot Ember de Inazuma Japón (Orion) lleva la **Chilena de pingüino de fuego** (es_ping-ino-aereo); se quita la de bosque de esa carta.
+- Quedan 129 cartas de Ares/Orion con foto de zukan: Sub Character, Star Unicorn sin sprite de equipo en la wiki y algunos casos sin sprite base (Nishikage/Umihara/Saginuma en Inazuma Japón, Kiyama, Sakuma…).

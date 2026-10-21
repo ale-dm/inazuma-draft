@@ -1370,6 +1370,10 @@ def main(extra_z=None, write=True):
             report.append(f"Equipo con un solo jugador, fuera: {c['team']} ({c['game']}) → {c['name']} sin equipo")
             c['team'] = 'Unaffiliated'
     cards += a_cards
+    for cid, url in {k: v for k, v in ov.get('card_images', {}).items() if not k.startswith('_')}.items():
+        c = next((c for c in cards if c['id'] == cid), None)
+        if c:
+            c['image_url'] = url
     # técnicas extra por carta (overrides.extra_moves)
     byid_card = {c['id']: c for c in cards}
     for cid, tids in {k: v for k, v in ov.get('extra_moves', {}).items() if not k.startswith('_')}.items():
