@@ -89,15 +89,53 @@ def write_balance():
                     f'from (values\n{vals_s}\n) as v(id, tp, mn, mx) where t.id = v.id;\n')
 
 
+AURA_FIELDS = ('key', 'hyper', 'hyper_es', 'hyper_fr', 'hyper_it', 'hyper_id', 'points', 'cost', 'atk')
+
+
+def _aura_points(cards, report):
+    """completa los puntos de aura de los espíritus guerreros y tótems: los puestos a mano (CRUD) copian los de otra
+    carta con el mismo especial; los de VR sin KP en la wiki salen de data/aura_points.json (tabla de Aura Points)"""
+    path = os.path.join(ROOT, 'data', 'aura_points.json')
+    cfg = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else {}
+    known = {}
+    for c in cards:
+        for sp in c.get('specials') or []:
+            if sp['type'] in ('keshin', 'soul') and sp.get('key') and sp.get('points'):
+                known.setdefault((sp['type'], sp['name']), sp)
+    missing = 0
+    for c in cards:
+        for sp in c.get('specials') or []:
+            if sp['type'] not in ('keshin', 'soul'):
+                continue
+            ref = known.get((sp['type'], sp['name']))
+            if ref and not sp.get('key'):
+                for k in AURA_FIELDS:
+                    if sp.get(k) is None and ref.get(k) is not None:
+                        sp[k] = ref[k]
+            fix = (cfg.get(sp['type']) or {}).get(sp.get('key') or '') or {}
+            dflt = (cfg.get('default') or {}).get(sp['type']) or {}
+            for k in ('points', 'cost', 'atk'):
+                if sp.get(k) is None and (k != 'atk' or sp['type'] == 'keshin'):
+                    sp[k] = fix.get(k, dflt.get(k))
+                    missing += k == 'points' and k not in fix
+    if missing:
+        report.append(f'Puntos de aura: {missing} especiales con la reserva por defecto (data/aura_points.json)')
+
+
 def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report, dropped=None, removed_cards=None,
                   dropped_techs=None, tech_remove=None, reassert_cards=None):
     os.makedirs(OUT, exist_ok=True)
     used = {t['id'] for c in cards for t in c['moves']}
+    used |= {sp['hyper_id'] for c in cards for sp in c.get('specials') or [] if sp.get('hyper_id')}   # técnicas de keshin / tótem
     saga_ids = {i for s in SAGA_BALANCE for i in saga_balance(s)}
     vr_extra_path = os.path.join(ROOT, 'data', 'technique_vr_extra.json')
     if os.path.exists(vr_extra_path):
         with open(vr_extra_path, encoding='utf-8') as f:
             saga_ids |= {x['id'] for x in json.load(f).get('techniques', [])}
+    aura_path = os.path.join(ROOT, 'data', 'aura_points.json')
+    if os.path.exists(aura_path):
+        with open(aura_path, encoding='utf-8') as f:
+            saga_ids |= set(json.load(f).get('tecnicas_sin_carta', []))
     techs = [{k: v for k, v in t.items() if k != '_inf'}
              for t in techniques.values() if t and (t['id'] in used or t['id'] in saga_ids)]
     char_ids = {c['character_id'] for c in cards}
@@ -119,6 +157,7 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report, dr
         })
     _balance(techs)
     apply_edits(public, techs, chars, report)                # cambios del CRUD oculto (data/card_edits.json)
+    _aura_points(public, report)
     with open(os.path.join(OUT, 'players.json'), 'w', encoding='utf-8') as f:
         json.dump({'cards': public, 'techniques': techs, 'characters': chars, 'teams': teams, 'staff': staff}, f, ensure_ascii=False, indent=1)
 

@@ -16,11 +16,6 @@
    140,
    800
   ],
-  "BakunetsuStorm_K": [
-   150,
-   180,
-   900
-  ],
   "BallistaShot": [
    120,
    140,
@@ -40,11 +35,6 @@
    130,
    160,
    880
-  ],
-  "BloodyEncore": [
-   90,
-   95,
-   600
   ],
   "BoomerangFeint": [
    70,
@@ -76,11 +66,6 @@
    60,
    360
   ],
-  "BushinRenzan": [
-   150,
-   180,
-   900
-  ],
   "ButtobiJump": [
    70,
    70,
@@ -90,11 +75,6 @@
    60,
    60,
    360
-  ],
-  "Checkmate": [
-   170,
-   215,
-   980
   ],
   "Claymore": [
    90,
@@ -111,22 +91,7 @@
    140,
    800
   ],
-  "CrimsonSphere": [
-   150,
-   180,
-   900
-  ],
   "CrystalBarrier": [
-   90,
-   95,
-   600
-  ],
-  "DancingGhost": [
-   80,
-   85,
-   540
-  ],
-  "DarkSpace": [
    90,
    95,
    600
@@ -176,11 +141,6 @@
    100,
    640
   ],
-  "DragonStorm": [
-   50,
-   50,
-   300
-  ],
   "ElephantPress": [
    60,
    60,
@@ -200,11 +160,6 @@
    110,
    120,
    720
-  ],
-  "FalcoWing": [
-   90,
-   95,
-   600
   ],
   "FireTornadoDD": [
    170,
@@ -236,16 +191,6 @@
    140,
    800
   ],
-  "GallopBuster": [
-   110,
-   120,
-   720
-  ],
-  "GiganticBomb": [
-   150,
-   180,
-   900
-  ],
   "GodHandV": [
    150,
    180,
@@ -256,40 +201,10 @@
    160,
    880
   ],
-  "GreatTheHand": [
-   150,
-   180,
-   900
-  ],
-  "GuardianShield": [
-   90,
-   95,
-   600
-  ],
-  "HakaiDanmaku": [
-   100,
-   100,
-   640
-  ],
-  "Harmonics": [
-   110,
-   120,
-   720
-  ],
   "HeadBazooka": [
    60,
    60,
    360
-  ],
-  "HeavyAquaLance": [
-   150,
-   180,
-   900
-  ],
-  "HellsFist": [
-   150,
-   180,
-   900
   ],
   "HuntersNet": [
    100,
@@ -301,20 +216,10 @@
    70,
    440
   ],
-  "IcicleRoad": [
-   150,
-   180,
-   900
-  ],
   "JokerRains": [
    120,
    140,
    800
-  ],
-  "JusticeWing": [
-   170,
-   215,
-   980
   ],
   "KageTsukami": [
    100,
@@ -336,22 +241,7 @@
    85,
    540
   ],
-  "KingFire": [
-   150,
-   180,
-   900
-  ],
   "KouteiPenguin7": [
-   120,
-   140,
-   800
-  ],
-  "LostAngel": [
-   110,
-   120,
-   720
-  ],
-  "LuckyDice": [
    120,
    140,
    800
@@ -360,11 +250,6 @@
    100,
    100,
    640
-  ],
-  "MachineGunBeat": [
-   80,
-   85,
-   540
   ],
   "MachWind": [
    70,
@@ -375,21 +260,6 @@
    60,
    60,
    360
-  ],
-  "MagiciansBox": [
-   90,
-   95,
-   600
-  ],
-  "MajinTheHand_K": [
-   150,
-   180,
-   900
-  ],
-  "MaouNoOno": [
-   170,
-   215,
-   980
   ],
   "MelodyWave": [
    110,
@@ -416,20 +286,10 @@
    160,
    880
   ],
-  "Overdrive": [
-   60,
-   60,
-   360
-  ],
   "PantherBlizzard": [
    110,
    120,
    720
-  ],
-  "PegasusBreak": [
-   80,
-   85,
-   540
   ],
   "PerfectCourse": [
    50,
@@ -445,11 +305,6 @@
    80,
    85,
    540
-  ],
-  "RagingClaw": [
-   110,
-   120,
-   720
   ],
   "RainbowBubbleShot": [
    90,
@@ -481,11 +336,6 @@
    95,
    600
   ],
-  "ScratchRaid": [
-   100,
-   100,
-   640
-  ],
   "SerpentFang": [
    120,
    140,
@@ -511,11 +361,6 @@
    70,
    440
   ],
-  "SoulBringer": [
-   170,
-   215,
-   980
-  ],
   "SoyokazeStep": [
    70,
    70,
@@ -535,26 +380,6 @@
    90,
    95,
    600
-  ],
-  "StrongTower": [
-   90,
-   95,
-   600
-  ],
-  "SunshineForce": [
-   150,
-   180,
-   900
-  ],
-  "SwordExcalibur": [
-   180,
-   230,
-   1000
-  ],
-  "SwordOfFire": [
-   180,
-   230,
-   1000
   ],
   "TheMist": [
    80,
@@ -605,11 +430,6 @@
    110,
    120,
    720
-  ],
-  "WhiteBreath": [
-   170,
-   215,
-   980
   ],
   "WhiteHurricane": [
    140,

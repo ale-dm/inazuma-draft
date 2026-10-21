@@ -71,6 +71,26 @@
   "200": [
    270,
    1080
+  ],
+  "210": [
+   290,
+   1130
+  ],
+  "220": [
+   310,
+   1180
+  ],
+  "230": [
+   330,
+   1230
+  ],
+  "240": [
+   350,
+   1280
+  ],
+  "250": [
+   370,
+   1330
   ]
  },
  "techniques": {
@@ -180,9 +200,9 @@
    720
   ],
   "BakunetsuStorm_K": [
-   110,
-   120,
-   720
+   190,
+   250,
+   1030
   ],
   "BakuretsuPunch": [
    90,
@@ -1735,9 +1755,9 @@
    720
   ],
   "MajinTheHand_K": [
-   110,
-   120,
-   720
+   200,
+   270,
+   1080
   ],
   "MakiwariChop": [
    70,
@@ -4088,6 +4108,541 @@
    70,
    70,
    440
+  ],
+  "WhiteBreath": [
+   210,
+   290,
+   1130
+  ],
+  "MaouNoOno": [
+   200,
+   270,
+   1080
+  ],
+  "JusticeWing": [
+   200,
+   270,
+   1080
+  ],
+  "SoulBringer": [
+   190,
+   250,
+   1030
+  ],
+  "Checkmate": [
+   190,
+   250,
+   1030
+  ],
+  "LostAngel": [
+   180,
+   230,
+   1000
+  ],
+  "SunshineForce": [
+   180,
+   230,
+   1000
+  ],
+  "BushinRenzan": [
+   170,
+   215,
+   980
+  ],
+  "IcicleRoad": [
+   170,
+   215,
+   980
+  ],
+  "Harmonics": [
+   170,
+   215,
+   980
+  ],
+  "HeavyAquaLance": [
+   160,
+   195,
+   930
+  ],
+  "GallopBuster": [
+   160,
+   195,
+   930
+  ],
+  "RagingClaw": [
+   160,
+   195,
+   930
+  ],
+  "FalcoWing": [
+   150,
+   180,
+   900
+  ],
+  "MagiciansBox": [
+   150,
+   180,
+   900
+  ],
+  "PegasusBreak": [
+   160,
+   195,
+   930
+  ],
+  "ScratchRaid": [
+   150,
+   180,
+   900
+  ],
+  "DancingGhost": [
+   150,
+   180,
+   900
+  ],
+  "Overdrive": [
+   150,
+   180,
+   900
+  ],
+  "MachineGunBeat": [
+   120,
+   140,
+   800
+  ],
+  "StrongTower": [
+   140,
+   170,
+   890
+  ],
+  "DarkSpace": [
+   140,
+   170,
+   890
+  ],
+  "DragonStorm": [
+   130,
+   160,
+   880
+  ],
+  "KingFire": [
+   190,
+   250,
+   1030
+  ],
+  "HellsFist": [
+   180,
+   230,
+   1000
+  ],
+  "GiganticBomb": [
+   160,
+   195,
+   930
+  ],
+  "LuckyDice": [
+   160,
+   195,
+   930
+  ],
+  "GuardianShield": [
+   150,
+   180,
+   900
+  ],
+  "MortalSmash": [
+   230,
+   330,
+   1230
+  ],
+  "MangetsuRush": [
+   210,
+   290,
+   1130
+  ],
+  "AthenaAssault": [
+   210,
+   290,
+   1130
+  ],
+  "RedPrison": [
+   200,
+   270,
+   1080
+  ],
+  "HeartRapier_F": [
+   200,
+   270,
+   1080
+  ],
+  "HeartRapier_M": [
+   200,
+   270,
+   1080
+  ],
+  "HououRekka": [
+   200,
+   270,
+   1080
+  ],
+  "ShadowLeg": [
+   180,
+   230,
+   1000
+  ],
+  "BurningEdge": [
+   170,
+   215,
+   980
+  ],
+  "DemonsBolt": [
+   170,
+   215,
+   980
+  ],
+  "Tempest": [
+   170,
+   215,
+   980
+  ],
+  "ShippuuJinrai": [
+   170,
+   215,
+   980
+  ],
+  "TsumujiNoYaiba": [
+   160,
+   195,
+   930
+  ],
+  "ShadowSword": [
+   150,
+   180,
+   900
+  ],
+  "BloodyEncore": [
+   170,
+   215,
+   980
+  ],
+  "MysticThorn": [
+   170,
+   215,
+   980
+  ],
+  "SeikenKikkouha": [
+   170,
+   215,
+   980
+  ],
+  "HuntingLance": [
+   160,
+   195,
+   930
+  ],
+  "KourinNoYa": [
+   160,
+   195,
+   930
+  ],
+  "HakaiDanmaku": [
+   160,
+   195,
+   930
+  ],
+  "ValkyrieFlag": [
+   160,
+   195,
+   930
+  ],
+  "TenkuuNoMai": [
+   150,
+   180,
+   900
+  ],
+  "ShadowGuard": [
+   150,
+   180,
+   900
+  ],
+  "GigabiteScrew": [
+   210,
+   290,
+   1130
+  ],
+  "GreatTheHand": [
+   200,
+   270,
+   1080
+  ],
+  "ShikigamiLines": [
+   190,
+   250,
+   1030
+  ],
+  "CrimsonSphere": [
+   190,
+   250,
+   1030
+  ],
+  "HisshouGamusharan": [
+   180,
+   230,
+   1000
+  ],
+  "ShadowHand": [
+   170,
+   215,
+   980
+  ],
+  "MeteoddFireTornadoV": [
+   230,
+   330,
+   1230
+  ],
+  "LuminousImpact": [
+   220,
+   310,
+   1180
+  ],
+  "EmpressShadow": [
+   210,
+   290,
+   1130
+  ],
+  "SunriseCarnival": [
+   170,
+   215,
+   980
+  ],
+  "DespairFortress": [
+   170,
+   215,
+   980
+  ],
+  "IxaalCannon": [
+   220,
+   310,
+   1180
+  ],
+  "OokamiStrike": [
+   210,
+   290,
+   1130
+  ],
+  "LionAssault": [
+   200,
+   270,
+   1080
+  ],
+  "HayabusaGlide": [
+   200,
+   270,
+   1080
+  ],
+  "DorougaAssault": [
+   190,
+   250,
+   1030
+  ],
+  "BelionWhip": [
+   180,
+   230,
+   1000
+  ],
+  "PelionWhip": [
+   180,
+   230,
+   1000
+  ],
+  "DragnovaStrike": [
+   180,
+   230,
+   1000
+  ],
+  "GoligerAssault": [
+   180,
+   230,
+   1000
+  ],
+  "GoomaInferno": [
+   180,
+   230,
+   1000
+  ],
+  "BegiranWhip": [
+   170,
+   215,
+   980
+  ],
+  "VairaasCannon": [
+   170,
+   215,
+   980
+  ],
+  "PegasusBrave": [
+   170,
+   215,
+   980
+  ],
+  "GusspheeBomb": [
+   160,
+   195,
+   930
+  ],
+  "KujakuBlind": [
+   160,
+   195,
+   930
+  ],
+  "RedioCabriole": [
+   160,
+   195,
+   930
+  ],
+  "DohmaDriller": [
+   150,
+   180,
+   900
+  ],
+  "UnivoltSprint": [
+   150,
+   180,
+   900
+  ],
+  "BrachiasBlind": [
+   150,
+   180,
+   900
+  ],
+  "GryphbangPress": [
+   150,
+   180,
+   900
+  ],
+  "PamerioCabriole": [
+   140,
+   170,
+   890
+  ],
+  "ZoomaDriller": [
+   140,
+   170,
+   890
+  ],
+  "BuffaloCrusher": [
+   160,
+   195,
+   930
+  ],
+  "FoxMirage": [
+   160,
+   195,
+   930
+  ],
+  "GandranCrusher": [
+   160,
+   195,
+   930
+  ],
+  "RatelClaw": [
+   150,
+   180,
+   900
+  ],
+  "FukurouSteal": [
+   150,
+   180,
+   900
+  ],
+  "ClupeClaw": [
+   140,
+   170,
+   890
+  ],
+  "DandorlCrusher": [
+   140,
+   170,
+   890
+  ],
+  "DolphanusSplash": [
+   140,
+   170,
+   890
+  ],
+  "FlameyMirage": [
+   140,
+   170,
+   890
+  ],
+  "GaryuuBounce": [
+   140,
+   170,
+   890
+  ],
+  "GyoromClaw": [
+   140,
+   170,
+   890
+  ],
+  "JinryuuBounce": [
+   140,
+   170,
+   890
+  ],
+  "GigirasShield": [
+   200,
+   270,
+   1080
+  ],
+  "GouryuuSwing": [
+   200,
+   270,
+   1080
+  ],
+  "MammothPressure": [
+   180,
+   230,
+   1000
+  ],
+  "AngydraCombo": [
+   170,
+   215,
+   980
+  ],
+  "DelpinusEcho": [
+   170,
+   215,
+   980
+  ],
+  "GrimronShield": [
+   170,
+   215,
+   980
+  ],
+  "MagnatasPressure": [
+   170,
+   215,
+   980
+  ],
+  "MosspheeBurst": [
+   170,
+   215,
+   980
+  ],
+  "SaranarjaCombo": [
+   160,
+   195,
+   930
+  ],
+  "SwordExcalibur": [
+   210,
+   290,
+   1130
+  ],
+  "SwordOfFire": [
+   210,
+   290,
+   1130
   ]
  }
 }

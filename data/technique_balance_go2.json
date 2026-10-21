@@ -1,5 +1,5 @@
 {
- "_doc": "TP y potencia específicos de GO2 (Chrono Stone) para las técnicas originales de GO2 (debut GO2: coste CS y sin coste IE1/IE2/IE3/GO1). Solo técnicas normales (sin keshin, Mixi Max ni tótems). Colocadas por lore; ver docs/balance-tecnicas-go2-go3-originales.md. Se aplican solo a cartas GO2; el balance_tp global no se toca.",
+ "_doc": "TP y potencia específicos de GO2 (Chrono Stone) para las técnicas originales de GO2 (debut GO2: coste CS y sin coste IE1/IE2/IE3/GO1). Técnicas normales y las 11 de Mixi Max (sin keshin ni tótems). Colocadas por lore; ver docs/balance-tecnicas-go2-go3-originales.md. Se aplican solo a cartas GO2; el balance_tp global no se toca.",
  "techniques": {
   "AggressiveBeat": [
    80,
@@ -171,6 +171,11 @@
    195,
    930
   ],
+  "GreatMaxNaOre": [
+   180,
+   230,
+   1000
+  ],
   "GyroSaving": [
    90,
    95,
@@ -191,6 +196,21 @@
    170,
    890
   ],
+  "KikuIchimonji": [
+   160,
+   195,
+   930
+  ],
+  "KirakiraIllusion": [
+   150,
+   180,
+   900
+  ],
+  "KodaiNoKiba": [
+   130,
+   160,
+   880
+  ],
   "KodaiNoTsubasa": [
    140,
    170,
@@ -200,6 +220,16 @@
    160,
    195,
    930
+  ],
+  "KuroshioRide": [
+   140,
+   170,
+   890
+  ],
+  "LaFlamme": [
+   140,
+   170,
+   890
   ],
   "LastDeathZone": [
    190,
@@ -256,6 +286,16 @@
    230,
    1000
   ],
+  "OuNoTsurugi": [
+   150,
+   180,
+   900
+  ],
+  "OujaNoKiba": [
+   170,
+   215,
+   980
+  ],
   "PenguinTheHand": [
    160,
    195,
@@ -285,6 +325,11 @@
    90,
    95,
    600
+  ],
+  "SetsunaBoost": [
+   170,
+   215,
+   980
   ],
   "ShellbitBurst": [
    170,
@@ -345,6 +390,16 @@
    150,
    180,
    900
+  ],
+  "TaikokuOuka": [
+   170,
+   215,
+   980
+  ],
+  "TenchiRaimei": [
+   160,
+   195,
+   930
   ],
   "TheMonsters": [
    170,

@@ -212,22 +212,91 @@ def main(extra_z=None, write=True):
                     return f
         return None
 
+    # Puntos de aura (modelo Aura Points de Character Reforged, docs/balance-tecnicas-auras.md): el espíritu guerrero
+    # tiene una reserva PEG (su KP de Galaxy a nivel 6) y su técnica cuesta su coste de Galaxy en PEG; el tótem, una
+    # barra SP (su SP a nivel máximo) y su técnica, su coste en SP. Como en el mod, siempre la escala de Galaxy (la de
+    # Chrono Stone no cuadra: Corogaon KP 10); si falta, Chrono Stone y luego GO.
+    waza_all = lua_entries(load('WazaData.lua'))
+    aura_game = {}
+    w_type = {'SH': 'Shoot', 'OF': 'Dribble', 'DF': 'Block', 'GK': 'Catch'}
+
+    def lua_block(body, field):
+        """contenido de field={...} (con llaves anidadas)"""
+        i = (body or '').find('\n\t\t' + field + '={')
+        if i < 0:
+            return ''
+        j = k = i + len('\n\t\t' + field + '={')
+        depth = 1
+        while k < len(body) and depth:
+            depth += {'{': 1, '}': -1}.get(body[k], 0)
+            k += 1
+        return body[j:k - 1]
+
+    def game_nums(block):
+        """KP={GO={…},CS={…}} → {'GO': […], 'CS': […]}; SP={…} / cost=40 → {'': […]}"""
+        d = {g: [int(x) for x in re.findall(r'-?\d+', v)] for g, v in re.findall(r'(\w+)=\{([^}]*)\}', block)}
+        d.update({g: [int(v)] for g, v in re.findall(r'(\w+)=(-?\d+)', re.sub(r'\w+=\{[^}]*\}', '', block))})
+        return d or {'': [int(x) for x in re.findall(r'-?\d+', block)]}
+
+    def by_game(nums, game, pick=-1):
+        """valor del juego de la carta (nivel máximo con pick=-1), si no el de Galaxy, Chrono Stone o GO"""
+        for g in (aura_game.get(game), 'GX', 'CS', 'GO', '', 'VR'):
+            if nums.get(g):
+                return nums[g][pick]
+        return None
+
+    def hyper_technique(mid):
+        """técnica del espíritu guerrero / tótem en el catálogo; si la wiki cacheada no tiene su ficha, sale de WazaData"""
+        t_ = technique(mid)
+        if t_:
+            return t_
+        w_ = waza_all.get(mid, '')
+        typ = w_type.get((re.search(r'wType="(\w+)"', w_) or [None, None])[1])
+        if not typ:
+            return None
+        info = technique_any(mid)
+        el = (re.search(r'element="(\w+)"', w_) or [None, None])[1]
+        techniques[mid] = {'id': mid, 'name': info['name'], 'name_es': info.get('name_es'), 'name_jp': info.get('name_jp'),
+                           'type': typ, 'element': ELEMENT.get(el, (el or '').lower() or None), 'cost': None, 'cost_game': None,
+                           'costs': {}, 'description': None, 'image_url': None, 'zukan_types': None}
+        return techniques[mid]
+
+    def keshin_special(key, game, armed):
+        kd = keshin_data.get(key, '')
+        page = (re.search(r'page="([^"]+)"', kd) or [None, key])[1]
+        es, en = es_keshin.get(romaji(page), (None, None))
+        hk = re.search(r'\n\t\thissatsu="(\w+)"', kd)                         # hipertécnica del espíritu guerrero
+        hid = hk.group(1) if hk else None
+        ht = (hyper_technique(hid) or technique_any(hid)) if hid else None
+        atk = game_nums(lua_block(kd, 'attack'))
+        return {'type': 'keshin', 'name': en or page, 'name_es': es, 'armed': armed,
+                'hyper': ht and ht['name'], 'hyper_es': ht and ht.get('name_es'), 'hyper_jp': ht and ht.get('name_jp'),
+                'key': key, 'hyper_id': ht and ht.get('id'),
+                'points': by_game(game_nums(lua_block(kd, 'KP')), game),
+                'cost': by_game(game_nums(lua_block(waza_all.get(hid, ''), 'cost')), game, 0) if hid else None,
+                'atk': (atk.get('CS') or atk.get('GO') or atk.get('GX') or [None])[0]}
+
+    def soul_special(key, game):
+        sd = soul_data.get(key, '')
+        page = (re.search(r'page="([^"]+)"', sd) or [None, key])[1]
+        es, en = es_soul.get(romaji(page), (None, None))
+        hk = re.search(r'\n\t\tstrike="(\w+)"', sd)                            # técnica del tótem (Soul Strike)
+        hid = hk.group(1) if hk else None
+        ht = (hyper_technique(hid) or technique_any(hid)) if hid else None
+        sp_ = game_nums(lua_block(sd, 'SP')).get('', [])
+        cost = re.search(r'\n\t\tcost=(\d+)', sd)
+        return {'type': 'soul', 'name': en or page, 'name_es': es,
+                'hyper': ht and ht['name'], 'hyper_es': ht and ht.get('name_es'), 'hyper_jp': ht and ht.get('name_jp'),
+                'key': key, 'hyper_id': ht and ht.get('id'), 'points': sp_[-1] if sp_ else None,
+                'cost': int(cost.group(1)) if cost else None}
+
     def specials_for(body, game, hint, tm):
         """poderes especiales de la carta: Keshin (espíritu guerrero), Keshin Armed (armadura), Soul (tótem), Mixi Max"""
         out = []
         for key, armed in lua_game_list(body, 'keshin', MODULE[game]):
-            kd = keshin_data.get(key, '')
-            page = (re.search(r'page="([^"]+)"', kd) or [None, key])[1]
-            es, en = es_keshin.get(romaji(page), (None, None))
-            hk = re.search(r'\n\t\thissatsu="(\w+)"', kd)                     # hipertécnica del espíritu guerrero
-            ht = technique_any(hk.group(1)) if hk else None
-            out.append({'type': 'keshin', 'name': en or page, 'name_es': es, 'armed': armed,
-                        'hyper': ht and ht['name'], 'hyper_es': ht and ht.get('name_es'), 'hyper_jp': ht and ht.get('name_jp')})
+            out.append(keshin_special(key, game, armed))
         for key, _ in lua_game_list(body, 'soul', MODULE[game]):
-            sd = soul_data.get(key, '')
-            page = (re.search(r'page="([^"]+)"', sd) or [None, key])[1]
-            es, en = es_soul.get(romaji(page), (None, None))
-            out.append({'type': 'soul', 'name': en or page, 'name_es': es})
+            out.append(soul_special(key, game))
         if tm in ('Mixi Max', 'Chrono Storm') and isinstance(hint, dict):
             who = hint.get('fusion_partner') or next((n for n in (hint.get('mixi') or []) if n and n != 'mixi'), None)
             out.append({'type': 'mixi', 'name': who})
@@ -1416,14 +1485,10 @@ def main(extra_z=None, write=True):
             or next((b_ for b_ in bodies if not form_of(b_)), None)
         sp = []
         for key, armed in (lua_game_list(body, 'keshin', 'VR') if body else []):
-            kd = keshin_data.get(key, '')
-            kpage = (re.search(r'page="([^"]+)"', kd) or [None, key])[1]
-            es, en = es_keshin.get(romaji(kpage), (None, None))
-            hk = re.search(r'\n\t\thissatsu="(\w+)"', kd)
-            ht = technique_any(hk.group(1)) if hk else None
-            sp.append({'type': 'keshin', 'name': en or kpage, 'name_es': es or special_es.get(en or kpage), 'armed': False,
-                       'hyper': ht and ht['name'], 'hyper_es': ht and (ht.get('name_es') or special_es.get(ht['name'])),
-                       'hyper_jp': ht and ht.get('name_jp')})
+            k_ = keshin_special(key, 'VR', False)
+            k_['name_es'] = k_['name_es'] or special_es.get(k_['name'])
+            k_['hyper_es'] = k_['hyper_es'] or (k_['hyper'] and special_es.get(k_['hyper']))
+            sp.append(k_)
         if outsider:
             sp.append({'type': 'mixi', 'name': 'Zanark' if c['character_id'] != 'zanark-avalonic' else 'Zanark (futuro)'})
         c['specials'] = sp
@@ -1483,6 +1548,13 @@ def main(extra_z=None, write=True):
         for mid in saga_ids:
             if mid not in techniques:
                 technique(mid)
+    # técnicas de espíritu guerrero sin carta (keshin de fusión), para que tengan su TP en el catálogo
+    aura_path = os.path.join(ROOT, 'data', 'aura_points.json')
+    if os.path.exists(aura_path):
+        with open(aura_path, encoding='utf-8') as f:
+            for mid in json.load(f).get('tecnicas_sin_carta', []):
+                if not techniques.get(mid):
+                    hyper_technique(mid)
     # Victory Road: originales que no lleva ninguna carta (datos de la wiki), para que tengan su TP en el catálogo
     vr_extra_path = os.path.join(ROOT, 'data', 'technique_vr_extra.json')
     if os.path.exists(vr_extra_path):

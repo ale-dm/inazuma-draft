@@ -1,0 +1,40 @@
+{
+ "_doc": "Puntos de aura (modelo Aura Points de Character Reforged, ver docs/balance-tecnicas-auras.md) de los espíritus guerreros que la wiki no trae con KP (los de Victory Road): reserva PEG y coste de su técnica, de la tabla del mod (content/match_resources/peg.toml). El resto sale de Module:KeshinData / SoulData en build.py. «tecnicas_sin_carta»: técnicas de espíritu guerrero que no lleva ningún especial de carta (keshin de fusión de la película de GO1) y se quieren en el catálogo.",
+ "keshin": {
+  "Victory": {
+   "points": 240,
+   "cost": 90
+  },
+  "Victoria": {
+   "points": 230,
+   "cost": 90
+  },
+  "ClaraBunny": {
+   "points": 200,
+   "cost": 70
+  },
+  "Warborg": {
+   "points": 220,
+   "cost": 50
+  },
+  "Entertainer": {
+   "points": 220,
+   "cost": 50
+  }
+ },
+ "default": {
+  "keshin": {
+   "points": 200,
+   "cost": 60,
+   "atk": 80
+  },
+  "soul": {
+   "points": 200,
+   "cost": 50
+  }
+ },
+ "tecnicas_sin_carta": [
+  "SwordExcalibur",
+  "SwordOfFire"
+ ]
+}

@@ -45,15 +45,22 @@ en Victory Road es 300 con la técnica más cara en 100: aquí las técnicas lle
   Parada→defensa solo en porteros). Coste **TP × 2** (`techCost`); bonus **TP/40**, mínimo 1, **+1 si es de la afinidad
   de la carta** (30 TP → +1, 100 → +3, 200 → +5) (`techBonus`).
 - **Presión alta** (solo en el medio campo): coste 80, +3 al control de esa ocasión (`PRESS`).
-- **Hiperenergía** (una vez por partido, si la carta tiene espíritu guerrero / Mixi Max / tótem): coste 200, +4 al
-  número de la fase (`HYPER`).
+- **Puntos de aura** (modelo Aura Points de Character Reforged, `auraMoves` en `lib/tension.ts`; ver
+  [balance-tecnicas-auras.md](./balance-tecnicas-auras.md)): no gastan tensión, sino la reserva del especial para todo
+  el partido.
+  - **Espíritu guerrero / tótem**: su técnica (la del tipo del número) cuesta su coste de Galaxy en PEG / SP y suma como
+    una supertécnica de su TP. Reserva: KP de Galaxy a nivel 6 (PEG) o SP a nivel máximo (SP). A 0 se retira.
+  - **Armadura** (keshin con armadura): +2 y las supertécnicas de ese turno no gastan tensión; gasta
+    (KP + ATK) × 0,025 × 0,75 PEG por segundo (10 s por turno) y la primera del partido recupera un 30 %; no va con la
+    técnica del keshin en el mismo turno.
+  - **Mixi Max**: sin tiempo, +3 cada turno por 25 PE de su aguante (100).
 - **Grito del portero** (solo defendiendo, una vez por parte): coste 120, el ataque rival no entra (`SHOUT_COST`).
 - **Contraataque** (automático): tras parar un ataque rival, +2 al control de tu siguiente ocasión (`COUNTER_BONUS`).
 - **Táctica del descanso** (gratis): Ofensiva (+2 ataque, −2 defensa), Equilibrada o Defensiva (al revés) hasta el
   final (`TACTIC_MOD`).
 - **IA competitiva** (`ai.ts` + `aiPlan` en `SimMatch.tsx`): cambia de carta pagando tensión si le compensa, usa supertécnica,
-  presión, hiperenergía y grito solo cuando cambian el resultado, y elige táctica en el descanso según el marcador. Mismas
-  reglas de tensión que tú; ve tus números con error de ±2 y no sabe qué vas a usar.
+  presión, puntos de aura y grito solo cuando cambian el resultado, y elige táctica en el descanso según el marcador. Mismas
+  reglas de tensión y de puntos de aura que tú; ve tus números con error de ±2 y no sabe qué vas a usar.
 - El resultado se calcula al revelar la fase con lo elegido: `controlWinner` y `shotResult` (`fatal.ts`); la probabilidad
   de gol usa `goalChance(ataque + bonus, defensa + bonus)`. Los goles muestran goleador y asistente.
 - «Saltar» resuelve lo que quede sin usar tensión (`autoResults`).

@@ -102,6 +102,13 @@ export interface Special {
   hyper_es?: string | null
   hyper_fr?: string | null
   hyper_it?: string | null
+  /** Puntos de aura (modelo Aura Points): clave de la wiki, técnica, reserva (PEG del keshin / SP del tótem), coste de su
+   *  técnica en esa reserva y ATK del keshin (gasto de la armadura) */
+  key?: string | null
+  hyper_id?: string | null
+  points?: number | null
+  cost?: number | null
+  atk?: number | null
 }
 
 export type StaffRole = 'Manager' | 'Coach' | 'Coordinator'

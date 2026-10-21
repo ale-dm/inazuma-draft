@@ -1,6 +1,7 @@
 # Técnicas originales de GO1 — TP y colocación
 
 > **Estado:** revisión. Lista completa de técnicas **originales de GO1** (debut GO1: coste GO1 y sin coste IE1/IE2/IE3), sacadas de `Module:WazaData` y contrastadas con la wiki inglesa.
+> **Espíritus guerreros:** las 36 técnicas de keshin de esta lista ya no usan el TP de GO1; van por puntos de aura con su propio TP, ver [balance-tecnicas-auras.md](./balance-tecnicas-auras.md). Quedan 91 normales.
 > **Aplicado** con TP por saga: las cartas GO1 leen `balance_tp_go1`; el `balance_tp` global de IE/GO2/GO3 no se toca.
 
 ## 1. Cobertura y rango de TP

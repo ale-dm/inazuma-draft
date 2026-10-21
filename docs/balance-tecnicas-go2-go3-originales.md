@@ -297,9 +297,9 @@ El TP no sale de una fórmula sobre el coste. Cada técnica se coloca leyendo su
 
 ## 5. Mixi Max (aparte, sin TP de saga)
 
-Técnicas que el jugador obtiene al fusionarse con el aura. Se quedan con su TP global hasta que se balanceen junto a las formas Mixi Max.
+Técnicas que el jugador obtiene al fusionarse con el aura. Ahora tienen TP de GO2 por lore (son técnicas normales que se pagan con tensión; la fusión va por puntos): ver [balance-tecnicas-auras.md](./balance-tecnicas-auras.md) §3. La columna de la derecha es el TP global de antes.
 
-| Técnica | ID | Tipo | Fusión | TP global actual |
+| Técnica | ID | Tipo | Fusión | TP global anterior |
 |---|---|---|---|---:|
 | Chut prehistórico | `KodaiNoKiba` | Tiro | Fei × Tyranno | 120 |
 | Colmillo retorcido | `OujaNoKiba` | Tiro | Fei × Big | 100 |

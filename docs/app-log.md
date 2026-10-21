@@ -657,3 +657,11 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - Royal Academy (Teikoku Gakuen, cap. 8) entra en la rampa con 80,5; South Cirrus (protagonista) 82,1, un punto por encima del Raimon de la final (81,2).
 - Raimon: Harper Evans 90 queda por encima del capitán Tsukikage (excepción, como Endou en IE2).
 - Detalle en docs/plan-balance-temporadas.md (Victory Road).
+
+## Espíritus guerreros, tótems y Mixi Max: puntos de aura
+
+- Modelo **Aura Points** (mod Character Reforged de VR): espíritu guerrero y armadura con reserva PEG (KP de Galaxy a nivel 6), tótem con SP (SP a nivel máximo), Mixi Max con PE; sus técnicas no gastan tensión sino su coste de Galaxy en esa reserva.
+- `build.py` añade a cada especial `key`, `hyper_id`, `points`, `cost` y `atk` (KeshinData / SoulData, escala de Galaxy; los keshin de VR desde `data/aura_points.json`, de la tabla del mod). Las técnicas de keshin y tótem entran en el catálogo.
+- TP por lore de 109 técnicas de aura (escala ampliada hasta 250): espíritu guerrero GO2 hasta 230, tótems hasta 220, GO1 hasta 210. Las 36 de GO1 salen del TP por saga. Mixi Max: 11 técnicas con TP de GO2.
+- Fatal Sim: fuera la hiperenergía; acciones de espíritu guerrero / tótem, armadura y Mixi Max por puntos, también para la IA.
+- Detalle en docs/balance-tecnicas-auras.md.

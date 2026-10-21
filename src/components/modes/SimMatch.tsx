@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
 import { useAppSettings } from '../../context/AppSettings'
-import { teamLabel, techniqueName } from '../../data/catalog'
+import { getTechnique, teamLabel, techniqueName } from '../../data/catalog'
 import { teamRating } from '../../lib/chemistry'
 import {
   SIM_CHANCES, SIM_PER_HALF, adaptRival, autoResults, cardOf, controlWinner, fatalTeam, goalChance, fullRival, shotResult, simScore, simTeamStats, simulate,
   chooseBoosts, perceive, penaltyGoal, type FatalCard, type PenDir, type SimChance, type SimResult,
 } from '../../lib/fatal'
 import {
-  COUNTER_BONUS, HYPER, hyperBonus, PICK_COST, PRESS, SHOUT_COST, TENSION_GAIN, TENSION_START, gainTension, techBonus, techCost, usableTechs,
+  COUNTER_BONUS, PICK_COST, PRESS, SHOUT_COST, TENSION_GAIN, TENSION_START, auraMoves, gainTension, payAura, poolLeft, poolUnit,
+  techBonus, techCost, usableTechs, type AuraMove, type AuraPools,
 } from '../../lib/tension'
 import type { DuelKey } from '../../lib/duel'
 import type { TranslationKey } from '../../i18n/translations'
@@ -46,7 +47,7 @@ type Tone = 'mine' | 'opp' | 'neutral'
 interface LogEntry { minute: number; text: string; tone: Tone }
 
 /** Una acción que se puede elegir en tu turno */
-interface Action { id: string; label: string; desc: string; cost: number; bonus: number; kind: 'tech' | 'press' | 'hyper' | 'shout'; tech?: Technique }
+interface Action { id: string; label: string; desc: string; cost: number; bonus: number; kind: 'tech' | 'press' | 'shout' | AuraMove['kind']; tech?: Technique; aura?: AuraMove }
 
 /** Qué se decide en la fase: dónde juega mi carta y con qué número */
 interface Decision { key: DuelKey; pool: FatalCard[]; pick: number; opp: FatalCard; oppKey: DuelKey; who: Side | null }
@@ -92,9 +93,10 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
   const [tactic, setTactic] = useState<Tactic>('bal')
   const [sel, setSel] = useState<string[]>([])
   const [outcome, setOutcome] = useState<Outcome>({ mine: [], opp: null, bonus: [0, 0], shout: false })
-  const [hyperUsed, setHyperUsed] = useState(false)
+  /** Puntos de aura (PEG / SP / PE) que le quedan a cada especial, de los dos equipos, y armaduras ya puestas (la 1.ª recupera) */
+  const [pools, setPools] = useState<[AuraPools, AuraPools]>([{}, {}])
+  const [armoured, setArmoured] = useState<[string[], string[]]>([[], []])
   const [shoutUsed, setShoutUsed] = useState<[boolean, boolean]>([false, false])
-  const [oppHyperUsed, setOppHyperUsed] = useState(false)
   const [oppShoutUsed, setOppShoutUsed] = useState<[boolean, boolean]>([false, false])
   const [oppTactic, setOppTactic] = useState<Tactic>('bal')
   const [counter, setCounter] = useState(false)
@@ -143,17 +145,36 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
       id: `t:${x.id}`, kind: 'tech', tech: x, label: techniqueName(x, locale), cost: techCost(x), bonus: techBonus(x, myCard), desc: t('sim.act.tech', { n: techBonus(x, myCard), stat: statLabel(dec.key) }),
     }))
     if (phase === 'control') out.push({ id: 'press', kind: 'press', label: t('sim.act.press'), cost: PRESS.cost, bonus: PRESS.bonus, desc: t('sim.act.pressDesc', { n: PRESS.bonus }) })
-    if (!hyperUsed && myCard.p.specials.length) out.push({ id: 'hyper', kind: 'hyper', label: t('sim.act.hyper'), cost: HYPER.cost, bonus: hyperBonus(myCard), desc: t('sim.act.hyperDesc', { n: hyperBonus(myCard), stat: statLabel(dec.key) }) })
+    for (const m of auraMoves(myCard, dec.key, pools[0], getTechnique, armoured[0])) out.push(auraAction(m, myCard.p.id))
     if (dec.who === 1 && !shoutUsed[half]) out.push({ id: 'shout', kind: 'shout', label: t('sim.act.shout'), cost: SHOUT_COST, bonus: 0, desc: t('sim.act.shoutDesc') })
     return out
   }
+  /** Una acción de aura: no gasta tensión, sino su reserva (lo que le queda sale en la descripción) */
+  function auraAction(m: AuraMove, cardId: string): Action {
+    const left = poolLeft(pools[0], cardId, m.special)
+    const unit = poolUnit(m.special)
+    const label = m.kind === 'armour' ? t('sim.act.armour') : m.kind === 'mixi' ? t('sim.act.mixi')
+      : m.tech ? techniqueName(m.tech, locale) : t('sim.act.aura')
+    const desc = t(m.kind === 'armour' ? 'sim.act.armourDesc' : 'sim.act.auraDesc', {
+      n: m.bonus, stat: dec ? statLabel(dec.key) : '', pts: Math.max(0, m.points), unit, left,
+    })
+    return { id: m.id, kind: m.kind, label, desc, cost: 0, bonus: m.bonus, tech: m.tech, aura: m }
+  }
   const acts = actions()
-  const selCost = acts.filter(a => sel.includes(a.id)).reduce((n, a) => n + a.cost, 0)
+  /** Con la armadura puesta, las supertécnicas de ese turno no gastan tensión */
+  const costOf = (a: Action, chosen: readonly string[]) => (a.kind === 'tech' && acts.some(x => x.kind === 'armour' && chosen.includes(x.id)) ? 0 : a.cost)
+  const selCost = acts.filter(a => sel.includes(a.id)).reduce((n, a) => n + costOf(a, sel), 0)
   const free = tension[0] - selCost
   const canPick = !!dec && tension[0] >= PICK_COST
   const hasOptions = canPick || acts.some(a => a.cost <= tension[0])
 
-  const toggle = (a: Action) => setSel(l => (l.includes(a.id) ? l.filter(x => x !== a.id) : a.cost <= free ? [...l, a.id] : l))
+  /** La técnica del keshin no va con su armadura: elegir una quita la otra del mismo especial */
+  const toggle = (a: Action) => setSel(l => {
+    if (l.includes(a.id)) return l.filter(x => x !== a.id)
+    if (a.cost > free) return l
+    const pool = a.aura && (a.kind === 'armour' || a.kind === 'aura') ? a.aura.pool : null
+    return [...l.filter(x => !pool || x === a.id || (x !== `armour:${pool}` && x !== `aura:${pool}`)), a.id]
+  })
 
   const choosePick = (k: number) => {
     if (!dec || k === dec.pick || free < PICK_COST) return
@@ -178,11 +199,11 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
    * La IA decide sus refuerzos como un jugador: mira cuánto le falta (con tus números vistos con error y sin saber qué vas
    * a usar), y gasta lo más barato que cubra la diferencia: supertécnica, presión alta, hiperenergía o grito del portero.
    */
-  function aiPlan(d: Decision, mine: FatalCard): { bonus: number; cost: number; names: string[]; tech: Technique | null; shout: boolean; hyper: boolean } {
+  function aiPlan(d: Decision, mine: FatalCard): { bonus: number; cost: number; names: string[]; tech: Technique | null; shout: boolean; aura: AuraMove[] } {
     const own = d.opp
     const ownNum = own.st[d.oppKey] + oppTacticBonus(d.oppKey)
     const myNum = perceive(mine.st[d.key] + tacticBonus(d.key) + (phase === 'control' && counter ? COUNTER_BONUS : 0))
-    const none = { bonus: 0, cost: 0, names: [] as string[], tech: null, shout: false, hyper: false }
+    const none = { bonus: 0, cost: 0, names: [] as string[], tech: null, shout: false, aura: [] as AuraMove[] }
     // grito del portero: si defiende y tu ataque tiene muchas opciones
     if (d.who === 0 && !oppShoutUsed[half] && tension[1] >= SHOUT_COST && goalChance(mine.st.att, own.st.def) >= 0.5 && Math.random() < 0.85) {
       return { ...none, cost: SHOUT_COST, shout: true, names: [t('sim.act.shout')] }
@@ -190,15 +211,28 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
     const techs = usableTechs(own, d.oppKey)
     const opts: { id: string; cost: number; bonus: number }[] = techs.map(x => ({ id: `t:${x.id}`, cost: techCost(x), bonus: techBonus(x, own) }))
     if (phase === 'control') opts.push({ id: 'press', cost: PRESS.cost, bonus: PRESS.bonus })
-    if (!oppHyperUsed && own.p.specials.length) opts.push({ id: 'hyper', cost: HYPER.cost, bonus: hyperBonus(own) })
+    // puntos de aura: no gastan tensión (la IA juega con las mismas reglas que tú)
+    const auras = auraMoves(own, d.oppKey, pools[1], getTechnique, armoured[1])
+    for (const m of auras) opts.push({ id: m.id, cost: 0, bonus: m.bonus })
     // control: hay que superar tu número; ataque: llegar a la altura de tu defensa + 5; defensa: dejar tu ataque a ≤ 1
     const need = d.key === 'con' ? myNum - ownNum + 1 : d.who === 0 ? myNum - ownNum - 1 : myNum - ownNum + 6
-    const picked = chooseBoosts(opts, need, tension[1], 2)
+    let picked = chooseBoosts(opts, need, tension[1], 2)
+    // la técnica del keshin y su armadura no van juntas
+    const armourPools = new Set(picked.filter(o => o.id.startsWith('armour:')).map(o => o.id.slice('armour:'.length)))
+    picked = picked.filter(o => !(o.id.startsWith('aura:') && armourPools.has(o.id.slice('aura:'.length))))
     if (!picked.length) return none
     const tech = techs.find(x => picked.some(o => o.id === `t:${x.id}`)) ?? null
+    const aura = auras.filter(m => picked.some(o => o.id === m.id))
+    const armour = aura.some(m => m.kind === 'armour')
+    const nameOf = (id: string) => {
+      const m = aura.find(x => x.id === id)
+      if (m) return m.kind === 'armour' ? t('sim.act.armour') : m.kind === 'mixi' ? t('sim.act.mixi') : m.tech ? techniqueName(m.tech, locale) : t('sim.act.aura')
+      return id === 'press' ? t('sim.act.press') : tech ? techniqueName(tech, locale) : ''
+    }
     return {
-      bonus: picked.reduce((n, o) => n + o.bonus, 0), cost: picked.reduce((n, o) => n + o.cost, 0), tech, shout: false, hyper: picked.some(o => o.id === 'hyper'),
-      names: picked.map(o => (o.id === 'press' ? t('sim.act.press') : o.id === 'hyper' ? t('sim.act.hyper') : tech ? techniqueName(tech, locale) : '')),
+      bonus: picked.reduce((n, o) => n + o.bonus, 0),
+      cost: picked.reduce((n, o) => n + (armour && o.id.startsWith('t:') ? 0 : o.cost), 0),
+      tech, shout: false, aura, names: picked.map(o => nameOf(o.id)),
     }
   }
 
@@ -206,16 +240,20 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
     if (!dec || !myCard) return
     const chosen = acts.filter(a => sel.includes(a.id) && a.cost <= tension[0])
     const ai = aiPlan(dec, myCard)
-    const spent: [number, number] = [chosen.reduce((n, a) => n + a.cost, 0), ai.cost]
+    const spent: [number, number] = [chosen.reduce((n, a) => n + costOf(a, sel), 0), ai.cost]
+    const myAura = chosen.flatMap(a => (a.aura ? [a.aura] : []))
+    if (myAura.length || ai.aura.length) {
+      setPools(([a, b]) => [payAura(a, myAura), payAura(b, ai.aura)])
+      const arm = (l: AuraMove[]) => l.filter(m => m.kind === 'armour').map(m => m.pool)
+      setArmoured(([a, b]) => [[...a, ...arm(myAura)], [...b, ...arm(ai.aura)]])
+    }
     spentTotal.current += spent[0]
     const techsUsed = chosen.filter(a => a.kind === 'tech').length
     if (techsUsed) track('fatalTechs', techsUsed)
     const bm = chosen.reduce((n, a) => n + a.bonus, 0) + tacticBonus(dec.key) + (phase === 'control' && counter ? COUNTER_BONUS : 0)
     const bo = ai.bonus + oppTacticBonus(dec.oppKey)
-    if (ai.hyper) setOppHyperUsed(true)
     if (ai.shout) setOppShoutUsed(([a, b]) => (half ? [a, true] : [true, b]))
     const shout = chosen.some(a => a.kind === 'shout') || ai.shout
-    if (chosen.some(a => a.kind === 'hyper')) setHyperUsed(true)
     if (shout) setShoutUsed(([a, b]) => (half ? [a, true] : [true, b]))
     const names = chosen.map(a => a.label)
     setOutcome({ mine: names, opp: ai.names.length ? ai.names.join(' + ') : null, bonus: [bm, bo], shout })
@@ -466,9 +504,9 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
             <div className="sim-acts">
               {acts.map(a => (
                 <ActButton key={a.id} label={a.label} desc={a.desc} cost={a.cost} on={sel.includes(a.id)} disabled={!sel.includes(a.id) && a.cost > free} onClick={() => toggle(a)}
-                  tone={a.tech?.element ?? (a.kind === 'tech' ? 'none' : a.kind)}
+                  tone={a.tech?.element ?? (a.aura ? 'hyper' : a.kind === 'press' || a.kind === 'shout' ? a.kind : 'none')}
                   icon={a.tech ? <><TechniqueIcon type={a.tech.type} traits={a.tech.traits} className="act-icon" />{a.tech.element && <ElementIcon element={a.tech.element} className="act-icon act-icon--el" />}</>
-                    : a.kind === 'hyper' ? <SpecialIcon type={myCard!.p.specials[0].type} className="act-icon" /> : <span className="act-glyph">{a.kind === 'press' ? '⚡' : '🧤'}</span>} />
+                    : a.aura ? <SpecialIcon type={a.aura.special.type} className="act-icon" /> : <span className="act-glyph">{a.kind === 'press' ? '⚡' : '🧤'}</span>} />
               ))}
             </div>
             <button type="button" className="sheet-cta" onClick={confirm}>{t('sim.go')}{selCost ? ` (−${selCost})` : ''}</button>
