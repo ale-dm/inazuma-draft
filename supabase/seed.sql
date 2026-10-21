@@ -10823,7 +10823,11 @@ insert into public.characters (id,name,wiki_page,zukan_no) values
 ('zippy-doerr','Zyphar Doar','Zippy Doerr',5854),
 ('ahdatchin','Ah Dackchin','Ahdatchin',5875),
 ('kota','KOTA','KOTA',5876),
-('eshin','eshin','Eshin',5877) on conflict (id) do update set name=excluded.name,wiki_page=excluded.wiki_page,zukan_no=excluded.zukan_no;
+('eshin','eshin','Eshin',5877),
+('medam','Medam',null,null),
+('leiser','Leiser',null,null),
+('einam','Einam',null,null),
+('minenne','Minenne',null,null) on conflict (id) do update set name=excluded.name,wiki_page=excluded.wiki_page,zukan_no=excluded.zukan_no;
 insert into public.techniques (id,name,name_es,name_fr,name_it,name_jp,type,element,cost,cost_game,costs,description,image_url,zukan_types,traits) values
 ('es_entrada-deslumbrante','Brilliant Move','Entrada deslumbrante',null,null,'ブリリアントムーヴ','Block','air',null,null,'{}'::jsonb,'Bloqueo de aire exclusivo de los videojuegos (IE AC / SD).',null,'["Defence"]'::jsonb,'[]'::jsonb),
 ('es_mar-de-lagrimas','Flood of Feels','Mar de lágrimas','Vague de larmes','Ondata di Lacrime','涙で波だ','Catch','fire',null,null,'{}'::jsonb,'Parada de fuego del manga de Ares; Rolland Bowlby.',null,'["Catch"]'::jsonb,'[]'::jsonb),
@@ -17045,7 +17049,14 @@ insert into public.cards (id,character_id,name,game,saga,version,team,position,e
 ('tentou--ie1--base','tentou','Grant Mardy','IE1','IE','base','Unaffiliated','DF','air',42,'Common Player','C','stats del juego',48,42,44,41,41,43,'https://dxi4wb638ujep.cloudfront.net/1/k/8/i/8insuydyvyc.png','k/8/i/8insuydyvyc',425,425,'Loves carnivals and always joins in with the samba dancing.','Le gustan mucho los carnavales y siempre se une al ritmo de samba.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 60, "Body": 55, "Control": 40, "Guard": 42, "Speed": 40, "Stamina": 56, "Guts": 60}'::jsonb,false,'[47, 47, 59, 52, 55, 68, 40]'::jsonb,1,375,null,null,null),
 ('takano--ie1--base','takano','Horty Courture','IE1','IE','base','Unaffiliated','FW','wood',42,'Common Player','C','stats del juego',41,42,42,47,43,41,'https://dxi4wb638ujep.cloudfront.net/1/k/2/9/29b5ngnbqxe.png','k/2/9/29b5ngnbqxe',575,575,'Likes brand clothing. Even his school uniform cost a fortune.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 29, "Body": 48, "Control": 43, "Guard": 48, "Speed": 60, "Stamina": 47, "Guts": 42}'::jsonb,false,'[69, 72, 58, 38, 49, 52, 41]'::jsonb,1,417,null,null,null),
 ('ichimatsu--ie1--base','ichimatsu','Mario Nette','IE1','IE','base','Unaffiliated','DF','earth',42,'Common Player','C','stats del juego',42,42,41,42,42,41,'https://dxi4wb638ujep.cloudfront.net/1/k/p/f/pf8i_e91ivk.png','k/p/f/pf8i_e91ivk',925,925,'Keeps his late mother''s cherished doll close to his heart.','Guarda con cariño la muñeca tradicional japonesa de su madre.','[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 43, "Body": 45, "Control": 47, "Guard": 48, "Speed": 48, "Stamina": 44, "Guts": 42}'::jsonb,false,'[37, 52, 65, 57, 53, 75, 42]'::jsonb,1,417,null,null,null),
-('fukikoshi--ie1--base','fukikoshi','Shylock Watson','IE1','IE','base','Unaffiliated','DF','wood',42,'Common Player','C','stats del juego',42,42,41,42,42,42,'https://dxi4wb638ujep.cloudfront.net/1/k/1/d/1dl8yqazlh0.png','k/1/d/1dl8yqazlh0',415,415,'This junior detective buys all of his spy gadgets from magazine adverts.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 43, "Body": 42, "Control": 41, "Guard": 45, "Speed": 40, "Stamina": 44, "Guts": 49}'::jsonb,false,'[37, 50, 61, 56, 52, 72, 41]'::jsonb,1,417,null,null,null) on conflict (id) do update set character_id=excluded.character_id,name=excluded.name,game=excluded.game,saga=excluded.saga,version=excluded.version,team=excluded.team,position=excluded.position,element=excluded.element,ovr=excluded.ovr,category=excluded.category,tier=excluded.tier,source=excluded.source,shooting=excluded.shooting,control=excluded.control,physical=excluded.physical,speed=excluded.speed,defense=excluded.defense,goalkeeping=excluded.goalkeeping,image_url=excluded.image_url,zukan_id=excluded.zukan_id,zukan_no=excluded.zukan_no,no=excluded.no,description=excluded.description,description_es=excluded.description_es,specials=excluded.specials,extra_teams=excluded.extra_teams,raw_stats=excluded.raw_stats,is_version=excluded.is_version,stats40=excluded.stats40,growth=excluded.growth,freedom=excluded.freedom,duel_att=excluded.duel_att,duel_con=excluded.duel_con,duel_def=excluded.duel_def;
+('fukikoshi--ie1--base','fukikoshi','Shylock Watson','IE1','IE','base','Unaffiliated','DF','wood',42,'Common Player','C','stats del juego',42,42,41,42,42,42,'https://dxi4wb638ujep.cloudfront.net/1/k/1/d/1dl8yqazlh0.png','k/1/d/1dl8yqazlh0',415,415,'This junior detective buys all of his spy gadgets from magazine adverts.',null,'[]'::jsonb,'[]'::jsonb,'{"form": "European version", "Kick": 43, "Body": 42, "Control": 41, "Guard": 45, "Speed": 40, "Stamina": 44, "Guts": 49}'::jsonb,false,'[37, 50, 61, 56, 52, 72, 41]'::jsonb,1,417,null,null,null),
+('medam--go2--protocol-omega-2-0','medam','Medam','GO2','GO','Protocol Omega 2.0','Protocol Omega 2.0','DF','earth',68,'Growing Player','B','card_edits',48,56,68,62,73,53,'https://static.wikia.nocookie.net/inazuma-eleven/images/8/8a/%28PO%29_Medam_sprite.png/revision/latest?cb=20230527092612',null,null,null,null,null,'[]'::jsonb,'[]'::jsonb,'{}'::jsonb,true,null,null,null,null,null,null),
+('leiser--go2--protocol-omega-2-0','leiser','Leiser','GO2','GO','Protocol Omega 2.0','Protocol Omega 2.0','FW','air',68,'Growing Player','B','card_edits',74,58,56,70,46,50,'https://static.wikia.nocookie.net/inazuma-eleven/images/e/ef/%28PO%29_Leiser_sprite.png/revision/latest?cb=20230527095356',null,null,null,null,null,'[]'::jsonb,'[]'::jsonb,'{}'::jsonb,true,null,null,null,null,null,null),
+('einam--go2--protocol-omega-2-0','einam','Einam','GO2','GO','Protocol Omega 2.0','Protocol Omega 2.0','FW','wood',68,'Growing Player','B','card_edits',75,58,60,66,50,50,'https://static.wikia.nocookie.net/inazuma-eleven/images/8/83/%28PO%29_Einam_sprite.png/revision/latest?cb=20230527095653',null,null,null,null,null,'[]'::jsonb,'[]'::jsonb,'{}'::jsonb,true,null,null,null,null,null,null),
+('minenne--go2--protocol-omega-2-0','minenne','Minenne','GO2','GO','Protocol Omega 2.0','Protocol Omega 2.0','FW','air',68,'Growing Player','B','card_edits',75,58,58,68,53,53,'https://static.wikia.nocookie.net/inazuma-eleven/images/e/ed/%28PO%29_Minenne_sprite.png/revision/latest?cb=20230527100745',null,null,null,null,null,'[]'::jsonb,'[]'::jsonb,'{}'::jsonb,true,null,null,null,null,null,null),
+('medam--go2--protocol-omega-3-0','medam','Medam','GO2','GO','Protocol Omega 3.0','Protocol Omega 3.0','DF','earth',79,'Advanced Player','B','card_edits',58,66,78,70,84,62,'https://static.wikia.nocookie.net/inazuma-eleven/images/8/8a/%28PO%29_Medam_sprite.png/revision/latest?cb=20230527092612',null,null,null,null,null,'[]'::jsonb,'[]'::jsonb,'{}'::jsonb,true,null,null,null,null,null,null),
+('leiser--go2--protocol-omega-3-0','leiser','Leiser','GO2','GO','Protocol Omega 3.0','Protocol Omega 3.0','FW','air',78,'Advanced Player','B','card_edits',86,67,65,80,52,56,'https://static.wikia.nocookie.net/inazuma-eleven/images/e/ef/%28PO%29_Leiser_sprite.png/revision/latest?cb=20230527095356',null,null,null,null,null,'[]'::jsonb,'[]'::jsonb,'{}'::jsonb,true,null,null,null,null,null,null),
+('einam--go2--protocol-omega-3-0','einam','Einam','GO2','GO','Protocol Omega 3.0','Protocol Omega 3.0','FW','wood',78,'Advanced Player','B','card_edits',86,66,67,76,57,56,'https://static.wikia.nocookie.net/inazuma-eleven/images/8/83/%28PO%29_Einam_sprite.png/revision/latest?cb=20230527095653',null,null,null,null,null,'[]'::jsonb,'[]'::jsonb,'{}'::jsonb,true,null,null,null,null,null,null) on conflict (id) do update set character_id=excluded.character_id,name=excluded.name,game=excluded.game,saga=excluded.saga,version=excluded.version,team=excluded.team,position=excluded.position,element=excluded.element,ovr=excluded.ovr,category=excluded.category,tier=excluded.tier,source=excluded.source,shooting=excluded.shooting,control=excluded.control,physical=excluded.physical,speed=excluded.speed,defense=excluded.defense,goalkeeping=excluded.goalkeeping,image_url=excluded.image_url,zukan_id=excluded.zukan_id,zukan_no=excluded.zukan_no,no=excluded.no,description=excluded.description,description_es=excluded.description_es,specials=excluded.specials,extra_teams=excluded.extra_teams,raw_stats=excluded.raw_stats,is_version=excluded.is_version,stats40=excluded.stats40,growth=excluded.growth,freedom=excluded.freedom,duel_att=excluded.duel_att,duel_con=excluded.duel_con,duel_def=excluded.duel_def;
 insert into public.card_techniques (card_id,technique_id,slot) values
 ('endou-mamoru--ie3--inazuma-japan','SeigiNoTekken',1),
 ('endou-mamoru--ie3--inazuma-japan','IkariNoTettsui',2),
@@ -36812,7 +36823,29 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('fukikoshi--ie1--base','CoilTurn',1),
 ('fukikoshi--ie1--base','Magic',2),
 ('fukikoshi--ie1--base','SuperScanOF',3),
-('fukikoshi--ie1--base','SuperScanDF',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
+('fukikoshi--ie1--base','SuperScanDF',4),
+('medam--go2--protocol-omega-2-0','CoilUpper',1),
+('medam--go2--protocol-omega-2-0','ExcellentBreast',2),
+('medam--go2--protocol-omega-2-0','Sidewinder',3),
+('medam--go2--protocol-omega-2-0','MagnetDraw',4),
+('leiser--go2--protocol-omega-2-0','GaussShot',1),
+('leiser--go2--protocol-omega-2-0','PlasmaBall',2),
+('leiser--go2--protocol-omega-2-0','WhiteBlade',3),
+('einam--go2--protocol-omega-2-0','GaussShot',1),
+('einam--go2--protocol-omega-2-0','PlasmaBall',2),
+('einam--go2--protocol-omega-2-0','SpringArrow',3),
+('minenne--go2--protocol-omega-2-0','SpinningTransam',1),
+('minenne--go2--protocol-omega-2-0','BigScissors',2),
+('medam--go2--protocol-omega-3-0','CoilUpper',1),
+('medam--go2--protocol-omega-3-0','ExcellentBreast',2),
+('medam--go2--protocol-omega-3-0','Sidewinder',3),
+('medam--go2--protocol-omega-3-0','MagnetDraw',4),
+('leiser--go2--protocol-omega-3-0','GaussShot',1),
+('leiser--go2--protocol-omega-3-0','PlasmaBall',2),
+('leiser--go2--protocol-omega-3-0','WhiteBlade',3),
+('einam--go2--protocol-omega-3-0','GaussShot',1),
+('einam--go2--protocol-omega-3-0','PlasmaBall',2),
+('einam--go2--protocol-omega-3-0','SpringArrow',3) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 -- cambios hechos desde el CRUD de la app (supabase/admin.sql): se vuelven a aplicar encima
 select public.admin_replay();
 -- limpieza final: las técnicas quitadas no vuelven por admin_replay

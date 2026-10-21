@@ -6,8 +6,8 @@
 ## 1. Resumen ejecutivo
 
 - **GO2 ya es el pico de GO**: 90,45 de media en Mixi Max, 88,82 en Chrono Storm y 87,0 en los extras. GO3 se queda en 84,82 y GO1 en 84,73.
-- **Protocol Omega 2.0** ya está en **12 cartas / 12 personajes** y **77,73** (Beta 83). Faltan Medam, Leiser, Einam y Minenne para las 16.
-- **Protocol Omega 3.0** tiene ya **8 cartas** y **80,00**. Faltan Medam, Leiser y Einam para las 11.
+- **Protocol Omega 2.0** ya está completa: **16 cartas / 16 personajes** y **77,73** (Beta 83). Medam, Leiser, Einam y Minenne creados desde la wiki.
+- **Protocol Omega 3.0** ya está completa: **11 cartas** y **79,55**. Medam, Leiser y Einam creados desde la wiki.
 - Los **duplicados base + versión** se han limpiado: las bases quedan en `Unaffiliated` (fuera de los pools de draft) y los equipos usan la versión.
 - Las cartas **Mixi Max y Chrono Storm** ya muestran su compañero (`mixi`); falta la herencia de Keshin y las formas que no existen.
 - **White Deer** ya baja: Taian 90 → 88; el equipo queda en **77,82**.
@@ -18,9 +18,9 @@
 | Equipo | Objetivo | Real | Estrella | Notas |
 |---|---:|---:|---|---|
 | Protocol Omega | 76 | **76,00** | Alpha 90 | 13 cartas |
-| Protocol Omega 2.0 | 77,5 | **77,73** | Beta 83 | 12 cartas; faltan 4 |
+| Protocol Omega 2.0 | 77,5 | **77,73** | Beta 83 | 16 cartas |
 | White Deer | 78 | **77,82** | Taian 88 | Ya rebajado |
-| Protocol Omega 3.0 | 79,5 | **80,00** | Gamma 89 | 8 cartas; faltan 3 |
+| Protocol Omega 3.0 | 79,5 | **79,55** | Gamma 89 | 11 cartas |
 | Terracotta Army | 80 | **80,91** | Terracotta 87 | 11 cartas |
 | Zanark's Domain | 81 | **81,55** | Zanark 89 | 16 cartas |
 | Perfect Cascade | 82 | **82,00** | Ar Ecks 90 | 16 cartas, 16 personajes (bases fuera) |
@@ -119,7 +119,7 @@ Los **Souls / tótems** son de **Galaxy (GO3)**, no de GO2. En la app están en 
 | Ishido form | **1** | Gouenji |
 | Teen | **1** | Gouenji Yuuka |
 
-En la app, GO2 tiene **452 cartas**: 339 base y 113 versiones. Las etiquetas más repetidas son Perfect Cascade (16), Raimon (16), Chrono Storm (12), Inazuma Legend Japan (11), Mixi Max (Zanark) (9), Protocol Omega 2.0 (9), Adult (6) y luego muchas versiones únicas.
+En la app, GO2 tiene **459 cartas**: 339 base y 120 versiones. Las etiquetas más repetidas son Perfect Cascade (16), Raimon (16), Chrono Storm (12), Inazuma Legend Japan (11), Mixi Max (Zanark) (9), Protocol Omega 2.0 (13), Adult (6), Protocol Omega 3.0 (6) y luego muchas versiones únicas.
 
 ### 4.1 Cobertura de versiones
 
@@ -159,7 +159,7 @@ Cada carta tiene un array `specials` con:
 
 | Métrica | Valor |
 |---|---:|
-| Cartas GO2 | 452 |
+| Cartas GO2 | 459 |
 | Con algún special | 175 |
 | Keshin | 122 |
 | Keshin Armed | 78 |
@@ -167,7 +167,7 @@ Cada carta tiene un array `specials` con:
 | Keshin únicos | 69 |
 | Mixi (tag) | 73 |
 | Souls | 0 (son GO3) |
-| Sin specials | 277 |
+| Sin specials | 284 |
 
 Cartas con combinaciones:
 
@@ -258,8 +258,8 @@ También sobra **Mike (Tez Beyan) con Zanark**: no está en la lista de 11 forma
 
 ### 6.4 Plantillas y duplicados
 
-- **Protocol Omega 2.0**: 12 cartas, 12 personajes, 77,73. Roster de la wiki: 16; faltan **Medam, Leiser, Einam y Minenne** por crear.
-- **Protocol Omega 3.0**: 8 cartas, 80,00. Historia 11; faltan **Medam, Leiser y Einam**.
+- **Protocol Omega 2.0**: 16 cartas, 16 personajes, 77,73. Medam, Leiser, Einam y Minenne creados desde la wiki.
+- **Protocol Omega 3.0**: 11 cartas, 79,55. Medam, Leiser y Einam creados desde la wiki.
 - **Perfect Cascade**: 16 cartas para 16 personajes; las bases están en `Unaffiliated`.
 - **Ragnah**: 14 cartas, 14 personajes; Saryuu una vez.
 - **Despairadoes / Nosfanática / Aullido Lunar / Chrono Storm**: bases en `Unaffiliated`; el equipo usa solo la versión.
@@ -268,8 +268,8 @@ También sobra **Mike (Tez Beyan) con Zanark**: no está en la lista de 11 forma
 
 ### P0 - Datos y plantillas (aplicado)
 
-1. **2.0**: `beta--go2--base` fuera; versiones 2.0 de Zanou, Gaura, Quorth, Neira, Laszlo, Cople, Finik y Mechius. Quedan **12/16**; faltan Medam, Leiser, Einam y Minenne. `compress: 0.5` y Beta 83 para que la plantilla no sea solo Beta + relleno.
-2. **3.0**: versiones de Ward, Quorth y Orca. Queda **8/11**; faltan Medam, Leiser y Einam. `compress: 0.5`.
+1. **2.0**: `beta--go2--base` fuera; versiones 2.0 de Zanou, Gaura, Quorth, Neira, Laszlo, Cople, Finik y Mechius; Medam, Leiser, Einam y Minenne creados. **16/16**. `compress: 0.5` y Beta 83.
+2. **3.0**: versiones de Ward, Quorth y Orca; Medam, Leiser y Einam creados. **11/11**. `compress: 0.5`.
 3. **Duplicados**: bases de Perfect Cascade, Ragnah, Despairadoes, Nosfanática, Aullido Lunar, Chrono Storm y 2.0 movidas a `Unaffiliated` (fuera de los pools de draft). Retuneado.
 4. **White Deer**: hecho (Taian 88; equipo 77,82).
 
