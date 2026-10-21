@@ -615,3 +615,11 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - No se aplican aún los TP: las 48 son compartidas con IE/GO2/GO3/Ares/Orion y el alance_tp es global; hace falta separar el TP por saga.
 - Corregidos los elementos inválidos de AcrobatKeep y SkyWalk a **air**.
 - Pendiente: costes GO1 de LightningAccel y WarpDrive.
+
+
+## GO1: técnicas originales
+
+- Listadas las **127 técnicas originales de GO1** (debut GO1, sin coste IE1/IE2/IE3) desde Module:WazaData/wiki inglesa.
+- TP GO1 por tipo: tiros 25–150 (50), regates 20–50 (26), bloqueos 20–50 (25), paradas 20–80 (26).
+- 93 ya están en la app; **34 faltan** solo en la wiki. Propuesta de colocación en docs/balance-tecnicas-go1-originales.md.
+- No se aplican TP todavía: muchas se reutilizan en GO2/GO3 y el alance_tp es global. Elementos inválidos de AcrobatKeep/SkyWalk corregidos a air.

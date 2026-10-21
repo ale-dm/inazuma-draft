@@ -1,6 +1,7 @@
-# Técnicas de GO1 — bloqueos y regates
+# Técnicas de GO1 — bloqueos y regates (primer corte)
 
-> **Estado:** revisión/propuesta. No se han aplicado los TP nuevos: el `balance_tp` es global y estas 48 técnicas también se usan en IE/GO2/GO3/Ares/Orion. Se han corregido solo los elementos inválidos.
+> **Aviso:** este documento incluye las 48 técnicas **usadas por cartas GO1**, aunque muchas son compartidas con IE/GO2/GO3. El alcance bueno, solo **originales de GO1**, está en [`balance-tecnicas-go1-originales.md`](./balance-tecnicas-go1-originales.md).
+> **Estado:** revisión/propuesta. No se han aplicado los TP nuevos: el `balance_tp` es global. Se han corregido solo los elementos inválidos.
 > **Base:** 23 bloqueos y 25 regates usados por cartas de GO1; coste GO1 de la ficha de la wiki.
 > **Pendiente estructural:** separar el TP por saga (ver `docs/balance-tecnicas-ares-orion.md`, apartado Pendiente).
 
