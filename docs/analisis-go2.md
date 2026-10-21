@@ -206,7 +206,7 @@ Por equipo (Keshin / Armed / Mixi):
 - **29 cartas** en el grupo `Mixi Max`; **12** en Chrono Storm.
 - **19 recetas** en `src/data/fusions.json`.
 - **10 cartas Mixi Max no tienen receta**: Shuu/Tezlong, Tsurugi/Baivic, Fubuki/Shaxel, Kidou/Juleb, Endou/Markion, Tsurugi/Victarion, Zanark/Zeta, Fei/Tyranno, Kirino/Aitriel y Kirino/Gabardo (algunas son la dirección inversa de una pareja o formas de historia).
-- Las 29 cartas Mixi Max y las 12 Chrono Storm muestran un **tag `mixi` con el compañero**. **9 Mixi Max heredan el Keshin del aura** (Markion, Victarion, Juleb, Gabardo, Zanark, etc.) cuando el usuario y el aura tienen Keshin en GO2; si el usuario no puede Armed, el heredado va sin Armed.
+- Las 29 cartas Mixi Max y las 12 Chrono Storm muestran un **tag `mixi` con el compañero**. **9 Mixi Max heredan el Keshin del aura** (Markion, Victarion, Gabardo, Zanark, Kirino/Riccardo, etc.) cuando el usuario y el aura tienen Keshin en GO2; si el usuario no puede Armed, el heredado va sin Armed.
 - La fusión es una **receta fija**: dos personajes del mismo juego, una vez por cuenta, y da la carta Mixi Max ya existente. No calcula stats a partir de los ingredientes; no hay Best Match, Mixi Trans ni herencia de técnicas/skills (solo Keshin cuando existe).
 - El grupo `Mixi Max` queda fuera de los pools del draft; es colección/endgame.
 
