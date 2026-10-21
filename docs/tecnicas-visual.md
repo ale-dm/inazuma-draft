@@ -36,3 +36,9 @@ Las imágenes están en `public/icons/` (copiadas de `EditorMods\iconos\`, sin r
 - `src/components/CardInfo.tsx`: lo usa en la lista de supertécnicas.
 - `src/app.css`: `.tblock`, placas y degradados por elemento.
 - `src/i18n/translations.ts`: `tech.long` y `tech.blockShot`.
+
+
+## Variantes de elemento
+
+- Algunas técnicas existen en **dos fichas** con distinto elemento (p. ej. **Shadow Ray** de bosque y de montaña, **Fire Blizzard** de fuego y de viento). En la app son **ids distintos** (ShadowRay_Forest/ShadowRay_Mountain, FireBlizzard_Fire/FireBlizzard_Wind) y overrides.technique_elements les fija el elemento (wood/earth, ire/ir).
+- Las que siguen sin un elemento de los cinco (elementos únicos de la wiki, {{PAGENAME}}, null…) caen al degradado de **Vacío** (	b-el5), que es el morado. Para quitarlo hay que asignarles un elemento con el mismo override.

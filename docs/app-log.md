@@ -506,3 +506,10 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - **Zero y Chaos**: ZeroMagnum sale de las cartas base de Bailong y Tezcat (Luz Eterna / Oscuridad Ancestral) y queda solo en **Equipo Zero**; Fire Blizzard sale de Prominence y Diamond Dust y queda solo en **Chaos**. Los duplicados de Torch y Gazelle en Chaos se quitan: la carta base ya no lleva `extra_teams: ["Chaos"]`. `tech_remove` ahora funciona en IE/GO y el seed borra los enlaces viejos antes de reinsertar.
 - **Dark Angel** (IE3): creado el combinado de **Sky Team** + **Dark Team** con las 11 versiones (Astaroth, Hebeemoth, Beelzebu, Nenel, Elfel, Mephisto, Satanatos, Gyuel, Uinel, Desuta y Sein), target **83,5** y capitán **Desuta**. **Shadow Ray** (tiro de dos de Sein/Sael y Destra) sale de las cartas base y queda solo en las versiones de Dark Angel; **Dark Phoenix** se queda en Thanatos base y en su versión Dark Angel.
 - **Sprites**: Equipo Zero con los `(Z) ... sprite (VR)`; Dark Angel con los **VR de sus equipos base** (`(MGZ)` para el Dark Team y `(TS)` para el Sky Team), porque la wiki inglesa no tiene sprites VR del uniforme Dark Angel; en Chaos, Torch y Gazelle pasan a los `(C) ... sprite (VR)` ingleses y el resto sigue con los `(C) HVR`.
+
+
+## GO1 Raimon: plantilla del último partido
+
+- **Raimon First Squad** pasa a los 16 principales del final vs Dragonlink: entran **Tsurugi** (desde Black Templars), **Aoyama** e **Ichino** (desde Raimon Second Squad) con sprites (SR) VR; salen **Kosaka** y **Mizumori** (dejaron el club → Unaffiliated) y **Minamisawa** (Gassan Kunimitsu → Lunar Sea).
+- Sprites: Tsurugi en Black Templars con (KK); Kosaka/Mizumori con (SR); Minamisawa con (GK) de Gassan Kunimitsu.
+- Técnicas de dos versiones: **Shadow Ray** Forest/Mountain y **Fire Blizzard** Fire/Wind se separan por id y elemento (wood/earth y ire/ir) con overrides.technique_elements; ya no caen en el morado de Vacío.

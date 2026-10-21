@@ -169,6 +169,7 @@ python3 tools/db/build.py            # genera build/players.json, build/review.c
     - GO1 (**hecho**): escala tipo IE1, un pelín por encima.
       - Vía Láctea 74,5 → Poderosa Fe 75 → Royal Academy 76 → Cala Pirata 76,5 → Mar de Luna 77 → Alpino 77,5 → Kirkwood 78 → Espejismo 78,5 → Universal 79 → Monte Olimpo 80 → Dragon Link 81 → Luz Eterna 82,5 → Oscuridad Ancestral 83,5.
       - Las notas de más de 84 se comprimen a la mitad (92 → 88) y las subidas no pasan de 87.
+        - Raimon (protagonista): plantilla del último partido vs Dragonlink (16 principales); Tsurugi, Aoyama e Ichino entran; Kosaka, Mizumori y Minamisawa salen.
       - **Equipo Zero** (post-game): combinado de Luz Eterna + Oscuridad Ancestral, 11 versiones «Zero», target 85,0.
     - GO2 (orden por el nivel de la historia en la wiki): Protocolo Omega 76 → Omega 2.0 77,5 → Ciervo Blanco 78 → Omega 3.0 79,5 → Terracota 80 → Zanark Domain 81 → Cascada Perfecta 82 → Zan 83 → Gir 83,5 → Gar 84 → Ragnah 85,5; después de la historia: Desesperdidos 86,5, Nosfanáticos y Aullido Lunar 87. Techo 90.
     - GO3 (nivel de la historia): Dragones de Fuego 73 → Big Waves 73,5 → Cimitarras 74,5 → Muay Tigers 75 → Storm Wolves 76 → Sílice 77 → Naiadi 78 → Magmavís 79 → Fertilia 80 → Falam Medius 81 → Flota Ixar 82,5; después de la historia: Supernova y Big Bang 84,5. Techo 90.

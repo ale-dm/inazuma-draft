@@ -409,6 +409,13 @@
     "vr_whd01540": "Nudo atrapaosos",
     "vr_whk01410": "Velo de sirena"
   },
+  "technique_elements": {
+    "_doc": "Elemento a la fuerza por técnica (id → fire/wood/air/earth): para las variantes que la wiki guarda como una sola ficha con el elemento en el nombre.",
+    "ShadowRay_Forest": "wood",
+    "ShadowRay_Mountain": "earth",
+    "FireBlizzard_Fire": "fire",
+    "FireBlizzard_Wind": "air"
+  },
   "extra_moves": {
     "_doc": "Técnicas extra por carta (id de carta -> ids de técnica). Se añaden después del build de Ares/Orion.",
     "mizukamiya-seiryuu--ares--base": [
@@ -729,6 +736,13 @@
     "kosaka-motonari--go1--base": "Unaffiliated",
     "mizumori-tatsuya--go1--base": "Unaffiliated",
     "minamisawa-atsushi--go1--base": "Lunar Sea"
+  },
+  "card_images": {
+    "_doc": "Sprite a la fuerza por carta (id de carta → URL). Para versiones base que no deben usar el zukan.",
+    "tsurugi-kyousuke--go1--base": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/0b/%28KK%29_Tsurugi_Kyousuke_sprite_%28VR%29.png/revision/latest?cb=20260809202942",
+    "kosaka-motonari--go1--base": "https://static.wikia.nocookie.net/inazuma-eleven/images/5/52/%28SR%29_Kosaka_Motonari_sprite_%28VR%29.png/revision/latest?cb=20251203124613",
+    "mizumori-tatsuya--go1--base": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/25/%28SR%29_Mizumori_Tatsuya_sprite_%28VR%29.png/revision/latest?cb=20251203124649",
+    "minamisawa-atsushi--go1--base": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/f3/%28GK%29_Minamisawa_Atsushi_sprite.png/revision/latest?cb=20230520000814"
   },
   "extra_teams_remove": {
     "_doc": "Equipos extra a quitar por carta (id de carta → equipos): evita duplicados cuando la carta base ya tiene una versión propia del equipo combinado.",

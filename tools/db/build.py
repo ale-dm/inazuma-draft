@@ -1218,6 +1218,11 @@ def main(extra_z=None, write=True):
             sprite_review = [r for r in sprite_review if r['id'] != c['id']]
         if x and x.get('no'):
             c['no_force'] = x['no']
+    for cid, url in {k: v for k, v in ov.get('card_images', {}).items() if not k.startswith('_')}.items():
+        c = next((c for c in cards if c['id'] == cid), None)
+        if c:
+            c['image_url'] = url
+            sprite_review = [r for r in sprite_review if r['id'] != cid]
     with open(os.path.join(OUT, 'sprites_review.json'), 'w', encoding='utf-8') as f:
         json.dump(sprite_review, f, ensure_ascii=False, indent=1)
     if extra_sprites:
@@ -1379,6 +1384,9 @@ def main(extra_z=None, write=True):
     for tid, name in {k: v for k, v in ov.get('technique_names', {}).items() if not k.startswith('_')}.items():
         if tid in techniques:
             techniques[tid]['name_es'] = name
+    for tid, el in {k: v for k, v in ov.get('technique_elements', {}).items() if not k.startswith('_')}.items():
+        if tid in techniques:
+            techniques[tid]['element'] = el
     apply_stats_mod(cards, ov, report)                       # stats de IE1-3 desde el balance del mod de Victory Road
     known = {t['name'] for t in teams}
     for tm in sorted({c['team'] for c in a_cards} - known):
