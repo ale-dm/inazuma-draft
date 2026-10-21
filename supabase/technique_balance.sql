@@ -266,7 +266,7 @@ from (values
 ('GreatBarrierReef',100,100,640),
 ('GreatBlaster',140,170,890),
 ('GreatMaxNaOre',160,195,930),
-('GreatTheHand',200,270,1080),
+('GreatTheHand',210,290,1130),
 ('GrenadeShot',50,50,300),
 ('GrimronShield',170,215,980),
 ('GroundQuake',140,170,890),

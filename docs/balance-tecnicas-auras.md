@@ -94,7 +94,7 @@ El coste lo pone la reserva; el **TP** solo mide la potencia (suma como una supe
 | **150** | Danza de plumas | Bloqueo | `TenkuuNoMai` | Guerrera del sur, Zhuque, Serpiente emplumada, Kukulkán | 120/40, 130/40 | Suzaku, guerrero del sur. |
 | **150** | Guardia sombría | Bloqueo | `ShadowGuard` | Jinkou Keshin Plasma Shadow DF | 128/32 | Androides de Perfect Cascade (Plasma Shadow). |
 | **210** | Géiser gigante | Parada | `GigabiteScrew` | Dragón despiadado, Vritrá, Shinen no Agillaus | 220/60, 240/60 | Fadam (Agillaus): para a Lancelot y Musashi con armadura y la Fiebre de luna llena. |
-| **200** | Mano grandiosa | Parada | `GreatTheHand` | Mágico gigante, Grandius | 220/70 | Endou (Majin Great): para el Shoot Command 01; en la película frena el poder de Fran con Legend Japan. |
+| **210** | Mano grandiosa | Parada | `GreatTheHand` | Mágico gigante, Grandius | 220/70 | Endou (Majin Great): para el Shoot Command 01; en la película frena el poder de Fran con Legend Japan. |
 | **190** | Defensa de muñecos | Parada | `ShikigamiLines` | Colablanca explosiva, Amorosa | 200/50 | Chet (Tamazusa): para a Rei con armadura; la rompe Soy todopoderoso. |
 | **190** | Cúpula carmesí | Parada | `CrimsonSphere` | Ryuujin Corogaon | 290/50 | Corogaon; potencia 200 en CS. |
 | **180** | Descarga de colores | Parada | `HisshouGamusharan` | Eichi no Ou Bungu Oh | 200/50 | ENDOU (Bunguoh): desvía a duras penas la combinada de los Lovers. |
