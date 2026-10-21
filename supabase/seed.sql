@@ -36769,4 +36769,17 @@ insert into public.card_techniques (card_id,technique_id,slot) values
 ('fukikoshi--ie1--base','SuperScanDF',4) on conflict (card_id,technique_id) do update set slot=excluded.slot;
 -- cambios hechos desde el CRUD de la app (supabase/admin.sql): se vuelven a aplicar encima
 select public.admin_replay();
+-- limpieza final: las técnicas quitadas no vuelven por admin_replay
+delete from public.card_techniques where card_id = 'desuta--ie3--base' and technique_id in ('ShadowRay_Mountain');
+delete from public.card_techniques where card_id = 'haizaki-ryouhei--ares--base' and technique_id in ('es_ping-ino-goleador');
+delete from public.card_techniques where card_id = 'haizaki-ryouhei--orion--base' and technique_id in ('es_chilena-de-ping-ino');
+delete from public.card_techniques where card_id = 'hakuryuu--go1--base' and technique_id in ('ZeroMagnum');
+delete from public.card_techniques where card_id = 'inamori-asuto--ares--base' and technique_id in ('CounterdriveGK', 'es_ping-ino-goleador');
+delete from public.card_techniques where card_id = 'jimon-daiki--ares--base' and technique_id in ('es_arrollador');
+delete from public.card_techniques where card_id = 'kozoumaru-sasuke--ares--base' and technique_id in ('CounterdriveGK');
+delete from public.card_techniques where card_id = 'nagumo-haruya--ie2--base' and technique_id in ('FireBlizzard_Fire');
+delete from public.card_techniques where card_id = 'sein--ie3--base' and technique_id in ('ShadowRay_Forest');
+delete from public.card_techniques where card_id = 'shuu--go1--base' and technique_id in ('ZeroMagnum');
+delete from public.card_techniques where card_id = 'suzuno-fuusuke--ie2--base' and technique_id in ('FireBlizzard_Wind');
+delete from public.card_techniques where card_id = 'umihara-norika--ares--base' and technique_id in ('es_parada-remolino', 'es_velo-de-sirena');
 commit;

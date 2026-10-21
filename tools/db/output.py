@@ -63,7 +63,7 @@ def write_balance():
 
 
 def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report, dropped=None, removed_cards=None,
-                  dropped_techs=None):
+                  dropped_techs=None, tech_remove=None):
     os.makedirs(OUT, exist_ok=True)
     used = {t['id'] for c in cards for t in c['moves']}
     techs = [{k: v for k, v in t.items() if k != '_inf'} for t in techniques.values() if t and t['id'] in used]
@@ -131,8 +131,12 @@ def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report, dr
             insert('cards', card_cols, public, key='id'),
             insert('card_techniques', ['card_id', 'technique_id', 'slot'], links, key=('card_id', 'technique_id')),
             '-- cambios hechos desde el CRUD de la app (supabase/admin.sql): se vuelven a aplicar encima',
-            'select public.admin_replay();',
-            'commit;', '']
+            'select public.admin_replay();']
+    if tech_remove:
+        seed += ['-- limpieza final: las técnicas quitadas no vuelven por admin_replay']
+        for cid, tids in sorted(tech_remove.items()):
+            seed.append(f"delete from public.card_techniques where card_id = {sql(cid)} and technique_id in ({', '.join(sql(t) for t in tids)});")
+    seed += ['commit;', '']
     os.makedirs(os.path.join(ROOT, 'supabase'), exist_ok=True)
     with open(os.path.join(ROOT, 'supabase', 'seed.sql'), 'w', encoding='utf-8') as f:
         f.write('\n'.join(seed))

@@ -1415,7 +1415,8 @@ def main(extra_z=None, write=True):
     if write:
         write_outputs(cards, chars_out, techniques, teams, staff, zukan_rows, report, dropped=drop,
                       removed_cards=[k for k in ov.get('tech_remove', {}) if not k.startswith('_')],
-                      dropped_techs=dropped_techs)
+                      dropped_techs=dropped_techs,
+                      tech_remove={k: v for k, v in ov.get('tech_remove', {}).items() if not k.startswith('_')})
     return uncovered
 
 
