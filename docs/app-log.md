@@ -532,3 +532,5 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 ## Chilena de pingüino: nombre único
 
 - **Pingüino Aéreo** venía de la ficha inglesa (*Overhead Penguin*) que se añadió en la pasada de Ares; es la misma técnica que **Chilena de pingüino**. Se unifica el nombre en las dos variantes: es_ping-ino-aereo (**fuego**, pingüinos negros) y es_chilena-de-ping-ino (**bosque**, pingüinos azules).
+
+- Las dos versiones de **Overhead Penguin / Chilena de pingüino** comparten nombre (Overhead Penguin / Chilena de pingüino), japonés, francés, italiano y origen (Ares/Orion); solo cambian el elemento (fuego/bosque) y el TP del balance.
