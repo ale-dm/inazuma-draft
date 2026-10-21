@@ -494,8 +494,11 @@
       "vr_whk01400",
       "vr_whk01410"
     ],
-    "satanatos--ie3--dark-angel": [
-      "DarkPhoenix"
+    "sein--ie3--dark-angel": [
+      "ShadowRay_Forest"
+    ],
+    "desuta--ie3--dark-angel": [
+      "ShadowRay_Mountain"
     ]
   },
   "scout_pool": {
@@ -724,6 +727,15 @@
     "rinno-fujiko--go1--base": "Sub Character",
     "ookazeya-giichi--go1--base": "Sub Character"
   },
+  "extra_teams_remove": {
+    "_doc": "Equipos extra a quitar por carta (id de carta → equipos): evita duplicados cuando la carta base ya tiene una versión propia del equipo combinado.",
+    "nagumo-haruya--ie2--base": [
+      "Chaos"
+    ],
+    "suzuno-fuusuke--ie2--base": [
+      "Chaos"
+    ]
+  },
   "extra_versions": [
     {
       "_doc": "Versión añadida a mano (sin ficha de zukan): page de la wiki, juego, equipo, nº (hueco de zukan) e imagen."
@@ -931,67 +943,67 @@
       "page": "Astaroth",
       "game": "IE3",
       "team": "Dark Angel",
-      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/e4/%28DA%29_Astaroth_sprite.png/revision/latest?cb=20230823172202"
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/aa/%28MGZ%29_Astaroth_sprite_%28VR%29.png/revision/latest?cb=20251203101031"
     },
     {
       "page": "Hebeemoth",
       "game": "IE3",
       "team": "Dark Angel",
-      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/ef/%28DA%29_Hebeemoth_sprite.png/revision/latest?cb=20230823172350"
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/05/%28MGZ%29_Hebeemoth_sprite_%28VR%29.png/revision/latest?cb=20251203101025"
     },
     {
       "page": "Beelzebu",
       "game": "IE3",
       "team": "Dark Angel",
-      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/39/%28DA%29_Beelzebu_sprite.png/revision/latest?cb=20230823172506"
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/64/%28MGZ%29_Beelzebu_sprite_%28VR%29.png/revision/latest?cb=20251203101021"
     },
     {
       "page": "Nenel",
       "game": "IE3",
       "team": "Dark Angel",
-      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/ee/%28DA%29_Nenel_sprite.png/revision/latest?cb=20230823172624"
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/09/%28TS%29_Nenel_sprite_%28VR%29.png/revision/latest?cb=20251205160602"
     },
     {
       "page": "Elfel",
       "game": "IE3",
       "team": "Dark Angel",
-      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/0d/%28DA%29_Elfel_sprite.png/revision/latest?cb=20230823173019"
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/34/%28TS%29_Elfel_sprite_%28VR%29.png/revision/latest?cb=20251205160820"
     },
     {
       "page": "Mephisto",
       "game": "IE3",
       "team": "Dark Angel",
-      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/06/%28DA%29_Mephisto_sprite.png/revision/latest?cb=20230823173124"
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/64/%28MGZ%29_Mephisto_sprite_%28VR%29.png/revision/latest?cb=20251203101026"
     },
     {
       "page": "Satanatos",
       "game": "IE3",
       "team": "Dark Angel",
-      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/29/%28DA%29_Satanatos_sprite.png/revision/latest?cb=20230823202645"
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/f7/%28MGZ%29_Satanatos_sprite_%28VR%29.png/revision/latest?cb=20251203101027"
     },
     {
       "page": "Gyuel",
       "game": "IE3",
       "team": "Dark Angel",
-      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/04/%28DA%29_Gyuel_sprite.png/revision/latest?cb=20230823202748"
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/1/1a/%28TS%29_Gyuel_sprite_%28VR%29.png/revision/latest?cb=20251205161235"
     },
     {
       "page": "Uinel",
       "game": "IE3",
       "team": "Dark Angel",
-      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/b/bb/%28DA%29_Uinel_sprite.png/revision/latest?cb=20230823202908"
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/6d/%28TS%29_Uinel_sprite_%28VR%29.png/revision/latest?cb=20251205161005"
     },
     {
       "page": "Desuta",
       "game": "IE3",
       "team": "Dark Angel",
-      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/0d/%28DA%29_Desuta_sprite.png/revision/latest?cb=20230823203007"
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/6d/%28MGZ%29_Desuta_sprite_%28VR%29.png/revision/latest?cb=20260419232431"
     },
     {
       "page": "Sein",
       "game": "IE3",
       "team": "Dark Angel",
-      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/7/74/%28DA%29_Sein_sprite.png/revision/latest?cb=20230823203100"
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/0a/%28TS%29_Sein_sprite_%28VR%29.png/revision/latest?cb=20260615125542"
     }
   ],
   "zukan_wiki_pages": {
@@ -1806,8 +1818,11 @@
     "suzuno-fuusuke--ie2--base": [
       "FireBlizzard_Wind"
     ],
-    "satanatos--ie3--base": [
-      "DarkPhoenix"
+    "sein--ie3--base": [
+      "ShadowRay_Forest"
+    ],
+    "desuta--ie3--base": [
+      "ShadowRay_Mountain"
     ]
   }
 }

@@ -8685,9 +8685,7 @@
    "description_es": "Capitán del Polvo de Diamantes. Tiene mucho temple.",
    "no": 1122,
    "specials": [],
-   "extra_teams": [
-    "Chaos"
-   ],
+   "extra_teams": [],
    "raw_stats": {
     "form": "Normal form",
     "Kick": 78,
@@ -11225,9 +11223,7 @@
    "description_es": "Capitán de Prominence. Es muy presuntuoso y siempre va al ataque.",
    "no": 1105,
    "specials": [],
-   "extra_teams": [
-    "Chaos"
-   ],
+   "extra_teams": [],
    "raw_stats": {
     "form": "Normal form",
     "Kick": 69,
@@ -13953,7 +13949,7 @@
    "speed": 82,
    "defense": 79,
    "goalkeeping": 83,
-   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/0d/%28DA%29_Desuta_sprite.png/revision/latest?cb=20230823203007",
+   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/6d/%28MGZ%29_Desuta_sprite_%28VR%29.png/revision/latest?cb=20260419232431",
    "zukan_id": "k/v/x/vx-yk_kv6ge",
    "zukan_no": 2060,
    "is_version": true,
@@ -26903,7 +26899,6 @@
    "techniques": [
     "DarkMatter",
     "Gravitation",
-    "ShadowRay_Mountain",
     "Hellfire"
    ],
    "duel_att": null,
@@ -30281,7 +30276,6 @@
    "techniques": [
     "HeavenDrive",
     "UltraMoon",
-    "ShadowRay_Forest",
     "Excalibur"
    ],
    "duel_att": null,
@@ -32153,7 +32147,7 @@
    "speed": 78,
    "defense": 92,
    "goalkeeping": 80,
-   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/39/%28DA%29_Beelzebu_sprite.png/revision/latest?cb=20230823172506",
+   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/64/%28MGZ%29_Beelzebu_sprite_%28VR%29.png/revision/latest?cb=20251203101021",
    "zukan_id": "k/c/z/czpfxivghmu",
    "zukan_no": 2051,
    "is_version": true,
@@ -34524,7 +34518,7 @@
    "speed": 89,
    "defense": 80,
    "goalkeeping": 80,
-   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/04/%28DA%29_Gyuel_sprite.png/revision/latest?cb=20230823202748",
+   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/1/1a/%28TS%29_Gyuel_sprite_%28VR%29.png/revision/latest?cb=20251205161235",
    "zukan_id": "k/e/_/e_b_tihtjqk",
    "zukan_no": 2048,
    "is_version": true,
@@ -36129,7 +36123,7 @@
    "speed": 88,
    "defense": 87,
    "goalkeeping": 79,
-   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/0d/%28DA%29_Elfel_sprite.png/revision/latest?cb=20230823173019",
+   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/34/%28TS%29_Elfel_sprite_%28VR%29.png/revision/latest?cb=20251205160820",
    "zukan_id": "k/-/s/-scfrzew6zc",
    "zukan_no": 2043,
    "is_version": true,
@@ -37926,7 +37920,7 @@
    "speed": 88,
    "defense": 80,
    "goalkeeping": 80,
-   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/7/74/%28DA%29_Sein_sprite.png/revision/latest?cb=20230823203100",
+   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/0a/%28TS%29_Sein_sprite_%28VR%29.png/revision/latest?cb=20260615125542",
    "zukan_id": "k/1/x/1xqe-3hpkzm",
    "zukan_no": 2049,
    "is_version": true,
@@ -40137,7 +40131,7 @@
    "speed": 78,
    "defense": 88,
    "goalkeeping": 88,
-   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/e4/%28DA%29_Astaroth_sprite.png/revision/latest?cb=20230823172202",
+   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/aa/%28MGZ%29_Astaroth_sprite_%28VR%29.png/revision/latest?cb=20251203101031",
    "zukan_id": "k/8/c/8cswivaougk",
    "zukan_no": 2050,
    "is_version": true,
@@ -40575,7 +40569,7 @@
    "speed": 80,
    "defense": 88,
    "goalkeeping": 81,
-   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/ef/%28DA%29_Hebeemoth_sprite.png/revision/latest?cb=20230823172350",
+   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/05/%28MGZ%29_Hebeemoth_sprite_%28VR%29.png/revision/latest?cb=20251203101025",
    "zukan_id": "k/v/6/v654yub2jt8",
    "zukan_no": 2053,
    "is_version": true,
@@ -46299,7 +46293,7 @@
    "speed": 81,
    "defense": 89,
    "goalkeeping": 81,
-   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/ee/%28DA%29_Nenel_sprite.png/revision/latest?cb=20230823172624",
+   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/09/%28TS%29_Nenel_sprite_%28VR%29.png/revision/latest?cb=20251205160602",
    "zukan_id": "k/8/z/8zbdfamc_fc",
    "zukan_no": 2040,
    "is_version": true,
@@ -48627,7 +48621,8 @@
    "techniques": [
     "DarkMatter",
     "BarbarianNoTate",
-    "TatsumakiDokugiri"
+    "TatsumakiDokugiri",
+    "DarkPhoenix"
    ],
    "duel_att": null,
    "duel_con": null,
@@ -48653,7 +48648,7 @@
    "speed": 81,
    "defense": 68,
    "goalkeeping": 80,
-   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/29/%28DA%29_Satanatos_sprite.png/revision/latest?cb=20230823202645",
+   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/f7/%28MGZ%29_Satanatos_sprite_%28VR%29.png/revision/latest?cb=20251203101027",
    "zukan_id": "k/k/_/k_p5nacvxts",
    "zukan_no": 2059,
    "is_version": true,
@@ -56338,7 +56333,7 @@
    "speed": 83,
    "defense": 82,
    "goalkeeping": 82,
-   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/b/bb/%28DA%29_Uinel_sprite.png/revision/latest?cb=20230823202908",
+   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/6d/%28TS%29_Uinel_sprite_%28VR%29.png/revision/latest?cb=20251205161005",
    "zukan_id": "k/v/v/vvolv7ncike",
    "zukan_no": 2045,
    "is_version": true,
@@ -62276,7 +62271,7 @@
    "speed": 81,
    "defense": 79,
    "goalkeeping": 82,
-   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/0/06/%28DA%29_Mephisto_sprite.png/revision/latest?cb=20230823173124",
+   "image_url": "https://static.wikia.nocookie.net/inazuma-eleven/images/6/64/%28MGZ%29_Mephisto_sprite_%28VR%29.png/revision/latest?cb=20251203101026",
    "zukan_id": "k/-/9/-9rsmmierak",
    "zukan_no": 2055,
    "is_version": true,

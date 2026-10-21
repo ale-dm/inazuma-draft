@@ -1023,6 +1023,12 @@ def main(extra_z=None, write=True):
     # Caos: la carta base de ese juego (Prominence / Diamond Dust) cuenta también para ese equipo
     for c in cards:
         c['extra_teams'] = sorted({tm for g, tm in extra_team_pages.get(c['page'], ()) if g == c['game'] and c['version'] == 'base'})
+    for cid, tms in ov.get('extra_teams_remove', {}).items():
+        if cid.startswith('_'):
+            continue
+        c = next((c for c in cards if c['id'] == cid), None)
+        if c:
+            c['extra_teams'] = [tm for tm in c['extra_teams'] if tm not in tms]
 
     # --- nombres de equipo en castellano (wiki en español: plantilla Equipo; cruce por nombre inglés o japonés)
     es_team = {}
