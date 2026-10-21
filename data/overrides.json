@@ -687,6 +687,7 @@
     "Gouenji Shuuya|ARES|base": 83,
     "_doc_go2": "GO2: White Deer baja un poco la estrella (Taian 90 → 88); el equipo queda algo por debajo de 78.",
     "Inaba Taian|GO2|base": 88,
+    "Beta|GO2|Protocol Omega 2.0": 87,
     "_doc_go1": "GO1: Alpino por debajo de Kirkwood (su target 77,5 se pasaba a 78,5 por los outliers).",
     "Makari Ginjirou|GO1|base": 84,
     "Yukimura Hyouga|GO1|base": 83,
@@ -777,6 +778,30 @@
     "kosaka-motonari--go1--base": "Unaffiliated",
     "mizumori-tatsuya--go1--base": "Unaffiliated",
     "minamisawa-atsushi--go1--base": "Lunar Sea"
+  ,
+    "beta--go2--base": "Unaffiliated",
+    "rei-rukh--go2--base": "Unaffiliated",
+    "bado-addo--go2--base": "Unaffiliated",
+    "gra-fom--go2--base": "Unaffiliated",
+    "lau-sem--go2--base": "Unaffiliated",
+    "fa-neil--go2--base": "Unaffiliated",
+    "bull-rex--go2--base": "Unaffiliated",
+    "ma-donel--go2--base": "Unaffiliated",
+    "sei-servo--go2--base": "Unaffiliated",
+    "lin-cool--go2--base": "Unaffiliated",
+    "dai-load--go2--base": "Unaffiliated",
+    "il-mel--go2--base": "Unaffiliated",
+    "nie-bell--go2--base": "Unaffiliated",
+    "a-simov--go2--base": "Unaffiliated",
+    "kay-rowe--go2--base": "Unaffiliated",
+    "zara-kusu--go2--base": "Unaffiliated",
+    "emi-ul--go2--base": "Unaffiliated",
+    "saryuu-evan--go2--base": "Unaffiliated",
+    "saryuu-evan--go2--ragnah-n-3938": "Unaffiliated",
+    "fran--go2--base": "Unaffiliated",
+    "vampheny-vamp--go2--base": "Unaffiliated",
+    "garshah-wolfein--go2--base": "Unaffiliated",
+    "torb--go2--base": "Unaffiliated"
   },
   "card_images": {
     "_doc": "Sprite a la fuerza por carta (id de carta → URL). Para versiones base que no deben usar el zukan.",
@@ -1060,7 +1085,16 @@
     "michinari-tatsumi--orion--base": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/3b/%28IR%29_Michinari_Tatsumi_sprite.png/revision/latest?cb=20260128123155",
     "okuiri-hiro--orion--base": "https://static.wikia.nocookie.net/inazuma-eleven/images/4/41/%28IR%29_Okuiri_Hiro_sprite.png/revision/latest?cb=20260128123155",
     "hattori-hanta--orion--base": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/e6/%28IR%29_Hattori_Hanta_sprite.png/revision/latest?cb=20260128123155",
-    "hiyori-masakatsu--orion--base": "https://static.wikia.nocookie.net/inazuma-eleven/images/1/12/%28IR%29_Hiyori_Masakatsu_sprite.png/revision/latest?cb=20260128123155"
+    "hiyori-masakatsu--orion--base": "https://static.wikia.nocookie.net/inazuma-eleven/images/1/12/%28IR%29_Hiyori_Masakatsu_sprite.png/revision/latest?cb=20260128123155",
+    "beta--go2--protocol-omega-2-0": "https://static.wikia.nocookie.net/inazuma-eleven/images/4/4b/%28PO%29_Beta_sprite.png/revision/latest?cb=20230527102326",
+    "ward--go2--base": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/d7/%28PO%29_Ward_sprite.png/revision/latest?cb=20230527125019",
+    "drim--go2--base": "https://static.wikia.nocookie.net/inazuma-eleven/images/4/4b/%28PO%29_Drim_sprite.png/revision/latest?cb=20230527102012",
+    "orca--go2--base": "https://static.wikia.nocookie.net/inazuma-eleven/images/4/41/%28PO%29_Orca_sprite.png/revision/latest?cb=20230527102159",
+    "gamma--go2--base": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/dd/%28PO%29_Gamma_sprite.png/revision/latest?cb=20230527103414",
+    "dhanna--go2--base": "https://static.wikia.nocookie.net/inazuma-eleven/images/7/7b/%28PO%29_Dhanna_sprite.png/revision/latest?cb=20230527103211",
+    "galling--go2--base": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/f3/%28PO%29_Galling_sprite.png/revision/latest?cb=20230527102851",
+    "lugic--go2--base": "https://static.wikia.nocookie.net/inazuma-eleven/images/3/32/%28PO%29_Lugic_sprite.png/revision/latest?cb=20230527102647",
+    "bahamus--go2--base": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/a2/%28PO%29_Bahamus_sprite.png/revision/latest?cb=20230527103030"
   },
   "extra_teams_remove": {
     "_doc": "Equipos extra a quitar por carta (id de carta → equipos): evita duplicados cuando la carta base ya tiene una versión propia del equipo combinado.",
@@ -1387,6 +1421,73 @@
       "game": "GO1",
       "team": "Raimon First Squad",
       "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/f/fa/%28SR%29_Ichino_Nanasuke_sprite_%28VR%29.png/revision/latest?cb=20260715214114"
+    }
+  ,
+    {
+      "page": "Zanou",
+      "game": "GO2",
+      "team": "Protocol Omega 2.0",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/e/ec/%28PO%29_Zanou_sprite.png/revision/latest?cb=20230527092358"
+    },
+    {
+      "page": "Gaura",
+      "game": "GO2",
+      "team": "Protocol Omega 2.0",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/c/ca/%28PO%29_Gaura_sprite.png/revision/latest?cb=20230527094621"
+    },
+    {
+      "page": "Quorth",
+      "game": "GO2",
+      "team": "Protocol Omega 2.0",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/d3/%28PO%29_Quorth_sprite.png/revision/latest?cb=20230527094908"
+    },
+    {
+      "page": "Neira",
+      "game": "GO2",
+      "team": "Protocol Omega 2.0",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/a/ac/%28PO%29_Neira_sprite.png/revision/latest?cb=20230527095214"
+    },
+    {
+      "page": "Laszlo",
+      "game": "GO2",
+      "team": "Protocol Omega 2.0",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/21/%28PO%29_Laszlo_sprite.png/revision/latest?cb=20230527095832"
+    },
+    {
+      "page": "Cople",
+      "game": "GO2",
+      "team": "Protocol Omega 2.0",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/2/21/%28PO%29_Cople_sprite.png/revision/latest?cb=20230527100138"
+    },
+    {
+      "page": "Finik",
+      "game": "GO2",
+      "team": "Protocol Omega 2.0",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/8/80/%28PO%29_Finik_sprite.png/revision/latest?cb=20230527100402"
+    },
+    {
+      "page": "Mechius",
+      "game": "GO2",
+      "team": "Protocol Omega 2.0",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/1/17/%28PO%29_Mechius_sprite.png/revision/latest?cb=20230527100555"
+    },
+    {
+      "page": "Ward",
+      "game": "GO2",
+      "team": "Protocol Omega 3.0",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/d7/%28PO%29_Ward_sprite.png/revision/latest?cb=20230527125019"
+    },
+    {
+      "page": "Quorth",
+      "game": "GO2",
+      "team": "Protocol Omega 3.0",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/d/d3/%28PO%29_Quorth_sprite.png/revision/latest?cb=20230527094908"
+    },
+    {
+      "page": "Orca",
+      "game": "GO2",
+      "team": "Protocol Omega 3.0",
+      "image": "https://static.wikia.nocookie.net/inazuma-eleven/images/4/41/%28PO%29_Orca_sprite.png/revision/latest?cb=20230527102159"
     }
   ],
   "zukan_wiki_pages": {

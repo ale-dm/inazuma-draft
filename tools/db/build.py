@@ -929,6 +929,14 @@ def main(extra_z=None, write=True):
         if nm:
             c['name'] = nm
 
+    # mover antes de la curva las cartas base que ya tienen versión de equipo:
+    # si no, el equipo se tunearía contando el duplicado y luego perdería la media al quitarlo
+    pre_unaff = {k for k, v in (ov.get('team_force') or {}).items()
+                 if not k.startswith('_') and v == 'Unaffiliated' and '--go2--' in k}
+    for c in cards:
+        if c['id'] in pre_unaff:
+            c['team'] = 'Unaffiliated'
+
     apply_tuning(cards, set(MAIN), ov, report)
 
     # a mano: overrides.drop_cards (versiones descartadas)
@@ -1006,15 +1014,26 @@ def main(extra_z=None, write=True):
         if seen_ids[c['id']] > 1:
             c['id'] += f"-{seen_ids[c['id']]}"
 
-    # poderes: las cartas Mixi Max (y el Chrono Storm, que va en su forma Mixi Max) no pueden usar nada;
-    # la versión normal de GO2 del jugador indica con quién puede hacer Mixi Max
+    # poderes: las cartas Mixi Max (y el Chrono Storm, que va en su forma Mixi Max) no llevan Keshin/Armed,
+    # pero sí muestran con quién están fusionadas; la versión normal de GO2 indica con quién puede hacer Mixi Max
+    chrono_partner = {
+        'hakuryuu': 'Zhuge Kongming', 'nanobana-kinako': 'Master Dragon',
+        'zanark-avalonic': 'Clara Jane', 'fei-rune': 'Big',
+        'nishizono-shinsuke': 'Liu Xuande', 'tsurugi-kyousuke': 'Okita Souji',
+        'matsukaze-tenma': 'King Arthur', 'nishiki-ryouma': 'Sakamoto Ryouma',
+        'amemiya-taiyou': 'Zhuge Kongming', 'shindou-takuto': 'Oda Nobunaga',
+        'kirino-ranmaru': "Jeanne d'Arc", 'torb': 'Toh-chan',
+    }
     partners = collections.defaultdict(list)
     for c in cards:
         if c['team'] in ('Mixi Max', 'Chrono Storm'):
-            for sp in c.get('specials') or []:
-                if sp['type'] == 'mixi' and sp.get('name') and sp['name'] not in partners[c['character_id']]:
-                    partners[c['character_id']].append(sp['name'])
-            c['specials'] = []
+            partner = chrono_partner.get(c['character_id']) if c['team'] == 'Chrono Storm' else None
+            if not partner and c['team'] == 'Mixi Max':
+                mm = re.search(r'Mixi Max \(([^)]+)\)', c['version'])
+                partner = mm.group(1) if mm else None
+            c['specials'] = [{'type': 'mixi', 'name': partner}] if partner else []
+            if partner and partner not in partners[c['character_id']]:
+                partners[c['character_id']].append(partner)
     for c in cards:
         if c['game'] == 'GO2' and c['team'] not in ('Mixi Max', 'Chrono Storm') and partners.get(c['character_id']):
             c['specials'] = [x for x in c.get('specials') or [] if x['type'] != 'mixi'] + \

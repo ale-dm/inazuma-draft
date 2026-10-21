@@ -547,3 +547,19 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 
 - White Deer: Taian 90 → 88; el once queda en 77,82 (antes 78,00).
 - Análisis completo en docs/analisis-go2.md: lore de Chrono Stone, versiones de PlayerData, Keshin Armed, Mixi Max, plantillas 2.0/3.0 y duplicados base/versión.
+
+
+## GO2 P0: plantillas y duplicados
+
+- Protocol Omega 2.0: 12 cartas, Beta 87; base Beta fuera. Faltan Medam, Leiser, Einam y Minenne.
+- Protocol Omega 3.0: 8 cartas con Ward, Quorth y Orca. Faltan Medam, Leiser y Einam.
+- Perfect Cascade, Ragnah, Despairadoes, Nosfanática, Aullido Lunar, Chrono Storm y 2.0: bases duplicadas movidas a Unaffiliated (fuera de pools de draft).
+- La curva se aplica después de mover las bases (pre_unaff) para que no cuente el duplicado.
+- Resultado: 2.0 77,73; 3.0 79,63; Perfect Cascade 82,00; Ragnah 85,55.
+
+
+## GO2 P1: compañeros de Mixi Max
+
+- Las 29 cartas del grupo Mixi Max y las 12 de Chrono Storm muestran ya el tag mixi con su compañero.
+- Chrono Storm: Zhuge, Master Dragon, Clara Jane, Big, Liu Xuande, Okita, Arthur, Sakamoto, Nobunaga, Jeanne y Toh-chan.
+- Siguen sin heredar Keshin; eso queda para una segunda parte.

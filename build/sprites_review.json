@@ -208,22 +208,6 @@
   "sprite": "https://static.wikia.nocookie.net/inazuma/images/d/d6/%28R_%28GO%29_Goldie_%28HVR%29.png/revision/latest?cb=20240406152257&path-prefix=es"
  },
  {
-  "id": "beta--go2--base",
-  "name": "Beta",
-  "game": "GO2",
-  "version": "base",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/u/h/uhsign1h3ek.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/5/54/%28PO_2.0%29_Beta_%28HVR%29.png/revision/latest?cb=20260203001908&path-prefix=es"
- },
- {
-  "id": "beta--go2--protocol-omega-2-0",
-  "name": "Beta",
-  "game": "GO2",
-  "version": "Protocol Omega 2.0",
-  "zukan": "https://dxi4wb638ujep.cloudfront.net/1/k/i/j/ijgn8lthcc8.png",
-  "sprite": "https://static.wikia.nocookie.net/inazuma/images/5/54/%28PO_2.0%29_Beta_%28HVR%29.png/revision/latest?cb=20260203001908&path-prefix=es"
- },
- {
   "id": "matatagi-hayato--go3--base",
   "name": "Falco Flashman",
   "game": "GO3",

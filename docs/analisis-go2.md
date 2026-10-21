@@ -1,14 +1,15 @@
 # Análisis GO2 — Chrono Stone
 
-> Estado: **análisis**. Solo se ha aplicado el bajón de White Deer (Taian 88). El resto son propuestas, a la espera de decidir.
+> Estado: **P0 aplicado** (plantillas 2.0/3.0, duplicados base/versión y White Deer). El resto son propuestas.
 > Fecha: 2026-10-21.
 
 ## 1. Resumen ejecutivo
 
 - **GO2 ya es el pico de GO**: 90,45 de media en Mixi Max, 88,82 en Chrono Storm y 87,0 en los extras. GO3 se queda en 84,82 y GO1 en 84,73.
-- La rampa de historia está bien salvo **Protocol Omega 2.0** (81,80 vs 77,5), que está roto por tener solo 5 cartas y Beta duplicado.
-- **Protocol Omega 3.0** también está incompleto: 5 cartas frente a 11 de la historia.
-- Hay **duplicados base + versión** en Perfect Cascade (32 cartas, 16 personajes), Ragnah (Saryuu 3 veces) y varios equipos con una carta base y su versión.
+- **Protocol Omega 2.0** ya está en **12 cartas / 12 personajes** y **77,73** (Beta 87). Faltan Medam, Leiser, Einam y Minenne para las 16.
+- **Protocol Omega 3.0** tiene ya **8 cartas** y **79,63**. Faltan Medam, Leiser y Einam para las 11.
+- Los **duplicados base + versión** se han limpiado: las bases quedan en `Unaffiliated` (fuera de los pools de draft) y los equipos usan la versión.
+- Las cartas **Mixi Max y Chrono Storm** ya muestran su compañero (`mixi`); falta la herencia de Keshin y las formas que no existen.
 - **White Deer** ya baja: Taian 90 → 88; el equipo queda en **77,82**.
 - **Keshin Armed** está implementado como flag + hipertécnica; **Mixi Max** como cartas fijas + 19 recetas. Las dos cosas funcionan, pero tienen lagunas de lore (herencia de Keshin, reglas de Armed, Mixi Trans, recetas).
 
@@ -17,19 +18,19 @@
 | Equipo | Objetivo | Real | Estrella | Notas |
 |---|---:|---:|---|---|
 | Protocol Omega | 76 | **76,00** | Alpha 90 | 13 cartas |
-| Protocol Omega 2.0 | 77,5 | **81,80** | Beta 90 | 5 cartas, Beta duplicado |
+| Protocol Omega 2.0 | 77,5 | **77,73** | Beta 87 | 12 cartas; faltan 4 |
 | White Deer | 78 | **77,82** | Taian 88 | Ya rebajado |
-| Protocol Omega 3.0 | 79,5 | **79,60** | Gamma 90 | 5 cartas; historia 11 |
+| Protocol Omega 3.0 | 79,5 | **79,63** | Gamma 90 | 8 cartas; faltan 3 |
 | Terracotta Army | 80 | **80,91** | Terracotta 87 | 11 cartas |
 | Zanark's Domain | 81 | **81,55** | Zanark 89 | 16 cartas |
-| Perfect Cascade | 82 | **82,00** | Ar Ecks 90 | 32 cartas, 16 personajes |
-| Zan | 83 | **83,18** | Feduhm 89 | 15 cartas |
-| Gihl | 83,5 | **83,55** | Mehr 89 | 16 cartas |
+| Perfect Cascade | 82 | **82,00** | Ar Ecks 90 | 16 cartas, 16 personajes (bases fuera) |
+| Zan | 83 | **83,27** | Feduhm 89 | 15 cartas |
+| Gihl | 83,5 | **83,64** | Mehr 89 | 16 cartas |
 | Gahl | 84 | **84,09** | Chitoh 88 | 15 cartas |
-| Ragnah | 85,5 | **85,55** | Simeon 90 | 16 cartas, Saryuu 3 veces |
-| Despairadoes | 86,5 | **87,00** | Asta 90 | 14 cartas |
-| Nosfanática | 87 | **87,00** | Desmodus 90 | 12 cartas |
-| Aullido Lunar | 87 | **87,00** | Wolfram 90 | 12 cartas |
+| Ragnah | 85,5 | **85,55** | Simeon 90 | 14 cartas, Saryuu una vez |
+| Despairadoes | 86,5 | **86,64** | Asta 90 | 13 cartas |
+| Nosfanática | 87 | **87,18** | Desmodus 90 | 11 cartas |
+| Aullido Lunar | 87 | **87,00** | Lee Canthrup 90 | 11 cartas |
 | Raimon | — | **86,09** | Goldie 90 | protagonista |
 | Chrono Storm | — | **88,82** | Bailong 92 | final de historia |
 | Inazuma Legend Japan | — | **88,36** | Axel 91 | extra |
@@ -118,7 +119,7 @@ Los **Souls / tótems** son de **Galaxy (GO3)**, no de GO2. En la app están en 
 | Ishido form | **1** | Gouenji |
 | Teen | **1** | Gouenji Yuuka |
 
-En la app, GO2 tiene **441 cartas**: 339 base y 102 versiones. Las etiquetas más repetidas son Perfect Cascade (16), Raimon (16), Chrono Storm (12), Inazuma Legend Japan (11), Mixi Max (Zanark) (9), Adult (6) y luego muchas versiones únicas.
+En la app, GO2 tiene **452 cartas**: 339 base y 113 versiones. Las etiquetas más repetidas son Perfect Cascade (16), Raimon (16), Chrono Storm (12), Inazuma Legend Japan (11), Mixi Max (Zanark) (9), Protocol Omega 2.0 (9), Adult (6) y luego muchas versiones únicas.
 
 ### 4.1 Cobertura de versiones
 
@@ -158,40 +159,42 @@ Cada carta tiene un array `specials` con:
 
 | Métrica | Valor |
 |---|---:|
-| Cartas GO2 | 441 |
-| Con algún special | 128 |
-| Keshin | 118 |
-| Keshin Armed | 75 |
-| Keshin sin Armed | 43 |
-| Keshin únicos | 68 |
-| Mixi (tag) | 27 |
+| Cartas GO2 | 452 |
+| Con algún special | 175 |
+| Keshin | 122 |
+| Keshin Armed | 78 |
+| Keshin sin Armed | 44 |
+| Keshin únicos | 69 |
+| Mixi (tag) | 73 |
 | Souls | 0 (son GO3) |
-| Sin specials | 313 |
+| Sin specials | 277 |
 
 Cartas con combinaciones:
 
-- **Keshin + Mixi**: 17.
-- **Solo Mixi**: 10.
-- **Solo Keshin**: 101.
+- **Keshin + Mixi**: 20.
+- **Solo Mixi**: 53 (29 Mixi Max + 12 Chrono Storm + 12 bases con compañero).
+- **Solo Keshin**: 102.
 
-Para comparar, el `PlayerData/CS` declara **392 entradas de Keshin**, **82 Keshin únicos** y **249 entradas marcadas Armed**. La app solo materializa las que tienen carta en GO2 (118 / 68 únicos / 75 Armed). GO1 tiene 83 Keshin y ninguno Armed; GO3 tiene 78 Keshin, 7 Armed y 71 Souls.
+Para comparar, el `PlayerData/CS` declara **392 entradas de Keshin**, **82 Keshin únicos** y **249 entradas marcadas Armed**. La app solo materializa las que tienen carta en GO2 (122 / 69 únicos / 78 Armed). GO1 tiene 83 Keshin y ninguno Armed; GO3 tiene 78 Keshin, 7 Armed y 71 Souls.
 
 Por equipo (Keshin / Armed / Mixi):
 
 | Equipo | Keshin | Armed | Mixi |
 |---|---:|---:|---:|
-| Perfect Cascade | 32 | 30 | 0 |
+| Perfect Cascade | 16 | 15 | 0 |
+| Mixi Max | 0 | 0 | 29 |
+| Chrono Storm | 0 | 0 | 12 |
 | Raimon | 7 | 7 | 8 |
-| Despairadoes | 6 | 4 | 0 |
-| Nosfanática | 7 | 4 | 0 |
-| Ragnah | 7 | 4 | 0 |
+| Despairadoes | 5 | 3 | 0 |
+| Nosfanática | 6 | 3 | 0 |
+| Ragnah | 5 | 2 | 0 |
 | Gihl | 6 | 4 | 0 |
-| Aullido Lunar | 7 | 3 | 0 |
+| Aullido Lunar | 6 | 2 | 0 |
 | Zan | 4 | 3 | 0 |
 | Sherwinds | 3 | 3 | 3 |
 | Protocol Omega | 3 | 2 | 2 |
-| Protocol Omega 2.0 | 2 | 2 | 2 |
-| Protocol Omega 3.0 | 2 | 2 | 5 |
+| Protocol Omega 2.0 | 3 | 2 | 3 |
+| Protocol Omega 3.0 | 3 | 3 | 8 |
 | Zanark’s Domain | 6 | 2 | 1 |
 | Gahl | 4 | 2 | 0 |
 | White Deer | 2 | 1 | 0 |
@@ -203,7 +206,7 @@ Por equipo (Keshin / Armed / Mixi):
 - **29 cartas** en el grupo `Mixi Max`; **12** en Chrono Storm.
 - **19 recetas** en `src/data/fusions.json`.
 - **10 cartas Mixi Max no tienen receta**: Shuu/Tezlong, Tsurugi/Baivic, Fubuki/Shaxel, Kidou/Juleb, Endou/Markion, Tsurugi/Victarion, Zanark/Zeta, Fei/Tyranno, Kirino/Aitriel y Kirino/Gabardo (algunas son la dirección inversa de una pareja o formas de historia).
-- **Las 29 cartas Mixi Max y las 12 Chrono Storm tienen `specials: []`**: no heredan Keshin ni muestran compañero.
+- Las 29 cartas Mixi Max y las 12 Chrono Storm ya muestran un **tag `mixi` con el compañero**; siguen **sin heredar Keshin** (no llevan Keshin/Armed).
 - La fusión es una **receta fija**: dos personajes del mismo juego, una vez por cuenta, y da la carta Mixi Max ya existente. No calcula stats a partir de los ingredientes; no hay Best Match, Mixi Trans ni herencia de Keshin.
 - El grupo `Mixi Max` queda fuera de los pools del draft; es colección/endgame.
 
@@ -255,24 +258,24 @@ También sobra **Mike (Tez Beyan) con Zanark**: no está en la lista de 11 forma
 
 ### 6.4 Plantillas y duplicados
 
-- **Protocol Omega 2.0**: 5 cartas, 4 personajes; Beta duplicado. Roster de la wiki: 16. La app tiene 12 de esos personajes en otras cartas; faltan **Medam, Leiser, Einam, Minenne**.
-- **Protocol Omega 3.0**: 5 cartas; historia 11. Faltan **Medam, Ward, Quorth, Orca, Leiser, Einam** (Ward/Quorth/Orca ya existen en otras cartas).
-- **Perfect Cascade**: 32 cartas para 16 personajes (base + versión).
-- **Ragnah**: 16 cartas, 14 personajes; Saryuu 3 veces.
-- **Despairadoes / Nosfanática / Aullido Lunar / Chrono Storm**: una carta base + una versión del mismo personaje.
+- **Protocol Omega 2.0**: 12 cartas, 12 personajes, 77,73. Roster de la wiki: 16; faltan **Medam, Leiser, Einam y Minenne** por crear.
+- **Protocol Omega 3.0**: 8 cartas, 79,63. Historia 11; faltan **Medam, Leiser y Einam**.
+- **Perfect Cascade**: 16 cartas para 16 personajes; las bases están en `Unaffiliated`.
+- **Ragnah**: 14 cartas, 14 personajes; Saryuu una vez.
+- **Despairadoes / Nosfanática / Aullido Lunar / Chrono Storm**: bases en `Unaffiliated`; el equipo usa solo la versión.
 
 ## 7. Propuesta por prioridad
 
-### P0 — Datos y plantillas
+### P0 - Datos y plantillas (aplicado)
 
-1. **2.0**: sacar `beta--go2--base` del equipo y quedarse con la versión 2.0. Añadir versiones 2.0 de Zanou, Gaura, Quorth, Neira, Laszlo, Cople, Finik y Mechius (con Ward, Drim, Orca y Beta quedarían 12/16). Los 4 que faltan (Medam, Leiser, Einam, Minenne) se pueden crear después.
-2. **3.0**: añadir versiones de Ward, Quorth y Orca (8/11). Medam, Leiser y Einam quedan pendientes de crear.
-3. **Duplicados**: mover las cartas base fuera del equipo en Perfect Cascade (16), Ragnah (Saryuu), Despairadoes (Fran), Nosfanática (Vampheny), Aullido Lunar (Garshah), Chrono Storm (Torb) y 2.0 (Beta). Retunear después.
-4. **White Deer**: hecho (Taian 88; equipo 77,82). Si hay que bajar más, 87 dejaría el once en 77,7.
+1. **2.0**: `beta--go2--base` fuera; versiones 2.0 de Zanou, Gaura, Quorth, Neira, Laszlo, Cople, Finik y Mechius. Quedan **12/16**; faltan Medam, Leiser, Einam y Minenne.
+2. **3.0**: versiones de Ward, Quorth y Orca. Queda **8/11**; faltan Medam, Leiser y Einam.
+3. **Duplicados**: bases de Perfect Cascade, Ragnah, Despairadoes, Nosfanática, Aullido Lunar, Chrono Storm y 2.0 movidas a `Unaffiliated` (fuera de los pools de draft). Retuneado.
+4. **White Deer**: hecho (Taian 88; equipo 77,82).
 
 ### P1 — Mixi Max
 
-5. Añadir el **tag de compañero** a las 12 cartas Chrono Storm (Big, Zhuge, Dragon, Liu Bei, Sakamoto, Toh-chan, Nobunaga, Jeanne, Okita, Arthur, Clara Jane, etc.). No hace falta crear cartas nuevas: ya existen.
+5. **Tag de compañero aplicado** a las 12 cartas Chrono Storm y a las 29 Mixi Max. No hace falta crear cartas nuevas para esas.
 6. Añadir las formas que faltan de verdad:
    - Medam, Leiser, Einam (Zanark).
    - Saryuu (S Idenshi), Fran (Kuroi Bara), Garshah (G Idenshi), Vampheny (V Idenshi).
