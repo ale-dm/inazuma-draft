@@ -649,3 +649,11 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - Fuera: 5 de espíritu guerrero, técnicas antiguas con código nuevo y variantes. Anotados 5 duplicados de IE con id `vr_`.
 - GO1: Ceniza negra y Tiro sobrenatural 130, Manos liberadas 120.
 - Detalle en docs/balance-tecnicas-vr-originales.md.
+
+## Victory Road: medias de los equipos
+
+- `_game.VR.compress = 0,5`, como el resto de temporadas: los cracks de equipos flojos bajan (Callejón, Academia IA) y la rampa deja de cruzarse.
+- `top11` corregidos por iteración para que la media final (tras suelo de héroes 86 y subida del capitán) caiga en la rampa: 74,5 → 82,4 en la historia y 85,0 → 86,3 en la crónica (desvío máx. 0,3).
+- Royal Academy (Teikoku Gakuen, cap. 8) entra en la rampa con 80,5; South Cirrus (protagonista) 82,1, un punto por encima del Raimon de la final (81,2).
+- Raimon: Harper Evans 90 queda por encima del capitán Tsukikage (excepción, como Endou en IE2).
+- Detalle en docs/plan-balance-temporadas.md (Victory Road).

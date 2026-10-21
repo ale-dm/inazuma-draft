@@ -2046,6 +2046,7 @@
       },
       "VR": {
         "cap": 88,
+        "compress": 0.5,
         "captain_plus": 6,
         "captain_raise": 15,
         "hero_floor": 86,
@@ -2192,100 +2193,109 @@
         "note": "1 · nv 6 · cap. 2"
       },
       "Seagull FC": {
-        "top11": 75.0,
+        "top11": 74.4,
         "captain": "Kudaira Eimu",
         "note": "2 · nv 8 · cap. 3"
       },
       "Twinford": {
-        "top11": 75.5,
+        "top11": 75.0,
         "captain": "Yomogi Kenta",
         "note": "3 · nv 12–38 · entrenamiento"
       },
       "West Manor": {
-        "top11": 76.0,
+        "top11": 75.9,
         "captain": "Itoi Kou",
         "note": "4 · nv 18 · cap. 4"
       },
       "Orchid Academy": {
-        "top11": 76.5,
+        "top11": 75.9,
         "captain": "Housen Ranka",
         "note": "5 · nv 18–36 · entrenamiento"
       },
       "Northbright": {
-        "top11": 77.0,
+        "top11": 76.7,
         "captain": "Soramiya Sei",
         "note": "6 · nv 20 · cap. 5"
       },
       "Crosswind-Fauxshore": {
-        "top11": 77.5,
+        "top11": 76.8,
         "captain": "Itoshima Hanahiko",
         "note": "7 · nv 21–35 · entrenamiento"
       },
       "Back Alley Kickers": {
-        "top11": 78.0,
+        "top11": 77.1,
         "captain": "Tsukigawara Gensaku",
         "note": "8 · nv 25–47 · entrenamiento"
       },
       "Eastwind": {
-        "top11": 78.5,
+        "top11": 78.3,
         "captain": "Yamanouchi Touyou",
         "note": "9 · nv 28 · cap. 6"
       },
       "Noble Insight": {
-        "top11": 79.0,
+        "top11": 77.9,
         "captain": "Futatsumiya Kinjirou",
         "note": "10 · nv 32–52 · entrenamiento"
       },
       "Lawcrest": {
-        "top11": 79.0,
+        "top11": 78.2,
         "captain": "Daitou Ryouya",
         "note": "11 · nv 32–52 · entrenamiento"
       },
       "AI Academy": {
-        "top11": 79.0,
+        "top11": 78.0,
         "captain": "Hakari Tomokazu",
         "note": "12 · nv 32–52 · entrenamiento"
       },
       "Stormridge": {
-        "top11": 79.5,
+        "top11": 78.7,
         "captain": "Ikue Magoichi",
         "note": "13 · nv 33 · cap. 7"
       },
       "Alpine": {
-        "top11": 80.0,
+        "top11": 79.4,
         "captain": "Shumari Horoka",
         "note": "14 · nv 36–60 · entrenamiento"
       },
+      "Royal Academy": {
+        "top11": 80.0,
+        "captain": "Homura Eisuke",
+        "note": "15 · cap. 8 · 2.ª ronda del torneo nacional (Teikoku Gakuen)"
+      },
       "Raimon": {
-        "top11": 81.0,
+        "top11": 79.7,
         "captain": "Tsukikage Ren",
-        "note": "15 · cap. 9 · final"
+        "note": "16 · cap. 9 · final (excepción: Harper Evans 90 es la estrella del juego, por encima del capitán Tsukikage)"
+      },
+      "South Cirrus Junior High": {
+        "top11": 78.7,
+        "note": "protagonista (Nagumohara) · un punto por encima del Raimon de la final"
       },
       "Solaria-Zeus": {
-        "top11": 82.0,
+        "top11": 81.8,
         "captain": "Teita Tanji",
-        "note": "16 · nv 60 · historia extendida"
+        "note": "17 · nv 60 · historia extendida"
       },
       "Zanark's Outsiders": {
         "top11": 85.0,
         "floor": 84,
         "captain": "Zanark Avalonic",
-        "note": "17 · nv 87–99 · crónica"
+        "note": "18 · nv 87–99 · crónica"
       },
       "Gatekeepers": {
         "top11": 85.5,
         "captain": "Lindalin Bernie",
-        "note": "18 · nv 91–99 · crónica"
+        "note": "19 · nv 91–99 · crónica"
       },
       "Platos": {
-        "top11": 86.0,
+        "top11": 85.6,
         "captain": "Victorio Arno",
-        "note": "19 · nv 96–99 · crónica"
+        "note": "20 · nv 96–99 · crónica"
       },
       "Destroyers": {
-        "top11": 86.5,
+        "top11": 86.2,
         "captain": "Kinis Elvim",
-        "note": "20 · nv 99 · crónica"
+        "note": "21 · nv 99 · crónica"
       }
     }
   },

@@ -1,6 +1,6 @@
 # Plan: balance de rivales por temporadas (historia)
 
-> Estado: **IE1, IE2, IE3, GO1, GO2, Ares y Orion hechos**; GO3 **pendiente**. GO2 queda cerrado salvo mejoras finas opcionales de Keshin Armed.
+> Estado: **IE1, IE2, IE3, GO1, GO2, Ares, Orion y Victory Road hechos**; GO3 **pendiente**. GO2 queda cerrado salvo mejoras finas opcionales de Keshin Armed.
 > Objetivo: que la curva de nota de los rivales de la historia (una temporada = un juego) sea coherente y siga el
 > orden de los partidos, con las reglas de abajo.
 > Complementa [`plan-base-jugadores.md`](./plan-base-jugadores.md) §3 (OVR) y §9 (`team_tuning`).
@@ -245,6 +245,51 @@ Inazuma Japón (protagonista) se queda como estaba, en 89,7, por debajo del de I
 - **Inazuma Japón**: 89,7, capitán Jude Sharp 92; no se toca (protagonista, por debajo del Inazuma Japón de IE3).
 - **Cobertura**: 207 cartas y 15 equipos; Secundarios (66,5) y Raimon (45,4) no son rivales de la historia.
 
+### Victory Road — hecho
+
+Historia del juego (Nagumohara / South Cirrus) más la crónica. Rampa de **74,5 a 82,4** en la historia y **85,0 → 86,3** en la
+crónica, con `_game.VR.compress = 0,5` (como el resto de temporadas), cap 88, capitán hasta +6 sobre el once (subida máx. 15),
+**héroes/basara con suelo 86** y **Harper Evans 90** (estrella del juego).
+
+| Equipo (ES) | Once | #1 | Estrella / Capitán |
+|---|--:|--:|---|
+| Vendedores de South Cirrus | 74,5 | 80 | Yelena Poplawska |
+| Gaviotas FC | 75,1 | 80 | Kean Aimes |
+| Twinford | 75,5 | 81 | Vearn Dashwood |
+| Academia West Manor | 76,3 | 82 | Edgard Loathe |
+| Academia Orchid | 76,4 | 82 | Elyse Reign |
+| Secundaria Northbright | 77,1 | 87 | Nikas Himmelstein |
+| Secundaria Crosswind-Fauxshore | 77,5 | 83 | Itor Sheerman |
+| Goleadores del Callejón | 77,8 | 83 | Holden Monday |
+| Eastwind | 78,7 | 84 | Toyo Yamanouchi |
+| Visión Noble | 79,1 | 84 | Keepie Upshire |
+| Lawcrest | 79,3 | 84 | Eames Rapport |
+| Academia IA | 78,8 | 84 | Reubel Kauntless |
+| Secundaria Stormridge | 79,3 | 85 | Elijah Singleton |
+| Alpino | 80,3 | 85 | Anastasia Mingler |
+| **Royal Academy** (Teikoku Gakuen, cap. 8) | 80,5 | 86 | Syd Faircrest (Homura Eisuke) |
+| **Raimon** (final, cap. 9) | 81,2 | 90 | Harper Evans · capitán Darian Moonward (Tsukikage) 86 |
+| **Secundaria South Cirrus** (protagonista) | 82,1 | 86 | Alix La Fontaine (Shisendou) |
+| Secundaria Solaria-Zeus (historia extendida) | 82,4 | 88 | Thaddeus Bellefax |
+| Zanark Outsiders (crónica) | 85,0 | 88 | Zanark Avalonic |
+| Guardianas (crónica) | 85,5 | 88 | Lindalyn Berny |
+| Plathos (crónica) | 85,9 | 88 | Victorio Cryptix |
+| Destructores (crónica) | 86,3 | 88 | Keines Elvain |
+
+- **Compresión**: sin ella los equipos con héroes o cracks se salían de la rampa (Visión Noble 81,3 con objetivo 79; el
+  Callejón 79,1 por encima de Eastwind; Barker y Holden 88 en un equipo de 78). Con `compress` 0,5 los cracks bajan
+  (Callejón: Holden 83; Academia IA: 84).
+- **Objetivos corregidos**: el suelo de héroes (86) y la subida del capitán se aplican después de la curva y empujan la media
+  hacia arriba; los `top11` de `team_tuning.VR` están ajustados (por iteración) para que la **media final** caiga en la
+  rampa (desvío máx. 0,3).
+- **Royal Academy** (Senjutsu no Teikoku = Teikoku Gakuen) **entra en la rampa**: es el rival del capítulo 8 (2.ª ronda del
+  torneo nacional), entre Stormridge y la final. Capitán Homura Eisuke (Syd Faircrest).
+- **South Cirrus** (protagonista) entra a **82,0**: un punto por encima del Raimon de la final, como Inazuma Japón en IE3.
+  Su capitán, Sasanami Unmei, es el personaje del jugador y no tiene carta: va sin capitán fijado.
+- **Excepción a capitán #1**: en Raimon el capitán es Tsukikage Ren (86), pero Harper Evans (90) es la estrella del juego;
+  queda como la de Endou en IE2.
+- Los clubes del instituto (66–78) y Secundarios no son rivales de la historia y no se tocan.
+
 ### Pendientes (objetivos actuales, de `plan-base-jugadores.md` §9)
 
 | Temporada | Estado | Notas |
@@ -256,6 +301,7 @@ Inazuma Japón (protagonista) se queda como estaba, en 89,7, por debajo del de I
 | GO3 | pendiente | Dragones de Fuego 73 → … → Supernova/Big Bang 84,5 (techo 90) |
 | Ares | **hecho** | rampa 76,0 → 86,1 (Barcelona); Raimon 84,5; Ribera 81,2; Green Hill 76,4; `compress` 0,5 y `ovr_shift` -1; Mark 88 y Axel 83 a mano |
 | Orion | **hecho** | rampa 76,3 → 87,0 (Eclipse); Inazuma Japón 89,7; `compress` 0,5 |
+| VR | **hecho** | rampa 74,5 → 82,4 + crónica 85,0 → 86,3; Royal Academy en la rampa; South Cirrus 82,1; `compress` 0,5 |
 
 Cada temporada pendiente: revisar la rampa con la receta §2 (aplicar `compress`, capitán #1 y el criterio "por debajo de
 la siguiente") y anotar aquí el resultado.
