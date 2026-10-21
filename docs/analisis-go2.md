@@ -125,7 +125,7 @@ En la app, GO2 tiene **471 cartas**: 339 base y 132 versiones. Las etiquetas má
 
 ### 4.1 Cobertura de versiones
 
-- **Mixi Max**: **36 cartas de forma** (29 que ya había + 7 nuevas) en `Unaffiliated`; **no forman equipo**, igual que en el juego. Las 12 de Chrono Storm sí son equipo. El PlayerData CS declara 31 formas; las de Chrono Storm (Taiyou, Kinako, Nishizono, Nishiki, Torb…) están como carta de equipo con su tag.
+- **Mixi Max**: **39 cartas de forma** (29 que ya había + 10 nuevas) en `Unaffiliated`; **no forman equipo**, igual que en el juego. Las 12 de Chrono Storm sí son equipo. El PlayerData CS declara 31 formas; las de Chrono Storm (Taiyou, Kinako, Nishizono, Nishiki, Torb…) están como carta de equipo con su tag.
 - **Hyper Dive**: las 16 versiones de Perfect Cascade parecen ser la forma Hyper Dive, aunque la etiqueta diga solo “Perfect Cascade”.
 - **Adult / Inazuma Legend Japan**: 17 cartas entre las dos etiquetas; cubre las 15 formas adultas y algún extra.
 - **Beta**: base, Protocol Omega 2.0, **Jouou-sama Mode** y **Benigiku** (estas dos en Sub Character).
