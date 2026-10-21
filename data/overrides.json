@@ -414,7 +414,20 @@
     "ShadowRay_Forest": "wood",
     "ShadowRay_Mountain": "earth",
     "FireBlizzard_Fire": "fire",
-    "FireBlizzard_Wind": "air"
+    "FireBlizzard_Wind": "air",
+    "es_embestida-bufalina": "earth",
+    "es_dimensi-n-kamakura": "wood",
+    "es_ping-ino-emperador-n-2-tibur-n": "wood",
+    "es_tiro-a-reo-triple": "wood",
+    "es_ping-inos-de-luz-y-sombra": "wood",
+    "es_ruptura-rel-mpago-cg": "air",
+    "es_supermano-celestial": "earth",
+    "es_guila-implacable": "earth",
+    "vr_whs03280": "void",
+    "vr_whk01660": "void",
+    "vr_whs03290": "void",
+    "vr_whk01600": "void",
+    "vr_whs03220": "void"
   },
   "extra_moves": {
     "_doc": "Técnicas extra por carta (id de carta -> ids de técnica). Se añaden después del build de Ares/Orion.",

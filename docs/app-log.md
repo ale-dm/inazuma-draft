@@ -513,3 +513,10 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - **Raimon First Squad** pasa a los 16 principales del final vs Dragonlink: entran **Tsurugi** (desde Black Templars), **Aoyama** e **Ichino** (desde Raimon Second Squad) con sprites (SR) VR; salen **Kosaka** y **Mizumori** (dejaron el club → Unaffiliated) y **Minamisawa** (Gassan Kunimitsu → Lunar Sea).
 - Sprites: Tsurugi en Black Templars con (KK); Kosaka/Mizumori con (SR); Minamisawa con (GK) de Gassan Kunimitsu.
 - Técnicas de dos versiones: **Shadow Ray** Forest/Mountain y **Fire Blizzard** Fire/Wind se separan por id y elemento (wood/earth y ire/ir) con overrides.technique_elements; ya no caen en el morado de Vacío.
+
+
+## Técnicas: revisión de elementos
+
+- Añadido el elemento **Vacío** (`void`) a la app (`Element`, `EL_NUM` y traducciones) con la placa `plate_fsp_5.png`; las técnicas Void ya no usan el degradado morado de reserva.
+- Asignados 8 elementos que faltaban (Bull Steam Ahead, KAMAKURA D, Koutei Penguin 2gou feat. Shark, Triple G Strike, Penguin The God & Devil, Inazuma Break CG, Super God Hand y Tenkuu Hayabusadan) y 5 Void (Last Resort Σ/D, Mega Majin Trio, Black Shield y Black Field).
+- Quedan 24 técnicas con elemento único (`{{PAGENAME}}`/nombre propio) y 4 sin elemento en la wiki: Shining Penguin, Chilena de pingüino, Arrollador y Orion's Shade. Detalle en [tecnicas-visual.md](tecnicas-visual.md).

@@ -4,7 +4,7 @@ import { techniqueName } from '../data/catalog'
 import { useAppSettings } from '../context/AppSettings'
 
 /** Elemento de la app → número del juego (1 Aire, 2 Bosque, 3 Fuego, 4 Montaña, 5 Vacío) */
-const EL_NUM: Record<string, number> = { air: 1, wood: 2, fire: 3, earth: 4 }
+const EL_NUM: Record<string, number> = { air: 1, wood: 2, fire: 3, earth: 4, void: 5 }
 /** Tipo de técnica → icono de categoría (icon_sp_area01..04) */
 const AREA: Record<Technique['type'], number> = { Shoot: 1, Dribble: 2, Block: 3, Catch: 4 }
 

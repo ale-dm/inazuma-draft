@@ -1,4 +1,4 @@
-export type Element = 'fire' | 'wood' | 'air' | 'earth'
+export type Element = 'fire' | 'wood' | 'air' | 'earth' | 'void'
 export type Position = 'GK' | 'DF' | 'MF' | 'FW'
 
 export type GameId = 'IE1' | 'IE2' | 'IE3' | 'GO1' | 'GO2' | 'GO3' | 'ARES' | 'ORION' | 'VR'

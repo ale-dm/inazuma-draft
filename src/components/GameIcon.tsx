@@ -7,7 +7,8 @@ import type { Element, GameId, Position, Technique } from '../types'
 const BASE = `${import.meta.env.BASE_URL}icons/`
 
 const POSITION: Record<Position, string> = { GK: 'pos-gk', DF: 'pos-df', MF: 'pos-mf', FW: 'pos-fw' }
-const ELEMENT: Record<Element, string> = { fire: 'el-fire', air: 'el-air', wood: 'el-wood', earth: 'el-earth' }
+// Los jugadores solo usan los cuatro elementos; «void» es para técnicas y no tiene icono propio.
+const ELEMENT: Record<Element, string> = { fire: 'el-fire', air: 'el-air', wood: 'el-wood', earth: 'el-earth', void: 'el-earth' }
 const TECH: Record<Technique['type'], string> = { Shoot: 'tech-shoot', Dribble: 'tech-dribble', Block: 'tech-block', Catch: 'tech-catch' }
 const SPECIAL = { keshin: 'sp-keshin', mixi: 'sp-mixi', soul: 'sp-soul' } as const
 /** Pestañas "onglet_seriesNN" de los assets del juego (mismo orden que GAMES) */

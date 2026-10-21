@@ -42,3 +42,10 @@ Las imágenes están en `public/icons/` (copiadas de `EditorMods\iconos\`, sin r
 
 - Algunas técnicas existen en **dos fichas** con distinto elemento (p. ej. **Shadow Ray** de bosque y de montaña, **Fire Blizzard** de fuego y de viento). En la app son **ids distintos** (ShadowRay_Forest/ShadowRay_Mountain, FireBlizzard_Fire/FireBlizzard_Wind) y overrides.technique_elements les fija el elemento (wood/earth, ire/ir).
 - Las que siguen sin un elemento de los cinco (elementos únicos de la wiki, {{PAGENAME}}, null…) caen al degradado de **Vacío** (	b-el5), que es el morado. Para quitarlo hay que asignarles un elemento con el mismo override.
+
+
+## Revisión de elementos (2026-10-21)
+
+- Añadido **Vacío** como elemento real (`void`) en la app: `Element`, `EL_NUM` y traducciones. Usa la placa `plate_fsp_5.png`, así que las técnicas Void ya no caen al degradado de reserva.
+- Asignados elementos que faltaban: Bull Steam Ahead → earth, KAMAKURA D → wood, Koutei Penguin 2gou feat. Shark → wood, Triple G Strike → wood, Penguin The God & Devil → wood, Inazuma Break CG → air, Super God Hand → earth, Tenkuu Hayabusadan → earth, y Void a Last Resort Σ/D, Mega Majin Trio, Black Shield y Black Field.
+- Quedan **24 técnicas con elemento único** (la wiki usa el nombre de la técnica: God Hand, Majin The Hand, Star Reflection, etc.) y **4 sin elemento** (Shining Penguin, Chilena de pingüino, Arrollador y Orion's Shade). Esas siguen con el fondo de reserva.
