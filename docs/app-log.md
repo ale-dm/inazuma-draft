@@ -493,3 +493,9 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - Revisada la temporada GO1: rampa **75,0 → 83,5**, Raimon **83,9**, techo 87. Corregido compress_above en 	uning.py para que la compresión de >84 no se pierda al aplicar la curva del equipo: Bailong 92 → 88, Iggie 90 → 87, Dracon 89 → 87… y desaparecen las tres fallas de capitán (Royal, Alpine y Kirkwood).
 - Creado **Equipo Zero** (post-game, combinado de **Luz Eterna + Oscuridad Ancestral**, como el Caos de IE2): 11 versiones «Zero» con sprites (Z), target **85,0** y capitán **Hakuryuu**. Los 6 cartas de cuerpo técnico/banquillo que el zukan ponía en Team Zero pasan a **Sub Character**.
 - Documentado en [plan-balance-temporadas.md](plan-balance-temporadas.md) y [plan-base-jugadores.md](plan-base-jugadores.md).
+
+
+## Equipo Zero: sprites de Victory Road
+
+- Cambiados los 11 sprites del Equipo Zero por los de la sección **Victory Road** de las fichas inglesas (.../Game_appearance#Victory_Road): uniforme Zero (Z) ... sprite (VR).png. Los anteriores (Z) ... sprite.png eran los de GO1 y no cuadraban.
+- **Criterio desde ahora**: para sprites e info de jugadores/técnicas, revisar primero la **wiki inglesa** (inazuma-eleven.fandom.com), que tiene la galería completa por juego (Game_appearance → Victory Road).
