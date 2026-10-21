@@ -631,3 +631,21 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - Nuevas columnas alance_tp_go1, alance_power_min_go1 y alance_power_max_go1; el frontend las usa solo en cartas GO1.
 - Valores en data/technique_balance_go1.json y supabase/technique_balance.sql; el TP global de IE/GO2/GO3 no se toca.
 - Escala: tiros 50–200; regates 50–140; bloqueos 50–130; paradas 50–180.
+
+
+## GO2 y GO3: TP por saga aplicado
+
+- Originales con el mismo filtro que GO1 (Module:WazaData): **GO2** = coste CS sin coste IE1/IE2/IE3/GO1; **GO3** = coste GX sin coste IE1/IE2/IE3/GO1/GO2.
+- Solo técnicas normales: fuera 25 *Keshin hissatsu* (GO2), 56 *Soul Strikes* (GO3) y 11 de **Mixi Max** (GO2, listadas aparte). Aplicadas **74 de GO2** y **76 de GO3**.
+- Colocadas por lore de la wiki inglesa (anime, películas, trivia «la más fuerte de CS/GX», usuario) y después por potencia CS/GX/VR; las combinadas no se castigan.
+- Techos GO1 < GO3 < GO2: tiros 180/190/200, regates 130/140/150, bloqueos 120/140/150, paradas 150/170/180.
+- Columnas balance_tp_go2/go3 (y potencias); el frontend usa el TP por saga en cartas GO1, GO2 y GO3 (`sagaTp`). technique_balance.sql crea las columnas si faltan, así que basta `balance_only`.
+- Detalle en docs/balance-tecnicas-go2-go3-originales.md.
+
+## Victory Road: técnicas originales
+
+- 49 técnicas normales que se estrenan en VR (categoría *Victory Road hissatsu* de la wiki): 43 con cartas y 6 sin carta añadidas al catálogo (`data/technique_vr_extra.json`); TP en el `balance_tp` global (solo las usan cartas VR, como Ares/Orion).
+- Sin anime: colocadas por quién las usa y su punto en la historia (Raimon de la final y Royal Academy arriba; firmas de los protagonistas de Nagumohara; rivales por orden) y por la potencia de VR.
+- Fuera: 5 de espíritu guerrero, técnicas antiguas con código nuevo y variantes. Anotados 5 duplicados de IE con id `vr_`.
+- GO1: Ceniza negra y Tiro sobrenatural 130, Manos liberadas 120.
+- Detalle en docs/balance-tecnicas-vr-originales.md.

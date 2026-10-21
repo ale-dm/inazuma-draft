@@ -1472,15 +1472,27 @@ def main(extra_z=None, write=True):
                    'element': ELEMENT.get(z['element']), 'position': z['position'], 'teams': z['teams'], 'games': z['games'],
                    'description': (zdesc.get(str(z['no'])) or {}).get('desc'), 'vr_lv50': (zdesc.get(str(z['no'])) or {}).get('vr_lv50'),
                    'wiki_page': page_of(z)} for z in zukan if z.get('no')]
-    # GO1: las técnicas originales de GO1 pueden no estar usadas por ninguna carta
-    # (34 de las 127 solo viven en la wiki), pero las queremos en el catálogo para el TP por saga.
-    go1_balance_path = os.path.join(ROOT, 'data', 'technique_balance_go1.json')
-    if os.path.exists(go1_balance_path):
-        with open(go1_balance_path, encoding='utf-8') as f:
-            go1_ids = json.load(f).get('techniques', {})
-        for mid in go1_ids:
+    # TP por saga (GO1/GO2/GO3): las técnicas originales de una saga pueden no estar usadas por ninguna carta
+    # (34 de las 127 de GO1 solo viven en la wiki), pero las queremos en el catálogo para el TP por saga.
+    for saga in ('go1', 'go2', 'go3'):
+        saga_balance_path = os.path.join(ROOT, 'data', f'technique_balance_{saga}.json')
+        if not os.path.exists(saga_balance_path):
+            continue
+        with open(saga_balance_path, encoding='utf-8') as f:
+            saga_ids = json.load(f).get('techniques', {})
+        for mid in saga_ids:
             if mid not in techniques:
                 technique(mid)
+    # Victory Road: originales que no lleva ninguna carta (datos de la wiki), para que tengan su TP en el catálogo
+    vr_extra_path = os.path.join(ROOT, 'data', 'technique_vr_extra.json')
+    if os.path.exists(vr_extra_path):
+        with open(vr_extra_path, encoding='utf-8') as f:
+            for x in json.load(f).get('techniques', []):
+                if x['id'] not in techniques:
+                    techniques[x['id']] = {'id': x['id'], 'name': x['name'], 'name_jp': x['name_jp'], 'name_es': x['name_es'],
+                                           'type': x['type'], 'element': x['element'], 'cost': None, 'cost_game': None,
+                                           'costs': {'VR_power': x['vr_power']}, 'description': x['description'],
+                                           'image_url': None, 'zukan_types': None}
 
     localize(cards, techniques, teams, ov, report)           # nombres en francés e italiano (i18n.py)
     assign_logos(teams, report)                              # escudo de cada equipo (logos.py)

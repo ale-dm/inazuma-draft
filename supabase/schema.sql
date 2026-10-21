@@ -39,6 +39,12 @@ alter table public.techniques add column if not exists balance_power_max int;
 alter table public.techniques add column if not exists balance_tp_go1 int;           -- TP específico de GO1 (originales de GO1)
 alter table public.techniques add column if not exists balance_power_min_go1 int;
 alter table public.techniques add column if not exists balance_power_max_go1 int;
+alter table public.techniques add column if not exists balance_tp_go2 int;           -- TP específico de GO2 (originales de GO2)
+alter table public.techniques add column if not exists balance_power_min_go2 int;
+alter table public.techniques add column if not exists balance_power_max_go2 int;
+alter table public.techniques add column if not exists balance_tp_go3 int;           -- TP específico de GO3 (originales de GO3)
+alter table public.techniques add column if not exists balance_power_min_go3 int;
+alter table public.techniques add column if not exists balance_power_max_go3 int;
 alter table public.techniques add column if not exists source text;                  -- null = de la carga; otro valor = fila añadida a mano (no se toca)
 
 create table if not exists public.cards (

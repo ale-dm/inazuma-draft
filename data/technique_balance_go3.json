@@ -1,0 +1,385 @@
+{
+ "_doc": "TP y potencia específicos de GO3 (Galaxy) para las técnicas originales de GO3 (debut GO3: coste GX y sin coste IE1/IE2/IE3/GO1/GO2). Solo técnicas normales (sin keshin, Mixi Max ni tótems). Colocadas por lore; ver docs/balance-tecnicas-go2-go3-originales.md. Se aplican solo a cartas GO3; el balance_tp global no se toca.",
+ "techniques": {
+  "ArashiTatsumakiHurricane": [
+   170,
+   215,
+   980
+  ],
+  "AsokoNiUFO": [
+   100,
+   100,
+   640
+  ],
+  "AtlasSword": [
+   140,
+   170,
+   890
+  ],
+  "BeautifulHoop": [
+   70,
+   70,
+   440
+  ],
+  "BicycleSword": [
+   130,
+   160,
+   880
+  ],
+  "BigMouth": [
+   110,
+   120,
+   720
+  ],
+  "BlackDawn": [
+   170,
+   215,
+   980
+  ],
+  "BubbleBoil": [
+   110,
+   120,
+   720
+  ],
+  "CastleGate": [
+   150,
+   180,
+   900
+  ],
+  "CrocodileFang": [
+   60,
+   60,
+   360
+  ],
+  "DeadStraight": [
+   100,
+   100,
+   640
+  ],
+  "DeathScytheLow": [
+   70,
+   70,
+   440
+  ],
+  "DeathScytheMiddle": [
+   80,
+   85,
+   540
+  ],
+  "DefenseHouteishiki": [
+   60,
+   60,
+   360
+  ],
+  "DesertDrift": [
+   80,
+   85,
+   540
+  ],
+  "DiffuseChord": [
+   140,
+   170,
+   890
+  ],
+  "DigThrough": [
+   100,
+   100,
+   640
+  ],
+  "DigUp": [
+   100,
+   100,
+   640
+  ],
+  "Doukasen": [
+   50,
+   50,
+   300
+  ],
+  "DryBlow": [
+   80,
+   85,
+   540
+  ],
+  "DustJavelin": [
+   110,
+   120,
+   720
+  ],
+  "Einsatz": [
+   70,
+   70,
+   440
+  ],
+  "FatalLift": [
+   130,
+   160,
+   880
+  ],
+  "FootworkDraw": [
+   90,
+   95,
+   600
+  ],
+  "GalacticaFall": [
+   170,
+   215,
+   980
+  ],
+  "GekirinDunk": [
+   150,
+   180,
+   900
+  ],
+  "GigantVine": [
+   100,
+   100,
+   640
+  ],
+  "GingaRocket": [
+   170,
+   215,
+   980
+  ],
+  "GoldFever": [
+   90,
+   95,
+   600
+  ],
+  "HologramLock": [
+   120,
+   140,
+   800
+  ],
+  "IvoryCrash": [
+   80,
+   85,
+   540
+  ],
+  "Jackknife": [
+   120,
+   140,
+   800
+  ],
+  "JudgmentRay": [
+   140,
+   170,
+   890
+  ],
+  "KabukiBreak": [
+   110,
+   120,
+   720
+  ],
+  "Kazangan": [
+   100,
+   100,
+   640
+  ],
+  "Kazanrai": [
+   140,
+   170,
+   890
+  ],
+  "KillerElbow": [
+   80,
+   85,
+   540
+  ],
+  "KonohaRendezvous": [
+   120,
+   140,
+   800
+  ],
+  "KonohaRoll": [
+   90,
+   95,
+   600
+  ],
+  "KyoubouHead": [
+   100,
+   100,
+   640
+  ],
+  "LiquidFlow": [
+   100,
+   100,
+   640
+  ],
+  "LoyalHeartShot": [
+   140,
+   170,
+   890
+  ],
+  "MagicAmp": [
+   130,
+   160,
+   880
+  ],
+  "MagmaCarpet": [
+   100,
+   100,
+   640
+  ],
+  "MermaidSmash": [
+   60,
+   60,
+   360
+  ],
+  "MushroomHop": [
+   100,
+   100,
+   640
+  ],
+  "OilRush": [
+   80,
+   85,
+   540
+  ],
+  "OraoraMenchi": [
+   70,
+   70,
+   440
+  ],
+  "OrbitalDrive": [
+   140,
+   170,
+   890
+  ],
+  "ParkourAttack": [
+   120,
+   140,
+   800
+  ],
+  "Phalanx": [
+   130,
+   160,
+   880
+  ],
+  "PsychicBow": [
+   130,
+   160,
+   880
+  ],
+  "RapidFire": [
+   60,
+   60,
+   360
+  ],
+  "ReboundLayer": [
+   120,
+   140,
+   800
+  ],
+  "RisingSlash": [
+   120,
+   140,
+   800
+  ],
+  "RockHammer": [
+   120,
+   140,
+   800
+  ],
+  "RollingCutter": [
+   100,
+   100,
+   640
+  ],
+  "Sacrifice": [
+   150,
+   180,
+   900
+  ],
+  "SandKnock": [
+   110,
+   120,
+   720
+  ],
+  "ScreamOfEden": [
+   160,
+   195,
+   930
+  ],
+  "ShinyFeather": [
+   130,
+   160,
+   880
+  ],
+  "ShootEater": [
+   140,
+   170,
+   890
+  ],
+  "SilkRoad": [
+   80,
+   85,
+   540
+  ],
+  "Stargazer": [
+   160,
+   195,
+   930
+  ],
+  "StealthWalk": [
+   130,
+   160,
+   880
+  ],
+  "TentacleHold": [
+   110,
+   120,
+   720
+  ],
+  "TheEarthInfinity": [
+   190,
+   250,
+   1030
+  ],
+  "TracePress": [
+   60,
+   60,
+   360
+  ],
+  "TwistReach": [
+   60,
+   60,
+   360
+  ],
+  "VolcanicFly": [
+   100,
+   100,
+   640
+  ],
+  "VolcanoHead": [
+   110,
+   120,
+   720
+  ],
+  "Waterfall": [
+   110,
+   120,
+   720
+  ],
+  "WildDunk": [
+   70,
+   70,
+   440
+  ],
+  "WillyWilly": [
+   60,
+   60,
+   360
+  ],
+  "WinningLogic": [
+   80,
+   85,
+   540
+  ],
+  "ZSlash": [
+   90,
+   95,
+   600
+  ]
+ }
+}

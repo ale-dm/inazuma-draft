@@ -304148,7 +304148,10 @@
    ],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go2": 110,
+   "balance_power_min_go2": 120,
+   "balance_power_max_go2": 720
   },
   {
    "id": "GodHandV",
@@ -304287,7 +304290,10 @@
    "traits": [],
    "balance_tp": 130,
    "balance_power_min": 160,
-   "balance_power_max": 880
+   "balance_power_max": 880,
+   "balance_tp_go2": 140,
+   "balance_power_min_go2": 170,
+   "balance_power_max_go2": 890
   },
   {
    "id": "FireTornado",
@@ -304505,7 +304511,10 @@
    "traits": [],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go2": 90,
+   "balance_power_min_go2": 95,
+   "balance_power_max_go2": 600
   },
   {
    "id": "SparkEdgeDribble",
@@ -304530,7 +304539,10 @@
    "traits": [],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go2": 110,
+   "balance_power_min_go2": 120,
+   "balance_power_max_go2": 720
   },
   {
    "id": "FireTornadoDD",
@@ -304615,7 +304627,10 @@
    "traits": [],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go2": 90,
+   "balance_power_min_go2": 95,
+   "balance_power_max_go2": 600
   },
   {
    "id": "AtomicFlare",
@@ -304925,7 +304940,10 @@
    ],
    "balance_tp": 160,
    "balance_power_min": 195,
-   "balance_power_max": 930
+   "balance_power_max": 930,
+   "balance_tp_go2": 150,
+   "balance_power_min_go2": 180,
+   "balance_power_max_go2": 900
   },
   {
    "id": "ShippuuDash",
@@ -305413,7 +305431,10 @@
    ],
    "balance_tp": 160,
    "balance_power_min": 195,
-   "balance_power_max": 930
+   "balance_power_max": 930,
+   "balance_tp_go2": 160,
+   "balance_power_min_go2": 195,
+   "balance_power_max_go2": 930
   },
   {
    "id": "BushinRenzan",
@@ -305782,7 +305803,10 @@
    ],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go2": 80,
+   "balance_power_min_go2": 85,
+   "balance_power_max_go2": 540
   },
   {
    "id": "OdinSword",
@@ -306523,7 +306547,10 @@
    "traits": [],
    "balance_tp": 200,
    "balance_power_min": 270,
-   "balance_power_max": 1080
+   "balance_power_max": 1080,
+   "balance_tp_go3": 190,
+   "balance_power_min_go3": 250,
+   "balance_power_max_go3": 1030
   },
   {
    "id": "LuckyDice",
@@ -307493,7 +307520,10 @@
    ],
    "balance_tp": 200,
    "balance_power_min": 270,
-   "balance_power_max": 1080
+   "balance_power_max": 1080,
+   "balance_tp_go2": 190,
+   "balance_power_min_go2": 250,
+   "balance_power_max_go2": 1030
   },
   {
    "id": "KouteiPenguin2gou",
@@ -308990,7 +309020,10 @@
    "traits": [],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go2": 160,
+   "balance_power_min_go2": 195,
+   "balance_power_max_go2": 930
   },
   {
    "id": "PlanetShield",
@@ -309041,7 +309074,10 @@
    ],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go3": 60,
+   "balance_power_min_go3": 60,
+   "balance_power_max_go3": 360
   },
   {
    "id": "MushroomHop",
@@ -309065,7 +309101,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go3": 100,
+   "balance_power_min_go3": 100,
+   "balance_power_max_go3": 640
   },
   {
    "id": "YakimochiScrew",
@@ -309121,7 +309160,10 @@
    ],
    "balance_tp": 160,
    "balance_power_min": 195,
-   "balance_power_max": 930
+   "balance_power_max": 930,
+   "balance_tp_go3": 160,
+   "balance_power_min_go3": 195,
+   "balance_power_max_go3": 930
   },
   {
    "id": "GodHandTriple",
@@ -309434,7 +309476,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go2": 80,
+   "balance_power_min_go2": 85,
+   "balance_power_max_go2": 540
   },
   {
    "id": "BritanniaCross",
@@ -309580,7 +309625,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go2": 70,
+   "balance_power_min_go2": 70,
+   "balance_power_max_go2": 440
   },
   {
    "id": "SerpentFang",
@@ -310103,7 +310151,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go2": 60,
+   "balance_power_min_go2": 60,
+   "balance_power_max_go2": 360
   },
   {
    "id": "SouthernCrosscut",
@@ -310155,7 +310206,10 @@
    "traits": [],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go2": 150,
+   "balance_power_min_go2": 180,
+   "balance_power_max_go2": 900
   },
   {
    "id": "BungeeThrust",
@@ -310180,7 +310234,10 @@
    "traits": [],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go2": 100,
+   "balance_power_min_go2": 100,
+   "balance_power_max_go2": 640
   },
   {
    "id": "MeteorShower",
@@ -311471,7 +311528,10 @@
    "traits": [],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go2": 160,
+   "balance_power_min_go2": 195,
+   "balance_power_max_go2": 930
   },
   {
    "id": "ArmadilloCircus",
@@ -312042,7 +312102,10 @@
    ],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go2": 110,
+   "balance_power_min_go2": 120,
+   "balance_power_max_go2": 720
   },
   {
    "id": "KuroshioRide",
@@ -312326,7 +312389,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go2": 70,
+   "balance_power_min_go2": 70,
+   "balance_power_max_go2": 440
   },
   {
    "id": "Shinkuuma",
@@ -312781,7 +312847,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go3": 50,
+   "balance_power_min_go3": 50,
+   "balance_power_max_go3": 300
   },
   {
    "id": "VivaBanriNoChoujou",
@@ -314175,7 +314244,10 @@
    ],
    "balance_tp": 160,
    "balance_power_min": 195,
-   "balance_power_max": 930
+   "balance_power_max": 930,
+   "balance_tp_go2": 170,
+   "balance_power_min_go2": 215,
+   "balance_power_max_go2": 980
   },
   {
    "id": "MegaWall",
@@ -314471,7 +314543,10 @@
    "traits": [],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go2": 60,
+   "balance_power_min_go2": 60,
+   "balance_power_max_go2": 360
   },
   {
    "id": "AcrobatKeep",
@@ -314525,7 +314600,10 @@
    "traits": [],
    "balance_tp": 150,
    "balance_power_min": 180,
-   "balance_power_max": 900
+   "balance_power_max": 900,
+   "balance_tp_go2": 140,
+   "balance_power_min_go2": 170,
+   "balance_power_max_go2": 890
   },
   {
    "id": "ArashiTatsumakiHurricane",
@@ -314551,7 +314629,10 @@
    ],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go3": 170,
+   "balance_power_min_go3": 215,
+   "balance_power_max_go3": 980
   },
   {
    "id": "AsokoNiUFO",
@@ -314575,7 +314656,10 @@
    "traits": [],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go3": 100,
+   "balance_power_min_go3": 100,
+   "balance_power_max_go3": 640
   },
   {
    "id": "AsteriskRock",
@@ -314603,7 +314687,10 @@
    ],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go2": 120,
+   "balance_power_min_go2": 140,
+   "balance_power_max_go2": 800
   },
   {
    "id": "AtlantisWall",
@@ -314659,7 +314746,10 @@
    "traits": [],
    "balance_tp": 150,
    "balance_power_min": 180,
-   "balance_power_max": 900
+   "balance_power_max": 900,
+   "balance_tp_go3": 140,
+   "balance_power_min_go3": 170,
+   "balance_power_max_go3": 890
   },
   {
    "id": "BatAttack",
@@ -314717,7 +314807,10 @@
    ],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go2": 100,
+   "balance_power_min_go2": 100,
+   "balance_power_max_go2": 640
   },
   {
    "id": "BeastLord",
@@ -314742,7 +314835,10 @@
    "traits": [],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go2": 160,
+   "balance_power_min_go2": 195,
+   "balance_power_max_go2": 930
   },
   {
    "id": "BeautifulHoop",
@@ -314766,7 +314862,10 @@
    "traits": [],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go3": 70,
+   "balance_power_min_go3": 70,
+   "balance_power_max_go3": 440
   },
   {
    "id": "BicycleSword",
@@ -314789,7 +314888,10 @@
    "name_it": "Stoccata Invertita",
    "traits": [
     "long"
-   ]
+   ],
+   "balance_tp_go3": 130,
+   "balance_power_min_go3": 160,
+   "balance_power_max_go3": 880
   },
   {
    "id": "BigBang",
@@ -314864,7 +314966,10 @@
    "traits": [],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go3": 110,
+   "balance_power_min_go3": 120,
+   "balance_power_max_go3": 720
   },
   {
    "id": "BigScissors",
@@ -314920,9 +315025,9 @@
    "balance_tp": 120,
    "balance_power_min": 140,
    "balance_power_max": 800,
-   "balance_tp_go1": 140,
-   "balance_power_min_go1": 170,
-   "balance_power_max_go1": 890
+   "balance_tp_go1": 130,
+   "balance_power_min_go1": 160,
+   "balance_power_max_go1": 880
   },
   {
    "id": "BlackDawn",
@@ -314946,7 +315051,10 @@
    "traits": [],
    "balance_tp": 130,
    "balance_power_min": 160,
-   "balance_power_max": 880
+   "balance_power_max": 880,
+   "balance_tp_go3": 170,
+   "balance_power_min_go3": 215,
+   "balance_power_max_go3": 980
   },
   {
    "id": "BlitzBridge",
@@ -314974,7 +315082,10 @@
    ],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go2": 60,
+   "balance_power_min_go2": 60,
+   "balance_power_max_go2": 360
   },
   {
    "id": "BloodyEncore",
@@ -315054,7 +315165,10 @@
    "traits": [],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go2": 70,
+   "balance_power_min_go2": 70,
+   "balance_power_max_go2": 440
   },
   {
    "id": "BoundFlame",
@@ -315135,7 +315249,10 @@
    ],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go3": 110,
+   "balance_power_min_go3": 120,
+   "balance_power_max_go3": 720
   },
   {
    "id": "BuraiHand",
@@ -315163,9 +315280,9 @@
    "balance_tp": 110,
    "balance_power_min": 120,
    "balance_power_max": 720,
-   "balance_tp_go1": 130,
-   "balance_power_min_go1": 160,
-   "balance_power_max_go1": 880
+   "balance_tp_go1": 120,
+   "balance_power_min_go1": 140,
+   "balance_power_max_go1": 800
   },
   {
    "id": "BurningCatch",
@@ -315283,7 +315400,10 @@
    ],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go2": 110,
+   "balance_power_min_go2": 120,
+   "balance_power_max_go2": 720
   },
   {
    "id": "CardSplash",
@@ -315342,7 +315462,10 @@
    ],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go3": 150,
+   "balance_power_min_go3": 180,
+   "balance_power_max_go3": 900
   },
   {
    "id": "Checkmate",
@@ -315422,7 +315545,10 @@
    "traits": [],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go2": 80,
+   "balance_power_min_go2": 85,
+   "balance_power_max_go2": 540
   },
   {
    "id": "CounterdriveGK",
@@ -315533,7 +315659,10 @@
    "traits": [],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go3": 60,
+   "balance_power_min_go3": 60,
+   "balance_power_max_go3": 360
   },
   {
    "id": "CrystalBarrier",
@@ -315667,7 +315796,10 @@
    "name_it": "Controdiretto",
    "traits": [
     "chain"
-   ]
+   ],
+   "balance_tp_go3": 100,
+   "balance_power_min_go3": 100,
+   "balance_power_max_go3": 640
   },
   {
    "id": "DeathBreak",
@@ -315746,7 +315878,10 @@
    "traits": [],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go3": 70,
+   "balance_power_min_go3": 70,
+   "balance_power_max_go3": 440
   },
   {
    "id": "DeathScytheMiddle",
@@ -315773,7 +315908,10 @@
    ],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go3": 80,
+   "balance_power_min_go3": 85,
+   "balance_power_max_go3": 540
   },
   {
    "id": "DeathSword",
@@ -315827,7 +315965,10 @@
    "traits": [],
    "balance_tp": 130,
    "balance_power_min": 160,
-   "balance_power_max": 880
+   "balance_power_max": 880,
+   "balance_tp_go2": 120,
+   "balance_power_min_go2": 140,
+   "balance_power_max_go2": 800
   },
   {
    "id": "DeepMist",
@@ -315883,7 +316024,10 @@
    "traits": [],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go3": 60,
+   "balance_power_min_go3": 60,
+   "balance_power_max_go3": 360
   },
   {
    "id": "DesertDrift",
@@ -315907,7 +316051,10 @@
    "traits": [],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go3": 80,
+   "balance_power_min_go3": 85,
+   "balance_power_max_go3": 540
   },
   {
    "id": "DestinyCloud",
@@ -315933,7 +316080,10 @@
    "traits": [],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go2": 160,
+   "balance_power_min_go2": 195,
+   "balance_power_max_go2": 930
   },
   {
    "id": "DevilBurst",
@@ -315960,9 +316110,9 @@
    "balance_tp": 140,
    "balance_power_min": 170,
    "balance_power_max": 890,
-   "balance_tp_go1": 140,
-   "balance_power_min_go1": 170,
-   "balance_power_max_go1": 890
+   "balance_tp_go1": 130,
+   "balance_power_min_go1": 160,
+   "balance_power_max_go1": 880
   },
   {
    "id": "DiffuseChord",
@@ -315986,7 +316136,10 @@
    "traits": [],
    "balance_tp": 160,
    "balance_power_min": 195,
-   "balance_power_max": 930
+   "balance_power_max": 930,
+   "balance_tp_go3": 140,
+   "balance_power_min_go3": 170,
+   "balance_power_max_go3": 890
   },
   {
    "id": "DigThrough",
@@ -316010,7 +316163,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go3": 100,
+   "balance_power_min_go3": 100,
+   "balance_power_max_go3": 640
   },
   {
    "id": "DigUp",
@@ -316034,7 +316190,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go3": 100,
+   "balance_power_min_go3": 100,
+   "balance_power_max_go3": 640
   },
   {
    "id": "DimensionStorm",
@@ -316061,7 +316220,10 @@
    ],
    "balance_tp": 130,
    "balance_power_min": 160,
-   "balance_power_max": 880
+   "balance_power_max": 880,
+   "balance_tp_go2": 140,
+   "balance_power_min_go2": 170,
+   "balance_power_max_go2": 890
   },
   {
    "id": "DinosaurBreak",
@@ -316117,7 +316279,10 @@
    "traits": [],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go2": 150,
+   "balance_power_min_go2": 180,
+   "balance_power_max_go2": 900
   },
   {
    "id": "DoonShout",
@@ -316143,7 +316308,10 @@
    "traits": [],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go2": 70,
+   "balance_power_min_go2": 70,
+   "balance_power_max_go2": 440
   },
   {
    "id": "DoubleShot",
@@ -316170,7 +316338,10 @@
    ],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go2": 130,
+   "balance_power_min_go2": 160,
+   "balance_power_max_go2": 880
   },
   {
    "id": "DragonStorm",
@@ -316247,7 +316418,10 @@
    "traits": [],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go3": 80,
+   "balance_power_min_go3": 85,
+   "balance_power_max_go3": 540
   },
   {
    "id": "DustJavelin",
@@ -316271,7 +316445,10 @@
    "traits": [],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go3": 110,
+   "balance_power_min_go3": 120,
+   "balance_power_max_go3": 720
   },
   {
    "id": "Einsatz",
@@ -316298,7 +316475,10 @@
    ],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go3": 70,
+   "balance_power_min_go3": 70,
+   "balance_power_max_go3": 440
   },
   {
    "id": "ExtremeRabbit",
@@ -316323,7 +316503,10 @@
    "traits": [],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go2": 160,
+   "balance_power_min_go2": 195,
+   "balance_power_max_go2": 930
   },
   {
    "id": "FalcoWing",
@@ -316373,7 +316556,10 @@
    "traits": [],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go3": 130,
+   "balance_power_min_go3": 160,
+   "balance_power_max_go3": 880
   },
   {
    "id": "FenceOfGaia",
@@ -316430,7 +316616,10 @@
    "traits": [],
    "balance_tp": 200,
    "balance_power_min": 270,
-   "balance_power_max": 1080
+   "balance_power_max": 1080,
+   "balance_tp_go2": 190,
+   "balance_power_min_go2": 250,
+   "balance_power_max_go2": 1030
   },
   {
    "id": "FloralDespair",
@@ -316455,7 +316644,10 @@
    "traits": [],
    "balance_tp": 130,
    "balance_power_min": 160,
-   "balance_power_max": 880
+   "balance_power_max": 880,
+   "balance_tp_go2": 110,
+   "balance_power_min_go2": 120,
+   "balance_power_max_go2": 720
   },
   {
    "id": "FlyingFish",
@@ -316510,7 +316702,10 @@
    "traits": [],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go3": 90,
+   "balance_power_min_go3": 95,
+   "balance_power_max_go3": 600
   },
   {
    "id": "Fortissimo",
@@ -316566,7 +316761,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go2": 70,
+   "balance_power_min_go2": 70,
+   "balance_power_max_go2": 440
   },
   {
    "id": "GalacticaFall",
@@ -316590,7 +316788,10 @@
    "traits": [],
    "balance_tp": 150,
    "balance_power_min": 180,
-   "balance_power_max": 900
+   "balance_power_max": 900,
+   "balance_tp_go3": 170,
+   "balance_power_min_go3": 215,
+   "balance_power_max_go3": 980
   },
   {
    "id": "GallopBuster",
@@ -316643,7 +316844,10 @@
    ],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go2": 130,
+   "balance_power_min_go2": 160,
+   "balance_power_max_go2": 880
   },
   {
    "id": "GaussShot",
@@ -316670,7 +316874,10 @@
    ],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go2": 90,
+   "balance_power_min_go2": 95,
+   "balance_power_max_go2": 600
   },
   {
    "id": "GearDrive",
@@ -316695,7 +316902,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go2": 90,
+   "balance_power_min_go2": 95,
+   "balance_power_max_go2": 600
   },
   {
    "id": "GekirinDunk",
@@ -316720,7 +316930,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go3": 150,
+   "balance_power_min_go3": 180,
+   "balance_power_max_go3": 900
   },
   {
    "id": "GigantVine",
@@ -316746,7 +316959,10 @@
    ],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go3": 100,
+   "balance_power_min_go3": 100,
+   "balance_power_max_go3": 640
   },
   {
    "id": "GiganticBomb",
@@ -316800,7 +317016,10 @@
    ],
    "balance_tp": 120,
    "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_power_max": 800,
+   "balance_tp_go3": 170,
+   "balance_power_min_go3": 215,
+   "balance_power_max_go3": 980
   },
   {
    "id": "GloriousRay",
@@ -316825,7 +317044,10 @@
    "traits": [],
    "balance_tp": 120,
    "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_power_max": 800,
+   "balance_tp_go2": 140,
+   "balance_power_min_go2": 170,
+   "balance_power_max_go2": 890
   },
   {
    "id": "GodHandW",
@@ -316851,7 +317073,10 @@
    "traits": [],
    "balance_tp": 150,
    "balance_power_min": 180,
-   "balance_power_max": 900
+   "balance_power_max": 900,
+   "balance_tp_go2": 180,
+   "balance_power_min_go2": 230,
+   "balance_power_max_go2": 1000
   },
   {
    "id": "GoldFever",
@@ -316875,7 +317100,10 @@
    "traits": [],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go3": 90,
+   "balance_power_min_go3": 95,
+   "balance_power_max_go3": 600
   },
   {
    "id": "GrandSweeper",
@@ -316903,7 +317131,10 @@
    ],
    "balance_tp": 120,
    "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_power_max": 800,
+   "balance_tp_go2": 140,
+   "balance_power_min_go2": 170,
+   "balance_power_max_go2": 890
   },
   {
    "id": "GravityPoint",
@@ -317013,7 +317244,10 @@
    "traits": [],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go2": 90,
+   "balance_power_min_go2": 95,
+   "balance_power_max_go2": 600
   },
   {
    "id": "HakaiDanmaku",
@@ -317176,7 +317410,10 @@
    ],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go2": 110,
+   "balance_power_min_go2": 120,
+   "balance_power_max_go2": 720
   },
   {
    "id": "HologramLock",
@@ -317200,7 +317437,10 @@
    "traits": [],
    "balance_tp": 120,
    "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_power_max": 800,
+   "balance_tp_go3": 120,
+   "balance_power_min_go3": 140,
+   "balance_power_max_go3": 800
   },
   {
    "id": "HuntersNet",
@@ -317292,7 +317532,10 @@
    ],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go2": 80,
+   "balance_power_min_go2": 85,
+   "balance_power_max_go2": 540
   },
   {
    "id": "IcicleRoad",
@@ -317366,7 +317609,10 @@
    "traits": [],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go3": 80,
+   "balance_power_min_go3": 85,
+   "balance_power_max_go3": 540
   },
   {
    "id": "Jackknife",
@@ -317390,7 +317636,10 @@
    "traits": [],
    "balance_tp": 120,
    "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_power_max": 800,
+   "balance_tp_go3": 120,
+   "balance_power_min_go3": 140,
+   "balance_power_max_go3": 800
   },
   {
    "id": "JokerRains",
@@ -317443,7 +317692,10 @@
    "traits": [],
    "balance_tp": 120,
    "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_power_max": 800,
+   "balance_tp_go3": 140,
+   "balance_power_min_go3": 170,
+   "balance_power_max_go3": 890
   },
   {
    "id": "KabukiBreak",
@@ -317467,7 +317719,10 @@
    "traits": [],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go3": 110,
+   "balance_power_min_go3": 120,
+   "balance_power_max_go3": 720
   },
   {
    "id": "KageTsukami",
@@ -317555,7 +317810,10 @@
    ],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go3": 100,
+   "balance_power_min_go3": 100,
+   "balance_power_max_go3": 640
   },
   {
    "id": "Kazanrai",
@@ -317581,7 +317839,10 @@
    ],
    "balance_tp": 120,
    "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_power_max": 800,
+   "balance_tp_go3": 140,
+   "balance_power_min_go3": 170,
+   "balance_power_max_go3": 890
   },
   {
    "id": "KikuIchimonji",
@@ -317663,7 +317924,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go3": 80,
+   "balance_power_min_go3": 85,
+   "balance_power_max_go3": 540
   },
   {
    "id": "KillerWhale",
@@ -317794,7 +318058,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go2": 140,
+   "balance_power_min_go2": 170,
+   "balance_power_max_go2": 890
   },
   {
    "id": "KogetsuJuujishou",
@@ -317822,7 +318089,10 @@
    ],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go2": 160,
+   "balance_power_min_go2": 195,
+   "balance_power_max_go2": 930
   },
   {
    "id": "KonohaRendezvous",
@@ -317846,7 +318116,10 @@
    "traits": [],
    "balance_tp": 160,
    "balance_power_min": 195,
-   "balance_power_max": 930
+   "balance_power_max": 930,
+   "balance_tp_go3": 120,
+   "balance_power_min_go3": 140,
+   "balance_power_max_go3": 800
   },
   {
    "id": "KonohaRoll",
@@ -317870,7 +318143,10 @@
    "traits": [],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go3": 90,
+   "balance_power_min_go3": 95,
+   "balance_power_max_go3": 600
   },
   {
    "id": "KyoubouHead",
@@ -317896,7 +318172,10 @@
    ],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go3": 100,
+   "balance_power_min_go3": 100,
+   "balance_power_max_go3": 640
   },
   {
    "id": "LaFlamme",
@@ -317948,7 +318227,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go3": 100,
+   "balance_power_min_go3": 100,
+   "balance_power_max_go3": 640
   },
   {
    "id": "LostAngel",
@@ -318001,7 +318283,10 @@
    ],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go2": 90,
+   "balance_power_min_go2": 95,
+   "balance_power_max_go2": 600
   },
   {
    "id": "LoyalHeartShot",
@@ -318025,7 +318310,10 @@
    "traits": [],
    "balance_tp": 130,
    "balance_power_min": 160,
-   "balance_power_max": 880
+   "balance_power_max": 880,
+   "balance_tp_go3": 140,
+   "balance_power_min_go3": 170,
+   "balance_power_max_go3": 890
   },
   {
    "id": "MachineGunBeat",
@@ -318104,7 +318392,10 @@
    "traits": [],
    "balance_tp": 130,
    "balance_power_min": 160,
-   "balance_power_max": 880
+   "balance_power_max": 880,
+   "balance_tp_go3": 130,
+   "balance_power_min_go3": 160,
+   "balance_power_max_go3": 880
   },
   {
    "id": "MagicalFlower",
@@ -318129,7 +318420,10 @@
    "traits": [],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go2": 100,
+   "balance_power_min_go2": 100,
+   "balance_power_max_go2": 640
   },
   {
    "id": "MagiciansBox",
@@ -318179,7 +318473,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go3": 100,
+   "balance_power_min_go3": 100,
+   "balance_power_max_go3": 640
   },
   {
    "id": "MagnetDraw",
@@ -318204,7 +318501,10 @@
    "traits": [],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go2": 80,
+   "balance_power_min_go2": 85,
+   "balance_power_max_go2": 540
   },
   {
    "id": "MajinTheHand_K",
@@ -318317,7 +318617,10 @@
    ],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go2": 100,
+   "balance_power_min_go2": 100,
+   "balance_power_max_go2": 640
   },
   {
    "id": "MokkoriOkaNoMoai",
@@ -318394,7 +318697,10 @@
    "traits": [],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go2": 140,
+   "balance_power_min_go2": 170,
+   "balance_power_max_go2": 890
   },
   {
    "id": "MueiSouha",
@@ -318419,7 +318725,10 @@
    "traits": [],
    "balance_tp": 150,
    "balance_power_min": 180,
-   "balance_power_max": 900
+   "balance_power_max": 900,
+   "balance_tp_go2": 120,
+   "balance_power_min_go2": 140,
+   "balance_power_max_go2": 800
   },
   {
    "id": "NaminoriPierrot",
@@ -318475,7 +318784,10 @@
    ],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go2": 120,
+   "balance_power_min_go2": 140,
+   "balance_power_max_go2": 800
   },
   {
    "id": "OilRush",
@@ -318499,7 +318811,10 @@
    "traits": [],
    "balance_tp": 90,
    "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_power_max": 600,
+   "balance_tp_go3": 80,
+   "balance_power_min_go3": 85,
+   "balance_power_max_go3": 540
   },
   {
    "id": "OkehazamaWall",
@@ -318527,7 +318842,10 @@
    ],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go2": 90,
+   "balance_power_min_go2": 95,
+   "balance_power_max_go2": 600
   },
   {
    "id": "OlympusHarmony",
@@ -318581,7 +318899,10 @@
    "traits": [],
    "balance_tp": 180,
    "balance_power_min": 230,
-   "balance_power_max": 1000
+   "balance_power_max": 1000,
+   "balance_tp_go2": 180,
+   "balance_power_min_go2": 230,
+   "balance_power_max_go2": 1000
   },
   {
    "id": "OmegaTheHand",
@@ -318630,7 +318951,10 @@
    "traits": [],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go3": 70,
+   "balance_power_min_go3": 70,
+   "balance_power_max_go3": 440
   },
   {
    "id": "OrbitalDrive",
@@ -318654,7 +318978,10 @@
    "traits": [],
    "balance_tp": 130,
    "balance_power_min": 160,
-   "balance_power_max": 880
+   "balance_power_max": 880,
+   "balance_tp_go3": 140,
+   "balance_power_min_go3": 170,
+   "balance_power_max_go3": 890
   },
   {
    "id": "OuNoTsurugi",
@@ -318785,7 +319112,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go3": 120,
+   "balance_power_min_go3": 140,
+   "balance_power_max_go3": 800
   },
   {
    "id": "PegasusBreak",
@@ -318837,7 +319167,10 @@
    "traits": [],
    "balance_tp": 130,
    "balance_power_min": 160,
-   "balance_power_max": 880
+   "balance_power_max": 880,
+   "balance_tp_go2": 160,
+   "balance_power_min_go2": 195,
+   "balance_power_max_go2": 930
   },
   {
    "id": "PerfectCourse",
@@ -318890,7 +319223,10 @@
    "traits": [],
    "balance_tp": 130,
    "balance_power_min": 160,
-   "balance_power_max": 880
+   "balance_power_max": 880,
+   "balance_tp_go3": 130,
+   "balance_power_min_go3": 160,
+   "balance_power_max_go3": 880
   },
   {
    "id": "PowerSpike",
@@ -318999,7 +319335,10 @@
    "traits": [],
    "balance_tp": 150,
    "balance_power_min": 180,
-   "balance_power_max": 900
+   "balance_power_max": 900,
+   "balance_tp_go3": 130,
+   "balance_power_min_go3": 160,
+   "balance_power_max_go3": 880
   },
   {
    "id": "RCShoot",
@@ -319108,7 +319447,10 @@
    ],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go3": 60,
+   "balance_power_min_go3": 60,
+   "balance_power_max_go3": 360
   },
   {
    "id": "RapidWhip",
@@ -319167,7 +319509,10 @@
    ],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go3": 120,
+   "balance_power_min_go3": 140,
+   "balance_power_max_go3": 800
   },
   {
    "id": "Rejection",
@@ -319193,7 +319538,10 @@
    "traits": [],
    "balance_tp": 130,
    "balance_power_min": 160,
-   "balance_power_max": 880
+   "balance_power_max": 880,
+   "balance_tp_go2": 120,
+   "balance_power_min_go2": 140,
+   "balance_power_max_go2": 800
   },
   {
    "id": "ReverseWorld",
@@ -319251,7 +319599,10 @@
    ],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go3": 120,
+   "balance_power_min_go3": 140,
+   "balance_power_max_go3": 800
   },
   {
    "id": "RockHammer",
@@ -319275,7 +319626,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go3": 120,
+   "balance_power_min_go3": 140,
+   "balance_power_max_go3": 800
   },
   {
    "id": "RollingCutter",
@@ -319299,7 +319653,10 @@
    "traits": [],
    "balance_tp": 120,
    "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_power_max": 800,
+   "balance_tp_go3": 100,
+   "balance_power_min_go3": 100,
+   "balance_power_max_go3": 640
   },
   {
    "id": "Sacrifice",
@@ -319326,7 +319683,10 @@
    ],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go3": 150,
+   "balance_power_min_go3": 180,
+   "balance_power_max_go3": 900
   },
   {
    "id": "SaikyouElevenHadou",
@@ -319351,7 +319711,10 @@
    "traits": [],
    "balance_tp": 180,
    "balance_power_min": 230,
-   "balance_power_max": 1000
+   "balance_power_max": 1000,
+   "balance_tp_go2": 200,
+   "balance_power_min_go2": 270,
+   "balance_power_max_go2": 1080
   },
   {
    "id": "SaikyousanShoukan",
@@ -319406,7 +319769,10 @@
    "traits": [],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go2": 120,
+   "balance_power_min_go2": 140,
+   "balance_power_max_go2": 800
   },
   {
    "id": "SandKnock",
@@ -319433,7 +319799,10 @@
    ],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go3": 110,
+   "balance_power_min_go3": 120,
+   "balance_power_max_go3": 720
   },
   {
    "id": "ScratchRaid",
@@ -319483,7 +319852,10 @@
    "traits": [],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go3": 160,
+   "balance_power_min_go3": 195,
+   "balance_power_max_go3": 930
   },
   {
    "id": "ShellbitBurst",
@@ -319510,7 +319882,10 @@
    ],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go2": 170,
+   "balance_power_min_go2": 215,
+   "balance_power_max_go2": 980
   },
   {
    "id": "ShiningHole",
@@ -319536,7 +319911,10 @@
    "traits": [],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go2": 160,
+   "balance_power_min_go2": 195,
+   "balance_power_max_go2": 930
   },
   {
    "id": "ShinyFeather",
@@ -319560,7 +319938,10 @@
    "traits": [],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go3": 130,
+   "balance_power_min_go3": 160,
+   "balance_power_max_go3": 880
   },
   {
    "id": "ShootBreak",
@@ -319619,7 +320000,10 @@
    ],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go3": 140,
+   "balance_power_min_go3": 170,
+   "balance_power_max_go3": 890
   },
   {
    "id": "Sidewinder",
@@ -319674,7 +320058,10 @@
    "traits": [],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go3": 80,
+   "balance_power_min_go3": 85,
+   "balance_power_max_go3": 540
   },
   {
    "id": "SkyWalk",
@@ -319728,7 +320115,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go2": 80,
+   "balance_power_min_go2": 85,
+   "balance_power_max_go2": 540
   },
   {
    "id": "SonicShot",
@@ -319784,7 +320174,10 @@
    ],
    "balance_tp": 130,
    "balance_power_min": 160,
-   "balance_power_max": 880
+   "balance_power_max": 880,
+   "balance_tp_go2": 150,
+   "balance_power_min_go2": 180,
+   "balance_power_max_go2": 900
   },
   {
    "id": "SoulBringer",
@@ -319835,7 +320228,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go2": 100,
+   "balance_power_min_go2": 100,
+   "balance_power_max_go2": 640
   },
   {
    "id": "SpinningTransam",
@@ -319860,7 +320256,10 @@
    "traits": [],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go2": 60,
+   "balance_power_min_go2": 60,
+   "balance_power_max_go2": 360
   },
   {
    "id": "SpinningUpper",
@@ -319885,7 +320284,10 @@
    "traits": [],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go2": 70,
+   "balance_power_min_go2": 70,
+   "balance_power_max_go2": 440
   },
   {
    "id": "SpringArrow",
@@ -319910,7 +320312,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go2": 130,
+   "balance_power_min_go2": 160,
+   "balance_power_max_go2": 880
   },
   {
    "id": "SprintWarp",
@@ -319963,7 +320368,10 @@
    "traits": [],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go3": 130,
+   "balance_power_min_go3": 160,
+   "balance_power_max_go3": 880
   },
   {
    "id": "StormZone",
@@ -319988,7 +320396,10 @@
    "traits": [],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go2": 150,
+   "balance_power_min_go2": 180,
+   "balance_power_max_go2": 900
   },
   {
    "id": "StrongTower",
@@ -320067,7 +320478,10 @@
    ],
    "balance_tp": 130,
    "balance_power_min": 160,
-   "balance_power_max": 880
+   "balance_power_max": 880,
+   "balance_tp_go2": 150,
+   "balance_power_min_go2": 180,
+   "balance_power_max_go2": 900
   },
   {
    "id": "SwordExcalibur",
@@ -320169,7 +320583,10 @@
    "traits": [],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go3": 110,
+   "balance_power_min_go3": 120,
+   "balance_power_max_go3": 720
   },
   {
    "id": "TheMatrix",
@@ -320245,7 +320662,10 @@
    "traits": [],
    "balance_tp": 170,
    "balance_power_min": 215,
-   "balance_power_max": 980
+   "balance_power_max": 980,
+   "balance_tp_go2": 170,
+   "balance_power_min_go2": 215,
+   "balance_power_max_go2": 980
   },
   {
    "id": "TheStamp",
@@ -320356,7 +320776,10 @@
    "traits": [],
    "balance_tp": 40,
    "balance_power_min": 30,
-   "balance_power_max": 200
+   "balance_power_max": 200,
+   "balance_tp_go3": 60,
+   "balance_power_min_go3": 60,
+   "balance_power_max_go3": 360
   },
   {
    "id": "TriangleZZ",
@@ -320441,7 +320864,10 @@
    ],
    "balance_tp": 50,
    "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_power_max": 300,
+   "balance_tp_go3": 60,
+   "balance_power_min_go3": 60,
+   "balance_power_max_go3": 360
   },
   {
    "id": "VampireLord",
@@ -320466,7 +320892,10 @@
    "traits": [],
    "balance_tp": 140,
    "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_power_max": 890,
+   "balance_tp_go2": 160,
+   "balance_power_min_go2": 195,
+   "balance_power_max_go2": 930
   },
   {
    "id": "VolcanicFly",
@@ -320490,7 +320919,10 @@
    "traits": [],
    "balance_tp": 100,
    "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_power_max": 640,
+   "balance_tp_go3": 100,
+   "balance_power_min_go3": 100,
+   "balance_power_max_go3": 640
   },
   {
    "id": "VolcanoHead",
@@ -320517,7 +320949,10 @@
    ],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go3": 110,
+   "balance_power_min_go3": 120,
+   "balance_power_max_go3": 720
   },
   {
    "id": "Waterfall",
@@ -320544,7 +320979,10 @@
    ],
    "balance_tp": 110,
    "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_power_max": 720,
+   "balance_tp_go3": 110,
+   "balance_power_min_go3": 120,
+   "balance_power_max_go3": 720
   },
   {
    "id": "WhiteBlade",
@@ -320655,7 +321093,10 @@
    "traits": [],
    "balance_tp": 40,
    "balance_power_min": 30,
-   "balance_power_max": 200
+   "balance_power_max": 200,
+   "balance_tp_go3": 70,
+   "balance_power_min_go3": 70,
+   "balance_power_max_go3": 440
   },
   {
    "id": "WillyWilly",
@@ -320679,7 +321120,10 @@
    "traits": [],
    "balance_tp": 60,
    "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_power_max": 360,
+   "balance_tp_go3": 60,
+   "balance_power_min_go3": 60,
+   "balance_power_max_go3": 360
   },
   {
    "id": "WinningLogic",
@@ -320703,7 +321147,10 @@
    "traits": [],
    "balance_tp": 80,
    "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_power_max": 540,
+   "balance_tp_go3": 80,
+   "balance_power_min_go3": 85,
+   "balance_power_max_go3": 540
   },
   {
    "id": "ZSlash",
@@ -320727,7 +321174,10 @@
    "traits": [],
    "balance_tp": 70,
    "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_power_max": 440,
+   "balance_tp_go3": 90,
+   "balance_power_min_go3": 95,
+   "balance_power_max_go3": 600
   },
   {
    "id": "ZeroMagnum",
@@ -323778,9 +324228,9 @@
    "name_fr": "Éclair de force",
    "name_it": "Lampo di Forza",
    "traits": [],
-   "balance_tp": 90,
-   "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whs10010",
@@ -323802,9 +324252,9 @@
    "name_fr": "Tonnerre du printemps",
    "name_it": "Tuono di Primavera",
    "traits": [],
-   "balance_tp": 140,
-   "balance_power_min": 170,
-   "balance_power_max": 890
+   "balance_tp": 170,
+   "balance_power_min": 215,
+   "balance_power_max": 980
   },
   {
    "id": "vr_whs10050",
@@ -323826,9 +324276,9 @@
    "name_fr": "Tir tournoyant",
    "name_it": "Tiro Vorticante",
    "traits": [],
-   "balance_tp": 70,
-   "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whd10010",
@@ -323899,9 +324349,9 @@
    "name_fr": "Éclair divin",
    "name_it": "Ultra Tuono Celeste",
    "traits": [],
-   "balance_tp": 70,
-   "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whd10090",
@@ -323926,9 +324376,9 @@
    "traits": [
     "block"
    ],
-   "balance_tp": 80,
-   "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whd10130",
@@ -323950,9 +324400,9 @@
    "name_fr": "Tacle dramatique",
    "name_it": "Tackle Teatrale",
    "traits": [],
-   "balance_tp": 90,
-   "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whs10140",
@@ -323974,9 +324424,9 @@
    "name_fr": "Propulsion académique",
    "name_it": "Impulso della Risposta",
    "traits": [],
-   "balance_tp": 70,
-   "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_who10100",
@@ -324070,9 +324520,9 @@
    "name_fr": "Contre du héron",
    "name_it": "Picchiata del Falco",
    "traits": [],
-   "balance_tp": 110,
-   "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_who10110",
@@ -324142,9 +324592,9 @@
    "name_fr": "Dribble fantasmagorique",
    "name_it": "Dribbling Fantasma",
    "traits": [],
-   "balance_tp": 80,
-   "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs10170",
@@ -324166,9 +324616,9 @@
    "name_fr": "Loup argenté légendaire",
    "name_it": "Richiamo del Lupo Grigio",
    "traits": [],
-   "balance_tp": 80,
-   "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whs10150",
@@ -324190,9 +324640,9 @@
    "name_fr": "Marlins volants",
    "name_it": "Pesce Volante",
    "traits": [],
-   "balance_tp": 70,
-   "balance_power_min": 70,
-   "balance_power_max": 440
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_who10160",
@@ -324238,9 +324688,9 @@
    "name_fr": "Marteau de fer",
    "name_it": "Martello Metallico",
    "traits": [],
-   "balance_tp": 80,
-   "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_tp": 90,
+   "balance_power_min": 95,
+   "balance_power_max": 600
   },
   {
    "id": "vr_whd10120",
@@ -324265,9 +324715,9 @@
    "traits": [
     "block"
    ],
-   "balance_tp": 110,
-   "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_who10170",
@@ -324289,9 +324739,9 @@
    "name_fr": "Riff ventriculaire",
    "name_it": "Ritmo Rock and Roll",
    "traits": [],
-   "balance_tp": 110,
-   "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whk10070",
@@ -324314,9 +324764,9 @@
    "name_fr": "Main céleste tigrée",
    "name_it": "Mano di Luce della Tigre",
    "traits": [],
-   "balance_tp": 120,
-   "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whs10120",
@@ -324338,9 +324788,9 @@
    "name_fr": "Choc de Bahamut",
    "name_it": null,
    "traits": [],
-   "balance_tp": 120,
-   "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "vr_whs10030",
@@ -324362,9 +324812,9 @@
    "name_fr": "Un de Plus",
    "name_it": "Unificazione",
    "traits": [],
-   "balance_tp": 50,
-   "balance_power_min": 50,
-   "balance_power_max": 300
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_whs10110",
@@ -324435,9 +324885,9 @@
    "name_fr": "Étreinte sacrée",
    "name_it": "Abbraccio della Dea",
    "traits": [],
-   "balance_tp": 150,
-   "balance_power_min": 180,
-   "balance_power_max": 900
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
   },
   {
    "id": "vr_whk10040",
@@ -324484,9 +324934,9 @@
    "name_fr": null,
    "name_it": null,
    "traits": [],
-   "balance_tp": 90,
-   "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_tp": 80,
+   "balance_power_min": 85,
+   "balance_power_max": 540
   },
   {
    "id": "vr_whs10020",
@@ -324508,9 +324958,9 @@
    "name_fr": "Brisure du soleil",
    "name_it": "Fendiluce",
    "traits": [],
-   "balance_tp": 80,
-   "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_who10040",
@@ -324532,9 +324982,9 @@
    "name_fr": "Ruée Exigeante",
    "name_it": null,
    "traits": [],
-   "balance_tp": 80,
-   "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "vr_whs10080",
@@ -324556,9 +325006,9 @@
    "name_fr": "Tir de sniper",
    "name_it": "Tiro del Cecchino",
    "traits": [],
-   "balance_tp": 60,
-   "balance_power_min": 60,
-   "balance_power_max": 360
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
   },
   {
    "id": "vr_whk00130",
@@ -324606,9 +325056,9 @@
    "name_fr": "Royaume cybernétique",
    "name_it": "Morsa Cibernetica",
    "traits": [],
-   "balance_tp": 90,
-   "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_who10060",
@@ -324630,9 +325080,9 @@
    "name_fr": "Chutes du Niagara",
    "name_it": null,
    "traits": [],
-   "balance_tp": 90,
-   "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whd10040",
@@ -324654,9 +325104,9 @@
    "name_fr": "Plongée en profondeur",
    "name_it": null,
    "traits": [],
-   "balance_tp": 90,
-   "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whs10060",
@@ -324678,9 +325128,9 @@
    "name_fr": "Blaster du Tricheur",
    "name_it": null,
    "traits": [],
-   "balance_tp": 80,
-   "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   },
   {
    "id": "vr_whk10050",
@@ -324703,9 +325153,9 @@
    "name_fr": "Encre silencieuse",
    "name_it": "Pennellata Silenziosa",
    "traits": [],
-   "balance_tp": 80,
-   "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_who10070",
@@ -324727,9 +325177,9 @@
    "name_fr": "Menace visuelle",
    "name_it": "Sguardo Spettrale",
    "traits": [],
-   "balance_tp": 100,
-   "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whk10060",
@@ -324752,9 +325202,9 @@
    "name_fr": "Bouclier Royal",
    "name_it": null,
    "traits": [],
-   "balance_tp": 110,
-   "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whd10060",
@@ -324800,9 +325250,9 @@
    "name_fr": "Lumière du Maréchal",
    "name_it": null,
    "traits": [],
-   "balance_tp": 100,
-   "balance_power_min": 100,
-   "balance_power_max": 640
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "vr_whs10100",
@@ -324824,9 +325274,9 @@
    "name_fr": "Parade du manchot royal",
    "name_it": "Marcia dei Pinguini Imperatori",
    "traits": [],
-   "balance_tp": 110,
-   "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whk00280",
@@ -324951,6 +325401,138 @@
    "balance_tp": 80,
    "balance_power_min": 85,
    "balance_power_max": 540
+  },
+  {
+   "id": "vr_whd10080",
+   "name": "Kraken Seaquake",
+   "name_jp": "海神・ザ・クェイク",
+   "name_es": null,
+   "type": "Block",
+   "element": "air",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 440
+   },
+   "description": "Encircle your rival in a spiraling vortex and awaken the ocean's guardian to rise with a crashing wave and steal the ball.",
+   "image_url": null,
+   "zukan_types": null,
+   "name_fr": "Séisme d'Umi-Bozu",
+   "name_it": null,
+   "traits": [],
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
+  },
+  {
+   "id": "vr_whk10090",
+   "name": "Divine Deflectors",
+   "name_jp": "ゴッドフィンガーズ",
+   "name_es": "Deflectores divinos",
+   "type": "Catch",
+   "element": "air",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 640
+   },
+   "description": "Tear open space itself and guide the ball along a path carved by celestial hands.",
+   "image_url": null,
+   "zukan_types": null,
+   "name_fr": "Renvoi divin",
+   "name_it": "Respinta Divina",
+   "traits": [],
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
+  },
+  {
+   "id": "vr_whk10030",
+   "name": "Stillness Drip",
+   "name_jp": "スウェットスティルネス",
+   "name_es": "Gota de la quietud",
+   "type": "Catch",
+   "element": "fire",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 300
+   },
+   "description": "Gather every ounce of power and catch the ball in a dazzling display of determination and skill.",
+   "image_url": null,
+   "zukan_types": null,
+   "name_fr": "Sueur calmante",
+   "name_it": "Goccia Immobilizzante",
+   "traits": [],
+   "balance_tp": 70,
+   "balance_power_min": 70,
+   "balance_power_max": 440
+  },
+  {
+   "id": "vr_GodHandEV",
+   "name": "God Hand EV",
+   "name_jp": "ゴッドハンドＥＶ",
+   "name_es": "Mano celestial EV",
+   "type": "Catch",
+   "element": "earth",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 540
+   },
+   "description": "Envelop your hand in a rainbow wave with the ultimate evolution of God Hand to block any shot.",
+   "image_url": null,
+   "zukan_types": null,
+   "name_fr": "Main Céleste Évoluée",
+   "name_it": null,
+   "traits": [],
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
+  },
+  {
+   "id": "vr_GodCatchFT",
+   "name": "God Catch FT",
+   "name_jp": "ゴッドキャッチＦＴ",
+   "name_es": "Parada celestial TURBO",
+   "type": "Catch",
+   "element": "earth",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 640
+   },
+   "description": "Mastery of God Catch elevates the Majin to new heights, causing its rainbow aura to seal off the goal.",
+   "image_url": null,
+   "zukan_types": null,
+   "name_fr": null,
+   "name_it": null,
+   "traits": [],
+   "balance_tp": 160,
+   "balance_power_min": 195,
+   "balance_power_max": 930
+  },
+  {
+   "id": "vr_OkanTheHand",
+   "name": "Mama's Helping Hand",
+   "name_jp": "オカン・ザ・ハンド",
+   "name_es": "Mano matriarcal",
+   "type": "Catch",
+   "element": "earth",
+   "cost": null,
+   "cost_game": null,
+   "costs": {
+    "VR_power": 540
+   },
+   "description": "Catch the shot with the helping hand of a mom fed up with her study-shirking kid!",
+   "image_url": null,
+   "zukan_types": null,
+   "name_fr": "Ma-main magique",
+   "name_it": null,
+   "traits": [],
+   "balance_tp": 110,
+   "balance_power_min": 120,
+   "balance_power_max": 720
   }
  ],
  "characters": [

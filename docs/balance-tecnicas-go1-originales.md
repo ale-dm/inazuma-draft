@@ -76,8 +76,8 @@ Criterio:
 | 60 | 140 | Pingüino emperador 7 | `KouteiPenguin7` | 90 | **120** | sí |
 | 60 | 160 | Aguijones escarlata | `ThousandArrow` | 150 | **120** | sí |
 | 60 | 200 | Triángulo ZZ | `TriangleZZ` | 100 | **120** | sí |
-| 70 | 180 | Ceniza negra | `BlackAsh` | 120 | **140** | sí |
-| 70 | 180 | Tiro sobrenatural | `DevilBurst` | 140 | **140** | sí |
+| 70 | 180 | Ceniza negra | `BlackAsh` | 120 | **130** | sí |
+| 70 | 180 | Tiro sobrenatural | `DevilBurst` | 140 | **130** | sí |
 | 70 | 220 | Triple amenaza | `Evolution` | 170 | **180** | sí |
 | 70 | 200 | Fire Tornado DD | `FireTornadoDD` | 140 | **170** | sí |
 | 70 | 180 | Ciclón blanco | `WhiteHurricane` | 150 | **140** | sí |
@@ -176,7 +176,7 @@ Criterio:
 | 45 | 140 | Rompetiros | `ShootBreak` | 90 | **100** | sí |
 | 50 | 160 | Dados de la suerte | `LuckyDice` | — | **120** | sí |
 | 50 | 160 | Mordisco de serpiente | `SerpentFang` | 60 | **120** | sí |
-| 55 | 180 | Manos liberadas | `BuraiHand` | 110 | **130** | sí |
+| 55 | 180 | Manos liberadas | `BuraiHand` | 110 | **120** | sí |
 | 55 | 180 | God Hand V | `GodHandV` | 170 | **150** | sí |
 | 55 | 180 | Centro de gravedad | `GravityPoint` | 100 | **130** | sí |
 | 55 | 180 | Puente sin final | `KillBridge` | 100 | **130** | sí |

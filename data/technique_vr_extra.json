@@ -1,0 +1,17 @@
+{
+ "_doc": "Técnicas originales de Victory Road que no lleva ninguna carta, pero que queremos en el catálogo para su TP (ver docs/balance-tecnicas-vr-originales.md). build.py las añade si faltan; el TP está en data/technique_balance.json.",
+ "techniques": [
+  {"id": "vr_whd10080", "name": "Kraken Seaquake", "name_jp": "海神・ザ・クェイク", "name_es": null, "type": "Block", "element": "air", "vr_power": 440,
+   "description": "Encircle your rival in a spiraling vortex and awaken the ocean's guardian to rise with a crashing wave and steal the ball."},
+  {"id": "vr_whk10090", "name": "Divine Deflectors", "name_jp": "ゴッドフィンガーズ", "name_es": "Deflectores divinos", "type": "Catch", "element": "air", "vr_power": 640,
+   "description": "Tear open space itself and guide the ball along a path carved by celestial hands."},
+  {"id": "vr_whk10030", "name": "Stillness Drip", "name_jp": "スウェットスティルネス", "name_es": "Gota de la quietud", "type": "Catch", "element": "fire", "vr_power": 300,
+   "description": "Gather every ounce of power and catch the ball in a dazzling display of determination and skill."},
+  {"id": "vr_GodHandEV", "name": "God Hand EV", "name_jp": "ゴッドハンドＥＶ", "name_es": "Mano celestial EV", "type": "Catch", "element": "earth", "vr_power": 540,
+   "description": "Envelop your hand in a rainbow wave with the ultimate evolution of God Hand to block any shot."},
+  {"id": "vr_GodCatchFT", "name": "God Catch FT", "name_jp": "ゴッドキャッチＦＴ", "name_es": "Parada celestial TURBO", "type": "Catch", "element": "earth", "vr_power": 640,
+   "description": "Mastery of God Catch elevates the Majin to new heights, causing its rainbow aura to seal off the goal."},
+  {"id": "vr_OkanTheHand", "name": "Mama's Helping Hand", "name_jp": "オカン・ザ・ハンド", "name_es": "Mano matriarcal", "type": "Catch", "element": "earth", "vr_power": 540,
+   "description": "Catch the shot with the helping hand of a mom fed up with her study-shirking kid!"}
+ ]
+}

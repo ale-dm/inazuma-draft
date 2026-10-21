@@ -1,0 +1,375 @@
+{
+ "_doc": "TP y potencia específicos de GO2 (Chrono Stone) para las técnicas originales de GO2 (debut GO2: coste CS y sin coste IE1/IE2/IE3/GO1). Solo técnicas normales (sin keshin, Mixi Max ni tótems). Colocadas por lore; ver docs/balance-tecnicas-go2-go3-originales.md. Se aplican solo a cartas GO2; el balance_tp global no se toca.",
+ "techniques": {
+  "AggressiveBeat": [
+   80,
+   85,
+   540
+  ],
+  "AllDelete": [
+   140,
+   170,
+   890
+  ],
+  "AsteriskRock": [
+   120,
+   140,
+   800
+  ],
+  "BeamKobushi": [
+   100,
+   100,
+   640
+  ],
+  "BeastLord": [
+   160,
+   195,
+   930
+  ],
+  "BlitzBridge": [
+   60,
+   60,
+   360
+  ],
+  "BouncerRabbit": [
+   70,
+   70,
+   440
+  ],
+  "BungeeThrust": [
+   100,
+   100,
+   640
+  ],
+  "ButtobiPunch": [
+   110,
+   120,
+   720
+  ],
+  "ChaosMeteor": [
+   170,
+   215,
+   980
+  ],
+  "CoilUpper": [
+   80,
+   85,
+   540
+  ],
+  "DeadFuture": [
+   150,
+   180,
+   900
+  ],
+  "DecoyRelease": [
+   120,
+   140,
+   800
+  ],
+  "DeepJungle": [
+   150,
+   180,
+   900
+  ],
+  "DestinyCloud": [
+   160,
+   195,
+   930
+  ],
+  "DimensionStorm": [
+   140,
+   170,
+   890
+  ],
+  "DisasterBreak": [
+   150,
+   180,
+   900
+  ],
+  "DoonShout": [
+   70,
+   70,
+   440
+  ],
+  "DoubleShot": [
+   130,
+   160,
+   880
+  ],
+  "DragonBlaster": [
+   160,
+   195,
+   930
+  ],
+  "ExcellentBreast": [
+   70,
+   70,
+   440
+  ],
+  "ExtremeRabbit": [
+   160,
+   195,
+   930
+  ],
+  "FireTornadoTC": [
+   190,
+   250,
+   1030
+  ],
+  "FloralDespair": [
+   110,
+   120,
+   720
+  ],
+  "FractalHouse": [
+   70,
+   70,
+   440
+  ],
+  "GammaStrike": [
+   130,
+   160,
+   880
+  ],
+  "GaussShot": [
+   90,
+   95,
+   600
+  ],
+  "GearDrive": [
+   90,
+   95,
+   600
+  ],
+  "GigatonHead": [
+   110,
+   120,
+   720
+  ],
+  "GloriousRay": [
+   140,
+   170,
+   890
+  ],
+  "GodHandW": [
+   180,
+   230,
+   1000
+  ],
+  "GodWind": [
+   160,
+   195,
+   930
+  ],
+  "GrandSweeper": [
+   140,
+   170,
+   890
+  ],
+  "GreatBlaster": [
+   160,
+   195,
+   930
+  ],
+  "GyroSaving": [
+   90,
+   95,
+   600
+  ],
+  "HinawaBullet": [
+   110,
+   120,
+   720
+  ],
+  "Ichiyajou": [
+   80,
+   85,
+   540
+  ],
+  "KazaanaDrive": [
+   140,
+   170,
+   890
+  ],
+  "KodaiNoTsubasa": [
+   140,
+   170,
+   890
+  ],
+  "KogetsuJuujishou": [
+   160,
+   195,
+   930
+  ],
+  "LastDeathZone": [
+   190,
+   250,
+   1030
+  ],
+  "LinearDrive": [
+   70,
+   70,
+   440
+  ],
+  "LoveArrow": [
+   90,
+   95,
+   600
+  ],
+  "MagicalFlower": [
+   100,
+   100,
+   640
+  ],
+  "MagnetDraw": [
+   80,
+   85,
+   540
+  ],
+  "MochimochiKinakoMochi": [
+   100,
+   100,
+   640
+  ],
+  "MueiRanbu": [
+   140,
+   170,
+   890
+  ],
+  "MueiSouha": [
+   120,
+   140,
+   800
+  ],
+  "OgreBlade": [
+   120,
+   140,
+   800
+  ],
+  "OkehazamaWall": [
+   90,
+   95,
+   600
+  ],
+  "OmegaAttack": [
+   180,
+   230,
+   1000
+  ],
+  "PenguinTheHand": [
+   160,
+   195,
+   930
+  ],
+  "PlasmaBall": [
+   80,
+   85,
+   540
+  ],
+  "Rejection": [
+   120,
+   140,
+   800
+  ],
+  "SaikyouElevenHadou": [
+   200,
+   270,
+   1080
+  ],
+  "SandCutter": [
+   120,
+   140,
+   800
+  ],
+  "Screwdriver": [
+   90,
+   95,
+   600
+  ],
+  "ShellbitBurst": [
+   170,
+   215,
+   980
+  ],
+  "ShiningHole": [
+   160,
+   195,
+   930
+  ],
+  "SkytreeFall": [
+   80,
+   85,
+   540
+  ],
+  "SouhiYuuseidan": [
+   150,
+   180,
+   900
+  ],
+  "SoyoyagiStep": [
+   100,
+   100,
+   640
+  ],
+  "SparkEdgeDribble": [
+   110,
+   120,
+   720
+  ],
+  "SparkleWave": [
+   110,
+   120,
+   720
+  ],
+  "SpinningTransam": [
+   60,
+   60,
+   360
+  ],
+  "SpinningUpper": [
+   70,
+   70,
+   440
+  ],
+  "SpringArrow": [
+   130,
+   160,
+   880
+  ],
+  "StormZone": [
+   150,
+   180,
+   900
+  ],
+  "SunshineStorm": [
+   150,
+   180,
+   900
+  ],
+  "TheMonsters": [
+   170,
+   215,
+   980
+  ],
+  "Transmove": [
+   60,
+   60,
+   360
+  ],
+  "TsubameGaeshi": [
+   90,
+   95,
+   600
+  ],
+  "VampireLord": [
+   160,
+   195,
+   930
+  ],
+  "WonderTrap": [
+   60,
+   60,
+   360
+  ]
+ }
+}

@@ -34,6 +34,18 @@ def insert(table, cols, rows, key, chunk=500):
     return '\n'.join(out)
 
 
+SAGA_BALANCE = ('go1', 'go2', 'go3')   # TP por saga: data/technique_balance_<saga>.json → balance_tp_<saga>
+
+
+def saga_balance(saga):
+    """TP por saga de las técnicas originales de esa saga: {id: [tp, mínima, máxima]} (vacío si no hay fichero)"""
+    path = os.path.join(ROOT, 'data', f'technique_balance_{saga}.json')
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding='utf-8') as f:
+        return json.load(f).get('techniques', {})
+
+
 def _balance(techs):
     """añade balance_tp / balance_power_* a las técnicas de players.json (la base los lleva en columnas propias)"""
     path = os.path.join(ROOT, 'data', 'technique_balance.json')
@@ -41,16 +53,13 @@ def _balance(techs):
         return
     with open(path, encoding='utf-8') as f:
         bal = json.load(f)['techniques']
-    go1 = {}
-    go1_path = os.path.join(ROOT, 'data', 'technique_balance_go1.json')
-    if os.path.exists(go1_path):
-        with open(go1_path, encoding='utf-8') as f:
-            go1 = json.load(f).get('techniques', {})
+    sagas = {s: saga_balance(s) for s in SAGA_BALANCE}
     for t in techs:
         if t['id'] in bal:
             t['balance_tp'], t['balance_power_min'], t['balance_power_max'] = bal[t['id']]
-        if t['id'] in go1:
-            t['balance_tp_go1'], t['balance_power_min_go1'], t['balance_power_max_go1'] = go1[t['id']]
+        for s, sb in sagas.items():
+            if t['id'] in sb:
+                t[f'balance_tp_{s}'], t[f'balance_power_min_{s}'], t[f'balance_power_max_{s}'] = sb[t['id']]
 
 
 def write_balance():
@@ -67,27 +76,30 @@ def write_balance():
                 '-- TP balanceado de las técnicas y la potencia que le corresponde (hoja de balance). Idempotente.\n'
                 'update public.techniques t set balance_tp = v.tp, balance_power_min = v.mn, balance_power_max = v.mx\n'
                 f'from (values\n{vals}\n) as v(id, tp, mn, mx) where t.id = v.id;\n')
-        go1_path = os.path.join(ROOT, 'data', 'technique_balance_go1.json')
-        if os.path.exists(go1_path):
-            with open(go1_path, encoding='utf-8') as gf:
-                go1 = json.load(gf).get('techniques', {})
-            vals_go1 = ',\n'.join(f"({sql(i)},{tp},{mn},{mx})" for i, (tp, mn, mx) in sorted(go1.items()))
-            f.write('\n-- TP por saga: GO1 original. Solo lo leen las cartas de GO1; no toca el TP global.\n'
-                    'update public.techniques t set balance_tp_go1 = v.tp, balance_power_min_go1 = v.mn, balance_power_max_go1 = v.mx\n'
-                    f'from (values\n{vals_go1}\n) as v(id, tp, mn, mx) where t.id = v.id;\n')
+        for s in SAGA_BALANCE:
+            sb = saga_balance(s)
+            if not sb:
+                continue
+            vals_s = ',\n'.join(f"({sql(i)},{tp},{mn},{mx})" for i, (tp, mn, mx) in sorted(sb.items()))
+            # las columnas también están en schema.sql; aquí van para que la carga balance_only funcione sola
+            f.write(f'\n-- TP por saga: {s.upper()} original. Solo lo leen las cartas de {s.upper()}; no toca el TP global.\n'
+                    + ''.join(f'alter table public.techniques add column if not exists {c}_{s} int;\n'
+                              for c in ('balance_tp', 'balance_power_min', 'balance_power_max'))
+                    + f'update public.techniques t set balance_tp_{s} = v.tp, balance_power_min_{s} = v.mn, balance_power_max_{s} = v.mx\n'
+                    f'from (values\n{vals_s}\n) as v(id, tp, mn, mx) where t.id = v.id;\n')
 
 
 def write_outputs(cards, chars, techniques, teams, staff, zukan_rows, report, dropped=None, removed_cards=None,
                   dropped_techs=None, tech_remove=None, reassert_cards=None):
     os.makedirs(OUT, exist_ok=True)
     used = {t['id'] for c in cards for t in c['moves']}
-    go1_path = os.path.join(ROOT, 'data', 'technique_balance_go1.json')
-    go1_ids = set()
-    if os.path.exists(go1_path):
-        with open(go1_path, encoding='utf-8') as f:
-            go1_ids = set(json.load(f).get('techniques', {}))
+    saga_ids = {i for s in SAGA_BALANCE for i in saga_balance(s)}
+    vr_extra_path = os.path.join(ROOT, 'data', 'technique_vr_extra.json')
+    if os.path.exists(vr_extra_path):
+        with open(vr_extra_path, encoding='utf-8') as f:
+            saga_ids |= {x['id'] for x in json.load(f).get('techniques', [])}
     techs = [{k: v for k, v in t.items() if k != '_inf'}
-             for t in techniques.values() if t and (t['id'] in used or t['id'] in go1_ids)]
+             for t in techniques.values() if t and (t['id'] in used or t['id'] in saga_ids)]
     char_ids = {c['character_id'] for c in cards}
     chars = [c for c in chars.values() if c['id'] in char_ids]
 

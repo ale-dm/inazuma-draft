@@ -40,10 +40,9 @@ export interface Technique {
   /** Potencia mínima y máxima que le corresponde a ese TP */
   powerMin?: number | null
   powerMax?: number | null
-  /** TP específico de GO1 (técnicas originales de GO1); si existe, sustituye a tp en cartas GO1 */
-  tpGo1?: number | null
-  powerMinGo1?: number | null
-  powerMaxGo1?: number | null
+  /** TP por saga (técnicas originales de GO1/GO2/GO3); si existe, sustituye a tp en las cartas de esa saga */
+  sagaTp?: Partial<Record<'GO1' | 'GO2' | 'GO3', { tp: number, powerMin: number | null, powerMax: number | null }>>
+
   costGame: string | null
   /** Descripción oficial de zukan (inglés) e imagen */
   description?: string | null

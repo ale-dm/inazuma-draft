@@ -72,6 +72,12 @@ interface TechniqueRow {
   balance_tp_go1?: number | null
   balance_power_min_go1?: number | null
   balance_power_max_go1?: number | null
+  balance_tp_go2?: number | null
+  balance_power_min_go2?: number | null
+  balance_power_max_go2?: number | null
+  balance_tp_go3?: number | null
+  balance_power_min_go3?: number | null
+  balance_power_max_go3?: number | null
 }
 
 interface StaffRow {
@@ -139,8 +145,22 @@ const CARD_COLUMNS_OLD = 'id,character_id,name,game,version,team,position,elemen
   + 'duel_att,duel_con,duel_def,card_techniques(slot,technique_id)'
 const TECHNIQUE_COLUMNS = 'id,name,name_es,name_fr,name_it,type,element,cost,cost_game,description,image_url,traits'
 /** TP balanceado y su potencia (si la base aún no tiene esas columnas, se piden sin ellas) */
-const BALANCE_COLUMNS = 'balance_tp,balance_power_min,balance_power_max,balance_tp_go1,balance_power_min_go1,balance_power_max_go1'
 const BALANCE_COLUMNS_OLD = 'balance_tp,balance_power_min,balance_power_max'
+const sagaColumns = (s: string) => `balance_tp_${s},balance_power_min_${s},balance_power_max_${s}`
+const BALANCE_COLUMNS_GO1 = `${BALANCE_COLUMNS_OLD},${sagaColumns('go1')}`
+const BALANCE_COLUMNS = `${BALANCE_COLUMNS_GO1},${sagaColumns('go2')},${sagaColumns('go3')}`
+/** TP por saga de una fila de técnicas (solo las sagas que tienen valor) */
+const sagaTp = (t: TechniqueRow): Technique['sagaTp'] => {
+  const out: NonNullable<Technique['sagaTp']> = {}
+  for (const [game, tp, mn, mx] of [
+    ['GO1', t.balance_tp_go1, t.balance_power_min_go1, t.balance_power_max_go1],
+    ['GO2', t.balance_tp_go2, t.balance_power_min_go2, t.balance_power_max_go2],
+    ['GO3', t.balance_tp_go3, t.balance_power_min_go3, t.balance_power_max_go3],
+  ] as const) {
+    if (tp != null) out[game] = { tp, powerMin: mn ?? null, powerMax: mx ?? null }
+  }
+  return Object.keys(out).length ? out : undefined
+}
 let cardColumns = CARD_COLUMNS
 const cardsPage = async (offset: number, headers?: Record<string, string>) => {
   try {
@@ -169,6 +189,7 @@ export async function loadCatalog(): Promise<void> {
   // todo a la vez; equipos y cuerpo técnico son opcionales (sin ellos: nombres en inglés, sin pestaña de staff)
   const [techniques, teams, staffRows, rows] = await Promise.all([
     get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS},${BALANCE_COLUMNS}`)
+      .catch(() => get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS},${BALANCE_COLUMNS_GO1}`))
       .catch(() => get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS},${BALANCE_COLUMNS_OLD}`))
       .catch(() => get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS}`)),
     get<TeamRow[]>('teams?select=name,name_es,name_fr,name_it,logo_url,logos').catch(() => [] as TeamRow[]),
@@ -237,7 +258,7 @@ export function rebuildCatalog() {
   const techById = new Map<string, Technique>(baseTechniques.map(t => [t.id, {
     id: t.id, name: t.name, nameEs: t.name_es, nameFr: t.name_fr, nameIt: t.name_it, type: t.type, element: t.element,
     cost: t.cost, costGame: t.cost_game, tp: t.balance_tp ?? t.cost, powerMin: t.balance_power_min ?? null, powerMax: t.balance_power_max ?? null,
-    tpGo1: t.balance_tp_go1 ?? null, powerMinGo1: t.balance_power_min_go1 ?? null, powerMaxGo1: t.balance_power_max_go1 ?? null,
+    sagaTp: sagaTp(t),
     description: t.description, image: t.image_url, traits: t.traits ?? [],
   }]))
   techniquesById = techById
@@ -246,9 +267,10 @@ export function rebuildCatalog() {
   players = rows.map(r => {
     const techs = [...r.card_techniques].sort((a, b) => a.slot - b.slot)
       .map(ct => techById.get(ct.technique_id)).filter((t): t is Technique => !!t)
-      .map(t => r.game === 'GO1' && t.tpGo1 != null
-        ? { ...t, tp: t.tpGo1, powerMin: t.powerMinGo1 ?? null, powerMax: t.powerMaxGo1 ?? null }
-        : t)
+      .map(t => {
+        const s = t.sagaTp?.[r.game as 'GO1' | 'GO2' | 'GO3']
+        return s ? { ...t, tp: s.tp, powerMin: s.powerMin, powerMax: s.powerMax } : t
+      })
     const duel = r.duel_att != null || r.duel_con != null || r.duel_def != null
       ? { att: r.duel_att ?? null, con: r.duel_con ?? null, def: r.duel_def ?? null } : undefined
     return {
