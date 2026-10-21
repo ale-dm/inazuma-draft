@@ -23,9 +23,8 @@ Las imágenes están en `public/icons/` (copiadas de `EditorMods\iconos\`, sin r
 - **Marcas de grado** (`grade_*.png`): necesitan el `growthType` de la técnica y el grado evolucionado
   del jugador (1–5). La base de la app no guarda esos dos datos todavía; cuando se importen, el bloque
   solo tiene que añadir el `<img>` del grado.
-- **Auras** (keshin, armadura, tótem, Mixi Max, poder, modo, vínculo): las placas ya están copiadas
-  (`plate_fs`, `plate_fsa`, `plate_soul`, `plate_mixi`, `plate_power`, `plate_mode`, `plate_kizuna`) y
-  los iconos `icon_sp_area05..11`, pero las técnicas de la app solo distinguen tiro/regate/bloqueo/parada.
+- **Auras de poder, modo y vínculo** (`plate_power`, `plate_mode`, `plate_kizuna`, `icon_sp_area09..11`): copiadas, sin
+  uso todavía (la app no tiene Despertar, Cambio de forma ni Kizuna Trans).
 - **Caras y escudos del juego**: `teameditor_data\faces` ocupa ~54 MB y `emblems` ~2 MB; no se copian al
   repo. Para usarlos haría falta servirlos desde Supabase Storage o un CDN, y guardar el `modelo`
   (`c01000100`) de cada carta. La app sigue con las caras de zukan y los escudos que ya tenía.
@@ -50,3 +49,22 @@ Las imágenes están en `public/icons/` (copiadas de `EditorMods\iconos\`, sin r
 - Asignados elementos que faltaban: Bull Steam Ahead → earth, KAMAKURA D → wood, Koutei Penguin 2gou feat. Shark → wood, Triple G Strike → wood, Penguin The God & Devil → wood, Inazuma Break CG → air, Super God Hand → earth, Tenkuu Hayabusadan → earth, y Void a Last Resort Σ/D, Mega Majin Trio, Black Shield y Black Field.
 - Las 4 que quedaban sin elemento se han resuelto con la wiki española: **Shining Penguin** → Vacío (manga sin elemento), **Chilena de pingüino** → Bosque (variante azul de Overhead Penguin; la negra/fuego es Pingüino Aéreo), **Arrollador** (= Coz/Judge Through) → Fuego y **Orion's Shade** → Vacío (Neutro en VR; Bosque en SD).
 - Quedan **24 técnicas con elemento único** (la wiki usa el nombre de la técnica: God Hand, Majin The Hand, Star Reflection, etc.). Esas siguen con el fondo de reserva.
+
+
+## Aura en la ficha del jugador (2026-10-21)
+
+La sección «Poderes especiales» pasa a llamarse **Aura** y cada especial es un bloque `AuraBlock` (`src/components/AuraBlock.tsx`):
+
+| Aura | Placa | Icono |
+|---|---|---|
+| Espíritu guerrero (keshin) | `plate_fs_<el>` | `icon_sp_area05` |
+| Armadura (si `armed`) | `plate_fsa_<el>` | `icon_sp_area06` |
+| Mixi Max | `plate_mixi_<el>` | `icon_sp_area07` |
+| Tótem (soul) | `plate_soul_<el>` | `icon_sp_area08` |
+
+- `<el>`: elemento de su técnica (o el de la carta si no tiene), con la misma numeración que las supertécnicas.
+- Cabecera: icono, tipo, nombre y **reserva** de puntos de aura (PEG / SP / PE, `poolMax`).
+- Debajo, su técnica con el bloque de supertécnica de siempre (placa, icono, **TP**) y dos datos: **coste por uso**
+  en la reserva (`auraCost`) y **usos** por partido (reserva / coste). Mixi Max: 25 PE por turno y +3.
+- Armadura: segunda placa con +2, técnicas gratis y su gasto en PEG por turno (`armourDrain`).
+- Los números salen de `src/lib/tension.ts` (los mismos del Fatal Sim) y `docs/balance-tecnicas-auras.md`.

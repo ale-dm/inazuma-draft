@@ -61,6 +61,8 @@ export type AuraPools = Record<string, number>
 
 export const poolKey = (cardId: string, sp: Special) => `${cardId}|${sp.type}|${sp.name ?? ''}`
 export const poolMax = (sp: Special) => (sp.type === 'mixi' ? MIXI.pe : sp.points ?? DEFAULT_POOL)
+/** Lo que gasta de su reserva cada uso: la técnica del keshin / tótem o un turno de Mixi Max */
+export const auraCost = (sp: Special) => (sp.type === 'mixi' ? MIXI.cost : sp.cost ?? DEFAULT_COST)
 export const poolLeft = (pools: AuraPools, cardId: string, sp: Special) => pools[poolKey(cardId, sp)] ?? poolMax(sp)
 /** Unidad de la reserva: PEG (espíritu guerrero), SP (tótem), PE (Mixi Max) */
 export const poolUnit = (sp: Special) => (sp.type === 'keshin' ? 'PEG' : sp.type === 'soul' ? 'SP' : 'PE')
@@ -78,7 +80,7 @@ export function auraMoves(card: FatalCard, key: DuelKey, pools: AuraPools, techO
       continue
     }
     const tech = sp.hyper_id ? techOf(sp.hyper_id) : undefined
-    const cost = sp.cost ?? DEFAULT_COST
+    const cost = auraCost(sp)
     if (tech && TECH_KEY[tech.type] === key && (tech.type !== 'Catch' || card.p.position === 'GK') && left >= cost) {
       out.push({ id: `aura:${pool}`, kind: 'aura', pool, special: sp, points: cost, bonus: techBonus(tech, card), tech })
     }
