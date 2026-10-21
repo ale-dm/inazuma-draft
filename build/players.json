@@ -317728,9 +317728,9 @@
    "name_fr": "Le Blob",
    "name_it": null,
    "traits": [],
-   "balance_tp": 110,
-   "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "vr_who00590",
@@ -318042,9 +318042,9 @@
    "name_fr": "Sirène Magique",
    "name_it": null,
    "traits": [],
-   "balance_tp": 110,
-   "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "es_tiro-a-reo-triple",
@@ -318219,9 +318219,9 @@
    "name_fr": "Anneau d'Artemis",
    "name_it": "Anelli di Artemide",
    "traits": [],
-   "balance_tp": 120,
-   "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whk01520",
@@ -318408,9 +318408,9 @@
    "name_fr": null,
    "name_it": null,
    "traits": [],
-   "balance_tp": 120,
-   "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "vr_whk01560",
@@ -318458,9 +318458,9 @@
    "name_fr": "Prise de Diamant",
    "name_it": null,
    "traits": [],
-   "balance_tp": 120,
-   "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "vr_whk01550",
@@ -318483,9 +318483,9 @@
    "name_fr": "Poing cristallisé",
    "name_it": "Pugno di Diamante",
    "traits": [],
-   "balance_tp": 120,
-   "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whk01680",
@@ -318632,9 +318632,9 @@
    "name_fr": "Barrière de Feu",
    "name_it": null,
    "traits": [],
-   "balance_tp": 90,
-   "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whs03200",
@@ -318778,9 +318778,9 @@
    "name_fr": "Sonate de l'Oubli",
    "name_it": null,
    "traits": [],
-   "balance_tp": 90,
-   "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whs03300",
@@ -318900,9 +318900,9 @@
    "name_fr": "Éventail du Dragon",
    "name_it": null,
    "traits": [],
-   "balance_tp": 90,
-   "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "vr_whd01590",
@@ -319020,9 +319020,9 @@
    "name_fr": "Satellite militaire Phobos",
    "name_it": "Raggio Satellitare",
    "traits": [],
-   "balance_tp": 90,
-   "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whs03080",
@@ -319166,9 +319166,9 @@
    "name_fr": "Spa-gant-ti",
    "name_it": null,
    "traits": [],
-   "balance_tp": 80,
-   "balance_power_min": 85,
-   "balance_power_max": 540
+   "balance_tp": 100,
+   "balance_power_min": 100,
+   "balance_power_max": 640
   },
   {
    "id": "vr_whs03170",
@@ -319239,9 +319239,9 @@
    "name_fr": "Bouche de la Vérité",
    "name_it": null,
    "traits": [],
-   "balance_tp": 110,
-   "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whs03030",
@@ -319360,9 +319360,9 @@
    "name_fr": "Tricéra-Bouclier",
    "name_it": null,
    "traits": [],
-   "balance_tp": 90,
-   "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whk01600",
@@ -319385,9 +319385,9 @@
    "name_fr": "Âmes Enchaînées",
    "name_it": null,
    "traits": [],
-   "balance_tp": 120,
-   "balance_power_min": 140,
-   "balance_power_max": 800
+   "balance_tp": 140,
+   "balance_power_min": 170,
+   "balance_power_max": 890
   },
   {
    "id": "vr_whs03060",

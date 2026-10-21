@@ -94,3 +94,28 @@ De los **37 tiros exclusivos** de Orion, 15 estaban por debajo de su banda por p
 - Es la versión curva del **Rayo de diamantes** (130) y la que usa Clario en Orion; faltaba en el catálogo.
 - Queda en la banda de los tiros de VR 540 (140), por debajo de **Hoja diamantina** (150) y por encima de Rayo de diamantes.
 - En la categoría inglesa de Orion aparece como **Magaru Diamond Ray**; en Victory Road, *Arced Diamond Ray*.
+
+
+## Paradas de Orion — posicionadas por VR
+
+Referencia de Ares por escalón de VR: **640 → 110**, **540 → 110**, **440 → 120**, **360 → 90**. La ficha inglesa da la potencia VR, el 	_vr y la evolución; la sección Info (a quién para y contra quién falla) decide el suelo de cada banda.
+
+| VR | Técnica | Antes | Ahora | Por qué |
+|---:|---|---:|---:|---|
+| 640 | Ola mágica | 110 | **150** | Norika para Innocent Drive. |
+| 640 | Brazo de diamante | 120 | **150** | Endou para Innocent Drive en la final. |
+| 540 | Anillo de Artemisa | 120 | **140** | Nishikage para Requiem Dust. |
+| 540 | Escudo sombrío | 120 | **140** | Procyon para Pingüino emperador 2 + Tiburón. |
+| 540 | Despeje diamantino | 120 | **140** | Endou despeja Diamond Edge y Carnival Shake. |
+| 440 | Supermano celestial | 120 | **130** | Casi para Diamond Ray; puente hacia Diamond Hand. |
+| 440 | Burbuja pegajosa | 110 | **130** | Alonso para Kumagoroshi Zan dos veces. |
+| 440 | Abanicos dragontinos | 90 | **130** | Kung Fuche para Pingüino 2 + Tiburón y Perfect Penguin. |
+| 440 | Boca de la verdad | 110 | **120** | Gabriella falla contra las combinadas. |
+| 440 | Sonata del olvido | 90 | **120** | Alek falla varias veces. |
+| 440 | Paradón satelital | 90 | **120** | Bigman bloquea a Ichinose y Fudou; Aphrodi lo rompe. |
+| 440 | Escudo tricerátops | 90 | **120** | Racerit para Fire Tornado con apoyo; luego cae. |
+| 360 | Muro de fuego | 90 | **100** | Rae-won no para Last Resort. |
+| 360 | Parada de espaguetis | 80 | **100** | Macero falla contra Cosmic Blaster, Kumagoroshi Zan y Fire Lemonade. |
+
+- **Sin cambios:** Mano celestial de la amistad 190, Ultramanos mágicas 160, Mano de diamante 150, Halo solar 110, Guillotina solar 110, Pellizco aplastante 110, Parada de espaguetis extra 120, Parada de Asura 200 y Dimensión Kamakura 180.
+- **Parada de espaguetis extra** (r_whk01615, *Sauced-up Marinara Barrier*): estaba en el catálogo sin carta; se ha añadido a **Gonçalo/Macero** (Orion, slot 4) con TP **120**. Es la evolución 改 de la Parada de espaguetis y falla contra Shark The Deep.

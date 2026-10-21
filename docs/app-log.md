@@ -479,3 +479,10 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - Añadida **Rayo de diamantes curvo** (Magaru Diamond Ray / Curving Diamond Ray) a **Sergi Hernández** (Orion), TP **140**, VR 540. Es la evolución de Rayo de diamantes y faltaba en el catálogo.
 - Revisadas las 70 técnicas de la categoría inglesa de Orion y las 959 de Victory Road: el resto ya estaban con otro nombre en la app.
 - La única ausencia real de Orion era esta; en VR solo quedan variantes menores sin usuario (Gutsy Grit Punch y dos códigos sin nombre).
+
+
+## Orion: paradas posicionadas por VR
+
+- Ajustadas **14 paradas** de Orion para que cada escalón de VR quede por encima de Ares: 640 → 150–190, 540 → 140–150, 440 → 120–130 y 360 → 100–110. Detalle en [balance-tecnicas-orion.md](balance-tecnicas-orion.md).
+- Añadida **Parada de espaguetis extra** (*Sauced-up Marinara Barrier*) a **Gonçalo/Macero** (Orion, slot 4) con TP **120**; estaba en el catálogo sin carta.
+- La ficha inglesa de cada técnica (potencia VR, 	_vr, evolución y Info) se ha usado para decidir el suelo de cada banda: las firmas suben a 130 en 440 y las que fallan en el anime se quedan en 120.

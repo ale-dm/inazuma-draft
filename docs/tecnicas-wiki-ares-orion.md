@@ -157,3 +157,4 @@ La categoría inglesa Orion hissatsu tiene 70 técnicas; la española, 65. Las c
 - **Magaru Diamond Ray** (Curving Diamond Ray) es la única que faltaba de verdad: se ha añadido a Sergi (Orion).
 - Las demás ya estaban con el nombre castellano; la categoría inglesa las lista con otro nombre.
 - En Victory Road queda una parada menor sin usuario (Gutsy Grit Punch) que no se ha añadido.
+- **Parada de espaguetis extra** (*Macaroni Spaghetti Sauce Zouryou*, evolución 改 de la Parada de espaguetis) estaba en el catálogo pero sin carta; se ha añadido a **Gonçalo/Macero** (Orion, slot 4) con TP **120**.
