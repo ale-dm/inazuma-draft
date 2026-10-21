@@ -318264,9 +318264,9 @@
    "traits": [
     "block"
    ],
-   "balance_tp": 110,
-   "balance_power_min": 120,
-   "balance_power_max": 720
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "vr_whs03260",
@@ -318508,9 +318508,9 @@
    "traits": [
     "block"
    ],
-   "balance_tp": 160,
-   "balance_power_min": 195,
-   "balance_power_max": 930
+   "balance_tp": 150,
+   "balance_power_min": 180,
+   "balance_power_max": 900
   },
   {
    "id": "vr_who01450",
@@ -318800,9 +318800,9 @@
    "name_fr": "Red Hot Météorite",
    "name_it": "Red Hot Chili Meteor",
    "traits": [],
-   "balance_tp": 90,
-   "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_tp": 120,
+   "balance_power_min": 140,
+   "balance_power_max": 800
   },
   {
    "id": "vr_whs03190",
@@ -318876,9 +318876,9 @@
    "traits": [
     "block"
    ],
-   "balance_tp": 90,
-   "balance_power_min": 95,
-   "balance_power_max": 600
+   "balance_tp": 130,
+   "balance_power_min": 160,
+   "balance_power_max": 880
   },
   {
    "id": "vr_whs03350",

@@ -1,4 +1,4 @@
-# Técnicas exclusivas de Orion — regates
+# Técnicas exclusivas de Orion — regates y bloqueos
 
 > **Estado:** TP aplicado (2026-10-20). **Solo Orion**: no se tocan las técnicas compartidas con Ares ni las exclusivas de Ares.
 > **Escala:** la de IE3 (Orion es IE3 en la segunda línea temporal), regates **50–150**.
@@ -31,3 +31,28 @@
 | **100** | Descodificación · Tornado venenoso | Avance flamígero · Coz 2 · Ultra lunar |
 
 Los cuatro quedan en la banda 100–130, sin superar el techo de IE3 (150) y sin meter combinadas por encima de individuales.
+
+## Los 4 bloqueos exclusivos de Orion
+
+| TP | Técnica (app) | EN / JP | Debut | Usuarios | VR | Antes |
+|---:|---|---|---|---|---:|---:|
+| **150** | Búnker | Formidable Fortress / ザ・シェルター | Orion, ep. 27 | Los Invencibles (10) | 540 | 160 |
+| **130** | Huracán múltiple | Tornado Barrier / スピニングフェンス | Orion, ep. 2 | Nathan Swift | 540 | 110 |
+| **120** | Meteorito ardiente | Red Hot Shower / レッドホットチリ・メテオ | Orion, ep. 12 | Arabian Firebirds (8) | 360 | 90 |
+| **130** | León devorador | Last Lion of Defence / 爆喰獅子 | Orion, ep. 18 | Sammo Tong | 440 | 90 |
+
+- **Búnker** baja de 160 a **150**: es el techo de IE3 (La montaña / Muro de hierro), no por encima.
+- **Huracán múltiple** (VR 540) sube a **130**, como los bloqueos de 540 de IE3.
+- **Meteorito ardiente** (VR 360) sube a **120**, como Entrada rodante / Jaula de piedra.
+- **León devorador** (VR 440) sube a **130**, como Corte diabólico / Escudo bárbaro.
+
+Los bloqueos compartidos con Ares (Contragolpe doble, Muro colectivo, Torbellino interceptor, Zona de contención, etc.) no se tocan aquí: siguen en el doc de Ares.
+
+## Comparación con IE3 (bloqueos)
+
+| TP | Orion | IE3 (bloqueos) |
+|---:|---|---|
+| **150** | Búnker | La montaña · Muro de hierro |
+| **140** | — | Gran seísmo · Subida a los cielos · Caída a los infiernos |
+| **130** | Huracán múltiple · León devorador | Corte diabólico · Escudo bárbaro · Cortafuegos · Rompehielos |
+| **120** | Meteorito ardiente | Entrada rodante · Jaula de piedra · Presa · Escudo corporal |
