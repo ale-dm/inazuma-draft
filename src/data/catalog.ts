@@ -78,6 +78,8 @@ interface TechniqueRow {
   balance_tp_go3?: number | null
   balance_power_min_go3?: number | null
   balance_power_max_go3?: number | null
+  debut_game?: string | null
+  users?: number | null
 }
 
 interface StaffRow {
@@ -149,6 +151,8 @@ const BALANCE_COLUMNS_OLD = 'balance_tp,balance_power_min,balance_power_max'
 const sagaColumns = (s: string) => `balance_tp_${s},balance_power_min_${s},balance_power_max_${s}`
 const BALANCE_COLUMNS_GO1 = `${BALANCE_COLUMNS_OLD},${sagaColumns('go1')}`
 const BALANCE_COLUMNS = `${BALANCE_COLUMNS_GO1},${sagaColumns('go2')},${sagaColumns('go3')}`
+/** Juego de estreno y número de jugadores (si la base aún no tiene las columnas, se piden sin ellas) */
+const DEBUT_COLUMNS = 'debut_game,users'
 /** TP por saga de una fila de técnicas (solo las sagas que tienen valor) */
 const sagaTp = (t: TechniqueRow): Technique['sagaTp'] => {
   const out: NonNullable<Technique['sagaTp']> = {}
@@ -188,7 +192,8 @@ export async function loadCatalog(): Promise<void> {
   if (players.length) return
   // todo a la vez; equipos y cuerpo técnico son opcionales (sin ellos: nombres en inglés, sin pestaña de staff)
   const [techniques, teams, staffRows, rows] = await Promise.all([
-    get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS},${BALANCE_COLUMNS}`)
+    get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS},${BALANCE_COLUMNS},${DEBUT_COLUMNS}`)
+      .catch(() => get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS},${BALANCE_COLUMNS}`))
       .catch(() => get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS},${BALANCE_COLUMNS_GO1}`))
       .catch(() => get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS},${BALANCE_COLUMNS_OLD}`))
       .catch(() => get<TechniqueRow[]>(`techniques?select=${TECHNIQUE_COLUMNS}`)),
@@ -259,7 +264,7 @@ export function rebuildCatalog() {
     id: t.id, name: t.name, nameEs: t.name_es, nameFr: t.name_fr, nameIt: t.name_it, type: t.type, element: t.element,
     cost: t.cost, costGame: t.cost_game, tp: t.balance_tp ?? t.cost, powerMin: t.balance_power_min ?? null, powerMax: t.balance_power_max ?? null,
     sagaTp: sagaTp(t),
-    description: t.description, image: t.image_url, traits: t.traits ?? [],
+    description: t.description, image: t.image_url, traits: t.traits ?? [], debut: t.debut_game ?? null, users: t.users ?? null,
   }]))
   techniquesById = techById
   const rows = baseCards

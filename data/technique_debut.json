@@ -1,0 +1,3557 @@
+{
+"_doc": "Juego de estreno (debut_game de la plantilla Hissatsu de la wiki inglesa) y número de jugadores (users) de cada técnica. Spin-offs sin juego propio: Ares u Orion según el anime; sin ficha en la wiki: el juego de sus cartas.",
+"techniques": {
+"Abisegeri": [
+"IE2",
+1
+],
+"AcrobatKeep": [
+"GO1",
+1
+],
+"AggressiveBeat": [
+"GO2",
+1
+],
+"Aikidou": [
+"IE2",
+2
+],
+"AirBullet": [
+"GO1",
+1
+],
+"AllDelete": [
+"GO2",
+1
+],
+"AngydraCombo": [
+"GO3",
+1
+],
+"ArashiTatsumakiHurricane": [
+"GO3",
+1
+],
+"ArmadilloCircus": [
+"IE2",
+2
+],
+"AsokoNiUFO": [
+"GO3",
+1
+],
+"AssaultShoot": [
+"IE2",
+1
+],
+"AsteriskRock": [
+"GO2",
+1
+],
+"AsteroidBelt": [
+"IE2",
+1
+],
+"AstroBreak": [
+"IE2",
+1
+],
+"AthenaAssault": [
+"GO2",
+1
+],
+"AtlantisWall": [
+"GO1",
+1
+],
+"AtlasSword": [
+"GO3",
+1
+],
+"AtomicFlare": [
+"IE2",
+1
+],
+"AuroraCurtain": [
+"IE2",
+1
+],
+"AuroraDribble": [
+"IE2",
+1
+],
+"BackTornado": [
+"IE1",
+1
+],
+"BakunetsuScrew": [
+"IE3",
+1
+],
+"BakunetsuStorm": [
+"IE2",
+1
+],
+"BakunetsuStorm_K": [
+"IE2",
+1
+],
+"BakuretsuPunch": [
+"IE1",
+1
+],
+"BallistaShot": [
+"GO1",
+1
+],
+"BarbarianNoTate": [
+"IE3",
+1
+],
+"BatAttack": [
+"GO1",
+1
+],
+"BeamKobushi": [
+"GO2",
+1
+],
+"BeastFang": [
+"IE2",
+1
+],
+"BeastLord": [
+"GO2",
+1
+],
+"BeautifulHoop": [
+"GO3",
+1
+],
+"BegiranWhip": [
+"GO3",
+1
+],
+"BelionWhip": [
+"GO3",
+1
+],
+"BicycleSword": [
+"GO3",
+1
+],
+"BigBang": [
+"IE3",
+3
+],
+"BigBangSlash": [
+"GO2",
+1
+],
+"BigCard": [
+"IE3",
+1
+],
+"BigMouth": [
+"GO3",
+1
+],
+"BigScissors": [
+"GO1",
+2
+],
+"BigSpider": [
+"IE3",
+1
+],
+"BlackAsh": [
+"GO1",
+1
+],
+"BlackDawn": [
+"GO3",
+2
+],
+"BlackHole": [
+"IE2",
+1
+],
+"BladeAttack": [
+"IE1",
+1
+],
+"BlitzBridge": [
+"GO2",
+1
+],
+"BlockCircus": [
+"IE2",
+2
+],
+"BloodyEncore": [
+"GO1",
+1
+],
+"BodyShield": [
+"IE2",
+3
+],
+"BoomerangFeint": [
+"GO1",
+1
+],
+"BoostGlider": [
+"IE1",
+3
+],
+"BouncerRabbit": [
+"GO2",
+1
+],
+"BoundFlame": [
+"GO1",
+1
+],
+"BrachiasBlind": [
+"GO3",
+1
+],
+"BraveShot": [
+"IE3",
+1
+],
+"BritanniaCross": [
+"GO1",
+2
+],
+"BubbleBoil": [
+"GO3",
+1
+],
+"BuffaloCrusher": [
+"GO3",
+1
+],
+"BungeeThrust": [
+"GO2",
+1
+],
+"BunshinBlock": [
+"IE2",
+1
+],
+"BunshinDefense": [
+"IE2",
+1
+],
+"BunshinFeint": [
+"IE1",
+1
+],
+"BunshinShoot": [
+"IE1",
+1
+],
+"BuraiHand": [
+"GO1",
+1
+],
+"BurningCatch": [
+"GO1",
+1
+],
+"BurningEdge": [
+"GO2",
+1
+],
+"BurningSummer": [
+"GO1",
+1
+],
+"Burnout": [
+"IE2",
+1
+],
+"BushinRenzan": [
+"GO1",
+1
+],
+"ButterflyDream": [
+"IE2",
+2
+],
+"ButtobiJump": [
+"STRIKERS",
+1
+],
+"ButtobiPunch": [
+"GO2",
+1
+],
+"CapoeiraSnatch": [
+"IE3",
+1
+],
+"CardBuster": [
+"IE3",
+1
+],
+"CardProtect": [
+"IE3",
+1
+],
+"CardSplash": [
+"GO1",
+1
+],
+"CastleGate": [
+"GO3",
+1
+],
+"ChabudaiGaeshi": [
+"IE2",
+1
+],
+"ChaosBreak": [
+"IE3",
+3
+],
+"ChaosMeteor": [
+"GO2",
+1
+],
+"Checkmate": [
+"GO1",
+1
+],
+"Claymore": [
+"GO1",
+1
+],
+"ClupeClaw": [
+"GO3",
+1
+],
+"CoilTurn": [
+"IE1",
+1
+],
+"CoilUpper": [
+"GO2",
+1
+],
+"ColosseoGuard": [
+"IE3",
+1
+],
+"CondorDive": [
+"IE1",
+1
+],
+"CorodraShoot": [
+"IE1",
+1
+],
+"CounterdriveDF": [
+"ARES",
+2
+],
+"CounterdriveGK": [
+"GO1",
+1
+],
+"Counterstrike": [
+"IE1",
+1
+],
+"CrazySunlight": [
+"GO1",
+1
+],
+"CrimsonSphere": [
+"GO1",
+1
+],
+"CrocodileFang": [
+"GO3",
+1
+],
+"CrossDrive": [
+"IE1",
+1
+],
+"CrystalBarrier": [
+"GO1",
+1
+],
+"Cyclone": [
+"IE1",
+1
+],
+"DaiBakuhatsuHarite": [
+"IE3",
+1
+],
+"DancingGhost": [
+"GO1",
+1
+],
+"DandorlCrusher": [
+"GO3",
+1
+],
+"DarkMatter": [
+"IE3",
+1
+],
+"DarkPhoenix": [
+"IE1",
+3
+],
+"DarkSpace": [
+"GO1",
+1
+],
+"DarkTornado": [
+"IE1",
+1
+],
+"DashAccel": [
+"IE1",
+1
+],
+"DashStorm": [
+"IE1",
+1
+],
+"DashTrain": [
+"GO1",
+1
+],
+"DeadFuture": [
+"GO2",
+2
+],
+"DeadStraight": [
+"GO3",
+1
+],
+"DeathBreak": [
+"STRIKERS",
+3
+],
+"DeathDrop": [
+"STRIKERS",
+1
+],
+"DeathRain": [
+"IE3",
+1
+],
+"DeathScytheLow": [
+"GO3",
+1
+],
+"DeathScytheMiddle": [
+"GO3",
+2
+],
+"DeathSpear": [
+"IE3",
+1
+],
+"DeathSword": [
+"STRIKERS",
+1
+],
+"DeathZone": [
+"IE1",
+3
+],
+"DeathZone2": [
+"IE2",
+3
+],
+"DecoyRelease": [
+"GO2",
+1
+],
+"DeepJungle": [
+"GO2",
+3
+],
+"DeepMist": [
+"GO1",
+1
+],
+"DefenseHouteishiki": [
+"GO3",
+1
+],
+"DelpinusEcho": [
+"GO3",
+1
+],
+"DemonCut": [
+"IE3",
+1
+],
+"DemonsBolt": [
+"GO2",
+1
+],
+"DenraiHoutou": [
+"GO1",
+1
+],
+"DesertDrift": [
+"GO3",
+1
+],
+"DesertStorm": [
+"IE3",
+1
+],
+"DespairFortress": [
+"VR",
+1
+],
+"DestinyCloud": [
+"GO2",
+1
+],
+"DevilBall": [
+"IE3",
+1
+],
+"DevilBurst": [
+"GO1",
+1
+],
+"DiffuseChord": [
+"GO3",
+1
+],
+"DigThrough": [
+"GO3",
+1
+],
+"DigUp": [
+"GO3",
+1
+],
+"DimensionCut": [
+"GO1",
+1
+],
+"DimensionStorm": [
+"GO2",
+1
+],
+"DinosaurBreak": [
+"GO1",
+1
+],
+"DisasterBreak": [
+"GO2",
+1
+],
+"DivineArrow": [
+"IE1",
+1
+],
+"DogRun": [
+"IE3",
+1
+],
+"DohmaDriller": [
+"GO3",
+1
+],
+"DokonjouBat": [
+"IE1",
+2
+],
+"DokonjouCatch": [
+"IE2",
+1
+],
+"DokonjouClub": [
+"IE2",
+2
+],
+"DokugiriNoJutsu": [
+"IE1",
+1
+],
+"DolphanusSplash": [
+"GO3",
+1
+],
+"DoonShout": [
+"GO2",
+1
+],
+"Doppelganger": [
+"IE1",
+1
+],
+"DorougaAssault": [
+"GO3",
+1
+],
+"DoubleCyclone": [
+"IE2",
+2
+],
+"DoubleGrenade": [
+"IE2",
+1
+],
+"DoubleJaw": [
+"IE3",
+1
+],
+"DoubleRocket": [
+"IE2",
+1
+],
+"DoubleShot": [
+"GO2",
+1
+],
+"DoubleTornado": [
+"IE2",
+2
+],
+"Doukasen": [
+"GO3",
+1
+],
+"DragnovaStrike": [
+"GO3",
+1
+],
+"DragonBlaster": [
+"GO2",
+1
+],
+"DragonCannon": [
+"IE2",
+1
+],
+"DragonCrash": [
+"IE1",
+1
+],
+"DragonGround": [
+"IE2",
+1
+],
+"DragonSlayer": [
+"IE3",
+1
+],
+"DragonStorm": [
+"GO1",
+1
+],
+"DragonTornado": [
+"IE1",
+2
+],
+"DragonsTail": [
+"GO1",
+1
+],
+"DrillSmasher": [
+"IE2",
+1
+],
+"DryBlow": [
+"GO3",
+1
+],
+"DualPass": [
+"IE2",
+2
+],
+"DualSmash": [
+"IE2",
+2
+],
+"DualStorm": [
+"IE2",
+2
+],
+"DualStrike": [
+"IE2",
+2
+],
+"DustJavelin": [
+"GO3",
+1
+],
+"DynamiteShoot": [
+"IE1",
+1
+],
+"EagleBuster": [
+"IE2",
+3
+],
+"Earthquake": [
+"IE1",
+1
+],
+"EchoBall": [
+"IE3",
+1
+],
+"EiffelDrive": [
+"IE3",
+1
+],
+"Einsatz": [
+"GO3",
+1
+],
+"Electrap": [
+"IE3",
+1
+],
+"ElephantPress": [
+"GO1",
+2
+],
+"EmpressShadow": [
+"VR",
+1
+],
+"EndlessSummer": [
+"GO1",
+1
+],
+"EternalBlizzard": [
+"IE2",
+1
+],
+"Evolution": [
+"GO1",
+3
+],
+"Excalibur": [
+"IE3",
+1
+],
+"ExcellentBreast": [
+"GO2",
+1
+],
+"ExtendZone": [
+"GO1",
+1
+],
+"ExtremeRabbit": [
+"GO2",
+2
+],
+"FakeBall": [
+"IE1",
+1
+],
+"FakeBomber": [
+"IE1",
+1
+],
+"FalcoWing": [
+"GO1",
+1
+],
+"FatalLift": [
+"GO3",
+1
+],
+"FenceOfGaia": [
+"GO1",
+1
+],
+"FireBlizzard_Fire": [
+"IE2",
+2
+],
+"FireBlizzard_Wind": [
+"IE2",
+2
+],
+"FireTornado": [
+"IE1",
+1
+],
+"FireTornadoDD": [
+"GO1",
+2
+],
+"FireTornadoTC": [
+"GO2",
+3
+],
+"FlameDance": [
+"IE2",
+1
+],
+"FlameVeil": [
+"IE2",
+1
+],
+"FlameyMirage": [
+"GO3",
+1
+],
+"FlashUpper": [
+"IE3",
+1
+],
+"FloralDespair": [
+"GO2",
+1
+],
+"FlyingFish": [
+"GO1",
+1
+],
+"FootworkDraw": [
+"GO3",
+1
+],
+"Fortissimo": [
+"STRIKERS",
+1
+],
+"FoxMirage": [
+"GO3",
+1
+],
+"FractalHouse": [
+"GO2",
+3
+],
+"FreezeShot": [
+"IE1",
+1
+],
+"FrozenSteal": [
+"IE2",
+1
+],
+"FukurouSteal": [
+"GO3",
+1
+],
+"FullPowerShield": [
+"IE1",
+1
+],
+"FutureEye": [
+"GO1",
+1
+],
+"FuujinNoMai": [
+"IE3",
+1
+],
+"FuurinkazanDestroyer": [
+"GO1",
+1
+],
+"FuusenGum": [
+"IE2",
+1
+],
+"GaiaBreak": [
+"IE2",
+3
+],
+"GalacticaFall": [
+"GO3",
+2
+],
+"Galatyn": [
+"IE3",
+1
+],
+"GallopBuster": [
+"GO1",
+1
+],
+"GammaStrike": [
+"GO2",
+1
+],
+"GandranCrusher": [
+"GO3",
+1
+],
+"GanymedeProton": [
+"IE2",
+1
+],
+"GaryuuBounce": [
+"GO3",
+1
+],
+"GaussShot": [
+"GO2",
+1
+],
+"GearDrive": [
+"GO2",
+1
+],
+"GekirinDunk": [
+"GO3",
+1
+],
+"GiantSpin": [
+"IE2",
+1
+],
+"GigabiteScrew": [
+"GO2",
+1
+],
+"GigantVine": [
+"GO3",
+1
+],
+"GigantWall": [
+"IE1",
+1
+],
+"GiganticBomb": [
+"GO1",
+1
+],
+"GigatonHead": [
+"GO2",
+1
+],
+"GigirasShield": [
+"GO3",
+1
+],
+"GingaRocket": [
+"GO3",
+1
+],
+"GladiusArch": [
+"IE3",
+1
+],
+"GloriousRay": [
+"GO2",
+1
+],
+"GoToHeaven": [
+"IE3",
+1
+],
+"GoToHell": [
+"IE3",
+1
+],
+"GoalZurashi": [
+"IE1",
+1
+],
+"GodBreak": [
+"IE2",
+1
+],
+"GodCatch": [
+"IE3",
+1
+],
+"GodHand": [
+"IE1",
+1
+],
+"GodHandTriple": [
+"IE2",
+3
+],
+"GodHandV": [
+"GO1",
+1
+],
+"GodHandW": [
+"GO2",
+1
+],
+"GodHandX": [
+"IE3",
+1
+],
+"GodHand_Blue": [
+"IE1",
+1
+],
+"GodKnows": [
+"IE1",
+1
+],
+"GodWind": [
+"GO2",
+1
+],
+"GoldFever": [
+"GO3",
+1
+],
+"GoligerAssault": [
+"GO3",
+1
+],
+"GoodSmell": [
+"IE2",
+1
+],
+"GoomaInferno": [
+"GO3",
+1
+],
+"Gorimuchuu": [
+"IE1",
+1
+],
+"GouryuuSwing": [
+"GO3",
+1
+],
+"GranFenrir": [
+"IE3",
+3
+],
+"GrandFire": [
+"IE3",
+3
+],
+"GrandSweeper": [
+"GO2",
+1
+],
+"Gravestone": [
+"IE3",
+1
+],
+"Gravitation": [
+"IE2",
+1
+],
+"GravityPoint": [
+"GO1",
+1
+],
+"GreatBarrierReef": [
+"IE3",
+1
+],
+"GreatBlaster": [
+"GO2",
+2
+],
+"GreatMaxNaOre": [
+"GO2",
+1
+],
+"GreatTheHand": [
+"GO1",
+1
+],
+"GrenadeShot": [
+"IE1",
+1
+],
+"GrimronShield": [
+"GO3",
+1
+],
+"GroundQuake": [
+"IE3",
+1
+],
+"GryphbangPress": [
+"GO3",
+1
+],
+"GuardianShield": [
+"GO1",
+1
+],
+"Gungnir": [
+"IE2",
+1
+],
+"Gunshot": [
+"IE3",
+1
+],
+"GusspheeBomb": [
+"GO3",
+1
+],
+"GyoromClaw": [
+"GO3",
+1
+],
+"GyroSaving": [
+"GO2",
+1
+],
+"HakaiDanmaku": [
+"GO1",
+1
+],
+"Hanafubuki": [
+"IE2",
+1
+],
+"Harmonics": [
+"GO1",
+1
+],
+"Harvest": [
+"IE1",
+2
+],
+"HawkShot": [
+"IE1",
+2
+],
+"HayabusaGlide": [
+"GO3",
+1
+],
+"HeadBazooka": [
+"GO1",
+1
+],
+"HeartRapier_F": [
+"GO2",
+1
+],
+"HeartRapier_M": [
+"GO2",
+1
+],
+"HeatTackle": [
+"IE1",
+1
+],
+"HeavenDrive": [
+"IE3",
+1
+],
+"HeavensTime": [
+"IE1",
+1
+],
+"HeavyAquaLance": [
+"GO1",
+1
+],
+"HeavyBaby": [
+"IE2",
+1
+],
+"Hellfire": [
+"IE3",
+1
+],
+"HellsFist": [
+"GO1",
+1
+],
+"HighVoltage": [
+"IE3",
+3
+],
+"HinawaBullet": [
+"GO2",
+2
+],
+"HisshouGamusharan": [
+"GO2",
+1
+],
+"HitoriOneTwo": [
+"IE2",
+1
+],
+"HologramLock": [
+"GO3",
+1
+],
+"HolyZone": [
+"IE3",
+1
+],
+"HonooNoKazamidori": [
+"IE1",
+2
+],
+"HornTrain": [
+"IE1",
+1
+],
+"HououRekka": [
+"GO2",
+1
+],
+"HuntersNet": [
+"GO1",
+1
+],
+"HuntingLance": [
+"GO2",
+1
+],
+"HurricaneArrow": [
+"IE1",
+3
+],
+"HyakuretsuShot": [
+"IE1",
+1
+],
+"HydroAnchor": [
+"GO1",
+1
+],
+"IceBlock": [
+"IE2",
+1
+],
+"IceGround": [
+"IE2",
+1
+],
+"Ichiyajou": [
+"GO2",
+3
+],
+"IcicleRoad": [
+"GO1",
+1
+],
+"IgniteSteal": [
+"IE2",
+1
+],
+"IjigenTheHand": [
+"IE3",
+1
+],
+"IkariNoTettsui": [
+"IE3",
+1
+],
+"IllusionBall": [
+"IE1",
+1
+],
+"Inazuma1gou": [
+"IE1",
+2
+],
+"Inazuma1gouOtoshi": [
+"IE2",
+3
+],
+"InazumaBreak": [
+"IE1",
+3
+],
+"InazumaOtoshi": [
+"IE1",
+2
+],
+"Injection": [
+"GO3",
+1
+],
+"IronWall": [
+"IE3",
+1
+],
+"IvoryCrash": [
+"GO3",
+1
+],
+"IxaalCannon": [
+"GO3",
+1
+],
+"Jackknife": [
+"GO3",
+1
+],
+"JibashiriKaen": [
+"IE3",
+1
+],
+"JigokuGuruma": [
+"IE1",
+2
+],
+"JikuuNoKabe": [
+"IE2",
+1
+],
+"JinryuuBounce": [
+"GO3",
+1
+],
+"JokerRains": [
+"GO1",
+2
+],
+"JudgeThrough": [
+"IE1",
+1
+],
+"JudgeThrough2": [
+"IE2",
+1
+],
+"JudgeThrough3": [
+"IE3",
+2
+],
+"JudgmentRay": [
+"GO3",
+1
+],
+"JumpingThunder": [
+"IE2",
+2
+],
+"JusticeWing": [
+"GO1",
+1
+],
+"KabukiBreak": [
+"GO3",
+1
+],
+"Kaenhousha": [
+"IE2",
+1
+],
+"KageNui": [
+"IE1",
+1
+],
+"KageTsukami": [
+"GO1",
+1
+],
+"KagomeKagome": [
+"IE1",
+3
+],
+"Kamaitachi": [
+"IE1",
+1
+],
+"Kamikakushi": [
+"IE1",
+1
+],
+"KangarooKick": [
+"IE3",
+1
+],
+"KattobiDefense": [
+"GO1",
+2
+],
+"KazaanaDrive": [
+"GO2",
+1
+],
+"Kazangan": [
+"GO3",
+1
+],
+"Kazanrai": [
+"GO3",
+1
+],
+"KikuIchimonji": [
+"GO2",
+1
+],
+"KillBridge": [
+"GO1",
+1
+],
+"KillerBlade": [
+"IE1",
+1
+],
+"KillerElbow": [
+"GO3",
+1
+],
+"KillerFields": [
+"IE3",
+2
+],
+"KillerSlide": [
+"IE1",
+1
+],
+"KillerWhale": [
+"GO1",
+1
+],
+"KingFire": [
+"GO1",
+1
+],
+"KirakiraIllusion": [
+"GO2",
+1
+],
+"KodaiNoKiba": [
+"GO2",
+1
+],
+"KodaiNoTsubasa": [
+"GO2",
+1
+],
+"Kogarashi": [
+"IE1",
+1
+],
+"KogetsuJuujishou": [
+"GO2",
+1
+],
+"KonohaRendezvous": [
+"GO3",
+2
+],
+"KonohaRoll": [
+"GO3",
+1
+],
+"KourinNoYa": [
+"GO2",
+1
+],
+"KouteiPenguin1gou": [
+"IE2",
+1
+],
+"KouteiPenguin2gou": [
+"IE1",
+3
+],
+"KouteiPenguin3gou": [
+"IE3",
+3
+],
+"KouteiPenguin7": [
+"GO1",
+1
+],
+"KouteiPenguinX": [
+"IE3",
+1
+],
+"KujakuBlind": [
+"GO3",
+1
+],
+"KumoNoIto": [
+"IE1",
+1
+],
+"KungFuAttack": [
+"IE2",
+1
+],
+"KungFuHead": [
+"IE1",
+1
+],
+"KuroshioRide": [
+"GO2",
+1
+],
+"KurukuruHead": [
+"IE2",
+1
+],
+"KyoubouHead": [
+"GO3",
+1
+],
+"LaFlamme": [
+"GO2",
+1
+],
+"LastDeathZone": [
+"GO2",
+3
+],
+"LiarShot": [
+"IE3",
+1
+],
+"LightningAccel": [
+"IE2",
+1
+],
+"LinearDrive": [
+"GO2",
+1
+],
+"LionAssault": [
+"GO3",
+1
+],
+"LiquidFlow": [
+"GO3",
+1
+],
+"LostAngel": [
+"GO1",
+1
+],
+"LoveArrow": [
+"GO2",
+1
+],
+"LoyalHeartShot": [
+"GO3",
+1
+],
+"LuckyDice": [
+"GO1",
+1
+],
+"LuminousImpact": [
+"VR",
+1
+],
+"MaboroshiDribble": [
+"IE2",
+1
+],
+"MaboroshiShot": [
+"GO1",
+1
+],
+"MachWind": [
+"GO1",
+1
+],
+"MachineGunBeat": [
+"GO1",
+1
+],
+"MadExpress": [
+"IE2",
+3
+],
+"MadJuggler": [
+"GO1",
+1
+],
+"Magic": [
+"IE1",
+1
+],
+"MagicAmp": [
+"GO3",
+1
+],
+"MagicalFlower": [
+"GO2",
+1
+],
+"MagiciansBox": [
+"GO1",
+1
+],
+"MagmaCarpet": [
+"GO3",
+1
+],
+"MagnatasPressure": [
+"GO3",
+1
+],
+"MagnetDraw": [
+"GO2",
+1
+],
+"MajinTheHand": [
+"IE1",
+1
+],
+"MajinTheHand_Blue": [
+"IE1",
+1
+],
+"MajinTheHand_K": [
+"IE1",
+1
+],
+"MakiwariChop": [
+"IE1",
+1
+],
+"MammothPressure": [
+"GO3",
+1
+],
+"MangetsuRush": [
+"GO2",
+1
+],
+"MaouNoOno": [
+"GO1",
+1
+],
+"MaouTheHand": [
+"IE3",
+1
+],
+"MatadorFeint": [
+"IE3",
+1
+],
+"MaximumFire": [
+"IE3",
+1
+],
+"MegaQuake": [
+"IE1",
+1
+],
+"MegaWall": [
+"IE2",
+2
+],
+"Megalodon": [
+"IE3",
+1
+],
+"MeganeCrash": [
+"IE2",
+2
+],
+"MegatonHead": [
+"IE2",
+1
+],
+"MelodyWave": [
+"GO1",
+1
+],
+"MermaidSmash": [
+"GO3",
+1
+],
+"MeteoddFireTornadoV": [
+"VR",
+1
+],
+"MeteorAttack": [
+"IE1",
+1
+],
+"MeteorShower": [
+"IE2",
+1
+],
+"MillionHands": [
+"IE3",
+1
+],
+"MirageShoot": [
+"IE3",
+1
+],
+"MochimochiKinakoMochi": [
+"GO2",
+1
+],
+"MoguraFeint": [
+"IE1",
+1
+],
+"MoguraShuffle": [
+"IE2",
+1
+],
+"MokkoriOkaNoMoai": [
+"ARES",
+1
+],
+"MonkeyTurn": [
+"IE1",
+1
+],
+"Moonsault": [
+"IE1",
+1
+],
+"MoonsaultStamp": [
+"GO1",
+1
+],
+"MortalSmash": [
+"GO2",
+1
+],
+"MosspheeBurst": [
+"GO3",
+1
+],
+"MueiRanbu": [
+"GO2",
+3
+],
+"MueiSouha": [
+"GO2",
+3
+],
+"MugenNoKabe": [
+"IE1",
+3
+],
+"MugenTheHand": [
+"IE2",
+1
+],
+"MushroomHop": [
+"GO3",
+1
+],
+"MysticThorn": [
+"GO2",
+1
+],
+"NaminoriPierrot": [
+"GO1",
+1
+],
+"NarakuOtoshi": [
+"IE3",
+1
+],
+"NeedleHammer": [
+"IE3",
+1
+],
+"NekketsuHead": [
+"IE2",
+1
+],
+"NekketsuPunch": [
+"IE1",
+1
+],
+"NeoGalaxy": [
+"IE2",
+3
+],
+"NihyakuretsuShot": [
+"IE2",
+2
+],
+"NininSankyaku": [
+"IE2",
+2
+],
+"NoEscape": [
+"IE2",
+3
+],
+"NoboriRyuu": [
+"GO1",
+1
+],
+"Noroi": [
+"IE1",
+1
+],
+"NorthernImpact": [
+"IE2",
+1
+],
+"OdinSword": [
+"IE3",
+1
+],
+"OgreBlade": [
+"GO2",
+1
+],
+"OilRush": [
+"GO3",
+1
+],
+"OkehazamaWall": [
+"GO2",
+1
+],
+"OlympusHarmony": [
+"GO1",
+1
+],
+"OmegaAttack": [
+"GO2",
+3
+],
+"OmegaTheHand": [
+"IE3",
+1
+],
+"Onryou": [
+"IE1",
+1
+],
+"OokamiStrike": [
+"GO3",
+1
+],
+"Oouchiwa": [
+"IE2",
+1
+],
+"OraoraMenchi": [
+"GO3",
+1
+],
+"OrbitalDrive": [
+"GO3",
+1
+],
+"OuNoTsurugi": [
+"GO2",
+1
+],
+"OujaNoKiba": [
+"GO2",
+1
+],
+"Overdrive": [
+"GO1",
+1
+],
+"PaladinStrike": [
+"IE3",
+1
+],
+"PamerioCabriole": [
+"GO3",
+1
+],
+"PantherBlizzard": [
+"GO1",
+1
+],
+"ParkourAttack": [
+"GO3",
+1
+],
+"PatriotShoot": [
+"IE1",
+1
+],
+"PegasusBrave": [
+"GO3",
+1
+],
+"PegasusBreak": [
+"GO1",
+1
+],
+"PegasusShot": [
+"IE3",
+1
+],
+"PelionWhip": [
+"GO3",
+1
+],
+"PenguinTheHand": [
+"GO2",
+1
+],
+"PerfectCourse": [
+"GO1",
+1
+],
+"PerfectTower": [
+"IE2",
+3
+],
+"Phalanx": [
+"GO3",
+3
+],
+"PhantomShoot": [
+"IE1",
+1
+],
+"PhotonFlash": [
+"IE2",
+1
+],
+"PlanetShield": [
+"IE2",
+1
+],
+"PlasmaBall": [
+"GO2",
+1
+],
+"PowerCharge": [
+"IE3",
+1
+],
+"PowerShield": [
+"IE1",
+1
+],
+"PowerSpike": [
+"GO1",
+1
+],
+"PressurePunch": [
+"IE1",
+1
+],
+"PrestoTurn": [
+"STRIKERS",
+1
+],
+"PrimaDonna": [
+"IE2",
+1
+],
+"PrimeLegend": [
+"IE3",
+2
+],
+"ProcyonNet": [
+"IE2",
+1
+],
+"ProfileZone": [
+"IE2",
+1
+],
+"PsychicBow": [
+"GO3",
+1
+],
+"PsychoShot": [
+"IE1",
+1
+],
+"QuickDraw": [
+"IE1",
+1
+],
+"RCShoot": [
+"IE3",
+1
+],
+"RagingClaw": [
+"GO1",
+1
+],
+"RainbowBubbleShot": [
+"GO1",
+1
+],
+"RainbowLoop": [
+"IE2",
+1
+],
+"RapidFire": [
+"GO3",
+1
+],
+"RapidWhip": [
+"GO1",
+1
+],
+"RatelClaw": [
+"GO3",
+1
+],
+"ReboundLayer": [
+"GO3",
+1
+],
+"RedPrison": [
+"GO2",
+1
+],
+"RedioCabriole": [
+"GO3",
+1
+],
+"ReflectBuster": [
+"IE1",
+1
+],
+"Rejection": [
+"GO2",
+1
+],
+"ReppuuDash": [
+"IE2",
+1
+],
+"ReverseWorld": [
+"GO2",
+1
+],
+"RevolutionV": [
+"IE2",
+2
+],
+"RibbonShower": [
+"IE2",
+1
+],
+"RisingSlash": [
+"GO3",
+1
+],
+"RoadrollerTackle": [
+"IE2",
+1
+],
+"RockHammer": [
+"GO3",
+1
+],
+"RockWallDam": [
+"IE2",
+2
+],
+"RocketHead": [
+"GO1",
+2
+],
+"RocketKobushi": [
+"IE1",
+1
+],
+"RollingCutter": [
+"GO3",
+2
+],
+"RollingKick": [
+"IE1",
+1
+],
+"RollingSlide": [
+"IE3",
+1
+],
+"RoseSplash": [
+"IE2",
+1
+],
+"RoundSpark": [
+"GO1",
+1
+],
+"RunBallRun": [
+"IE1",
+1
+],
+"RyuuseiBlade": [
+"IE2",
+1
+],
+"SabakiNoTettsui": [
+"IE1",
+1
+],
+"Sacrifice": [
+"GO3",
+1
+],
+"SafetyProtect": [
+"IE2",
+1
+],
+"SaikyouElevenHadou": [
+"GO2",
+3
+],
+"SaikyousanShoukan": [
+"GO1",
+1
+],
+"SandCutter": [
+"GO2",
+1
+],
+"SandKnock": [
+"GO3",
+1
+],
+"SaranarjaCombo": [
+"GO3",
+1
+],
+"Sargasso": [
+"GO1",
+2
+],
+"ScissorsBomb": [
+"IE3",
+1
+],
+"ScratchRaid": [
+"GO1",
+1
+],
+"ScreamOfEden": [
+"GO3",
+2
+],
+"Screwdriver": [
+"GO2",
+1
+],
+"SecurityShot": [
+"IE2",
+2
+],
+"SeigiNoTekken": [
+"IE2",
+1
+],
+"SeikenKikkouha": [
+"GO2",
+1
+],
+"Senpuujin": [
+"IE2",
+1
+],
+"SerpentFang": [
+"GO1",
+1
+],
+"SetsunaBoost": [
+"GO2",
+1
+],
+"ShadowGuard": [
+"GO2",
+1
+],
+"ShadowHand": [
+"GO2",
+1
+],
+"ShadowLeg": [
+"GO2",
+1
+],
+"ShadowRay_Forest": [
+"IE3",
+2
+],
+"ShadowRay_Mountain": [
+"IE3",
+2
+],
+"ShadowSword": [
+"GO2",
+1
+],
+"ShellbitBurst": [
+"GO2",
+1
+],
+"ShikigamiLines": [
+"GO2",
+1
+],
+"Shikofumi": [
+"IE1",
+1
+],
+"ShineDrive": [
+"IE1",
+1
+],
+"ShiningHole": [
+"GO2",
+1
+],
+"Shinkuuma": [
+"IE3",
+1
+],
+"ShinyFeather": [
+"GO3",
+1
+],
+"ShippuuDash": [
+"IE1",
+1
+],
+"ShippuuJinrai": [
+"GO2",
+1
+],
+"ShootBreak": [
+"GO1",
+1
+],
+"ShootEater": [
+"GO3",
+1
+],
+"ShootPocket": [
+"IE1",
+1
+],
+"ShootingStar": [
+"IE2",
+2
+],
+"Shootrap": [
+"IE3",
+1
+],
+"Sidewinder": [
+"GO1",
+1
+],
+"SigmaZone": [
+"IE2",
+3
+],
+"SilkRoad": [
+"GO3",
+1
+],
+"SkyWalk": [
+"GO1",
+1
+],
+"SkytreeFall": [
+"GO2",
+1
+],
+"SlashNail": [
+"IE2",
+1
+],
+"Slingshot": [
+"IE3",
+3
+],
+"SnakeShot": [
+"IE1",
+1
+],
+"SneakingRaid": [
+"IE3",
+2
+],
+"SnowAngel": [
+"IE3",
+1
+],
+"SonicShot": [
+"GO1",
+1
+],
+"SouhiYuuseidan": [
+"GO2",
+2
+],
+"SoulBringer": [
+"GO1",
+1
+],
+"SouthernCrosscut": [
+"IE2",
+1
+],
+"SoyokazeStep": [
+"STRIKERS",
+1
+],
+"SoyoyagiStep": [
+"GO2",
+1
+],
+"SpacePenguin": [
+"IE2",
+3
+],
+"SparkEdgeDribble": [
+"GO2",
+1
+],
+"SparkleWave": [
+"GO2",
+1
+],
+"SpinningCut": [
+"IE1",
+1
+],
+"SpinningShoot": [
+"IE1",
+1
+],
+"SpinningTransam": [
+"GO2",
+1
+],
+"SpinningUpper": [
+"GO2",
+1
+],
+"SpiralDraw": [
+"STRIKERS",
+1
+],
+"SpiralShot": [
+"IE1",
+1
+],
+"SpringArrow": [
+"GO2",
+1
+],
+"SprintWarp": [
+"GO1",
+1
+],
+"StarReflection": [
+"GO1",
+1
+],
+"Stargazer": [
+"GO3",
+1
+],
+"StealthWalk": [
+"GO3",
+1
+],
+"Stinger": [
+"IE3",
+1
+],
+"StonePrison": [
+"IE3",
+1
+],
+"StormRider": [
+"IE3",
+1
+],
+"StormZone": [
+"GO2",
+1
+],
+"StrikeSamba": [
+"IE3",
+1
+],
+"StrongTower": [
+"GO1",
+1
+],
+"SuiseiShoot": [
+"IE1",
+1
+],
+"SunriseCarnival": [
+"VR",
+1
+],
+"SunshineForce": [
+"GO1",
+1
+],
+"SunshineStorm": [
+"GO2",
+1
+],
+"SuperArmadillo": [
+"IE1",
+1
+],
+"SuperElastico": [
+"IE3",
+1
+],
+"SuperScanDF": [
+"IE1",
+1
+],
+"SuperScanOF": [
+"IE1",
+1
+],
+"SuperShikofumi": [
+"IE2",
+1
+],
+"Supernova": [
+"IE2",
+3
+],
+"SwanDive": [
+"IE2",
+1
+],
+"TaikokuOuka": [
+"GO2",
+1
+],
+"TamanoriPierrot": [
+"IE1",
+1
+],
+"TamashiiTheHand": [
+"IE3",
+1
+],
+"TarzanKick": [
+"IE1",
+1
+],
+"TatsumakiDokugiri": [
+"IE2",
+1
+],
+"TatsumakiOtoshi": [
+"IE3",
+2
+],
+"TatsumakiSenpuu": [
+"IE1",
+1
+],
+"Tempest": [
+"GO2",
+1
+],
+"TenchiRaimei": [
+"GO2",
+1
+],
+"TenkuuNoMai": [
+"GO2",
+1
+],
+"TenkuuOtoshi": [
+"IE3",
+1
+],
+"TentacleHold": [
+"GO3",
+1
+],
+"TheBirth": [
+"IE3",
+2
+],
+"TheEarth": [
+"IE2",
+3
+],
+"TheEarthInfinity": [
+"GO3",
+3
+],
+"TheEnd": [
+"IE3",
+1
+],
+"TheGalaxy": [
+"IE1",
+3
+],
+"TheHurricane": [
+"IE3",
+2
+],
+"TheIkaros": [
+"IE3",
+2
+],
+"TheMatrix": [
+"VR",
+1
+],
+"TheMist": [
+"GO1",
+1
+],
+"TheMonsters": [
+"GO2",
+2
+],
+"TheMountain": [
+"IE3",
+1
+],
+"ThePhoenix": [
+"IE1",
+3
+],
+"TheStamp": [
+"GO1",
+1
+],
+"TheTower": [
+"IE2",
+1
+],
+"TheTyphoon": [
+"IE3",
+1
+],
+"TheWall": [
+"IE1",
+1
+],
+"ThiefEye": [
+"GO1",
+1
+],
+"ThousandArrow": [
+"GO1",
+1
+],
+"ThunderBeast": [
+"IE3",
+2
+],
+"TigerDrive": [
+"IE3",
+1
+],
+"TigerStorm": [
+"IE3",
+2
+],
+"TkachevBomber": [
+"IE2",
+2
+],
+"TornadoCatch": [
+"IE1",
+1
+],
+"ToughnessBlock": [
+"IE1",
+1
+],
+"ToumeiFeint": [
+"IE2",
+1
+],
+"TracePress": [
+"GO3",
+1
+],
+"Transmove": [
+"GO2",
+1
+],
+"TriPegasus": [
+"IE2",
+3
+],
+"TriangleZ": [
+"IE1",
+3
+],
+"TriangleZZ": [
+"GO1",
+3
+],
+"TrickBall": [
+"GO1",
+1
+],
+"TripleBoost": [
+"IE2",
+3
+],
+"TripleDash": [
+"IE2",
+3
+],
+"TripleDefense": [
+"IE1",
+3
+],
+"TsubameGaeshi": [
+"GO2",
+1
+],
+"TsuchiDaruma": [
+"IE1",
+1
+],
+"Tsumuji": [
+"IE1",
+1
+],
+"TsumujiNoYaiba": [
+"GO2",
+1
+],
+"TsunamiBoost": [
+"IE2",
+1
+],
+"TsunamiWall": [
+"IE1",
+1
+],
+"TsuutenkakuShoot": [
+"IE2",
+1
+],
+"TwinBoost": [
+"IE1",
+2
+],
+"TwinBoostF": [
+"IE2",
+2
+],
+"TwinMixer": [
+"GO1",
+2
+],
+"TwistReach": [
+"GO3",
+1
+],
+"UBoat": [
+"IE3",
+1
+],
+"UltraMoon": [
+"IE3",
+1
+],
+"UnicornBoost": [
+"IE3",
+2
+],
+"UniverseBlast": [
+"IE2",
+2
+],
+"UnivoltSprint": [
+"GO3",
+2
+],
+"UshiroNoShoumen": [
+"IE1",
+1
+],
+"VairaasCannon": [
+"GO3",
+1
+],
+"ValkyrieFlag": [
+"GO2",
+1
+],
+"VampireLord": [
+"GO2",
+1
+],
+"VanishingCut": [
+"GO1",
+1
+],
+"VivaBanriNoChoujou": [
+"GO1",
+1
+],
+"VolcanicFly": [
+"GO3",
+1
+],
+"VolcanoCut": [
+"IE2",
+1
+],
+"VolcanoHead": [
+"GO3",
+1
+],
+"WarpDrive": [
+"IE2",
+1
+],
+"WaterVeil": [
+"IE2",
+1
+],
+"Waterfall": [
+"GO3",
+1
+],
+"WelcomeBack": [
+"IE3",
+1
+],
+"WhaleGuard": [
+"IE2",
+2
+],
+"WhiteBlade": [
+"GO1",
+1
+],
+"WhiteBreath": [
+"GO1",
+1
+],
+"WhiteHurricane": [
+"GO1",
+1
+],
+"WildClaw": [
+"IE1",
+1
+],
+"WildDunk": [
+"GO3",
+1
+],
+"WillyWilly": [
+"GO3",
+1
+],
+"WinningLogic": [
+"GO3",
+2
+],
+"WolfLegend": [
+"IE2",
+1
+],
+"WonderTrap": [
+"GO2",
+1
+],
+"Wormhole": [
+"IE2",
+1
+],
+"WyvernBlizzard": [
+"IE2",
+2
+],
+"WyvernCrash": [
+"IE2",
+1
+],
+"XBlast": [
+"IE3",
+1
+],
+"YakimochiScrew": [
+"GO2",
+1
+],
+"YugamuKuukan": [
+"IE1",
+1
+],
+"ZSlash": [
+"GO3",
+1
+],
+"Zanzou": [
+"IE1",
+1
+],
+"ZeroMagnum": [
+"GO1",
+2
+],
+"Zeroyon": [
+"GO1",
+1
+],
+"ZigzagFlame": [
+"IE3",
+1
+],
+"ZigzagSpark": [
+"IE1",
+1
+],
+"ZoomaDriller": [
+"GO3",
+1
+],
+"es_chilena-de-ping-ino": [
+"ORION",
+1
+],
+"es_dimensi-n-kamakura": [
+"ORION",
+3
+],
+"es_embestida-bufalina": [
+"ORION",
+3
+],
+"es_entrada-deslumbrante": [
+"ARES",
+1
+],
+"es_guila-implacable": [
+"ORION",
+4
+],
+"es_mar-de-lagrimas": [
+"ARES",
+1
+],
+"es_muro-colectivo": [
+"ARES",
+3
+],
+"es_ping-ino-aereo": [
+"ORION",
+1
+],
+"es_ping-ino-emperador-n-2-tibur-n": [
+"ORION",
+3
+],
+"es_ping-inos-de-luz-y-sombra": [
+"ORION",
+2
+],
+"es_rayo-de-diamantes-curvo": [
+"VR",
+1
+],
+"es_supermano-celestial": [
+"ORION",
+1
+],
+"es_tiro-a-reo-triple": [
+"ORION",
+3
+],
+"es_velo-de-sirena": [
+"ORION",
+1
+],
+"vr_whd00060": [
+"IE1",
+1
+],
+"vr_whd00150": [
+"IE1",
+1
+],
+"vr_whd00190": [
+"IE1",
+1
+],
+"vr_whd00220": [
+"IE1",
+1
+],
+"vr_whd00360": [
+"IE2",
+1
+],
+"vr_whd01460": [
+"ARES",
+1
+],
+"vr_whd01470": [
+"ARES",
+3
+],
+"vr_whd01490": [
+"ARES",
+1
+],
+"vr_whd01510": [
+"ARES",
+1
+],
+"vr_whd01540": [
+"VR",
+1
+],
+"vr_whd01560": [
+"VR",
+3
+],
+"vr_whd01570": [
+"ORION",
+1
+],
+"vr_whd01580": [
+"ORION",
+1
+],
+"vr_whd01590": [
+"ORION",
+1
+],
+"vr_whd10010": [
+"VR",
+1
+],
+"vr_whd10040": [
+"VR",
+1
+],
+"vr_whd10060": [
+"VR",
+3
+],
+"vr_whd10090": [
+"VR",
+1
+],
+"vr_whd10100": [
+"VR",
+1
+],
+"vr_whd10110": [
+"VR",
+1
+],
+"vr_whd10120": [
+"VR",
+1
+],
+"vr_whd10130": [
+"VR",
+1
+],
+"vr_whk00130": [
+"IE1",
+1
+],
+"vr_whk00180": [
+"IE1",
+1
+],
+"vr_whk00200": [
+"IE1",
+1
+],
+"vr_whk00280": [
+"IE2",
+1
+],
+"vr_whk00360": [
+"IE2",
+1
+],
+"vr_whk00400": [
+"IE2",
+1
+],
+"vr_whk00510": [
+"IE3",
+1
+],
+"vr_whk00800": [
+"GO1",
+1
+],
+"vr_whk01080": [
+"GO2",
+1
+],
+"vr_whk01400": [
+"ARES",
+1
+],
+"vr_whk01410": [
+"ARES",
+1
+],
+"vr_whk01440": [
+"ARES",
+1
+],
+"vr_whk01450": [
+"ARES",
+1
+],
+"vr_whk01460": [
+"ARES",
+1
+],
+"vr_whk01470": [
+"ARES",
+1
+],
+"vr_whk01480": [
+"ARES",
+1
+],
+"vr_whk01490": [
+"ARES",
+1
+],
+"vr_whk01510": [
+"ORION",
+1
+],
+"vr_whk01520": [
+"ORION",
+3
+],
+"vr_whk01530": [
+"ORION",
+1
+],
+"vr_whk01540": [
+"ORION",
+1
+],
+"vr_whk01550": [
+"VR",
+1
+],
+"vr_whk01560": [
+"ORION",
+1
+],
+"vr_whk01570": [
+"VR",
+1
+],
+"vr_whk01580": [
+"VR",
+1
+],
+"vr_whk01590": [
+"VR",
+1
+],
+"vr_whk01600": [
+"VR",
+1
+],
+"vr_whk01610": [
+"VR",
+1
+],
+"vr_whk01615": [
+"VR",
+1
+],
+"vr_whk01620": [
+"VR",
+1
+],
+"vr_whk01630": [
+"VR",
+1
+],
+"vr_whk01640": [
+"VR",
+1
+],
+"vr_whk01650": [
+"ORION",
+1
+],
+"vr_whk01660": [
+"ORION",
+1
+],
+"vr_whk01670": [
+"ORION",
+1
+],
+"vr_whk01690": [
+"ORION",
+1
+],
+"vr_whk01700": [
+"ORION",
+1
+],
+"vr_whk10010": [
+"VR",
+1
+],
+"vr_whk10020": [
+"VR",
+1
+],
+"vr_whk10040": [
+"VR",
+1
+],
+"vr_whk10050": [
+"VR",
+1
+],
+"vr_whk10060": [
+"VR",
+1
+],
+"vr_whk10070": [
+"VR",
+1
+],
+"vr_whk10080": [
+"VR",
+1
+],
+"vr_who00090": [
+"IE1",
+1
+],
+"vr_who00260": [
+"IE2",
+1
+],
+"vr_who00270": [
+"IE2",
+1
+],
+"vr_who00400": [
+"IE2",
+1
+],
+"vr_who00590": [
+"IE3",
+2
+],
+"vr_who00640": [
+"IE3",
+1
+],
+"vr_who01400": [
+"ARES",
+1
+],
+"vr_who01410": [
+"ARES",
+1
+],
+"vr_who01420": [
+"ARES",
+1
+],
+"vr_who01450": [
+"ORION",
+1
+],
+"vr_who01470": [
+"ARES",
+1
+],
+"vr_who10040": [
+"VR",
+1
+],
+"vr_who10050": [
+"VR",
+1
+],
+"vr_who10060": [
+"VR",
+1
+],
+"vr_who10070": [
+"VR",
+1
+],
+"vr_who10080": [
+"VR",
+1
+],
+"vr_who10100": [
+"VR",
+1
+],
+"vr_who10110": [
+"VR",
+1
+],
+"vr_who10120": [
+"VR",
+1
+],
+"vr_who10130": [
+"VR",
+1
+],
+"vr_who10140": [
+"VR",
+1
+],
+"vr_who10150": [
+"VR",
+1
+],
+"vr_who10160": [
+"VR",
+1
+],
+"vr_who10170": [
+"VR",
+1
+],
+"vr_whs00140": [
+"IE1",
+1
+],
+"vr_whs00570": [
+"IE2",
+1
+],
+"vr_whs00630": [
+"IE2",
+2
+],
+"vr_whs00920": [
+"IE2",
+1
+],
+"vr_whs01150": [
+"IE3",
+1
+],
+"vr_whs01160": [
+"IE3",
+1
+],
+"vr_whs02750": [
+"IE1",
+1
+],
+"vr_whs02760": [
+"ARES",
+1
+],
+"vr_whs02770": [
+"VR",
+3
+],
+"vr_whs02780": [
+"ARES",
+3
+],
+"vr_whs02790": [
+"ARES",
+1
+],
+"vr_whs02800": [
+"ARES",
+2
+],
+"vr_whs02810": [
+"ARES",
+1
+],
+"vr_whs02820": [
+"VR",
+1
+],
+"vr_whs02830": [
+"ARES",
+3
+],
+"vr_whs02840": [
+"VR",
+1
+],
+"vr_whs02850": [
+"ARES",
+1
+],
+"vr_whs02860": [
+"ARES",
+1
+],
+"vr_whs02880": [
+"ARES",
+1
+],
+"vr_whs02890": [
+"ARES",
+1
+],
+"vr_whs02900": [
+"ARES",
+1
+],
+"vr_whs02910": [
+"ARES",
+1
+],
+"vr_whs02920": [
+"ARES",
+1
+],
+"vr_whs02930": [
+"ARES",
+2
+],
+"vr_whs02940": [
+"ARES",
+1
+],
+"vr_whs02950": [
+"ARES",
+3
+],
+"vr_whs02960": [
+"ARES",
+1
+],
+"vr_whs02970": [
+"ARES",
+1
+],
+"vr_whs02980_or_02": [
+"ARES",
+2
+],
+"vr_whs02990": [
+"ARES",
+2
+],
+"vr_whs03000": [
+"ARES",
+1
+],
+"vr_whs03030": [
+"VR",
+4
+],
+"vr_whs03040": [
+"ORION",
+1
+],
+"vr_whs03050": [
+"ORION",
+1
+],
+"vr_whs03060": [
+"ORION",
+1
+],
+"vr_whs03070": [
+"VR",
+1
+],
+"vr_whs03080": [
+"VR",
+1
+],
+"vr_whs03090": [
+"ORION",
+1
+],
+"vr_whs03100": [
+"ORION",
+1
+],
+"vr_whs03120": [
+"VR",
+3
+],
+"vr_whs03130": [
+"ORION",
+1
+],
+"vr_whs03140": [
+"ORION",
+1
+],
+"vr_whs03150": [
+"VR",
+1
+],
+"vr_whs03160": [
+"ORION",
+2
+],
+"vr_whs03170": [
+"VR",
+2
+],
+"vr_whs03180": [
+"ORION",
+4
+],
+"vr_whs03190": [
+"ORION",
+1
+],
+"vr_whs03200": [
+"ORION",
+1
+],
+"vr_whs03210": [
+"ORION",
+1
+],
+"vr_whs03220": [
+"VR",
+1
+],
+"vr_whs03230": [
+"ORION",
+1
+],
+"vr_whs03240": [
+"VR",
+3
+],
+"vr_whs03260": [
+"ORION",
+1
+],
+"vr_whs03275": [
+"ORION",
+1
+],
+"vr_whs03280": [
+"ORION",
+4
+],
+"vr_whs03290": [
+"VR",
+1
+],
+"vr_whs03300": [
+"ORION",
+1
+],
+"vr_whs03310": [
+"ORION",
+1
+],
+"vr_whs03320": [
+"ORION",
+1
+],
+"vr_whs03350": [
+"ORION",
+2
+],
+"vr_whs03360": [
+"ORION",
+2
+],
+"vr_whs03370": [
+"VR",
+1
+],
+"vr_whs03390": [
+"ARES",
+1
+],
+"vr_whs03410": [
+"IE2",
+1
+],
+"vr_whs10010": [
+"VR",
+2
+],
+"vr_whs10020": [
+"VR",
+1
+],
+"vr_whs10030": [
+"VR",
+1
+],
+"vr_whs10040": [
+"VR",
+1
+],
+"vr_whs10050": [
+"VR",
+1
+],
+"vr_whs10060": [
+"VR",
+1
+],
+"vr_whs10080": [
+"VR",
+1
+],
+"vr_whs10100": [
+"VR",
+1
+],
+"vr_whs10110": [
+"VR",
+1
+],
+"vr_whs10120": [
+"VR",
+1
+],
+"vr_whs10130": [
+"VR",
+1
+],
+"vr_whs10140": [
+"VR",
+1
+],
+"vr_whs10150": [
+"VR",
+1
+],
+"vr_whs10170": [
+"VR",
+1
+]
+}
+}

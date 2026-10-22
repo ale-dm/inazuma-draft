@@ -33,6 +33,8 @@ alter table public.techniques add column if not exists vr_recast_time int;
 alter table public.techniques add column if not exists vr_category text;             -- Tiro | Regate | Bloqueo | Parada
 alter table public.techniques add column if not exists vr_participants int;
 alter table public.techniques add column if not exists vr_aura_type text;
+alter table public.techniques add column if not exists debut_game text;             -- juego de estreno (wiki inglesa): IE1…VR o STRIKERS
+alter table public.techniques add column if not exists users int;                    -- número de jugadores (1 individual, 2-4 combinada)
 alter table public.techniques add column if not exists balance_tp int;               -- TP nuevo, balanceado: el que enseña la app
 alter table public.techniques add column if not exists balance_power_min int;        -- potencia mínima / máxima que le corresponde a ese TP
 alter table public.techniques add column if not exists balance_power_max int;

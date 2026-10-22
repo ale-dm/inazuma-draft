@@ -87,6 +87,22 @@ def write_balance():
                               for c in ('balance_tp', 'balance_power_min', 'balance_power_max'))
                     + f'update public.techniques t set balance_tp_{s} = v.tp, balance_power_min_{s} = v.mn, balance_power_max_{s} = v.mx\n'
                     f'from (values\n{vals_s}\n) as v(id, tp, mn, mx) where t.id = v.id;\n')
+        write_debut(f)
+
+
+def write_debut(f):
+    """Juego de estreno y número de jugadores de cada técnica (data/technique_debut.json), al final de technique_balance.sql"""
+    path = os.path.join(ROOT, 'data', 'technique_debut.json')
+    if not os.path.exists(path):
+        return
+    with open(path, encoding='utf-8') as fd:
+        t = json.load(fd)['techniques']
+    vals = ',\n'.join(f"({sql(i)},{sql(g)},{n})" for i, (g, n) in sorted(t.items()))
+    f.write('\n-- Juego de estreno (wiki inglesa) y número de jugadores de cada técnica.\n'
+            'alter table public.techniques add column if not exists debut_game text;\n'
+            'alter table public.techniques add column if not exists users int;\n'
+            'update public.techniques t set debut_game = v.g, users = v.n\n'
+            f'from (values\n{vals}\n) as v(id, g, n) where t.id = v.id;\n')
 
 
 AURA_FIELDS = ('key', 'hyper', 'hyper_es', 'hyper_fr', 'hyper_it', 'hyper_id', 'points', 'cost', 'atk')

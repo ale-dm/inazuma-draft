@@ -49,6 +49,10 @@ export interface Technique {
   image?: string | null
   /** Rasgos: 'long' (tiro largo), 'block' (bloqueo de tiros), 'chain' (encadenable), 'punch' (despeje de puños) */
   traits?: string[]
+  /** Juego de estreno (wiki inglesa): IE1…VR o STRIKERS */
+  debut?: string | null
+  /** Número de jugadores: 1 individual, 2-4 combinada */
+  users?: number | null
 }
 
 export interface Player {

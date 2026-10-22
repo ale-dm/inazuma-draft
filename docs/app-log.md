@@ -677,3 +677,21 @@ Detalle en [balance-tecnicas-ie123.md](balance-tecnicas-ie123.md) (índice), con
 - «Poderes especiales» pasa a **Aura**: cada espíritu guerrero, tótem y Mixi Max es un bloque con la placa del juego
   (`plate_fs/fsa/soul/mixi`), su icono (`icon_sp_area05..08`), la reserva (PEG/SP/PE), su técnica con TP, el coste por
   uso y los usos por partido; la armadura va en una segunda placa con su gasto por turno. Ver docs/tecnicas-visual.md.
+
+## Fatal clásico con auras, ventaja de afinidad y Keshin Armed
+
+- **Auras en el duelo de 10 rondas**: al preparar la jugada salen, junto a las supertécnicas, la técnica del espíritu
+  guerrero / tótem, la armadura y el Mixi Max de la carta, con su reserva (PEG / SP / PE). No gastan tensión; la IA
+  las usa con las mismas reglas. La revelación enseña qué usó cada uno.
+- **Ventaja de afinidad** (Fuego > Bosque > Aire > Montaña > Fuego): +3 al número de quien juega con ventaja, en el
+  clásico y en el Sim. Cuenta la afinidad de la técnica que se usa o, sin técnica, la de la carta (`elementEdge` en
+  `lib/tension.ts`). La IA la tiene en cuenta con la afinidad de las cartas.
+- **Keshin Armed**: con la armadura puesta la supertécnica de esa ronda no gasta tensión (también en el clásico) y,
+  como en Chrono Stone, la técnica del keshin queda bloqueada el resto del partido.
+
+## Ficha: juego de estreno y jugadores de cada técnica
+
+- `data/technique_debut.json`: juego de estreno (`debut_game` de la wiki inglesa) y número de jugadores de 888
+  técnicas. `build.py` lo añade a `supabase/technique_balance.sql` (columnas `debut_game` y `users`).
+- Cada bloque de técnica enseña el logo del juego de estreno y, en las combinadas, «×N» jugadores.
+- Marcas de grado: pendientes, faltan los datos de crecimiento por técnica y el grado del jugador.

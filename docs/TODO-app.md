@@ -56,7 +56,8 @@ Leyenda: `[x]` hecho · `[~]` en curso · `[ ]` pendiente.
 ## Fase 4 · Modos
 - [x] Duelo = Fatal de MADFUT: Mi club y Draft (10 rondas por turnos, pista, desempate), Simulación (6 ocasiones por puestos), química y boost semanal. Ver [duelo.md](duelo.md)
 - [x] Números de duelo por puesto y con las supertécnicas (tipo, TP, tiro largo / bloqueo)
-- [ ] Duelo con supertécnicas y ventaja de afinidad (ver duelo.md); tensión e hiperenergía de Victory Road recopiladas en [tension-vr.md](tension-vr.md)
+- [x] Duelo con supertécnicas, auras (espíritu guerrero, tótem, armadura, Mixi Max) y ventaja de afinidad (ver duelo.md); tensión e hiperenergía de Victory Road recopiladas en [tension-vr.md](tension-vr.md)
+- [ ] Marcas de grado en las técnicas (`grade_*.png`): faltan en la base el tipo de crecimiento de cada técnica y el grado del jugador
 - [x] Higher/Lower (media o un número de duelo; 50 monedas por acierto; récord)
 - [x] Copas por saga (8 equipos: IE, GO, Ares/Orión, VR) y copa diaria de 4 equipos (mismos rivales para todos, 1 al día)
 - [x] Puzzles de draft: diario + 30 numerados; 17 cartas fijas → química objetivo (siempre con solución)

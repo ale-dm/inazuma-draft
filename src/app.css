@@ -458,6 +458,9 @@ button.ic:active { transform: scale(.95); }
 .tb-cat { width: 1.75rem; height: 1.75rem; object-fit: contain; flex-shrink: 0; image-rendering: pixelated; }
 .tbn { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .tbf { width: 1.1rem; height: 1.1rem; object-fit: contain; flex-shrink: 0; }
+.tbu { font-size: .72rem; font-weight: 800; padding: 0 .3rem; border-radius: .4rem; background: rgb(0 0 0 / .35); flex-shrink: 0; }
+.tbg { height: 1.05rem; max-width: 2.4rem; object-fit: contain; flex-shrink: 0; filter: drop-shadow(0 1px 1px rgb(0 0 0 / .5)); }
+.tbg--txt { font-size: .6rem; font-weight: 800; text-transform: uppercase; line-height: 1.05rem; }
 .tbtp { font-size: 1.15rem; font-weight: 800; font-style: italic; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .tbtp small { font-size: .55rem; font-style: normal; margin-right: .1rem; }
 
