@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useAppSettings } from '../../context/AppSettings'
-import { getAllPlayers, getAllTechniques, getPlayer, teamLabel, teamLogo } from '../../data/catalog'
+import { getAllPlayers, getAllTechniques, getPlayer, getTechnique, teamLabel, teamLogo } from '../../data/catalog'
 import { teamRating } from '../../lib/chemistry'
 import { duelReward, type DuelKey } from '../../lib/duel'
 import { getFormation } from '../../lib/lineup'
@@ -19,7 +19,7 @@ import type { Technique } from '../../types'
 import DuelCard from '../DuelCard'
 import Coin from '../Coin'
 import Screen from '../club/Screen'
-import { ElementIcon, TechniqueIcon } from '../GameIcon'
+import { ElementIcon, SpecialIcon, TechniqueIcon } from '../GameIcon'
 import SimMatch from './SimMatch'
 import TensionBar from './TensionBar'
 import ActButton from './ActButton'
@@ -28,7 +28,10 @@ import { recordMatch } from '../../lib/history'
 import { level } from '../../lib/difficulty'
 import type { MatchRecord } from '../../lib/club'
 
-import { COMBO_DISCOUNT, COMBO_MAX, DUEL_TENSION, comboCost, gainTension, techBonus, techCost, usableTechs } from '../../lib/tension'
+import {
+  COMBO_DISCOUNT, COMBO_MAX, DUEL_TENSION, auraMoves, comboCost, elementEdge, gainTension, payAura, playedElement, poolLeft, poolUnit,
+  techBonus, techCost, usableTechs, type AuraMove, type AuraPools,
+} from '../../lib/tension'
 import { techniqueName } from '../../data/catalog'
 import SquadPicker, { draftSquad, type PickedSquad } from './SquadPicker'
 import { DRAFT_HASH, EXPEDITION_HASH, FATAL_DRAFT_HASH } from '../../lib/route'
@@ -188,7 +191,14 @@ interface Plan {
   bonus: [number, number]
   mineTech: Technique | null
   oppTech: Technique | null
+  /** Espíritu guerrero, tótem, armadura o Mixi Max de cada lado */
+  mineAura: AuraMove[]
+  oppAura: AuraMove[]
+  /** Ventaja de afinidad de cada lado (ya sumada en `bonus`) */
+  edge: [number, number]
   tension: [number, number]
+  pools: [AuraPools, AuraPools]
+  armoured: [string[], string[]]
   combo: number
   gain: [number, number]
 }
@@ -197,6 +207,14 @@ const DUEL_THINK_MS = 1400
 const AI_LEAD_MS = 1300
 
 const withBonus = (c: FatalCard, k: DuelKey, n: number): FatalCard => (n ? { ...c, st: { ...c.st, [k]: c.st[k] + n } } : c)
+const hasArmour = (l: readonly AuraMove[]) => l.some(a => a.kind === 'armour')
+const auraBonus = (l: readonly AuraMove[]) => l.reduce((n, a) => n + a.bonus, 0)
+/** La técnica del keshin no va con su armadura: elegir una quita la otra del mismo especial */
+function toggleAura(sel: string[], a: AuraMove): string[] {
+  if (sel.includes(a.id)) return sel.filter(x => x !== a.id)
+  const same = a.kind === 'mixi' ? [] : [`armour:${a.pool}`, `aura:${a.pool}`]
+  return [...sel.filter(x => !same.includes(x)), a.id]
+}
 
 function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode, expedition }: { mode: DuelSource; title: string; squad: PickedSquad; boostText: string; onAgain: () => void; onResult: OnResult; backHref: string; expedition?: { rating: number; avoid: string[] } }) {
   const { t, locale } = useAppSettings()
@@ -221,6 +239,10 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode
   const [techSel, setTechSel] = useState<string | null>(null)
   const [tension, setTension] = useState<[number, number]>([DUEL_TENSION.start, DUEL_TENSION.start])
   const [combo, setCombo] = useState(0)
+  /** Puntos de aura (PEG / SP / PE) que le quedan a cada especial, de los dos equipos, y armaduras ya puestas */
+  const [pools, setPools] = useState<[AuraPools, AuraPools]>([{}, {}])
+  const [armoured, setArmoured] = useState<[string[], string[]]>([[], []])
+  const [auraSel, setAuraSel] = useState<string[]>([])
   const [plan, setPlan] = useState<Plan | null>(null)
   const [rv, setRv] = useState(0)
   const [theirsHidden, setTheirsHidden] = useState<FatalCard | null>(null)
@@ -254,14 +276,18 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode
   }, [result, paid, step])
 
   const myTechs = choice ? usableTechs(choice.card, choice.stat) : []
-  const techCostNow = (x: Technique) => comboCost(x, combo)
+  const myAuras = choice ? auraMoves(choice.card, choice.stat, pools[0], getTechnique, armoured[0]) : []
+  const chosenAura = myAuras.filter(a => auraSel.includes(a.id))
+  /** Con la armadura puesta, la supertécnica de esa ronda no gasta tensión */
+  const techCostNow = (x: Technique) => (hasArmour(chosenAura) ? 0 : comboCost(x, combo))
   const selTech = myTechs.find(x => x.id === techSel) ?? null
-  const preview = selTech && techCostNow(selTech) <= tension[0] ? techBonus(selTech, choice!.card) : 0
+  const preview = (selTech && techCostNow(selTech) <= tension[0] ? techBonus(selTech, choice!.card) : 0) + auraBonus(chosenAura)
 
   /** Prepara la jugada: elegir supertécnica (si hay) y confirmar */
   function startPlay(card: FatalCard, stat: DuelKey) {
     setChoice({ card, stat })
     setTechSel(null)
+    setAuraSel([])
     setStep('prep')
   }
 
@@ -281,32 +307,50 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode
     }
   }
 
-  /** La IA usa su supertécnica si con ella pasa de perder (o de ganar por muy poco) a ganar, viendo tu número con error */
-  function aiTech(card: FatalCard, key: DuelKey, myNum: number): Technique | null {
+  /**
+   * La IA usa su supertécnica y sus auras si con ellas pasa de perder (o de ganar por muy poco) a ganar, viendo tu número
+   * con error. Las auras no gastan tensión sino su reserva; juega con las mismas reglas que tú.
+   */
+  function aiPlan(card: FatalCard, key: DuelKey, myNum: number, edge: number): { tech: Technique | null; aura: AuraMove[] } {
     const techs = usableTechs(card, key)
-    const opts = techs.map(x => ({ id: x.id, cost: techCost(x), bonus: techBonus(x, card) }))
-    const pick = chooseBoosts(opts, perceive(myNum) - card.st[key] + 1, tension[1], 1)[0]
-    return pick ? techs.find(x => x.id === pick.id) ?? null : null
+    const auras = auraMoves(card, key, pools[1], getTechnique, armoured[1])
+    const opts = [...techs.map(x => ({ id: `t:${x.id}`, cost: techCost(x), bonus: techBonus(x, card) })), ...auras.map(a => ({ id: a.id, cost: 0, bonus: a.bonus }))]
+    let picked = chooseBoosts(opts, perceive(myNum) - card.st[key] - edge + 1, tension[1], 2)
+    // la técnica del keshin y su armadura no van juntas
+    const armourPools = new Set(picked.filter(o => o.id.startsWith('armour:')).map(o => o.id.slice('armour:'.length)))
+    picked = picked.filter(o => !(o.id.startsWith('aura:') && armourPools.has(o.id.slice('aura:'.length))))
+    return { tech: techs.find(x => picked.some(o => o.id === `t:${x.id}`)) ?? null, aura: auras.filter(a => picked.some(o => o.id === a.id)) }
   }
 
   function beginReveal(mine: { card: FatalCard; stat: DuelKey }, theirs: FatalCard, theirKey: DuelKey) {
     const myKey = lead === 0 ? mine.stat : counter(m.pending!.stat)
-    const mineTech = selTech && comboCost(selTech, combo) <= tension[0] ? selTech : null
-    const oppTech = aiTech(theirs, theirKey, mine.card.st[myKey])
-    const bm = mineTech ? techBonus(mineTech, mine.card) : 0
-    const bo = oppTech ? techBonus(oppTech, theirs) : 0
+    const mineTech = selTech && techCostNow(selTech) <= tension[0] ? selTech : null
+    const mineAura = chosenAura
+    // la IA calcula con la afinidad de las cartas (no sabe qué técnica vas a usar)
+    const cardEdge = elementEdge(theirs.p.element, mine.card.p.element)[0]
+    const ai = aiPlan(theirs, theirKey, mine.card.st[myKey], cardEdge)
+    const oppTech = ai.tech
+    const oppAura = ai.aura
+    const edge = elementEdge(
+      playedElement(mine.card, [mineTech, ...mineAura.map(a => a.tech)]),
+      playedElement(theirs, [oppTech, ...oppAura.map(a => a.tech)]),
+    )
+    const bm = (mineTech ? techBonus(mineTech, mine.card) : 0) + auraBonus(mineAura) + edge[0]
+    const bo = (oppTech ? techBonus(oppTech, theirs) : 0) + auraBonus(oppAura) + edge[1]
     const statLead = lead === 0 ? myKey : theirKey
     const round = playRound(lead, statLead, withBonus(mine.card, myKey, bm), withBonus(theirs, theirKey, bo))
     const w = round.winner
     const gain: [number, number] = [w === 0 ? DUEL_TENSION.win : w === 1 ? DUEL_TENSION.lose : DUEL_TENSION.draw, w === 1 ? DUEL_TENSION.win : w === 0 ? DUEL_TENSION.lose : DUEL_TENSION.draw]
-    const spent: [number, number] = [mineTech ? comboCost(mineTech, combo) : 0, oppTech ? techCost(oppTech) : 0]
+    const spent: [number, number] = [mineTech ? techCostNow(mineTech) : 0, oppTech && !hasArmour(oppAura) ? techCost(oppTech) : 0]
     spentTotal.current += spent[0]
     if (mineTech) track('fatalTechs')
+    const arm = (l: AuraMove[]) => l.filter(a => a.kind === 'armour').map(a => a.pool)
     // combo: ganar usando supertécnica sube un nivel; usarla sin ganar (o perder) lo pierde
     const newCombo = mineTech ? (w === 0 ? Math.min(COMBO_MAX, combo + 1) : 0) : w === 1 ? 0 : combo
     setPlan({
-      index: i, round, orig: [mine.card, theirs], myKey, theirKey, base: [mine.card.st[myKey], theirs.st[theirKey]], bonus: [bm, bo], mineTech, oppTech,
+      index: i, round, orig: [mine.card, theirs], myKey, theirKey, base: [mine.card.st[myKey], theirs.st[theirKey]], bonus: [bm, bo], mineTech, oppTech, mineAura, oppAura, edge,
       tension: [gainTension(tension[0] - spent[0], gain[0]), gainTension(tension[1] - spent[1], gain[1])], combo: newCombo, gain,
+      pools: [payAura(pools[0], mineAura), payAura(pools[1], oppAura)], armoured: [[...armoured[0], ...arm(mineAura)], [...armoured[1], ...arm(oppAura)]],
     })
     applied.current = false
     setTheirsHidden(theirs)
@@ -318,7 +362,7 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode
   useEffect(() => {
     if (step !== 'reveal' || !plan) return
     if (rv >= 3) return
-    const wait = rv === 0 ? 900 : rv === 1 ? 1300 : plan.mineTech || plan.oppTech ? 1500 : 500
+    const wait = rv === 0 ? 900 : rv === 1 ? 1300 : boostedPlan(plan) ? 1500 : 500
     const id = setTimeout(() => setRv(x => x + 1), wait)
     return () => clearTimeout(id)
   }, [step, plan, rv])
@@ -327,7 +371,7 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode
   useEffect(() => {
     if (step !== 'reveal' || !plan) return
     if (rv === 1) playSfx('flip')
-    if (rv === 2 && (plan.mineTech || plan.oppTech)) playSfx('tech')
+    if (rv === 2 && boostedPlan(plan)) playSfx('tech')
     if (rv === 3) {
       const w = plan.round.winner
       playSfx(w === 0 ? 'win' : w === 1 ? 'lose' : 'tick')
@@ -344,6 +388,8 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode
     setMetas(x => [...x, { orig }])
     setTension(plan.tension)
     setCombo(plan.combo)
+    setPools(plan.pools)
+    setArmoured(plan.armoured)
   }, [step, plan, rv])
 
   function next() {
@@ -351,6 +397,7 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode
     setChoice(null)
     setSel(null)
     setTechSel(null)
+    setAuraSel([])
     setPlan(null)
     setTheirsHidden(null)
     setRv(0)
@@ -408,7 +455,7 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode
           <span className="duel-score__team">{teamLabel(m.opp.name, locale)}</span>
           <small className="duel-score__round">{over ? t('duel.fullTime') : lead === 0 ? t('duel.youLead') : t('duel.rivalLeads')} · {boostText}</small>
         </div>
-        <TensionBar value={tension[0]} spend={step === 'prep' && preview ? techCostNow(selTech!) : 0} opp={tension[1]} label={t('sim.tension')} />
+        <TensionBar value={tension[0]} spend={step === 'prep' && selTech && techCostNow(selTech) <= tension[0] ? techCostNow(selTech) : 0} opp={tension[1]} label={t('sim.tension')} />
         {combo > 0 && <p className="duel-combo">{t('duel.combo', { n: combo, p: Math.round(combo * COMBO_DISCOUNT * 100) })}</p>}
       </div>
 
@@ -460,7 +507,8 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode
       {(step === 'prep' || step === 'think' || step === 'reveal') && choice && (
         <Stage
           step={step} rv={rv} plan={plan} choice={choice} lead={lead} pending={m.pending} theirsHidden={theirsHidden} round={i + 1}
-          myTechs={myTechs} techSel={techSel} onTech={id => setTechSel(techSel === id ? null : id)} tension={tension} combo={combo}
+          myTechs={myTechs} techSel={techSel} onTech={id => setTechSel(techSel === id ? null : id)} tension={tension} techCost={techCostNow}
+          auras={myAuras} auraSel={auraSel} onAura={a => setAuraSel(l => toggleAura(l, a))} pools={pools[0]}
           preview={preview} oppName={teamLabel(m.opp.name, locale)} onPlay={play} onCancel={next} onNext={next} onSkip={() => setRv(3)} last={i + 1 >= FATAL_ROUNDS || (plan !== null && plan.index + 1 >= FATAL_ROUNDS)}
         />
       )}
@@ -469,9 +517,10 @@ function FatalMatch({ title, squad, boostText, onAgain, onResult, backHref, mode
 }
 
 /** Ventana de la jugada: preparar (supertécnica), el rival piensa, y se descubre paso a paso con animaciones */
-function Stage({ step, rv, plan, choice, lead, pending, theirsHidden, round, myTechs, techSel, onTech, tension, combo, preview, oppName, onPlay, onCancel, onNext, onSkip, last }: {
+function Stage({ step, rv, plan, choice, lead, pending, theirsHidden, round, myTechs, techSel, onTech, tension, techCost, auras, auraSel, onAura, pools, preview, oppName, onPlay, onCancel, onNext, onSkip, last }: {
   step: Step; rv: number; plan: Plan | null; choice: { card: FatalCard; stat: DuelKey }; lead: 0 | 1; pending: { card: FatalCard; stat: DuelKey } | null
-  theirsHidden: FatalCard | null; round: number; myTechs: Technique[]; techSel: string | null; onTech: (id: string) => void; tension: [number, number]; combo: number
+  theirsHidden: FatalCard | null; round: number; myTechs: Technique[]; techSel: string | null; onTech: (id: string) => void; tension: [number, number]
+  techCost: (x: Technique) => number; auras: AuraMove[]; auraSel: string[]; onAura: (a: AuraMove) => void; pools: AuraPools
   preview: number; oppName: string; onPlay: () => void; onCancel: () => void; onNext: () => void; onSkip: () => void; last: boolean
 }) {
   const { t, locale } = useAppSettings()
@@ -484,10 +533,11 @@ function Stage({ step, rv, plan, choice, lead, pending, theirsHidden, round, myT
   const mineNum = (reveal ? plan.base[0] : choice.card.st[myKey]) + (boosted ? plan.bonus[0] : step === 'prep' ? preview : 0)
   const theirNum = reveal && flipped ? plan.base[1] + (boosted ? plan.bonus[1] : 0) : null
   const verdict = reveal && rv >= 3 ? plan.round.winner : null
+  const auraName = (a: AuraMove) => (a.kind === 'armour' ? t('sim.act.armour') : a.kind === 'mixi' ? t('sim.act.mixi') : a.tech ? techniqueName(a.tech, locale) : t('sim.act.aura'))
   const say = step === 'prep'
     ? t('duel.say.prep', { name: choice.card.p.name, stat: t(STAT_KEY[myKey]) })
     : step === 'think' ? t('duel.thinking')
-    : rv === 0 ? t('duel.say.wait') : rv === 1 ? t('duel.say.flip') : rv === 2 ? ((plan?.mineTech || plan?.oppTech) ? t('duel.say.boost') : t('duel.say.numbers')) : ''
+    : rv === 0 ? t('duel.say.wait') : rv === 1 ? t('duel.say.flip') : rv === 2 ? (plan && boostedPlan(plan) ? t('duel.say.boost') : t('duel.say.numbers')) : ''
   return (
     <div className="ds-backdrop" onClick={() => reveal && rv < 3 && onSkip()}>
       <div className="ds-panel" onClick={e => e.stopPropagation()}>
@@ -519,18 +569,25 @@ function Stage({ step, rv, plan, choice, lead, pending, theirsHidden, round, myT
 
         {step === 'prep' && (
           <div className="ds-prep">
-            {myTechs.length > 0 ? (
+            {myTechs.length + auras.length > 0 ? (
               <>
                 <p className="fd-hint">{t('duel.techHint', { stat: t(STAT_KEY[myKey]) })}</p>
                 <div className="sim-acts">
                   {myTechs.map(x => {
-                    const cost = comboCost(x, combo)
+                    const cost = techCost(x)
                     return (
                       <ActButton key={x.id} label={techniqueName(x, locale)} desc={t('sim.act.tech', { n: techBonus(x, choice.card), stat: t(STAT_KEY[myKey]) })} cost={cost}
                         on={techSel === x.id} disabled={cost > tension[0]} onClick={() => onTech(x.id)} tone={x.element ?? 'none'}
                         icon={<><TechniqueIcon type={x.type} traits={x.traits} className="act-icon" />{x.element && <ElementIcon element={x.element} className="act-icon act-icon--el" />}</>} />
                     )
                   })}
+                  {auras.map(a => (
+                    <ActButton key={a.id} label={auraName(a)} cost={0} on={auraSel.includes(a.id)} disabled={false} onClick={() => onAura(a)} tone="hyper"
+                      desc={t(a.kind === 'armour' ? 'sim.act.armourDesc' : 'sim.act.auraDesc', {
+                        n: a.bonus, stat: t(STAT_KEY[myKey]), pts: Math.max(0, a.points), unit: poolUnit(a.special), left: poolLeft(pools, choice.card.p.id, a.special),
+                      })}
+                      icon={<SpecialIcon type={a.special.type} className="act-icon" />} />
+                  ))}
                 </div>
               </>
             ) : <p className="fd-hint">{t('duel.noTech')}</p>}
@@ -541,10 +598,16 @@ function Stage({ step, rv, plan, choice, lead, pending, theirsHidden, round, myT
           </div>
         )}
         {step === 'think' && <p className="duel-thinking">{t('duel.thinking')}<span className="dots"><i /><i /><i /></span></p>}
-        {reveal && rv >= 2 && (plan.mineTech || plan.oppTech) && (
+        {reveal && rv >= 2 && boostedPlan(plan) && (
           <p className="sim-used ds-used">
-            {plan.mineTech && <span className="is-mine">{t('sim.used', { name: techniqueName(plan.mineTech, locale) })} (+{plan.bonus[0]})</span>}
-            {plan.oppTech && <span className="is-opp">{t('sim.usedOpp', { name: techniqueName(plan.oppTech, locale) })} (+{plan.bonus[1]})</span>}
+            {(plan.mineTech || plan.mineAura.length > 0) && (
+              <span className="is-mine">{t('sim.used', { name: [...(plan.mineTech ? [techniqueName(plan.mineTech, locale)] : []), ...plan.mineAura.map(auraName)].join(' + ') })} (+{plan.bonus[0] - plan.edge[0]})</span>
+            )}
+            {(plan.oppTech || plan.oppAura.length > 0) && (
+              <span className="is-opp">{t('sim.usedOpp', { name: [...(plan.oppTech ? [techniqueName(plan.oppTech, locale)] : []), ...plan.oppAura.map(auraName)].join(' + ') })} (+{plan.bonus[1] - plan.edge[1]})</span>
+            )}
+            {plan.edge[0] > 0 && <span className="is-mine">{t('duel.edge', { n: plan.edge[0] })}</span>}
+            {plan.edge[1] > 0 && <span className="is-opp">{t('duel.edgeOpp', { n: plan.edge[1] })}</span>}
           </p>
         )}
         {verdict !== null && (
@@ -562,6 +625,9 @@ function Stage({ step, rv, plan, choice, lead, pending, theirsHidden, round, myT
     </div>
   )
 }
+
+/** ¿Sube algún número en la revelación? (supertécnica, aura o ventaja de afinidad) */
+const boostedPlan = (p: Plan) => !!(p.mineTech || p.oppTech || p.mineAura.length || p.oppAura.length || p.edge[0] || p.edge[1])
 
 /** Posición de cada carta en el campo: la de su formación o, sin formación, filas por puesto */
 function positions(team: FatalTeam): Map<FatalCard, { x: number; y: number }> {

@@ -44,8 +44,9 @@ export const COUNTER_BONUS = 2                       // tras parar un ataque, +2
  * la armadura, el tótem y el Mixi Max no gastan tensión. Cada carta tiene su reserva para todo el partido: PEG del keshin
  * (su KP de Galaxy a nivel 6), SP del tótem (su SP a nivel máximo) o PE (aguante) del Mixi Max.
  * - Técnica del keshin / tótem: cuesta su coste de Galaxy en la reserva; suma como una supertécnica de su TP.
- * - Armadura: +2 y las supertécnicas de ese turno no gastan tensión; gasta (KP + ATK) × 0,025 × 0,75 PEG por segundo
- *   (10 s por turno); la primera del partido recupera el 30 % de la reserva; la técnica del keshin no va con armadura.
+ * - Armadura (Keshin Armed): +2 y las supertécnicas de ese turno no gastan tensión; gasta (KP + ATK) × 0,025 × 0,75 PEG
+ *   por segundo (10 s por turno); la primera del partido recupera el 30 % de la reserva. Como en Chrono Stone, una vez
+ *   puesta la técnica del keshin queda bloqueada hasta agotar la reserva (no se vuelve al keshin normal).
  * - Mixi Max: sin tiempo, +3 pagando PE cada turno hasta quedarse sin aguante.
  * A 0 el keshin / tótem se retira el resto del partido.
  */
@@ -81,7 +82,9 @@ export function auraMoves(card: FatalCard, key: DuelKey, pools: AuraPools, techO
     }
     const tech = sp.hyper_id ? techOf(sp.hyper_id) : undefined
     const cost = auraCost(sp)
-    if (tech && TECH_KEY[tech.type] === key && (tech.type !== 'Catch' || card.p.position === 'GK') && left >= cost) {
+    // con la armadura ya puesta no se vuelve al keshin normal: su técnica queda bloqueada
+    const locked = sp.type === 'keshin' && armoured.includes(pool)
+    if (tech && !locked && TECH_KEY[tech.type] === key && (tech.type !== 'Catch' || card.p.position === 'GK') && left >= cost) {
       out.push({ id: `aura:${pool}`, kind: 'aura', pool, special: sp, points: cost, bonus: techBonus(tech, card), tech })
     }
     if (sp.type === 'keshin' && sp.armed && left > 0) {
@@ -100,6 +103,20 @@ export function payAura(pools: AuraPools, moves: readonly AuraMove[]): AuraPools
     next[m.pool] = Math.max(0, Math.min(max, (next[m.pool] ?? max) - m.points))
   }
   return next
+}
+
+/** Ventaja de afinidad (como en engine/sim.ts): Fuego > Bosque > Aire > Montaña > Fuego */
+export const ELEMENT_BEATS: Record<string, string> = { fire: 'wood', wood: 'air', air: 'earth', earth: 'fire' }
+/** Lo que suma al número de la fase quien juega con ventaja de afinidad */
+export const EDGE_BONUS = 3
+/** Afinidad que juega cada lado: la de la técnica que usa (supertécnica o de aura) o, sin técnica, la de la carta */
+export const playedElement = (card: FatalCard, techs: readonly (Technique | null | undefined)[]) =>
+  techs.find(t => t?.element)?.element ?? card.p.element
+/** Bonus de afinidad de cada lado: [mío, rival]; como mucho uno de los dos lo tiene */
+export function elementEdge(a?: string | null, b?: string | null): [number, number] {
+  if (a && b && ELEMENT_BEATS[a] === b) return [EDGE_BONUS, 0]
+  if (a && b && ELEMENT_BEATS[b] === a) return [0, EDGE_BONUS]
+  return [0, 0]
 }
 
 /** Fatal clásico (duelo de 10 rondas): tensión inicial y ganancia por ronda (+60 al ganarla, +30 al perderla o empatarla) */

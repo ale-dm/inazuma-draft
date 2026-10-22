@@ -88,5 +88,10 @@ sin importar). Ideas, de menos a más cambio:
 6. **Cartas de técnica** coleccionables en sobres, que se equipan a las cartas del club (más adelante, con
    evoluciones).
 
-Propuesta para empezar cuando toque: 1 + 4 (bonus por tipo según TP y ventaja de afinidad), porque no cambian la
+**Hecho**: 1 (bonus por TP), 2 (barra de tensión), 4 (ventaja de afinidad: +3 a quien juega con ventaja, por la
+afinidad de la técnica usada o, sin técnica, la de la carta) y 5 (espíritu guerrero, tótem, armadura y Mixi Max con
+puntos de aura, en el clásico y en el Sim; con armadura la supertécnica no gasta tensión y la técnica del keshin queda
+bloqueada el resto del partido).
+
+Propuesta original: 1 + 4 (bonus por tipo según TP y ventaja de afinidad), porque no cambian la
 interfaz: solo suman a los números que ya se comparan y se pueden enseñar en la línea de la jugada.

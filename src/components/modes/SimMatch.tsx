@@ -7,7 +7,7 @@ import {
   chooseBoosts, perceive, penaltyGoal, type FatalCard, type PenDir, type SimChance, type SimResult,
 } from '../../lib/fatal'
 import {
-  COUNTER_BONUS, PICK_COST, PRESS, SHOUT_COST, TENSION_GAIN, TENSION_START, auraMoves, gainTension, payAura, poolLeft, poolUnit,
+  COUNTER_BONUS, PICK_COST, PRESS, SHOUT_COST, TENSION_GAIN, TENSION_START, auraMoves, elementEdge, gainTension, payAura, playedElement, poolLeft, poolUnit,
   techBonus, techCost, usableTechs, type AuraMove, type AuraPools,
 } from '../../lib/tension'
 import type { DuelKey } from '../../lib/duel'
@@ -57,6 +57,8 @@ interface Outcome {
   mine: string[]
   opp: string | null
   bonus: [number, number]
+  /** Ventaja de afinidad de cada lado (ya sumada en `bonus`) */
+  edge: [number, number]
   shout: boolean
 }
 
@@ -92,7 +94,7 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
   const [tension, setTension] = useState<[number, number]>([TENSION_START, TENSION_START])
   const [tactic, setTactic] = useState<Tactic>('bal')
   const [sel, setSel] = useState<string[]>([])
-  const [outcome, setOutcome] = useState<Outcome>({ mine: [], opp: null, bonus: [0, 0], shout: false })
+  const [outcome, setOutcome] = useState<Outcome>({ mine: [], opp: null, bonus: [0, 0], edge: [0, 0], shout: false })
   /** Puntos de aura (PEG / SP / PE) que le quedan a cada especial, de los dos equipos, y armaduras ya puestas (la 1.ª recupera) */
   const [pools, setPools] = useState<[AuraPools, AuraPools]>([{}, {}])
   const [armoured, setArmoured] = useState<[string[], string[]]>([[], []])
@@ -201,7 +203,9 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
    */
   function aiPlan(d: Decision, mine: FatalCard): { bonus: number; cost: number; names: string[]; tech: Technique | null; shout: boolean; aura: AuraMove[] } {
     const own = d.opp
-    const ownNum = own.st[d.oppKey] + oppTacticBonus(d.oppKey)
+    // cuenta con la afinidad de las cartas (no sabe qué técnica vas a usar)
+    const [eo, em] = elementEdge(own.p.element, mine.p.element)
+    const ownNum = own.st[d.oppKey] + oppTacticBonus(d.oppKey) + eo - em
     const myNum = perceive(mine.st[d.key] + tacticBonus(d.key) + (phase === 'control' && counter ? COUNTER_BONUS : 0))
     const none = { bonus: 0, cost: 0, names: [] as string[], tech: null, shout: false, aura: [] as AuraMove[] }
     // grito del portero: si defiende y tu ataque tiene muchas opciones
@@ -250,13 +254,18 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
     spentTotal.current += spent[0]
     const techsUsed = chosen.filter(a => a.kind === 'tech').length
     if (techsUsed) track('fatalTechs', techsUsed)
-    const bm = chosen.reduce((n, a) => n + a.bonus, 0) + tacticBonus(dec.key) + (phase === 'control' && counter ? COUNTER_BONUS : 0)
-    const bo = ai.bonus + oppTacticBonus(dec.oppKey)
+    // ventaja de afinidad: la de la técnica que se usa o, sin técnica, la de la carta
+    const edge = elementEdge(
+      playedElement(myCard, chosen.map(a => a.tech)),
+      playedElement(dec.opp, [ai.tech, ...ai.aura.map(m => m.tech)]),
+    )
+    const bm = chosen.reduce((n, a) => n + a.bonus, 0) + tacticBonus(dec.key) + (phase === 'control' && counter ? COUNTER_BONUS : 0) + edge[0]
+    const bo = ai.bonus + oppTacticBonus(dec.oppKey) + edge[1]
     if (ai.shout) setOppShoutUsed(([a, b]) => (half ? [a, true] : [true, b]))
     const shout = chosen.some(a => a.kind === 'shout') || ai.shout
     if (shout) setShoutUsed(([a, b]) => (half ? [a, true] : [true, b]))
     const names = chosen.map(a => a.label)
-    setOutcome({ mine: names, opp: ai.names.length ? ai.names.join(' + ') : null, bonus: [bm, bo], shout })
+    setOutcome({ mine: names, opp: ai.names.length ? ai.names.join(' + ') : null, bonus: [bm, bo], edge, shout })
     setSel([])
     if (phase === 'control') {
       const ball = controlWinner(c, [bm, bo])
@@ -343,7 +352,7 @@ export default function SimMatch({ title, squad, boostText, settle, onAgain, bac
 
   const next = (nextIdx: number) => {
     setIdx(nextIdx)
-    setOutcome({ mine: [], opp: null, bonus: [0, 0], shout: false })
+    setOutcome({ mine: [], opp: null, bonus: [0, 0], edge: [0, 0], shout: false })
     setLast(null)
     setPhase(nextIdx === SIM_PER_HALF || nextIdx === chances.length ? 'runout' : 'run')
   }
@@ -636,6 +645,8 @@ function ResultFace({ c, phase, ball, last, outcome, oppName }: { c: SimChance; 
     <p className="sim-used">
       {outcome.mine.length > 0 && <span className="is-mine">{t('sim.used', { name: outcome.mine.join(' + ') })}</span>}
       {outcome.opp && <span className="is-opp">{t('sim.usedOpp', { name: outcome.opp })}</span>}
+      {outcome.edge[0] > 0 && <span className="is-mine">{t('duel.edge', { n: outcome.edge[0] })}</span>}
+      {outcome.edge[1] > 0 && <span className="is-opp">{t('duel.edgeOpp', { n: outcome.edge[1] })}</span>}
     </p>
   )
   if (phase === 'ctrlRes') {
