@@ -81,10 +81,14 @@ def write_balance():
             if not sb:
                 continue
             vals_s = ',\n'.join(f"({sql(i)},{tp},{mn},{mx})" for i, (tp, mn, mx) in sorted(sb.items()))
-            # las columnas también están en schema.sql; aquí van para que la carga balance_only funcione sola
+            # las columnas también están en schema.sql; aquí van para que la carga balance_only funcione sola. Las que
+            # ya no están en el JSON (p. ej. las de espíritu guerrero que salieron de GO1) se vacían antes de escribir.
+            ids = ','.join(sql(i) for i in sorted(sb))
             f.write(f'\n-- TP por saga: {s.upper()} original. Solo lo leen las cartas de {s.upper()}; no toca el TP global.\n'
                     + ''.join(f'alter table public.techniques add column if not exists {c}_{s} int;\n'
                               for c in ('balance_tp', 'balance_power_min', 'balance_power_max'))
+                    + f'update public.techniques set balance_tp_{s} = null, balance_power_min_{s} = null, balance_power_max_{s} = null\n'
+                    f'where balance_tp_{s} is not null and id not in ({ids});\n'
                     + f'update public.techniques t set balance_tp_{s} = v.tp, balance_power_min_{s} = v.mn, balance_power_max_{s} = v.mx\n'
                     f'from (values\n{vals_s}\n) as v(id, tp, mn, mx) where t.id = v.id;\n')
 

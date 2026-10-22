@@ -918,6 +918,8 @@ from (values
 alter table public.techniques add column if not exists balance_tp_go1 int;
 alter table public.techniques add column if not exists balance_power_min_go1 int;
 alter table public.techniques add column if not exists balance_power_max_go1 int;
+update public.techniques set balance_tp_go1 = null, balance_power_min_go1 = null, balance_power_max_go1 = null
+where balance_tp_go1 is not null and id not in ('AcrobatKeep','AirBullet','AtlantisWall','BallistaShot','BatAttack','BigScissors','BlackAsh','BoomerangFeint','BoundFlame','BritanniaCross','BuraiHand','BurningCatch','BurningSummer','ButtobiJump','CardSplash','Claymore','CounterdriveGK','CrazySunlight','CrystalBarrier','DashTrain','DeathDrop','DeathSword','DeepMist','DenraiHoutou','DevilBurst','DimensionCut','DinosaurBreak','DragonsTail','ElephantPress','EndlessSummer','Evolution','ExtendZone','FenceOfGaia','FireTornadoDD','FlyingFish','Fortissimo','FutureEye','FuurinkazanDestroyer','GodHandV','GravityPoint','HeadBazooka','HuntersNet','HydroAnchor','JokerRains','KageTsukami','KattobiDefense','KillBridge','KillerWhale','KouteiPenguin7','MaboroshiShot','MachWind','MadJuggler','MelodyWave','MoonsaultStamp','NaminoriPierrot','NoboriRyuu','OlympusHarmony','PantherBlizzard','PerfectCourse','PowerSpike','PrestoTurn','RainbowBubbleShot','RapidWhip','ReverseWorld','RocketHead','RoundSpark','SaikyousanShoukan','Sargasso','SerpentFang','ShootBreak','Sidewinder','SkyWalk','SonicShot','SoyokazeStep','SpiralDraw','SprintWarp','StarReflection','TheMist','TheStamp','ThiefEye','ThousandArrow','TriangleZZ','TrickBall','TwinMixer','VanishingCut','VivaBanriNoChoujou','WhiteBlade','WhiteHurricane','YakimochiScrew','ZeroMagnum','Zeroyon');
 update public.techniques t set balance_tp_go1 = v.tp, balance_power_min_go1 = v.mn, balance_power_max_go1 = v.mx
 from (values
 ('AcrobatKeep',100,100,640),
@@ -1017,6 +1019,8 @@ from (values
 alter table public.techniques add column if not exists balance_tp_go2 int;
 alter table public.techniques add column if not exists balance_power_min_go2 int;
 alter table public.techniques add column if not exists balance_power_max_go2 int;
+update public.techniques set balance_tp_go2 = null, balance_power_min_go2 = null, balance_power_max_go2 = null
+where balance_tp_go2 is not null and id not in ('AggressiveBeat','AllDelete','AsteriskRock','BeamKobushi','BeastLord','BlitzBridge','BouncerRabbit','BungeeThrust','ButtobiPunch','ChaosMeteor','CoilUpper','DeadFuture','DecoyRelease','DeepJungle','DestinyCloud','DimensionStorm','DisasterBreak','DoonShout','DoubleShot','DragonBlaster','ExcellentBreast','ExtremeRabbit','FireTornadoTC','FloralDespair','FractalHouse','GammaStrike','GaussShot','GearDrive','GigatonHead','GloriousRay','GodHandW','GodWind','GrandSweeper','GreatBlaster','GreatMaxNaOre','GyroSaving','HinawaBullet','Ichiyajou','KazaanaDrive','KikuIchimonji','KirakiraIllusion','KodaiNoKiba','KodaiNoTsubasa','KogetsuJuujishou','KuroshioRide','LaFlamme','LastDeathZone','LinearDrive','LoveArrow','MagicalFlower','MagnetDraw','MochimochiKinakoMochi','MueiRanbu','MueiSouha','OgreBlade','OkehazamaWall','OmegaAttack','OuNoTsurugi','OujaNoKiba','PenguinTheHand','PlasmaBall','Rejection','SaikyouElevenHadou','SandCutter','Screwdriver','SetsunaBoost','ShellbitBurst','ShiningHole','SkytreeFall','SouhiYuuseidan','SoyoyagiStep','SparkEdgeDribble','SparkleWave','SpinningTransam','SpinningUpper','SpringArrow','StormZone','SunshineStorm','TaikokuOuka','TenchiRaimei','TheMonsters','Transmove','TsubameGaeshi','VampireLord','WonderTrap');
 update public.techniques t set balance_tp_go2 = v.tp, balance_power_min_go2 = v.mn, balance_power_max_go2 = v.mx
 from (values
 ('AggressiveBeat',80,85,540),
@@ -1110,6 +1114,8 @@ from (values
 alter table public.techniques add column if not exists balance_tp_go3 int;
 alter table public.techniques add column if not exists balance_power_min_go3 int;
 alter table public.techniques add column if not exists balance_power_max_go3 int;
+update public.techniques set balance_tp_go3 = null, balance_power_min_go3 = null, balance_power_max_go3 = null
+where balance_tp_go3 is not null and id not in ('ArashiTatsumakiHurricane','AsokoNiUFO','AtlasSword','BeautifulHoop','BicycleSword','BigMouth','BlackDawn','BubbleBoil','CastleGate','CrocodileFang','DeadStraight','DeathScytheLow','DeathScytheMiddle','DefenseHouteishiki','DesertDrift','DiffuseChord','DigThrough','DigUp','Doukasen','DryBlow','DustJavelin','Einsatz','FatalLift','FootworkDraw','GalacticaFall','GekirinDunk','GigantVine','GingaRocket','GoldFever','HologramLock','IvoryCrash','Jackknife','JudgmentRay','KabukiBreak','Kazangan','Kazanrai','KillerElbow','KonohaRendezvous','KonohaRoll','KyoubouHead','LiquidFlow','LoyalHeartShot','MagicAmp','MagmaCarpet','MermaidSmash','MushroomHop','OilRush','OraoraMenchi','OrbitalDrive','ParkourAttack','Phalanx','PsychicBow','RapidFire','ReboundLayer','RisingSlash','RockHammer','RollingCutter','Sacrifice','SandKnock','ScreamOfEden','ShinyFeather','ShootEater','SilkRoad','Stargazer','StealthWalk','TentacleHold','TheEarthInfinity','TracePress','TwistReach','VolcanicFly','VolcanoHead','Waterfall','WildDunk','WillyWilly','WinningLogic','ZSlash');
 update public.techniques t set balance_tp_go3 = v.tp, balance_power_min_go3 = v.mn, balance_power_max_go3 = v.mx
 from (values
 ('ArashiTatsumakiHurricane',170,215,980),
